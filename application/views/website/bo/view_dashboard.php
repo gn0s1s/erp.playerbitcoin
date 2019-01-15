@@ -21,8 +21,8 @@
 														</div>
 														<div style="max-height: 100%;" class="carousel-inner">
 															<!-- Slide 1 -->
-															<div class="item active">
-																<img src="/media/imagenes/m4.jpg" alt="demo user">
+															<div class="item active"><!-- /media/imagenes/m4.jpg -->
+																<img src="/logo.png" alt="demo user">
 															</div>
 														</div>
 													</div>

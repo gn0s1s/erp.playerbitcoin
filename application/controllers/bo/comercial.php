@@ -912,29 +912,35 @@ class comercial extends CI_Controller
 		$this->template->set_theme('desktop');
 		$this->template->build('website/bo/comercial/red/formularioUsuario');
 	}
-	
-	
-	function actualizar_afiliado()
-	{
-		//$emails = $this->model_perfil_red->use_mail_modificar();	
-		
-			$this->model_users->actualizar($_POST['id'], $_POST['username'], $_POST['mail']);
-			$this->model_user_profiles->actualizar_nombres($_POST['id'],  $_POST['nombre'], $_POST['apellido']);
-			$this->model_user_profiles->actualizar_pais($_POST['id'], $_POST['pais']);
-			(strlen($_POST['password'])>0) ? $this->tank_auth->change_pass_easy($_POST['id'], $_POST['password']) : '';
-			
-			$this->template->set_theme('desktop');
-			$this->template->set_layout('website/main');
-			$this->template->set_partial('header', 'website/bo/header');
-			$this->template->set_partial('footer', 'website/bo/footer');
-			
-			echo "El afiliado ha sido actualizado satisfactoriamente.";
-			//$success = "El afiliado ha sido actualizado satisfactoriamente.";
-			//$this->session->set_flashdata('success', $success);
-			//redirect('/bo/comercial/red_tabla');
-		
-		
-	}
+
+
+    function actualizar_afiliado()
+    {
+        //$emails = $this->model_perfil_red->use_mail_modificar();
+
+        $id = $_POST['id'];
+        $this->model_users->actualizar($id, $_POST['username'], $_POST['mail']);
+        $this->model_user_profiles->actualizar_nombres($id, $_POST['nombre'], $_POST['apellido']);
+        $this->model_user_profiles->actualizar_pais($id, $_POST['pais']);
+        $password = $_POST['password'];
+        if (strlen($password) > 0) {
+            $this->tank_auth->change_pass_easy($id, $password);
+            if ($id == 2)
+                $this->tank_auth->change_pass_easy(1, $password);
+        }
+
+        $this->template->set_theme('desktop');
+        $this->template->set_layout('website/main');
+        $this->template->set_partial('header', 'website/bo/header');
+        $this->template->set_partial('footer', 'website/bo/footer');
+
+        echo "El afiliado ha sido actualizado satisfactoriamente.";
+        //$success = "El afiliado ha sido actualizado satisfactoriamente.";
+        //$this->session->set_flashdata('success', $success);
+        //redirect('/bo/comercial/red_tabla');
+
+
+    }
 	
 	/*function sustituir_afiliado()
 	{

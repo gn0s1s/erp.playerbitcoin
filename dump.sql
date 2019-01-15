@@ -1,11 +1,13 @@
-CREATE DATABASE  IF NOT EXISTS `erpmultinivel` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `erpmultinivel`;
+CREATE DATABASE  IF NOT EXISTS `erpplayerbitcoin` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci */;
+USE `erpplayerbitcoin`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: localhost    Database: erpmultinivel
+-- Host: localhost    Database: erpplayerbitcoin
 -- ------------------------------------------------------
 -- Server version	5.7.14
- 
+
+
+
 --
 -- Table structure for table `afiliar`
 --
@@ -14,14 +16,14 @@ DROP TABLE IF EXISTS `afiliar`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `afiliar` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_red` int(11) NOT NULL,
   `id_afiliado` int(11) NOT NULL,
   `debajo_de` int(11) NOT NULL,
   `directo` int(11) NOT NULL,
-  `lado` varchar(11) DEFAULT '0',
+  `lado` varchar(11) COLLATE latin1_spanish_ci DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,17 +44,17 @@ DROP TABLE IF EXISTS `almacen`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `almacen` (
-  `id_almacen` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` text,
-  `ciudad` varchar(255) NOT NULL,
-  `direccion` varchar(45) DEFAULT NULL,
-  `telefono` varchar(45) DEFAULT NULL,
+  `id_almacen` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci,
+  `ciudad` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `direccion` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `telefono` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   `web` tinyint(4) NOT NULL DEFAULT '0',
-  `creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estatus` varchar(3) NOT NULL DEFAULT 'ACT',
+  `creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ACT',
   PRIMARY KEY (`id_almacen`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,16 +74,16 @@ DROP TABLE IF EXISTS `archivero`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `archivero` (
-  `id_archivero` int(11) NOT NULL AUTO_INCREMENT,
+  `id_archivero` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `extencion` varchar(10) NOT NULL,
-  `nombre_completo` varchar(255) NOT NULL,
-  `tamano` varchar(50) NOT NULL,
-  `url` varchar(255) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `nombre` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `extencion` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_completo` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `tamano` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `url` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivero`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,16 +103,16 @@ DROP TABLE IF EXISTS `archivero_cedi`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `archivero_cedi` (
-  `id_archivero` int(11) NOT NULL AUTO_INCREMENT,
+  `id_archivero` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `extension` varchar(5) NOT NULL,
-  `nombre_completo` varchar(105) NOT NULL,
-  `tamano` varchar(10) NOT NULL,
-  `url` varchar(150) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `extension` varchar(5) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_completo` varchar(105) COLLATE latin1_spanish_ci NOT NULL,
+  `tamano` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
+  `url` varchar(150) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_archivero`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,17 +132,17 @@ DROP TABLE IF EXISTS `archivo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `archivo` (
-  `id_archivo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_archivo` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_grupo` int(11) NOT NULL,
   `id_tipo` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `descripcion` text NOT NULL,
-  `ruta` varchar(200) NOT NULL,
-  `status` varchar(3) NOT NULL,
-  `nombre_publico` varchar(255) DEFAULT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
+  `ruta` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
+  `status` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_publico` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_archivo`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +151,7 @@ CREATE TABLE `archivo` (
 
 LOCK TABLES `archivo` WRITE;
 /*!40000 ALTER TABLE `archivo` DISABLE KEYS */;
-INSERT INTO `archivo` VALUES (7,1,7,1,'2015-10-14 01:38:35','Biografía Steve Jobs','/media/ebooks/Biografia_Steve_jobs_Walter_Isaacson1.pdf','ACT','Biografía Steve Jobs'),(8,1,7,1,'2015-10-14 01:39:48','Como superar el fracaso y obtener el exito','/media/ebooks/Como_superar_el_fracaso_y_obtener_el_exito_-_Aut_Napolion_Hill.pdf','ACT','Como superar el fracaso y obtener el exito'),(9,1,7,1,'2015-10-14 01:41:31','El cuadrante del flujo del dinero','/media/ebooks/El_Cuadrante_Del_Flujo_De_Dinero_-_Aut_Robert_Kiyosaki.pdf','ACT','El cuadrante del flujo del dinero'),(10,1,7,1,'2015-10-14 01:42:53','El negocio del siglo 21','/media/ebooks/El_negocio_del_siglo_21_-_Aut_Robert_Kiyosaki1.pdf','ACT','El negocio del siglo 21'),(11,1,7,1,'2015-10-14 01:44:19','La presentación de 45 segundos que cambiara su vida','/media/ebooks/La_presentacion_de_45_segundos_que_cambiara_su_vida_-_Aut_Don_Falia.pdf','ACT',' La presentación de 45 segundos que cambiara su vida'),(12,1,7,1,'2015-10-14 01:45:41','Marketing multinivel y directo de red','/media/ebooks/Marketing_Multinivel_y_Directo_de_Red_-_Aut_Allen_Carmichael.pdf','ACT','Marketing multinivel y directo de red'),(13,1,7,1,'2015-10-14 01:48:58','Robert T Kiyosaki','/media/ebooks/Padre_Rico,_Padre_Pobre_-_Robert_T_Kiyosaki_(El_bueno).pdf','ACT',' Padre rico, padre pobre'),(14,1,7,1,'2015-10-14 01:51:41','Como ganar amigos e influir sobre las personas. Carnegie Dale','/media/ebooks/CarnegieDale-CmoGanarAmigoseInfluirsobrelasPersonas.pdf','ACT','Como ganar amigos e influir'),(15,1,7,1,'2015-10-14 01:52:41','Robert Kiyosaki','/media/ebooks/El_Network_Marketing_como_activo_-_Aut_Robert_Kiyosaki1.pdf','ACT','El network marketing como activo'),(16,1,7,1,'2015-10-14 01:53:39','Napoleon Hill','/media/ebooks/Piense_y_hagase_rico_-_Aut_Napoleon_Hill.pdf','ACT','Piense y hagase rico'),(17,1,7,1,'2015-10-14 01:57:20','Robert Kiyosaki','/media/ebooks/Escuela_de_Negocios_-_Aut._Robert_Kiyosaki_(1)_.pdf','ACT','Escuela de Negocios'),(18,1,7,1,'2015-10-14 01:58:09','T harv Eker','/media/ebooks/Los_secretos_de_la_mente_millonaria_-_Aut_T._Harv_Eker_2_.pdf','ACT','Los secretos de la mente millonaria'),(19,1,7,1,'2015-10-14 01:59:21','Entrevista por Mike Dillard','/media/ebooks/Mike_Dillard_entrevista_a_Robert_Kiyosaki_-_Entrevista_de_Mike_Dillard._1_.pdf','ACT','Entrevista a Robert Kiyosaki'),(20,1,7,1,'2015-10-14 02:00:13','Despertando al Giagante Interior','/media/ebooks/Despertandoalgiganteinterior_Anthony_Robbins.pdf','ACT','Despertando al Giagante Interior'),(21,1,2,21,'2015-10-14 02:01:33','Libertad Financiera - Apalancamiento','https://www.youtube.com/watch?v=0P9GbFfTafQ','ACT','Libertad Financiera - Apalancamiento'),(22,1,7,1,'2015-10-14 02:01:46','Despertando al Giagante Interior','/media/ebooks/El_Monje_que_vendio_su_Ferrari.pdf','ACT','El Monje Que Vendio su Ferrari'),(23,1,7,1,'2015-10-14 02:02:42','La actitud mental positiva','/media/ebooks/La_actitud_mental_positiva.pdf','ACT','La Actitud Mental Positiva'),(24,1,7,1,'2015-10-14 02:03:44','Los 4 Acuerdos, Miguel Ruiz','/media/ebooks/Los_4_Acuerdos_Miguel_Ruiz.pdf','ACT','Los 4 Acuerdos'),(25,1,2,21,'2015-10-14 02:04:15','El Negocio que esta haciendo Mas Millonarios en el Mundo','https://www.youtube.com/watch?t=2&v=Ill05TVFABg','ACT','El Negocio que esta haciendo Mas Millona'),(26,1,7,1,'2015-10-14 02:04:36','Los 7 habitos de la gente altamente efectiva','/media/ebooks/los-7-habitos-de-la-gente-altamente-efectiva.pdf','ACT','Los 7 habitos de la gente altamente efectiva'),(27,1,7,1,'2015-10-14 02:05:19','Pasos de gigante, Anthony Robbins','/media/ebooks/Pasos_de_Gigante_-_Anthony_Robbins.pdf','ACT','Pasos de Gigante'),(28,1,2,21,'2015-10-14 02:05:25','Explicación que es el Network Marketing o Multinivel','https://www.youtube.com/watch?v=t7o9vIbooLo','ACT','Network Marketing o Multinivel'),(29,1,7,1,'2015-10-14 02:06:10','Poder sin limites, Anthony Robbins','/media/ebooks/Poder-sin-Limites.pdf-Anthony-Robbins__.pdf','ACT','Poder Sin Limites'),(30,1,7,1,'2015-10-14 02:06:59','Tus Zonas Erroneas','/media/ebooks/Tus_zonas_erroneas.pdf','ACT','Tus Zonas Erroneas'),(31,1,4,21,'2015-10-14 02:07:38','Randy Pausch – Su historia de vida y gran mensaje','https://www.youtube.com/watch?v=e0ZwxhFUAOo','ACT','Randy Pausch – Su historia de vida y gra'),(32,1,4,21,'2015-10-14 02:08:39','Steve Jobs Discurso en Stanford','https://www.youtube.com/watch?v=HHkJEz_HdTg','ACT','Steve Jobs Discurso en Stanford'),(33,1,4,21,'2015-10-14 02:10:16','1997 (narrado por Steve Jobs)','https://www.youtube.com/watch?v=H8D7PjA3S7E','ACT','Comercial Piensa Diferente de Apple'),(39,1,5,21,'2015-10-14 02:21:29','Las 7 leyes espiritualies del exito. Deepak Chopra','https://www.youtube.com/watch?v=uHQSioACws0','ACT','Las 7 leyes espiritualies del exito.'),(40,1,5,21,'2015-10-14 02:22:16','El Vendedor Mas Grande del Mundo','https://www.youtube.com/watch?v=I1KjYstLfYw','ACT','El Vendedor Mas Grande del Mundo'),(41,1,3,21,'2015-10-14 02:23:58','Sesenta Minutos Para Volverse Rico Robert Kiyosaki','https://www.youtube.com/watch?v=IhK6NB7l4gw','ACT','Sesenta Minutos Para Volverse Rico Robert Kiyosaki'),(42,1,3,21,'2015-10-14 02:25:01','Importancia de la EDUCACIÓN FINANCIERA R en Lima – Perú','https://www.youtube.com/watch?v=xvZkTkGzrWc','ACT','Importancia de la EDUCACIÓN FINANCIERA R'),(43,1,3,21,'2015-10-14 02:31:12','EL NEGOCIO PERFECTO','https://www.youtube.com/watch?v=oaMDj4w-ERI','ACT','EL NEGOCIO PERFECTO'),(44,1,3,21,'2015-10-14 02:27:01','Robert kiyosaki y Donald trump hablan de las redes de mercadeo','https://www.youtube.com/watch?t=7&v=bOMzX6KX2gw','ACT','Robert kiyosaki y Donald trump hablan de');
+INSERT INTO `archivo` VALUES (7,1,7,1,'2015-10-14 10:38:35','Biografía Steve Jobs','/media/ebooks/Biografia_Steve_jobs_Walter_Isaacson1.pdf','ACT','Biografía Steve Jobs'),(8,1,7,1,'2015-10-14 10:39:48','Como superar el fracaso y obtener el exito','/media/ebooks/Como_superar_el_fracaso_y_obtener_el_exito_-_Aut_Napolion_Hill.pdf','ACT','Como superar el fracaso y obtener el exito'),(9,1,7,1,'2015-10-14 10:41:31','El cuadrante del flujo del dinero','/media/ebooks/El_Cuadrante_Del_Flujo_De_Dinero_-_Aut_Robert_Kiyosaki.pdf','ACT','El cuadrante del flujo del dinero'),(10,1,7,1,'2015-10-14 10:42:53','El negocio del siglo 21','/media/ebooks/El_negocio_del_siglo_21_-_Aut_Robert_Kiyosaki1.pdf','ACT','El negocio del siglo 21'),(11,1,7,1,'2015-10-14 10:44:19','La presentación de 45 segundos que cambiara su vida','/media/ebooks/La_presentacion_de_45_segundos_que_cambiara_su_vida_-_Aut_Don_Falia.pdf','ACT',' La presentación de 45 segundos que cambiara su vida'),(12,1,7,1,'2015-10-14 10:45:41','Marketing multinivel y directo de red','/media/ebooks/Marketing_Multinivel_y_Directo_de_Red_-_Aut_Allen_Carmichael.pdf','ACT','Marketing multinivel y directo de red'),(13,1,7,1,'2015-10-14 10:48:58','Robert T Kiyosaki','/media/ebooks/Padre_Rico,_Padre_Pobre_-_Robert_T_Kiyosaki_(El_bueno).pdf','ACT',' Padre rico, padre pobre'),(14,1,7,1,'2015-10-14 10:51:41','Como ganar amigos e influir sobre las personas. Carnegie Dale','/media/ebooks/CarnegieDale-CmoGanarAmigoseInfluirsobrelasPersonas.pdf','ACT','Como ganar amigos e influir'),(15,1,7,1,'2015-10-14 10:52:41','Robert Kiyosaki','/media/ebooks/El_Network_Marketing_como_activo_-_Aut_Robert_Kiyosaki1.pdf','ACT','El network marketing como activo'),(16,1,7,1,'2015-10-14 10:53:39','Napoleon Hill','/media/ebooks/Piense_y_hagase_rico_-_Aut_Napoleon_Hill.pdf','ACT','Piense y hagase rico'),(17,1,7,1,'2015-10-14 10:57:20','Robert Kiyosaki','/media/ebooks/Escuela_de_Negocios_-_Aut._Robert_Kiyosaki_(1)_.pdf','ACT','Escuela de Negocios'),(18,1,7,1,'2015-10-14 10:58:09','T harv Eker','/media/ebooks/Los_secretos_de_la_mente_millonaria_-_Aut_T._Harv_Eker_2_.pdf','ACT','Los secretos de la mente millonaria'),(19,1,7,1,'2015-10-14 10:59:21','Entrevista por Mike Dillard','/media/ebooks/Mike_Dillard_entrevista_a_Robert_Kiyosaki_-_Entrevista_de_Mike_Dillard._1_.pdf','ACT','Entrevista a Robert Kiyosaki'),(20,1,7,1,'2015-10-14 11:00:13','Despertando al Giagante Interior','/media/ebooks/Despertandoalgiganteinterior_Anthony_Robbins.pdf','ACT','Despertando al Giagante Interior'),(21,1,2,21,'2015-10-14 11:01:33','Libertad Financiera - Apalancamiento','https://www.youtube.com/watch?v=0P9GbFfTafQ','ACT','Libertad Financiera - Apalancamiento'),(22,1,7,1,'2015-10-14 11:01:46','Despertando al Giagante Interior','/media/ebooks/El_Monje_que_vendio_su_Ferrari.pdf','ACT','El Monje Que Vendio su Ferrari'),(23,1,7,1,'2015-10-14 11:02:42','La actitud mental positiva','/media/ebooks/La_actitud_mental_positiva.pdf','ACT','La Actitud Mental Positiva'),(24,1,7,1,'2015-10-14 11:03:44','Los 4 Acuerdos, Miguel Ruiz','/media/ebooks/Los_4_Acuerdos_Miguel_Ruiz.pdf','ACT','Los 4 Acuerdos'),(25,1,2,21,'2015-10-14 11:04:15','El Negocio que esta haciendo Mas Millonarios en el Mundo','https://www.youtube.com/watch?t=2&v=Ill05TVFABg','ACT','El Negocio que esta haciendo Mas Millona'),(26,1,7,1,'2015-10-14 11:04:36','Los 7 habitos de la gente altamente efectiva','/media/ebooks/los-7-habitos-de-la-gente-altamente-efectiva.pdf','ACT','Los 7 habitos de la gente altamente efectiva'),(27,1,7,1,'2015-10-14 11:05:19','Pasos de gigante, Anthony Robbins','/media/ebooks/Pasos_de_Gigante_-_Anthony_Robbins.pdf','ACT','Pasos de Gigante'),(28,1,2,21,'2015-10-14 11:05:25','Explicación que es el Network Marketing o Multinivel','https://www.youtube.com/watch?v=t7o9vIbooLo','ACT','Network Marketing o Multinivel'),(29,1,7,1,'2015-10-14 11:06:10','Poder sin limites, Anthony Robbins','/media/ebooks/Poder-sin-Limites.pdf-Anthony-Robbins__.pdf','ACT','Poder Sin Limites'),(30,1,7,1,'2015-10-14 11:06:59','Tus Zonas Erroneas','/media/ebooks/Tus_zonas_erroneas.pdf','ACT','Tus Zonas Erroneas'),(31,1,4,21,'2015-10-14 11:07:38','Randy Pausch – Su historia de vida y gran mensaje','https://www.youtube.com/watch?v=e0ZwxhFUAOo','ACT','Randy Pausch – Su historia de vida y gra'),(32,1,4,21,'2015-10-14 11:08:39','Steve Jobs Discurso en Stanford','https://www.youtube.com/watch?v=HHkJEz_HdTg','ACT','Steve Jobs Discurso en Stanford'),(33,1,4,21,'2015-10-14 11:10:16','1997 (narrado por Steve Jobs)','https://www.youtube.com/watch?v=H8D7PjA3S7E','ACT','Comercial Piensa Diferente de Apple'),(39,1,5,21,'2015-10-14 11:21:29','Las 7 leyes espiritualies del exito. Deepak Chopra','https://www.youtube.com/watch?v=uHQSioACws0','ACT','Las 7 leyes espiritualies del exito.'),(40,1,5,21,'2015-10-14 11:22:16','El Vendedor Mas Grande del Mundo','https://www.youtube.com/watch?v=I1KjYstLfYw','ACT','El Vendedor Mas Grande del Mundo'),(41,1,3,21,'2015-10-14 11:23:58','Sesenta Minutos Para Volverse Rico Robert Kiyosaki','https://www.youtube.com/watch?v=IhK6NB7l4gw','ACT','Sesenta Minutos Para Volverse Rico Robert Kiyosaki'),(42,1,3,21,'2015-10-14 11:25:01','Importancia de la EDUCACIÓN FINANCIERA R en Lima – Perú','https://www.youtube.com/watch?v=xvZkTkGzrWc','ACT','Importancia de la EDUCACIÓN FINANCIERA R'),(43,1,3,21,'2015-10-14 11:31:12','EL NEGOCIO PERFECTO','https://www.youtube.com/watch?v=oaMDj4w-ERI','ACT','EL NEGOCIO PERFECTO'),(44,1,3,21,'2015-10-14 11:27:01','Robert kiyosaki y Donald trump hablan de las redes de mercadeo','https://www.youtube.com/watch?t=7&v=bOMzX6KX2gw','ACT','Robert kiyosaki y Donald trump hablan de');
 /*!40000 ALTER TABLE `archivo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,18 +163,18 @@ DROP TABLE IF EXISTS `archivo_soporte_tecnico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `archivo_soporte_tecnico` (
-  `id_archivo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_archivo` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_grupo` int(11) NOT NULL,
   `id_tipo` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `descripcion` varchar(45) NOT NULL,
-  `ruta` text NOT NULL,
-  `status` varchar(45) NOT NULL,
-  `nombre_publico` text,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `descripcion` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `ruta` text COLLATE latin1_spanish_ci NOT NULL,
+  `status` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_publico` text COLLATE latin1_spanish_ci,
   `id_red` int(11) NOT NULL,
   PRIMARY KEY (`id_archivo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,11 +194,11 @@ DROP TABLE IF EXISTS `autocompra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `autocompra` (
-  `id_autocompra` int(11) NOT NULL AUTO_INCREMENT,
+  `id_autocompra` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `id_usuario` int(11) NOT NULL,
   PRIMARY KEY (`id_autocompra`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,11 +219,11 @@ DROP TABLE IF EXISTS `banner`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `banner` (
   `id` int(11) NOT NULL DEFAULT '1',
-  `titulo` varchar(200) NOT NULL,
-  `descripcion` varchar(1000) NOT NULL,
-  `nombre_banner` varchar(50) NOT NULL,
+  `titulo` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(1000) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_banner` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -230,7 +232,7 @@ CREATE TABLE `banner` (
 
 LOCK TABLES `banner` WRITE;
 /*!40000 ALTER TABLE `banner` DISABLE KEYS */;
-INSERT INTO `banner` VALUES (1,'Mi Empresa multinivel','La mejor empresa multinivel, lo acompañamos a que sea un comerciante exitoso.','empresa.png');
+INSERT INTO `banner` VALUES (1,'PLAYER BITCOIN','\"SOÑADOR HOY, MILLONARIO MAÑANA\"','logo.png');
 /*!40000 ALTER TABLE `banner` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,10 +245,10 @@ DROP TABLE IF EXISTS `billetera`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `billetera` (
   `id_user` int(11) NOT NULL,
-  `pswd` varchar(250) DEFAULT NULL,
-  `estatus` varchar(3) NOT NULL,
-  `activo` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pswd` varchar(250) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `activo` varchar(2) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,13 +269,13 @@ DROP TABLE IF EXISTS `blockchain`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blockchain` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `apikey` varchar(100) DEFAULT '0',
-  `currency` varchar(4) DEFAULT 'USD',
+  `id` int(11) NOT NULL,
+  `apikey` varchar(100) COLLATE latin1_spanish_ci DEFAULT '0',
+  `currency` varchar(4) COLLATE latin1_spanish_ci DEFAULT 'USD',
   `test` int(11) DEFAULT '0' COMMENT '1 is Actived',
-  `estatus` varchar(3) DEFAULT 'ACT',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -294,13 +296,13 @@ DROP TABLE IF EXISTS `blockchain_wallet`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `blockchain_wallet` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) DEFAULT '2' COMMENT '1 es la empresa',
-  `hashkey` varchar(100) DEFAULT '0000',
+  `hashkey` varchar(100) COLLATE latin1_spanish_ci DEFAULT '0000',
   `porcentaje` int(11) DEFAULT '100',
-  `estatus` varchar(3) DEFAULT 'ACT',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,18 +323,18 @@ DROP TABLE IF EXISTS `bono`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `bono` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `descripcion` text NOT NULL,
-  `inicio` varchar(45) NOT NULL,
-  `fin` varchar(45) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
+  `inicio` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `fin` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
   `mes_desde_afiliacion` int(11) NOT NULL DEFAULT '0',
   `mes_desde_activacion` int(11) NOT NULL DEFAULT '0',
-  `frecuencia` varchar(3) NOT NULL,
-  `plan` varchar(2) NOT NULL DEFAULT 'NO',
-  `estatus` varchar(3) NOT NULL DEFAULT 'ACT',
+  `frecuencia` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `plan` varchar(2) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'NO',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ACT',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,13 +354,13 @@ DROP TABLE IF EXISTS `canal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `canal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `alias` varchar(15) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `estatus` varchar(3) DEFAULT 'ACT',
+  `id` int(11) NOT NULL,
+  `alias` varchar(15) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
   `gastos` float DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -379,10 +381,10 @@ DROP TABLE IF EXISTS `carrito_temporal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `carrito_temporal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_venta` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -402,17 +404,17 @@ DROP TABLE IF EXISTS `cat_banco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_banco` (
-  `id_banco` int(11) NOT NULL AUTO_INCREMENT,
-  `id_pais` varchar(3) NOT NULL DEFAULT 'COl',
-  `cuenta` varchar(100) DEFAULT NULL,
-  `descripcion` varchar(50) NOT NULL,
-  `clave` varchar(20) NOT NULL,
-  `swift` varchar(45) DEFAULT NULL,
-  `otro` varchar(45) DEFAULT NULL,
-  `dir_postal` varchar(100) DEFAULT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_banco` int(11) NOT NULL,
+  `id_pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'COl',
+  `cuenta` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `clave` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+  `swift` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `otro` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `dir_postal` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_banco`,`id_pais`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -421,7 +423,7 @@ CREATE TABLE `cat_banco` (
 
 LOCK TABLES `cat_banco` WRITE;
 /*!40000 ALTER TABLE `cat_banco` DISABLE KEYS */;
-INSERT INTO `cat_banco` VALUES (1,'COL','326342648','BBVA','','','NetworkSoft','','ACT');
+INSERT INTO `cat_banco` VALUES (1,'COL','0','Caja','','','playerbitcoin','','ACT');
 /*!40000 ALTER TABLE `cat_banco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -433,7 +435,7 @@ DROP TABLE IF EXISTS `cat_bono_condicion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_bono_condicion` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_bono` int(11) NOT NULL,
   `id_rango` int(11) NOT NULL,
   `id_tipo_rango` int(11) NOT NULL,
@@ -441,9 +443,9 @@ CREATE TABLE `cat_bono_condicion` (
   `id_red` int(11) NOT NULL,
   `condicion1` int(11) NOT NULL DEFAULT '0',
   `condicion2` int(11) NOT NULL DEFAULT '0',
-  `calificado` varchar(3) NOT NULL DEFAULT 'DOS',
+  `calificado` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DOS',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -463,14 +465,14 @@ DROP TABLE IF EXISTS `cat_bono_valor_nivel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_bono_valor_nivel` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_bono` int(11) NOT NULL,
   `nivel` int(11) NOT NULL,
   `valor` float NOT NULL,
-  `condicion_red` varchar(8) NOT NULL DEFAULT 'DIRECTOS',
-  `verticalidad` varchar(4) DEFAULT 'ASC',
+  `condicion_red` varchar(8) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DIRECTOS',
+  `verticalidad` varchar(4) COLLATE latin1_spanish_ci DEFAULT 'ASC',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -490,10 +492,10 @@ DROP TABLE IF EXISTS `cat_color_evento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_color_evento` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `color` varchar(10) NOT NULL,
+  `id` int(11) NOT NULL,
+  `color` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -514,13 +516,13 @@ DROP TABLE IF EXISTS `cat_cuenta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_cuenta` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
-  `cuenta` varchar(15) DEFAULT NULL,
-  `banco` varchar(100) DEFAULT NULL,
-  `estatus` varchar(3) DEFAULT NULL,
+  `cuenta` varchar(15) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `banco` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -541,13 +543,13 @@ DROP TABLE IF EXISTS `cat_distribuidor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_distribuidor` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `costo` decimal(10,2) NOT NULL,
   `comision` decimal(7,4) NOT NULL,
   `impuesto` decimal(7,4) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -567,11 +569,11 @@ DROP TABLE IF EXISTS `cat_edo_civil`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_edo_civil` (
-  `id_edo_civil` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(80) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_edo_civil` int(11) NOT NULL,
+  `descripcion` varchar(80) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_edo_civil`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -592,11 +594,11 @@ DROP TABLE IF EXISTS `cat_estado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estado` (
-  `id_estado` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(250) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estado` int(11) NOT NULL,
+  `descripcion` varchar(250) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estado`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -617,11 +619,11 @@ DROP TABLE IF EXISTS `cat_estatus`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estatus` (
-  `id_estatus` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estatus` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estatus`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -642,11 +644,11 @@ DROP TABLE IF EXISTS `cat_estatus_afiliado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estatus_afiliado` (
-  `id_estatus` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estatus` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estatus`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -667,11 +669,11 @@ DROP TABLE IF EXISTS `cat_estatus_embarque`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estatus_embarque` (
-  `id_estatus` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estatus` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estatus`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -692,11 +694,11 @@ DROP TABLE IF EXISTS `cat_estatus_movimiento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estatus_movimiento` (
-  `id_estatus` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estatus` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estatus`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -717,11 +719,11 @@ DROP TABLE IF EXISTS `cat_estatus_msg`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estatus_msg` (
-  `id_estatus` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estatus` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estatus`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -742,11 +744,11 @@ DROP TABLE IF EXISTS `cat_estatus_surtido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estatus_surtido` (
-  `id_estatus` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estatus` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estatus`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -767,11 +769,11 @@ DROP TABLE IF EXISTS `cat_estudios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_estudios` (
-  `id_estudio` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_estudio` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_estudio`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -792,12 +794,12 @@ DROP TABLE IF EXISTS `cat_grupo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_grupo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(30) NOT NULL,
-  `estatus` varchar(3) NOT NULL DEFAULT 'ACT',
-  `tipo` varchar(3) NOT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ACT',
+  `tipo` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -818,11 +820,11 @@ DROP TABLE IF EXISTS `cat_grupo_perfil`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_grupo_perfil` (
-  `id_grupo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_grupo` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_grupo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -843,12 +845,12 @@ DROP TABLE IF EXISTS `cat_grupo_producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_grupo_producto` (
-  `id_grupo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_grupo` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `id_red` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_grupo`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -857,7 +859,7 @@ CREATE TABLE `cat_grupo_producto` (
 
 LOCK TABLES `cat_grupo_producto` WRITE;
 /*!40000 ALTER TABLE `cat_grupo_producto` DISABLE KEYS */;
-INSERT INTO `cat_grupo_producto` VALUES (1,'principal','ACT',1);
+INSERT INTO `cat_grupo_producto` VALUES (1,'Boletos','ACT',1);
 /*!40000 ALTER TABLE `cat_grupo_producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -869,13 +871,13 @@ DROP TABLE IF EXISTS `cat_grupo_soporte_tecnico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_grupo_soporte_tecnico` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(45) DEFAULT NULL,
-  `estatus` varchar(45) DEFAULT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estatus` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tipo` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   `id_red` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -895,14 +897,14 @@ DROP TABLE IF EXISTS `cat_img`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_img` (
-  `id_img` int(11) NOT NULL AUTO_INCREMENT,
-  `url` varchar(250) NOT NULL,
-  `nombre_completo` varchar(50) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `extencion` varchar(6) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_img` int(11) NOT NULL,
+  `url` varchar(250) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre_completo` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `extencion` varchar(6) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_img`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -911,7 +913,7 @@ CREATE TABLE `cat_img` (
 
 LOCK TABLES `cat_img` WRITE;
 /*!40000 ALTER TABLE `cat_img` DISABLE KEYS */;
-INSERT INTO `cat_img` VALUES (3,'/media/2/user.jpg','user.jpg','user','jpg','ACT');
+INSERT INTO `cat_img` VALUES (3,'/media/2/user.jpg','user.jpg','user','jpg','ACT'),(4,'/template/img/empresario.jpg','empresario.jpg','empresario','jpg','ACT');
 /*!40000 ALTER TABLE `cat_img` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -923,13 +925,13 @@ DROP TABLE IF EXISTS `cat_impuesto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_impuesto` (
-  `id_impuesto` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
+  `id_impuesto` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `porcentaje` int(11) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
-  `id_pais` varchar(5) NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `id_pais` varchar(5) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_impuesto`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -938,7 +940,7 @@ CREATE TABLE `cat_impuesto` (
 
 LOCK TABLES `cat_impuesto` WRITE;
 /*!40000 ALTER TABLE `cat_impuesto` DISABLE KEYS */;
-INSERT INTO `cat_impuesto` VALUES (1,'IVA',0,'ACT','AAA'),(2,'IVA',16,'ACT','COL'),(3,'IVA',21,'ACT','ESP'),(4,'IVA',21,'ACT','ARG'),(5,'IVA',19,'ACT','CHL'),(6,'IVA',18,'ACT','PER'),(7,'IVA',18,'ACT','DOM'),(8,'IVA',17,'ACT','BRA'),(9,'IVA',16,'ACT','MEX'),(10,'IVA',15,'ACT','HND'),(11,'IVA',15,'ACT','NIC'),(12,'IVA',13,'ACT','BOL'),(13,'IVA',13,'ACT','CRI'),(14,'IVA',13,'ACT','SLV'),(15,'IVA',12,'ACT','ECU'),(16,'IVA',12,'ACT','GTM'),(17,'IVA',12,'ACT','VEN'),(18,'IVA',11,'ACT','PRI'),(19,'IVA',10,'ACT','PRY'),(20,'IVA',7,'ACT','PAN');
+INSERT INTO `cat_impuesto` VALUES (1,'IVA',0,'ACT','AAA'),(2,'IVA',19,'ACT','COL'),(3,'IVA',21,'ACT','ESP'),(4,'IVA',21,'ACT','ARG'),(5,'IVA',19,'ACT','CHL'),(6,'IVA',18,'ACT','PER'),(7,'IVA',18,'ACT','DOM'),(8,'IVA',17,'ACT','BRA'),(9,'IVA',16,'ACT','MEX'),(10,'IVA',15,'ACT','HND'),(11,'IVA',15,'ACT','NIC'),(12,'IVA',13,'ACT','BOL'),(13,'IVA',13,'ACT','CRI'),(14,'IVA',13,'ACT','SLV'),(15,'IVA',12,'ACT','ECU'),(16,'IVA',12,'ACT','GTM'),(17,'IVA',12,'ACT','VEN'),(18,'IVA',11,'ACT','PRI'),(19,'IVA',10,'ACT','PRY'),(20,'IVA',7,'ACT','PAN');
 /*!40000 ALTER TABLE `cat_impuesto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -950,11 +952,11 @@ DROP TABLE IF EXISTS `cat_metodo_cobro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_metodo_cobro` (
-  `id_metodo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_metodo` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_metodo`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -975,11 +977,11 @@ DROP TABLE IF EXISTS `cat_metodo_pago`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_metodo_pago` (
-  `id_metodo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_metodo` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_metodo`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1000,11 +1002,11 @@ DROP TABLE IF EXISTS `cat_moneda`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_moneda` (
-  `codigo_pais` varchar(2) NOT NULL,
-  `codigo_moneda` varchar(3) NOT NULL,
-  `moneda` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `codigo_pais` varchar(2) COLLATE latin1_spanish_ci NOT NULL,
+  `codigo_moneda` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `moneda` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1025,12 +1027,12 @@ DROP TABLE IF EXISTS `cat_movimiento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_movimiento` (
-  `id_movimiento` int(11) NOT NULL AUTO_INCREMENT,
+  `id_movimiento` int(11) NOT NULL,
   `id_tipo_movimiento` int(11) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_movimiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1050,11 +1052,11 @@ DROP TABLE IF EXISTS `cat_municipio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_municipio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(250) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(250) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2319 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1075,11 +1077,11 @@ DROP TABLE IF EXISTS `cat_ocupacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_ocupacion` (
-  `id_ocupacion` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_ocupacion` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_ocupacion`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1100,12 +1102,12 @@ DROP TABLE IF EXISTS `cat_paquete`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_paquete` (
-  `id_paquete` int(11) NOT NULL AUTO_INCREMENT,
+  `id_paquete` int(11) NOT NULL,
   `id_mercancia` int(11) NOT NULL,
-  `estutus` varchar(3) NOT NULL,
+  `estutus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `cantidad` int(11) NOT NULL,
   PRIMARY KEY (`id_paquete`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1125,11 +1127,11 @@ DROP TABLE IF EXISTS `cat_perfil_permiso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_perfil_permiso` (
-  `id_perfil` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_perfil` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_perfil`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1150,13 +1152,13 @@ DROP TABLE IF EXISTS `cat_permiso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_permiso` (
-  `id_permiso` int(11) NOT NULL AUTO_INCREMENT,
+  `id_permiso` int(11) NOT NULL,
   `id_grupo` int(11) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_permiso`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1177,11 +1179,11 @@ DROP TABLE IF EXISTS `cat_promo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_promo` (
-  `id_promo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_promo` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_promo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1202,11 +1204,11 @@ DROP TABLE IF EXISTS `cat_proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_proveedor` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `comision` decimal(7,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1226,13 +1228,13 @@ DROP TABLE IF EXISTS `cat_rango`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_rango` (
-  `id_rango` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL DEFAULT 'ACT',
-  `condicion_red_afilacion` varchar(4) NOT NULL,
+  `id_rango` int(11) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ACT',
+  `condicion_red_afilacion` varchar(4) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_rango`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1252,12 +1254,12 @@ DROP TABLE IF EXISTS `cat_regimen`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_regimen` (
-  `id_regimen` int(11) NOT NULL AUTO_INCREMENT,
-  `abreviatura` varchar(20) NOT NULL,
-  `descripcion` varchar(60) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_regimen` int(11) NOT NULL,
+  `abreviatura` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_regimen`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1278,13 +1280,13 @@ DROP TABLE IF EXISTS `cat_retencion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_retencion` (
-  `id_retencion` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
+  `id_retencion` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `porcentaje` int(11) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
-  `duracion` varchar(3) NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `duracion` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_retencion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1304,14 +1306,14 @@ DROP TABLE IF EXISTS `cat_retenciones_historial`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_retenciones_historial` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(45) NOT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
   `valor` int(11) NOT NULL,
   `mes` int(11) NOT NULL,
   `ano` int(11) NOT NULL,
   `id_afiliado` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1331,11 +1333,11 @@ DROP TABLE IF EXISTS `cat_sexo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_sexo` (
-  `id_sexo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(10) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_sexo` int(11) NOT NULL,
+  `descripcion` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_sexo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1356,11 +1358,11 @@ DROP TABLE IF EXISTS `cat_social`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_social` (
-  `id_social` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(60) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_social` int(11) NOT NULL,
+  `descripcion` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_social`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1380,11 +1382,11 @@ DROP TABLE IF EXISTS `cat_tiempo_dedicado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tiempo_dedicado` (
-  `id_tiempo_dedicado` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(100) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_tiempo_dedicado` int(11) NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_tiempo_dedicado`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1405,11 +1407,11 @@ DROP TABLE IF EXISTS `cat_tipo_archivo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_archivo` (
-  `id_tipo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(20) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_tipo` int(11) NOT NULL,
+  `descripcion` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_tipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1430,10 +1432,10 @@ DROP TABLE IF EXISTS `cat_tipo_evento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_evento` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(15) NOT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(15) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1454,11 +1456,11 @@ DROP TABLE IF EXISTS `cat_tipo_mercancia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_mercancia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1479,11 +1481,11 @@ DROP TABLE IF EXISTS `cat_tipo_paquete`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_paquete` (
-  `id_tipo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_tipo` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_tipo`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1504,10 +1506,10 @@ DROP TABLE IF EXISTS `cat_tipo_producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_producto` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tipo_producto` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL,
+  `tipo_producto` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1528,11 +1530,11 @@ DROP TABLE IF EXISTS `cat_tipo_proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_proveedor` (
-  `id_tipo` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_tipo` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_tipo`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1553,11 +1555,11 @@ DROP TABLE IF EXISTS `cat_tipo_rango`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_rango` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `estatus` varchar(5) DEFAULT 'ACT',
+  `id` int(11) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(5) COLLATE latin1_spanish_ci DEFAULT 'ACT',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1578,10 +1580,10 @@ DROP TABLE IF EXISTS `cat_tipo_servicio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_servicio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tipo_servicio` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL,
+  `tipo_servicio` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1602,11 +1604,11 @@ DROP TABLE IF EXISTS `cat_tipo_tarjeta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_tarjeta` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(10) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1627,11 +1629,11 @@ DROP TABLE IF EXISTS `cat_tipo_tel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_tel` (
-  `id_tipo_tel` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(40) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_tipo_tel` int(11) NOT NULL,
+  `descripcion` varchar(40) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_tipo_tel`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1652,11 +1654,11 @@ DROP TABLE IF EXISTS `cat_tipo_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_tipo_usuario` (
-  `id_tipo_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_tipo_usuario` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_tipo_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1677,18 +1679,18 @@ DROP TABLE IF EXISTS `cat_titulo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_titulo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `orden` int(11) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `descripcion` text NOT NULL,
-  `frecuencia` varchar(4) NOT NULL DEFAULT 'MES',
-  `tipo` varchar(10) NOT NULL DEFAULT 'PUNTOSP',
-  `condicion_red_afilacion` varchar(4) NOT NULL DEFAULT 'EQU',
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
+  `frecuencia` varchar(4) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'MES',
+  `tipo` varchar(10) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'PUNTOSP',
+  `condicion_red_afilacion` varchar(4) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'EQU',
   `porcentaje` float NOT NULL DEFAULT '0',
   `valor` float NOT NULL DEFAULT '0',
   `ganancia` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1709,11 +1711,11 @@ DROP TABLE IF EXISTS `cat_usuario_fiscal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_usuario_fiscal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(50) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1734,11 +1736,11 @@ DROP TABLE IF EXISTS `cat_zona`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cat_zona` (
-  `id_zona` int(11) NOT NULL AUTO_INCREMENT,
-  `descripcion` varchar(25) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `id_zona` int(11) NOT NULL,
+  `descripcion` varchar(25) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_zona`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1759,18 +1761,18 @@ DROP TABLE IF EXISTS `cedi`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cedi` (
-  `id_cedi` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  `descripcion` varchar(45) DEFAULT NULL,
-  `ciudad` varchar(45) DEFAULT NULL,
-  `direccion` varchar(45) DEFAULT NULL,
-  `telefono` varchar(45) DEFAULT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estatus` varchar(3) DEFAULT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
-  `codigo_postal` char(10) DEFAULT NULL,
+  `id_cedi` int(11) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `ciudad` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `direccion` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `telefono` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `tipo` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `codigo_postal` char(10) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_cedi`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1779,7 +1781,7 @@ CREATE TABLE `cedi` (
 
 LOCK TABLES `cedi` WRITE;
 /*!40000 ALTER TABLE `cedi` DISABLE KEYS */;
-INSERT INTO `cedi` VALUES (1,'tierra santa','tierra santa','9076','ebenezer','8676533','2016-09-30 02:14:42','ACT','A','252211'),(2,'supercundi','supercundi','9076','av. panamericana','8463643','2016-09-30 02:14:57','ACT','A','252211'),(3,'mercatodos','mercatodos','9076','calle 6','8458677','2016-09-30 02:09:19','ACT','C','252211'),(4,'melaos','sport','9076','camellon 8','8465454','2016-09-30 02:11:10','ACT','C','252211');
+INSERT INTO `cedi` VALUES (1,'tierra santa','tierra santa','9076','ebenezer','8676533','2016-09-30 11:14:42','ACT','A','252211'),(2,'supercundi','supercundi','9076','av. panamericana','8463643','2016-09-30 11:14:57','ACT','A','252211'),(3,'mercatodos','mercatodos','9076','calle 6','8458677','2016-09-30 11:09:19','ACT','C','252211'),(4,'melaos','sport','9076','camellon 8','8465454','2016-09-30 11:11:10','ACT','C','252211');
 /*!40000 ALTER TABLE `cedi` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1791,13 +1793,13 @@ DROP TABLE IF EXISTS `ci_sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ci_sessions` (
-  `session_id` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '0',
-  `ip_address` varchar(16) COLLATE utf8_bin NOT NULL DEFAULT '0',
-  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
+  `session_id` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `user_agent` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
-  `user_data` text COLLATE utf8_bin NOT NULL,
+  `user_data` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`session_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1871,13 +1873,13 @@ DROP TABLE IF EXISTS `coaplicante`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `coaplicante` (
-  `id_coaplicante` int(11) NOT NULL AUTO_INCREMENT,
+  `id_coaplicante` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `nombre` varchar(60) NOT NULL,
-  `apellido` varchar(60) NOT NULL,
-  `keyword` varchar(20) NOT NULL,
+  `nombre` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
+  `apellido` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
+  `keyword` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_coaplicante`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1897,7 +1899,7 @@ DROP TABLE IF EXISTS `cobro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cobro` (
-  `id_cobro` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cobro` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `id_metodo` int(11) NOT NULL,
   `id_estatus` int(11) NOT NULL,
@@ -1905,15 +1907,15 @@ CREATE TABLE `cobro` (
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fecha_pago` date NOT NULL,
   `cuenta` int(20) NOT NULL,
-  `titular` varchar(200) NOT NULL,
-  `banco` varchar(100) NOT NULL,
+  `titular` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
+  `banco` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `clabe` int(11) NOT NULL,
-  `swift` varchar(35) DEFAULT NULL,
-  `pais` varchar(3) DEFAULT 'COL',
-  `otro` varchar(35) DEFAULT NULL,
+  `swift` varchar(35) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `pais` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'COL',
+  `otro` varchar(35) COLLATE latin1_spanish_ci DEFAULT NULL,
   `postal` int(11) DEFAULT '0',
   PRIMARY KEY (`id_cobro`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1933,14 +1935,14 @@ DROP TABLE IF EXISTS `combinado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `combinado` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `descripcion` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
   `descuento` decimal(10,2) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `id_red` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1960,13 +1962,13 @@ DROP TABLE IF EXISTS `comentario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comentario` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `comentario` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `comentario` text COLLATE latin1_spanish_ci NOT NULL,
   `autor` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_video` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1986,13 +1988,13 @@ DROP TABLE IF EXISTS `comentario_video_soporte_tecnico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comentario_video_soporte_tecnico` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `comentario` text NOT NULL,
-  `autor` text NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL,
+  `comentario` text COLLATE latin1_spanish_ci NOT NULL,
+  `autor` text COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_video` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2014,7 +2016,7 @@ DROP TABLE IF EXISTS `comercializacion`;
 CREATE TABLE `comercializacion` (
   `mercancia` int(11) NOT NULL,
   `canal` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2142,7 +2144,6 @@ CREATE TABLE `cometchat_chatroommessages` (
 
 LOCK TABLES `cometchat_chatroommessages` WRITE;
 /*!40000 ALTER TABLE `cometchat_chatroommessages` DISABLE KEYS */;
-INSERT INTO `cometchat_chatroommessages` VALUES (1,2,1,'entonces',1436562297),(2,57,1,'Aqui te dare ayuda con cualquier problema que encuentres',1436562322),(3,172,1,'entonces',1436562339),(4,57,1,'hola mi amor',1436562355),(5,2,1,'que falta de seriedad ome',1436562373),(6,57,1,'jajajajaja',1436562384),(7,161,1,'que falta de respeto',1436562410),(8,57,1,'ya me corompieron la sala de soporte',1436562445),(9,161,1,'<span style=\"color:#FFA000\">que ome</span>',1436562457),(10,18,2,'dwdawdawd',1443623572),(11,19,2,'ASASASAs',1443623581),(12,18,2,'sadsdasdasd',1443623597),(13,18,2,'ha iniciado una conversación en video. <a token =\'\' href=\'javascript:void(0);\' onclick=\"javascript:jqcc.ccavchat.join(\'2\');\">Clic aquí para unirte a la conversación.</a> ',1443623600),(14,19,2,'ha iniciado una conversación en video. <a token =\'\' href=\'javascript:void(0);\' onclick=\"javascript:jqcc.ccavchat.join(\'2\');\">Clic aquí para unirte a la conversación.</a> ',1443623621),(15,18,2,'NetSoft12345@NetSoft12345@',1443623676),(16,21,2,'ha iniciado una conversación en video. <a token =\'\' href=\'javascript:void(0);\' onclick=\"javascript:jqcc.ccavchat.join(\'2\');\">Clic aquí para unirte a la conversación.</a> ',1443623685),(17,21,2,'ha iniciado una conversación en video. <a token =\'\' href=\'javascript:void(0);\' onclick=\"javascript:jqcc.ccavchat.join(\'2\');\">Clic aquí para unirte a la conversación.</a> ',1443623771),(18,21,3,'hoa',1445702558),(19,2,3,'fdgdfg',1445702559),(20,2,3,'hkho',1445702593),(21,101,3,'123123',1452210735),(22,101,3,'ha iniciado una conversación en video. <a token =\'\' href=\'javascript:void(0);\' onclick=\"javascript:jqcc.ccavchat.join(\'3\');\">Clic aquí para unirte a la conversación.</a> ',1452210788),(23,2,3,'adjadj',1455767143);
 /*!40000 ALTER TABLE `cometchat_chatroommessages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2322,7 +2323,6 @@ CREATE TABLE `cometchat_status` (
 
 LOCK TABLES `cometchat_status` WRITE;
 /*!40000 ALTER TABLE `cometchat_status` DISABLE KEYS */;
-INSERT INTO `cometchat_status` VALUES (2,NULL,'available',NULL,NULL,1,1455855327),(3,NULL,'away',NULL,NULL,0,1438445135),(4,NULL,'away',NULL,NULL,0,1438445096),(7,NULL,'available',NULL,NULL,1,1422044968),(18,NULL,'away',NULL,NULL,0,1443624749),(19,NULL,'available',NULL,NULL,0,1443625663),(21,NULL,'away',NULL,NULL,0,1445708744),(23,NULL,NULL,NULL,NULL,0,1443625353),(51,NULL,NULL,NULL,NULL,0,1445702756),(57,NULL,'available',NULL,NULL,1,1436565888),(90,NULL,NULL,NULL,NULL,0,1452213027),(100,NULL,'away',NULL,NULL,0,1452213401),(101,NULL,'available',NULL,NULL,0,1452300230),(102,NULL,'available',NULL,NULL,0,1452288616),(103,NULL,'available',NULL,NULL,0,1452300811),(104,NULL,'available',NULL,NULL,0,1452300181),(109,NULL,NULL,NULL,NULL,0,1453306792),(161,NULL,'',NULL,NULL,1,1436562648),(172,NULL,'',NULL,NULL,1,1436562779);
 /*!40000 ALTER TABLE `cometchat_status` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2334,15 +2334,15 @@ DROP TABLE IF EXISTS `comision`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comision` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_venta` int(11) NOT NULL,
-  `id_afiliado` varchar(45) NOT NULL,
+  `id_afiliado` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
   `id_red` int(11) DEFAULT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `puntos` varchar(45) NOT NULL,
+  `puntos` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
   `valor` float DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2362,13 +2362,13 @@ DROP TABLE IF EXISTS `comision_bono`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comision_bono` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_bono` int(11) NOT NULL,
   `id_bono_historial` int(11) NOT NULL,
   `valor` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2388,14 +2388,14 @@ DROP TABLE IF EXISTS `comision_bono_historial`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comision_bono_historial` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_bono` int(11) NOT NULL,
   `dia` int(11) NOT NULL,
   `mes` int(11) NOT NULL,
   `ano` int(11) NOT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2415,14 +2415,14 @@ DROP TABLE IF EXISTS `comision_web_personal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comision_web_personal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_afiliado` int(11) NOT NULL,
   `id_venta` int(11) NOT NULL,
   `id_comprador` int(11) NOT NULL,
   `valor` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2442,7 +2442,7 @@ DROP TABLE IF EXISTS `comisionpuntosremanentes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comisionpuntosremanentes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_bono` int(11) NOT NULL,
   `id_bono_historial` int(11) NOT NULL,
@@ -2450,7 +2450,7 @@ CREATE TABLE `comisionpuntosremanentes` (
   `id_pata` int(11) NOT NULL,
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2472,8 +2472,8 @@ DROP TABLE IF EXISTS `compartir`;
 CREATE TABLE `compartir` (
   `id_archivero` int(11) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `estatus` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2494,17 +2494,17 @@ DROP TABLE IF EXISTS `comprador`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `comprador` (
   `dni` int(11) NOT NULL,
-  `nombre` text,
-  `apellido` text,
-  `id_pais` varchar(3) DEFAULT NULL,
-  `estado` text,
-  `municipio` text,
-  `colonia` text,
-  `direccion` text,
-  `email` text,
-  `telefono` text,
+  `nombre` text COLLATE latin1_spanish_ci,
+  `apellido` text COLLATE latin1_spanish_ci,
+  `id_pais` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estado` text COLLATE latin1_spanish_ci,
+  `municipio` text COLLATE latin1_spanish_ci,
+  `colonia` text COLLATE latin1_spanish_ci,
+  `direccion` text COLLATE latin1_spanish_ci,
+  `email` text COLLATE latin1_spanish_ci,
+  `telefono` text COLLATE latin1_spanish_ci,
   PRIMARY KEY (`dni`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2525,14 +2525,14 @@ DROP TABLE IF EXISTS `compras_reportes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `compras_reportes` (
   `id_usuario` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `estado actual` tinyint(1) NOT NULL,
-  `id_producto` int(11) NOT NULL AUTO_INCREMENT,
-  `producto` varchar(30) NOT NULL,
-  `fecha_venta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_producto` int(11) NOT NULL,
+  `producto` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha_venta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `precio` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2552,16 +2552,16 @@ DROP TABLE IF EXISTS `compropago`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `compropago` (
-  `email` varchar(100) NOT NULL DEFAULT 'you@domain.com',
-  `pk_test` varchar(255) DEFAULT 'pk_test',
-  `sk_test` varchar(255) DEFAULT 'sk_test',
-  `pk_live` varchar(255) DEFAULT 'pk_live',
-  `sk_live` varchar(255) DEFAULT 'sk_live',
-  `moneda` varchar(45) NOT NULL DEFAULT 'MXN',
+  `email` varchar(100) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'you@domain.com',
+  `pk_test` varchar(255) COLLATE latin1_spanish_ci DEFAULT 'pk_test',
+  `sk_test` varchar(255) COLLATE latin1_spanish_ci DEFAULT 'sk_test',
+  `pk_live` varchar(255) COLLATE latin1_spanish_ci DEFAULT 'pk_live',
+  `sk_live` varchar(255) COLLATE latin1_spanish_ci DEFAULT 'sk_live',
+  `moneda` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'MXN',
   `test` int(11) NOT NULL DEFAULT '1',
-  `estatus` varchar(3) NOT NULL DEFAULT 'DES',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DES',
   PRIMARY KEY (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2639,7 +2639,7 @@ CREATE TABLE `cross_autocompra_mercancia` (
   `id_autocompra` int(11) NOT NULL,
   `id_mercancia` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2661,10 +2661,10 @@ DROP TABLE IF EXISTS `cross_combinado`;
 CREATE TABLE `cross_combinado` (
   `id_combinado` int(11) NOT NULL,
   `id_mercancia` int(11) DEFAULT NULL,
-  `cantidad` varchar(3) DEFAULT '0',
+  `cantidad` varchar(3) COLLATE latin1_spanish_ci DEFAULT '0',
   `id_red` int(11) DEFAULT '1',
-  `id_tipo_mercancia` varchar(3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_tipo_mercancia` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2684,14 +2684,14 @@ DROP TABLE IF EXISTS `cross_comprador_venta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_comprador_venta` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_comprador` int(11) DEFAULT NULL,
   `id_venta` int(11) DEFAULT NULL,
   `id_afiliado` int(11) DEFAULT NULL,
-  `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estado` varchar(10) DEFAULT NULL,
+  `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `estado` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2712,12 +2712,12 @@ DROP TABLE IF EXISTS `cross_cuenta_user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_cuenta_user` (
   `id_user` int(11) NOT NULL,
-  `cuenta` varchar(20) NOT NULL,
-  `clabe` varchar(20) NOT NULL,
-  `clave_banco` varchar(3) NOT NULL,
-  `banco` varchar(250) NOT NULL,
-  `estatus` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `cuenta` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+  `clabe` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+  `clave_banco` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `banco` varchar(250) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2738,14 +2738,14 @@ DROP TABLE IF EXISTS `cross_dir_emp`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_dir_emp` (
   `id_empresa` int(11) NOT NULL,
-  `cp` varchar(7) NOT NULL,
-  `calle` varchar(100) NOT NULL,
-  `colonia` varchar(100) NOT NULL,
-  `municipio` varchar(100) NOT NULL,
-  `estado` varchar(100) NOT NULL,
-  `numero_exterior` varchar(5) NOT NULL,
-  `numero_interior` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `cp` varchar(7) COLLATE latin1_spanish_ci NOT NULL,
+  `calle` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `colonia` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `municipio` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estado` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `numero_exterior` varchar(5) COLLATE latin1_spanish_ci NOT NULL,
+  `numero_interior` varchar(5) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2767,14 +2767,14 @@ DROP TABLE IF EXISTS `cross_dir_user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_dir_user` (
   `id_user` int(11) NOT NULL DEFAULT '0',
-  `cp` varchar(10) NOT NULL,
+  `cp` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
   `calle` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `colonia` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `municipio` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `estado` varchar(250) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `pais` varchar(3) NOT NULL,
+  `pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2783,7 +2783,7 @@ CREATE TABLE `cross_dir_user` (
 
 LOCK TABLES `cross_dir_user` WRITE;
 /*!40000 ALTER TABLE `cross_dir_user` DISABLE KEYS */;
-INSERT INTO `cross_dir_user` VALUES (2,'CDMX','','','','','MEX');
+INSERT INTO `cross_dir_user` VALUES (2,'CDMX','','','','','COL');
 /*!40000 ALTER TABLE `cross_dir_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2797,7 +2797,7 @@ DROP TABLE IF EXISTS `cross_grupo_perfil`;
 CREATE TABLE `cross_grupo_perfil` (
   `id_grupo` int(11) NOT NULL,
   `id_perfil` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2819,7 +2819,7 @@ DROP TABLE IF EXISTS `cross_img_archivo`;
 CREATE TABLE `cross_img_archivo` (
   `id_archivo` int(11) NOT NULL,
   `id_img` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2841,7 +2841,7 @@ DROP TABLE IF EXISTS `cross_img_archivo_soporte_tecnico`;
 CREATE TABLE `cross_img_archivo_soporte_tecnico` (
   `id_archivo` int(11) NOT NULL,
   `id_img` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2863,7 +2863,7 @@ DROP TABLE IF EXISTS `cross_img_promo`;
 CREATE TABLE `cross_img_promo` (
   `id_promo` int(11) NOT NULL,
   `id_img` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2885,7 +2885,7 @@ DROP TABLE IF EXISTS `cross_img_user`;
 CREATE TABLE `cross_img_user` (
   `id_user` int(11) NOT NULL,
   `id_img` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2894,7 +2894,7 @@ CREATE TABLE `cross_img_user` (
 
 LOCK TABLES `cross_img_user` WRITE;
 /*!40000 ALTER TABLE `cross_img_user` DISABLE KEYS */;
-INSERT INTO `cross_img_user` VALUES (2,3);
+INSERT INTO `cross_img_user` VALUES (2,3),(1,4);
 /*!40000 ALTER TABLE `cross_img_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2907,8 +2907,8 @@ DROP TABLE IF EXISTS `cross_inventario_bloqueo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_inventario_bloqueo` (
   `id_inventario` int(11) NOT NULL,
-  `estatus` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2928,11 +2928,11 @@ DROP TABLE IF EXISTS `cross_merc_dist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_merc_dist` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_mercancia` int(11) NOT NULL,
   `id_distribuidor` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2952,11 +2952,11 @@ DROP TABLE IF EXISTS `cross_merc_img`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_merc_img` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_mercancia` int(11) NOT NULL,
   `id_cat_imagen` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2978,7 +2978,7 @@ DROP TABLE IF EXISTS `cross_merc_impuesto`;
 CREATE TABLE `cross_merc_impuesto` (
   `id_mercancia` int(11) NOT NULL,
   `id_impuesto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3003,7 +3003,7 @@ CREATE TABLE `cross_pack_merc` (
   `cantidad_producto` int(11) NOT NULL,
   `id_servicio` int(11) NOT NULL,
   `cantidad_servicio` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3025,10 +3025,10 @@ DROP TABLE IF EXISTS `cross_paquete`;
 CREATE TABLE `cross_paquete` (
   `id_paquete` int(11) NOT NULL,
   `id_mercancia` int(11) DEFAULT NULL,
-  `cantidad` varchar(3) DEFAULT '0',
+  `cantidad` varchar(3) COLLATE latin1_spanish_ci DEFAULT '0',
   `id_red` int(11) DEFAULT '1',
-  `id_tipo_mercancia` varchar(3) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `id_tipo_mercancia` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3051,7 +3051,7 @@ CREATE TABLE `cross_perfil_usuario` (
   `id_user` int(11) NOT NULL,
   `id_perfil` int(11) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3075,7 +3075,7 @@ CREATE TABLE `cross_permiso_perfil` (
   `id_permiso` int(11) NOT NULL,
   `id_perfil` int(11) NOT NULL,
   PRIMARY KEY (`id_permiso`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3100,7 +3100,7 @@ CREATE TABLE `cross_plan_bonos` (
   `id_bono` int(11) NOT NULL,
   `order` int(11) DEFAULT '1',
   PRIMARY KEY (`id_plan`,`id_bono`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3120,14 +3120,14 @@ DROP TABLE IF EXISTS `cross_premio_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_premio_usuario` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_premio` int(11) NOT NULL,
   `id_afiliado` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estado` varchar(20) DEFAULT 'Pendiente',
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `estado` varchar(20) COLLATE latin1_spanish_ci DEFAULT 'Pendiente',
   `fecha_entrega` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3150,10 +3150,10 @@ CREATE TABLE `cross_rango_tipos` (
   `id_rango` int(11) NOT NULL,
   `id_tipo_rango` int(11) NOT NULL,
   `valor` int(11) NOT NULL DEFAULT '0',
-  `condicion_red` varchar(10) NOT NULL DEFAULT 'DIRECTOS',
+  `condicion_red` varchar(10) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DIRECTOS',
   `nivel_red` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_rango`,`id_tipo_rango`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3177,8 +3177,8 @@ CREATE TABLE `cross_rango_user` (
   `id_rango` int(11) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `entregado` tinyint(1) NOT NULL,
-  `estatus` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3201,7 +3201,7 @@ CREATE TABLE `cross_surtido_embarque` (
   `id_surtido` int(11) NOT NULL,
   `id_embarque` int(11) NOT NULL,
   PRIMARY KEY (`id_surtido`,`id_embarque`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3224,9 +3224,9 @@ DROP TABLE IF EXISTS `cross_tel_user`;
 CREATE TABLE `cross_tel_user` (
   `id_user` int(11) NOT NULL,
   `id_tipo_tel` int(11) NOT NULL,
-  `numero` varchar(22) NOT NULL,
-  `estatus` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `numero` varchar(22) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3247,19 +3247,19 @@ DROP TABLE IF EXISTS `cross_user_banco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_user_banco` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL DEFAULT '2',
-  `cuenta` varchar(20) NOT NULL DEFAULT 'Your Card',
-  `titular` varchar(200) NOT NULL DEFAULT 'You',
-  `banco` varchar(100) NOT NULL DEFAULT 'Your Bank',
-  `pais` varchar(3) NOT NULL DEFAULT 'COL',
-  `swift` varchar(45) DEFAULT NULL,
-  `otro` varchar(45) DEFAULT NULL,
+  `cuenta` varchar(20) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Your Card',
+  `titular` varchar(200) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'You',
+  `banco` varchar(100) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Your Bank',
+  `pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'COL',
+  `swift` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `otro` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   `clabe` int(11) DEFAULT NULL,
   `dir_postal` int(35) DEFAULT NULL,
-  `estatus` varchar(3) NOT NULL DEFAULT 'ACT',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ACT',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3281,7 +3281,7 @@ DROP TABLE IF EXISTS `cross_usuario_cupon`;
 CREATE TABLE `cross_usuario_cupon` (
   `id_usuario` int(11) NOT NULL,
   `id_cupon` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3302,20 +3302,20 @@ DROP TABLE IF EXISTS `cross_venta_envio`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cross_venta_envio` (
   `id_venta` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellido` varchar(50) NOT NULL,
-  `cp` varchar(5) NOT NULL,
-  `id_pais` varchar(3) NOT NULL,
-  `estado` varchar(50) NOT NULL,
-  `municipio` varchar(50) NOT NULL,
-  `colonia` varchar(50) NOT NULL,
-  `calle` varchar(50) NOT NULL,
-  `correo` varchar(50) NOT NULL,
-  `celular` varchar(15) DEFAULT NULL,
-  `proveedor_mensajeria` varchar(50) DEFAULT NULL,
-  `info_ad` text,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `apellido` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `cp` varchar(5) COLLATE latin1_spanish_ci NOT NULL,
+  `id_pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `estado` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `municipio` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `colonia` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `calle` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `correo` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `celular` varchar(15) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `proveedor_mensajeria` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `info_ad` text COLLATE latin1_spanish_ci,
   PRIMARY KEY (`id_venta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3341,10 +3341,10 @@ CREATE TABLE `cross_venta_mercancia` (
   `costo_unidad` float NOT NULL,
   `impuesto_unidad` float NOT NULL DEFAULT '0',
   `costo_total` float NOT NULL,
-  `nombreImpuesto` varchar(100) NOT NULL DEFAULT '',
-  `id_` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreImpuesto` varchar(100) COLLATE latin1_spanish_ci NOT NULL DEFAULT '',
+  `id_` int(11) NOT NULL,
   PRIMARY KEY (`id_`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3366,8 +3366,8 @@ DROP TABLE IF EXISTS `cross_video_img`;
 CREATE TABLE `cross_video_img` (
   `id_video` int(11) NOT NULL,
   `id_img` int(11) NOT NULL,
-  `ruta_img` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `ruta_img` varchar(100) COLLATE latin1_spanish_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3387,15 +3387,15 @@ DROP TABLE IF EXISTS `cuenta_pagar_banco_historial`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cuenta_pagar_banco_historial` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `id_banco` varchar(45) DEFAULT NULL,
-  `id_usuario` varchar(45) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_banco` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `id_usuario` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   `id_venta` int(11) DEFAULT NULL,
-  `valor` varchar(45) DEFAULT NULL,
-  `estatus` varchar(3) NOT NULL DEFAULT 'DES',
+  `valor` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DES',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3404,7 +3404,7 @@ CREATE TABLE `cuenta_pagar_banco_historial` (
 
 LOCK TABLES `cuenta_pagar_banco_historial` WRITE;
 /*!40000 ALTER TABLE `cuenta_pagar_banco_historial` DISABLE KEYS */;
-INSERT INTO `cuenta_pagar_banco_historial` VALUES (1,'2016-09-30 09:03:04','1','2',1,'116','ACT');
+INSERT INTO `cuenta_pagar_banco_historial` VALUES (1,'2016-09-30 18:03:04','1','2',1,'116','ACT');
 /*!40000 ALTER TABLE `cuenta_pagar_banco_historial` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3416,13 +3416,13 @@ DROP TABLE IF EXISTS `cupon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cupon` (
-  `id_cupon` int(11) NOT NULL AUTO_INCREMENT,
-  `codigo` varchar(50) NOT NULL,
-  `descripcion` varchar(100) NOT NULL,
-  `estado` varchar(3) NOT NULL,
-  `fecha_adicion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_cupon` int(11) NOT NULL,
+  `codigo` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `estado` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha_adicion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_cupon`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3442,13 +3442,13 @@ DROP TABLE IF EXISTS `datos_generales_soporte_tecnico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `datos_generales_soporte_tecnico` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `skype` text,
-  `pekey` text,
-  `pinkost` text,
+  `id` int(11) NOT NULL,
+  `skype` text COLLATE latin1_spanish_ci,
+  `pekey` text COLLATE latin1_spanish_ci,
+  `pinkost` text COLLATE latin1_spanish_ci,
   `id_red` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3470,7 +3470,7 @@ DROP TABLE IF EXISTS `distribucion`;
 CREATE TABLE `distribucion` (
   `canal` int(11) NOT NULL,
   `tipo_mercancia` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3491,11 +3491,11 @@ DROP TABLE IF EXISTS `documento_inventario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `documento_inventario` (
-  `id_doc` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  `estatus` varchar(3) DEFAULT NULL,
+  `id_doc` int(11) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_doc`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3516,11 +3516,11 @@ DROP TABLE IF EXISTS `emails_departamentos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `emails_departamentos` (
-  `nombre` text,
-  `email` text,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` text COLLATE latin1_spanish_ci,
+  `email` text COLLATE latin1_spanish_ci,
+  `id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3529,7 +3529,7 @@ CREATE TABLE `emails_departamentos` (
 
 LOCK TABLES `emails_departamentos` WRITE;
 /*!40000 ALTER TABLE `emails_departamentos` DISABLE KEYS */;
-INSERT INTO `emails_departamentos` VALUES ('Pagos','pagos@miempresamultinivel.com',31),('Contacto','contacto@miempresamultinivel.com',32),('','',33),('','',34),('','',35),('','',36),('','',37),('','',38),('','',39),('','',40);
+INSERT INTO `emails_departamentos` VALUES ('Pagos','pagos@playerbitcoin.com',31),('Contacto','contacto@playerbitcoin.com',32),('','',33),('','',34),('','',35),('','',36),('','',37),('','',38),('','',39),('','',40);
 /*!40000 ALTER TABLE `emails_departamentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3541,13 +3541,13 @@ DROP TABLE IF EXISTS `embarque`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `embarque` (
-  `id_embarque` int(11) NOT NULL AUTO_INCREMENT,
+  `id_embarque` int(11) NOT NULL,
   `fecha_entrega` date NOT NULL,
   `id_estatus` int(11) NOT NULL,
-  `n_guia` text,
+  `n_guia` text COLLATE latin1_spanish_ci,
   `id_mensajeria` int(11) DEFAULT '0',
   PRIMARY KEY (`id_embarque`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3567,13 +3567,13 @@ DROP TABLE IF EXISTS `empresa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `empresa` (
-  `id_empresa` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) NOT NULL,
-  `id_razon` varchar(30) NOT NULL,
-  `correo` varchar(255) NOT NULL,
-  `site` varchar(255) NOT NULL,
+  `id_empresa` int(11) NOT NULL,
+  `nombre` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `id_razon` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `correo` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `site` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_empresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3582,7 +3582,7 @@ CREATE TABLE `empresa` (
 
 LOCK TABLES `empresa` WRITE;
 /*!40000 ALTER TABLE `empresa` DISABLE KEYS */;
-INSERT INTO `empresa` VALUES (1,'fabrica','1','factory@networksoft.mx','http://networksoft.mx/');
+INSERT INTO `empresa` VALUES (1,'fabrica','1','factory@playerbitcoin.com','http://playerbitcoin.com/');
 /*!40000 ALTER TABLE `empresa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3594,28 +3594,28 @@ DROP TABLE IF EXISTS `empresa_multinivel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `empresa_multinivel` (
-  `id_tributaria` varchar(15) NOT NULL DEFAULT '000000000-0',
-  `nombre` varchar(65) NOT NULL DEFAULT 'NetworkSoft',
+  `id_tributaria` varchar(15) COLLATE latin1_spanish_ci NOT NULL DEFAULT '000000000-0',
+  `nombre` varchar(65) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'playerbitcoin',
   `regimen` int(11) NOT NULL DEFAULT '1',
-  `fijo` varchar(22) NOT NULL DEFAULT '000-00-00',
-  `movil` varchar(22) NOT NULL DEFAULT '000-000-00-00',
-  `direccion` varchar(65) NOT NULL DEFAULT 'Cll 0',
-  `web` varchar(100) NOT NULL DEFAULT 'http://www.yourdomain.com',
-  `pais` varchar(3) NOT NULL DEFAULT 'AAA',
-  `postal` varchar(15) NOT NULL DEFAULT '000000',
-  `ciudad` varchar(45) DEFAULT 'No Define',
-  `provincia` varchar(45) DEFAULT 'No Define',
-  `membresia` varchar(3) DEFAULT 'DES',
-  `paquete` varchar(3) DEFAULT 'DES',
-  `item` varchar(3) DEFAULT 'DES',
+  `fijo` varchar(22) COLLATE latin1_spanish_ci NOT NULL DEFAULT '000-00-00',
+  `movil` varchar(22) COLLATE latin1_spanish_ci NOT NULL DEFAULT '000-000-00-00',
+  `direccion` varchar(65) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Cll 0',
+  `web` varchar(100) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'http://www.yourdomain.com',
+  `pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'AAA',
+  `postal` varchar(15) COLLATE latin1_spanish_ci NOT NULL DEFAULT '000000',
+  `ciudad` varchar(45) COLLATE latin1_spanish_ci DEFAULT 'No Define',
+  `provincia` varchar(45) COLLATE latin1_spanish_ci DEFAULT 'No Define',
+  `membresia` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'DES',
+  `paquete` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'DES',
+  `item` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'DES',
   `banner` int(11) DEFAULT '1',
-  `resolucion` varchar(300) NOT NULL,
-  `comentarios` varchar(300) NOT NULL,
+  `resolucion` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
+  `comentarios` varchar(300) COLLATE latin1_spanish_ci NOT NULL,
   `afiliados_directos` int(11) NOT NULL DEFAULT '0',
   `puntos_personales` int(11) NOT NULL DEFAULT '0',
-  `g_captcha` varchar(45) DEFAULT '0',
+  `g_captcha` varchar(45) COLLATE latin1_spanish_ci DEFAULT '0',
   PRIMARY KEY (`id_tributaria`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3624,7 +3624,7 @@ CREATE TABLE `empresa_multinivel` (
 
 LOCK TABLES `empresa_multinivel` WRITE;
 /*!40000 ALTER TABLE `empresa_multinivel` DISABLE KEYS */;
-INSERT INTO `empresa_multinivel` VALUES ('98765432-1','ERP ALPHA (DEV)',1,'0','0','No define','http://dev.networksoft.mx','MEX','No define','No define','No define','DES','DES','DES',0,' ',' ',0,0,'0');
+INSERT INTO `empresa_multinivel` VALUES ('98765432-1','PLAYER BITCOIN (LOCAL)',1,'0','0','No define','erp.playerbitcoin','COL','No define','No define','No define','DES','DES','DES',0,' ',' ',0,0,'0');
 /*!40000 ALTER TABLE `empresa_multinivel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3636,14 +3636,14 @@ DROP TABLE IF EXISTS `encuesta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `encuesta` (
-  `id_encuesta` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `descripcion` varchar(140) NOT NULL,
+  `id_encuesta` int(11) NOT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(140) COLLATE latin1_spanish_ci NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estatus` varchar(3) NOT NULL,
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_encuesta`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3652,7 +3652,7 @@ CREATE TABLE `encuesta` (
 
 LOCK TABLES `encuesta` WRITE;
 /*!40000 ALTER TABLE `encuesta` DISABLE KEYS */;
-INSERT INTO `encuesta` VALUES (1,'Primera encuesta','Esta encuesta es para conocer su opinion por el diseño de su oficina virtual',1,'2015-01-24 21:45:54','ACT'),(2,'Segunda Encuesta','Esta encuesta es para conocer su opnion respecto al carrito',1,'2015-01-29 19:28:10','ACT'),(4,'Tercera Encuesta','Esta encuesta es para conocer su opinion respecto a lagunas secciones de la oficia virtual',1,'2015-01-29 19:48:31','ACT');
+INSERT INTO `encuesta` VALUES (1,'Primera encuesta','Esta encuesta es para conocer su opinion por el diseño de su oficina virtual',1,'2015-01-25 07:45:54','ACT'),(2,'Segunda Encuesta','Esta encuesta es para conocer su opnion respecto al carrito',1,'2015-01-30 05:28:10','ACT'),(4,'Tercera Encuesta','Esta encuesta es para conocer su opinion respecto a lagunas secciones de la oficia virtual',1,'2015-01-30 05:48:31','ACT');
 /*!40000 ALTER TABLE `encuesta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3664,12 +3664,12 @@ DROP TABLE IF EXISTS `encuesta_contestada`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `encuesta_contestada` (
-  `id_encuesta_contestada` int(11) NOT NULL AUTO_INCREMENT,
+  `id_encuesta_contestada` int(11) NOT NULL,
   `id_encuesta` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_encuesta_contestada`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3678,7 +3678,7 @@ CREATE TABLE `encuesta_contestada` (
 
 LOCK TABLES `encuesta_contestada` WRITE;
 /*!40000 ALTER TABLE `encuesta_contestada` DISABLE KEYS */;
-INSERT INTO `encuesta_contestada` VALUES (1,1,2,'2015-01-24 21:47:13');
+INSERT INTO `encuesta_contestada` VALUES (1,1,2,'2015-01-25 07:47:13');
 /*!40000 ALTER TABLE `encuesta_contestada` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3690,11 +3690,11 @@ DROP TABLE IF EXISTS `encuesta_pregunta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `encuesta_pregunta` (
-  `id_pregunta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_pregunta` int(11) NOT NULL,
   `id_encuesta` int(11) NOT NULL,
-  `pregunta` varchar(140) NOT NULL,
+  `pregunta` varchar(140) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_pregunta`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3715,11 +3715,11 @@ DROP TABLE IF EXISTS `encuesta_respuesta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `encuesta_respuesta` (
-  `id_respuesta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_respuesta` int(11) NOT NULL,
   `id_pregunta` int(11) NOT NULL,
-  `respuesta` varchar(140) NOT NULL,
+  `respuesta` varchar(140) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_respuesta`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3743,7 +3743,7 @@ CREATE TABLE `encuesta_resultado` (
   `id_encuesta_contestada` int(11) NOT NULL,
   `id_pregunta` int(11) NOT NULL,
   `id_respuesta` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3789,13 +3789,13 @@ DROP TABLE IF EXISTS `estilo_usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `estilo_usuario` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `bg_color` varchar(100) NOT NULL,
-  `btn_1_color` varchar(30) NOT NULL,
-  `btn_2_color` varchar(30) NOT NULL,
+  `bg_color` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `btn_1_color` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `btn_2_color` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3804,7 +3804,7 @@ CREATE TABLE `estilo_usuario` (
 
 LOCK TABLES `estilo_usuario` WRITE;
 /*!40000 ALTER TABLE `estilo_usuario` DISABLE KEYS */;
-INSERT INTO `estilo_usuario` VALUES (1,1,'#f4f4f4','#1f5e6b','#00bcde'),(2,2,'#00bdef','#005a6e','#514f4d');
+INSERT INTO `estilo_usuario` VALUES (1,1,'#1048b1','#1048b1','#f7931a'),(2,2,'#f4f4f4','#1048b1','#f7931a');
 /*!40000 ALTER TABLE `estilo_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3816,25 +3816,25 @@ DROP TABLE IF EXISTS `evento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `evento` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_tipo` int(11) NOT NULL,
   `id_color` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `nombre` varchar(200) NOT NULL,
-  `descripcion` text NOT NULL,
-  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `nombre` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
+  `fecha_creacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `inicio` datetime NOT NULL,
   `fin` datetime NOT NULL,
-  `lugar` varchar(100) NOT NULL,
+  `lugar` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `costo` int(11) NOT NULL,
-  `direccion` varchar(200) NOT NULL,
-  `latitud` varchar(12) NOT NULL,
-  `longitud` varchar(12) NOT NULL,
-  `observaciones` varchar(200) NOT NULL,
-  `estatus` varchar(3) NOT NULL DEFAULT 'ACT',
-  `url` text NOT NULL,
+  `direccion` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
+  `latitud` varchar(12) COLLATE latin1_spanish_ci NOT NULL,
+  `longitud` varchar(12) COLLATE latin1_spanish_ci NOT NULL,
+  `observaciones` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ACT',
+  `url` text COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3854,21 +3854,21 @@ DROP TABLE IF EXISTS `factura`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `factura` (
-  `id_venta` int(11) NOT NULL AUTO_INCREMENT,
-  `id_pais` varchar(3) NOT NULL,
-  `cp` varchar(5) NOT NULL,
-  `estado` varchar(50) NOT NULL,
-  `municipio` varchar(50) NOT NULL,
-  `colonia` varchar(50) NOT NULL,
-  `calle` varchar(50) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `apellido` varchar(50) NOT NULL,
-  `correo` varchar(50) NOT NULL,
-  `rfc` varchar(50) NOT NULL,
-  `compania` varchar(50) DEFAULT NULL,
-  `celular` varchar(200) DEFAULT NULL,
+  `id_venta` int(11) NOT NULL,
+  `id_pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `cp` varchar(5) COLLATE latin1_spanish_ci NOT NULL,
+  `estado` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `municipio` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `colonia` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `calle` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `apellido` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `correo` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `rfc` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `compania` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `celular` varchar(200) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_venta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3888,15 +3888,15 @@ DROP TABLE IF EXISTS `informacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `informacion` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `descripcion` varchar(1000) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `img` varchar(100) NOT NULL,
-  `status` varchar(3) NOT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(1000) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `img` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `status` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3916,14 +3916,14 @@ DROP TABLE IF EXISTS `inventario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inventario` (
-  `id_inventario` int(11) NOT NULL AUTO_INCREMENT,
+  `id_inventario` int(11) NOT NULL,
   `id_almacen` int(11) NOT NULL,
   `id_mercancia` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `bloqueados` int(11) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_inventario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3943,19 +3943,19 @@ DROP TABLE IF EXISTS `inventario_historial`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inventario_historial` (
-  `id_inventario_historial` int(11) NOT NULL AUTO_INCREMENT,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_inventario_historial` int(11) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_origen` int(11) DEFAULT NULL,
-  `otro_origen` text,
+  `otro_origen` text COLLATE latin1_spanish_ci,
   `id_destino` int(11) DEFAULT NULL,
   `id_documento` int(11) DEFAULT NULL,
-  `cantidad` varchar(45) DEFAULT NULL,
-  `id_inventario` varchar(45) DEFAULT NULL,
+  `cantidad` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `id_inventario` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   `id_mercancia` int(11) DEFAULT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
-  `n_documento` varchar(45) DEFAULT NULL,
+  `tipo` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `n_documento` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_inventario_historial`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3993,12 +3993,12 @@ DROP TABLE IF EXISTS `login_attempts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `login_attempts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ip_address` varchar(40) COLLATE utf8_bin NOT NULL,
-  `login` varchar(50) COLLATE utf8_bin NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `login` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4018,11 +4018,11 @@ DROP TABLE IF EXISTS `mails`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mails` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_emails` int(11) DEFAULT '1',
-  `nombre` varchar(45) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4043,13 +4043,13 @@ DROP TABLE IF EXISTS `membresia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `membresia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(30) NOT NULL,
-  `caducidad` varchar(3) NOT NULL,
-  `descripcion` text NOT NULL,
+  `id` int(11) NOT NULL,
+  `nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `caducidad` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
   `id_red` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4069,16 +4069,16 @@ DROP TABLE IF EXISTS `mensaje`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mensaje` (
-  `id_mensaje` int(11) NOT NULL AUTO_INCREMENT,
+  `id_mensaje` int(11) NOT NULL,
   `enviado` int(11) NOT NULL,
   `id_estatus_msg` int(11) NOT NULL,
   `recibido` int(11) NOT NULL,
-  `titulo` varchar(200) NOT NULL,
-  `mensaje` text NOT NULL,
+  `titulo` varchar(200) COLLATE latin1_spanish_ci NOT NULL,
+  `mensaje` text COLLATE latin1_spanish_ci NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `estatus` varchar(3) NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_mensaje`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4098,23 +4098,23 @@ DROP TABLE IF EXISTS `mercancia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `mercancia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `sku` int(11) NOT NULL,
-  `sku_2` varchar(20) NOT NULL,
+  `sku_2` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
   `id_tipo_mercancia` int(11) NOT NULL,
-  `pais` varchar(3) NOT NULL,
-  `fecha_alta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estatus` varchar(3) NOT NULL,
+  `pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha_alta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `id_proveedor` int(11) DEFAULT NULL,
   `real` decimal(10,2) NOT NULL,
   `costo` decimal(10,2) NOT NULL,
   `costo_publico` decimal(10,2) NOT NULL,
-  `entrega` varchar(3) NOT NULL,
+  `entrega` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `puntos_comisionables` decimal(10,2) NOT NULL,
-  `iva` varchar(3) NOT NULL DEFAULT 'CON',
+  `iva` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'CON',
   `descuento` decimal(10,2) DEFAULT '0.00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4134,22 +4134,22 @@ DROP TABLE IF EXISTS `movimiento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movimiento` (
-  `id_movimiento` int(11) NOT NULL AUTO_INCREMENT,
+  `id_movimiento` int(11) NOT NULL,
   `id_tipo` int(11) NOT NULL,
   `entrada` int(11) NOT NULL,
-  `keyword` varchar(10) NOT NULL,
-  `origen` varchar(100) NOT NULL,
-  `destino` varchar(100) NOT NULL,
+  `keyword` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
+  `origen` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `destino` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `id_mercancia` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `id_impuesto` int(11) NOT NULL,
   `subtotal` decimal(10,2) NOT NULL,
   `importe` decimal(10,2) NOT NULL,
   `total` decimal(10,2) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_estatus` int(11) NOT NULL,
   PRIMARY KEY (`id_movimiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4169,11 +4169,11 @@ DROP TABLE IF EXISTS `movimiento_inventario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movimiento_inventario` (
-  `id_doc` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) DEFAULT NULL,
-  `estatus` varchar(3) DEFAULT NULL,
+  `id_doc` int(11) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_doc`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4194,16 +4194,16 @@ DROP TABLE IF EXISTS `noticia`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `noticia` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `nombre` text NOT NULL,
-  `contenido` text NOT NULL,
-  `imagen` varchar(1000) DEFAULT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(3) NOT NULL,
+  `nombre` text COLLATE latin1_spanish_ci NOT NULL,
+  `contenido` text COLLATE latin1_spanish_ci NOT NULL,
+  `imagen` varchar(1000) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `id_grupo` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4223,15 +4223,15 @@ DROP TABLE IF EXISTS `notificacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `notificacion` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `fecha_inicio` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fecha_fin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `nombre` varchar(45) NOT NULL DEFAULT 'AVISO GENERAL',
-  `descripcion` varchar(255) NOT NULL DEFAULT 'Hola, Bienvenido',
-  `link` varchar(255) DEFAULT '/',
-  `estatus` varchar(3) DEFAULT 'ACT',
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'AVISO GENERAL',
+  `descripcion` varchar(255) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Hola, Bienvenido',
+  `link` varchar(255) COLLATE latin1_spanish_ci DEFAULT '/',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4251,12 +4251,12 @@ DROP TABLE IF EXISTS `pago_online_proceso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pago_online_proceso` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `contenido_carrito` text NOT NULL,
-  `carrito` text NOT NULL,
+  `contenido_carrito` text COLLATE latin1_spanish_ci NOT NULL,
+  `carrito` text COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4276,18 +4276,18 @@ DROP TABLE IF EXISTS `pago_online_transaccion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pago_online_transaccion` (
-  `id_venta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_venta` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `transaction_id` varchar(45) NOT NULL,
+  `transaction_id` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
   `fecha` date NOT NULL,
-  `reference_sale` varchar(45) NOT NULL,
-  `payment_method_id` varchar(45) NOT NULL,
-  `payment_method_name` varchar(45) NOT NULL,
-  `state_pol` varchar(45) NOT NULL,
-  `response_code_pol` varchar(45) NOT NULL,
-  `currency` varchar(45) NOT NULL,
+  `reference_sale` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `payment_method_id` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `payment_method_name` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `state_pol` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `response_code_pol` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `currency` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_venta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4307,18 +4307,18 @@ DROP TABLE IF EXISTS `paquete_inscripcion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `paquete_inscripcion` (
-  `id_paquete` int(11) NOT NULL AUTO_INCREMENT,
+  `id_paquete` int(11) NOT NULL,
   `id_tipo` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `Descripcion` text,
+  `nombre` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `Descripcion` text COLLATE latin1_spanish_ci,
   `precio` decimal(10,2) NOT NULL,
   `puntos` decimal(10,2) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `id_red` int(11) DEFAULT NULL,
-  `tipo` char(2) DEFAULT NULL,
-  `caducidad` varchar(3) DEFAULT '0',
+  `tipo` char(2) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `caducidad` varchar(3) COLLATE latin1_spanish_ci DEFAULT '0',
   PRIMARY KEY (`id_paquete`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4338,12 +4338,12 @@ DROP TABLE IF EXISTS `paypal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `paypal` (
-  `email` varchar(45) NOT NULL DEFAULT 'seonetworksoft-facilitator@gmail.com',
-  `moneda` varchar(45) NOT NULL DEFAULT 'USD',
-  `test` varchar(45) NOT NULL DEFAULT '1',
-  `estatus` varchar(3) NOT NULL DEFAULT 'DES',
+  `email` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'seonetworksoft-facilitator@gmail.com',
+  `moneda` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'USD',
+  `test` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT '1',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DES',
   PRIMARY KEY (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4364,14 +4364,14 @@ DROP TABLE IF EXISTS `payulatam`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `payulatam` (
-  `apykey` varchar(100) NOT NULL DEFAULT '6u39nqhq8ftd0hlvnjfs66eh8c',
-  `id_comercio` varchar(45) NOT NULL DEFAULT '500238',
-  `id_cuenta` varchar(45) NOT NULL DEFAULT '509171',
-  `moneda` varchar(45) NOT NULL DEFAULT 'USD',
+  `apykey` varchar(100) COLLATE latin1_spanish_ci NOT NULL DEFAULT '6u39nqhq8ftd0hlvnjfs66eh8c',
+  `id_comercio` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT '500238',
+  `id_cuenta` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT '509171',
+  `moneda` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'USD',
   `test` int(11) NOT NULL DEFAULT '1',
-  `estatus` varchar(3) NOT NULL DEFAULT 'DES',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DES',
   PRIMARY KEY (`apykey`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4392,12 +4392,12 @@ DROP TABLE IF EXISTS `plan`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `plan` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL DEFAULT 'Default',
-  `descripcion` varchar(255) NOT NULL DEFAULT 'ejemplo',
-  `estatus` varchar(3) DEFAULT 'ACT',
+  `id` int(11) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Default',
+  `descripcion` varchar(255) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ejemplo',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4417,9 +4417,9 @@ DROP TABLE IF EXISTS `pos_temporal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pos_temporal` (
-  `id_temporal` varchar(30) NOT NULL DEFAULT '1',
+  `id_temporal` varchar(30) COLLATE latin1_spanish_ci NOT NULL DEFAULT '1',
   `id_user` int(11) NOT NULL DEFAULT '2'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4445,8 +4445,8 @@ CREATE TABLE `pos_venta` (
   `descuento` float DEFAULT '0',
   `iva` float DEFAULT '0',
   `puntos` float DEFAULT '0',
-  `estatus` varchar(3) DEFAULT 'ACT'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4472,12 +4472,12 @@ CREATE TABLE `pos_venta_historial` (
   `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `item` int(11) NOT NULL DEFAULT '1',
   `cantidad` int(11) NOT NULL DEFAULT '1',
-  `costo` varchar(5) NOT NULL DEFAULT 'DETAL',
+  `costo` varchar(5) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DETAL',
   `puntos` float DEFAULT '0',
   `descuento` float NOT NULL DEFAULT '0',
-  `tipo_descuento` varchar(1) NOT NULL DEFAULT '$',
+  `tipo_descuento` varchar(1) COLLATE latin1_spanish_ci NOT NULL DEFAULT '$',
   `total` float NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4502,7 +4502,7 @@ CREATE TABLE `pos_venta_item` (
   `cantidad` int(11) NOT NULL DEFAULT '1',
   `valor` float NOT NULL DEFAULT '0',
   `puntos` float DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4522,18 +4522,18 @@ DROP TABLE IF EXISTS `pos_venta_temporal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pos_venta_temporal` (
-  `id_temporal` varchar(30) NOT NULL DEFAULT '1',
+  `id_temporal` varchar(30) COLLATE latin1_spanish_ci NOT NULL DEFAULT '1',
   `id_user` int(11) NOT NULL DEFAULT '2',
   `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `item` int(11) NOT NULL DEFAULT '1',
   `cantidad` int(11) NOT NULL DEFAULT '1',
-  `costo` varchar(5) NOT NULL DEFAULT 'DETAL',
+  `costo` varchar(5) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DETAL',
   `descuento` float NOT NULL DEFAULT '0',
-  `tipo_descuento` varchar(1) NOT NULL DEFAULT '$',
-  `estatus` varchar(3) DEFAULT 'ACT',
+  `tipo_descuento` varchar(1) COLLATE latin1_spanish_ci NOT NULL DEFAULT '$',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
   `puntos` float DEFAULT '0',
   `cliente` int(11) NOT NULL DEFAULT '2'
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4553,17 +4553,17 @@ DROP TABLE IF EXISTS `premios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `premios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(255) DEFAULT NULL,
-  `descripcion` text,
-  `imagen` varchar(255) DEFAULT NULL,
-  `nivel` varchar(10) NOT NULL,
-  `num_afiliados` varchar(15) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci,
+  `imagen` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `nivel` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
+  `num_afiliados` varchar(15) COLLATE latin1_spanish_ci NOT NULL,
   `id_red` int(11) NOT NULL DEFAULT '1',
-  `frecuencia` text NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `frecuencia` text COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4583,16 +4583,16 @@ DROP TABLE IF EXISTS `preregistro`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `preregistro` (
-  `id_preregistro` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) DEFAULT NULL,
-  `correo` varchar(120) NOT NULL,
-  `celular` varchar(30) DEFAULT NULL,
-  `invitado_por` varchar(100) DEFAULT NULL,
-  `cedula` varchar(22) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estatus` varchar(3) NOT NULL,
+  `id_preregistro` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `correo` varchar(120) COLLATE latin1_spanish_ci NOT NULL,
+  `celular` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `invitado_por` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cedula` varchar(22) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_preregistro`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4612,20 +4612,20 @@ DROP TABLE IF EXISTS `producto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `producto` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_grupo` int(11) NOT NULL,
-  `nombre` varchar(60) NOT NULL,
-  `concepto` varchar(50) NOT NULL,
-  `descripcion` text NOT NULL,
+  `nombre` varchar(60) COLLATE latin1_spanish_ci NOT NULL,
+  `concepto` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
   `peso` decimal(6,2) DEFAULT NULL,
   `alto` decimal(6,2) DEFAULT NULL,
   `ancho` decimal(6,2) DEFAULT NULL,
   `profundidad` decimal(6,2) DEFAULT NULL,
   `diametro` decimal(6,2) DEFAULT NULL,
-  `marca` varchar(45) NOT NULL,
-  `codigo_barras` varchar(30) NOT NULL,
-  `min_venta` varchar(3) NOT NULL,
-  `max_venta` varchar(10) NOT NULL,
+  `marca` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `codigo_barras` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `min_venta` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `max_venta` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
   `instalacion` tinyint(1) NOT NULL,
   `especificacion` tinyint(1) NOT NULL,
   `produccion` tinyint(1) NOT NULL,
@@ -4633,7 +4633,7 @@ CREATE TABLE `producto` (
   `sobrepedido` tinyint(1) NOT NULL,
   `inventario` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4653,17 +4653,17 @@ DROP TABLE IF EXISTS `promocion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `promocion` (
-  `id_promocion` int(11) NOT NULL AUTO_INCREMENT,
+  `id_promocion` int(11) NOT NULL,
   `id_mercancia` int(11) NOT NULL,
-  `nombre` varchar(45) NOT NULL,
-  `cantidad_mercancia` varchar(3) NOT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `cantidad_mercancia` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `costo` decimal(10,2) DEFAULT NULL,
-  `descripcion` text NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
   `inicio` date NOT NULL,
   `fin` date NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_promocion`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4683,29 +4683,29 @@ DROP TABLE IF EXISTS `proveedor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `proveedor` (
-  `id_proveedor` int(11) NOT NULL AUTO_INCREMENT,
+  `id_proveedor` int(11) NOT NULL,
   `id_empresa` int(11) DEFAULT NULL,
   `id_regimen` int(11) NOT NULL,
   `id_zona` int(11) NOT NULL,
   `mercancia` int(11) NOT NULL,
-  `razon_social` varchar(255) NOT NULL,
-  `curp` varchar(20) NOT NULL,
-  `rfc` varchar(20) NOT NULL,
+  `razon_social` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `curp` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
+  `rfc` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
   `id_impuesto` int(11) NOT NULL,
-  `condicion_pago` varchar(255) NOT NULL,
-  `promedio_entrega` varchar(3) NOT NULL,
-  `promedio_entrega_documentacion` varchar(3) NOT NULL,
-  `plazo_pago` varchar(3) NOT NULL,
-  `plazo_suspencion` varchar(3) NOT NULL,
-  `plazo_suspencion_firma` varchar(3) NOT NULL,
-  `interes_moratorio` varchar(3) NOT NULL,
-  `dia_corte` varchar(3) NOT NULL,
-  `dia_pago` varchar(3) NOT NULL,
+  `condicion_pago` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `promedio_entrega` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `promedio_entrega_documentacion` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `plazo_pago` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `plazo_suspencion` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `plazo_suspencion_firma` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `interes_moratorio` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `dia_corte` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `dia_pago` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   `credito_autorizado` tinyint(1) NOT NULL,
   `credito_suspendido` tinyint(1) NOT NULL,
-  `estatus` varchar(3) NOT NULL DEFAULT 'ACT',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ACT',
   PRIMARY KEY (`id_proveedor`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4714,7 +4714,7 @@ CREATE TABLE `proveedor` (
 
 LOCK TABLES `proveedor` WRITE;
 /*!40000 ALTER TABLE `proveedor` DISABLE KEYS */;
-INSERT INTO `proveedor` VALUES (1,1,1,2,1,'NetworkSoft Factory','746346262','2665645646',2,'ninguno','3','2','7','5','5','3','7','7',1,0,'ACT');
+INSERT INTO `proveedor` VALUES (1,1,1,2,2,'playerbitcoin Factory','746346262','2665645646',2,'ninguno','3','2','7','5','5','3','7','7',1,0,'ACT');
 /*!40000 ALTER TABLE `proveedor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4726,16 +4726,16 @@ DROP TABLE IF EXISTS `proveedor_contacto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `proveedor_contacto` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_proveedor` int(11) DEFAULT NULL,
-  `nombre` varchar(100) DEFAULT NULL,
-  `apellido` varchar(100) DEFAULT NULL,
-  `telefono_movil` text,
-  `telefono_fijo` text,
-  `mail` varchar(100) DEFAULT NULL,
-  `puesto` varchar(45) DEFAULT NULL,
+  `nombre` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `apellido` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `telefono_movil` text COLLATE latin1_spanish_ci,
+  `telefono_fijo` text COLLATE latin1_spanish_ci,
+  `mail` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `puesto` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4757,18 +4757,18 @@ DROP TABLE IF EXISTS `proveedor_datos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `proveedor_datos` (
   `id_proveedor` int(11) NOT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  `apellido` varchar(45) DEFAULT NULL,
-  `pais` varchar(3) DEFAULT NULL,
-  `provincia` varchar(45) DEFAULT NULL,
-  `ciudad` varchar(45) DEFAULT NULL,
-  `codigo_postal` varchar(10) DEFAULT NULL,
-  `comision` varchar(5) DEFAULT NULL,
-  `email` varchar(60) DEFAULT NULL,
-  `telefono` text,
-  `direccion` varchar(45) DEFAULT NULL,
+  `nombre` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `apellido` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `pais` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `provincia` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `ciudad` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `codigo_postal` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `comision` varchar(5) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `email` varchar(60) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `telefono` text COLLATE latin1_spanish_ci,
+  `direccion` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_proveedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4777,7 +4777,7 @@ CREATE TABLE `proveedor_datos` (
 
 LOCK TABLES `proveedor_datos` WRITE;
 /*!40000 ALTER TABLE `proveedor_datos` DISABLE KEYS */;
-INSERT INTO `proveedor_datos` VALUES (1,'Soy el','Fabricante','MEX','CDMX','CDMX','252211','0','proveedor@networksoft.mx',' - 3008797700 - 8748332','CDMX');
+INSERT INTO `proveedor_datos` VALUES (1,'Soy el','Fabricante','AAA','CDMX','CDMX','252211','0','proveedor@playerbitcoin.com',' -  3008797700   -  8748332 ','CDMX');
 /*!40000 ALTER TABLE `proveedor_datos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4789,21 +4789,21 @@ DROP TABLE IF EXISTS `proveedor_mensajeria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `proveedor_mensajeria` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `razon_social` varchar(255) DEFAULT NULL,
-  `nombre_empresa` varchar(255) DEFAULT NULL,
-  `idioma` varchar(100) DEFAULT NULL,
-  `id_pais` varchar(3) DEFAULT NULL,
-  `direccion` varchar(255) DEFAULT NULL,
-  `colonia` varchar(100) DEFAULT NULL,
-  `municipio` varchar(100) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `razon_social` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `nombre_empresa` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `idioma` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `id_pais` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `direccion` varchar(255) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `colonia` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `municipio` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   `estado` int(11) DEFAULT NULL,
-  `codigo_postal` varchar(10) DEFAULT NULL,
-  `direccion_web` varchar(100) DEFAULT NULL,
-  `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `estatus` varchar(3) DEFAULT NULL,
+  `codigo_postal` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `direccion_web` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4812,7 +4812,7 @@ CREATE TABLE `proveedor_mensajeria` (
 
 LOCK TABLES `proveedor_mensajeria` WRITE;
 /*!40000 ALTER TABLE `proveedor_mensajeria` DISABLE KEYS */;
-INSERT INTO `proveedor_mensajeria` VALUES (34,'---------------','Ninguno','Español','ESP','------------------','-------------------','5270',78,'----------','-------------','2016-02-06 08:23:07','ACT');
+INSERT INTO `proveedor_mensajeria` VALUES (34,'---------------','Ninguno','Español','ESP','------------------','-------------------','5270',78,'----------','-------------','2016-02-06 18:23:07','ACT');
 /*!40000 ALTER TABLE `proveedor_mensajeria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -4824,11 +4824,11 @@ DROP TABLE IF EXISTS `puntos_padre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `puntos_padre` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
-  `puntos` varchar(45) DEFAULT NULL,
+  `puntos` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4850,11 +4850,11 @@ DROP TABLE IF EXISTS `red`;
 CREATE TABLE `red` (
   `id_red` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
-  `profundidad` varchar(11) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
-  `premium` varchar(2) DEFAULT NULL,
+  `profundidad` varchar(11) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `premium` varchar(2) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id_red`,`id_usuario`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4875,13 +4875,13 @@ DROP TABLE IF EXISTS `sepomex`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sepomex` (
-  `id_sepomex` int(11) NOT NULL AUTO_INCREMENT,
-  `cp` varchar(5) NOT NULL,
-  `colonia` varchar(100) NOT NULL,
-  `municipio` varchar(100) NOT NULL,
+  `id_sepomex` int(11) NOT NULL,
+  `cp` varchar(5) COLLATE latin1_spanish_ci NOT NULL,
+  `colonia` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `municipio` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `id_estado` int(2) NOT NULL,
   PRIMARY KEY (`id_sepomex`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4901,15 +4901,15 @@ DROP TABLE IF EXISTS `servicio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `servicio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(30) NOT NULL,
-  `concepto` varchar(30) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `concepto` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_fin` date NOT NULL,
-  `descripcion` text NOT NULL,
+  `descripcion` text COLLATE latin1_spanish_ci NOT NULL,
   `id_red` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4929,14 +4929,14 @@ DROP TABLE IF EXISTS `surtido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `surtido` (
-  `id_surtido` int(11) NOT NULL AUTO_INCREMENT,
+  `id_surtido` int(11) NOT NULL,
   `id_almacen_origen` int(11) NOT NULL,
   `id_movimiento` int(11) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `estatus` int(11) NOT NULL,
   `id_venta` int(11) NOT NULL,
   PRIMARY KEY (`id_surtido`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4956,17 +4956,17 @@ DROP TABLE IF EXISTS `tarjeta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tarjeta` (
-  `id_tarjeta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_tarjeta` int(11) NOT NULL,
   `tipo_tarjeta` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `id_banco` int(11) NOT NULL,
-  `cuenta` varchar(50) NOT NULL,
+  `cuenta` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
   `fecha_vencimiento` date NOT NULL,
-  `titular` varchar(50) NOT NULL,
-  `codigo_seguridad` varchar(10) NOT NULL,
-  `estatus` varchar(3) NOT NULL,
+  `titular` varchar(50) COLLATE latin1_spanish_ci NOT NULL,
+  `codigo_seguridad` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_tarjeta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4986,16 +4986,16 @@ DROP TABLE IF EXISTS `temp_invitacion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `temp_invitacion` (
-  `token` varchar(255) NOT NULL,
-  `email` varchar(65) DEFAULT NULL,
+  `token` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
+  `email` varchar(65) COLLATE latin1_spanish_ci DEFAULT NULL,
   `red` int(11) DEFAULT '1',
   `sponsor` int(11) DEFAULT '2',
   `padre` int(11) DEFAULT '2',
   `lado` int(11) DEFAULT '0',
-  `estatus` varchar(3) DEFAULT 'ACT',
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
+  `id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5015,16 +5015,16 @@ DROP TABLE IF EXISTS `tipo_red`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tipo_red` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(30) NOT NULL,
-  `descripcion` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
+  `nombre` varchar(30) COLLATE latin1_spanish_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE latin1_spanish_ci NOT NULL,
   `frontal` int(11) DEFAULT '1',
   `profundidad` int(11) DEFAULT '1',
   `valor_punto` int(11) NOT NULL DEFAULT '0',
-  `estatus` varchar(3) DEFAULT 'ACT',
-  `plan` varchar(3) DEFAULT 'MAT',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'ACT',
+  `plan` varchar(3) COLLATE latin1_spanish_ci DEFAULT 'MAT',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5033,7 +5033,7 @@ CREATE TABLE `tipo_red` (
 
 LOCK TABLES `tipo_red` WRITE;
 /*!40000 ALTER TABLE `tipo_red` DISABLE KEYS */;
-INSERT INTO `tipo_red` VALUES (1,'Desarrollo','Red de Desarrollo',0,0,1,'ACT','MAT');
+INSERT INTO `tipo_red` VALUES (1,'jugadores','Red de jugadores',0,8,1,'ACT','MAT');
 /*!40000 ALTER TABLE `tipo_red` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5045,14 +5045,14 @@ DROP TABLE IF EXISTS `transaccion_billetera`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `transaccion_billetera` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `fecha` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `id_user` int(11) NOT NULL DEFAULT '2',
-  `tipo` varchar(3) NOT NULL DEFAULT 'ADD',
-  `descripcion` varchar(225) NOT NULL DEFAULT 'Checkout',
+  `tipo` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'ADD',
+  `descripcion` varchar(225) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Checkout',
   `monto` decimal(30,2) NOT NULL DEFAULT '0.00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5072,14 +5072,14 @@ DROP TABLE IF EXISTS `tucompra`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tucompra` (
-  `email` varchar(100) NOT NULL DEFAULT 'you@domain.com',
-  `cuenta` varchar(45) DEFAULT 'you',
-  `llave` varchar(255) DEFAULT 'your~key',
-  `moneda` varchar(45) NOT NULL DEFAULT 'COP',
+  `email` varchar(100) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'you@domain.com',
+  `cuenta` varchar(45) COLLATE latin1_spanish_ci DEFAULT 'you',
+  `llave` varchar(255) COLLATE latin1_spanish_ci DEFAULT 'your~key',
+  `moneda` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'COP',
   `test` int(11) NOT NULL DEFAULT '1',
-  `estatus` varchar(3) NOT NULL DEFAULT 'DES',
+  `estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DES',
   PRIMARY KEY (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5100,13 +5100,13 @@ DROP TABLE IF EXISTS `user_autologin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_autologin` (
-  `key_id` char(32) COLLATE utf8_bin NOT NULL,
+  `key_id` char(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `user_id` int(11) NOT NULL DEFAULT '0',
-  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
-  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
-  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `user_agent` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `last_ip` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`key_id`,`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5126,22 +5126,22 @@ DROP TABLE IF EXISTS `user_envio`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_envio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
   `id_proveedor` int(11) DEFAULT NULL,
-  `costo` varchar(45) DEFAULT NULL,
-  `nombre` varchar(50) DEFAULT NULL,
-  `apellido` varchar(50) DEFAULT NULL,
-  `id_pais` varchar(3) DEFAULT NULL,
-  `estado` varchar(65) DEFAULT NULL,
-  `municipio` varchar(65) DEFAULT NULL,
-  `colonia` varchar(50) DEFAULT NULL,
-  `calle` varchar(50) DEFAULT NULL,
-  `cp` varchar(10) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `telefono` varchar(100) DEFAULT NULL,
+  `costo` varchar(45) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `nombre` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `apellido` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `id_pais` varchar(3) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `estado` varchar(65) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `municipio` varchar(65) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `colonia` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `calle` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `cp` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `telefono` varchar(100) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5150,7 +5150,6 @@ CREATE TABLE `user_envio` (
 
 LOCK TABLES `user_envio` WRITE;
 /*!40000 ALTER TABLE `user_envio` DISABLE KEYS */;
-INSERT INTO `user_envio` VALUES (1,2,1,'0','soy el','Fabricante','COL','cundinamarca','fusagasuga','centro','22','252211','dev@networksoft.mx','8730705');
 /*!40000 ALTER TABLE `user_envio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5162,7 +5161,7 @@ DROP TABLE IF EXISTS `user_profiles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_profiles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `id_sexo` int(11) NOT NULL DEFAULT '1',
   `id_edo_civil` int(11) NOT NULL DEFAULT '1',
@@ -5172,16 +5171,16 @@ CREATE TABLE `user_profiles` (
   `id_tiempo_dedicado` int(11) NOT NULL DEFAULT '1',
   `id_estatus` int(11) NOT NULL DEFAULT '1',
   `id_fiscal` int(11) NOT NULL DEFAULT '1',
-  `keyword` varchar(22) COLLATE utf8_bin NOT NULL DEFAULT '1',
+  `keyword` varchar(22) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '1',
   `paquete` int(11) DEFAULT NULL,
-  `nombre` varchar(255) COLLATE utf8_bin NOT NULL,
-  `apellido` varchar(40) COLLATE utf8_bin NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `apellido` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `fecha_nacimiento` date NOT NULL,
   `ultima_sesion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `estatus` varchar(3) COLLATE utf8_bin DEFAULT 'DES',
+  `estatus` varchar(3) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT 'DES',
   `nivel_en_red` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5190,7 +5189,7 @@ CREATE TABLE `user_profiles` (
 
 LOCK TABLES `user_profiles` WRITE;
 /*!40000 ALTER TABLE `user_profiles` DISABLE KEYS */;
-INSERT INTO `user_profiles` VALUES (1,1,0,0,1,0,0,0,1,1,'1',1,'Admin','','0000-00-00','2018-02-15 19:40:17','ACT',3),(2,2,1,1,2,5,3,1,1,1,'1069740663',1,'Administrador','Oficina Virtual','1980-01-01','2016-10-19 08:10:49','ACT',1);
+INSERT INTO `user_profiles` VALUES (1,1,0,0,1,0,0,0,1,1,'1',1,'Admin','','0000-00-00','2018-02-16 05:40:17','ACT',3),(2,2,1,1,2,5,3,1,1,1,'1069740663',1,'Administrador','Oficina Virtual','1980-01-01','2016-10-19 17:10:49','ACT',1);
 /*!40000 ALTER TABLE `user_profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5202,12 +5201,12 @@ DROP TABLE IF EXISTS `user_red_temporal`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_red_temporal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_user` varchar(10) DEFAULT NULL,
-  `id_red_temporal` varchar(10) DEFAULT NULL,
-  `id_red_a_red` varchar(10) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `id_user` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `id_red_temporal` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `id_red_a_red` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5227,11 +5226,11 @@ DROP TABLE IF EXISTS `user_soporte`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_soporte` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_user` varchar(10) DEFAULT NULL,
-  `id_red_temporal` varchar(10) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `id_user` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `id_red_temporal` varchar(10) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5251,11 +5250,11 @@ DROP TABLE IF EXISTS `user_webs_personales`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_webs_personales` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) DEFAULT NULL,
-  `clave` varchar(30) DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `username` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
+  `clave` varchar(30) COLLATE latin1_spanish_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5275,25 +5274,25 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) COLLATE utf8_bin NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
-  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `id` int(11) NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `activated` tinyint(1) NOT NULL DEFAULT '1',
   `banned` tinyint(1) NOT NULL DEFAULT '0',
-  `ban_reason` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `new_password_key` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `ban_reason` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `new_password_key` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `new_password_requested` datetime DEFAULT NULL,
-  `new_email` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `new_email_key` varchar(50) COLLATE utf8_bin DEFAULT NULL,
-  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `new_email` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `new_email_key` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `last_ip` varchar(40) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `last_login` datetime DEFAULT NULL,
   `created` datetime DEFAULT NULL,
-  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `recovery` varchar(65) COLLATE utf8_bin DEFAULT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `recovery` varchar(65) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `created` (`created`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5302,7 +5301,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','$2a$08$n7GIrO4xJmW30zmr8./Wd.dhT93nUZj5FG1ctu/weBF3qxYnGrj6a','contact@networksoft.mx',1,0,NULL,NULL,NULL,NULL,NULL,'::1','2018-11-01 18:46:30','2015-07-11 00:00:00','2018-11-02 05:46:30','admin1414'),(2,'dev','$2a$08$n7GIrO4xJmW30zmr8./Wd.dhT93nUZj5FG1ctu/weBF3qxYnGrj6a','dev@networksoft.mx',1,0,NULL,NULL,NULL,NULL,NULL,'::1','2018-10-23 01:20:21','2015-05-11 00:00:00','2018-10-23 11:20:21','admin1414');
+INSERT INTO `users` VALUES (1,'admin','$2a$08$8DlAzYEcidjg8/yM0Sz9VeuODz/U9wKQU0iT5jBGxdggviIz3MTGi','admin@playerbitcoin.com',1,0,NULL,NULL,NULL,NULL,NULL,'181.118.158.130','2019-01-15 12:18:01','2015-07-11 00:00:00','2019-01-15 23:45:10','Qnh6rIekdd'),(2,'boss','$2a$08$8DlAzYEcidjg8/yM0Sz9VeuODz/U9wKQU0iT5jBGxdggviIz3MTGi','contacto@playerbitcoin.com',1,0,NULL,NULL,NULL,NULL,NULL,'::1','2018-10-23 01:20:21','2015-05-11 00:00:00','2019-01-15 23:43:05','Qnh6rIekdd');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5314,19 +5313,19 @@ DROP TABLE IF EXISTS `users_almacen`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users_almacen` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `id_cedi` int(11) NOT NULL,
   `dni` int(11) NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `nombres` varchar(100) NOT NULL,
-  `apellidos` varchar(45) NOT NULL,
-  `telefono` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `pais` varchar(3) NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(3) NOT NULL,
+  `username` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `nombres` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `apellidos` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `telefono` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `email` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5335,7 +5334,7 @@ CREATE TABLE `users_almacen` (
 
 LOCK TABLES `users_almacen` WRITE;
 /*!40000 ALTER TABLE `users_almacen` DISABLE KEYS */;
-INSERT INTO `users_almacen` VALUES (1,1,2147483647,'modista','modista','santa','68574575','modista@gmail.com','COL','2016-09-30 08:38:16','ACT'),(2,2,2147483647,'contratista','contratista','cundi','5786586','contratista@gmail.com','COL','2016-09-30 08:41:41','ACT');
+INSERT INTO `users_almacen` VALUES (1,1,2147483647,'modista','modista','santa','68574575','modista@gmail.com','COL','2016-09-30 17:38:16','ACT'),(2,2,2147483647,'contratista','contratista','cundi','5786586','contratista@gmail.com','COL','2016-09-30 17:41:41','ACT');
 /*!40000 ALTER TABLE `users_almacen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5347,12 +5346,12 @@ DROP TABLE IF EXISTS `users_attempts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users_attempts` (
-  `ip` varchar(20) NOT NULL,
+  `ip` varchar(20) COLLATE latin1_spanish_ci NOT NULL,
   `last_login` datetime NOT NULL,
   `attempts` int(1) NOT NULL DEFAULT '1',
   `blocked` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ip`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5373,23 +5372,23 @@ DROP TABLE IF EXISTS `users_cedi`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users_cedi` (
-  `id_users_cedi` int(11) NOT NULL AUTO_INCREMENT,
+  `id_users_cedi` int(11) NOT NULL,
   `id_cedi` int(11) NOT NULL,
   `dni` int(11) NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `nombres` varchar(100) NOT NULL,
-  `apellido_uno` varchar(45) NOT NULL,
-  `apellido_dos` varchar(45) NOT NULL,
-  `telefono_fijo` varchar(45) NOT NULL,
-  `telefono_movil` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `ocupacion` varchar(45) NOT NULL,
-  `id_pais` varchar(3) NOT NULL,
-  `idioma` varchar(45) NOT NULL,
-  `fecha_alta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` varchar(3) NOT NULL,
+  `username` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `nombres` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
+  `apellido_uno` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `apellido_dos` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `telefono_fijo` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `telefono_movil` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `email` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `ocupacion` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `id_pais` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
+  `idioma` varchar(45) COLLATE latin1_spanish_ci NOT NULL,
+  `fecha_alta` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` varchar(3) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_users_cedi`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5409,12 +5408,12 @@ DROP TABLE IF EXISTS `valor_comisiones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `valor_comisiones` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `profundidad` int(11) NOT NULL,
   `id_red` int(11) NOT NULL,
-  `valor` varchar(45) NOT NULL DEFAULT '0',
+  `valor` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5434,13 +5433,13 @@ DROP TABLE IF EXISTS `venta`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `venta` (
-  `id_venta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_venta` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `id_estatus` varchar(3) NOT NULL DEFAULT 'DES',
+  `id_estatus` varchar(3) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'DES',
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_metodo_pago` varchar(10) NOT NULL,
+  `id_metodo_pago` varchar(10) COLLATE latin1_spanish_ci NOT NULL,
   PRIMARY KEY (`id_venta`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5453,260 +5452,12 @@ LOCK TABLES `venta` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'erpmultinivel'
---
-/*!50003 DROP PROCEDURE IF EXISTS `afiliar` */;
- 
-DELIMITER ;;
-CREATE  PROCEDURE `afiliar`(	
-
-
-								ID_afiliar int
-
-								,in Perfil varchar(255),								
-
-								in Afiliar varchar(255),
-
-								in Estilo varchar(255),
-
-								in Coaplicante varchar(255),
-
-								in Dir varchar(255),
-
-								in Billetera varchar(255),
-
-								in Rango varchar(255),
-
-								in Img varchar(255)						
-
-							)
-BEGIN
-
-
-
-start transaction;
-
-
-
-update users set activated = 1 where id = ID_afiliar;
-
-
-
-SET @sql = CONCAT('insert into user_profiles 
-
-	(user_id,id_sexo,id_edo_civil,id_tipo_usuario,id_estudio,
-
-		id_ocupacion,id_tiempo_dedicado, id_estatus,id_fiscal,
-
-		keyword,paquete,nombre,apellido,fecha_nacimiento)
-
-values (', Perfil, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SET @sql = CONCAT('insert into cross_perfil_usuario
-
-values (',ID_afiliar,',2)');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-  SET @sql = CONCAT('insert into afiliar
-
-						(id_red,
-
-						id_afiliado,
-
-						debajo_de,
-
-						directo,
-
-						lado)
-
-values (', Afiliar, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SET @sql = CONCAT('insert into estilo_usuario
-
-					(id_usuario,
-
-					bg_color,
-
-					btn_1_color,
-
-					btn_2_color)
-
-values (', Estilo, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SET @sql = CONCAT('insert into coaplicante
-
-						(id_user,
-
-						nombre,
-
-						apellido,
-
-						keyword)
-
-values (', Coaplicante, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SET @sql = CONCAT('insert into cross_dir_user
-
-values (', Dir, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SET @sql = CONCAT('insert into billetera
-
-						(id_user,
-
-						estatus,
-
-						activo)
-
-values (', Billetera, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SET @sql = CONCAT('insert into cross_rango_user
-
-						(id_user,
-
-						id_rango,
-
-						entregado,
-
-						estatus)
-
-values (', Rango, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SET @sql = CONCAT('insert into cat_img
-
-							(url,
-
-							nombre_completo,
-
-							nombre,
-
-							extencion,
-
-							estatus)
-
-values (', Img, ')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SELECT @A:=max(id_img) FROM cat_img;
-
-
-
-SET @sql = CONCAT('insert into cross_img_user
-
-values (',ID_afiliar,',',@A,')');
-
-  PREPARE stmt FROM @sql;
-
-  EXECUTE stmt;
-
-	DEALLOCATE PREPARE stmt;
-
-
-
-SELECT @Validar:=u.id FROM users u,user_profiles p,afiliar a 
-
-						where a.id_afiliado = p.user_id and p.user_id = u.id
-
-							and u.id = ID_afiliar;
-
-
-
-if (@Validar=ID_afiliar) then 
-
-	commit; 
-
-else 
-
-	rollback; 
-
-	delete from cross_tel_user where id_user = ID_afiliar; 
-
-	delete from users where id = ID_afiliar;
-
-end if;
-
-
-
-END ;;
-DELIMITER ;
- 
-
---
 -- Final view structure for view `items`
 --
 
 /*!50001 DROP VIEW IF EXISTS `items`*/;
- 
-/*!50001 CREATE  VIEW `items` AS select `m`.`id` AS `id`,`m`.`sku` AS `sku`,`m`.`puntos_comisionables` AS `puntos_comisionables`,(case when (`m`.`id_tipo_mercancia` = 1) then (select `producto`.`nombre` from `producto` where (`producto`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 2) then (select `servicio`.`nombre` from `servicio` where (`servicio`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 3) then (select `combinado`.`nombre` from `combinado` where (`combinado`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 4) then (select `paquete_inscripcion`.`nombre` from `paquete_inscripcion` where (`paquete_inscripcion`.`id_paquete` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 5) then (select `membresia`.`nombre` from `membresia` where (`membresia`.`id` = `m`.`sku`)) else 'No define' end) AS `item`,(case when (`m`.`id_tipo_mercancia` = 1) then (select `producto`.`id_grupo` from `producto` where (`producto`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 2) then (select `servicio`.`id_red` from `servicio` where (`servicio`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 3) then (select `combinado`.`id_red` from `combinado` where (`combinado`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 4) then (select `paquete_inscripcion`.`id_red` from `paquete_inscripcion` where (`paquete_inscripcion`.`id_paquete` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 5) then (select `membresia`.`id_red` from `membresia` where (`membresia`.`id` = `m`.`sku`)) else '' end) AS `categoria`,(case when (`m`.`id_tipo_mercancia` = 1) then (select `a`.`id_red` from (`producto` `p` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `p`.`id_grupo`) and (`p`.`id` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 2) then (select `a`.`id_red` from (`servicio` `s` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `s`.`id_red`) and (`s`.`id` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 3) then (select `a`.`id_red` from (`combinado` `o` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `o`.`id_red`) and (`o`.`id` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 4) then (select `a`.`id_red` from (`paquete_inscripcion` `q` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `q`.`id_red`) and (`q`.`id_paquete` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 5) then (select `a`.`id_red` from (`membresia` `b` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `b`.`id_red`) and (`b`.`id` = `m`.`sku`))) else '' end) AS `red`,`m`.`id_tipo_mercancia` AS `id_tipo_mercancia` from `mercancia` `m` */;
- 
 
--- Dump completed on 2018-11-09 17:37:51
+/*!50001 CREATE  VIEW `items` AS select `m`.`id` AS `id`,`m`.`sku` AS `sku`,`m`.`puntos_comisionables` AS `puntos_comisionables`,(case when (`m`.`id_tipo_mercancia` = 1) then (select `producto`.`nombre` from `producto` where (`producto`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 2) then (select `servicio`.`nombre` from `servicio` where (`servicio`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 3) then (select `combinado`.`nombre` from `combinado` where (`combinado`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 4) then (select `paquete_inscripcion`.`nombre` from `paquete_inscripcion` where (`paquete_inscripcion`.`id_paquete` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 5) then (select `membresia`.`nombre` from `membresia` where (`membresia`.`id` = `m`.`sku`)) else 'No define' end) AS `item`,(case when (`m`.`id_tipo_mercancia` = 1) then (select `producto`.`id_grupo` from `producto` where (`producto`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 2) then (select `servicio`.`id_red` from `servicio` where (`servicio`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 3) then (select `combinado`.`id_red` from `combinado` where (`combinado`.`id` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 4) then (select `paquete_inscripcion`.`id_red` from `paquete_inscripcion` where (`paquete_inscripcion`.`id_paquete` = `m`.`sku`)) when (`m`.`id_tipo_mercancia` = 5) then (select `membresia`.`id_red` from `membresia` where (`membresia`.`id` = `m`.`sku`)) else '' end) AS `categoria`,(case when (`m`.`id_tipo_mercancia` = 1) then (select `a`.`id_red` from (`producto` `p` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `p`.`id_grupo`) and (`p`.`id` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 2) then (select `a`.`id_red` from (`servicio` `s` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `s`.`id_red`) and (`s`.`id` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 3) then (select `a`.`id_red` from (`combinado` `o` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `o`.`id_red`) and (`o`.`id` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 4) then (select `a`.`id_red` from (`paquete_inscripcion` `q` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `q`.`id_red`) and (`q`.`id_paquete` = `m`.`sku`))) when (`m`.`id_tipo_mercancia` = 5) then (select `a`.`id_red` from (`membresia` `b` join `cat_grupo_producto` `a`) where ((`a`.`id_grupo` = `b`.`id_red`) and (`b`.`id` = `m`.`sku`))) else '' end) AS `red`,`m`.`id_tipo_mercancia` AS `id_tipo_mercancia` from `mercancia` `m` */;
+
+
+-- Dump completed on 2019-01-15 17:50:59
