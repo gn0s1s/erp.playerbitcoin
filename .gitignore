@@ -1,0 +1,7 @@
+/application/config/database.php
+reset.sh
+/nbproject
+/.projectKnowledge
+/media
+/application/logs
+/.idea
