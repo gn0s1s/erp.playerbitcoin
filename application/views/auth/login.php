@@ -165,7 +165,7 @@
         <!--================================================== -->	
         <style type="text/css" media="screen">
                 .form_login{
-                    background: rgba(<?= $ci->general->hex2rgb($style[2],true)?>,0.2) !important;
+                    background: rgba(<?= $ci->general->hex2rgb($style[2],true)?>,0.6) !important;
                         border: none;
                         box-shadow: 1px 1px 4px rgba(<?= $ci->general->hex2rgb($style[2],true)?>, 0.5);
                 }	
@@ -221,7 +221,7 @@
                         height: 5em;
                         text-align: center;
                         color: #FFF !important;
-                        background-color: <?=$style[1]?>;
+                        background-color: <?=$style[2]?>;
                 }
                 #extr-page #main{
                     padding: 2% 5% 10% 5%;

@@ -131,14 +131,27 @@
 																<li><span class="font-md"><i>Total :</i></span> <?=$puntos_red_total?>
 																</li>
 															</ul>
-														<h1><small>Últimos Auspiciados</small></h1>
-															<ul class="list-inline friends-list">
-																<?php 
-																foreach ($ultimos_auspiciados as $afiliado) {
-																	echo '<li><a onclick="detalles('.$afiliado["id"].')"><img src="'.$afiliado["foto"].'"></a>
+                                                            <?php if (sizeof($ultimos_auspiciados)>0) :?>
+                                                                <h1><small>Últimos Auspiciados</small></h1>
+                                                                <ul class="list-inline friends-list">
+                                                                    <?php
+                                                                    foreach ($ultimos_auspiciados as $afiliado) {
+                                                                        echo '<li><a onclick="detalles('.$afiliado["id"].')"><img src="'.$afiliado["foto"].'"></a>
 																		  </li>';
-																}?>
-															</ul>
+                                                                    }?>
+                                                                </ul>
+                                                            <?php endif;?>
+														<hr/>
+                                                            <div class="col-md-12">
+                                                                <a href="/play/dashboard">
+                                                                    <div id="play-boton" class="link_dashboard well well-sm txt-color-white text-center ">
+                                                                        <i class="fa fa-btc fa-3x"></i>
+                                                                        <h3>JUGAR</h3>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+
+
 														</div>
 													</div>
 												</div>
@@ -255,14 +268,16 @@
 																		</div>
 																	</li>';
 																		}
-																	?>																
-																	
+																	?>
+
+
 																	
 																</ul>
 															</div>
+
 															</div>
 														</div>
-													</div>
+                                                </div>
 												</div>                                                                                      
 												</div>
 									</fieldset>
@@ -466,7 +481,7 @@
 										<div class="row">
 											<fieldset>
 												<legend><b>Comunicación</b></legend>
-												<div class="col-sm-3">
+												<div class="col-sm-2">
 												</div>
 												
 												<div class="col-sm-2">
@@ -498,8 +513,17 @@
 													</a>
 												</div>
 												
-												<?php }?>	 
-											</div>
+												<?php }?>
+                                                <div class="col-sm-2">
+                                                    <a href="javascript:void(0);"><!-- cgeneral/ganadores -->
+                                                        <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
+                                                            <i class="fa fa-trophy fa-3x"></i>
+                                                            <h5>Ganadores</h5>
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                        </div>
 
 											
 										</div>
@@ -837,7 +861,42 @@
         </div>
 			</div>
 			<!-- END MAIN CONTENT -->
+<style>
+
+    #play-boton{
+        background:#C00;
+        border-radius:100%;
+        padding: 2em 0;
+        width: 12.5em;
+    }
+    @media (min-width: 1170px){
+        #play-boton{
+            position: fixed;
+            z-index:10000;
+            top:5em;
+            right:0;
+        }
+    }
+    .link_dashboard{
+        box-shadow: none;
+    }
+</style>
 <script>
+
+    resizelinks();
+
+    function resizelinks(){
+        var wdth= $("#play-boton").parent().parent().width();
+        console.log("screen "+wdth);
+        if(screen.width < 1170){
+            var link = $("#play-boton").width();
+            link/=2;wdth/=2;
+            var margin = wdth-link;
+            console.log("left "+margin+" -> "+wdth+" - "+link);
+            $(".link_dashboard").css("left",margin+"px");
+        }
+    }
+
 function detalles(id)
 {
 	$.ajax({

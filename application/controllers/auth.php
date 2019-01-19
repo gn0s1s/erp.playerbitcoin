@@ -243,7 +243,7 @@ class Auth extends CI_Controller
 			$tipo = $this->general->get_tipo($id);
 			$tipo = (int)$tipo[0]->id_tipo_usuario;
 			
-			$this->accesos ( $tipo );	
+			$this->accesos ( $tipo );
 
 		} elseif ($this->tank_auth->is_logged_in(FALSE)) {						// logged in, not activated
 			redirect('/auth/send_again/');
@@ -304,7 +304,7 @@ class Auth extends CI_Controller
 						if($estatus == '1'){
 							$this->general->unlocked();
 							
-							$this->accesos ( $tipo );		
+							$this->accesos ( $tipo ,true );
 							
 						}else{
 							$this->logout2();
@@ -340,7 +340,7 @@ class Auth extends CI_Controller
 	}
 	
 	
-	private function accesos($tipo) {
+	private function accesos($tipo,$options = true) {
 		if($tipo==2){
 			$this->cobrarRetenciones();
 		}
@@ -355,8 +355,14 @@ class Auth extends CI_Controller
 				7 => '/boa/dashboard',
 				8 => '/CEDI/home',
 				9 => '/Almacen/home',
+                "play" => '/home'
 		);
-		
+
+		if($options && $tipo == 2){
+            redirect($accesos["play"]);
+            return true;
+        }
+
 		if($accesos[$tipo]){
 			redirect($accesos[$tipo]);
 		}
