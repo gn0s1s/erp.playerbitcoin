@@ -870,12 +870,12 @@
         width: 12.5em;
     }
     @media (min-width: 1170px){
-        #play-boton{
+         /* #play-boton{
             position: fixed;
             z-index:10000;
             top:5em;
             right:0;
-        }
+        } */
     }
     .link_dashboard{
         box-shadow: none;
@@ -888,13 +888,13 @@
     function resizelinks(){
         var wdth= $("#play-boton").parent().parent().width();
         console.log("screen "+wdth);
-        if(screen.width < 1170){
+        // if(screen.width < 1170){
             var link = $("#play-boton").width();
             link/=2;wdth/=2;
             var margin = wdth-link;
             console.log("left "+margin+" -> "+wdth+" - "+link);
             $(".link_dashboard").css("left",margin+"px");
-        }
+        // }
     }
 
 function detalles(id)
