@@ -104,6 +104,7 @@
 															<input type="number" min="0" max="" name="puntos_com" id="puntos_com" required>
 														</label>
 													</section>
+                                                </fieldset>
 													<legend>Impuestos</legend>
 
 													<fieldset>
@@ -149,7 +150,6 @@
 													</section>
 													</div>
 													</fieldset>
-												</fieldset>
 											</div>
 										</div>
 									</fieldset>

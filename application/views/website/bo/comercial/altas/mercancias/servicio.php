@@ -185,6 +185,9 @@ if ($this->session->flashdata ( 'error' )) {
 										min="0" max="" name="puntos_com" id="puntos_com" required>
 									</label>
 								</section>
+
+                            </fieldset>
+
 								<legend>Impuestos</legend>
 
 								<fieldset>
@@ -244,7 +247,6 @@ if ($this->session->flashdata ( 'error' )) {
 										</section>
 									</div>
 								</fieldset>
-							</fieldset>
 					
 					</div>
 				</div>

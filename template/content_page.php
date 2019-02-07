@@ -64,9 +64,9 @@
 
         <!-- Main content -->
         <div class="content" 
-        		style="background-image: url('[[$FONDO]]');
+        		style="/*background-image: url('[[$FONDO]]');
         			   background-attachment: fixed;
-        			   background-size: 100% auto;" >
+        			   background-size: 100% auto;*/ background: #1048b1" >
             <div>
                 <!-- Header -->
                 <div class="row">

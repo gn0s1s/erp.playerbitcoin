@@ -14,7 +14,7 @@ class web_personal extends CI_Model{
     }
     
     function setDir(){
-        $webfolder = str_replace("erp.clientes","sites.clientes", getcwd());
+        $webfolder = str_replace("erp.playerbitcoin","public_html", getcwd());
         
         $this->sys_dir = (substr($webfolder, 1,1) == ":") ? "\\" : "/";
         
@@ -89,8 +89,8 @@ class web_personal extends CI_Model{
         if($this->sys_dir=="\\")
             return true;
         
-        if($id == 2)
-            return true;
+        #if($id == 2)
+        #    return true;
         
         $miWeb = $this->configDirPersonal($id);
         $miPagina = $miWeb . $this->sys_dir . "index.php";

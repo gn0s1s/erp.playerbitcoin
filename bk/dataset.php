@@ -9,7 +9,7 @@ if (! $secure) {
 }
 
 function setDir(){
-   $dir = str_replace("sites.clientes", "erp.clientes", getcwd());
+   $dir = str_replace("public_html", "erp.playerbitcoin", getcwd());
    $dir = str_replace("/bk", "", $dir);
    return $dir;
 }

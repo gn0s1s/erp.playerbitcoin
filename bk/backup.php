@@ -1,11 +1,11 @@
 #!/usr/bin/php
 <?php
-date_default_timezone_set('America/Mexico_City');#city
+date_default_timezone_set('America/Bogota');#city
 echo "Leyendo datos..."; 
 	
 	#function setDir($base="/var/www"){	
-	function setDir_($base="/home/startupns/www/"){	
-		$project="erp.networksoft"; #"erp.clientes" 
+	function setDir_($base="/home/playerbitcoin/"){
+		$project="erp.playerbitcoin"; #"erp.clientes"
 		$project.="/rtm";#"erp.multinivel" 
 		return $base.$project;
 	}
