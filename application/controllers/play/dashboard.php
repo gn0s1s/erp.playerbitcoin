@@ -28,25 +28,18 @@ private $test = true;
 	
 	function index()
 	{
-
-	    if($this->test){
-	        echo "<div class='txt-color-blue text-center full-screen'>
-                    <h1>PROXIMAMENTE!!</h1>
-                    </div>
-                    <script>
-                        window.setTimeout('window.location.href=\"/ov/dashboard\"',3000);
-                    </script>";
-	        return false;
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
         }
 
-		if (!$this->tank_auth->is_logged_in())
-		{																		// logged in
-			redirect('/auth');
-		}
-		
-		$id=$this->tank_auth->get_user_id();
-		$usuario=$this->general->get_username($id);
-		
+        $id=$this->tank_auth->get_user_id();
+        $usuario=$this->general->get_username($id);
+
+        if($this->test){
+            $this->getPlayerDashboard($id);
+            return;
+        }
 		
 		$this->getAfiliadosRed($id);
 		$numeroAfiliadosRed=count($this->afiliados);
@@ -187,6 +180,33 @@ private $test = true;
 			exit();
 		}
 		
-	}	
+	}
+
+    private function getPlayerDashboard($id)
+    {
+        $usuario=$this->general->get_username($id);
+
+        $nombre_completo = $usuario[0]->nombre." ".$usuario[0]->apellido;
+        $bienvenido = "<h2 class=\"horizon h1txt\">Bienvenido, $nombre_completo</h2>";
+        $imgbtc="<img src=\"https://mesadejuego.playerbitcoin.com/template/btc.PNG\"/>";
+
+        $web = "https://playerbitcoin.com/";
+        $web .= 'dashboard/';
+        $s = file_get_contents($web);
+        $s = str_replace('href="', 'href="' . $web . '', $s);
+        $s = str_replace('href="' . $web . 'http', 'href="http', $s);
+        $s = str_replace('src="', 'src="' . $web . '', $s);
+        $s = str_replace('src="' . $web . 'http', 'src="http', $s);
+        echo $s;
+        echo '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+ integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
+ crossorigin="anonymous">';
+        echo "<script>
+                $('.btn.btn-registro8').attr('href','/ov/dashboard');
+                $('.container-fluid.marginPanelAbajo').prepend('$bienvenido');
+                $('.fa.fa-bitcoin.iconBitcoin').parent().prepend('$imgbtc');
+                $('.fa.fa-bitcoin.iconBitcoin').remove();
+                </script>";
+    }
 
 }

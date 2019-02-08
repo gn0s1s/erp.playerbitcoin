@@ -273,10 +273,10 @@
 				<div class="paymentMethodImg"> 
 				<h3>Métodos de pago</h3>
 					<img src="/template/img/payment/payu.jpg" alt="img" height="50"> 
-					<img src="/template/img/payment/master_card.png" alt="img" height="30"> 
+					<img src="/template/img/payment/blockchain.png" alt="img" height="30">
 					<img src="/template/img/payment/paypal.png" alt="img" height="30"> 
-					<img src="/template/img/payment/american_express_card.png" alt="img" height="30"> 
-					<img src="/template/img/payment/discover_network_card.png" alt="img" height="30">  
+					<img class="hide" src="/template/img/payment/american_express_card.png" alt="img" height="30">
+					<img class="hide" src="/template/img/payment/discover_network_card.png" alt="img" height="30">
 				</div>
 </article>
 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">

@@ -231,8 +231,8 @@ class modelo_pagosonline extends CI_Model
         $this->db->update('blockchain', $dato);
 
         $dato=array(
-            "hashkey"     => $_POST['wallet'],
-            "porcentaje"       		=> $_POST['wallet_per'],
+            "hashkey"     => $_POST['wallet'][0],
+            "porcentaje"       		=> $_POST['wallet_per'][0],
         );
 
         $this->db->where('id_usuario', 1);

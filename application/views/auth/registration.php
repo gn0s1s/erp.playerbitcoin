@@ -236,7 +236,7 @@
 																[[profundidad]]</section>
 														</fieldset>
 														<fieldset>
-															<legend>Datos co-aplicante</legend>
+															<legend>Datos de Beneficiario</legend>
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input"> <input

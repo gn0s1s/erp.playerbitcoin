@@ -197,7 +197,7 @@
 																					label : "Ok!",
 																					className : "btn-success",
 																					callback : function() {
-																						location.href = "/";
+																						location.href = "https://mesadejuego.playerbitcoin.com/auth/login";
 																						FinalizarSpinner();
 																					}
 																				}

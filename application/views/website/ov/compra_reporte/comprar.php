@@ -212,8 +212,11 @@
 													<div class="col-sm-8">
 														<div class="payment-methods">
 															<h1 class="font-300">Metodos de Pago</h1>
-															<a onclick="consignacion()" style="margin-left: 1rem;" class="btn btn-success txt-color-blueLight">
-																<img src="/template/img/payment/deposito-bancario.jpg" alt="Banco" height="60" width="240">
+															<a onclick="consignacion()"
+                                                               style="margin-left: 1rem;padding: 1em;
+                                                               background: #090;color:#000;font-weight: bold"
+                                                               class="btn btn-success txt-color-bl">
+																BILLETERA
 															</a>
                                                             <?php if($blockchain[0]->estatus=='ACT') {?>
                                                                 <a onclick="blockchain()" style="margin-left: 1rem;" class="btn btn-success txt-color-blueLight">

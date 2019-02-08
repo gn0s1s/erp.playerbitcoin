@@ -355,10 +355,10 @@ class Auth extends CI_Controller
 				7 => '/boa/dashboard',
 				8 => '/CEDI/home',
 				9 => '/Almacen/home',
-                "play" => '/home'
+                "play" => '/play/dashboard'
 		);
 
-		if($options && $tipo == 2){
+		if($tipo == 2){#$options &&
             redirect($accesos["play"]);
             return true;
         }

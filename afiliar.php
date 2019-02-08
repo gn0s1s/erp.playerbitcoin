@@ -1,6 +1,6 @@
 <?php
 $secure = isset($val) ? $val : false;
-
+$link_retorno = "http://mesadejuego.playerbitcoin.com";
 if (! $secure) {
     echo '<div class="col-md-6">
  <h4>ROBOT DETECTADO</h4>
@@ -18,7 +18,7 @@ if (! $datos) {
 }
 
 function setDir_(){
-   return str_replace("sites.clientes", "erp.clientes", getcwd());
+   return str_replace("public_html", "erp.playerbitcoin", getcwd());
 }
 
 require_once(setDir_()."/bk/dataset.php");
@@ -30,8 +30,8 @@ if ($isRepeated) {
     echo '<div class="col-md-6">
   <h4>El Email ingresado ya esta registrado.</h4>
      <p>Si desea Iniciar Sesion con esta cuenta 
-           <a href="http://oficinavirtual.[[website]]/">Haz Click Aqui</a>.</p>
-  </div><script>setTimeout (\'window.location.href="/"\', 5000);</script>';
+           <a href="'.$link_retorno.'">Haz Click Aqui</a>.</p>
+  </div><script>setTimeout (\'window.location.href="'.$link_retorno.'"\', 5000);</script>';
     terminar(1);
 }
 
