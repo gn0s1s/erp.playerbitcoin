@@ -43,7 +43,7 @@ if(!$afilia){
         echo '<div class="col-md-6">
   <h4>ABORTADO, El proceso no pudo completarse.</h4>
   <p>Por favor, intente de nuevo y/o verifique la informacion proporcionada.</p>
-  </div><script>setTimeout (\'window.location.href="/"\', 5000);</script>';
+  </div>';
         terminar(1);
 }
 

@@ -398,7 +398,7 @@ where a.id_paquete = e.id_paquete and d.sku= a.id_paquete and d.estatus="ACT" an
 	
 	function detalles_servicios($i)
 	{
-		$q=$this->db->query('SELECT b.id,a.nombre,a.descripcion,b.costo_publico,b.costo,b.puntos_comisionables from servicio a, mercancia b where a.id=b.sku and b.id='.$i);
+		$q=$this->db->query('SELECT a.*,b.id,b.costo_publico,b.costo,b.puntos_comisionables from servicio a, mercancia b where a.id=b.sku and b.id='.$i);
 		return $q->result();
 	}
 	

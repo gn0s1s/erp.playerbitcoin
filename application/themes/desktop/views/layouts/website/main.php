@@ -72,10 +72,34 @@
 				document.write('<script src="/template/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
 			}
 		</script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    {
+                        pageLanguage: 'es',
+                        layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+                        multilanguagePage: true,
+                        gaTrack: true,
+                        gaId: 'UA-85400219-1'
+                    },
+                    'google_translate_element'
+                );
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <style>
+            #google_translate_element{
+                background: #fff;
+                padding: .5rem;
+                border-radius: 5px 0 0 5px;
+                z-index: 10000;
+            }
+        </style>
 	</head>
 
 	<body style="background:<?php if(isset($style[0]->bg_color)){ echo $style[0]->bg_color; } ?>;">
         <?php if(isset($template['partials']['header'])){ echo $template['partials']['header']; }?>
+        <div class="pull-right" id="google_translate_element"></div>
         <?php echo $template['body']; ?>
         <?php if(isset($template['partials']['footer'])){ echo $template['partials']['footer']; }?>
     </body>

@@ -56,7 +56,7 @@
 																</li>
 																<li>
 																	<h5 class="text-muted">
-																		<i class="fa fa-globe"></i> LINK PERSONAL:<br/></h5>
+																		<i class="fa fa-globe"></i> Enlace de referidos:<br/></h5>
 																		<a href="<?=$link_personal;?>" ><?=$link_personal;?></a>
 																	<hr/>
 																</li>
@@ -366,7 +366,7 @@
 													<a href="/ov/compras/carrito">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-shopping-cart fa-3x"></i>
-															<h5>Carrito</h5>
+															<h5>Deposito</h5>
 														</div>
 													</a>
 												</div>

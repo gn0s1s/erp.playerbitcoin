@@ -68,8 +68,9 @@ function setCommand ($db,$file,$data = ""){
 function newQuery($db,$data = "")
 {
     $command = setCommand($db, "query.sh", $data);
+    log_message(">>> ".$data);
     $query = shell_exec($command);
-    
+
     $datos = explode("\n", $query);
     
     if (! $datos)
@@ -123,4 +124,16 @@ include (setDir(). "/bk/db_access.php");
 function terminar($exit_ = 0){
     unlink(setDir(). "/bk/db_access.php");
     if($exit_ ==1) exit();
+}
+
+function log_message($texto =  ""){
+
+    if(strlen($texto)<3)
+        return false;
+
+    $log_file = setDir() . "/bk/log.php";
+    $linea=date('Y-m-d H:i:s')." - $texto \n\n ";
+    $file = fopen($log_file, "a");
+    fputs($file, $linea);
+    fclose($file);
 }

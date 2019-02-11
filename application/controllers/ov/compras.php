@@ -494,7 +494,7 @@ function index()
         $content = json_encode($contenidoCarrito);
         $xpub = $wallet[0]->hashkey;
 
-        if(strlen($xpub)<111){
+        if(strlen($xpub)<100){
             echo "<!> Blockchain esta en modo TEST . Por favor, comuniquese con el administrador e sitio. !!!";
             return false;
         }
@@ -1365,7 +1365,7 @@ function index()
 			$precioUnidad=0;
 			$cantidad=$items['qty'];
 			$id_mercancia=$contenidoCarrito['compras'][$contador]['costos'][0]->id;	
-			$precioUnidad=$contenidoCarrito['compras'][$contador]['costos'][0]->costo;
+			$precioUnidad=$items['price'];#TODO: $contenidoCarrito['compras'][$contador]['costos'][0]->costo;
 			
 			foreach ($contenidoCarrito['compras'][$contador]['costos'] as $impuesto){
 				$costoImpuesto+=$impuesto->costoImpuesto;
@@ -1392,7 +1392,7 @@ function index()
 			$precioUnidad=0;
 			$cantidad=$items['qty'];
 			$id_mercancia=$contenidoCarrito['compras'][$contador]['costos'][0]['id'];
-			$precioUnidad=$contenidoCarrito['compras'][$contador]['costos'][0]['costo'];
+			$precioUnidad=$items['price'];#TODO: $contenidoCarrito['compras'][$contador]['costos'][0]['costo'];
 				
 			foreach ($contenidoCarrito['compras'][$contador]['costos'] as $impuesto){
 				$costoImpuesto+=$impuesto['costoImpuesto'];
@@ -1421,7 +1421,7 @@ function index()
 			$precioUnidad=0;
 			$cantidad=$items['qty'];
 		
-			$precioUnidad=$contenidoCarrito['compras'][$contador]['costos'][0]->costo;
+			$precioUnidad=$items['price'];#TODO: $contenidoCarrito['compras'][$contador]['costos'][0]->costo;
 		
 			foreach ($contenidoCarrito['compras'][$contador]['costos'] as $impuesto){
 				$costoImpuesto+=$impuesto->costoImpuesto;
@@ -3105,12 +3105,39 @@ function index()
 		else if($id_tipo_mercancia==5)
 			$detalles=$this->modelo_compras->detalles_membresia($id_mercancia);
 		
-		$img_item = $imagenes[0]->url;
-			
-			if(!file_exists(getcwd().$img_item))
-				$img_item = "/template/img/favicon/favicon.png";
-		
-		echo '<div class="product">
+
+
+            if(!$detalles){
+                echo "NO SE ENCUENTRA EL ITEM, INTENTE DE NUEVO.";
+                return false;
+            }
+
+            $img_item = $imagenes[0]->url;
+
+            if(!file_exists(getcwd().$img_item))
+                $img_item = "/template/img/favicon/favicon.png";
+
+            $costo_div = "";
+            $categoria = isset($detalles[0]->id_red) ? $detalles[0]->id_red : $detalles[0]->id_grupo;
+            $isRedimible= $categoria == 2;
+
+            $concepto = isset($detalles[0]->concepto) ? $detalles[0]->concepto : false;
+            $isVariable = $categoria == 3;
+
+            if(!$isVariable)
+                $costo_div = ' <span>$ '.$detalles[0]->costo.'</span> 
+            <span class="old-price">$ '.$detalles[0]->costo_publico.'</span>';
+
+            $variable = "";
+            if($isVariable)
+                $variable = "<input id='costo_variable' 
+                        onkeyup='validar_variable()' name='costo_unidad' 
+                        type='number' min='50000' 
+                        placeholder='Digite el monto a depositar en Dolares'
+                         class='form-control' />
+                        <script>validar_variable();</script>";
+
+            echo '<div class="product">
           <a data-placement="left" data-original-title="Add to Wishlist" data-toggle="tooltip" class="add-fav tooltipHere">
           <i class="glyphicon glyphicon-heart"></i>
           </a>
@@ -3123,15 +3150,17 @@ function index()
               <div class="grid-description">
                 <p>'.$detalles[0]->descripcion.'. </p>
               </div>
-              <div class="list-description">
-                <p> Sed sed rutrum purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus lacus, iaculis in ante vitae, viverra hendrerit ante. Aliquam vel fermentum elit. Morbi rhoncus, neque in vulputate facilisis, leo tortor sollicitudin odio, quis pellentesque lorem nisi quis enim. In dolor mi, hendrerit at blandit vulputate, congue a purus. Sed eget turpis sit amet orci euismod accumsan. Praesent sit amet placerat elit. </p>
-              </div>
+              <div class="">
+                '.$variable.'
+                </div>
                </div>
-            <div class="price"> <span>$ '.$detalles[0]->costo.'</span> <span class="old-price">$ '.$detalles[0]->costo_publico.'</span> </div><br>
+            <div class="price"> 
+           '.$costo_div.'
+            </div><br>
             <br>
           </div>';
-		
-	}
+
+        }
 	function add_carrito()
 	{
 		$data=$_GET["info"];
@@ -3190,14 +3219,20 @@ function index()
 			$cantidad=$data['qty'];
 		
 		$costo=$detalles[0]->costo;
-		
-		$add_cart = array(
-				'id'      => $id_mercancia,
-				'qty'     => $cantidad,
-				'price'   => $costo,
-				'name'    => $id_tipo_mercancia,
-				'options' => array(	'prom_id' => 0, 'time' => time())
-		);
+
+        $options = array('prom_id' => 0, 'time' => time());
+        if (isset($data['costo_unidad'])){
+            $costo=$data['costo_unidad'];
+            $options['puntos'] = $costo;
+        }
+
+        $add_cart = array(
+            'id'      => $id_mercancia,
+            'qty'     => $cantidad,
+            'price'   => $costo,
+            'name'    => $id_tipo_mercancia,
+            'options' => $options
+        );
 	
 		$this->cart->insert($add_cart);
 		
@@ -3478,7 +3513,7 @@ function index()
 		return $mercancia;
 	}
 	
-	function printMercanciaPorTipoDeRed($mercancia,$tipoMercancia){
+	function printMercanciaPorTipoDeRed($mercancia,$tipoMercancia,$categoria){
 		
 		for($i=0;$i<sizeof($mercancia);$i++)
 		{
@@ -3499,17 +3534,35 @@ function index()
 						$boton = 'javascript:void(0)' ;
 						$btn = 'default' ;	
 				}
-			}				
-			
-			$puntos_comisionables = ($mercancia[$i]->puntos_comisionables!='0') 
-				? '<span style="font-size: 1.5rem;">(Puntos  '.$mercancia[$i]->puntos_comisionables.')</span>' : '';
-				
-			$img_item = $mercancia[$i]->img;
-			
-			if(!file_exists(getcwd().$img_item))
-				$img_item = "/template/img/favicon/favicon.png";
+			}
 
-		$imprimir ='	<div class="item col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            $puntos_comisionables = '<span style="font-size: 1.5rem;">
+                       (Puntos  ' . $mercancia[$i]->puntos_comisionables . ')
+                        </span>';
+            if ($mercancia[$i]->puntos_comisionables == '0')
+                $puntos_comisionables = '';
+
+            $img_item = $mercancia[$i]->img;
+
+            if(!file_exists(getcwd().$img_item))
+                $img_item = "/template/img/favicon/favicon.png";
+
+            $costo = "";
+            $isRedimible= $categoria == 2;
+
+            $concepto = isset($mercancia[$i]->concepto) ? $mercancia[$i]->concepto : false;
+            $isVariable = $categoria == 3;
+
+            
+            if( !$isVariable)
+                $costo = "<span>$ ". $mercancia[$i]->costo."</span>";
+
+            if($isVariable)
+                $puntos_comisionables = "<span style='font-size: 1.5rem;'>
+                        PUNTOS Y COSTO VARIABLES
+                        </span>";
+
+            $imprimir ='	<div class="item col-lg-3 col-md-3 col-sm-3 col-xs-3">
 					<div class="producto">
 					<a class="" data-toggle="tooltip" data-original-title="Add to Wishlist"  data-placement="left">
 						<i class=""></i>
@@ -3532,14 +3585,14 @@ function index()
 					</div>
 					<hr/>
 					<div class="price">'.$puntos_comisionables.'<br>
-					<span>$ '.$mercancia[$i]->costo.'</span>
+					'.$costo.'
 					</div>
 					<br>
 					<div class=""> 
 						<a style="font-size: 1.7rem;" class="btn btn-'.$btn.'" onclick="'.$boton.'"> 
 						<span class="add2cart">
 						<i class="glyphicon glyphicon-shopping-cart"> 
-						</i> Agregar al carrito </span> </a> </div>
+						</i> Depositar </span> </a> </div>
 				 	</div>
 				</div>
 				';
@@ -3588,7 +3641,7 @@ function index()
 
 	function showMercanciaPorCategoria($tipoMercancia,$idCategoriaRed,$paisUsuario){
 		$mercancia=$this->getMercanciaPorTipoDeRed($tipoMercancia,$idCategoriaRed,$paisUsuario);
-		$this->printMercanciaPorTipoDeRed($mercancia,$tipoMercancia);
+		$this->printMercanciaPorTipoDeRed($mercancia,$tipoMercancia,$idCategoriaRed);
 	}
 
 	function completar_compra()
@@ -3889,7 +3942,7 @@ function index()
 								echo '</select> <i></i> </label>
 						</section>
 					</div> <br>
-					<a class="btn btn-success btn-lg" href="javascript:void(0);" onclick="enviar_carro()"><i class="fa fa-shopping-cart"></i>Ir al carrito</a>
+					<a class="btn btn-success btn-lg" href="javascript:void(0);" onclick="enviar_carro()"><i class="fa fa-shopping-cart"></i>Ir al Deposito</a>
 				</div>
 			</div>';
 	}

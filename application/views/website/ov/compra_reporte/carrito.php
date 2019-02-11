@@ -23,8 +23,14 @@
 <![endif]-->
 
 <!-- include pace script for automatic web page progress bar  -->
-
-<div id="content">
+<style>
+    #google_translate_element {
+        position: fixed;
+        z-index: 1000;
+        right: 0;
+    }
+</style>
+<div id="content" style="margin-top: 4em;">
  <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation" id="cart_cont" style="background: <?= $style[0]->btn_1_color;?> !important;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"> <i style="color : #fff;" class="fa fa-shopping-cart fa-2x"> </i> <span style="color : #fff;" class="cartRespons"> Cart (<?php echo $this->cart->total_items(); ?> ) </span> </button>
@@ -270,7 +276,7 @@
 					
 				</div>
 				<!-- end widget -->
-				<div class="paymentMethodImg"> 
+				<div class="hide paymentMethodImg">
 				<h3>Métodos de pago</h3>
 					<img src="/template/img/payment/payu.jpg" alt="img" height="50"> 
 					<img src="/template/img/payment/blockchain.png" alt="img" height="30">
@@ -385,6 +391,22 @@
 <!--<script src="/template/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>  -->
 <script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 <script type="text/javascript">
+
+    function validar_variable()
+    {
+        console.log("validar_variable");
+
+        var costo_variable = $("#costo_variable").val();
+
+        var validar = /^[0-9]{1,}$/.test(costo_variable);
+
+        if(!validar)
+            $('#agregar_item').attr('disabled','disabled');
+        else
+            $('#agregar_item').removeAttr('disabled');
+    }
+
+
 			function detalles(id,tipo)
 			{
 				var datos={'id':id,'tipo':tipo};
@@ -491,7 +513,9 @@
 				
 				var qty=$("#cantidad").val();
 
-					var datos={'id':id,'tipo':tipo,'qty':qty};
+                var costo = ($("#costo_variable")) ? $("#costo_variable").val() : false;
+
+                var datos= {'id':id,'tipo':tipo,'qty':qty,'costo_unidad':costo};
 					$.ajax({
 						data:{info:JSON.stringify(datos)},
 						type: 'get',

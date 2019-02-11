@@ -14,7 +14,16 @@
 
 <!-- styles needed by mCustomScrollbar -->
 <link href="/cart/HTML/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-<div id="content" class="container main-container" style="background-color: #fff;min-height: auto ! important;padding-top: 5rem;padding-bottom: 10rem;"> 
+<style>
+    #google_translate_element {
+        position: fixed;
+        z-index: 1000;
+        right: 0;
+    }
+</style>
+<div id="content" class="container main-container"
+     style="background-color: #fff;min-height: auto ! important;
+     padding-top: 5rem;padding-bottom: 10rem;margin-top: 3.5em;">
 <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation" id="cart_cont" style="background: #2980b9 ! important;">
     <div class="navbar-header">
       <a style="color : #fff;margin-left:4rem;" class="navbar-brand titulo_carrito" href="/ov/compras/carrito"> <i class="fa fa-arrow-circle-left"></i> Atras &nbsp;</a> 
@@ -130,14 +139,12 @@
 													{
 														foreach ($this->cart->contents() as $items) 
 														{
-														
-															
 															$costoImpuesto=0;
 															$nombreImpuestos="";
 															$precioUnidad=0;
 															$cantidad=$items['qty'];
 															
-															$precioUnidad=$compras[$contador]['costos'][0]->costo;
+															$precioUnidad=$items['price']; #TODO: $compras[$contador]['costos'][0]->costo;
 															
 															foreach ($compras[$contador]['costos'] as $impuesto){
 																$costoImpuesto+=$impuesto->costoImpuesto;
