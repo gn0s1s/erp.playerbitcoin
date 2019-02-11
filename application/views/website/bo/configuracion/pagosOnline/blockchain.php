@@ -44,6 +44,7 @@
                     </header>
                     <?php
                     $wallets = $blockchain[1];
+                    $fee = $blockchain[2];
                     $blockchain = $blockchain[0];
                     ?>
                     <!-- widget div-->
@@ -60,6 +61,24 @@
                                     </label>
                                     <div class="note">
                                         <strong>Nota:</strong> En estado test : 78d9ce16-e1d6-47f7-acf1-f456409715f5
+                                    </div>
+                                </section>
+                                <?php
+                                $wallet = $wallets[0];
+                                $id_data = 1; ?>
+                                <section class="col col-6 wallet_<?=$id_data;?>">
+                                    <i class="icon-append fa fa-money"></i>xPub :
+                                    <label class="input">
+
+                                            <textarea required type="text" name="wallet"
+                                                      id="wallet_<?=$id_data;?>" class="wallet"
+                                                      pattern="[A-z0-9--]{111,120}" onkeyup="validarhash(<?=$id_data;?>)"
+                                                      rows="3" style="width: 100%;"
+                                                      placeholder="111 caracteres"><?= $wallet->hashkey; ?></textarea>
+                                    </label>
+                                    <div class="note">
+                                        <strong>Nota:</strong> En estado test :
+                                        <abbr title="xpub6DCYLGKBqULSb45X9tKkg5gCX2QP1o4gx7D9QTruw7xhA6Rp21crjvL6G94Uij4Di6jWZ566t4kFj7Az9BRnBDMcakL81Bs7vhCRnCmgQ26">?</abbr>
                                     </div>
                                 </section>
                                 <section class="col col-6">
@@ -90,35 +109,50 @@
                                     </label>
                                 </section>
                             </fieldset>
-                            <fieldset>
-                                <legend>Wallets</legend>
-                                <?php foreach ($wallets as $index => $wallet) : ?>
-                                <?php $id_data = $index+1; ?>
-                                <div class="well col-md-6 padding-top-10" id="wx_<?=$id_data;?>">
-                                    <section class="col col-8 wallet_<?=$id_data;?>">
-                                        <i class="icon-append fa fa-money"></i>xPub :
-                                        <label class="input">
 
-                                            <textarea required type="text" name="wallet[]"
-                                                   id="wallet_<?=$id_data;?>" class="wallet"
-                                                   pattern="[A-z0-9--]{111,120}" onkeyup="validarhash(<?=$id_data;?>)"
-                                                   rows="3" style="width: 100%;"
-                                                   placeholder="111 caracteres"><?= $wallet->hashkey; ?></textarea>
+                            <fieldset class="fee_div">
+                                <div class="row buttonsfee">
+                                    <legend>Tasa de aumento</legend>
+                                    <div class="col col-lg-3 col-xs-2">
+                                    </div>
+                                    <div class="col col-lg-2 col-xs-2">
+                                        <a style="cursor: pointer;"
+                                           onclick="add_fee()">
+                                            Agregar Tasa
+                                            <i class="fa fa-plus"></i></a>
+                                    </div>
+
+                                </div>
+                                <?php foreach ($fee as $index => $tax) : ?>
+                                <?php $id_data = $index+1; ?>
+                                <div class="well col-md-4 padding-top-10" id="fx_<?=$id_data;?>">
+                                    <input class="fee_id hide" id="fee_id_<?=$id_data;?>"
+                                           value="<?= $tax->id; ?>" name="fee_id[]">
+                                    <section class="col col-md-12">Tarifa <?=$id_data;?></section>
+                                    <section class="col col-6 wallet_<?=$id_data;?>">
+                                        Monto Mínimo :
+                                        <label class="input">
+                                            <i class="icon-prepend fa fa-dollar"></i>
+                                            <input required type="number" name="fee[]"
+                                                   id="fee_<?=$id_data;?>" class="fee"
+                                                   min="0" step="0.01"
+                                                   placeholder="si es el primero: 0"
+                                                   value="<?= $tax->monto; ?>">
                                         </label>
                                         <div class="note">
                                             <strong>Nota:</strong> En estado test :
-                                            <abbr title="xpub6DCYLGKBqULSb45X9tKkg5gCX2QP1o4gx7D9QTruw7xhA6Rp21crjvL6G94Uij4Di6jWZ566t4kFj7Az9BRnBDMcakL81Bs7vhCRnCmgQ26">?</abbr>
+                                            <abbr title="0">?</abbr>
                                         </div>
                                     </section>
-                                    <section class="col col-4 wallet_per_<?=$id_data;?>">
-                                        <?php $per = (sizeof($wallets)>1) ? $wallet->porcentaje : 100; ?>
+                                    <section class="col col-6 wallet_per_<?=$id_data;?>">
                                         Porcentaje :
                                         <label class="input">
                                             <i class="icon-prepend">%</i>
-                                            <input required type="number" name="wallet_per[]"
-                                                   id="wallet_per_<?=$id_data;?>" class="wallet-per"
+                                            <input required type="number" name="fee_per[]"
+                                                   id="fee_per_<?=$id_data;?>" class="fee-per"
                                                    max="100" min="0" step="0.01"
-                                                   placeholder="máximo: 100%" value="<?= $wallet->porcentaje; ?>">
+                                                   placeholder="máximo: 100%"
+                                                   value="<?= $tax->tarifa; ?>">
                                         </label>
                                         <div class="note">
                                             <strong>Nota:</strong> 0 es deshabilitado
@@ -153,6 +187,13 @@
 <script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 <script type="text/javascript">
 
+    $(document).ready(function () {
+        var id_fee = <?=sizeof($fee);?>;
+        if(id_fee>1){
+            button_fee_del();
+        }
+    });
+
     $("#form_virtual").submit(function (event) {
         event.preventDefault();
         iniciarSpinner();
@@ -174,7 +215,6 @@
             $(sec).append(warn);
 
     }
-
     function enviar() {
 
 
@@ -199,6 +239,45 @@
                         }
                     }
                 });//fin done ajax
+
+            });//Fin callback bootbox
+
+    }
+
+    function button_fee_del(){
+        $('.buttonsfee').append('<div class="rm_div_fee col col-lg-2 col-xs-2">\n' +
+            ' <a style="cursor: pointer;color:red !important" \n' +
+            '  onclick="del_fee()">\n' +
+            '  Eliminar Tasa\n' +
+            '  <i class="fa fa-minus-circle"></i></a>\n' +
+            ' </div>');
+    }
+
+    function del_fee() {
+
+            var id_fee = $('.fee').length;
+            $('#fx_'+id_fee).remove();
+            if(id_fee<=2){
+                $('.rm_div_fee').remove();
+            }
+    }
+
+    function add_fee() {
+
+        var id_fee = $('.fee').length;
+
+        $.ajax({
+            type: "POST",
+            url: "/bo/virtual/add_fee",
+            data: {id:id_fee}
+        })
+            .done(function (msg) {
+
+                $('.fee_div').append(msg);
+
+                if(id_fee==1){
+                    button_fee_del();
+                }
 
             });//Fin callback bootbox
     }

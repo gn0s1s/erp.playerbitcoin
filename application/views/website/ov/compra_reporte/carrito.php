@@ -238,7 +238,7 @@
 					<!-- end widget div -->
 					
 				</div>
-				<div class="jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false">
+				<div class="hide jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-arrows-v"></i> </span>
 						<h2 class="font-md"><i>Tipos de Mercancia</i></h2>				
@@ -399,6 +399,7 @@
         var costo_variable = $("#costo_variable").val();
 
         var validar = /^[0-9]{1,}$/.test(costo_variable);
+        validar &= costo_variable>=5;
 
         if(!validar)
             $('#agregar_item').attr('disabled','disabled');

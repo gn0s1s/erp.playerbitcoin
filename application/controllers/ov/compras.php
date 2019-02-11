@@ -3132,7 +3132,7 @@ function index()
             if($isVariable)
                 $variable = "<input id='costo_variable' 
                         onkeyup='validar_variable()' name='costo_unidad' 
-                        type='number' min='50000' 
+                        type='number' min='5' 
                         placeholder='Digite el monto a depositar en Dolares'
                          class='form-control' />
                         <script>validar_variable();</script>";
@@ -3183,7 +3183,13 @@ function index()
 					</div>";
 		}
 
-		echo "<div class='row'><br><a class='btn btn-success' onclick='comprar(".$id_mercancia.",".$id_tipo_mercancia.")'><i class='fa fa-shopping-cart'></i> Comprar</a></div>
+		echo "<div class='row'><br>
+                <i class='icon-prepend fa fa-dollar'></i>
+                <a id='agregar_item' class='btn btn-success'
+                 onclick='comprar(".$id_mercancia.",".$id_tipo_mercancia.")'>
+                    <i class='fa fa-shopping-cart'></i> Comprar
+                 </a>
+             </div>
 			</form>";
 
 	}

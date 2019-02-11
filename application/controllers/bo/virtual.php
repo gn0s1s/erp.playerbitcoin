@@ -80,6 +80,46 @@ class virtual extends CI_Controller
         $this->template->build('website/bo/configuracion/pagosOnline/blockchain');
     }
 
+    function add_fee(){
+
+        $id_data = isset($_POST['id']) ? $_POST['id']+1 : 1;
+
+        echo '  <div class="well col-md-4 padding-top-10" id="fx_'.$id_data.'">
+                    <input class="fee_id hide" id="fee_id_'.$id_data.'"
+                           value="'. $id_data.'" name="fee_id[]">   
+                    <section class="col col-md-12">Tarifa '.$id_data.'</section>                                
+                    <section class="col col-6 wallet_'.$id_data.'">
+                        Monto Mínimo :
+                        <label class="input">
+                            <i class="icon-prepend fa fa-dollar"></i>
+                            <input required type="number" name="fee[]"
+                                   id="fee_'.$id_data.'" class="fee"
+                                   min="0" step="0.01"
+                                   placeholder="si es el primero: 0"
+                                   value="0">
+                        </label>
+                        <div class="note">
+                            <strong>Nota:</strong> En estado test :
+                            <abbr title="0">?</abbr>
+                        </div>
+                    </section>
+                    <section class="col col-6 wallet_per_'.$id_data.'">
+                        Porcentaje :
+                        <label class="input">
+                            <i class="icon-prepend">%</i>
+                            <input required type="number" name="fee_per[]"
+                                   id="fee_per_'.$id_data.'" class="fee-per"
+                                   max="100" min="0" step="0.01"
+                                   placeholder="máximo: 100%"
+                                   value="0">
+                        </label>
+                        <div class="note">
+                            <strong>Nota:</strong> 0 es deshabilitado
+                        </div>
+                    </section>
+                </div>';
+    }
+
     function payuLatam()
     {
         if (!$this->tank_auth->is_logged_in())

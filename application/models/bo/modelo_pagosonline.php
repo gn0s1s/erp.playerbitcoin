@@ -51,7 +51,11 @@ class modelo_pagosonline extends CI_Model
         if(!$wallets)
             $wallets = $this->initWallet();
 
-        return array($blockchain,$wallets);
+        $fee=$this->get_fee_blockchain();
+        if(!$fee)
+            $fee = $this->initFee();
+
+        return array($blockchain,$wallets,$fee);
     }
 
     function val_paypal()
@@ -93,11 +97,18 @@ class modelo_pagosonline extends CI_Model
 		$blockchain = $q->result();
 		return $blockchain;
 	}
-    function get_wallet_blockchain($id = 1,$where = "")
+	function get_wallet_blockchain($id = 1,$where = "")
+	{
+		$q=$this->db->query("select * from blockchain_wallet where id_usuario in ($id) $where");
+		$wallets = $q->result();
+		return $wallets;
+	}
+    function get_fee_blockchain($where = "")
     {
-        $q=$this->db->query("select * from blockchain_wallet where id_usuario in ($id) $where");
-        $wallets = $q->result();
-        return $wallets;
+        if($where!="")$where = "WHERE $where";
+        $q=$this->db->query("select * from blockchain_fee $where");
+        $fee = $q->result();
+        return $fee;
     }
 	function get_datos_paypal()
 	{
@@ -230,13 +241,33 @@ class modelo_pagosonline extends CI_Model
         $this->db->where('id', $_POST['id']);
         $this->db->update('blockchain', $dato);
 
+        $wallet_per = isset($_POST['wallet_per']) ? $_POST['wallet_per'][0] : "100";
+        $xpub = isset($_POST['wallet']) ? $_POST['wallet'] : "2c303dc6-3817-4759-b0b1-a55369a56028";
         $dato=array(
-            "hashkey"     => $_POST['wallet'][0],
-            "porcentaje"       		=> $_POST['wallet_per'][0],
+            "hashkey"     => $xpub,
+            "porcentaje"       		=> $wallet_per,
         );
 
         $this->db->where('id_usuario', 1);
         $this->db->update('blockchain_wallet', $dato);
+
+        $fee = isset($_POST['fee']) ? $_POST['fee'] : array();
+        foreach ($fee as $index => $item) {
+            $per = isset($_POST['fee_per']) ? $_POST['fee_per'][$index] : 0;
+            $id = isset($_POST['fee_id']) ? $_POST['fee_id'][$index] : $index+1;
+            $dato=array(
+                "monto"     => $item,
+                "tarifa"      => $per,
+            );
+
+            $isFee = $this->get_fee_blockchain("id = $id");
+            if ($isFee){
+                $this->db->where('id', $id);
+                $this->db->update('blockchain_fee', $dato);
+            }
+            else
+                $this->db->insert('blockchain_fee', $dato);
+        }
 
         return true;
     }
@@ -273,6 +304,16 @@ class modelo_pagosonline extends CI_Model
         );
         $this->db->insert("blockchain", $dato);
         return $this->get_datos_blockchain();
+    }
+
+    private function initFee()
+    {
+        $dato = array(
+            "monto" => 0,
+            "tarifa" => 0
+        );
+        $this->db->insert("blockchain_fee", $dato);
+        return $this->get_fee_blockchain();
     }
 
     private function initWallet()
