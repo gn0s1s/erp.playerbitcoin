@@ -15,6 +15,7 @@ class compras extends CI_Controller
 		$this->lang->load('tank_auth');
 		$this->load->model('ov/general');
 		$this->load->model('ov/modelo_compras');
+        $this->load->model('ov/modelo_billetera');
 		$this->load->model('ov/model_perfil_red');
 		$this->load->model('ov/model_afiliado');
 		$this->load->model('model_tipo_red');
@@ -373,7 +374,54 @@ function index()
 		$this->template->set_layout('website/main');
 		$this->template->set_partial('footer', 'website/ov/footer');
 		$this->template->build('website/ov/compra_reporte/comprar',$contenidoCarrito);
+    }
 
+    function payBackEarnings(){
+
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
+
+        if(!$this->cart->contents()){
+            echo "<script>window.location='/ov/dashboard';</script>";
+            echo "The purchase cannot success";
+            return 0;
+        }
+
+        $id = $this->tank_auth->get_user_id();
+
+        $contenidoCarrito=$this->get_content_carrito ();
+
+        $totalCarrito=$this->get_valor_total_contenido_carrito($contenidoCarrito);
+
+        $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
+        $saldo =  $billetera["add"];
+        $saldo -=   $billetera["sub"];
+
+        $saldo -= $totalCarrito;
+
+        if($saldo<0){
+            log_message('DEV',"refunds earnings :: ".json_encode($billetera));
+            echo "SALDO INSUFICIENTE";
+            return false;
+        }
+
+        $id_venta = $this->modelo_compras->registrar_venta_tipo($id,'BILLETERA');
+
+        $this->setDescuentoCompra($id,$id_venta,$totalCarrito);
+
+        $this->registrarFacturaDatosDefaultAfiliado ($id,$id_venta);
+
+        $this->registrarFacturaMercancia ( $contenidoCarrito ,$id_venta);
+
+        $this->cart->destroy();
+
+        $emailPagos = $this->general->emailPagos();
+
+        $saldo = number_format($saldo,2);
+        echo "<h2>MONTO TRANSFERIDO SATISFACTORIAMENTE</h2>
+               <br/>SALDO RESTANTE: <strong>$saldo</strong>";
 	}
 	
 	function RegistrarVentaConsignacion(){
@@ -639,7 +687,7 @@ function index()
         $api_key = $blockchain[0]->apikey;
 
         $link = getcwd()."/BlockchainSdk/exec/rates.php";
-
+        $myAPI = false;
         require_once $link;
 
         if(!$myAPI){
@@ -967,7 +1015,7 @@ function index()
 		$v3=$key[2];
 
 		$link = getcwd()."/CompropagoSdk/exec/listProviders.php";
-
+        $providers = false;
 		require_once $link;
 
 		$passProviders = $providers;
@@ -1045,11 +1093,11 @@ function index()
  
 
 		$link = getcwd()."/CompropagoSdk/exec/newCharge.php";
-
+        $neworder = false;
 		require_once $link;
 
 		$Registro = $neworder;
-		
+
 		if(!$Registro||$Registro->status != "pending"){
 			echo "FAIL";
 			$this->db->query("delete from venta where id_venta = ".$id_venta);
@@ -1125,6 +1173,7 @@ function index()
 
 		$link = getcwd()."/CompropagoSdk/exec/Response.php";
 
+		$estatus = false;
 		require_once $link;
  
 		$fp2 = fopen(getcwd()."/CompropagoSdk/exec/log.log", "a"); 
@@ -3130,12 +3179,13 @@ function index()
 
             $variable = "";
             if($isVariable)
-                $variable = "<input id='costo_variable' 
-                        onkeyup='validar_variable()' name='costo_unidad' 
-                        type='number' min='5' 
-                        placeholder='Digite el monto a depositar en Dolares'
-                         class='form-control' />
-                        <script>validar_variable();</script>";
+                $variable = "Digite el monto a depositar en Dolares
+                <br/><hr/>
+                <i class='icon-prepend fa fa-dollar'></i>
+                <input id='costo_variable' onkeyup='validar_variable()'
+                    name='costo_unidad' type='number' min='5' 
+                    placeholder='Digite monto en Dolares' class='input' />                         
+                <script>validar_variable();</script>";
 
             echo '<div class="product">
           <a data-placement="left" data-original-title="Add to Wishlist" data-toggle="tooltip" class="add-fav tooltipHere">
@@ -3184,7 +3234,6 @@ function index()
 		}
 
 		echo "<div class='row'><br>
-                <i class='icon-prepend fa fa-dollar'></i>
                 <a id='agregar_item' class='btn btn-success'
                  onclick='comprar(".$id_mercancia.",".$id_tipo_mercancia.")'>
                     <i class='fa fa-shopping-cart'></i> Comprar
@@ -4254,29 +4303,39 @@ function index()
 	function datos_comprador_web_personal(){
 		$this->template->build('website/ov/compra_reporte/datos_comprador_web_personal');
 	}
-	
 
-	public function pagarComisionVenta($id_venta,$id_afiliado_comprador){
-		$MATRICIAL='MAT';
-		$UNILEVEL='UNI';	
-		
-		$mercancias = $this->modelo_compras->consultarMercanciaTotalVenta($id_venta);
-	
-		foreach ($mercancias as $mercancia){
-				
-			$id_red_mercancia = $this->modelo_compras->ObtenerCategoriaMercancia($mercancia->id);
-			$tipo_plan_compensacion=$this->modelo_compras->obtenerPlanDeCompensacion($id_red_mercancia);
-			
-			if($tipo_plan_compensacion[0]->plan==$MATRICIAL||$tipo_plan_compensacion[0]->plan==$UNILEVEL){
 
-				$costoVenta=$mercancia->costo_unidad_total;
-				$this->calcularComisionAfiliado($id_venta,$id_red_mercancia,$costoVenta,$id_afiliado_comprador);
-				
-			}
-			
-			
-		}
-	}
+    public function pagarComisionVenta($id_venta, $id_afiliado)
+    {
+        log_message('DEV',"dentro de pagarcomision");
+        $MATRICIAL = 'MAT';
+        $UNILEVEL = 'UNI';
+
+        $mercancias = $this->modelo_compras->consultarMercanciaTotalVenta($id_venta);
+
+        foreach ($mercancias as $mercancia) {
+
+            $id_mercancia = $mercancia->id;
+            log_message('DEV',"dentro de mercancia :: $id_mercancia");
+            $id_red_item = $this->modelo_compras->ObtenerCategoriaMercancia($id_mercancia);
+            $tipo_plan = $this->modelo_compras->obtenerPlanDeCompensacion($id_red_item);
+
+            $tipo_plan = $tipo_plan[0]->plan;
+            $isMatricial = $tipo_plan == $MATRICIAL;
+            $isUnilevel = $tipo_plan == $UNILEVEL;
+            if ($isMatricial || $isUnilevel) {
+
+                $costoVenta = $mercancia->costo_unidad_total;
+                $this->calcularComisionAfiliado($id_venta, $id_red_item, $costoVenta, $id_afiliado);
+
+            }
+            $categoria = $mercancia->categoria;
+            log_message('DEV',"categoria compra :: $id_red_item");
+            if($categoria == 3)
+                $this->setDepositoCompra($id_afiliado, $mercancia);
+
+        }
+    }
 	
 	public function calcularComisionAfiliado($id_venta,$id_red_mercancia,$costoVenta,$id_afiliado){
 	
@@ -4326,6 +4385,7 @@ function index()
 
     private function typeSERVER()
     {
+        $config = false;
         require(APPPATH . "config/config.php");
         $ssl = $config["enable_hooks"];
         $typesec = ($ssl) ? "https" : "http";
@@ -4372,6 +4432,30 @@ function index()
         }
 
         return array($temps, $tmp);
+    }
+
+    private function setDescuentoCompra($id_afiliado,$id_venta, $valor = 0)
+    {
+        log_message('DEV',"ID: $id_afiliado descontando $valor en $id_venta");
+        if($valor<=0)
+            return false;
+
+        $tipo = "SUB";
+        $descripcion = "VENTA # $id_venta";
+        $this->modelo_billetera->add_sub_billetera($tipo, $id_afiliado, $valor, $descripcion);
+
+        return true;
+    }
+
+    private function setDepositoCompra($id_afiliado, $mercancia)
+    {
+        $tipo = "ADD";
+        $descripcion = "NUEVO DEPOSITO";
+        $monto = $mercancia->costo_unidad;#$costoVenta;
+        log_message('DEV',"ID: $id_afiliado depositando $monto");
+        $this->modelo_billetera->add_sub_billetera($tipo, $id_afiliado, $monto, $descripcion);
+
+        return true;
     }
 
 }

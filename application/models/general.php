@@ -245,19 +245,25 @@ class general extends CI_Model
 		($ocupado) ? $this->model_perfil_red->trash_token($temp[0]->id) : ''; 
 		return ($ocupado) ? true : false;
 	}
-	
-        function issetVar($var, $type = false, $novar = false) {
 
-            $result = isset($var) ? $var : $novar;
+    function issetVar($var, $type = false, $novar = false) {
 
-            if ($type)
-                $result = isset($var[0]->$type) ? $var[0]->$type : $novar;
+        $result = isset($var) ? $var : $novar;
 
-            if (!isset($var[0]->$type))
-                log_message('DEV', "issetVar T:($type) :: " . json_encode($var));
+        if(isset($var[0]))
+            $var = $var[0];
 
-            return $result;
-        }
+        if ($type)
+            $result = isset($var->$type) ? $var->$type : $novar;
+
+        $noAttr = !isset($var->$type);
+        $noType = ($novar === false);
+        $json = json_encode($var);
+        if ($noAttr && $noType)
+            log_message('DEV', "issetVar T:($type) :: $json");
+
+        return $result;
+    }
 	
         function hex2rgb($hex,$str = false) {
             $hex = str_replace("#", "", $hex);

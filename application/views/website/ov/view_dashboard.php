@@ -113,7 +113,7 @@
 															<br>
 														</div>
 														<div class="col-sm-4">
-														<h1><small>Puntos Comisionables Personales</small>  <i class='fa fa-user'></i></h1>
+														<h1><small>Mis Puntos Comisionables</small>  <i class='fa fa-user'></i></h1>
 															<ul class="list-inline friends-list">
 																<li><span class="font-md"><i>Semana :</i></span> <?=intval($puntos_semana)?>
 																</li>
@@ -122,7 +122,7 @@
 																<li><span class="font-md"><i>Total :</i></span> <?=intval($puntos_total)?>
 																</li>
 															</ul>
-														<h1><small>Puntos Comisionables Red </small>  <i class='fa fa-sitemap'></i></h1>
+														<h1><small>Puntos Comisionables en la Red </small>  <i class='fa fa-sitemap'></i></h1>
 															<ul class="list-inline friends-list">
 																<li><span class="font-md"><i>Semana :</i></span> <?=$puntos_red_semana?>
 																</li>

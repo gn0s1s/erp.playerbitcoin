@@ -93,6 +93,7 @@
                 padding: .5rem;
                 border-radius: 5px 0 0 5px;
                 z-index: 10000;
+                right: 0;
             }
         </style>
 	</head>

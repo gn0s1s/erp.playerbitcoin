@@ -248,11 +248,17 @@ class mGeneral extends CI_Model
 
         $result = isset($var) ? $var : $novar;
 
-        if ($type)
-            $result = isset($var[0]->$type) ? $var[0]->$type : $novar;
+        if(isset($var[0]))
+            $var = $var[0];
 
-        if (!isset($var[0]->$type))
-            log_message('DEV', "issetVar T:($type) :: " . json_encode($var));
+        if ($type)
+            $result = isset($var->$type) ? $var->$type : $novar;
+
+        $noAttr = !isset($var->$type);
+        $noType = ($novar === false);
+        $json = json_encode($var);
+        if ($noAttr && $noType)
+            log_message('DEV', "issetVar T:($type) :: $json");
 
         return $result;
     }

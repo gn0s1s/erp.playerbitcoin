@@ -510,7 +510,10 @@ from transaccion_billetera where id_user = ".$id." order by fecha desc ");
 	function set_transacciones_format($q2){
 		
 		if(!$q2) {
-			return null;
+			return array(
+                'add'=>0 ,
+                'sub'=>0
+            );
 		}
 		
 		$i=0;

@@ -392,7 +392,7 @@ where a.id_paquete = e.id_paquete and d.sku= a.id_paquete and d.estatus="ACT" an
 	
 	function detalles_membresia($i)
 	{
-		$q=$this->db->query('SELECT b.id,a.nombre,a.descripcion,b.costo_publico,b.costo,b.puntos_comisionables from membresia a, mercancia b where a.id=b.sku and b.id='.$i);
+		$q=$this->db->query('SELECT a.*, b.id,b.costo_publico,b.costo,b.puntos_comisionables from membresia a, mercancia b where a.id=b.sku and b.id='.$i);
 		return $q->result();
 	}
 	
@@ -1034,8 +1034,24 @@ where a.id_paquete = e.id_paquete and d.sku= a.id_paquete and d.estatus="ACT" an
 		);
 		$this->db->insert("comision_web_personal",$dato_cross_venta);
 	}
-	
-	function registrar_ventaConsignacion($id_usuario, $fecha){
+
+    function registrar_venta_tipo($id_usuario, $tipo = 'BANCO', $estatus = 'ACT',$fecha = false){
+
+	    if(!$fecha)
+	        $fecha = date('Y-m-d H:i:s');
+
+        $dato_venta=array(
+            "id_user" 			=> $id_usuario,
+            "id_estatus"		=> $estatus,
+            "id_metodo_pago" 	=> $tipo,
+            "fecha" 			=> $fecha
+        );
+        $this->db->insert("venta",$dato_venta);
+        $venta = $this->db->insert_id();
+        return $venta;
+    }
+
+    function registrar_ventaConsignacion($id_usuario, $fecha){
 		$dato_venta=array(
 				"id_user" 			=> $id_usuario,
 				"id_estatus"		=> 'DES',
@@ -1290,9 +1306,9 @@ where a.id_paquete = e.id_paquete and d.sku= a.id_paquete and d.estatus="ACT" an
 	}
 	
 	function consultarMercanciaTotalVenta($id_venta){
-		$q = $this->db->query("select M.id, CVM.costo_total as costo,(CVM.costo_unidad*CVM.cantidad) as costo_unidad_total,CVM.costo_unidad as costo_unidad, M.costo_publico, CVM.cantidad, M.puntos_comisionables, M.id_tipo_mercancia
-							from cross_venta_mercancia CVM, mercancia M
-							where CVM.id_venta = ".$id_venta."  and CVM.id_mercancia=M.id;");
+		$q = $this->db->query("select M.id, CVM.costo_total as costo,i.categoria ,(CVM.costo_unidad*CVM.cantidad) as costo_unidad_total,CVM.costo_unidad as costo_unidad, M.costo_publico, CVM.cantidad, M.puntos_comisionables, M.id_tipo_mercancia
+							from cross_venta_mercancia CVM, mercancia M,items i
+							where CVM.id_venta = ".$id_venta."  and CVM.id_mercancia=M.id AND i.id = M.id ");
 		$mercancia = $q->result();
 		return $mercancia;
 	}

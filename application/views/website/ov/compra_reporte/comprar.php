@@ -220,11 +220,16 @@
 														<div class="payment-methods">
 															<h1 class="font-300">Metodos de Pago</h1>
 															<a onclick="consignacion()"
+                                                               style="margin-left: 1rem;" class="hide btn btn-success txt-color-blueLight">
+                                                                <img src="/template/img/payment/deposito-bancario.jpg"
+                                                                     alt="Transaccion Bancaria" height="60" >
+                                                            </a>
+                                                            <a onclick="billetera()"
                                                                style="margin-left: 1rem;padding: 1em;
                                                                background: #090;color:#000;font-weight: bold"
                                                                class="btn btn-success txt-color-bl">
-																BILLETERA
-															</a>
+                                                                BILLETERA
+                                                            </a>
                                                             <?php if($blockchain[0]->estatus=='ACT') {?>
                                                                 <a onclick="blockchain()" style="margin-left: 1rem;" class="btn btn-success txt-color-blueLight">
                                                                     <img src="/template/img/payment/blockchain.png" alt="blockchain" height="60" >
@@ -327,8 +332,37 @@
 				}
 			})
 		});
-		
-	}
+    }
+
+    function billetera(){
+
+        $.ajax({
+            data:{
+                /*id_mercancia : id,
+                cantidad : cant*/
+            },
+            type:"POST",
+            url:"/ov/compras/payBackEarnings",
+            success: function(msg){
+
+                bootbox.dialog({
+                    message: msg,
+                    title: "Pay back earnings",
+                    className: "",
+                    buttons: {
+                        success: {
+                            label: "Success",
+                            className: "hide",
+                            callback: function() {
+                                window.location="/ov/dashboard";
+                            }
+                        }
+                    }
+                })
+            }
+        });
+
+    }
 
 	function consignacion(){
 		
