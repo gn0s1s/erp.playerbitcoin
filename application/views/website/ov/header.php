@@ -25,11 +25,11 @@
 								<i style="font-size: 2rem;" class="fa fa-group "></i> Perfil y Red <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/perfil_red/">Perfil</a>
+										<a href="/ov/networkProfile">Perfil</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/perfil_red/foto">Foto</a>
+										<a href="/ov/networkProfile/photo">Foto</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -46,19 +46,19 @@
 								<i style="font-size: 2rem;" class="fa fa-credit-card"></i> Compras y Comisiones <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/compras/carrito">Deposito</a>
+										<a href="/shoppingcart">Deposito</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/billetera2/index_estado">Estado de Cuenta</a>
+										<a href="/ov/accountStatus">Estado de Cuenta</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/billetera2/index">Billetera</a>
+										<a href="/ov/wallet">Billetera</a>
 									</li>
 									<li class="divider"></li>
 									 <li>
-										<a href="/ov/compras/reportes">Reportes</a>
+										<a href="/ov/reports">Reportes</a>
 									</li>
 										
 								</ul>
@@ -68,19 +68,19 @@
 								<i style="font-size: 2rem;" class="fa fa-th-large"></i> General <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/cgeneral/encuestas">Encuestas</a>
+										<a href="/ov/surveys">Encuestas</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/archivo">Archivero</a>
+										<a href="/ov/archive">Archivero</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/tablero">Tablero</a>
+										<a href="/ov/board">Tablero</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/compartir">Compartir</a>
+										<a href="/ov/share">Compartir</a>
 									</li>
 								</ul>
 							</li>
@@ -89,15 +89,15 @@
 								<i style="font-size: 2rem;" class="fa fa-envelope-square"></i> Comunicación <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/cgeneral/web_personal">Web Personal</a>
+										<a href="/ov/personalWeb">Web Personal</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cgeneral/chat">Chat mi Red</a>
+										<a href="/ov/chat">Chat mi Red</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/email">Email</a>
+										<a href="/ov/email">Email</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -105,7 +105,7 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/email">Sugerencias</a>
+										<a href="/ov/email">Sugerencias</a>
 									</li>
 								</ul>
 							</li>
@@ -114,43 +114,43 @@
 								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Información y Capacitación <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/escuela_negocios/informacion">Información</a>
+										<a href="/ov/information">Información</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/presentaciones">Presentaciones</a>
+										<a href="/ov/presentations">Presentaciones</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/ebooks">E-books</a>
+										<a href="/ov/ebooks">E-books</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/descargas">Descargas</a>
+										<a href="/ov/downloads">Descargas</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/bonos">Bonos</a>
+										<a href="/ov/coupons">Bonos</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/eventos">Eventos</a>
+										<a href="/ov/events">Eventos</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/noticias">Noticias</a>
+										<a href="/ov/news">Noticias</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/videos">Vídeos</a>
+										<a href="/ov/videos">Vídeos</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/reconocimientos">Reconocimientos</a>
+										<a href="/ov/acknowledgments">Reconocimientos</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/compras/estadistica">Estadisticas</a>
+										<a href="/ov/statistics">Estadisticas</a>
 									</li>
 								</ul>
 							</li>

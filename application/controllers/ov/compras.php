@@ -152,7 +152,7 @@ function index()
 		}
 		
 		if(!isset($id_tipo_mercancia)){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 	
 		$mostrarMercanciaTipo=0;
@@ -341,7 +341,7 @@ function index()
 
 
         if(!$contenidoCarrito['compras'])
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		
 		$cartItem = array(); 
 		
@@ -510,7 +510,7 @@ function index()
         $usuario=$this->general->get_username($id);
 
         if(!$this->cart->contents()){
-            echo "<script>window.location='/ov/compras/carrito';</script>";
+            echo "<script>window.location='/shoppingcart';</script>";
             echo "La compra no puedo ser registrada";
             return 0;
         }
@@ -685,7 +685,7 @@ function index()
         }
 
         if(!$this->cart->contents()){
-            echo "<script>window.location='/ov/compras/carrito';</script>";
+            echo "<script>window.location='/shoppingcart';</script>";
             echo "La compra no puedo ser registrada";
             return 0;
         }
@@ -4284,7 +4284,7 @@ function index()
 		if (!$this->tank_auth->is_logged_in())																	// logged in
 			redirect('/auth');
 		
-		redirect("/ov/compras/comprar");
+		redirect("/buy");
 	}
 	
 	function buscarProveedores(){
@@ -4318,7 +4318,7 @@ function index()
 		);
 		$this->modelo_compras->guardarDatosEnvio($datos);
 		
-		redirect("/ov/compras/comprar");
+		redirect("/buy");
 	}
 
 	function datos_comprador_web_personal(){

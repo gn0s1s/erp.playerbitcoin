@@ -26,7 +26,7 @@
      padding-top: 5rem;padding-bottom: 10rem;margin-top: 3.5em;">
 <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation" id="cart_cont" style="background: #2980b9 ! important;">
     <div class="navbar-header">
-      <a style="color : #fff;margin-left:4rem;" class="navbar-brand titulo_carrito" href="/ov/compras/carrito"> <i class="fa fa-arrow-circle-left"></i> Atras &nbsp;</a> 
+      <a style="color : #fff;margin-left:4rem;" class="navbar-brand titulo_carrito" href="/shoppingcart"> <i class="fa fa-arrow-circle-left"></i> Atras &nbsp;</a> 
       
       <!-- this part for mobile -
       <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -317,7 +317,7 @@
 							})
 							.done(function( msg )
 							{
-								window.location.href='/ov/compras/comprar'
+								window.location.href='/buy'
 							});//Fin callback bootbox
 						}
 			

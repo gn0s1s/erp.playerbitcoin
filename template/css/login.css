@@ -1,0 +1,15 @@
+body{background:url(../img/playerBitcoin/bgCabezaN.jpg) no-repeat;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; color:#fff;}
+.noPadding{padding:0 !important;}
+.noMargin{margin:0 !important;}
+.contForm{background: #fff;width: 100%;padding: 10% 10% 10% 10%;color:#333;box-shadow: 0px 0px 10px #0B3686}
+.grupoCajas{font-size:1.2em !important;}
+.cajas{padding: 5% !important;height: auto !important;font-size:0.9em;}
+.columnaLogin{padding: 5% 0 0 0}
+.columnaLogo{padding: 8% 0 0 0;}
+#compania{width: 50%}
+.tituloLogin{margin:0 0 15% 0;text-transform: uppercase;}
+.parrafoLogin{font-size: 2.0em;}
+.derechos{text-align: center}
+.derechos a{color:#fff;}
+.derechos a:hover{color:#ED8C17;text-decoration: none}
+.btnLogin{padding: 5% 10% !important;color:#fff;text-transform: uppercase;background: #F5921B;border-radius: 0 !important;font-weight: bold;width: auto;font-size:1.5em;width: 100%}

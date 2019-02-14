@@ -621,7 +621,7 @@
 									})
 									.done(function( msg )
 									{
-										window.location.href='/ov/compras/carrito'
+										window.location.href='/shoppingcart'
 									});//Fin callback bootbox
 								}
 					

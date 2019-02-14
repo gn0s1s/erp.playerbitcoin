@@ -110,7 +110,7 @@
 		         url: "guardar_encuesta",
 		         success: function(){
 		              alert("Se ha enviado la encuesta. Gracias por tu participación");
-		              window.location.href = '/ov/cgeneral/encuestas';
+		              window.location.href = '/ov/surveys';
 		         }
 			});
 	}

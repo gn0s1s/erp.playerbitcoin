@@ -293,7 +293,7 @@ class usuarios extends CI_Controller
 			$id=$NODO_EMPRESA;
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$id_red          = $_GET['id_red'];
