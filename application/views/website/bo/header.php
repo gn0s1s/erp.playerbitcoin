@@ -1,4 +1,4 @@
-<header style="height: 60px;background-color: #FAFAFA;">
+<header class="mainHeaderPlayer">
 <article class="col-sm-12" style="z-index: 1000;">
 
 			<div class="navbar navbar-default" style="border-color: rgb(255, 255, 255);">
@@ -47,9 +47,10 @@
 
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li style="margin-right: 2rem; margin-top: 0.3rem;" class="">
+							<!-- <li style="margin-right: 2rem; margin-top: 0.3rem;" class="">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/template/img/blank.gif" class="flag flag-es" alt="Spanish"><span> Español </span></a>
-							</li>
+							</li> -->
+                            <?php $this->load->view('website/traslate'); ?>
 							<li class="dropdown">
 							<div id="logout" class="btn-header transparent">
 								<span> 
