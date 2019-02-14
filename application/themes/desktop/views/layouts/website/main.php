@@ -2,7 +2,7 @@
    	$ci ->load ->model("bo/model_admin");
    	$empresa=$ci->model_admin->val_empresa_multinivel()?>
 <!DOCTYPE html>
-<html class="">
+<html class="" lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title> <?php echo $empresa[0]->nombre; ?></title>
@@ -100,7 +100,8 @@
 
 	<body style="background:<?php if(isset($style[0]->bg_color)){ echo $style[0]->bg_color; } ?>;">
         <?php if(isset($template['partials']['header'])){ echo $template['partials']['header']; }?>
-        <div class="pull-right" id="google_translate_element"></div>
+		<!-- <div class="pull-right" id="google_translate_element"></div> -->
+		<?php $this->load->view('website/traslate'); ?>
         <?php echo $template['body']; ?>
         <?php if(isset($template['partials']['footer'])){ echo $template['partials']['footer']; }?>
     </body>
