@@ -1,4 +1,4 @@
-<header style="height: 60px;background-color: #FAFAFA;">
+<header class="mainHeaderPlayer">
 <article class="col-sm-12" style="z-index: 1000;">
 
 			<div class="navbar navbar-default" style="border-color: rgb(255, 255, 255);">
@@ -162,9 +162,7 @@
 							<li class="dropdown">
 							<div id="logout" class="btn-header transparent">
 								<span> 
-									<a style="width: 6rem !important; height: 4rem;color: rgb(255, 255, 255); background: rgb(206, 53, 44) none repeat scroll 0% 0%;" 
-									href="/auth/logout" title="Salir" data-action="userLogout" 
-									data-logout-msg="¿ Realmente desea salir ?">
+									<a class="btnLogout" href="/auth/logout" title="Salir" data-action="userLogout" data-logout-msg="¿ Realmente desea salir ?">
 									<i class="fa fa-sign-out fa-2x"></i>
 									</a> 
 									</span>
