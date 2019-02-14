@@ -352,7 +352,6 @@
                     buttons: {
                         success: {
                             label: "Success",
-                            className: "hide",
                             callback: function() {
                                 window.location="/ov/dashboard";
                             }

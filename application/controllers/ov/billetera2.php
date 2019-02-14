@@ -217,8 +217,11 @@ class billetera2 extends CI_Controller
 		$cuenta			 = $this->model_perfil_red->val_cuenta_banco($id);
 		
 		$transaction = $this->modelo_billetera->get_total_transacciones_id($id);
-		
-		$this->template->set("style",$style);
+
+        $psr = $this->modelo_billetera->get_psr($id);
+        $this->template->set("psr",$psr);
+
+        $this->template->set("style",$style);
 		$this->template->set("pais",$pais);
 		$this->template->set("cuenta",$cuenta);
 		$this->template->set("comisiones",$comisiones);
@@ -350,7 +353,9 @@ class billetera2 extends CI_Controller
 		
 		$transaction = $this->modelo_billetera->get_total_transacciones_id($id);	
 		
-		
+        $psr = $this->modelo_billetera->get_psr($id);
+        $this->template->set("psr",$psr);
+
 		$this->template->set("style",$style);
 		$this->template->set("usuario",$usuario);
 		$this->template->set("id",$id);

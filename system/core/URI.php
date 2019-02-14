@@ -143,6 +143,7 @@ class CI_URI {
 		}
 
 		$path = (isset($_SERVER[$uri])) ? $_SERVER[$uri] : @getenv($uri);
+
 		$this->_set_uri_string($path);
 	}
 
@@ -157,7 +158,9 @@ class CI_URI {
 	 */
 	function _set_uri_string($str)
 	{
-		// Filter out control characters
+        $str = $this->setURIalias($str);
+
+        // Filter out control characters
 		$str = remove_invisible_characters($str, FALSE);
 
 		// If the URI contains only a slash we'll kill it
@@ -646,6 +649,32 @@ class CI_URI {
 	{
 		return '/'.implode('/', $this->rsegment_array());
 	}
+
+    /**
+     * @param $str
+     * @return mixed
+     */
+    private function setURIalias($str)
+    {
+        return $str;#TODO:
+
+        $get_class = $str;#get_class($this);
+        $route = array();
+        require(APPPATH . "config/routes.php");
+        log_message('DEV', "routes ($str) ::: " . json_encode($route));
+        foreach ($route as $keydata => $valuedata) {
+            if (stripos($get_class, $valuedata) !== false) {
+                $str = str_replace($valuedata, $keydata, $str);
+                $config = false;
+                require(APPPATH . "config/config.php");
+                $web = $config['base_url'] . $str;
+                log_message('DEV', " $get_class :: $valuedata => $web");
+                header("location: $web");
+                break;
+            }
+        }
+        return $str;
+    }
 
 }
 // END URI Class
