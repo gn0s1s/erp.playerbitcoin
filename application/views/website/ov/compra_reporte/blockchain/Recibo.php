@@ -5,7 +5,7 @@
     <h3>Pulsa en la imagen para redirigirte a confirmar el pago.</h3>
         <fieldset class="well" style="text-align: center">
             <img src="<?=$qr;?>"  alt="qr" width="80%" style="cursor:pointer;"
-                 onclick="location.href='bitcoin:<?=$direccion?>'" />
+                 onclick="location.href='bitcoin:<?=$direccion?>?label=Playerbitcoin&amount=<?=$total?>'" />
         </fieldset>
         <p>dirección: </p>
         <textarea id="dir" name="code" readonly><?=$direccion?></textarea>

@@ -2,11 +2,31 @@
 
 class modelo_billetera extends CI_Model
 {
-	function get_estatus($id)
+	function get_psr($id)
 	{
-		$q=$this->db->query('SELECT * from billetera where id_user='.$id);
-		return $q->result();
+        $query = "SELECT * FROM
+                    venta v, cross_venta_mercancia c,items i,mercancia m 
+                    WHERE i.id = m.id 
+                        AND m.id = c.id_mercancia 
+                        AND c.id_venta = v.id_venta
+                        AND i.categoria = 2
+                        AND v.id_user in ($id)
+                        AND id_estatus = 'ACT'
+                    ORDER BY v.fecha";
+
+        $q=$this->db->query($query);
+        $result = $q->result();
+
+        log_message('DEV',"psr ($id) :: ".json_encode($result));
+        return $result;
 	}
+
+    function get_estatus($id)
+    {
+        $q=$this->db->query('SELECT * from billetera where id_user='.$id);
+        return $q->result();
+    }
+
 	function crea_pswd($id)
 	{
 		$pswd=strlen($_POST['password']).strrev($_POST['password']);
