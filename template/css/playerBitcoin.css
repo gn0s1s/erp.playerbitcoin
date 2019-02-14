@@ -11,4 +11,5 @@ body{background: #f6f6f6 !important}
     text-decoration: none;
     background-color: #0E3F9A !important;
 }
+.banderitas{padding:10% 0 0 0;}
 .btnLogout{width: 6rem !important; height: 4rem !important;color: #fff !important; background: #ED8C17 !important;border:none !important;}

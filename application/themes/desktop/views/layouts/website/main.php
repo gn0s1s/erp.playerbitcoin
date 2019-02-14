@@ -104,7 +104,7 @@
 	<body style="background:<?php if(isset($style[0]->bg_color)){ echo $style[0]->bg_color; } ?>;">
         <?php if(isset($template['partials']['header'])){ echo $template['partials']['header']; }?>
 		<!-- <div class="pull-right" id="google_translate_element"></div> -->
-		<?php $this->load->view('website/traslate'); ?>
+		
         <?php echo $template['body']; ?>
         <?php if(isset($template['partials']['footer'])){ echo $template['partials']['footer']; }?>
     </body>

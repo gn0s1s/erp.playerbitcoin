@@ -156,9 +156,9 @@
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li style="margin-right: 2rem; margin-top: 0.3rem;" class="">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/template/img/blank.gif" class="flag flag-es" alt="Spanish"><span> Español </span></a>
-							</li>
+							<!--<li style="margin-right: 2rem; margin-top: 0.3rem;" class="">-->
+							<?php $this->load->view('website/traslate'); ?>
+							<!-- </li>-->
 							<li class="dropdown">
 							<div id="logout" class="btn-header transparent">
 								<span> 
