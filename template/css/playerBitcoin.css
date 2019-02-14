@@ -1,0 +1,14 @@
+body{background: #f6f6f6 !important}
+.mainHeaderPlayer{height: 60px;background-color: #1048B1;padding: 3px}
+.navbar-default{background: transparent;border:none;}
+.nav>li.active{background: #ED8C17 !important}
+.nav>li.active a{background: transparent !important;}
+.nav>li>a:focus, .nav>li>a {
+    color:#fff !important;
+    margin:0 15px 0 0;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: #0E3F9A !important;
+}
+.btnLogout{width: 6rem !important; height: 4rem !important;color: #fff !important; background: #ED8C17 !important;border:none !important;}

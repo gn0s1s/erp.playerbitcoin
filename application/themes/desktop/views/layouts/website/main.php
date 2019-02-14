@@ -34,6 +34,9 @@
 		<!--Estilos de los autores de la pagina-->
 		<link rel="stylesheet" type="text/css" media="screen" href="/template/css/your_style.css">
 
+		<!-- Estilos de la nueva integración del ERP-->
+		<link rel="stylesheet" type="text/css" media="screen" href="/template/css/playerBitcoin.css">
+
 
 		<!-- #FAVICONS -->
 		<link rel="shortcut icon" href="/template/img/favicon/favicon.png" type="image/x-icon">

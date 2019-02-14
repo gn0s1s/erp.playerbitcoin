@@ -60,6 +60,18 @@
 														</tr>
 													</thead>
 													<tbody>
+
+                                                    <?php if (isset($psr)) :
+                                                        foreach ($psr as $index => $pasive) :
+                                                            #TODO: bono pasivo
+                                                            ?>
+                                                            <tr class="info">
+                                                                <td colspan="2"><b>
+                                                                        PSR <?= $index + 1; ?> $ <?= $pasive->costo; ?>
+                                                                    </b></td>
+                                                            </tr>
+                                                        <?php endforeach;
+                                                    endif; ?>
 												<?php 
 													$total = 0; 
 													$i = 0;

@@ -516,7 +516,7 @@ function index()
         }
 
         $contenidoCarrito=$this->get_content_carrito ();
-        $totalCarrito=$this->get_valor_total_contenido_carrito($contenidoCarrito);
+        $totalCarrito=$this->get_valor_total_contenido_carrito($contenidoCarrito,true);
 
         $wallet = $this->modelo_pagosonline->get_wallet_blockchain();
         $blockchain = $this->modelo_pagosonline->get_datos_blockchain();
@@ -551,17 +551,27 @@ function index()
 
         $address = isset($response->address) ? $response->address : false;
         if(!$response||!$address){
-            echo "<abbr title='".$response->description."'>?</abbr> Blockchain no generó la direción para su pago. Intente más tarde!!!";
+            echo "<abbr title='".json_encode($response)."'>?</abbr> Blockchain no generó la direción para su pago. Intente más tarde!!!";
             log_message('DEV',"response : ".json_encode($response));
             return false;
         }
         $this->updateCarritoProceso($id_proceso, $address,"address");
 
-        $filename = $this->setBlockchainQR($id,$address,$id_proceso);
+        $link = getcwd()."/BlockchainSdk/exec/rates.php";
+        $myAPI = false;$amount = 0;
+        require_once $link;
+
+        if($myAPI){
+            $currency = "USD";$to="BTC";
+            $amount = $myAPI->convertTo($totalCarrito,$currency,$to);
+        }
+
+        $filename = $this->setBlockchainQR($id,$address,$id_proceso,$amount);
         $this->template->set("qr",$filename);
 
         $this->template->set("id",$id);
         $this->template->set("direccion",$address);
+        $this->template->set("total",$amount);
         $this->template->build('website/ov/compra_reporte/blockchain/Recibo');
 
     }
@@ -713,7 +723,7 @@ function index()
     public function setPeticionBlockchain($id, $xpub, $content,$total)
     {
         $blockchain = $this->modelo_pagosonline->get_datos_blockchain();
-        $api_key = $blockchain[0]->apikey;
+        $api_key = trim($blockchain[0]->apikey);
 
         $firma = $this->setFirmaProceso($id, $api_key, $content, $total);
 
@@ -721,9 +731,13 @@ function index()
 
         $callback = $this->setCallback($firma, $id_proceso);
 
+        $xpub = trim($xpub);
+
         $url = "https://api.blockchain.info/v2/receive";
         $url .= "?xpub=$xpub&callback=$callback&key=$api_key&gap_limit=1000";
         $command = 'curl "' . $url . '"';
+
+        log_message('DEV',"new blockchain request ::>> ".$url);
         #TODO: echo $command;exit();
         $cargar = shell_exec($command);
         $response = json_decode($cargar);
@@ -1456,35 +1470,42 @@ function index()
 			$contador++;
 		}
 	}
-		
-	private function get_valor_total_contenido_carrito($contenidoCarrito){
-		
-		$contador=0;
-		$total=0;
-		
-		foreach ($this->cart->contents() as $items)
-		{
-		
-		
-			$costoImpuesto=0;
-			$precioUnidad=0;
-			$cantidad=$items['qty'];
-		
-			$precioUnidad=$items['price'];#TODO: $contenidoCarrito['compras'][$contador]['costos'][0]->costo;
-		
-			foreach ($contenidoCarrito['compras'][$contador]['costos'] as $impuesto){
-				$costoImpuesto+=$impuesto->costoImpuesto;
-			}
-		
-			if($contenidoCarrito['compras'][$contador]['costos'][0]->iva!='MAS'){
-				$precioUnidad-=$costoImpuesto;
-			}
 
-			 $total+=(($precioUnidad*$cantidad)+($costoImpuesto*$cantidad));
-			 $contador++;
-		}
-		return $total;
-	}
+    private function get_valor_total_contenido_carrito($contenidoCarrito, $fee = false)
+    {
+        $contador = 0;
+        $total = 0;
+
+        foreach ($this->cart->contents() as $items) {
+
+            $costoImpuesto = 0;
+            $precioUnidad = 0;
+            $cantidad = $items['qty'];
+
+            $precioUnidad = $items['price'];#TODO: $contenidoCarrito['compras'][$contador]['costos'][0]->costo;
+
+            foreach ($contenidoCarrito['compras'][$contador]['costos'] as $impuesto) {
+                $costoImpuesto += $impuesto->costoImpuesto;
+            }
+
+            if ($contenidoCarrito['compras'][$contador]['costos'][0]->iva != 'MAS') {
+                $precioUnidad -= $costoImpuesto;
+            }
+
+            $precioTotal = $precioUnidad * $cantidad;
+            $impuestoTotal = $costoImpuesto * $cantidad;
+            $totalItem = $precioTotal + $impuestoTotal;
+
+            if ($fee) {
+                $where = "estatus = 'ACT'";
+                $totalItem = $this->setBlockchainFee($totalItem, $where);
+            }
+
+            $total += $totalItem;
+            $contador++;
+        }
+        return $total;
+    }
 	
 	private function registrarFacturaDatosDefaultAfiliado($id,$id_venta) {
 
@@ -4392,9 +4413,9 @@ function index()
         return $typesec;
     }
 
-    private function setBlockchainQR($id, $address, $id_proceso)
+    private function setBlockchainQR($id, $address, $id_proceso,$total)
     {
-        $link = "bitcoin:$address";
+        $link = "bitcoin:$address?label=Playerbitcoin&amount=$total";
         $qrview = "/template/php/openqr/";
         $qrdir = getcwd() . $qrview;
         $qrlib = $qrdir . "qrlib.php";
@@ -4456,6 +4477,36 @@ function index()
         $this->modelo_billetera->add_sub_billetera($tipo, $id_afiliado, $monto, $descripcion);
 
         return true;
+    }
+
+    private function setBlockchainFee($valor, $where = "")
+    {
+        if($where != "")$where = "WHERE $where";
+        $query = "SELECT * FROM blockchain_fee $where";
+        $q = $this->db->query($query);
+        $q = $q->result();
+
+        if(!$q)
+            return $valor;
+
+        $tarifa = 0;
+        foreach ($q as $key => $value){
+            $minimo = $value->monto;
+
+            if($valor < $minimo)
+                break;
+
+            $tarifa = $value->tarifa;
+        }
+
+        if($tarifa <= 0)
+            return $valor;
+
+        $factor = $tarifa / 100;
+        $valor *= 1+ $factor;
+
+        return $valor;
+
     }
 
 }

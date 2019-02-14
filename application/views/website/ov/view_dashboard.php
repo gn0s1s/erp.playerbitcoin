@@ -9,156 +9,160 @@
 				</div>
 				<!-- end row -->
       <div class="row">
-					<div class="col-sm-12">
+      	<!-- panel lateral info usuario-->
+		<div class="col-sm-6 col-lg-6">
 							<div class="well well-sm">
 								<div class="row">
-					      	<div class="col-sm-12 col-md-12 col-lg-6">
-										<div class="well well-light well-sm no-margin no-padding">
-											<div class="row">
-												<div class="col-sm-12">
-													<div id="myCarousel" class="carousel fade profile-carousel">
-														<div class="air air-top-left padding-10">
-															<h4 class="txt-color-white font-md"></h4>
-														</div>
-														<div class="carousel-inner">
-															<!-- Slide 1 -->
-															<div class="item active">
-																<img src="/media/imagenes/m3.jpg" alt="demo user">
-															</div>
-														</div>
-													</div>
-												</div>
-
-												<div class="col-sm-12">
-
+							      	<div class="col-sm-12 col-md-12 col-lg-12">
+												<div class="well well-light well-sm no-margin no-padding">
 													<div class="row">
-
-														<div class="col-sm-3 profile-pic">
-															<img class="<?php if($actividad) echo "online";?>" src="<?=$user?>" alt="demo user">
-															<div class="padding-10">
-															<a style="padding: 6px 2rem 6px 6px;" href="/ov/networkProfile/photo"><i class="fa fa-camera fa-2x fa-fw fa-lg"></i></a>
-																<br><br>
-																<h4 class="font-md"><strong><?=$id?></strong>
-																<br>
-																<small>ID</small></h4>
+														<div class="col-sm-12">
+															<div id="myCarousel" class="carousel fade profile-carousel">
+																<div class="air air-top-left padding-10">
+																	<h4 class="txt-color-white font-md"></h4>
+																</div>
+																<div class="carousel-inner">
+																	<!-- Slide 1 -->
+																	<div class="item active">
+																		<!--<img src="/media/imagenes/m3.jpg" alt="demo user">-->
+																	</div>
+																</div>
 															</div>
 														</div>
-														<div class="col-sm-4">
-															<h1><?=$usuario[0]->nombre?> <span class="semi-bold"><?=$usuario[0]->apellido?></span>
-															<br>
-															<small> <?php //echo $nivel_actual_red?></small></h1>
 
-															<ul class="list-unstyled ">
-                                <li>
-                                <div class="demo-icon-font">
-																		<img class="flag flag-<?=strtolower($pais)?>">
-                                </div>
-																</li>
-																<li>
-																	<h5 class="text-muted">
-																		<i class="fa fa-globe"></i> Enlace de referidos:<br/></h5>
-																		<a href="<?=$link_personal;?>" ><?=$link_personal;?></a>
-																	<hr/>
-																</li>
-																<li>
-																	<p class="text-muted">
-																		<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a ><?=$email?></a>
-																	</p>
-																</li>
-																<li>
-																	<p class="text-muted">
-																		<i class="fa fa-user"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?=$username?></span>
-																	</p>
-																</li>
-																<li>
-																	<p class="text-muted">
-																		<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Ultima sesión: <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment"><?=$ultima?></a></span>
-																	</p>
-																</li>
-									                                <li>
-									                                <?php if($id_sponsor&&$name_sponsor){
-									                                if(($id_sponsor[0]->id_usuario!=1)){
-									                                ?>
-									                               <b>Patrocinador:</b>
-									                              <?=$name_sponsor[0]->nombre?> <?=$name_sponsor[0]->apellido?> con id <?=$id_sponsor[0]->id_usuario?><br/>
-									
-									                              <?php }else{?>
-									                              Eres un nodo raíz, fuiste patrocinado por la empresa<br />
-									                              <?php }}?>
-									                                </li>
-                                									<div class="row">
-																	<br>
-																	<div class="col-xs-2 col-sm-1">
-																			<strong class="<?php if($actividad) echo "label label-success";else echo "label label-default";?>" style="font-size: 2rem;"> <?php if($actividad) echo "<i class='fa fa-smile-o'></i> Activo";else echo "<i class='fa fa-frown-o'></i> Inactivo";?></strong>
-																	</div>
-																	<div class="col-sm-12">
+														<!-- info del usuario-->
+														<div class="col-sm-12">
+
+															<div class="row">
+
+																<div class="col-sm-3 profile-pic">
+																	<img class="<?php if($actividad) echo "online";?>" src="<?=$user?>" alt="demo user">
+																	<div class="padding-10">
+																	<a style="padding: 6px 2rem 6px 6px;" href="/ov/networkProfile/photo"><i class="fa fa-camera fa-2x fa-fw fa-lg"></i></a>
+																		<br><br>
+																		<h4 class="font-md"><strong><?=$id?></strong>
 																		<br>
-																		<?php if($titulo!=NULL) 
-																			echo '<ul id="sparks" class="">
-																				<li class="sparks-info">
-																				<h5>RANGO<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
-																				<div class="sparkline txt-color-yellow hidden-mobile hidden-md hidden-sm"></div>
-																				</li>
-																			</ul>'
-																			 ?>
+																		<small>ID</small></h4>
 																	</div>
-																	<div class="col-sm-12">
-				
-																		<br>
-				
-																	</div>
-				
 																</div>
-															</ul>
-															<br>
-														</div>
-														<div class="col-sm-4">
-														<h1><small>Mis Puntos Comisionables</small>  <i class='fa fa-user'></i></h1>
-															<ul class="list-inline friends-list">
-																<li><span class="font-md"><i>Semana :</i></span> <?=intval($puntos_semana)?>
-																</li>
-																<li><span class="font-md"><i>Mes :</i></span> <?=intval($puntos_mes)?>
-																</li>
-																<li><span class="font-md"><i>Total :</i></span> <?=intval($puntos_total)?>
-																</li>
-															</ul>
-														<h1><small>Puntos Comisionables en la Red </small>  <i class='fa fa-sitemap'></i></h1>
-															<ul class="list-inline friends-list">
-																<li><span class="font-md"><i>Semana :</i></span> <?=$puntos_red_semana?>
-																</li>
-																<li><span class="font-md"><i>Mes :</i></span> <?=$puntos_red_mes?>
-																</li>
-																<li><span class="font-md"><i>Total :</i></span> <?=$puntos_red_total?>
-																</li>
-															</ul>
-                                                            <?php if (sizeof($ultimos_auspiciados)>0) :?>
-                                                                <h1><small>Últimos Auspiciados</small></h1>
-                                                                <ul class="list-inline friends-list">
-                                                                    <?php
-                                                                    foreach ($ultimos_auspiciados as $afiliado) {
-                                                                        echo '<li><a onclick="detalles('.$afiliado["id"].')"><img src="'.$afiliado["foto"].'"></a>
-																		  </li>';
-                                                                    }?>
-                                                                </ul>
-                                                            <?php endif;?>
-														<hr/>
-                                                            <div class="col-md-12">
-                                                                <a href="/play/dashboard">
-                                                                    <div id="play-boton" class="link_dashboard well well-sm txt-color-white text-center ">
-                                                                        <i class="fa fa-btc fa-3x"></i>
-                                                                        <h3>JUGAR</h3>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
+																<div class="col-sm-4">
+																	<h1><?=$usuario[0]->nombre?> <span class="semi-bold"><?=$usuario[0]->apellido?></span>
+																	<br>
+																	<small> <?php //echo $nivel_actual_red?></small></h1>
+
+																	<ul class="list-unstyled ">
+		                                <li>
+		                                <div class="demo-icon-font">
+																				<img class="flag flag-<?=strtolower($pais)?>">
+		                                </div>
+																		</li>
+																		<li>
+																			<h5 class="text-muted">
+																				<i class="fa fa-globe"></i> Enlace de referidos:<br/></h5>
+																				<a href="<?=$link_personal;?>" ><?=$link_personal;?></a>
+																			<hr/>
+																		</li>
+																		<li>
+																			<p class="text-muted">
+																				<i class="fa fa-envelope"></i>&nbsp;&nbsp;<a ><?=$email?></a>
+																			</p>
+																		</li>
+																		<li>
+																			<p class="text-muted">
+																				<i class="fa fa-user"></i>&nbsp;&nbsp;<span class="txt-color-darken"><?=$username?></span>
+																			</p>
+																		</li>
+																		<li>
+																			<p class="text-muted">
+																				<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Ultima sesión: <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment"><?=$ultima?></a></span>
+																			</p>
+																		</li>
+											                                <li>
+											                                <?php if($id_sponsor&&$name_sponsor){
+											                                if(($id_sponsor[0]->id_usuario!=1)){
+											                                ?>
+											                               <b>Patrocinador:</b>
+											                              <?=$name_sponsor[0]->nombre?> <?=$name_sponsor[0]->apellido?> con id <?=$id_sponsor[0]->id_usuario?><br/>
+											
+											                              <?php }else{?>
+											                              Eres un nodo raíz, fuiste patrocinado por la empresa<br />
+											                              <?php }}?>
+											                                </li>
+		                                									<div class="row">
+																			<br>
+																			<div class="col-xs-2 col-sm-1">
+																					<strong class="<?php if($actividad) echo "label label-success";else echo "label label-default";?>" style="font-size: 2rem;"> <?php if($actividad) echo "<i class='fa fa-smile-o'></i> Activo";else echo "<i class='fa fa-frown-o'></i> Inactivo";?></strong>
+																			</div>
+																			<div class="col-sm-12">
+																				<br>
+																				<?php if($titulo!=NULL) 
+																					echo '<ul id="sparks" class="">
+																						<li class="sparks-info">
+																						<h5>RANGO<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
+																						<div class="sparkline txt-color-yellow hidden-mobile hidden-md hidden-sm"></div>
+																						</li>
+																					</ul>'
+																					 ?>
+																			</div>
+																			<div class="col-sm-12">
+						
+																				<br>
+						
+																			</div>
+						
+																		</div>
+																	</ul>
+																	<br>
+																</div>
+																<div class="col-sm-4">
+																<h1><small>Mis Puntos Comisionables</small>  <i class='fa fa-user'></i></h1>
+																	<ul class="list-inline friends-list">
+																		<li><span class="font-md"><i>Semana :</i></span> <?=intval($puntos_semana)?>
+																		</li>
+																		<li><span class="font-md"><i>Mes :</i></span> <?=intval($puntos_mes)?>
+																		</li>
+																		<li><span class="font-md"><i>Total :</i></span> <?=intval($puntos_total)?>
+																		</li>
+																	</ul>
+																<h1><small>Puntos Comisionables en la Red </small>  <i class='fa fa-sitemap'></i></h1>
+																	<ul class="list-inline friends-list">
+																		<li><span class="font-md"><i>Semana :</i></span> <?=$puntos_red_semana?>
+																		</li>
+																		<li><span class="font-md"><i>Mes :</i></span> <?=$puntos_red_mes?>
+																		</li>
+																		<li><span class="font-md"><i>Total :</i></span> <?=$puntos_red_total?>
+																		</li>
+																	</ul>
+		                                                            <?php if (sizeof($ultimos_auspiciados)>0) :?>
+		                                                                <h1><small>Últimos Auspiciados</small></h1>
+		                                                                <ul class="list-inline friends-list">
+		                                                                    <?php
+		                                                                    foreach ($ultimos_auspiciados as $afiliado) {
+		                                                                        echo '<li><a onclick="detalles('.$afiliado["id"].')"><img src="'.$afiliado["foto"].'"></a>
+																				  </li>';
+		                                                                    }?>
+		                                                                </ul>
+		                                                            <?php endif;?>
+																<hr/>
+		                                                            <div class="col-md-12">
+		                                                                <a href="/play/dashboard">
+		                                                                    <div id="play-boton" class="link_dashboard well well-sm txt-color-white text-center ">
+		                                                                        <i class="fa fa-btc fa-3x"></i>
+		                                                                        <h3>JUGAR</h3>
+		                                                                    </div>
+		                                                                </a>
+		                                                            </div>
 
 
+																</div>
+															</div>
 														</div>
+														<!-- fin info del usuario-->
+
 													</div>
-												</div>
-											</div>
-  									</div>
+		  									</div>
 									</div>
-                				<div class="col-sm-12 col-md-12 col-lg-6">
+                				<div class="col-sm-12 col-md-12 col-lg-12">
 									<!--Inica la secciion de la perfil y red-->
 									<div class="well" style="box-shadow: 0px 0px 0px !important;border-color: transparent;">
 										<fieldset>
@@ -284,135 +288,146 @@
 									<!--Termina la secciion de perfil y red-->
 								</div>
 						    </div>
-				      </div>
+				 </div>
           </div>
+
+		 <div class="col col-lg-6 col-md-6">
+
+		 	<!--Inica la seccion de la perfil y red-->
+				<div class="well" style="">
+					<fieldset>
+						<legend><b>Perfil y red</b></legend>
+						<div class="row">
+							<?php $permiso=$ci->model_permissions->check($id,'perfil');
+							if($permiso){
+							?>
+							<div class="col-sm-6">
+								<a href="networkProfile/">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
+										<i class="fa fa-user fa-3x"></i>
+										<h5>Perfil</h5>
+									</div>
+								</a>
+							</div>
+
+							<?php }$permiso=$ci->model_permissions->check($id,'afiliar'); //foto
+							if($permiso){
+							?>
+						  	<div class="col-sm-6">
+								<a href="/ov/perfil_red/afiliar?tipo=1"> <!-- perfil_red/foto -->
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
+										<i class="fa fa-edit fa-3x"></i> <!-- fa-camera -->
+										<h5>Afiliar</h5> <!-- Foto -->
+									</div>
+								</a>
+							</div> 
+							<?php }?>
+						</div>
+						<div class="row">
+							<?php $permiso= $ci->model_permissions->check($id,'reportes'); //afiliar
+							if($permiso){
+							?>
+							<div class="col-sm-6">
+								<a href="reports"> <!-- /ov/perfil_red/afiliar?tipo=1 -->
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
+										<i class="fa fa-table fa-3x"></i> <!-- fa-edit -->
+										<h5>Reportes</h5> <!-- Afiliar -->
+									</div>
+								</a>
+							</div>
+							<?php }$permiso=$ci->model_permissions->check($id,'red');
+							if($permiso){
+							?>
+							<div class="col-sm-6">
+								<a href="/ov/red/index">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
+										<i class="fa fa-sitemap fa-3x"></i>
+										<h5>Red</h5>
+									</div>
+								</a>
+							</div>
+
+							<?php }?>
+						</div>
+					</div>
+				</fieldset>
+				<!--Termina la seccion de perfil y red-->
+
+				<!--Inica la seccion de compras y reportes-->
+				<div class="well">
+					<fieldset>
+						<legend><b>Compras y comisiones</b></legend>
+						<div class="row">
+							<?php $permiso=$ci->model_permissions->check($id,'carrito');
+							if($permiso){
+							?>
+							<div class="col-sm-6">
+								<a href="/shoppingcart">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
+										<i class="fa fa-shopping-cart fa-3x"></i>
+										<h5>Deposito</h5>
+									</div>
+								</a>
+							</div>
+							<?php }?>
+    <?php $permiso=$ci->model_permissions->check($id,'billetera');
+							if($permiso){
+							?>
+							<div class="col-sm-6">
+								<a href="accountStatus">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
+										<i class="fa fa-money fa-3x"></i>
+										<h5>Estado de Cuenta</h5>
+									</div>
+								</a>
+							</div>
+							<?php }?>
+						</div>
+						<div class="row">
+    <?php $permiso=$ci->model_permissions->check($id,'afiliar'); //reportes
+							if($permiso){
+							?>
+							<div class="col-sm-6">
+								<a href="javascript:void(0);"> <!-- compras/reportes -->
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
+										<i class="fa fa-ticket fa-3x"></i><!-- fa-table -->
+										<h5>Boletos/Tickets</h5> <!-- Reportes -->
+									</div>
+								</a>
+							</div>
+							<?php }?>
+  <?php $permiso=$ci->model_permissions->check($id,'tickets');
+							if($permiso){
+							?>
+							<div class="col-sm-6">
+								<a href="wallet">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
+										<i class="fa fa-dollar fa-3x"></i>
+										<h5>Billetera</h5>
+									</div>
+								</a>
+							</div>
+							<?php }?>
+						</div>
+					</fieldset>
+				</div>
+			  <!--Termina la seccion de compras y reportes-->
+
+
+
+		 </div>
         </div>
-				<!-- end row -->
+		<!-- end row -->
+          <!-- panel lateral info usuario-->
 				<div>
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-lg-12">
 							<div class="row">
 							   <div class="col-sm-12 col-md-12 col-lg-4">
-									<!--Inica la seccion de la perfil y red-->
-									<div class="well" style=""> <!-- box-shadow: 0px 0px 0px !important;border-color: transparent; -->
-										<fieldset>
-											<legend><b>Perfil y red</b></legend>
-											<div class="row">
-												<?php $permiso=$ci->model_permissions->check($id,'perfil');
-												if($permiso){
-												?>
-												<div class="col-sm-6">
-													<a href="networkProfile/">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-															<i class="fa fa-user fa-3x"></i>
-															<h5>Perfil</h5>
-														</div>
-													</a>
-												</div>
-
-												<?php }$permiso=$ci->model_permissions->check($id,'afiliar'); //foto
-												if($permiso){
-												?>
-											  	<div class="col-sm-6">
-													<a href="/ov/perfil_red/afiliar?tipo=1"> <!-- perfil_red/foto -->
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
-															<i class="fa fa-edit fa-3x"></i> <!-- fa-camera -->
-															<h5>Afiliar</h5> <!-- Foto -->
-														</div>
-													</a>
-												</div> 
-												<?php }?>
-											</div>
-											<div class="row">
-												<?php $permiso= $ci->model_permissions->check($id,'reportes'); //afiliar
-												if($permiso){
-												?>
-												<div class="col-sm-6">
-													<a href="reports"> <!-- /ov/perfil_red/afiliar?tipo=1 -->
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<i class="fa fa-table fa-3x"></i> <!-- fa-edit -->
-															<h5>Reportes</h5> <!-- Afiliar -->
-														</div>
-													</a>
-												</div>
-												<?php }$permiso=$ci->model_permissions->check($id,'red');
-												if($permiso){
-												?>
-												<div class="col-sm-6">
-													<a href="/ov/red/index">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<i class="fa fa-sitemap fa-3x"></i>
-															<h5>Red</h5>
-														</div>
-													</a>
-												</div>
-
-												<?php }?>
-											</div>
-										</div>
-									</fieldset>
-									<!--Termina la seccion de perfil y red-->
+									
 								</div>
 								<div class="col-sm-12 col-md-12 col-lg-4">
-									<!--Inica la seccion de compras y reportes-->
-									<div class="well">
-										<fieldset>
-											<legend><b>Compras y comisiones</b></legend>
-											<div class="row">
-												<?php $permiso=$ci->model_permissions->check($id,'carrito');
-												if($permiso){
-												?>
-												<div class="col-sm-6">
-													<a href="/shoppingcart">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<i class="fa fa-shopping-cart fa-3x"></i>
-															<h5>Deposito</h5>
-														</div>
-													</a>
-												</div>
-												<?php }?>
-                        <?php $permiso=$ci->model_permissions->check($id,'billetera');
-												if($permiso){
-												?>
-												<div class="col-sm-6">
-													<a href="accountStatus">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<i class="fa fa-money fa-3x"></i>
-															<h5>Estado de Cuenta</h5>
-														</div>
-													</a>
-												</div>
-												<?php }?>
-											</div>
-											<div class="row">
-                        <?php $permiso=$ci->model_permissions->check($id,'afiliar'); //reportes
-												if($permiso){
-												?>
-												<div class="col-sm-6">
-													<a href="javascript:void(0);"> <!-- compras/reportes -->
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<i class="fa fa-ticket fa-3x"></i><!-- fa-table -->
-															<h5>Boletos/Tickets</h5> <!-- Reportes -->
-														</div>
-													</a>
-												</div>
-												<?php }?>
-                      <?php $permiso=$ci->model_permissions->check($id,'tickets');
-												if($permiso){
-												?>
-												<div class="col-sm-6">
-													<a href="wallet">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
-															<i class="fa fa-dollar fa-3x"></i>
-															<h5>Billetera</h5>
-														</div>
-													</a>
-												</div>
-												<?php }?>
-											</div>
-										</fieldset>
-									</div>
-								  <!--Termina la seccion de compras y reportes-->
+									
 								</div>
                 				<div class="col-sm-12 col-md-12 col-lg-4">
 									<!--Inica la seccion general-->
