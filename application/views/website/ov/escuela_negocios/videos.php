@@ -357,7 +357,7 @@
 			         url: "insert_coment",
 			         success: function(){
 			              alert("Tu comentario fue añadido con exito");
-			              location.href="/ov/escuela_negocios/videos";
+			              location.href="/ov/videos";
 			         }
 				});
 			}

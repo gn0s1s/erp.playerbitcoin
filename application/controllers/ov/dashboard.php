@@ -231,7 +231,7 @@ class dashboard extends CI_Controller
 		
 		if($this->general->isAValidUser($id,"OV") == false)
 		{
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$this->template->set("infoPremios",$infoPremios);

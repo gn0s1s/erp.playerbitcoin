@@ -36,7 +36,7 @@
 														<div class="col-sm-3 profile-pic">
 															<img class="<?php if($actividad) echo "online";?>" src="<?=$user?>" alt="demo user">
 															<div class="padding-10">
-															<a style="padding: 6px 2rem 6px 6px;" href="/ov/perfil_red/foto"><i class="fa fa-camera fa-2x fa-fw fa-lg"></i></a>
+															<a style="padding: 6px 2rem 6px 6px;" href="/ov/networkProfile/photo"><i class="fa fa-camera fa-2x fa-fw fa-lg"></i></a>
 																<br><br>
 																<h4 class="font-md"><strong><?=$id?></strong>
 																<br>
@@ -250,7 +250,7 @@
 																			<time>
 																				'.$cuenta->fecha.'
 																			</time> 
-																				<a href="/ov/cabecera/email" class="username">Enviar Comprobante de Pago</a>
+																				<a href="/ov/email" class="username">Enviar Comprobante de Pago</a>
 																				<br>
 																				<span>Realizar la consignacion bancaria a </span><br>
 																				<span>Banco  : <b>'.$cuenta->nombreBanco.'</b>,</span><br> 
@@ -302,7 +302,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-6">
-													<a href="perfil_red/">
+													<a href="networkProfile/">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-user fa-3x"></i>
 															<h5>Perfil</h5>
@@ -328,7 +328,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-6">
-													<a href="compras/reportes"> <!-- /ov/perfil_red/afiliar?tipo=1 -->
+													<a href="reports"> <!-- /ov/perfil_red/afiliar?tipo=1 -->
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-table fa-3x"></i> <!-- fa-edit -->
 															<h5>Reportes</h5> <!-- Afiliar -->
@@ -363,7 +363,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-6">
-													<a href="/ov/compras/carrito">
+													<a href="/shoppingcart">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-shopping-cart fa-3x"></i>
 															<h5>Deposito</h5>
@@ -375,7 +375,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-6">
-													<a href="billetera2/index_estado">
+													<a href="accountStatus">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-money fa-3x"></i>
 															<h5>Estado de Cuenta</h5>
@@ -401,7 +401,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-6">
-													<a href="billetera2/index">
+													<a href="wallet">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-dollar fa-3x"></i>
 															<h5>Billetera</h5>
@@ -424,7 +424,7 @@
 												if($permiso){
 												?>
 												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="cgeneral/encuestas">
+													<a href="surveys">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-file-text-o fa-3x"></i>
 															<h5>Encuestas</h5>
@@ -435,7 +435,7 @@
 												if($permiso){
 												?>
 												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="cabecera/archivo">
+													<a href="archive">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-archive fa-3x"></i>
 															<h5>Archivero</h5>
@@ -449,7 +449,7 @@
 												if($permiso){
 												?>
 												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="cabecera/tablero">
+													<a href="board">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-cogs fa-3x"></i>
 															<h5>Tablero</h5>
@@ -460,7 +460,7 @@
 												if($permiso){
 												?>
 												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="cabecera/compartir">
+													<a href="share">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa  fa-folder-open-o  fa-3x"></i>
 															<h5>Compartir</h5>
@@ -505,7 +505,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-2">
-													<a href="cabecera/email">
+													<a href="email">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-envelope fa-3x"></i>
 															<h5>E-mail</h5>
@@ -544,7 +544,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-2">
-													<a href="escuela_negocios/informacion">
+													<a href="information">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-info fa-3x"></i>
 															<h5>Información</h5>
@@ -555,7 +555,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-2">
-													<a href="escuela_negocios/presentaciones">
+													<a href="presentations">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-desktop fa-3x"></i>
 															<h5>Presentaciones</h5>
@@ -566,7 +566,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-2">
-													<a href="escuela_negocios/ebooks">
+													<a href="ebooks">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-book fa-3x"></i>
 															<h5>E-books</h5>
@@ -577,7 +577,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-2">
-													<a href="escuela_negocios/descargas">
+													<a href="downloads">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-download fa-3x"></i>
 															<h5>Descargas</h5>
@@ -595,7 +595,7 @@
 											if($permiso){
 											?>
 											<div class="col-sm-2">
-												<a href="escuela_negocios/eventos">
+												<a href="events">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-calendar fa-3x"></i>
 														<h5>Eventos</h5>
@@ -606,7 +606,7 @@
 											if($permiso){
 											?>
 											<div class="col-sm-2">
-												<a href="escuela_negocios/noticias">
+												<a href="news">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 														<i class="fa fa-bullhorn fa-3x"></i>
 														<h5>Noticias</h5>
@@ -617,7 +617,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-2">
-													<a href="escuela_negocios/videos">
+													<a href="videos">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-file-video-o fa-3x"></i>
 															<h5>Vídeos</h5>
@@ -630,7 +630,7 @@
 												if($permiso){
 												?>
 												<div class="col-sm-2">
-													<a href="compras/estadistica">
+													<a href="statistics">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-bar-chart-o fa-3x"></i>
 															<h5>Estadisticas</h5>
@@ -658,7 +658,7 @@
 												if($permiso){
 												?>
 											  	<div class="col-sm-2">
-													<a href="escuela_negocios/bonos"><!--   escuela_negocios/promociones -->
+													<a href="coupons"><!--   escuela_negocios/promociones -->
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-gift  fa-3x"></i>
 															<h5>Bonos</h5>
@@ -670,7 +670,7 @@
 											if($permiso){
 											?>
 										  	<div class="col-sm-2">
-												<a href="escuela_negocios/reconocimientos">
+												<a href="acknowledgments">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 														<i class="fa fa-star fa-3x"></i>
 														<h5>Reconocimientos</h5>
@@ -705,7 +705,7 @@
 												if($permiso){
 												?>
 											  	<div class="col-sm-2">
-													<a href="cgeneral/web_personal">
+													<a href="personalWeb">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-globe fa-3x"></i>
 															<h5>Web Personal</h5>
@@ -717,7 +717,7 @@
 												if($permiso){
 												?>
 											  	<div class="col-sm-2">
-													<a href="cgeneral/chat">
+													<a href="chat">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-weixin fa-3x"></i>
 															<h5>Chat Mi Red</h5>
@@ -745,7 +745,7 @@
 											<div class="col-sm-1">
 												</div>
 												<div class="col-sm-2">
-													<a href="cabecera/sugerencia">
+													<a href="suggestion">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-send fa-3x"></i>
 															<h5>Sugerencias</h5>

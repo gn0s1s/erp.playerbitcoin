@@ -304,7 +304,7 @@
 				$.ajax({
                                     type: "POST",
                                     url: "/bo/logistico2/facturaImprimir",//imprimirfactura
-                                    data: {id: id,link: '/ov/compras/reportes'},
+                                    data: {id: id,link: '/ov/reports'},
                                 })
 				.done(function( msg )
 				{
@@ -531,7 +531,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/bo/ventas/facturaImprimir",//imprimirfactura
-					data: {id: id, link : '/ov/compras/reportes'},
+					data: {id: id, link : '/ov/reports'},
 					success: function( msg ){
 						bootbox.dialog({
 							message: msg,

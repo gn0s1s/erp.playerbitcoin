@@ -35,7 +35,7 @@ class red extends CI_Controller
 		
 
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$style         = $this->general->get_style($id);
@@ -70,7 +70,7 @@ class red extends CI_Controller
 		$id            = $this->tank_auth->get_user_id();
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$style         = $this->general->get_style($id);
@@ -95,7 +95,7 @@ class red extends CI_Controller
 		$id            = $this->tank_auth->get_user_id();
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$id_red        = $_GET['id'];
@@ -143,7 +143,7 @@ class red extends CI_Controller
 		$id            = $this->tank_auth->get_user_id();
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$id_red        = $_GET['id'];
@@ -188,7 +188,7 @@ class red extends CI_Controller
 		$id            = $this->tank_auth->get_user_id();
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$id_red        = $_GET['id'];
@@ -233,7 +233,7 @@ class red extends CI_Controller
 		$id            = $this->tank_auth->get_user_id();
 	
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 	
 		$id_red        = $_GET['id'];

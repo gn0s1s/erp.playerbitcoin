@@ -325,7 +325,7 @@ class cgeneral extends CI_Controller
 		$success = "El cambio se ha efectuado satisfactoriamente.";
 		$this->session->set_flashdata('success', $success);
 	
-		redirect('/ov/cgeneral/web_personal');
+		redirect('/ov/personalWeb');
 	}
 	
 	function envia_mail_invitacion_web_personal()

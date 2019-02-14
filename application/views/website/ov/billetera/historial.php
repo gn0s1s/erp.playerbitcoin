@@ -6,7 +6,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<span>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<a href="/ov/billetera2/index"> > Billetera</a>
+							<a href="/ov/wallet"> > Billetera</a>
 							 > Historial</span>
 							
 						</h1>

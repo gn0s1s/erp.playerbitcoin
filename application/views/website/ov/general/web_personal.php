@@ -414,7 +414,7 @@ $(document).ready(function() {
 										label: "Aceptar",
 										className: "btn-success",
 										callback: function(){
-											window.location.href="/ov/cgeneral/web_personal";
+											window.location.href="/ov/personalWeb";
 										}
 									}
 								}

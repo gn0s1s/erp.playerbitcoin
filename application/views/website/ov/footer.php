@@ -26,7 +26,7 @@ $style = array(
 				<div class="col-xs-4 col-sm-4">
 					<span class="txt-color-white">
 			
-		<a class="txt-color-white" href="/ov/cabecera/sugerencia" target="_self"><i class="fa fa-send fa-2x"></i>&nbsp;Sugerencias</a>
+		<a class="txt-color-white" href="/ov/suggestion" target="_self"><i class="fa fa-send fa-2x"></i>&nbsp;Sugerencias</a>
 		
 		</span>
 				</div>

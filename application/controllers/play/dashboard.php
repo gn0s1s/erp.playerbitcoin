@@ -203,7 +203,7 @@ private $test = true;
  crossorigin="anonymous">';
         echo "<script>
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
-                $('.btn.btn-registro6').attr('href','/ov/compras/carrito');
+                $('.btn.btn-registro6').attr('href','/shoppingcart');
                 $('.btn.btn-registro6').removeAttr('data-target');
                 $('.btn.btn-registro6').removeAttr('data-toggle');
                 $('.container-fluid.marginPanelAbajo').prepend('$bienvenido');

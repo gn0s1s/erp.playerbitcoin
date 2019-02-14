@@ -5,3 +5,5 @@ reset.sh
 /media
 /application/logs
 /.idea
+access.log
+error.log

@@ -16,7 +16,7 @@
 					<div class="col-lg-2 col-sm-4 col-md-4 col-xs-12">
 					</div>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-						<a href="pedir_pago">
+						<a href="wallet/requestPayment">
 							<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 								<i class="fa fa-money fa-3x"></i>
 								<h5>Pedir Dinero</h5> 
@@ -24,7 +24,7 @@
 						</a>
 					</div>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-						<a href="/ov/billetera2/historial">
+						<a href="/ov/wallet/history">
 							<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 								<i class="fa fa-calendar fa-3x"></i>
 								<h5>Historial Pedir Dinero</h5>

@@ -6,7 +6,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<span>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<a href="/ov/billetera2/index_estado"> > Estado de cuenta</a>
+							<a href="/ov/accountStatus"> > Estado de cuenta</a>
 							 > Estado</span>
 							
 						</h1>
