@@ -185,7 +185,8 @@ private $test = true;
     private function getPlayerDashboard($id)
     {
 
-        $this->printTranslateElement();
+        // $this->printTranslateElement();
+		echo ( $this->load->view('website/traslate',true) );
 
         $empresa = $this->web_personal->empresa();
         $web = "https://playerbitcoin.com/";
