@@ -188,7 +188,7 @@
 	<div class="breadcrumbDiv col-lg-12">
       <ul class="breadcrumb">
         <li><a href="/"><i class="fa fa-home"></i>Home</a> </li>
-        <li class="active"><i class="fa fa-shopping-cart"></i> Carrito of Purchases </li>
+        <li class="active"><i class="fa fa-shopping-cart"></i> Shoppingcart </li>
       </ul>
     </div>
 <article class="col-lg-12 col-sm-4 col-md-3 col-lg-3">
