@@ -93,7 +93,7 @@ function validarSiNumero(numero){
   }
 function ValidarVacio(banco, pais, cuenta){
 	if(banco == ''){
-		alert('Campo Nombre of Banco es requerido');
+		alert('Campo Nombre of bank es requerido');
 		return false;
 	}else if(pais == '0'){
 		alert('Seleciona un pais');
@@ -111,7 +111,7 @@ function ValidarVacio(banco, pais, cuenta){
 function enviar()
 {
 	var id_banco = $("#id_banco").val();
-	var banco = $("#banco").val();
+	var banco= $("#banco").val();
 	var cuenta = $("#cuenta").val();
 	var pais = $("#pais").val();
 	var clabe = $("#clabe").val();

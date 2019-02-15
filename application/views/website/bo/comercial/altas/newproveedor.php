@@ -230,7 +230,7 @@
 								</div>
 								<div class="row">
 									<div id="cuenta" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-										<section class="col col-3">Banco
+										<section class="col col-3">bank
 											<label class="select"> 
 											<select class="custom-scroll" name="banco[]" id="banco" required>
 												<?php foreach ($bancos as $key){?>
@@ -572,7 +572,7 @@ function agregar1(tipo)
 function agregar_cuenta()
 {
 	
-	$("#cuenta").append('<section class="col col-3">Banco'
+	$("#cuenta").append('<section class="col col-3">bank '
 			+'<label class="select"> '
 			+'<select class="custom-scroll" name="banco[]" id="banco" required>'
 				+'<?php foreach ($bancos as $key){?>'

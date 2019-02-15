@@ -206,7 +206,7 @@
 
                         <div class="col col-8">
                             <input type="text" class="hide" value="<?php echo $cuentaBanco[$i]->id ?>" name="id_cuenta[]">
-                            <label class="select">Bancos 
+                            <label class="select">bank s
                                 <select class="custom-scroll" name="banco[]" id="banco" required>
                                     <?php foreach ($bancos as $key) { ?>
                                         <?php if ($key->id_banco == $cuentaBanco[$i]->banco) { ?>							
@@ -448,7 +448,7 @@
                                                                     function agregar_cuenta()
                                                                     {
 
-                                                                        $("#cuenta").append('<section class="col col-8">Banco'
+                                                                        $("#cuenta").append('<section class="col col-8">bank '
                                                                                 + '<input type="text" class="hide" value="0" name="id_cuenta[]">'
                                                                                 + '<label class="select"> '
                                                                                 + '<select class="custom-scroll" name="banco[]" id="banco" required>'

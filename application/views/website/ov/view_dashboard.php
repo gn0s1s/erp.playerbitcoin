@@ -98,7 +98,7 @@
 																				<?php if($titulo!=NULL) 
 																					echo '<ul id="sparks" class="">
 																						<li class="sparks-info">
-																						<h5>RANGO<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
+																						<h5>Ranking<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
 																						<div class="sparkline txt-color-yellow hidden-mobile hidden-md hidden-sm"></div>
 																						</li>
 																					</ul>'
@@ -254,10 +254,10 @@
 																			<time>
 																				'.$cuenta->fecha.'
 																			</time> 
-																				<a href="/ov/email" class="username">Enviar Comprobante of Pago</a>
+																				<a href="/ov/email" class="username">Submit payment voucher</a>
 																				<br>
 																				<span>Realizar the consignacion bancaria a </span><br>
-																				<span>Banco  : <b>'.$cuenta->nombreBanco.'</b>,</span><br> 
+																				<span>bank : <b>'.$cuenta->nombreBanco.'</b>,</span><br> 
 																				<span>Cuenta : <b>'.$cuenta->cuenta.'</b>,</span><br>
 																		';
 																		if($cuenta->otro)

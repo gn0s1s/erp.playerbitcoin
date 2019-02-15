@@ -285,7 +285,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 						<p><?php if (strlen($username) > 0) { ?>Nombre of usuario: <?php echo $username; ?><br /><?php } ?></p>
 						<p>Correo: <?php echo $email; ?></p><br/>
 						<p><?php if (isset($nombre) && isset($apellido)) { ?>Nombre & apellido: <?php echo $nombre." ".$apellido; ?><br /><?php } ?>		</p>	
-						<p><?php if (isset($banco)) { ?>Banco: <?php echo $banco; ?><br /><?php } ?></p>
+						<p><?php if (isset($banco)) { ?>bank : <?php echo $banco; ?><br /><?php } ?></p>
 						<p><?php if (isset($cuenta)) { ?>Numero of Cuenta: <?php echo $cuenta; ?><br /><?php } ?></p>
 						<p><?php if (isset($valor)) { ?>Valor of pago: $ <?php echo $valor; ?><br /><?php } ?></p> 
 						<br/>							

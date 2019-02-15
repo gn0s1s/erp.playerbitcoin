@@ -8,7 +8,7 @@
 				<span>>
 					<a href="/bo/configuracion">Configuración</a>
 				</span>
-				<span>>Tablero</span>
+				<span>>Template</span>
 			</h1>
 		</div>
 	</div>

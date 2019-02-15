@@ -45,7 +45,7 @@ var j=0;
 		</div>
 		<div class="form-group">
 	        <div class="row" id="cross_tipo_rango">
-									<header>Rangos</header><br><br>
+									<header>Ranking</header><br><br>
 									<div class="row">
 										<div class="col col-lg-3 col-xs-2">
 										</div>																	
@@ -328,13 +328,13 @@ function add_rango()
 	+'<div class="col col-xs-12 col-sm-12 col-lg-10">'
 		+'<label class="select">Nombre Rango'
 		+'<select id="id_rango'+i+'" style="max-width: 20rem;" name="id_rango[]" onChange="set_rango($(this).val(),\'rango'+i+'\');">'
-		+'<option value="0">--- Seleccione Rango ---</option>'
+		+'<option value="0">--- Seleccione Ranking ---</option>'
 		+'<?php	echo $rangos; ?>'
 	+'</select>'
 	+'</label>'
 	+'<div id="rango'+i+'" style="margin: 1rem;">'
 	+'</div>'
-	+'<a style="cursor: pointer;color: red;" onclick="delete_rango('+i+')">Eliminar Rango <i class="fa fa-minus"></i></a>'
+	+'<a style="cursor: pointer;color: red;" onclick="delete_rango('+i+')">Eliminar Ranking <i class="fa fa-minus"></i></a>'
 	+'</div>'
 	+'</div>';
 	$("#rango").append(code);

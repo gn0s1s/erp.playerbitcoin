@@ -403,9 +403,9 @@
 					                              		</div>
 					                              		<div class="col-xs-12 col-sm-6">
 										                  <div class="form-group required">
-											                  <label for="InputCountry">Banco<sup>*</sup> </label>
+											                  <label for="InputCountry">bank<sup>*</sup> </label>
 										                      <select class="form-control" required aria-required="true" id="banco_taj" name="banco_taj_c">
-								                                  <option value="">Banco</option>
+								                                  <option value="">bank</option>
 								                                  <option value="1">01 - VISA</option>
 								                                  <option value="2">02 - Master Card</option>
 								                                  <option value="3">03 - American Express</option>
@@ -526,9 +526,9 @@
 									                              </div>
 									                              <div class="col-xs-12 col-sm-6">
 													                  <div class="form-group required">
-														                  <label for="InputCountry">Banco<sup>*</sup> </label>
+														                  <label for="InputCountry">bank<sup>*</sup> </label>
 													                      <select class="form-control" required aria-required="true" id="banco_taj_c" name="banco_taj_c">
-											                                  <option value="">Banco</option>
+											                                  <option value="">bank</option>
 											                                  <option value="1">01 - VISA</option>
 											                                  <option value="2">02 - Master Card</option>
 											                                  <option value="3">03 - American Express</option>
@@ -614,9 +614,9 @@
 									                              </div>
 									                              <div class="col-xs-12 col-sm-6">
 													                  <div class="form-group required">
-														                  <label for="InputCountry">Banco<sup>*</sup> </label>
+														                  <label for="InputCountry">bank<sup>*</sup> </label>
 													                      <select class="form-control" required aria-required="true" id="banco_taj" name="banco_taj">
-											                                  <option value="">Banco</option>
+											                                  <option value="">bank</option>
 											                                  <option value="1">01 - VISA</option>
 											                                  <option value="2">02 - Master Card</option>
 											                                  <option value="3">03 - American Express</option>

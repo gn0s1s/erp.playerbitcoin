@@ -55,7 +55,7 @@
 											<option value="7">CEDI's</option>
 											<option value="8">Embarques</option>
 											<option value="9">Afiliados / Distribuidores</option>
-											<option value="10">Bancos</option>
+											<option value="10">bank s</option>
 											<option value="11">Orden of Purchase - Proveedores</option>
 											<option value="12">Requisici&oacute;n of compra</option>
 											<option value="13">Pedidos</option>

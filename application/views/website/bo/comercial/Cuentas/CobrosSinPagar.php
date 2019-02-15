@@ -4,7 +4,7 @@
 										<th data-hide="phone">ID</th>
 										<th data-class="expand">Fecha Solicitud</th>	
 										<th data-hide="phone">Usuario</th>
-										<th data-hide="phone">Banco</th>
+										<th data-hide="phone">bank </th>
 										<th data-hide="phone">Cuenta</th>
 										<th data-hide="phone">Titular</th>
 										<th data-hide="phone">Clabe</th>

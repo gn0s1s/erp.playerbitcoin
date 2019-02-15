@@ -63,7 +63,7 @@
 
 							</div>
 						</fieldset>
-			<button type="submit" class="btn btn-success pull-right btn-next"  >Enviar</button>
+			<button type="submit" class="btn btn-success pull-right btn-next"  >Submit</button>
 		</form>
 		
 	</div>

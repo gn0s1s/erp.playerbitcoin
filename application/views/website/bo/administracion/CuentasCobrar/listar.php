@@ -61,7 +61,7 @@
 										<th data-hide="phone">ID Venta</th>
 										<th data-class="expand">Afiliado</th>
 										<th data-hide="phone">Email</th>	
-										<th data-hide="phone">Banco</th>
+										<th data-hide="phone">bank</th>
 										<th data-hide="phone,tablet">N° Cuenta</th>
 										<th data-hide="phone,tablet">Titular</th>
 										<th data-hide="phone,tablet">CLABE</th>

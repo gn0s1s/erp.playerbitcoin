@@ -109,7 +109,7 @@
 										<div class="col col-xs-12 col-sm-12 col-lg-10" id="tipo_condicion">
 											<label class="select">Nombre Condicion
 											<select style="max-width: 20rem;" name="id_rango[]" onChange="set_rango($(this).val(),'rango0');" >
-											<option value='0' selected>--- Seleccione Rango ---</option>
+											<option value='0' selected>--- Seleccione Ranking ---</option>
 													<?php	
 														foreach($rangosActivos as $categoria){
 															echo "<option value='".$categoria->id_rango."'>".$categoria->nombre_rango."</option>";
@@ -380,13 +380,13 @@ function add_rango()
 	+'<div class="col col-xs-12 col-sm-12 col-lg-10">'
 		+'<label class="select">Nombre Condicion'
 		+'<select style="max-width: 20rem;" name="id_rango[]" onChange="set_rango($(this).val(),\'rango'+i+'\');">'
-		+'<option value="0">--- Seleccione Rango ---</option>'
+		+'<option value="0">--- Seleccione Ranking ---</option>'
 		+'<?php	echo $rangos; ?>'
 	+'</select>'
 	+'</label>'
 	+'<div id="rango'+i+'" style="margin: 1rem;">'
 	+'</div>'
-	+'<a style="cursor: pointer;color: red;" onclick="delete_rango('+i+')">Eliminar Rango <i class="fa fa-minus"></i></a>'
+	+'<a style="cursor: pointer;color: red;" onclick="delete_rango('+i+')">Eliminar Ranking <i class="fa fa-minus"></i></a>'
 	+'</div>'
 	+'</div>';
 	$("#rango").append(code);

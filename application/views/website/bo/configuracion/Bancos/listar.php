@@ -302,7 +302,7 @@ function estado_banco(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar the banco ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the bank ?'},
 		})
 		.done(function( msg )
 		{
@@ -353,7 +353,7 @@ function estado_banco(estatus, id)
 	function actualizar_banco()
 	{
 		
-		var banco = $("#banco").val();
+		var banco= $("#banco").val();
 		var cuenta = $("#cuenta").val();
 		var pais = $("#pais").val();
 		var clabe = $("#clabe").val();

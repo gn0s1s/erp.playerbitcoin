@@ -175,7 +175,7 @@
         </div>
         <!--/.search-box -->
         <div class=" transparent pull-right" id="logout">
-			<span> <a style="color: rgb(255, 255, 255); background: rgb(206, 53, 44) none repeat scroll 0% 0%;" class="btn btn-default btn-circle btn-lg" href="/index.php/auth/logout" title="Salir" data-action="userLogout" data-logout-msg="¿Realmente desea salir?">
+			<span> <a style="color: rgb(255, 255, 255); background: rgb(206, 53, 44) none repeat scroll 0% 0%;" class="btn btn-default btn-circle btn-lg" href="/index.php/auth/logout" title="sign out" data-action="userLogout" data-logout-msg="Do you really want to sign out?">
 				<i style="font-size: 3rem;" class="fa fa-sign-out"></i>
 					</a>
 			</span>

@@ -40,7 +40,7 @@
 												<a href="/bo/bancos">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 														<i class="fa fa-bank fa-3x"></i>
-														<h1>Bancos</h1>
+														<h1>banks</h1>
 													</div>
 												</a>
 												</div>

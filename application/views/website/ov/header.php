@@ -76,11 +76,11 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/board">Tablero</a>
+										<a href="/ov/board">Template</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/share">Compartir</a>
+										<a href="/ov/share">SharePoint</a>
 									</li>
 								</ul>
 							</li>
@@ -162,7 +162,7 @@
 							<li class="dropdown">
 							<div id="logout" class="btn-header transparent">
 								<span> 
-									<a class="btnLogout" href="/auth/logout" title="Salir" data-action="userLogout" data-logout-msg="¿ Realmente desea salir ?">
+									<a class="btnLogout" href="/auth/logout" title="sign out" data-action="userLogout" data-logout-msg="Do you really want to sign out ?">
 									<i class="fa fa-sign-out fa-2x"></i>
 									</a> 
 									</span>

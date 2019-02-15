@@ -56,8 +56,8 @@
 							<div id="logout" class="btn-header transparent" style="background: rgb(206, 53, 44);">
 								<span> 
 									<a style="width: 6rem !important; height: 8rem;color: rgb(255, 255, 255); background: rgb(206, 53, 44) none repeat scroll 0% 0%;border: none" 
-									href="/auth/logout" title="Salir" data-action="userLogout" 
-									data-logout-msg="¿ Realmente desea salir ?">
+									href="/auth/logout" title="sign out" data-action="userLogout"
+									data-logout-msg="Do you really want to sign out ?">
 									<i class="fa fa-sign-out fa-3x"></i>
 									</a> 
 									</span>

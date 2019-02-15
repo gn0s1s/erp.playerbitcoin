@@ -318,7 +318,7 @@
 																		</label>
 																	</section>
 																	<section class="col col-6">
-																		<label class="label"><b>Banco</b></label>
+																		<label class="label"><b>bank</b></label>
 																		<label class="input">
 																			<i class="icon-prepend fa fa-bank"></i>
 																			<input name="cbanco" type="text" value="<?=$cuenta[0]->banco?>" class="from-control" id="cbanco" required/>

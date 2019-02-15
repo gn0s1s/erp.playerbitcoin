@@ -87,7 +87,7 @@
 							                    <th class="text-center">Comision</th>
 							                    <th class="text-center">Impuesto</th>
 							                    <th class="text-center">Total</th>
-							                    <th class="text-center">Banco</th>
+							                    <th class="text-center">bank</th>
 							                    <th class="text-center">Cuenta</th>
 								            </tr>
 								        </thead>
@@ -102,7 +102,7 @@
 								                <td><?=$segundo_sandwich[$venta->id_user]?></td>
 								                <td>Ninguno</td>
 								                <td><?=$segundo_sandwich[$venta->id_user]?></td>
-								                <td>Banco</td>
+								                <td>bank</td>
 								                <td>Cuenta</td>
 								            </tr>
 								            <?}}?>

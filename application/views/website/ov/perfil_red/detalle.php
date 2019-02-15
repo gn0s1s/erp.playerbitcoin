@@ -64,7 +64,7 @@
 		
 			echo '<ul id="sparks" class="">
 					<li class="sparks-info">
-					 <h5>RANGO<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
+					 <h5>Ranking<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
 					 <div class="sparkline txt-color-yellow hidden-mobile hidden-md hidden-sm"></div>
 					</li>
 				</ul>';

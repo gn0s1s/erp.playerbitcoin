@@ -48,7 +48,7 @@
 						<div class="widget-body">
 							<ul id="myTab1" class="nav nav-tabs bordered">
 								<li class="active">
-									<a href="#s1" data-toggle="tab">Enviar</a>
+									<a href="#s1" data-toggle="tab">Submit</a>
 								</li>
 								<li>
 									<a href="#s2" data-toggle="tab">Mis mensajes</a>

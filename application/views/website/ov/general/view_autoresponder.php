@@ -113,7 +113,7 @@
 							</div>
 						</fieldset>
 						<fieldset>
-						<legend>Enviar Email</legend>
+						<legend>Submit Email</legend>
 												
 													
 													<div class="col-sm-6">
@@ -126,7 +126,7 @@
 												
 						</fieldset>
 						<footer>
-<button style="margin: 1rem;margin-bottom: 4rem;" id="botonsave" type="input" class="btn btn-success">Enviar</button>
+<button style="margin: 1rem;margin-bottom: 4rem;" id="botonsave" type="input" class="btn btn-success">Submit</button>
 							</footer>
 				</form>
 					</div>

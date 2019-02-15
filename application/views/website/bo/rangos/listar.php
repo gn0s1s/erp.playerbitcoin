@@ -7,7 +7,7 @@
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
 								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
-								<a href="/bo/rangos">Rangos</a>
+								<a href="/bo/rangos">Ranking</a>
 								> Listar Rangos
 							</span>
 						</h1>
@@ -242,7 +242,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar the Rango ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the Ranking ?'},
 	})
 	.done(function( msg )
 	{

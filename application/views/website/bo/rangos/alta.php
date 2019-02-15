@@ -14,7 +14,7 @@
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
 								<a href="/bo/configuracion/compensacion/">Plan of compensacion</a> >
-								<a href="/bo/rangos/">Rangos</a>
+								<a href="/bo/rangos/">Ranking</a>
 								> Nuevo rango
 							</span>
 						</h1>
@@ -239,7 +239,7 @@ function add_rango()
 		+'Valor<label for="" class="input">'
 			+'<i class="icon-prepend fa fa-sort"></i>'
 			+'<input type="number" class="form-control" name="valor_rango[]" placeholder=""class="form-control" required />'
-			+'<a style="color: red;cursor: pointer;" onclick="delete_rango('+i+')">Eliminar Rango <i class="fa fa-minus"></i></a>'
+			+'<a style="color: red;cursor: pointer;" onclick="delete_rango('+i+')">Eliminar Ranking <i class="fa fa-minus"></i></a>'
 		+'</label>'
 	+'</div>'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-2">'

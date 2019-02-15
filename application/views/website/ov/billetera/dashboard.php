@@ -16,7 +16,7 @@
 								<h5> Mis ganancias <span class="txt-color-blue"><?=number_format($ganancias,2)?></span></h5>
 							</li>
 							<li class="sparks-info">
-								<h5><span class="txt-color-blue"><a href="/ov/billetera/logout_billetera">Salir of Profit Wallet</a></span></h5>
+								<h5><span class="txt-color-blue"><a href="/ov/billetera/logout_billetera">sign out of Profit Wallet</a></span></h5>
 							</li>
 						</ul>
 					</div>

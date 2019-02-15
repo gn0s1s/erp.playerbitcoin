@@ -18,7 +18,7 @@
 				<strong><style="text-aling:right">E-mail</style></strong><input type="text" name="E-MIAL"></br>
 				<strong><style="text-aling:left;">Telefono:</style></strong><input type="text" name="TELEFONO"></br>
 				<strong><style="text-aling:right">Comentario:</style></strong><textarea rows="10" cols="15" type="text" name"COMENTARIO"></textarea></br>
-				<button type="button" onclick="Enviar()">Enviar</button>
+				<button type="button" onclick="Enviar()">Submit</button>
 				</blockquote>	
 			</form>
 		</div>

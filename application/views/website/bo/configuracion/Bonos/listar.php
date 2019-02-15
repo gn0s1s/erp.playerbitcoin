@@ -103,7 +103,7 @@
 														foreach ($condicionesBono as $condicion){
 																
 																if($condicion['id_bono']==$bono->id){
-																	echo "-Completar the rango <b>".$condicion['nombreRango']."</b> cuando genera <b>".$condicion['condicionRango']."</b> <b>".$condicion['tipoRango']."</b> ";
+																	echo "-Completar the Ranking <b>".$condicion['nombreRango']."</b> cuando genera <b>".$condicion['condicionRango']."</b> <b>".$condicion['tipoRango']."</b> ";
 																	echo "on the Network <b>".$condicion['nombreRed']."</b> en";
 																	foreach($condicion['condicion1'] as $con){
 																		echo ",<b> ".$con."</b>";
