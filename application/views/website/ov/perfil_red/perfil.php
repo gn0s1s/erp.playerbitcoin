@@ -7,7 +7,7 @@
 				<span> > 
 				<a href="/ov/networkProfile">Profile</a>
 				>
-					Datos Personales
+					Personal information
 				</span>
 			</h1>
 		</div>
@@ -34,7 +34,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>
+						<h2>Personal information</h2>
 
 					</header>
 
@@ -56,27 +56,27 @@
               ?>
 								</fieldset>
 								<fieldset>
-								<legend>Datos personales</legend>
+								<legend>Personal information</legend>
 									<div class="row">
 										<section class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-user"></i>
-												<input required type="text" value="<?=$usuario[0]->nombre?>" id="nombre" name="nombre" placeholder="Nombre">
+												<input required type="text" value="<?=$usuario[0]->nombre?>" id="nombre" name="nombre" placeholder="Name">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-user"></i>
-												<input required type="text" value="<?=$usuario[0]->apellido?>" id="apellido" name="apellido" placeholder="Apellido">
+												<input required type="text" value="<?=$usuario[0]->apellido?>" id="apellido" name="apellido" placeholder="Surname">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-												<input required id="datepicker" value="<?=$usuario[0]->nacimiento?>" type="text" name="nacimiento" placeholder="Fecha of nacimiento">
+												<input required id="datepicker" value="<?=$usuario[0]->nacimiento?>" type="text" name="nacimiento" placeholder="Birthdate">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label id="correo" class="input"><i class="icon-prepend fa fa-envelope-o"></i>
-												<input required value="<?=$usuario[0]->email?>" id="email" type="email" name="email" placeholder="Correo electrónico" onkeyup="use_mail()">
-												<b class="tooltip tooltip-top-left"> Ingrese un correo</b>
+												<input required value="<?=$usuario[0]->email?>" id="email" type="email" name="email" placeholder="Email" onkeyup="use_mail()">
+												<b class="tooltip tooltip-top-left"> Enter an email</b>
 											</label>
 										</section>
 									</div>
@@ -92,9 +92,9 @@
 										<section id='tel_default_<?php echo $telFijo?>' class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-phone"></i>
 												<input value="<?=$num->numero?>" id="fijo" type="tel" name="fijo[]" placeholder="(99) 99-99-99-99" >
-												<b class="tooltip tooltip-top-left"> Teléfono fijo</b>
+												<b class="tooltip tooltip-top-left"> Landline</b>
 												<?php if($telFijo>0){?>
-												<a style="cursor: pointer;color: red;" onclick="delete_telefono('default_<?php echo $telFijo?>')">Eliminar <i class="fa fa-minus"></i></a>
+												<a style="cursor: pointer;color: red;" onclick="delete_telefono('default_<?php echo $telFijo?>')">Remove <i class="fa fa-minus"></i></a>
 												<?php }?>
 											</label>
 										</section>
@@ -102,9 +102,9 @@
 										<section id='tel_default_<?php echo $telMovil?>' class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-mobile"></i>
 												<input value="<?=$num->numero?>" id="movil" type="tel" name="movil[]" placeholder="(999) 99-99-99-99-99">
-												<b class="tooltip tooltip-top-left"> Teléfono móvil</b>
+												<b class="tooltip tooltip-top-left"> Mobile phone</b>
 												<?php if($telMovil>0){?>
-												<a style="cursor: pointer;color: red;" onclick="delete_telefono('default_<?php echo $telMovil?>')">Eliminar <i class="fa fa-minus"></i></a>
+												<a style="cursor: pointer;color: red;" onclick="delete_telefono('default_<?php echo $telMovil?>')">Remove <i class="fa fa-minus"></i></a>
 												<?php }?>
 											</label>
 										</section>
@@ -113,55 +113,55 @@
 									</div>
 									<section class="col col-3">
 										<button type="button" onclick="agregar('1')" class="btn btn-primary">
-											&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+											&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 										</button>
 										<button type="button" onclick="agregar('2')" class="btn btn-primary">
-											&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+											&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 										</button>
 									</section>
 									</div>
 								</fieldset>
 								<fieldset>
-								<legend>Dirección</legend>
+								<legend>Address</legend>
 									<div id="dir" class="row">
 										<section id="estado" class="col col-2">
 											<label class="input">
-												Estado
+												State
 												<input type="text" name="estado" value="<?=$dir[0]->estado?>">
 											</label>
 										</section>
 										<section id="municipio" class="col col-2">
 											<label class="input">
-												Municipio
+												Municipality
 												<input type="text" name="municipio" value="<?=$dir[0]->municipio?>">
 											</label>
 										</section>
 										<section id="colonia" class="col col-2">
 											<label class="input">
-												Colonia
+												Colony
 												<input type="text" name="colonia" value="<?=$dir[0]->colonia?>">
 											</label>
 										</section>
 										<section class="col col-2">
 											<label class="input">
-												Dirección of domicilio
+												Home address
 												<input required type="text" name="calle" value="<?=$dir[0]->calle?>">
 											</label>
 										</section>
 										<section class="col col-2">
 											<label class="input">
-												Código postal
+												Postal Code
 												<input required type="text" id="cp" name="cp" value="<?=$dir[0]->cp?>">
 											</label>
 										</section>
 									</div>
 								</fieldset>
 								<fieldset>
-									<legend>Datos fiscales</legend>
+									<legend>Tax data</legend>
 									<div class="row">
 										<section class="col col-4">
 											<label class="input">
-												<input placeholder="Identificacion Fiscal" type="text" value="<?=$usuario[0]->keyword?>" name="rfc" id="keyword">
+												<input placeholder="Tax Identification" type="text" value="<?=$usuario[0]->keyword?>" name="rfc" id="keyword">
 											</label>
 										</section>
 										<section class="col col-4">
@@ -183,15 +183,15 @@
 									</div>
 								</fieldset>
 								<fieldset>
-								<legend>Datos Bancarios</legend>
+								<legend>Bank data</legend>
 									<div class="row">
-										<section class="col col-3">Nombre of titular
+										<section class="col col-3">Name of owner
 											<label class="input"><i class="icon-prepend fa fa-user"></i>												
 												<input required type="text" name="c_titular" value="<?=$cuenta[0]->titular?>">
 											</label>
 										</section>											
 										<section class="col col-3">
-											País of the Cuenta
+											Country of the Account
 											<label class="select">
 												<select id="" required name="c_pais">
 												<?php foreach ($pais as $key){													
@@ -208,45 +208,45 @@
 												</select>
 											</label>
 										</section>										
-										<section id="" class="col col-3">Número of the Cuenta
+										<section id="" class="col col-3">Account number
 											<label class="input"><i class="icon-prepend fa fa-credit-card"></i>													
 												<input type="text" name="c_cuenta" value="<?=$cuenta[0]->cuenta?>">
 											</label>
 										</section>
-										<section id="" class="col col-3">Nombre of Banco
+										<section id="" class="col col-3">Name of the bank
 											<label class="input"><i class="icon-prepend fa fa-bank"></i>												
 												<input type="text" name="c_banco" value="<?=$cuenta[0]->banco?>">
 											</label>
 										</section>
 									</div>
 									<div class="row">
-										<section id="colonia" class="col col-3">Código SWIFT
+										<section id="colonia" class="col col-3">SWIFT Code
 											<label class="input"><i class="icon-prepend fa fa-sort-numeric-desc"></i>												
 												<input type="text" name="c_swift" value="<?=$cuenta[0]->swift?>">
 											</label>
 										</section>	
-										<section id="municipio" class="col col-3">ABA/IBAN/OTRO
+										<section id="municipio" class="col col-3">ABA/IBAN/OTHER
 											<label class="input"><i class="icon-prepend fa fa-sort-numeric-desc"></i>												
 												<input type="text" name="c_otro" value="<?=$cuenta[0]->otro?>">
 											</label>
 										</section>
-										<section id="municipio" class="col col-3">CLABE
+										<section id="municipio" class="col col-3">KEY
 											<label class="input"><i class="icon-prepend fa fa-sort-numeric-desc"></i>												
 												<input type="text" name="c_clabe" value="<?=$cuenta[0]->clabe?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Dirección postal
+												Postal address
 												<input required type="number" name="c_postal" value="<?=$cuenta[0]->dir_postal?>">
 											</label>
 										</section>										
 									</div>
 								</fieldset>
 								<fieldset>
-									<legend>Estadistica</legend>
+									<legend>Statistics</legend>
 									<div class="row">
-										<section class="col col-3">Estado civil
+										<section class="col col-3">Civil status
 											<label class="select">
 												<select name="civil">
 												<?php foreach ($civil as $key)
@@ -260,12 +260,12 @@
 												</select>
 											</label>
 										</section>
-										<section class="col col-3">Edad
+										<section class="col col-3">Age
 											<label class="input"><i class="icon-prepend fa fa-child"></i>
 												<input readonly type="text" value="<?=$edad?>" placeholder="Edad">
 											</label>
 										</section>
-										<section class="col col-2">Sexo&nbsp;
+										<section class="col col-2">Gender&nbsp;
 											<div class="inline-group">
 												<?php
 												foreach ($sexo as $value)
@@ -274,20 +274,20 @@
 													{
 												?>
 														<label class="radio">
-														<input checked="checked" type="radio" value="<?=$value->id_sexo?>" name="sexo" placeholder="sexo">
+														<input checked="checked" type="radio" value="<?=$value->id_sexo?>" name="sexo" placeholder="Gender">
 														<i></i><?=$value->descripcion?></label>
 													<?php }
 													else
 													{
 														?>
 														<label class="radio">
-														<input type="radio" value="<?=$value->id_sexo?>" name="sexo" placeholder="sexo">
+														<input type="radio" value="<?=$value->id_sexo?>" name="sexo" placeholder="Gender">
 														<i></i><?=$value->descripcion?></label>
 													<?php }
 												}?>
 												</div>
 										</section>
-										<section class="col col-2">Estudio&nbsp;
+										<section class="col col-2">Educational level&nbsp;
 											<div class="inline-group">
 												<?php
 												foreach ($estudios as $value)
@@ -309,7 +309,7 @@
 												}?>
 												</div>
 										</section>
-										<section class="col col-2">Ocupación&nbsp;
+										<section class="col col-2">Occupation&nbsp;
 											<div class="inline-group">
 												<?php
 												foreach ($ocupacion as $value)
@@ -331,7 +331,7 @@
 												}?>
 												</div>
 										</section>
-										<section class="col col-2">Tiempo dedicado&nbsp;
+										<section class="col col-2">Dedicated time&nbsp;
 											<div class="inline-group">
 												<?php
 												foreach ($tiempo_dedicado as $value)
@@ -355,23 +355,23 @@
 									</div>
 								</fieldset>
 								<fieldset class="hidden">
-								<legend>Oficina virtual</legend>
+								<legend>Virtual office</legend>
 									<div class="row">
 										<section class="col col-3">
 											<label class="input">
-												Color of fondo
+												Background color
 												<input type="color" name="bg_color" value="<?=$usuario[0]->bg_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color of botones primarios
+												Primary button color
 												<input type="color" name="color_1" value="<?=$usuario[0]->btn_1_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color of botones secundarios
+												Secondary button color
 												<input type="color" name="color_2" value="<?=$usuario[0]->btn_2_color?>">
 											</label>
 										</section>
@@ -379,7 +379,7 @@
 								</fieldset>
 								<footer>
 									<button type="button" onclick="actualizar()" class="btn btn-success">
-										Actualizar
+										Update
 									</button>
 								</footer>
 							</form>
@@ -504,11 +504,11 @@ function agregar(tipo)
 {
 	if(tipo==1)
 	{
-		$("#tel").append("<section id='tel_"+id+"' class='col col-3'><label class='input'> <i class='icon-prepend fa fa-mobile'></i><input type='tel' name='movil[]' placeholder='(999) 99-99-99-99-99'></label><a style='cursor: pointer;color: red;' onclick='delete_telefono("+id+")'>Eliminar <i class='fa fa-minus'></i></a></section>");
+		$("#tel").append("<section id='tel_"+id+"' class='col col-3'><label class='input'> <i class='icon-prepend fa fa-mobile'></i><input type='tel' name='movil[]' placeholder='(999) 99-99-99-99-99'></label><a style='cursor: pointer;color: red;' onclick='delete_telefono("+id+")'>Remove <i class='fa fa-minus'></i></a></section>");
 	}
 	else
 	{
-		$("#tel").append("<section id='tel_"+id+"' class='col col-3'><label class='input'> <i class='icon-prepend fa fa-phone'></i><input type='tel' name='fijo[]' placeholder='(999) 99-99-99-99-99'></label><a style='cursor: pointer;color: red;' onclick='delete_telefono("+id+")'>Eliminar <i class='fa fa-minus'></i></a></section>");
+		$("#tel").append("<section id='tel_"+id+"' class='col col-3'><label class='input'> <i class='icon-prepend fa fa-phone'></i><input type='tel' name='fijo[]' placeholder='(999) 99-99-99-99-99'></label><a style='cursor: pointer;color: red;' onclick='delete_telefono("+id+")'>Remove <i class='fa fa-minus'></i></a></section>");
 	}
 
 	id++;
