@@ -315,7 +315,7 @@
 													<div class="carousel-caption caption-right">
 												<!--  		<h4>Title 1</h4>
 														<p>/media/imagenes/carrito/banner1.png
-															Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+															Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non my porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 														</p>
 														<br>
 														<a href="javascript:void(0);" class="btn btn-info btn-sm">Read more</a> -->
@@ -327,7 +327,7 @@
 													<div class="carousel-caption caption-left">
 													<!--  	<h4>Title 2</h4>
 														<p>/media/imagenes/carrito/banner2.png
-															Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+															Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non my porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 														</p>
 														<br>
 														<a href="javascript:void(0);" class="btn btn-danger btn-sm">Read more</a> -->
@@ -339,7 +339,7 @@
 													<div class="carousel-caption caption-left">
 													<!--  	<h4>Title 2</h4>
 														<p>/media/imagenes/carrito/banner3.png
-															Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+															Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non my porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
 														</p>
 														<br>
 														<a href="javascript:void(0);" class="btn btn-danger btn-sm">Read more</a> -->

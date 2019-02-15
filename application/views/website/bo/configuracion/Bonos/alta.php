@@ -140,7 +140,7 @@
 										</div>
 										<div class="col-sm-12 col-md-2 col-lg-2">
 											<div class="form-group">
-												<label>Meses Activo</label>
+												<label>Actived Months</label>
 												<input class="form-control spinner-both"  id="mesDesdeActivacion" name="mesDesdeActivacion" value="0">
 											</div>
 										</div>
@@ -163,7 +163,7 @@
 									</section><br><br><br>
 								<h4></h4>
 								
-								<header>Bonos Por Nivel</header><br><br>
+								<header>Calculated Commissions Por Nivel</header><br><br>
 									<div class="row">
 										<div class="col col-lg-3 col-xs-2">
 										</div>																	

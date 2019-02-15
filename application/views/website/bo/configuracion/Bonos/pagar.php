@@ -40,7 +40,7 @@
 			<legend>Calcular Bono</legend><br>
 		<div class="form-group" style="width: 100rem;">
 	        <div class="row" id="cross_tipo_rango">
-									<header>Bonos</header><br><br>
+									<header>Calculated Commissions</header><br><br>
 									<div class="row">
 										<div class="col col-lg-2">
 										</div>

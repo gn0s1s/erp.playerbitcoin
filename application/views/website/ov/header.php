@@ -29,7 +29,7 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/networkProfile/photo">Foto</a>
+										<a href="/ov/networkProfile/photo">Profile Photo</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -46,7 +46,7 @@
 								<i style="font-size: 2rem;" class="fa fa-credit-card"></i> Purchases & commissions <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/shoppingcart">Deposito</a>
+										<a href="/shoppingcart">Deposits</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -68,11 +68,11 @@
 								<i style="font-size: 2rem;" class="fa fa-th-large"></i> General <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/surveys">Encuestas</a>
+										<a href="/ov/surveys">Surveys</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/archive">Archivero</a>
+										<a href="/ov/archive">Files</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -86,14 +86,14 @@
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-envelope-square"></i> Comunicación <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-envelope-square"></i> Comunications <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
 										<a href="/ov/personalWeb">Web Personal</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/chat">Chat mi Network</a>
+										<a href="/ov/chat">Chat my Network</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -101,24 +101,24 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cgeneral/soporte_tecnico_ver_redes/">Soporte Técnico</a>
+										<a href="/ov/cgeneral/soporte_tecnico_ver_redes/">Support</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/email">Sugerencias</a>
+										<a href="/ov/email">Suggestions</a>
 									</li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Información & Capacitación <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Information & Training <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/information">Información</a>
+										<a href="/ov/information">Information</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/presentations">Presentaciones</a>
+										<a href="/ov/presentations">Slideshow</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -126,31 +126,31 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/downloads">Descargas</a>
+										<a href="/ov/downloads">Downloadable</a>
+									</li>
+									<li class="divider"></li>
+									<li class="hide">
+										<a href="/ov/coupons">Calculated Commissions</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/coupons">Bonos</a>
+										<a href="/ov/events">Events</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/events">Eventos</a>
+										<a href="/ov/news">News</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/news">Noticias</a>
+										<a href="/ov/videos">Videos</a>
 									</li>
 									<li class="divider"></li>
-									<li>
-										<a href="/ov/videos">Vídeos</a>
-									</li>
-									<li class="divider"></li>
-									<li>
+									<li class="hide">
 										<a href="/ov/acknowledgments">Reconocimientos</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/statistics">Estadisticas</a>
+										<a href="/ov/statistics">Statistics</a>
 									</li>
 								</ul>
 							</li>

@@ -70,7 +70,7 @@
 													<th>ID</th>
 													<th data-class="expand">Nombre</th>
 													<th data-hide="phone,tablet">Descripción</th>
-													<th data-hide="phone,tablet">Bonos</th>
+													<th data-hide="phone,tablet">Calculated Commissions</th>
 													<th data-class="expand">Acciones</th>
 												</tr>
 											</thead>

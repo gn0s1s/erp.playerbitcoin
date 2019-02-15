@@ -80,7 +80,7 @@
 														<a href="#">
 															<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 																<i class="fa fa-archive fa-3x"></i>
-																<h1>Archivero</h1>
+																<h1>Files</h1>
 																<h1>.</h1>
 															</div>
 														</a>

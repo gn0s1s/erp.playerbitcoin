@@ -132,7 +132,7 @@
 														
 														if($comision_todo["bonos"][$i]){
 															echo '<tr class="success" >
-																<td colspan="2"><i class="fa fa-gift"></i>Bonos</td>
+																<td colspan="2"><i class="fa fa-gift"></i>Calculated Commissions</td>
 															</tr>';
 															for ($k=0;$k<sizeof($comision_todo["bonos"][$i]);$k++){
 																if($comision_todo["bonos"][$i][$k]->valor<>0){

@@ -264,7 +264,7 @@ function new_empresa()
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" class="smart-form">'
 					+'<fieldset>'
-						+'<legend>Información of cuenta</legend>'
+						+'<legend>Information of cuenta</legend>'
 						+'<section id="usuario" class="col col-6">'
 							+'<label class="input">Razón social'
 								+'<input required type="text" name="nombre" placeholder="Empresa">'

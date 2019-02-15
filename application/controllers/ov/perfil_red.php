@@ -1598,7 +1598,7 @@ class perfil_red extends CI_Controller
 
                               <div>
                                 <input type="checkbox" name="saveInfo" id="saveInfoid" id="salvar_taj">
-                                <label for="saveInfoid">&nbsp;Guardar la información de mi tarjeta de Crédito</label>
+                                <label for="saveInfoid">&nbsp;Guardar la información de my tarjeta de Crédito</label>
                               </div>
                             </div>
                             <!--creditCard-->

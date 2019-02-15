@@ -45,7 +45,7 @@
                     <div>
                         <form id="form_empresa" method="post" action="/bo/admin/empresa_multinivel" role="form" class="smart-form">
                             <fieldset>
-                                <legend>Información of the factura of the Empresa</legend>
+                                <legend>Information of the factura of the Empresa</legend>
                                 <input type="hidden" value="<?= $empresa[0]->id_tributaria; ?>" name="id" >
                                 <section id="usuario" class="col col-3">
                                     <label class="input">Identificación Tributaria

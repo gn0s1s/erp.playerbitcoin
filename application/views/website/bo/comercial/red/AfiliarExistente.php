@@ -69,7 +69,7 @@
 													<form id="register" class="smart-form">
 														<fieldset>
 
-															<legend>Información of cuenta</legend>
+															<legend>Information of cuenta</legend>
 															<section class="col col-4">
 																<label class="input">RED
 																	<select class="form-control input-sm" id="red" name="red" onchange="use_username()">

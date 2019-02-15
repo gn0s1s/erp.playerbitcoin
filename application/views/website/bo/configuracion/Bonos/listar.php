@@ -7,7 +7,7 @@
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
 								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
-								<a href="/bo/bonos">Bonos</a>
+								<a href="/bo/bonos">Calculated Commissions</a>
 								> Listar Bonos
 							</span>
 						</h1>

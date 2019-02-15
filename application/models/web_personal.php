@@ -121,9 +121,8 @@ class web_personal extends CI_Model{
         $custom = '<script src="https://www.google.com/recaptcha/api.js">'
                 .'</script>';
         
-        $sumario = 'DESPUÉS DE LA CONFIRMACIÓN POR E-MAIL, 
-                    USTED COMENZARÁ A RECIBIR INFORMACIONES
-                    REFERENTE AL PROYECTO.';
+        $sumario = 'WHEN YOU RECEIVE E-MAIL CONFIRMATION, 
+                    YOU\'LL CAN BE UPDATED FROM OUR BUSINESS NEWSLETTERS.';
         
         $this->setContentPagePersonal("SUMARIO", $sumario);
         $this->setContentPagePersonal("FORM", $form);
@@ -221,7 +220,7 @@ class web_personal extends CI_Model{
         
         $form = str_replace("[[G_KEY]]", $captcha, $form);
         $form = str_replace("</form>", $in_sponsor."</form>", $form);
-        $subtitle = "Patrocinador : $nombre_completo";
+        $subtitle = "Sponsor : $nombre_completo";
         $form = str_replace("Formulario de Afiliación:", $subtitle, $form);
 
         return $form;

@@ -1746,7 +1746,7 @@ function new_empresa()
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
 		+'<fieldset>'
-		+'<legend>Información of cuenta</legend>'
+		+'<legend>Information of cuenta</legend>'
 		+'<section id="usuario" class="col col-6">'
 		+'<label class="input">Razón social'
 		+'<input required type="text" name="nombre" placeholder="Empresa">'
@@ -2291,7 +2291,7 @@ function new_pack()
 		+'<label class="select">'
 		+'<select class="custom-scroll"  name="visible">'
 		+'<option value="1">Affiliate</option>'
-		+'<option value="2">Deposito</option>'
+		+'<option value="2">Deposits</option>'
 		+'<option value="3">Affiliate & Deposito</option>'
 		+'</select>'
 		+'</label>'

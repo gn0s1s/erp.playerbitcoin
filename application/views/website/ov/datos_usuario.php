@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 	<html>
-		<head><title>Información</title></head>
+		<head><title>Information</title></head>
 		<body>
 			<main>
 				<div style="font-size-adjust: verdena; padding: 250px; border-radius:25px; border:25px; background-color: AliceBlue;">

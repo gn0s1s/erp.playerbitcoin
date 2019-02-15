@@ -68,7 +68,7 @@
                                             <video id="camara" autoplay controls></video>
                                         </div>
                                         <div class="contenedor">
-                                            <div class="titulo">Foto</div>
+                                            <div class="titulo">Profile Photo</div>
                                             <canvas id="foto" style="display:none" ></canvas>
 
                                           <form METHOD="POST" ENCTYPE="multipart/form-data" action="/ov/perfil_red/sube_foto_tomar/0" id="uploadPicture" name="picture">

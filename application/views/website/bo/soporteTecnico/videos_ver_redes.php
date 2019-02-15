@@ -8,7 +8,7 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span> 
                     > <a href="/bo/configuracion/">Configuración</a>
-                    > <a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a>
+                    > <a href="/bo/configuracion/soporte_tecnico">Support</a>
                     > Ver Redes
                 </span>
             </h1>

@@ -389,7 +389,7 @@
 												</section>
 								  			</div>
 								  			<select class="form-control" required aria-required="true" id="pago" name="pago" style="display:none;">
-				                                  <option value="5">Deposito on Efectivo</option>
+				                                  <option value="5">Deposits on Efectivo</option>
 				                                  <option value="1" selected="">Tarjeta of Credito</option>
 				                                  <option value="2">Tarjeta of Debito</option>
 				                                  <option value="3">Paypal</option>
@@ -469,7 +469,7 @@
 						                  				 </div>
 						                  				 <div class="form-group">
 										                    <input type="checkbox" name="salvar_taj_c" id="salvar_taj_c">
-												            <label for="saveInfoid">&nbsp;Guardar the información of mi tarjeta of Crédito</label>
+												            <label for="saveInfoid">&nbsp;Guardar the información of my tarjeta of Crédito</label>
 										                  </div>
 										               </div>
 		                              		
@@ -488,7 +488,7 @@
 									                <hr>
 									            </div>
 									            <select class="form-control" required aria-required="true" id="pago" name="pago" style="display:none;">
-					                                  <option value="5" selected="">Deposito on Efectivo</option>
+					                                  <option value="5" selected="">Deposits on Efectivo</option>
 					                                  <option value="1">Tarjeta of Credito</option>
 					                                  <option value="2">Tarjeta of Debito</option>
 					                                  <option value="3">Paypal</option>
@@ -498,7 +498,7 @@
 									                  <div class="panel-group paymentMethod" id="accordion">
 									                  	<div class="panel panel-default">
 									                      <div class="panel-heading panel-heading-custom">
-									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_1" data-parent="#accordion" href="#collapseOne"> <span class="numberCircuil">Opcion 1</span> <strong>Deposito on Efectivo</strong> </a> </h4>
+									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_1" data-parent="#accordion" href="#collapseOne"> <span class="numberCircuil">Opcion 1</span> <strong>Deposits on Efectivo</strong> </a> </h4>
 									                      </div>
 									                      <div id="collapseOne" class="panel-collapse collapse in">
 									                        <div class="panel-body">
@@ -592,7 +592,7 @@
 									                  				 </div>
 									                  				 <div class="form-group">
 													                    <input type="checkbox" name="salvar_taj_c" id="salvar_taj_c">
-															            <label for="saveInfoid">&nbsp;Guardar the información of mi tarjeta of Crédito</label>
+															            <label for="saveInfoid">&nbsp;Guardar the información of my tarjeta of Crédito</label>
 													                  </div>
 													            	</div>
 									                         	</div> 
@@ -679,7 +679,7 @@
 									                  				 </div>
 									                  				 <div class="form-group">
 													                    <input type="checkbox" name="salvar_taj" id="salvar_taj">
-															            <label for="saveInfoid">&nbsp;Guardar the información of mi tarjeta of Crédito</label>
+															            <label for="saveInfoid">&nbsp;Guardar the información of my tarjeta of Crédito</label>
 													                  </div>
 													            	</div>
 									                         	</div> 

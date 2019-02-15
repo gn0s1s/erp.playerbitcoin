@@ -24,7 +24,7 @@
 								<a href="redes_afiliado_chat?id=red_personal">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 										<i class="fa fa-user fa-3x"></i>
-										<h5>Chat con mi Network</h5>
+										<h5>Chat con my Network</h5>
 									</div>
 								</a>
 							</div>

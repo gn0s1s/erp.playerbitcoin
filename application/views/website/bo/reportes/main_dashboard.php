@@ -36,7 +36,7 @@
 										<option value="14">Ventas Pagos Enlinea</option>
 										<option value="13" >Comisiones Por Pagar</option>
 										<option value="10" >Comisiones Pagadas</option>
-										<option value="17" >Bonos Pagados</option>
+										<option value="17" >Calculated Commissions Pagados</option>
 										<option value="18" >Total Comisiones & Bonos</option>
 										<option value="11" >Comisiones Pagadas & Por Pagar</option>
 										<!--  	

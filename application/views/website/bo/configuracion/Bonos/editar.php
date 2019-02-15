@@ -97,7 +97,7 @@ var j=0;
 										</div>
 										<div class="col-sm-12 col-md-3 col-lg-3">
 											<div class="form-group">
-												<label>Meses Activo</label>
+												<label>Actived Months</label>
 												<input class="form-control spinner-both"  id="mesDesdeActivacion" name="mesDesdeActivacion" value="<?php echo $bono[0]->mes_desde_activacion;?>">
 											</div>
 										</div>
@@ -118,7 +118,7 @@ var j=0;
 									</section><br><br><br>
 								<h4></h4>
 								
-								<header>Bonos Por Nivel</header><br><br>
+								<header>Calculated Commissions Por Nivel</header><br><br>
 									<div class="row">
 										<div class="col col-lg-3 col-xs-2">
 										</div>																	

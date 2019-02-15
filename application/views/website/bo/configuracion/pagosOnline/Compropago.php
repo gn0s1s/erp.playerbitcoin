@@ -63,7 +63,7 @@
 
 
 						  <fieldset id="test" class="col-md-6">
-						  	<legend>Modo Activo</legend>
+						  	<legend>Modo Actived</legend>
 						 <section  class="col col-6">
 							 <label class="input">Llave Pública
 								 <input required type="text" name="pk_live" placeholder="Public Key" value="<?=$compropago[0]->pk_live;?>" > 

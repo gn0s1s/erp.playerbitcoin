@@ -54,7 +54,7 @@
 
 		<div class="form-group" style="width: 100rem;">
 	        <div class="row" id="cross_plan_bonos">
-									<header>Bonos</header><br><br>
+									<header>Calculated Commissions</header><br><br>
 									<div class="row">
 										<div class="col col-lg-3 col-xs-2">
 										</div>																	

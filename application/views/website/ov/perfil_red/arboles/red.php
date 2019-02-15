@@ -22,7 +22,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Arbol of mi Network</h5>
+									<h5>Arbol of my Network</h5>
 								</div>
 							</a>
 						</div>		
@@ -32,7 +32,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Frontalidad of mi Network</h5>
+									<h5>Frontalidad of my Network</h5>
 								</div>
 							</a>
 						</div>				
@@ -42,7 +42,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Profundidad of mi Network</h5>
+									<h5>Profundidad of my Network</h5>
 								</div>
 							</a>
 						</div>

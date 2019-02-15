@@ -28,7 +28,7 @@
 				<div class="step-pane active" id="step1_r">
 					<form id="register_red" class="smart-form">
 						<fieldset>
-							<legend>Información of cuenta</legend>
+							<legend>Information of cuenta</legend>
 							<section id="usuario_r" class="col col-6">
 								<label class="input"><i class="icon-prepend fa fa-user"></i>
 								<input id="username_r" onkeyup="use_username_r()" required type="text" name="username" placeholder="Usuario">

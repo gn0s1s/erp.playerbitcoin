@@ -87,7 +87,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 						<div class="well no-padding">
 							<form id="login-form" method="POST" action="/auth/forgot_password" class="smart-form client-form">
 								<header>
-									Recuperar mi contraseña
+									Recuperar my contraseña
 								</header>
 
 								<fieldset>

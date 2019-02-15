@@ -31,7 +31,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-gift"></i> </span>
-						<h2>Bonos</h2>				
+						<h2>Calculated Commissions</h2>
 						
 					</header>
 
@@ -48,7 +48,7 @@
 						<div class="widget-body">
 							<ul id="myTab1" class="nav nav-tabs bordered">
 								<li  class="active">
-									<a href="#s1" data-toggle="tab">Bonos</a>
+									<a href="#s1" data-toggle="tab">Calculated Commissions</a>
 								</li>
 								<li >
 									<a href="#s2" data-toggle="tab">Planes</a>
@@ -273,10 +273,10 @@ data-widget-deletebutton="false">
 																<a href="#plan<?= $plan->id?>tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">General</span> </a>
 															</li>
 															<li data-target="#step2">
-																<a href="#plan<?= $plan->id?>tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Bonos</span> </a>
+																<a href="#plan<?= $plan->id?>tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Calculated Commissions</span> </a>
 															</li>
 															<!--  <li data-target="#step3">
-																<a href="#plan<?= $plan->id?>tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Bonos</span> </a>
+																<a href="#plan<?= $plan->id?>tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Calculated Commissions</span> </a>
 															</li>-->
 															<li data-target="#step4">
 																<a href="#plan<?= $plan->id?>tab4" data-toggle="tab"> <span class="step">3</span> <span class="title">Valor</span> </a>
@@ -328,7 +328,7 @@ data-widget-deletebutton="false">
 								-->
 								<header role="heading">
 									<span class="widget-icon"> <i class="fa fa-list-alt"></i> </span>
-									<h2>Bonos del plan</h2>			
+									<h2>Calculated Commissions del plan</h2>
 									
 				
 								<span class="jarviswidget-loader"><i class="fa fa-refresh fa-spin"></i></span></header>

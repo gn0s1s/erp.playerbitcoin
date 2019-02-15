@@ -401,7 +401,7 @@ function botbox(nombre, id, lado)
 				+'<div class="step-pane active" id="step1_r">'
 					+'<form id="register" class="smart-form">'
 						+'<fieldset>'
-							+'<legend>Información of cuenta</legend>'
+							+'<legend>Information of cuenta</legend>'
 							+'<section id="usuario" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
 								+'<input id="username" onkeyup="use_username()" required="" name="username" placeholder="Usuario" type="text">'

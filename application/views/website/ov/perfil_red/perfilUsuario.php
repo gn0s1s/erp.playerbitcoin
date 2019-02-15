@@ -76,7 +76,7 @@
 												<a href="/ov/networkProfile/photo">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard primary botones" style="background: <?=$style[0]->btn_1_color?>">
 														<i class="fa fa-camera fa-4x"></i>
-														<h1>Foto</h1>
+														<h1>Profile Photo</h1>
 													</div>
 												</a>
 											</div>

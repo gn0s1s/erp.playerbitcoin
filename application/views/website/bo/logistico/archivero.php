@@ -131,7 +131,7 @@
 											-->
 											<header>
 												<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-												<h2>Archivero</h2>
+												<h2>Files</h2>
 											</header>
 							
 											<!-- widget div-->

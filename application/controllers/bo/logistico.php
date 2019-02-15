@@ -407,7 +407,7 @@ class logistico extends CI_Controller
 			echo '<div class="row">
 					<form id="almacen_update" class="smart-form" method="post" action="new_almacen">
 						<fieldset>
-							<legend>Información del almacen</legend>
+							<legend>Information del almacen</legend>
 							<section id="usuario" class="col col-6" style="display:none;">
 								<label class="input"> <i class="icon-prepend fa fa-user"></i>
 									<input id="id" required type="text" name="id" value='.$_POST["id"].'>
@@ -440,7 +440,7 @@ class logistico extends CI_Controller
 			echo '<div class="row">
 					<form id="almacen_update" class="smart-form" method="post" action="new_almacen">
 						<fieldset>
-							<legend>Información del almacen</legend>
+							<legend>Information del almacen</legend>
 							<section id="usuario" class="col col-6" style="display:none;">
 								<label class="input"> <i class="icon-prepend fa fa-user"></i>
 									<input id="id" required type="text" name="id" value='.$_POST["id"].'>

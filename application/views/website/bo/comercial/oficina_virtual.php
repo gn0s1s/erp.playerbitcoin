@@ -64,7 +64,7 @@
 									<a href="#s3" data-toggle="tab">E-Book's</a>
 								</li>
 								<li>
-									<a href="#s4" data-toggle="tab">Información</a>
+									<a href="#s4" data-toggle="tab">Information</a>
 								</li>
 								<li>
 									<a href="#s5" data-toggle="tab">Noticias</a>
@@ -85,7 +85,7 @@
 									<a href="#s10" data-toggle="tab">Reconocimientos</a>
 								</li>
 								<li>
-									<a href="#s11" data-toggle="tab">Encuestas</a>
+									<a href="#s11" data-toggle="tab">Surveys</a>
 								</li>
 							</ul>
 							<div id="myTabContent1" class="tab-content padding-10">
@@ -1164,7 +1164,7 @@
 															<table class="table table-striped table-forum">
 																<thead>
 																	<tr>
-																		<th colspan="2">Encuesta</th>
+																		<th colspan="2">Survey</th>
 																		<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Usuario</th>
 																		<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Fecha of creacion</th>
 																		<th class="text-center hidden-xs hidden-sm" style="width: 200px;">Veces que se ha contestado</th>
@@ -1234,7 +1234,7 @@
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12" id="buscarcomb">
 																	<label class="input">
-																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="agregar_encuesta()"><i class='fa fa-info'></i>&nbsp;Nueva Encuesta</a>
+																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="agregar_encuesta()"><i class='fa fa-info'></i>&nbsp;Nueva Survey</a>
 																	</label>
 																</section>
 															</div>
@@ -3182,7 +3182,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="checkbox">'
 													+'<input type="checkbox" id="activo" checked="checked" name="checkbox">'
-													+'<i></i>Activo</label>'
+													+'<i></i>Actived</label>'
 											+'</section>'
 										+'</div>'
 										+'<div class="row">'

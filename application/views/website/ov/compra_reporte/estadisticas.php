@@ -18,7 +18,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Afiliados on Toda Mi Organizacion</h2>
+						<h2>Afiliados on Toda my Organizacion</h2>
 						
 					</header>
 
@@ -78,7 +78,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Total Points on Mi Organizacion on the Mes</h2>
+						<h2>Total Points on my Organizacion on the Mes</h2>
 						
 					</header>
 
@@ -138,7 +138,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Total Points on Mi Organizacion</h2>
+						<h2>Total Points on my Organizacion</h2>
 						
 					</header>
 
@@ -198,7 +198,7 @@
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Ventas Totales on Mi Organizacion on the Mes</h2>
+						<h2>Ventas Totales on my Organizacion on the Mes</h2>
 						
 					</header>
 
@@ -258,7 +258,7 @@
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Ventas Totales on Mi Organizacion</h2>
+						<h2>Ventas Totales on my Organizacion</h2>
 						
 					</header>
 

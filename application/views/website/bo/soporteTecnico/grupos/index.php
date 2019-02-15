@@ -10,7 +10,7 @@
 								<a href="/bo/configuracion/">Configuración</a> 
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> > Grupos
+								<a href="/bo/configuracion/soporte_tecnico">Support</a> > Grupos
 							</span>
 						</h1>
 					</div>

@@ -5,7 +5,7 @@
 								<label class="hide">
 								<label class="label">Seleccione una categoria</label>
 									<select name="tipo" id="tipo" required="" style="width: 20rem">
-										<option value="INF" <?php if($grupo[0]->tipo=="INF")echo 'selected="selected"';?>>Información</option>
+										<option value="INF" <?php if($grupo[0]->tipo=="INF")echo 'selected="selected"';?>>Information</option>
 										<option value="VID" <?php if($grupo[0]->tipo=="VID")echo 'selected="selected"';?>>Videos</option>
 									</select>
 								</label>

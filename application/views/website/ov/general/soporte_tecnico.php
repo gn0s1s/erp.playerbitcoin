@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 								<a class="backHome" href="/ov"><i class="fa fa-home"></i> Menu</a> >
 							<span>
-								<a href="/ov/cgeneral/soporte_tecnico_ver_redes"> Ver Redes</a> >	Soporte Técnico
+								<a href="/ov/cgeneral/soporte_tecnico_ver_redes"> Ver Redes</a> >	Support
 							</span>
 						</h1>
 					</div>

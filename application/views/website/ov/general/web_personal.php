@@ -66,7 +66,7 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 								<br>
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4" style="margin-top: 2rem;">
 									
-										<label > Clave of mi Web Personal
+										<label > Clave of my Web Personal
 										</label>
 									</section>
 									

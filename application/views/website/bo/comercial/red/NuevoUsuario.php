@@ -95,7 +95,7 @@
 													<form id="register" class="smart-form">
 														<fieldset>
 														
-															<legend>Información of cuenta</legend>
+															<legend>Information of cuenta</legend>
 															<section id="usuario" class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-user"></i>
 																	<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Usuario">

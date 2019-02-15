@@ -117,18 +117,18 @@
 																<div class="col-sm-4">
 																<h1><small>My Points of commissions</small>  <i class='fa fa-user'></i></h1>
 																	<ul class="list-inline friends-list">
-																		<li><span class="font-md"><i>Semana :</i></span> <?=intval($puntos_semana)?>
+																		<li><span class="font-md"><i>On Week :</i></span> <?=intval($puntos_semana)?>
 																		</li>
-																		<li><span class="font-md"><i>Mes :</i></span> <?=intval($puntos_mes)?>
+																		<li><span class="font-md"><i>On Month :</i></span> <?=intval($puntos_mes)?>
 																		</li>
 																		<li><span class="font-md"><i>Total :</i></span> <?=intval($puntos_total)?>
 																		</li>
 																	</ul>
 																<h1><small>Points of commissions on the Network </small>  <i class='fa fa-sitemap'></i></h1>
 																	<ul class="list-inline friends-list">
-																		<li><span class="font-md"><i>Semana :</i></span> <?=$puntos_red_semana?>
+																		<li><span class="font-md"><i>On Week :</i></span> <?=$puntos_red_semana?>
 																		</li>
-																		<li><span class="font-md"><i>Mes :</i></span> <?=$puntos_red_mes?>
+																		<li><span class="font-md"><i>On Month :</i></span> <?=$puntos_red_mes?>
 																		</li>
 																		<li><span class="font-md"><i>Total :</i></span> <?=$puntos_red_total?>
 																		</li>
@@ -171,7 +171,7 @@
 												<div role="widget" class="jarviswidget jarviswidget-color-blueDark jarviswidget-sortable" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="false">
 												<header role="heading"><div role="menu"><a data-toggle="dropdown" href="javascript:void(0);"></a><ul class="dropdown-menu arrow-box-up-right color-select pull-right"><li><span class="bg-color-green" data-widget-setstyle="jarviswidget-color-green" rel="tooltip" data-placement="left" data-original-title="Green Grass"></span></li><li><span class="bg-color-greenDark" data-widget-setstyle="jarviswidget-color-greenDark" rel="tooltip" data-placement="top" data-original-title="Dark Green"></span></li><li><span class="bg-color-greenLight" data-widget-setstyle="jarviswidget-color-greenLight" rel="tooltip" data-placement="top" data-original-title="Light Green"></span></li><li><span class="bg-color-purple" data-widget-setstyle="jarviswidget-color-purple" rel="tooltip" data-placement="top" data-original-title="Purple"></span></li><li><span class="bg-color-magenta" data-widget-setstyle="jarviswidget-color-magenta" rel="tooltip" data-placement="top" data-original-title="Magenta"></span></li><li><span class="bg-color-pink" data-widget-setstyle="jarviswidget-color-pink" rel="tooltip" data-placement="right" data-original-title="Pink"></span></li><li><span class="bg-color-pinkDark" data-widget-setstyle="jarviswidget-color-pinkDark" rel="tooltip" data-placement="left" data-original-title="Fade Pink"></span></li><li><span class="bg-color-blueLight" data-widget-setstyle="jarviswidget-color-blueLight" rel="tooltip" data-placement="top" data-original-title="Light Blue"></span></li><li><span class="bg-color-teal" data-widget-setstyle="jarviswidget-color-teal" rel="tooltip" data-placement="top" data-original-title="Teal"></span></li><li><span class="bg-color-blue" data-widget-setstyle="jarviswidget-color-blue" rel="tooltip" data-placement="top" data-original-title="Ocean Blue"></span></li><li><span class="bg-color-blueDark" data-widget-setstyle="jarviswidget-color-blueDark" rel="tooltip" data-placement="top" data-original-title="Night Sky"></span></li><li><span class="bg-color-darken" data-widget-setstyle="jarviswidget-color-darken" rel="tooltip" data-placement="right" data-original-title="Night"></span></li><li><span class="bg-color-yellow" data-widget-setstyle="jarviswidget-color-yellow" rel="tooltip" data-placement="left" data-original-title="Day Light"></span></li><li><span class="bg-color-orange" data-widget-setstyle="jarviswidget-color-orange" rel="tooltip" data-placement="bottom" data-original-title="Orange"></span></li><li><span class="bg-color-orangeDark" data-widget-setstyle="jarviswidget-color-orangeDark" rel="tooltip" data-placement="bottom" data-original-title="Dark Orange"></span></li><li><span class="bg-color-red" data-widget-setstyle="jarviswidget-color-red" rel="tooltip" data-placement="bottom" data-original-title="Red Rose"></span></li><li><span class="bg-color-redLight" data-widget-setstyle="jarviswidget-color-redLight" rel="tooltip" data-placement="bottom" data-original-title="Light Red"></span></li><li><span class="bg-color-white" data-widget-setstyle="jarviswidget-color-white" rel="tooltip" data-placement="right" data-original-title="Purity"></span></li><li><a href="javascript:void(0);" class="jarviswidget-remove-colors" data-widget-setstyle="" rel="tooltip" data-placement="bottom" data-original-title="Reset widget color to default">Remove</a></li></ul></div>
 													<span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>
-													<h2>Notificaciones </h2>
+													<h2>Notifications </h2>
 													<div role="menu">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 														<!-- add: non-hidden - to disable auto hide -->
 														<div>
@@ -365,7 +365,7 @@
 								<a href="/shoppingcart">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 										<i class="fa fa-shopping-cart fa-3x"></i>
-										<h5>Deposito</h5>
+										<h5>Deposits</h5>
 									</div>
 								</a>
 							</div>
@@ -670,7 +670,7 @@
 													<a href="coupons"><!--   escuela_negocios/promociones -->
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-gift  fa-3x"></i>
-															<h5>Bonos</h5>
+															<h5>Calculated Commissions</h5>
 														</div>
 													</a>
 												</div>  
@@ -729,7 +729,7 @@
 													<a href="chat">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-weixin fa-3x"></i>
-															<h5>Chat Mi Network</h5>
+															<h5>Chat my Network</h5>
 														</div>
 													</a>
 												</div> 
@@ -741,7 +741,7 @@
 													<a href="cgeneral/soporte_tecnico_ver_redes">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-support fa-3x"></i>
-															<h5>Soporte Técnico</h5>
+															<h5>Support</h5>
 														</div>
 													</a>
 												</div>
@@ -757,7 +757,7 @@
 													<a href="suggestion">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-send fa-3x"></i>
-															<h5>Sugerencias</h5>
+															<h5>Suggestions</h5>
 														</div>
 													</a>
 												</div>
@@ -845,7 +845,7 @@
 													<a href="javascript:void(0);">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-support fa-3x"></i>
-															<h5>Soporte Técnico</h5>
+															<h5>Support</h5>
 														</div>
 													</a>
 												</div>

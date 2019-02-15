@@ -123,7 +123,7 @@ $ci->load->model("model_permissions");?>
 													<a href="/bo/oficinaVirtual/encuestas">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-file-text-o fa-3x"></i>
-															<h5>Encuestas</h5>
+															<h5>Surveys</h5>
 														</div>
 													</a>
 												</div>

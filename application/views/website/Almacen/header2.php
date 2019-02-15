@@ -43,7 +43,7 @@
 							</li>
 							<li class="text-center">
 								<a href="/bo/logistico/archivero"><!-- archivero -->
-								<i style="font-size: 2rem;" class="fa fa-folder"></i> <br/>Archivero </a>
+								<i style="font-size: 2rem;" class="fa fa-folder"></i> <br/>Files </a>
 							</li>
 
 						</ul>
