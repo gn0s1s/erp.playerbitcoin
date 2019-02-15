@@ -51,22 +51,22 @@
 
 												<li data-target="#step1" class="active"><span
 													class="badge badge-info">1</span>
-													Datos del registro
+													Registration data
 													<span class="chevron"></span></li>
 												<li data-target="#step2" >
 												<span class="badge badge-info">2</span>
-													Datos personales
+													Personal information
 													<span class="chevron"></span></li>
 											</ul>
 											<div id="acciones" class="actions">
 												<button type="button"
 													class="final btn btn-sm btn-primary btn-prev">
-													<i class="fa fa-arrow-left"></i>Anterior
+													<i class="fa fa-arrow-left"></i>Previous
 												</button>
 												<button type="button"
 													class="final btn btn-sm btn-success btn-next"
 													data-last="Registrarse" disabled="disabled">
-													Siguiente<i class="fa fa-arrow-right"></i>
+													Next<i class="fa fa-arrow-right"></i>
 												</button>
 											</div>
 										</div>
@@ -75,7 +75,7 @@
 											<div class="form-horizontal" id="fuelux-wizard">
 												<div class="step-pane active" id="step1">
 													<div id="register" class="smart-form">
-														<legend>Información de cuenta</legend>
+														<legend>Account information</legend>
 														
 														<fieldset>
 															<div class="row">															
@@ -83,7 +83,7 @@
 																<label class="input"> <i
 																	class="icon-prepend fa fa-user"></i> <input
 																	id="username" onkeyup="use_username()" required
-																	type="text" name="username" placeholder="Usuario">
+																	type="text" name="username" placeholder="Username">
 																</label>
 															</section>
 															<section id="correo" class="col col-6">
@@ -100,7 +100,7 @@
 																	class="icon-prepend fa fa-lock"></i> <input
 																	id="password" onkeyup="confirm_pass()" required
 																	type="password" name="password"
-																	placeholder="Contraseña">
+																	placeholder="Password">
 																</label>
 															</section>
 															<section id="confirmar_password" class="col col-6">
@@ -108,7 +108,7 @@
 																	class="icon-prepend fa fa-lock"></i> <input
 																	id="confirm_password" onkeyup="confirm_pass()" required
 																	type="password" name="confirm_password"
-																	placeholder="Repite contraseña">
+																	placeholder="Re-enter password">
 																</label>
 															</section>
 														</div>
@@ -142,28 +142,28 @@
 															<section class="col col-10" style="text-align: justify">
 																[[agreement]]</section>
 														</fieldset>                                                                                                        
-                                                                                                        <legend>Datos personales del afiliado</legend>
+                                                                                                        <legend>Personal information of the affiliate</legend>
 														<fieldset>															
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input"> <i
 																		class="icon-prepend fa fa-user"></i> <input
 																		id="nombre" required type="text" name="nombre"
-																		placeholder="Nombre">
+																		placeholder="Name">
 																	</label>
 																</section>
 																<section class="col col-4">
 																	<label class="input"> <i
 																		class="icon-prepend fa fa-user"></i> <input
 																		id="apellido" required type="text" name="apellido"
-																		placeholder="Apellido">
+																		placeholder="Surname">
 																	</label>
 																</section>
 																<section class="col col-4">
 																	<label class="input"> <i
 																		class="icon-prepend fa fa-calendar"></i> <input
 																		required id="datepicker" type="text" name="nacimiento"
-																		placeholder="Fecha de nacimiento" readonly="readonly">
+																		placeholder="Birthdate" readonly="readonly">
 																	</label>
 																</section>
 															</div><div class="row">
@@ -171,23 +171,23 @@
 																	<label id="key_" class="input"> <i
 																		class="icon-prepend fa fa-barcode"></i> <input
 																		id="keyword" onkeyup="check_keyword()"
-																		placeholder="Número de identificación" type="text"
+																		placeholder="Identification number" type="text"
 																		name="keyword">
 																	</label>
 																</section>
 																<section class="col col-4">
 																	<label class="select"> <select id="tipo_fiscal"
 																		required name="fiscal">
-																			<option value="1">Fisica</option>
-																			<option value="2">Moral</option>
+																			<option value="1">Physical person</option>
+																			<option value="2">Moral person</option>
 																	</select>
-																	</label> Tipo de persona
+																	</label> Kind of person
 																</section>
 																<section class="col col-4">
 																	<label class="input"> <i
 																		class="icon-prepend fa fa-skype"></i> <input
 																		id="skype" required type="text" name="skype"
-																		placeholder="Cuenta Skype">
+																		placeholder="Skype account">
 																	</label>
 																</section>
 															</div>
@@ -213,11 +213,11 @@
 																<section class="col col-6">
 																	<button type="button" onclick="agregar('1')"
 																		class="btn btn-primary">
-																		&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+																		&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 																	</button>
 																	<button type="button" onclick="agregar('2')"
 																		class="btn btn-primary">
-																		&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+																		&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 																	</button>
 																</section>
 
@@ -236,33 +236,33 @@
 																[[profundidad]]</section>
 														</fieldset>
 														<fieldset>
-															<legend>Datos de Beneficiario</legend>
+															<legend>Beneficiary data</legend>
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input"> <input
-																		placeholder="Nombre" type="text" name="nombre_co">
+																		placeholder="Name" type="text" name="nombre_co">
 																	</label>
 																</section>
 																<section class="col col-4">
 																	<label class="input"> <input
-																		placeholder="Apellido" type="text" name="apellido_co">
+																		placeholder="Surname" type="text" name="apellido_co">
 																	</label>
 																</section>
 																<section class="col col-4" id="key_co">
 																	<label id="key_1" class="input"> <i
 																		class=" icon-prepend fa fa-mobile-phone"></i> <input
-																		onkeyup="" placeholder="Telefono Movil" type="tel"
+																		onkeyup="" placeholder="Mobile phone number" type="tel"
 																		name="keyword_co" id="keyword_co">
 																	</label>
 																</section>
 															</div>
 														</fieldset>
 														<fieldset>
-															<legend>Dirección del afiliado</legend>
+															<legend>Affiliate address</legend>
 															<div id="dir" class="row">
 																<section class="col col-4">
 																	<div class="form-group">
-																		<label>País</label> <select style="width: 100%"
+																		<label>Country</label> <select style="width: 100%"
 																			class="select2" id="pais" required name="pais">
 																			<option value="ABW">Aruba</option>
 																			<option value="AFG">Afghanistan</option>
@@ -499,31 +499,31 @@
 																	</div>
 																</section>
 																<section id="municipio" class="col col-4">
-																	<label class="input"> Estado <input type="text"
+																	<label class="input"> State <input type="text"
 																		name="estado">
 																	</label>
 																</section>
 
 																<section id="municipio" class="col col-4">
-																	<label class="input"> Municipio <input
+																	<label class="input"> Municipality <input
 																		type="text" name="municipio">
 																	</label>
 																</section>
 														</div><div id="dir2" class="row">
 																<section id="colonia" class="col col-4">
-																	<label class="input"> Colonia <input
+																	<label class="input"> Colony <input
 																		type="text" name="colonia">
 																	</label>
 																</section>
 
 																<section class="col col-4">
-																	<label class="input"> Dirección de domicilio <input
+																	<label class="input"> Home address <input
 																		required type="text" name="calle">
 																	</label>
 																</section>
 
 																<section class="col col-4">
-																	<label class="input"> Código postal <input
+																	<label class="input"> Postal code <input
 																		required type="text" id="cp" name="cp">
 																	</label>
 																</section>
@@ -531,27 +531,27 @@
 															</div>
 														</fieldset>
 														<fieldset class="hide">
-															<legend>Estadistica</legend>
+															<legend>Statistics</legend>
 															<div class="row">
 																<section class="col col-3">
-																	Estado civil <label class="select"> <select
+																	Marital status <label class="select"> <select
 																		name="civil">
-																			<option value="1">Soltero/a</option>
-																			<option value="2">Casado/a</option>
-																			<option value="3">Divorciado/a</option>
-																			<option value="4">Viudo/a</option>
-																			<option value="5">Union libre</option>
+																			<option value="1">Single</option>
+																			<option value="2">Married</option>
+																			<option value="3">Divorced</option>
+																			<option value="4">Widower</option>
+																			<option value="5">Free Union</option>
 																	</select>
 																	</label>
 																</section>
 																<section class="col col-2">
-																	Sexo&nbsp;
+																	Gender&nbsp;
 																	<div class="inline-group">
 																		<label class="radio"> <input checked
 																			type="radio" value="1" name="sexo" placeholder="sexo">
-																			<i></i>Masculino
+																			<i></i>Male
 																		</label> <label class="radio"> <input type="radio"
-																			value="2" name="sexo" placeholder="sexo"> <i></i>Femenino
+																			value="2" name="sexo" placeholder="sexo"> <i></i>Female
 																		</label>
 																	</div>
 																</section>
