@@ -7,7 +7,7 @@
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark">
 							<i class="fa fa-table fa-fw "></i> 
-								Escuela de negocios 
+								Escuela of negocios 
 							<span>> 
 								Videos
 							</span>
@@ -208,7 +208,7 @@
 		<!-- PAGE RELATED PLUGIN(S) -->
 		<script src="/template/js/plugin/dropzone/dropzone.min.js"></script>
 
-		<!-- Scripts de la imaginacion chevre del autor de la pagina-->
+		<!-- Scripts of the imaginacion chevre del autor of the pagina-->
 			<script type="text/javascript">
 			
 				$("#anadir").click(function(){var grupo=$('#prepend').val();

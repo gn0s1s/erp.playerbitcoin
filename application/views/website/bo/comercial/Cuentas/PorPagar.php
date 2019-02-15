@@ -196,13 +196,13 @@
 				var fin=$("#finishdate").val();
 					if(inicio=='')
 					{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 					}
 					else
 					{
 						if(fin=='')
 						{
-							alert('Introduzca fecha de fin');
+							alert('Introduzca fecha of fin');
 						}
 						else
 						{
@@ -314,13 +314,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{

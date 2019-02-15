@@ -17,7 +17,7 @@
     <head>
         <meta charset="utf-8">
         <title><?=$nombre_empresa?></title>
-        <meta name="description" content="Software especializado en Multinivel">
+        <meta name="description" content="Software especializado on Multinivel">
         <meta name="author" content="<?=$nombre_empresa?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -84,16 +84,16 @@
                                         if (isset($data['errors'])) {
                                             $pswd = "";
                                             if (isset($data['errors']['login'])) {
-                                                $login = 'Error en la cuenta. ';
+                                                $login = 'Error on the cuenta. ';
                                             }
                                             if (isset($data['errors']['password'])) {
-                                                $pswd = 'Error en la contraseña. ';
+                                                $pswd = 'Error on the contraseña. ';
                                             }
                                             if (isset($data['errors']['blocked'])) {
-                                                $pswd = 'Tu cuenta esta bloqueada , intenta ingresar en 30 Minutos.<br>';
+                                                $pswd = 'Tu cuenta esta bloqueada , intenta ingresar on 30 Minutos.<br>';
                                             }
                                             if (isset($data['errors']['attempts'])) {
-                                                $pswd .= 'Solo te queda ' . $data['errors']['attempts'] . ' intentos antes que se bloque la cuenta.<br>';
+                                                $pswd .= 'Solo te queda ' . $data['errors']['attempts'] . ' intentos antes que se bloque the cuenta.<br>';
                                             }
                                         }
                                         ?>
@@ -114,7 +114,7 @@
 
                                             <div class="form-group grupoCajas">
                                                 <label for="password">Contraseña</label>
-                                                <input required type="password" class="form-control cajas" placeholder="Ingrese la contraseña" name="password" id="password">
+                                                <input required type="password" class="form-control cajas" placeholder="Ingrese the contraseña" name="password" id="password">
                                             </div>
                                             <div class="form-group grupoCajas"><br>
                                                 <button id="enviar" type="submit" class="btn btnLogin">
@@ -276,8 +276,8 @@
                     // Messages for form validation
                     messages: {
                         email: {
-                            required: 'Por favor ingresa una cuenta de correo',
-                            email: 'Porfavor ingresa una cuenta de correo valida'
+                            required: 'Por favor ingresa una cuenta of correo',
+                            email: 'Porfavor ingresa una cuenta of correo valida'
                         },
                         password: {
                             required: 'Por favor ingresa tu correo'

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>PAGO DE COMISIONES</title>
+<title>PAGO of COMISIONES</title>
 
 <style>
 	/* ------------------------------------- 
@@ -248,7 +248,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<table bgcolor="#999999">
 					<tr>
 						<td><img style="width:200px; height:150px;" src="<?=site_url('/wl.png')?>" alt="Networksoft"/></td>
-						<td align="right"><h6 class="collapse">Confirmacion de pago por Banco</h6></td>
+						<td align="right"><h6 class="collapse">Confirmacion of pago por Banco</h6></td>
 					</tr>
 				</table>
 				</div>
@@ -277,17 +277,17 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 						
 						<!-- Callout Panel -->
 						<p class="callout">
-							Recibimos su confirmacion sobre la transacion con los siguientes datos:
+							Recibimos su confirmacion sobre the transacion con los siguientes datos:
 						</p><!-- /Callout Panel -->
 						
 						<p><?php if (isset($id_venta)) { ?>ID venta: <?php echo $id_venta; ?><br /><?php } ?></p>
-						<p><?php if (isset($fecha)) { ?>Fecha de Solicitud: <?php echo $fecha; ?><br /><?php } ?></p>
-						<p><?php if (strlen($username) > 0) { ?>Nombre de usuario: <?php echo $username; ?><br /><?php } ?></p>
+						<p><?php if (isset($fecha)) { ?>Fecha of Solicitud: <?php echo $fecha; ?><br /><?php } ?></p>
+						<p><?php if (strlen($username) > 0) { ?>Nombre of usuario: <?php echo $username; ?><br /><?php } ?></p>
 						<p>Correo: <?php echo $email; ?></p><br/>
-						<p><?php if (isset($nombre) && isset($apellido)) { ?>Nombre y apellido: <?php echo $nombre." ".$apellido; ?><br /><?php } ?>		</p>	
+						<p><?php if (isset($nombre) && isset($apellido)) { ?>Nombre & apellido: <?php echo $nombre." ".$apellido; ?><br /><?php } ?>		</p>	
 						<p><?php if (isset($banco)) { ?>Banco: <?php echo $banco; ?><br /><?php } ?></p>
-						<p><?php if (isset($cuenta)) { ?>Numero de Cuenta: <?php echo $cuenta; ?><br /><?php } ?></p>
-						<p><?php if (isset($valor)) { ?>Valor de pago: $ <?php echo $valor; ?><br /><?php } ?></p> 
+						<p><?php if (isset($cuenta)) { ?>Numero of Cuenta: <?php echo $cuenta; ?><br /><?php } ?></p>
+						<p><?php if (isset($valor)) { ?>Valor of pago: $ <?php echo $valor; ?><br /><?php } ?></p> 
 						<br/>							
 												 
 						<!-- social & contact -->

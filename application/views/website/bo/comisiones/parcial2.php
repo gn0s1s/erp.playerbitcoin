@@ -42,7 +42,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Bono de inicio r&aacute;pido</h2>				
+						<h2>Bono of inicio r&aacute;pido</h2>				
 						
 					</header>
 
@@ -62,12 +62,12 @@
 									<div class="row">
 										<section class="col col-5">
 											<label class="input"> <i class="icon-append fa fa-calendar"></i>
-												<input required id="from" value="<?=(isset($from)) ? $from : '' ?>" type="text" name="from" placeholder="Fecha de inicio">
+												<input required id="from" value="<?=(isset($from)) ? $from : '' ?>" type="text" name="from" placeholder="Fecha of inicio">
 											</label>
 										</section>
 										<section class="col col-5">
 											<label class="input"> <i class="icon-append fa fa-calendar"></i>
-												<input type="text" id="to" value="<?=(isset($to)) ? $to : '' ?>" name="to" placeholder="Fecha de final">
+												<input type="text" id="to" value="<?=(isset($to)) ? $to : '' ?>" name="to" placeholder="Fecha of final">
 											</label>
 										</section>
 										<section class="col col-2">

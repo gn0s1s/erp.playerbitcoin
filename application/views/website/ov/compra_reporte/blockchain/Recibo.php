@@ -2,7 +2,7 @@
     <form action="#" id="recibo-pago">
         <input type="hidden" name="id" class="hide" value="<?=$id?>" />
 
-    <h3>Pulsa en la imagen para redirigirte a confirmar el pago.</h3>
+    <h3>Pulsa on the imagen para redirigirte a confirmar the pago.</h3>
         <fieldset class="well" style="text-align: center">
             <img src="<?=$qr;?>"  alt="qr" width="80%" style="cursor:pointer;"
                  onclick="location.href='bitcoin:<?=$direccion?>?label=Playerbitcoin&amount=<?=$total?>'" />
@@ -13,7 +13,7 @@
         <input type="submit" class="btn btn-success" value="Copiar dirección" />
     </form>
     <hr/>
-    <h4>Si deseas copiar la dirección pulsa el boton.</h4>
+    <h4>Si deseas copiar the dirección pulsa the boton.</h4>
 </div>
 <style>
     #dir{   
@@ -30,13 +30,13 @@
         var temp = $("<input>");
         //lo agregamos a nuestro body
         $("body").append(temp);
-        //agregamos en el atributo value del input el contenido html encontrado
-        //en el td que se dio click
-        //y seleccionamos el input temporal
+        //agregamos on the atributo value del input the contenido html encontrado
+        //en the td que se dio click
+        //y seleccionamos the input temporal
         temp.val("<?=$direccion;?>").select();
-        //ejecutamos la funcion de copiado
+        //ejecutamos the funcion of copiado
         document.execCommand("copy");
-        //eliminamos el input temporal
+        //eliminamos the input temporal
         temp.remove();
         console.log("texto copiado : ["+document.queryCommandSupported('copy')+"]");
     }

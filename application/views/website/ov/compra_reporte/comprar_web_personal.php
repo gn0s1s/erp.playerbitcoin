@@ -164,7 +164,7 @@
 			<div class="row">
 				<div class="row">
 					<div class="col-lg-9 col-md-9 col-sm-7">
-					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> Comprar</span></h1>
+					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> Purchase</span></h1>
 					</div>
 				</div> <!--/.row-->
 				<!-- widget edit box -->
@@ -588,7 +588,7 @@
 				if(qty>max||qty<min)
 				{
 					bootbox.dialog({
-						message: 'La cantidad de pedido de esta mercancia debe estar entre '+min+' y '+max,
+						message: 'La cantidad of pedido of esta mercancia debe estar entre '+min+' & '+max,
 						title: "Error",
 						className: "",
 						buttons: {
@@ -612,7 +612,7 @@
 							if(msg=="Error")
 							{
 								bootbox.dialog({
-									message: "¡Ooops! El producto se ha agotado, intente mas tarde porfavor.",
+									message: "¡Ooops! the producto se ha agotado, intente mas tarde porfavor.",
 									title: "Error",
 									className: "",
 									buttons: {
@@ -695,7 +695,7 @@
 					success: function(msg){
 						bootbox.dialog({
 							message: msg,
-							title: "Metodo de pago",
+							title: "Metodo of pago",
 							className: "",
 						
 						});
@@ -767,7 +767,7 @@
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo de tarjeta');
+								alert('Seleccione una tipo of tarjeta');
 							}
 							else
 							{
@@ -797,7 +797,7 @@
 											{
 												if(!codigo)
 												{
-													alert('El codigo de seguridad es obligatorio');
+													alert('El codigo of seguridad es obligatorio');
 												}
 												else
 												{
@@ -807,7 +807,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La compra fue un exito!");
+															alert("La Purchase fue un exito!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});
@@ -854,7 +854,7 @@
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo de tarjeta');
+								alert('Seleccione una tipo of tarjeta');
 							}
 							else
 							{
@@ -884,7 +884,7 @@
 											{
 												if(!codigo)
 												{
-													alert('El codigo de seguridad es obligatorio');
+													alert('El codigo of seguridad es obligatorio');
 												}
 												else
 												{
@@ -894,7 +894,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La compra fue un exito!");
+															alert("La Purchase fue un exito!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});

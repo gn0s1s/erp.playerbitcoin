@@ -24,12 +24,12 @@
 								</div>
 											
 								<label class="input" required>
-									Nivel de profundidad
+									Nivel of profundidad
 									<input style="width: 25rem;" required type="number" name="nivel" value='<?php echo $premio[0]->nivel?>' class="form-control" required>
 								</label>
 								<br>
 								<label class="input" required>
-									Cantidad de afiliados necesarios
+									Cantidad of afiliados necesarios
 									<input style="width: 25rem;" required type="number" name="cantidad" value='<?php echo $premio[0]->num_afiliados?>'class="form-control" required>
 								</label>
 								<br>
@@ -84,7 +84,7 @@
 											placeholder='<?php echo $nombre;?>' type="text">
 									</div>
 									<small><cite
-										title="Source Title">Para ver el archivo que va a cargar, pulse con el puntero en el boton de "Buscar"</cite>
+										title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
 									</small>
 								</section>
 								

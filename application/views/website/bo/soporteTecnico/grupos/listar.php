@@ -74,7 +74,7 @@
 													<th>ID</th>
 													<th>Nombre</th>
 													<th>Tipo</th>
-													<th>Red</th>
+													<th>Network</th>
 													<th>Acciones</th>
 												</tr>
 											</thead>
@@ -248,7 +248,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar El grupo ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the grupo ?'},
 	})
 	.done(function( msg )
 	{

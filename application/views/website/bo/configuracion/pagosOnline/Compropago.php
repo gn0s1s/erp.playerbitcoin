@@ -107,13 +107,13 @@
 								<section id="debug" class="col col-3">
 									<label class="checkbox"> <input name="test"
 										<?php if($compropago[0]->test == '1') echo "checked='checked'";?>
-										type="checkbox"> <i></i>Modo de Pruebas
+										type="checkbox"> <i></i>Modo of Pruebas
 									</label>
 								</section>
 								<section id="show" class="col col-3">
 									<label class="checkbox"> <input name="estatus"
 										<?php if($compropago[0]->estatus == 'ACT') echo "checked='checked'";?>
-										type="checkbox"> <i></i>Mostrar en Carrito de Compras
+										type="checkbox"> <i></i>Mostrar on Carrito of Purchases
 									</label>
 								</section>
 							</fieldset>

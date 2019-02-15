@@ -27,7 +27,7 @@
 						<span class="widget-icon "> <i class="fa fa-edit fa-2x"></i>
 						</span>						
 						<h2 class="pull-left">REGÍSTRATE</h2>
-						<h4 class="pull-right">Formulario de Afiliación:</h4>
+						<h4 class="pull-right">Formulario of Afiliación:</h4>
 						 
 					</header>
 
@@ -75,7 +75,7 @@
 											<div class="form-horizontal" id="fuelux-wizard">
 												<div class="step-pane active" id="step1">
 													<div id="register" class="smart-form">
-														<legend>Información de cuenta</legend>
+														<legend>Información of cuenta</legend>
 														
 														<fieldset>
 															<div class="row">															
@@ -163,7 +163,7 @@
 																	<label class="input"> <i
 																		class="icon-prepend fa fa-calendar"></i> <input
 																		required id="datepicker" type="text" name="nacimiento"
-																		placeholder="Fecha de nacimiento" readonly="readonly">
+																		placeholder="Fecha of nacimiento" readonly="readonly">
 																	</label>
 																</section>
 															</div><div class="row">
@@ -171,7 +171,7 @@
 																	<label id="key_" class="input"> <i
 																		class="icon-prepend fa fa-barcode"></i> <input
 																		id="keyword" onkeyup="check_keyword()"
-																		placeholder="Número de identificación" type="text"
+																		placeholder="Número of identificación" type="text"
 																		name="keyword">
 																	</label>
 																</section>
@@ -181,7 +181,7 @@
 																			<option value="1">Fisica</option>
 																			<option value="2">Moral</option>
 																	</select>
-																	</label> Tipo de persona
+																	</label> Tipo of persona
 																</section>
 																<section class="col col-4">
 																	<label class="input"> <i
@@ -236,7 +236,7 @@
 																[[profundidad]]</section>
 														</fieldset>
 														<fieldset>
-															<legend>Datos de Beneficiario</legend>
+															<legend>Datos of Beneficiario</legend>
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input"> <input
@@ -517,7 +517,7 @@
 																</section>
 
 																<section class="col col-4">
-																	<label class="input"> Dirección de domicilio <input
+																	<label class="input"> Dirección of domicilio <input
 																		required type="text" name="calle">
 																	</label>
 																</section>

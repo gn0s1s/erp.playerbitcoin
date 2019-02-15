@@ -6,7 +6,7 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span> 
                     > <a href="/bo/configuracion">Configuracion</a>
-                    > <a href="/bo/configuracion/tipoRed">Tipo De Red</a>
+                    > <a href="/bo/configuracion/tipoRed">Tipo of Network</a>
                     > Frontalidad/Profundidad
                 </span>
             </h1>
@@ -34,7 +34,7 @@
         }
         ?>
         <fieldset>
-            <legend>Red</legend>
+            <legend>Network</legend>
             <div class="row">
 <?php foreach ($redes as $red) { ?>
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

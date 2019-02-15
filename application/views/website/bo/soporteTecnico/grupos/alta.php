@@ -52,7 +52,7 @@
 											</label><br>
 											
 											<label class="select">
-													<label class="label">Seleccione la red de la categoría</label>
+													<label class="label">Seleccione the Category Network</label>
 														<select name="red" id="red" required="">
 															<?php 
 																foreach ($redes as $red){

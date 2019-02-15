@@ -35,7 +35,7 @@
 	<div>
 <div class="tab-pane fade in active" id="s1" style="margin-bottom: 6rem">
 	<div class="row">
-		<h5 class="col-xs-12 col-sm-12 col-md-8 col-lg-8">De click en la bandera del país para editar</h5>
+		<h5 class="col-xs-12 col-sm-12 col-md-8 col-lg-8">De click on the bandera del país para editar</h5>
 		<a onclick="dato_pais_multiple()" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 pull-right text-blue" href="#"><h5>Edicion multiple <i class="fa fa-check-square-o"></i></h5></a>
 	</div>
 	<div class="row">

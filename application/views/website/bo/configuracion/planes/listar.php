@@ -6,8 +6,8 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
-								<a href="/bo/configuracion/compensacion">Plan de compensacion</a> >
-								<a href="/bo/planes">Planes de Bonos</a>
+								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
+								<a href="/bo/planes">Planes of Bonos</a>
 								> Listar Planes
 							</span>
 						</h1>
@@ -241,7 +241,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar el Plan ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the Plan ?'},
 	})
 	.done(function( msg )
 	{

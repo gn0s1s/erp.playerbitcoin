@@ -72,7 +72,7 @@
 														<th data-class="expand">Nombre</th>
 														<th data-hide="phone">Descripcion</th>
 														<th data-hide="phone">Usuario</th>
-														<th data-hide="phone, tablet">Fecha de creacion</th>
+														<th data-hide="phone, tablet">Fecha of creacion</th>
 														<th data-hide="phone, tablet">Veces que se ha contestado</th>
 														<th data-hide="phone">Aciones</th>
 													</tr>
@@ -180,7 +180,7 @@
 			{
 				if (tipo==1){
 					bootbox.dialog({
-						message: "¿Seguro que desea dar de alta esta encuesta?",
+						message: "¿Seguro que desea dar of alta esta encuesta?",
 						title: "Activar",
 						buttons: {
 							success: {
@@ -194,7 +194,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha activado la encuesta');
+								             alert('Se ha activado the encuesta');
 								             location.reload();
 								        }
 									});
@@ -226,7 +226,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha desactivado la encuesta');
+								             alert('Se ha desactivado the encuesta');
 								             location.reload();
 								        }
 									});
@@ -247,7 +247,7 @@
 			function delete_encuesta(id)
 			{
 				bootbox.dialog({
-					message: "<p class='text-center'>¿Seguro que desea eliminar esta encuesta?<br> Se eliminara todo el historial de esta</p>",
+					message: "<p class='text-center'>¿Seguro que desea eliminar esta encuesta?<br> Se eliminara todo the historial of esta</p>",
 					title: "Eliminar Encuesta",
 					buttons: {
 						success: {

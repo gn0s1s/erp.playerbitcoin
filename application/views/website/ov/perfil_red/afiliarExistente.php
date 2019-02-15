@@ -24,7 +24,7 @@ function botbox(nombre, id, lado)
 		message: '<div class="row fuelux">'
 		+'<div id="spinner-div"></div><form id="register" class="smart-form">'
 			+'<fieldset>'
-			+'<legend>¿ Esta seguro de la Afiliacion ?</legend>'
+			+'<legend>¿ Esta seguro of the Afiliacion ?</legend>'
 				+'<section id="usuario" class="col col-6">'
 					+'<label class="input">'
 						+'<input type="hidden" id="username" onkeyup="use_username()" value="<?php echo $_GET['username']?>" required type="text" name="username" placeholder="Usuario">'
@@ -106,8 +106,8 @@ function detalles(id)
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>
 					> <a href="/bo/comercial">Comercial</a> 
-					> <a href="/bo/comercial/red">Red</a>
-					> <a href="/bo/usuarios/afiliar">Tipo de Afiliacion</a>
+					> <a href="/bo/comercial/red">Network</a>
+					> <a href="/bo/usuarios/afiliar">Tipo of Afiliacion</a>
 					> <a href="/bo/usuarios/afiliar_existente" > Afiliar Existente</a>
 					> Seleccionar Posicion
 				</span>
@@ -173,7 +173,7 @@ function detalles(id)
 														?>
 															<li><a
 															onclick='botbox("<?php echo 'Tu'; ?>","<?php echo $id; ?>","<?php echo $i; ?> ")'
-															href='javascript:void(0)'>Afiliar Aqui</a></li>
+															href='javascript:void(0)'>Affiliate Aqui</a></li>
 														<? } ?>
 													</ul></li>
 											</ul>

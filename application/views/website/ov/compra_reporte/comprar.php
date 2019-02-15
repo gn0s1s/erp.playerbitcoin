@@ -19,7 +19,7 @@
         height: auto !important;
     }
 </style>
-<!-- Estilos de la nueva integración del ERP-->
+<!-- Estilos of the nueva integración del ERP-->
 <link rel="stylesheet" type="text/css" media="screen" href="/template/css/playerBitcoin.css">
 
 
@@ -66,7 +66,7 @@
 												</address>
 											</div>
 											<div class="pull-right">
-												<h1 class="font-400">Recibo de pago</h1>
+												<h1 class="font-400">Recibo of pago</h1>
 											</div>
 											<div class="clearfix"></div>
 											<br>
@@ -77,7 +77,7 @@
 														<br>
 														<strong>Señor (a). <?php echo $datos_afiliado[0]->nombre." ".$datos_afiliado[0]->apellido;?></strong>
 														<br>
-														<abbr title="Phone">Número de identificación:</abbr> <?php echo $datos_afiliado[0]->keyword;?>
+														<abbr title="Phone">Número of identificación:</abbr> <?php echo $datos_afiliado[0]->keyword;?>
 														<br>
 														<abbr title="Phone">Dirección:</abbr> <?php echo $pais_afiliado[0]->direccion;?>
 														<br>
@@ -91,10 +91,10 @@
 													<div>
 														<div class="font-md">
 
-															<abbr title="Phone"><strong>Fecha de expedición:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
+															<abbr title="Phone"><strong>Fecha of expedición:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
 															<br>
 															<br>
-															<abbr title="Phone"><strong>Fecha de vencimiento:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
+															<abbr title="Phone"><strong>Fecha of vencimiento:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
 														</div>
 				
 													</div>
@@ -220,7 +220,7 @@
 				
 													<div class="col-sm-8">
 														<div class="payment-methods">
-															<h1 class="font-300">Metodos de Pago</h1>
+															<h1 class="font-300">Metodos of Pago</h1>
 															<a onclick="consignacion()"
                                                                style="margin-left: 1rem;" class="hide btn btn-success txt-color-blueLight">
                                                                 <img src="/template/img/payment/deposito-bancario.jpg"
@@ -268,7 +268,7 @@
 												
 												<div class="row">
 													<div class="col-sm-12">
-														<p class="note">**Para evitar cargos por exceso de penalización , por favor, hacer pagos dentro de los 30 días siguientes a la fecha de vencimiento. Habrá un cargo de interés del 2 % mensual sobre todas las facturas finales.</p>
+														<p class="note">**Para evitar cargos por exceso of penalización , por favor, hacer pagos dentro of los 30 días siguientes a the fecha of vencimiento. Habrá un cargo of interés del 2 % mensual sobre todas las facturas finales.</p>
 													</div>
 												</div>
 				
@@ -299,7 +299,7 @@
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar la mercancia ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the mercancia ?'},
 		})
 		.done(function( msg )
 		{
@@ -396,7 +396,7 @@
 	}
 
 	function compropago(){
-		//alert('Medio de Pago en Desarrollo');
+		//alert('Medio of Pago on Desarrollo');
 		iniciarSpinner();
 		$.ajax({
 			type:"post",
@@ -422,7 +422,7 @@
 
 
 	function tucompra(){
-		//alert('Medio de Pago en Desarrollo');
+		//alert('Medio of Pago on Desarrollo');
 		iniciarSpinner();
 		$.ajax({
 			type:"post",

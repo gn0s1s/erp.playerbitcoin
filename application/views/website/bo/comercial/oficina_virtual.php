@@ -79,7 +79,7 @@
 									<a href="#s8" data-toggle="tab">Eventos</a>
 								</li>
 								<li>
-									<a href="#s9" data-toggle="tab">Cupones - Boletos</a>
+									<a href="#s9" data-toggle="tab">Tickets/Cupons</a>
 								</li>
 								<li>
 									<a href="#s10" data-toggle="tab">Reconocimientos</a>
@@ -911,7 +911,7 @@
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12" id="buscarcomb">
 																	<label class="input">
-																		<a id="eliminar_carro" class="btn btn-danger btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="nuevo_archivo(7)"><i class='fa fa-youtube-play '></i>&nbsp;Video de Youtube</a>
+																		<a id="eliminar_carro" class="btn btn-danger btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="nuevo_archivo(7)"><i class='fa fa-youtube-play '></i>&nbsp;Video of Youtube</a>
 																	</label>
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12" id="buscarcomb">
@@ -1166,7 +1166,7 @@
 																	<tr>
 																		<th colspan="2">Encuesta</th>
 																		<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Usuario</th>
-																		<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Fecha de creacion</th>
+																		<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Fecha of creacion</th>
 																		<th class="text-center hidden-xs hidden-sm" style="width: 200px;">Veces que se ha contestado</th>
 																		<th class="text-center" style="width: 100px;">Mas...</th>
 																	</tr>
@@ -1313,7 +1313,7 @@
 						type: "post",
 						url: "add_grupo",
 						success: function(){
-								             alert('Se ha creado el grupo '+grupo);
+								             alert('Se ha creado the grupo '+grupo);
 								             location.reload();
 								        }
 					});
@@ -1327,7 +1327,7 @@
 									+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 										+'<label class="label">Nombre</label>'
 										+'<label class="input">'
-											+'<input type="text" placeholder="Nombre de la Encuesta" id="enc_nom">'
+											+'<input type="text" placeholder="Nombre of the Encuesta" id="enc_nom">'
 										+'</label>'
 									+'</section>'
 								+'</div>'
@@ -1341,7 +1341,7 @@
 								+'</div>'
 								+'<div class="row">'
 									+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
-										+'<label class="label">Cantidad de preguntas</label>'
+										+'<label class="label">Cantidad of preguntas</label>'
 										+'<label class="input">'								
 											+'<input type="number" id="preg_qty" min="1" max="30">' 
 										+'</label>'
@@ -1376,7 +1376,7 @@
 				{
 					if(qty<1||qty>30)
 					{
-						alert("La cantidad de preguntas debe de estar entre 1 y 30")
+						alert("La cantidad of preguntas debe of estar entre 1 & 30")
 					}
 					else
 					{
@@ -1388,7 +1388,7 @@
 			{
 				if (tipo==1){
 					bootbox.dialog({
-						message: "¿Seguro que desea dar de alta esta encuesta?",
+						message: "¿Seguro que desea dar of alta esta encuesta?",
 						title: "Activar",
 						buttons: {
 							success: {
@@ -1402,7 +1402,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha activado la encuesta');
+								             alert('Se ha activado the encuesta');
 								             location.reload();
 								        }
 									});
@@ -1434,7 +1434,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha desactivado la encuesta');
+								             alert('Se ha desactivado the encuesta');
 								             location.reload();
 								        }
 									});
@@ -1455,7 +1455,7 @@
 			{
 				if (tipo==1){
 					bootbox.dialog({
-						message: "¿Seguro que desea dar de alta este cupon?",
+						message: "¿Seguro que desea dar of alta este cupon?",
 						title: "Activar",
 						buttons: {
 							success: {
@@ -1469,7 +1469,7 @@
 								        type: "get",
 								        url: "estado_cupon",
 								        success: function(){
-								             alert('Se ha activado el cupon');
+								             alert('Se ha activado the cupon');
 								             location.reload();
 								        }
 									});
@@ -1501,7 +1501,7 @@
 								        type: "get",
 								        url: "estado_cupon",
 								        success: function(){
-								             alert('Se ha desactivado el cupon');
+								             alert('Se ha desactivado the cupon');
 								             location.reload();
 								        }
 									});
@@ -1536,7 +1536,7 @@
 								        type: "get",
 								        url: "estado_archivo",
 								        success: function(){
-								             alert('Se ha activado el archivo');
+								             alert('Se ha activado the archivo');
 								             location.reload();
 								        }
 									});
@@ -1568,7 +1568,7 @@
 								        type: "get",
 								        url: "estado_archivo",
 								        success: function(){
-								             alert('Se ha desactivado el archivo');
+								             alert('Se ha desactivado the archivo');
 								             location.reload();
 								        }
 									});
@@ -1610,7 +1610,7 @@
 					url: "borrar_evento",
 					type:"get",
 					success:function(msg){
-						alert("Se ha eiminado el evento con exito");
+						alert("Se ha eiminado the evento con exito");
 						location.reload();
 					}
 				});
@@ -1659,7 +1659,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Usuario</label>'
 												+'<label class="input">'
-													+'<input type="text" placeholder="Nombre de Usuario" onkeyup="buscar_usr()" onchange="buscar_usr()" id="nombre_frm">'
+													+'<input type="text" placeholder="Nombre of Usuario" onkeyup="buscar_usr()" onchange="buscar_usr()" id="nombre_frm">'
 												+'</label>'
 											+'</section>'
 										+'</div>'
@@ -1707,7 +1707,7 @@
 										+'<label class="label">Grupo</label>'
 										+'<label class="select">'
 											+'<select id="grupo_frm">'
-												+'<option value="0">Selecciona el grupo</option>'
+												+'<option value="0">Selecciona the grupo</option>'
 												+<?php
 												 	for($o=0;$o<sizeof($grupos);$o++)
 												 	{
@@ -1865,7 +1865,7 @@
 												+'<form id="add-event-form">'
 													+'<fieldset>'
 														+'<div class="form-group">'
-															+'<label>Selecciona el icono del evento</label>'
+															+'<label>Selecciona the icono del evento</label>'
 															+'<div class="btn-group btn-group-sm btn-group-justified" data-toggle="buttons">'
 																+'<label class="btn btn-default active">'
 																	+'<input type="radio" name="iconselect" id="icon-1" value="fa-info" checked>'
@@ -1919,7 +1919,7 @@
 															+'<p class="note">Tama&ntilde;o maximo 40 caracteres</p>'
 														+'</div>'
 														+'<div class="form-group">'
-															+'<label>Selecciona el color del evento</label>'
+															+'<label>Selecciona the color del evento</label>'
 															+'<div class="btn-group btn-group-justified btn-select-tick" data-toggle="buttons">'
 																+'<label class="btn bg-color-darken active">'
 																	+'<input type="radio" name="priority" id="option1" value="bg-color-darken txt-color-white" checked>'
@@ -2276,7 +2276,7 @@
 							{
 								if((dia_fin==dia_ini&&hora_ini>hora_fin)||(dia_fin==dia_ini&&hora_ini==hora_fin&&minuto_ini>minuto_fin))
 								{
-									alert('La hora de inicio no puede ser mayor que la hora de finalizacion');
+									alert('La hora of inicio no puede ser mayor que the hora of finalizacion');
 								}
 								else
 								{
@@ -2286,7 +2286,7 @@
 								         type: "get",
 								         url: "update_evento",
 								         success: function(){
-								              alert("Se edito el evento con exito");
+								              alert("Se edito the evento con exito");
 								              location.reload();
 								         }
 									});
@@ -2310,7 +2310,7 @@
 												+'<label class="label">Grupo</label>'
 												+'<label class="select">'
 													+'<select name="grupo_frm">'
-														+'<option value="0">Selecciona el grupo</option>'
+														+'<option value="0">Selecciona the grupo</option>'
 														+<?php
 														 	for($o=0;$o<sizeof($grupos);$o++)
 														 	{
@@ -2324,7 +2324,7 @@
 										+'</div>'
 										+'<div class="row">'
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
-												+'<label class="label">Nombre de la presentacion</label>'
+												+'<label class="label">Nombre of the presentacion</label>'
 												+'<label class="input">'	
 													+'<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico">'
 												+'</label>'	
@@ -2368,7 +2368,7 @@
 												+'<label class="label">Grupo</label>'
 												+'<label class="select">'
 													+'<select name="grupo_frm">'
-														+'<option value="0">Selecciona el grupo</option>'
+														+'<option value="0">Selecciona the grupo</option>'
 														+<?php
 														 	for($o=0;$o<sizeof($grupos);$o++)
 														 	{
@@ -2414,7 +2414,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme_2" placeholder="Seleccione una imagen para el video" readonly=""  type="text" id="file_frm_2">'
+													+'<input name="file_nme_2" placeholder="Seleccione una imagen para the video" readonly=""  type="text" id="file_frm_2">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2478,7 +2478,7 @@
 												+'<label class="label">Grupo</label>'
 												+'<label class="select">'
 													+'<select name="grupo_frm">'
-														+'<option value="0">Selecciona el grupo</option>'
+														+'<option value="0">Selecciona the grupo</option>'
 														+<?php
 														 	for($o=0;$o<sizeof($grupos);$o++)
 														 	{
@@ -2524,7 +2524,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme_2" placeholder="Seleccione una imagen para el e-book" readonly=""  type="text" id="file_frm_2">'
+													+'<input name="file_nme_2" placeholder="Seleccione una imagen para the e-book" readonly=""  type="text" id="file_frm_2">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2547,7 +2547,7 @@
 												+'<label class="label">Grupo</label>'
 												+'<label class="select">'
 													+'<select name="grupo_frm">'
-														+'<option value="0">Selecciona el grupo</option>'
+														+'<option value="0">Selecciona the grupo</option>'
 														+<?php
 														 	for($o=0;$o<sizeof($grupos);$o++)
 														 	{
@@ -2646,7 +2646,7 @@
 												+'<label class="label">Grupo</label>'
 												+'<label class="select">'
 													+'<select name="grupo_frm">'
-														+'<option value="0">Selecciona el grupo</option>'
+														+'<option value="0">Selecciona the grupo</option>'
 														+<?php
 														 	for($o=0;$o<sizeof($grupos);$o++)
 														 	{
@@ -2689,7 +2689,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme_2" placeholder="Seleccione una imagen para el video" readonly=""  type="text" id="file_frm_2">'
+													+'<input name="file_nme_2" placeholder="Seleccione una imagen para the video" readonly=""  type="text" id="file_frm_2">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2726,7 +2726,7 @@
 												+'<form id="add-event-form">'
 													+'<fieldset>'
 														+'<div class="form-group">'
-															+'<label>Selecciona el icono del evento</label>'
+															+'<label>Selecciona the icono del evento</label>'
 															+'<div class="btn-group btn-group-sm btn-group-justified" data-toggle="buttons">'
 																+'<label class="btn btn-default active">'
 																	+'<input type="radio" name="iconselect" id="icon-1" value="fa-info" checked>'
@@ -2779,7 +2779,7 @@
 															+'<p class="note">Tama&ntilde;o maximo 50 caracteres</p>'
 														+'</div>'
 														+'<div class="form-group">'
-															+'<label>Selecciona el color del evento</label>'
+															+'<label>Selecciona the color del evento</label>'
 															+'<div class="btn-group btn-group-justified btn-select-tick" data-toggle="buttons">'
 																+'<label class="btn bg-color-darken active">'
 																	+'<input type="radio" name="priority" id="option1" value="bg-color-darken txt-color-white" checked>'
@@ -3055,14 +3055,14 @@
 			
 			function delete_file(id,file)
 			{
-				if (confirm('¿Esta seguro de borrar este archivo?')) {
+				if (confirm('¿Esta seguro of borrar este archivo?')) {
 					var datos={'id':id,'file':file};
 					$.ajax({
 						data:{info:JSON.stringify(datos)},
 				        type: "get",
 				        url: "borrar_archivo",
 				        success: function(){
-				             alert("Se ha eliminado el archivo");
+				             alert("Se ha eliminado the archivo");
 				        }
 					});
 				    // Save it!
@@ -3074,14 +3074,14 @@
 			}
 			function delete_new(id)
 			{
-				if (confirm('¿Esta seguro de borrar esta noticia?')) {
+				if (confirm('¿Esta seguro of borrar esta noticia?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_noticia",
 				        success: function(){
-				             alert("Se ha eliminado la noticia");
+				             alert("Se ha eliminado the noticia");
 				        }
 					});
 				    // Save it!
@@ -3091,14 +3091,14 @@
 			}
 			function delete_info(id)
 			{
-				if (confirm('¿Esta seguro de borrar esta informacion?')) {
+				if (confirm('¿Esta seguro of borrar esta informacion?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_info",
 				        success: function(){
-				             alert("Se ha eliminado la informacion");
+				             alert("Se ha eliminado the informacion");
 				        }
 					});
 				    // Save it!
@@ -3111,14 +3111,14 @@
 			}
 			function delete_cupon(id)
 			{
-				if (confirm('¿Esta seguro de borrar este cupon?')) {
+				if (confirm('¿Esta seguro of borrar este cupon?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_cupon",
 				        success: function(){
-				             alert("Se ha eliminado el cupon");
+				             alert("Se ha eliminado the cupon");
 				             location.reload();
 				        }
 					});
@@ -3129,14 +3129,14 @@
 			}
 			function delete_encuesta(id)
 			{
-				if (confirm('¿Esta seguro de borrar esta encuesta?')) {
+				if (confirm('¿Esta seguro of borrar esta encuesta?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_encuesta",
 				        success: function(){
-				             alert("Se ha eliminado la encuesta");
+				             alert("Se ha eliminado the encuesta");
 				             location.reload();
 				        }
 					});
@@ -3389,7 +3389,7 @@
 							{
 								if((dia_fin==dia_ini&&hora_ini>hora_fin)||(dia_fin==dia_ini&&hora_ini==hora_fin&&minuto_ini>minuto_fin))
 								{
-									alert('La hora de inicio no puede ser mayor que la hora de finalizacion');
+									alert('La hora of inicio no puede ser mayor que the hora of finalizacion');
 								}
 								else
 								{
@@ -3399,7 +3399,7 @@
 								         type: "get",
 								         url: "nuevo_evento",
 								         success: function(){
-								              alert("Se añadido el evento");
+								              alert("Se añadido the evento");
 								              location.reload();
 								         }
 									});
@@ -3443,7 +3443,7 @@
 			    var date = new Date();
 			    var d = date.getDate();
 			    var m = date.getMonth();
-			    var y = date.getFullYear();
+			    var y= date.getFullYear();
 			
 			    var hdr = {
 			        left: 'title',

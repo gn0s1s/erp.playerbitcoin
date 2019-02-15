@@ -237,13 +237,13 @@ $(document).ready(function() {
 	
 function estado_archivo(estatus, id)
 {
-	var msg = "¿Desea desactivar el archivo?";
+	var msg = "¿Desea desactivar the archivo?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el archivo?";
+		msg = "¿Desea desactivar the archivo?";
 		titulo = "Desactivar archivo";
 	}else{
-		msg = "¿Desea activar el archivo?";
+		msg = "¿Desea activar the archivo?";
 		titulo = "Activar archivo";
 	}
 		
@@ -305,7 +305,7 @@ function estado_archivo(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el archivo ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the archivo ?'},
 		})
 		.done(function( msg )
 		{
@@ -325,7 +325,7 @@ function estado_archivo(estatus, id)
 						}).done(function( msg )
 						{
 							bootbox.dialog({
-							message: "Se ha eliminado el Archivo.",
+							message: "Se ha eliminado the Archivo.",
 							title: 'Felicitaciones',
 							buttons: {
 								success: {

@@ -101,13 +101,13 @@
 										<section class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-phone"></i>
 												<input required name="fijo[]" placeholder="(99) 99-99-99-99"
-												type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido">
+												type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-mobile"></i>
 												<input required name="movil[]"
-												placeholder="(999) 99-99-99-99-99" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido">
+												placeholder="(999) 99-99-99-99-99" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido">
 											</label>
 										</section>
 									</div>
@@ -126,7 +126,7 @@
 							<fieldset>
 								<legend>Configuración del proveedor</legend>
 								<section class="col col-3">
-									<label class="select">Selecciona el tipo de proveedor <select
+									<label class="select">Selecciona the tipo of proveedor <select
 										id="tipo_proveedor" required name="tipo_proveedor">
 								<?php foreach ( $tipo_proveedor as $key ) {
 									echo '<option value="'.$key->id_tipo.'">' . $key->descripcion . '</option>';
@@ -136,7 +136,7 @@
 									</label>
 								</section>
 								<section class="col col-3">
-									<label class="select">Selecciona la empresa <select
+									<label class="select">Selecciona the empresa <select
 										id="empresa" required name="empresa">
 								<?php foreach ( $empresa as $key ) {
 									echo '<option value="' . $key->id_empresa . '">' . $key->nombre . '</option>';
@@ -156,7 +156,7 @@
 								<legend>Dirección del proveedor</legend>
 								<div id="dir" class="row">
 									<section class="col col-4">
-										<label class="input"> Dirección de domicilio <input required
+										<label class="input"> Dirección of domicilio <input required
 											type="text" name="calle">
 										</label>
 									</section>
@@ -252,21 +252,21 @@
 								</div>
 							</fieldset>
 							<fieldset>
-								<legend>Datos de cobro</legend>
+								<legend>Datos of cobro</legend>
 								<div class="row">
 									<section class="col col-3">
-										<label class="input">Condiciones de pago <input required
+										<label class="input">Condiciones of pago <input required
 											type="text" name="condicion_pago">
 										</label>
 									</section>
 									<section class="col col-3">
-										<label class="input">Tiempo promedio de entrega <input
+										<label class="input">Tiempo promedio of entrega <input
 											required type="text" name="promedio_entrega"
 											placeholder="En días">
 										</label>
 									</section>
 									<section class="col col-3">
-										<label class="input">Tiempo de entrega de documentación <input
+										<label class="input">Tiempo of entrega of documentación <input
 											required type="text" name="promedio_entrega_documentacion"
 											placeholder="En días">
 										</label>
@@ -277,18 +277,18 @@
 								<legend>Credito</legend>
 								<div class="row">
 									<section class="col col-3">
-										<label class="input">Plazo de pago <input required
+										<label class="input">Plazo of pago <input required
 											type="number" min="0" name="plazo_pago" placeholder="En días">
 										</label>
 									</section>
 									<section class="col col-3">
-										<label class="input">Plazo de suspención <input required
+										<label class="input">Plazo of suspención <input required
 											type="number" min="0" name="plazo_suspencion"
 											placeholder="En días">
 										</label>
 									</section>
 									<section class="col col-3">
-										<label class="input">Plazo de suspención de firma <input
+										<label class="input">Plazo of suspención of firma <input
 											required type="number" min="0" name="plazo_suspencion_firma"
 											placeholder="En días">
 										</label>
@@ -300,19 +300,19 @@
 										</label>
 									</section>
 									<section class="col col-3">
-										<label class="input">Día de corte <input required
+										<label class="input">Día of corte <input required
 											type="number" min="0" name="dia_corte" placeholder="En días">
 										</label>
 									</section>
 									<section class="col col-3">
-										<label class="input">Día de pago <input required type="number"
+										<label class="input">Día of pago <input required type="number"
 											min="0" name="dia_pago" placeholder="En días">
 										</label>
 									</section>
 									<section class="col col-3">
 										<label class="select">Impuesto 
 										<select name="impuesto" id="impuesto">
-									<option value="">Selecciona primero el País</option>
+									<option value="">Selecciona primero the País</option>
 								</select>
 										</label>
 									</section>
@@ -384,7 +384,7 @@ function new_proveedor()
 		 	"Por favor ingresa tu apellido",
 		 	"Por favor seleciona un pais",
 		 	"Por favor ingresa tu código postal",
-		 	"Por favor seleciona el tipo de proveedor",
+		 	"Por favor seleciona the tipo of proveedor",
 		 	"Por favor ingresa un correo",
 		 	"Por favor seleciona una empresa"
 		 );
@@ -432,7 +432,7 @@ function new_empresa()
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" class="smart-form">'
 					+'<fieldset>'
-						+'<legend>Información de cuenta</legend>'
+						+'<legend>Información of cuenta</legend>'
 						+'<section id="usuario" class="col col-6">'
 							+'<label class="input">Razón social'
 								+'<input required type="text" name="nombre" placeholder="Empresa">'
@@ -460,7 +460,7 @@ function new_empresa()
 				        +'</section>'
 					+'</fieldset>'
 					+'<fieldset>'
-						+'<legend>Dirección de la empresa</legend>'
+						+'<legend>Dirección of the empresa</legend>'
 							+'<div id="dir" class="row">'
 								+'<section class="col col-6">'
 									+'País'
@@ -531,7 +531,7 @@ function new_empresa()
 						$("#empresa").append("<option value="+empresa['id']+">"+empresa['nombre']+"</option>");
 						$("#empresa").val(empresa['id']);
 						bootbox.dialog({
-						message: "Se agregado la empresa",
+						message: "Se agregado the empresa",
 						title: 'Empresa',
 						buttons: {
 							success: {
@@ -561,11 +561,11 @@ function agregar1(tipo)
 {
 	if(tipo==1)
 	{
-		$("#tel1").append("<section class='col col-3'><label class='input'> <i class='icon-prepend fa fa-mobile'></i><input type='tel' pattern='[0-9]{7,50}' title='Por favor digite un numero de telefono valido' name='movil[]' placeholder='(999) 99-99-99-99-99'></label></section>");
+		$("#tel1").append("<section class='col col-3'><label class='input'> <i class='icon-prepend fa fa-mobile'></i><input type='tel' pattern='[0-9]{7,50}' title='Por favor digite un numero of telefono valido' name='movil[]' placeholder='(999) 99-99-99-99-99'></label></section>");
 	}
 	else
 	{
-		$("#tel1").append("<section class='col col-3'><label class='input'> <i class='icon-prepend fa fa-phone'></i><input type='tel' name='fijo[]' pattern='[0-9]{7,50}' title='Por favor digite un numero de telefono valido' placeholder='(999) 99-99-99-99-99'></label></section>");
+		$("#tel1").append("<section class='col col-3'><label class='input'> <i class='icon-prepend fa fa-phone'></i><input type='tel' name='fijo[]' pattern='[0-9]{7,50}' title='Por favor digite un numero of telefono valido' placeholder='(999) 99-99-99-99-99'></label></section>");
 	}
 }
 

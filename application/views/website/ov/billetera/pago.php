@@ -6,7 +6,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-							<a href="/ov/wallet"> > Billetera</a>
+							<a href="/ov/wallet"> > Profit Wallet</a>
 							 > Pedir Plata</span>
 							
 						</h1>
@@ -55,7 +55,7 @@
 													<table class="table">
 													<thead>
 														<tr>
-															<th> <i class="fa fa-sitemap"></i> Red</th>
+															<th> <i class="fa fa-sitemap"></i> Network</th>
 															<th> <i class="fa fa-money"></i> Comision</th>
 														</tr>
 													</thead>
@@ -311,7 +311,7 @@
 																		</label>
 																	</section>	
 																	<section class="col col-6">
-																		<label class="label "><b>Numero de la cuenta</b></label>
+																		<label class="label "><b>Numero of the cuenta</b></label>
 																		<label class="input input">
 																		<i class="icon-prepend fa fa-credit-card"></i>
 																			<input type="number" name="ncuenta" value="<?=$cuenta[0]->cuenta?>" class="from-control" id="ncuenta" value="" required/>
@@ -339,7 +339,7 @@
 																		</label>
 																	</section>
 																	<section class="col col-6">
-																		<label class="label"><b>CLABE (Solo en Mexico)</b></label>
+																		<label class="label"><b>CLABE (Solo on Mexico)</b></label>
 																		<label class="input">
 																			<i class="icon-prepend fa fa-sort-numeric-desc"></i>
 																			<input name="cclabe" type="text" class="from-control" value="<?=$cuenta[0]->clabe?>" id="cclabe"/>
@@ -440,7 +440,7 @@ function ventas(id){
 	{					
 		bootbox.dialog({
 			message: msg,
-			title: 'Detalles de la Comisiones',
+			title: 'Detalles of the Comisiones',
 			buttons: {
 				danger: {
 					label: "Cerrar",
@@ -459,7 +459,7 @@ function cobrar() {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Pedir el pago con los datos que se acabaron de ingresar ?'},
+		data: {message: '¿ Esta seguro que desea Pedir the pago con los datos que se acabaron of ingresar ?'},
 	})
 	.done(function( msg )
 	{
@@ -509,7 +509,7 @@ function cobrar() {
 	})
 	});
 	}else {
-		alert("Los datos de la cuenta o el cobro estan incompletos o erroneos");
+		alert("Los datos of the cuenta o the cobro estan incompletos o erroneos");
 	}
 }
 function validarCampos(){

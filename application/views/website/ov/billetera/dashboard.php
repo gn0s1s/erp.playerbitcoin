@@ -7,7 +7,7 @@
 
 					<!-- col -->
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-file-o"></i> Billetera</h1>
+						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-file-o"></i> Profit Wallet</h1>
 					</div>
 					<!-- end col -->
 					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
@@ -16,7 +16,7 @@
 								<h5> Mis ganancias <span class="txt-color-blue"><?=number_format($ganancias,2)?></span></h5>
 							</li>
 							<li class="sparks-info">
-								<h5><span class="txt-color-blue"><a href="/ov/billetera/logout_billetera">Salir de billetera</a></span></h5>
+								<h5><span class="txt-color-blue"><a href="/ov/billetera/logout_billetera">Salir of Profit Wallet</a></span></h5>
 							</li>
 						</ul>
 					</div>
@@ -53,7 +53,7 @@
 											-->
 											<header>
 												<span class="widget-icon"> </span>
-												<h2>Billetera</h2>
+												<h2>Profit Wallet</h2>
 							
 											</header>
 							
@@ -89,7 +89,7 @@
 																	<tr>
 																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> Fecha</th>
 																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i> Monto</th>
-																		<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Método de pago</th>
+																		<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Método of pago</th>
 																	</tr>
 																</thead>
 																<tbody>
@@ -109,7 +109,7 @@
 																<header>Usted dispone de: $<?=number_format($ganancias,2)?></header>
 																<fieldset>
 																	<section class="col col-4">
-																		<label class="label">Método de pago</label>
+																		<label class="label">Método of pago</label>
 																		<label class="select">
 																			<select required name="metodo">
 																			<?foreach ($metodo_cobro as $key)
@@ -120,7 +120,7 @@
 																		</label>
 																	</section>
 																	<section class="col col-4">
-																		<label class="label">Retenciones por método de pago</label>
+																		<label class="label">Retenciones por método of pago</label>
 																		<label class="input">
 																			<input value="1" type="text" readonly />
 																		</label>

@@ -267,18 +267,18 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 			<table>
 				<tr>
 					<td>
-						<h3>Hola <?=$username?>, te damos la bienvenida a tu oficina virtual de <?=$site_name?></h3>
+						<h3>Hola <?=$username?>, te damos the bienvenida a tu oficina virtual of <?=$site_name?></h3>
 						
 						<!-- A Real Hero (and a real human being) -->
 						
 						<!-- Callout Panel -->
 						<p class="callout">
-							Para ingresar al sitio de clic <a class="btn" href="<? echo site_url('/auth/login/');?>">Aqui!</a>
+							Para ingresar al sitio of clic <a class="btn" href="<? echo site_url('/auth/login/');?>">Aqui!</a>
 						</p><!-- /Callout Panel -->
 						
-						<p>Si el link no funciona copie y pegue la siguiente direccion en su navegador <a href="<? echo site_url('/auth/login/');?>"></a><? echo site_url('/auth/login/');?></p>
+						<p>Si the link no funciona copie & pegue the siguiente direccion on su navegador <a href="<? echo site_url('/auth/login/');?>"></a><? echo site_url('/auth/login/');?></p>
 						
-						<p><?php if (strlen($username) > 0) { ?>Nombre de usuario: <?php echo $username; ?><br /><?php } ?></p>
+						<p><?php if (strlen($username) > 0) { ?>Nombre of usuario: <?php echo $username; ?><br /><?php } ?></p>
 						<p>Correo: <?php echo $email; ?></p>
 						<p><?php if (isset($password)) { ?>Contraseña: <?php echo $password; ?><br /><?php } ?>		</p>
 						<p>Id del Usuario: <?php echo $lst_id[0]->id; ?></p>

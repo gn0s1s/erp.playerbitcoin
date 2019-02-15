@@ -58,7 +58,7 @@
 		<header id="header" class="fade in">
 		<br />
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h1>Sistema Integral de Operaciones Networksoft &reg;</h1>
+				<h1>Sistema Integral of Operaciones Networksoft &reg;</h1>
 			</div>
 		</header>
 
@@ -83,18 +83,18 @@
 										</div>
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambio en billetera</strong></a>
+												<a href="javascript:void(0);"><strong>Cambio on Profit Wallet</strong></a>
 											</p>
 										</div>
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambio en SIO administracion de vídeos</strong></a>
+												<a href="javascript:void(0);"><strong>Cambio on SIO administracion of vídeos</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Correción de errores en el multiple upload</strong></a>
+												<a href="javascript:void(0);"><strong>Correción of errores on the multiple upload</strong></a>
 											</p>
 										</div>
 									</li>
@@ -108,25 +108,25 @@
 										</div>
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambio en el metodo de logeo del modulo billetera</strong></a>
+												<a href="javascript:void(0);"><strong>Cambio on the metodo of logeo del modulo Profit Wallet</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Correción del menú de red en la oficina virtual</strong></a>
+												<a href="javascript:void(0);"><strong>Correción del menú of Network on the oficina virtual</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Actualzacion de la red y de afiliación por red</strong></a>
+												<a href="javascript:void(0);"><strong>Actualzacion of Network & of afiliación por Network</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Actualización de modulos de chat y vdeollamadas</strong></a>
+												<a href="javascript:void(0);"><strong>Actualización of modulos of chat & vdeollamadas</strong></a>
 											</p>
 										</div>
 									</li>
@@ -140,25 +140,25 @@
 										</div>
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambio en los emails</strong></a>
+												<a href="javascript:void(0);"><strong>Cambio on los emails</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Optimización de la afiliación</strong></a>
+												<a href="javascript:void(0);"><strong>Optimización of the afiliación</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambios en todos los modulos de escuela de negocio</strong></a>
+												<a href="javascript:void(0);"><strong>Cambios on todos los modulos of escuela of negocio</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Actualización del carrito de compra</strong></a>
+												<a href="javascript:void(0);"><strong>Actualización del carrito of compra</strong></a>
 											</p>
 										</div>
 									</li>
@@ -172,19 +172,19 @@
 										</div>
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambios en el modulo ebooks sio</strong></a>
+												<a href="javascript:void(0);"><strong>Cambios on the modulo ebooks sio</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambios en el modulo informacion</strong></a>
+												<a href="javascript:void(0);"><strong>Cambios on the modulo informacion</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Actualizacion el los CSS del sistema</strong></a>
+												<a href="javascript:void(0);"><strong>Actualizacion the los CSS del sistema</strong></a>
 											</p>
 										</div>
 
@@ -196,13 +196,13 @@
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambios en el modulo eventos de OV y de SIO</strong></a>
+												<a href="javascript:void(0);"><strong>Cambios on the modulo eventos of OV & of SIO</strong></a>
 											</p>
 										</div>
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Cambios de diseño en el OV</strong></a>
+												<a href="javascript:void(0);"><strong>Cambios of diseño on the OV</strong></a>
 											</p>
 										</div>
 
@@ -304,8 +304,8 @@
 					// Messages for form validation
 					messages : {
 						email : {
-							required : 'Por favor ingresa una cuenta de correo',
-							email : 'Porfavor ingresa una cuenta de correo valida'
+							required : 'Por favor ingresa una cuenta of correo',
+							email : 'Porfavor ingresa una cuenta of correo valida'
 						},
 						password : {
 							required : 'Por favor ingresa tu correo'

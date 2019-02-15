@@ -48,7 +48,7 @@
 												<form id="add-event-form" class="smart-form col-sm-6 col-md-6 col-lg-6">
 													<fieldset>
 														<div class="form-group">
-															<b>Selecciona el icono del evento</b>
+															<b>Selecciona the icono del evento</b>
 															<div class="btn-group btn-group-sm btn-group-justified" data-toggle="buttons">
 																<label class="btn btn-default active">
 																	<input type="radio" name="iconselect" id="icon-1" value="fa-info" checked>
@@ -95,7 +95,7 @@
 															<b>URL del mapa</b>
 															<input class="form-control"  id="url_ev" name="title" type="text" placeholder="http://maps.google.com...">
 														</div>
-														<a href="/media/Maps.pdf" target="_blank"><h2 class="row-seperator-header"><i class="fa fa-question-circle"></i> ¿ No sabes cual es la url del mapa ?</h2></a>
+														<a href="/media/Maps.pdf" target="_blank"><h2 class="row-seperator-header"><i class="fa fa-question-circle"></i> ¿ No sabes cual es the url del mapa ?</h2></a>
 														<br>
 														<div class="form-group">
 															<b>Observaciones</b>
@@ -103,7 +103,7 @@
 															<p class="note">Tama&ntilde;o maximo 50 caracteres</p>
 														</div><br>
 														<div class="form-group">
-															<b>Selecciona el color del evento</b>
+															<b>Selecciona the color del evento</b>
 															<div class="btn-group btn-group-justified btn-select-tick" data-toggle="buttons">
 																<label class="btn bg-color-darken active">
 																	<input type="radio" name="priority" id="option1" value="bg-color-darken txt-color-white" checked>
@@ -129,7 +129,7 @@
 															<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																<section class="col col-lg-6 col-md-6 col-sm-6 col-xs-12">
 																	<label class="input"> <i class="icon-append fa fa-calendar"></i>
-																		<input type="text" name="startdate" id="startdate" placeholder="Fecha de Inicio">
+																		<input type="text" name="startdate" id="startdate" placeholder="Fecha of Inicio">
 																	</label>
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -235,7 +235,7 @@
 															<div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 																<section class="col col-lg-6 col-md-6 col-sm-6 col-xs-12">
 																	<label class="input"> <i class="icon-append fa fa-calendar"></i>
-																		<input type="text" name="finishdate" id="finishdate" placeholder="Fecha de Finalizacion">
+																		<input type="text" name="finishdate" id="finishdate" placeholder="Fecha of Finalizacion">
 																	</label>
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-3 col-xs-6">
@@ -499,7 +499,7 @@ function agregar_evento()
 				{
 					if((dia_fin==dia_ini&&hora_ini>hora_fin)||(dia_fin==dia_ini&&hora_ini==hora_fin&&minuto_ini>minuto_fin))
 					{
-						alert('La hora de inicio no puede ser mayor que la hora de finalizacion');
+						alert('La hora of inicio no puede ser mayor que the hora of finalizacion');
 					}
 					else
 					{
@@ -510,10 +510,10 @@ function agregar_evento()
 					         url: "nuevo_evento",
 					         success: function(msg){
 						          if (msg=="error_desc"){
-										alert("La casilla de descripción, no puede tener mas de 140 carácteres");
+										alert("La casilla of descripción, no puede tener mas of 140 carácteres");
 							          }
 						          else if (msg=="error_obs"){
-										alert("La casilla de observación, no puede tener mas de 50 carácteres");
+										alert("La casilla of observación, no puede tener mas of 50 carácteres");
 							          }
 						          else{
 					              	location.href="/bo/eventos/listar";

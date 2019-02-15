@@ -11,8 +11,8 @@
 										<section>
 											<label class="label">Cuenta</label>
 											<label class="input"> <i class="icon-append fa fa-mail-reply"></i>
-												<input required type="email" placeholder="Cuenta de Email a invitar" name="email_invitado">
-												<b class="tooltip tooltip-top-right"><i class="fa  txt-color-teal"></i> Ingrese un cuanta de correo valida</b></label>
+												<input required type="email" placeholder="Cuenta of Email a invitar" name="email_invitado">
+												<b class="tooltip tooltip-top-right"><i class="fa  txt-color-teal"></i> Ingrese un cuanta of correo valida</b></label>
 										</section>
 
 									

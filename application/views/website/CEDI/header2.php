@@ -19,11 +19,11 @@
 						<ul class="nav navbar-nav">
 							<li class="text-center">
 								<a href="/">
-								<i style="font-size: 2rem;" class="fa fa-home"></i><br/>Inicio</a>
+								<i style="font-size: 2rem;" class="fa fa-home"></i><br/>Home</a>
 							</li>
 							<li class="text-center">
 								<a href="/CEDI/POS">
-								<i style="font-size: 2rem;" class="fa fa-desktop"></i><br/>Punto de Venta </a>
+								<i style="font-size: 2rem;" class="fa fa-desktop"></i><br/>Punto of Venta </a>
 							</li>
 							<li class="text-center">
 								<a href="/CEDI/altas">
@@ -39,7 +39,7 @@
 							</li>							
 							<li class="text-center">
 								<a href="/bo/reportes_logistico/"><!-- reportes-->
-								<i style="font-size: 2rem;" class="fa fa-book  "></i> <br/>Reportes</a>
+								<i style="font-size: 2rem;" class="fa fa-book  "></i> <br/>Reports</a>
 							</li>
 							<li class="text-center">
 								<a href="/bo/logistico/archivero"><!-- archivero -->

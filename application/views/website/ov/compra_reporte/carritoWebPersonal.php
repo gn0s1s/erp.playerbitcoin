@@ -103,7 +103,7 @@
         
         <div class="miniCartFooter  miniCartFooterInMobile text-right">
           <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
+          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> Purchase! </a> </div>
         <!--/.miniCartFooter--> 
         
       </div>
@@ -158,7 +158,7 @@
             
             <div class="miniCartFooter text-right">
               <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
+              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> Purchase! </a> </div>
             <!--/.miniCartFooter--> 
             
           </div>
@@ -216,7 +216,7 @@
 				<div class="jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-arrows-v"></i> </span>
-						<h2 class="font-md"><i>Categoria de los productos</i></h2>				
+						<h2 class="font-md"><i>Categoria of los productos</i></h2>				
 					</header>
 
 					<!-- widget div-->
@@ -549,7 +549,7 @@
 				if(qty>max||qty<min)
 				{
 					bootbox.dialog({
-						message: 'La cantidad de pedido de esta mercancia debe estar entre '+min+' y '+max,
+						message: 'La cantidad of pedido of esta mercancia debe estar entre '+min+' & '+max,
 						title: "Error",
 						className: "",
 						buttons: {
@@ -573,7 +573,7 @@
 							if(msg=="Error")
 							{
 								bootbox.dialog({
-									message: "¡Ooops! El producto se ha agotado, intente mas tarde porfavor.",
+									message: "¡Ooops! the producto se ha agotado, intente mas tarde porfavor.",
 									title: "Error",
 									className: "",
 									buttons: {
@@ -658,7 +658,7 @@
 					success: function(msg){
 						bootbox.dialog({
 							message: msg,
-							title: "Metodo de pago",
+							title: "Metodo of pago",
 							className: "",
 						
 						});
@@ -729,7 +729,7 @@
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo de tarjeta');
+								alert('Seleccione una tipo of tarjeta');
 							}
 							else
 							{
@@ -759,7 +759,7 @@
 											{
 												if(!codigo)
 												{
-													alert('El codigo de seguridad es obligatorio');
+													alert('El codigo of seguridad es obligatorio');
 												}
 												else
 												{
@@ -769,7 +769,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La compra fue un exito!");
+															alert("La Purchase fue un exito!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});
@@ -816,7 +816,7 @@
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo de tarjeta');
+								alert('Seleccione una tipo of tarjeta');
 							}
 							else
 							{
@@ -846,7 +846,7 @@
 											{
 												if(!codigo)
 												{
-													alert('El codigo de seguridad es obligatorio');
+													alert('El codigo of seguridad es obligatorio');
 												}
 												else
 												{
@@ -856,7 +856,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La compra fue un exito!");
+															alert("La Purchase fue un exito!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});
@@ -934,7 +934,7 @@
 					
 					bootbox.dialog({
 						message: msg,
-						title: "Datos de Comprador",
+						title: "Datos of Comprador",
 						className: "div",
 						buttons: {
 							danger: {
@@ -946,7 +946,7 @@
 						}
 					})
 				})
-					//va en la vista a_comprar
+					//va on the vista a_comprar
 			}
 			
 			function a_comprar()
@@ -970,7 +970,7 @@
 					else
 					{
 			            bootbox.dialog({
-							message: "No tiene productos en el carrito",
+							message: "No tiene productos on the carrito",
 							title: "Alerta!",
 							className: "div_info_merc",
 							buttons: {

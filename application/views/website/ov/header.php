@@ -18,14 +18,14 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a href="/"><i style="font-size: 2rem;" class="fa fa-home "></i> Inicio</a>
+								<a href="/"><i style="font-size: 2rem;" class="fa fa-home "></i>Home</a>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-group "></i> Perfil y Red <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-group "></i> Profile & Network<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/networkProfile">Perfil</a>
+										<a href="/ov/networkProfile">Profile</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -33,32 +33,32 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/perfil_red/afiliar?tipo=1">Afiliar</a>
+										<a href="/ov/perfil_red/afiliar?tipo=1">Affiliate</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/red/index">Redes</a>
+										<a href="/ov/red/index">Networks</a>
 									</li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-credit-card"></i> Compras y Comisiones <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-credit-card"></i> Purchases & commissions <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
 										<a href="/shoppingcart">Deposito</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/accountStatus">Estado de Cuenta</a>
+										<a href="/ov/accountStatus">Profit Statement</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/wallet">Billetera</a>
+										<a href="/ov/wallet">Profit Wallet</a>
 									</li>
 									<li class="divider"></li>
 									 <li>
-										<a href="/ov/reports">Reportes</a>
+										<a href="/ov/reports">Reports</a>
 									</li>
 										
 								</ul>
@@ -93,7 +93,7 @@
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/chat">Chat mi Red</a>
+										<a href="/ov/chat">Chat mi Network</a>
 									</li>
 									<li class="divider"></li>
 									<li>
@@ -111,7 +111,7 @@
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Información y Capacitación <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Información & Capacitación <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
 										<a href="/ov/information">Información</a>

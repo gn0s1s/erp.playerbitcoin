@@ -53,7 +53,7 @@
 										<th data-hide="phone">Banco</th>
 										<th data-hide="phone,tablet">N° Cuenta</th>
 										<th data-hide="phone,tablet">Valor</th>
-										<th data-hide="phone,tablet">Estado</th>
+										<th data-hide="phone,tablet">Status</th>
 										<th></th>
 
 									</tr>
@@ -186,8 +186,8 @@ $(document).ready(function() {
 	
 function estado_cobro(venta,historial, usuario)
 {
-	var msg = "¿Esta seguro de confirmar el pago?";
-	var	titulo = "Confirmacion de pago";
+	var msg = "¿Esta seguro of confirmar the pago?";
+	var	titulo = "Confirmacion of pago";
 
 	bootbox.dialog({
 		message: msg,

@@ -35,7 +35,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>   Perfil Usuario</h2>
+						<h2>   Profile Usuario</h2>
 
 					</header>
 
@@ -51,7 +51,7 @@
 						<!-- widget content -->
 						<div class="widget-body no-padding smart-form">
                 <fieldset>
-									<legend> Editar Perfil</legend>
+									<legend> Editar Profile</legend>
                   <div class="contenidoBotones">
 										<div class="row">
 											<div class="col-sm-1">

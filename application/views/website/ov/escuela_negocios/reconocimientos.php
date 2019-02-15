@@ -90,7 +90,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -154,7 +154,7 @@
 																					</li>
 																					<li>
 																						<p class="text-muted">
-																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés de <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
+																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés of <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
 																						</p>
 																					</li>
 																				</ul>
@@ -251,7 +251,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -263,7 +263,7 @@
 																					</li>
 																					<li>
 																						<p class="text-muted">
-																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés de <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
+																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés of <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
 																						</p>
 																					</li>
 																				</ul>
@@ -316,7 +316,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -368,7 +368,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -380,7 +380,7 @@
 																					</li>
 																					<li>
 																						<p class="text-muted">
-																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés de <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
+																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés of <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
 																						</p>
 																					</li>
 																				</ul>
@@ -477,7 +477,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -489,7 +489,7 @@
 																					</li>
 																					<li>
 																						<p class="text-muted">
-																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés de <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
+																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés of <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
 																						</p>
 																					</li>
 																				</ul>
@@ -532,7 +532,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -584,7 +584,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -596,7 +596,7 @@
 																					</li>
 																					<li>
 																						<p class="text-muted">
-																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés de <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
+																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés of <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
 																						</p>
 																					</li>
 																				</ul>
@@ -693,7 +693,7 @@
 																				</div>
 																			</div>
 																			<div class="col-sm-6">
-																				<h1><span class="semi-bold">José de Jesús Pérez</span>
+																				<h1><span class="semi-bold">José of Jesús Pérez</span>
 																				<br>
 																				<small>Diamante</small></h1>
 									
@@ -705,7 +705,7 @@
 																					</li>
 																					<li>
 																						<p class="text-muted">
-																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés de <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
+																							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">libre despés of <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment">12:00 AM</a></span>
 																						</p>
 																					</li>
 																				</ul>

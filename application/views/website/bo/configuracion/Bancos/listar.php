@@ -7,7 +7,7 @@
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
 					<span>
 						> <a href="/bo/configuracion/"> Configuración</a>
-						> <a href="/bo/configuracion/formaspago"> Formas de Pago</a> 
+						> <a href="/bo/configuracion/formaspago"> Formas of Pago</a> 
 						> <a href="/bo/bancos/index"> Bancos </a>
 						> listar
 					</span>
@@ -233,13 +233,13 @@ $(document).ready(function() {
 	
 function estado_banco(estatus, id)
 {
-	var msg = "¿Desea desactivar el banco?";
+	var msg = "¿Desea desactivar the banco?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el banco?";
+		msg = "¿Desea desactivar the banco?";
 		titulo = "Desactivar Banco";
 	}else{
-		msg = "¿Desea activar el banco?";
+		msg = "¿Desea activar the banco?";
 		titulo = "Activar Banco";
 	}
 		
@@ -302,7 +302,7 @@ function estado_banco(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el banco ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the banco ?'},
 		})
 		.done(function( msg )
 		{

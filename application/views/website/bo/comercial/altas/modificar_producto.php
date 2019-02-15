@@ -62,7 +62,7 @@ $item = mercancia[0];
 												
                                             <section class="col col-12" style="width: 50%;">
                                                 <label class="input">
-                                                    Código de barras
+                                                    Código of barras
                                                     <input type="text" value='<?php echo $data_merc[0]->codigo_barras ?>' name="codigo_barras">
                                                 </label>
                                             </section>
@@ -123,7 +123,7 @@ $item = mercancia[0];
                         placeholder="Agregar alguna imágen" type="text">
         </div>
         <small><cite
-                title="Source Title">Para ver el archivo que va a cargar, pulse con el puntero en el boton de "Buscar"</cite>
+                title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
         </small>
 </section>-->
                                                 <section id="imagenes" class="col col-6">
@@ -134,7 +134,7 @@ $item = mercancia[0];
                                                             type="file" multiple>Buscar</span><input id="imagen_mr" 
                                                                   placeholder="Agregar alguna imágen" type="text">
                                                     </div>
-                                                    <small><cite title="Source Title">Para ver el archivo que va a cargar, pulse con el puntero en el boton de "Buscar"</cite></small>
+                                                    <small><cite title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite></small>
                                                 </section>												
                                             </div>
                                         </fieldset>
@@ -179,18 +179,18 @@ $item = mercancia[0];
                                         </fieldset>
 
                                         <fieldset id="moneda_field">
-                                            <legend>Moneda y país</legend>
+                                            <legend>Moneda & país</legend>
 													
                                             <section class="col col-12" style="width: 50%;">
                                                 <label class="input">
-                                                    Cantidad mínima de venta
+                                                    Cantidad mínima of venta
                                                     <input type="number" value='<?php echo $data_merc[0]->min_venta ?>' name="min_venta">
                                                 </label>
                                             </section>
 													
                                             <section  class="col col-12" style="width: 50%;">
                                                 <label  class="input">
-                                                    Cantidad máxima de venta
+                                                    Cantidad máxima of venta
                                                     <input type="number" value='<?php echo $data_merc[0]->max_venta ?>' name="max_venta">
                                                 </label>
                                             </section>
@@ -218,7 +218,7 @@ $item = mercancia[0];
 													
                                             <section class="col col-12" style="width: 50%;">
                                                 <label class="input">
-                                                    Tiempo mínimo de entrega
+                                                    Tiempo mínimo of entrega
                                                     <input placeholder="En días" type="number" value='<?php echo $item->entrega ?>' name="entrega" >
                                                 </label>
                                             </section>
@@ -244,14 +244,14 @@ $item = mercancia[0];
 													
                                             <section class="col col-12" style="width: 50%;">
                                                 <label class="input">
-                                                    Puntos comisionables
+                                                    Points of commissions
                                                     <input type="number" min="0" max=""  step="0.01"  value='<?php echo $item->puntos_comisionables ?>' name="puntos_com" id="puntos_com">
                                                 </label>
                                             </section>
                                         </fieldset>
                                         <fieldset id="impuesto_field">
                                             <legend>Impuestos</legend>
-                                            <section class="col col-12" style="width: 50%;">País de la mercancía
+                                            <section class="col col-12" style="width: 50%;">País of the mercancía
                                                 <label class="select">
                                                     <select id="pais2" required name="pais" onChange="select_pais()">
                                                         <?php foreach ($pais as $key) {
@@ -424,7 +424,7 @@ $item = mercancia[0];
                                     </div>
                                 </section>
 														
-                                <section class="col col-12" style="width: 50%; padding-left: 80px;">Producto de importación
+                                <section class="col col-12" style="width: 50%; padding-left: 80px;">Producto of importación
                                     <div class="inline-group">
                                         <?php if ($data_merc[0]->importacion == 1) { ?>
                                             <label class="radio">
@@ -444,7 +444,7 @@ $item = mercancia[0];
                                     </div>
                                 </section>
 														
-                                <section class="col col-12" style="width: 50%; padding-right: 80px;">Producto de sobrepedido
+                                <section class="col col-12" style="width: 50%; padding-right: 80px;">Producto of sobrepedido
                                     <div class="inline-group">
                                         <?php if ($data_merc[0]->sobrepedido == 1) { ?>
                                             <label class="radio">
@@ -672,7 +672,7 @@ function enviar() {
 						.done(function( msg ) {
 
 							bootbox.dialog({
-						message: "Se ha modificado el producto.",
+						message: "Se ha modificado the producto.",
 						title: 'Felicitaciones',
 						buttons: {
 							success: {

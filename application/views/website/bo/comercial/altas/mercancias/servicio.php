@@ -14,14 +14,14 @@
 				<?php //}else{?>	
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>&gt;
-								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/carrito_de_compras"> Carrito de Compras </a>
+								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/carrito_de_compras"> Carrito of Purchases </a>
 								> <a href="/bo/mercancia/index" >Alta</a> > Servicio
 				</span>
 				
 				<?php //}?>-->
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>&gt;
 					<a href="/bo/comercial">Comercial</a> > <a
-					href="/bo/comercial/carrito_de_compras?co=c"> Carrito de Compras </a>
+					href="/bo/comercial/carrito_de_compras?co=c"> Carrito of Purchases </a>
 					> <a href="/bo/mercancia/index?co=c">Alta</a> > Servicio
 				</span>
 			</h1>
@@ -81,13 +81,13 @@ if ($this->session->flashdata ( 'error' )) {
 												</label>
 											</section>
 											<section class="col col-2">
-												<label class="input">Fecha de inicio <input required
+												<label class="input">Fecha of inicio <input required
 													type="text" name="fecha_inicio" id="startdate"
 													readonly="readonly" />
 												</label>
 											</section>
 											<section class="col col-2">
-												<label class="input">Fecha de termino <input type="text"
+												<label class="input">Fecha of termino <input type="text"
 													name="fecha_fin" id="finishdate" readonly="readonly" />
 												</label>
 											</section>
@@ -128,17 +128,17 @@ if ($this->session->flashdata ( 'error' )) {
 												</span><input id="imagen_mr"
 													placeholder="Agregar alguna imágen" type="text" required>
 											</div>
-											<small>Para cargar múltiples archivos, presione la tecla ctrl
+											<small>Para cargar múltiples archivos, presione the tecla ctrl
 												y sin soltar selecione sus archivos.<br />
 											<cite title="Source Title">Para ver los archivos que va a
-													cargar, deje el puntero sobre el boton de "Buscar"</cite>
+													cargar, deje the puntero sobre the boton of "Buscar"</cite>
 											</small>
 										</section>
 									</div>
 							
 							<div class="row">
 							<fieldset id="moneda_field">
-								<legend>Moneda y país</legend>
+								<legend>Moneda & país</legend>
 								<section class="col col-2">
 									<label class="input"> Costo real <input type="number" min="1"
 										name="real" id="real" onchange="calcular_precio_total()"
@@ -158,7 +158,7 @@ if ($this->session->flashdata ( 'error' )) {
 									</label>
 								</section>
 								<section class="col col-2">
-									<label class="input"> Tiempo mínimo de entrega <input
+									<label class="input"> Tiempo mínimo of entrega <input
 										placeholder="En días" type="number" min="1" name="entrega"
 										id="entrega">
 									</label>
@@ -181,7 +181,7 @@ if ($this->session->flashdata ( 'error' )) {
 								</section>
 
 								<section class="col col-3">
-									<label class="input"> Puntos comisionables <input type="number"
+									<label class="input"> Points of commissions <input type="number"
 										min="0" max="" name="puntos_com" id="puntos_com" required>
 									</label>
 								</section>
@@ -475,7 +475,7 @@ function new_proveedor()
 		 	"Por favor ingresa tu apellido",
 		 	"Por favor seleciona un pais",
 		 	"Por favor ingresa tu código postal",
-		 	"Por favor seleciona el tipo de proveedor",
+		 	"Por favor seleciona the tipo of proveedor",
 		 	"Por favor ingresa un correo",
 		 	"Por favor seleciona una empresa"
 		 );

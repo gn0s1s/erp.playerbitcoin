@@ -55,19 +55,19 @@
 									<div class="row">
 										<section class="col col-3">
 											<label class="input">
-												Color de fondo
+												Color of fondo
 												<input type="color" name="bg_color" value="<?=$style[0]->bg_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color de botones primarios
+												Color of botones primarios
 												<input type="color" name="color_1" value="<?=$style[0]->btn_1_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color de botones secundarios
+												Color of botones secundarios
 												<input type="color" name="color_2" value="<?=$style[0]->btn_2_color?>">
 											</label>
 										</section>

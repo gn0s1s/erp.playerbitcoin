@@ -149,8 +149,8 @@ data-widget-deletebutton="false">
 																		
 																		echo '<div class="alert alert-warning alert-block">
 																		<h4 class="alert-heading">'.$condicion['tipoRango'].'</h4>';
-																		echo "Completar el rango <b>".$condicion['nombreRango']."</b> cuando genera <b>".$condicion['condicionRango']."</b> <b>".$condicion['tipoRango']."</b> ";
-																		echo "en la red <b>".$condicion['nombreRed']."</b> en";
+																		echo "Completar the rango <b>".$condicion['nombreRango']."</b> cuando genera <b>".$condicion['condicionRango']."</b> <b>".$condicion['tipoRango']."</b> ";
+																		echo "on the Network <b>".$condicion['nombreRed']."</b> en";
 																		foreach($condicion['condicion1'] as $con){
 																			echo ",<b> ".$con."</b>";
 																		}
@@ -372,8 +372,8 @@ data-widget-deletebutton="false">
 																		
 																		echo '<div class="alert alert-warning alert-block">
 																		<h4 class="alert-heading">'.$plan_bono['tipoRango'].'</h4>';
-																		echo "Completar el rango <b>".$plan_bono['nombreRango']."</b> cuando genera <b>".$plan_bono['condicionRango']."</b> <b>".$plan_bono['tipoRango']."</b> ";
-																		echo "en la red <b>".$plan_bono['nombreRed']."</b> en";
+																		echo "Completar the rango <b>".$plan_bono['nombreRango']."</b> cuando genera <b>".$plan_bono['condicionRango']."</b> <b>".$plan_bono['tipoRango']."</b> ";
+																		echo "on the Network <b>".$plan_bono['nombreRed']."</b> en";
 																		foreach($plan_bono['condicion1'] as $con){
 																			echo ",<b> ".$con."</b>";
 																		}

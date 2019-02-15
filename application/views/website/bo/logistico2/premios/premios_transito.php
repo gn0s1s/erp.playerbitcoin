@@ -9,14 +9,14 @@
 							<span>
 							
 								> <a href="/bo/premios/index">Premios / Entrega</a>
-								> Premios en Transito
+								> Premios on Transito
 							</span>
 							<?php }else{?>
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
 								> <a href="/bol/dashboard/">Log&iacute;stico</a> 
 								> <a href="/bo/premios/index">Premios / Entrega</a>
-								> Premios en Transito
+								> Premios on Transito
 							</span>
 							
 								
@@ -111,7 +111,7 @@
 																					<tr>
 																						<th data-hide="phone">ID</th>
 																						<th data-class="expand">Usuario</th>
-																						<th data-hide="phone">Nombre y Apellido</th>
+																						<th data-hide="phone">Nombre & Apellido</th>
 																						<th data-hide="phone">Telefono</th>
 																						<th data-hide="phone">email</th>
 																						<th data-hide="phone">Direción</th>
@@ -208,7 +208,7 @@
 					})
 					.done(function(msg){
 						bootbox.dialog({
-							message: "Se han embarcado el premio exitosamente.",
+							message: "Se han embarcado the premio exitosamente.",
 							title: "Exito",
 							className: "",
 							buttons: {

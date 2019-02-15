@@ -40,7 +40,7 @@
 													<a href="/bo/bonos/pago_bono">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-money fa-3x"></i>&nbsp<i class="fa fa-money fa-2x"></i>&nbsp<i class="fa fa-money fa-1x"></i>
-															<h1>Calculo de <br>Bonos</h1>
+															<h1>Calculo of <br>Bonos</h1>
 														</div>
 													</a>
 											</div>

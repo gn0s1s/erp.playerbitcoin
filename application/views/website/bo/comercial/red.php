@@ -79,7 +79,7 @@
 									<div class="row">
 										<div class="col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
 											Detalles <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-eye"></i></a>
-											Detalles en red <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-sitemap"></i></a>
+											Detalles on red <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-sitemap"></i></a>
 											Permisos <a title="Permisos" href="#" class="txt-color-blue"><i class="fa fa-unlock"></i></a>
 											Eliminar <a title="Eliminar" href="#" class="txt-color-red"><i class="fa fa-trash-o"></i></a> 
 											Activar <a title="Activar" href="#" class="txt-color-blue"><i class="fa fa-check"></i></a> 
@@ -114,7 +114,7 @@
 								                <td><?=$user->apellido?></td>
 								                <td>
 								                <a title="Detalles" href="#" onclick="detalle_usuario(<?=$user->id?>)" class="txt-color-blue"><i class="fa fa-eye"></i></a>
-								                <?php if($user->tipo_usuario!='Administrador'){?><a onclick="detalle_red(<?=$user->id?>)" title="Detalles en red" href="#" class="txt-color-blue"><i class="fa fa-sitemap"></i></a><?php }?>
+								                <?php if($user->tipo_usuario!='Administrador'){?><a onclick="detalle_red(<?=$user->id?>)" title="Detalles on red" href="#" class="txt-color-blue"><i class="fa fa-sitemap"></i></a><?php }?>
 								                <a title="Permisos" href="#" onclick="perfil_permiso(<?=$user->id?>)" class="txt-color-blue"><i class="fa fa-unlock"></i></a>
 								                <?php if($user->id_estatus==2){?>
 								                <a title="Activar" href="#" onclick="activar(<?=$user->id?>)" class="txt-color-blue"><i class="fa fa-check"></i></a>
@@ -750,7 +750,7 @@ function del_perfil()
 {
 	bootbox.dialog({
 			message: '<div class="row"><form class="smart-form" id="datos_perfil" action ="/bo/comercial/del_perfil" method="POST">'
-			+'<section class="col col-6">Selecciona el perfil que deseas borrar'
+			+'<section class="col col-6">Selecciona the Profile que deseas borrar'
 				+'<label class="select">'
 					+'<select name="perfil">'
 					+'<?php foreach ($perfiles as $key){?>'
@@ -802,7 +802,7 @@ function del_perfil()
 function desactivar(id)
 {
 	bootbox.dialog({
-			message: "Confirme que desactivará al usuario con el id <b>"+id+"</b>",
+			message: "Confirme que desactivará al usuario con the id <b>"+id+"</b>",
 			title: "Atención",
 			buttons: {
 				success: {
@@ -844,7 +844,7 @@ function desactivar(id)
 function activar(id)
 {
 	bootbox.dialog({
-			message: "Confirme que activará al usuario con el id <b>"+id+"</b>",
+			message: "Confirme que activará al usuario con the id <b>"+id+"</b>",
 			title: "Atención",
 			buttons: {
 				success: {
@@ -886,7 +886,7 @@ function activar(id)
 function eliminar(id)
 {
 	bootbox.dialog({
-			message: "Confirme que <b>eliminará</b> al usuario con el id <b>"+id+"</b>",
+			message: "Confirme que <b>eliminará</b> al usuario con the id <b>"+id+"</b>",
 			title: "Atención",
 			buttons: {
 				success: {
@@ -936,7 +936,7 @@ function detalle_red(id)
 	{
 		bootbox.dialog({
 			message: msg,
-			title: "Detalles de afiliación",
+			title: "Detalles of afiliación",
 			buttons: {
 				success: {
 				label: "Cambiar posición!",

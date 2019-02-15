@@ -380,7 +380,7 @@
 					})
 					.done(function(msg){
 						bootbox.dialog({
-							message: "Se ha cambiado el estatus de este almacen exitosamente.",
+							message: "Se ha cambiado the estatus of este almacen exitosamente.",
 							title: "Exito",
 							className: "",
 							buttons: {

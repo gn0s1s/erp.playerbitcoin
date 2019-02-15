@@ -38,7 +38,7 @@ $item = $mercancia[0];
 									
                                 <fieldset>
 
-                                    <legend>Datos de la membresía</legend>
+                                    <legend>Datos of the membresía</legend>
                                     <div id="form_mercancia">
                                         <div class="row">
                                             <fieldset>
@@ -76,7 +76,7 @@ $item = $mercancia[0];
                                                     </label>
                                                 </section>
                                                 <section class="col col-2" style="width: 50%;">
-                                                    <label class="input"><span id="labelextra">Descuento de la
+                                                    <label class="input"><span id="labelextra">Descuento of la
                                                             membresía</span> 
                                                         <input required id="precio_promo"  type="number" name="descuento" value='<?= $item->descuento; ?>' required/> 
                                                     </label>
@@ -113,7 +113,7 @@ $item = $mercancia[0];
                                                                      placeholder="Agregar alguna imágen" type="text" >
                                                         </div>
                                                         <small>
-                                                            <cite title="Source Title">Para ver el archivo que va a cargar, pulse con el puntero en el boton de "Buscar"</cite>
+                                                            <cite title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
                                                         </small>
                                                     </section>
 
@@ -122,7 +122,7 @@ $item = $mercancia[0];
                                             </fieldset>
 												
                                             <fieldset id="moneda_field">
-                                                <legend>Moneda y país</legend>
+                                                <legend>Moneda & país</legend>
 													
                                                 <section class="col col-2" style="width: 50%;">
                                                     <label class="input">Costo distribuidores
@@ -132,14 +132,14 @@ $item = $mercancia[0];
 
                                                 <section class="col col-3" style="width: 50%;">
                                                     <label class="input">
-                                                        Puntos comisionables
+                                                        Points of commissions
                                                         <input type="number" min="0" max="" value='<?= $item->puntos_comisionables ?>' name="puntos_com" id="puntos_com">
                                                     </label>
                                                 </section>
                                             </fieldset>
                                             <fieldset id="impuesto_field">
                                                 <legend>Impuesto</legend>
-                                                <section class="col col-12" style="width: 50%;">País de la mercancía
+                                                <section class="col col-12" style="width: 50%;">País of the mercancía
                                                     <label class="select">
                                                         <select id="pais2" required name="pais" onChange="select_pais()">
                                                             <?php
@@ -466,7 +466,7 @@ function enviar() {
 						.done(function( msg ) {
 
 							bootbox.dialog({
-						message: "Se ha modificado la membresia.",
+						message: "Se ha modificado the membresia.",
 						title: 'Felicitaciones',
 						buttons: {
 							success: {

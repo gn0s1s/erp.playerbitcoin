@@ -36,9 +36,9 @@
 						<div class="widget-body">
 							<form method="POST" enctype="multipart/form-data"  action="/bo/admin/new_mercancia" id="mercancia" class="smart-form" novalidate="novalidate">
 								<fieldset>
-									<legend>Alta de mercancía</legend>
+									<legend>Alta of mercancía</legend>
 									<section class="col col-3" id="b_persona">
-										Tipo de mercancia
+										Tipo of mercancia
 										<label class="select">
 											<select onchange="formulario()" name="tipo_mercancia" id="tipo_mercancia" required name="">
 												<option value="1">Producto</option>
@@ -73,7 +73,7 @@
 												</section>
 												<section class="col col-2">
 													<label class="input">
-														Código de barras
+														Código of barras
 														<input type="text" name="codigo_barras" id="codigo_barras">
 													</label>
 												</section>
@@ -100,7 +100,7 @@
 															<span class="button">
 																<input id="img" name="img[]" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">
 															</div>
-															<small>Para cargar múltiples archivos, presione la tecla ctrl y sin soltar selecione sus archivos.<br /><cite title="Source Title">Para ver los archivos que va a cargar, deje el puntero sobre el boton de "Buscar"</cite></small>
+															<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br /><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>
 														</section>
 													</div>
 												</fieldset>
@@ -138,16 +138,16 @@
 													</section>
 												</fieldset>
 												<fieldset id="moneda_field">
-													<legend>Moneda y país</legend>
+													<legend>Moneda & país</legend>
 													<section class="col col-2">
 														<label class="input">
-															Cantidad mínima de venta
+															Cantidad mínima of venta
 															<input type="text" name="min_venta" id="min_venta">
 														</label>
 													</section>
 													<section class="col col-2">
 														<label class="input">
-															Cantidad máxima de venta
+															Cantidad máxima of venta
 															<input type="text" name="max_venta" id="max_venta">
 														</label>
 													</section>
@@ -171,7 +171,7 @@
 													</section>
 													<section class="col col-2">
 														<label class="input">
-															Tiempo mínimo de entrega
+															Tiempo mínimo of entrega
 															<input placeholder="En días" type="text" name="entrega" id="entrega">
 														</label>
 													</section>
@@ -187,7 +187,7 @@
 														</label>
 													</section>
 													
-													<section class="col col-3">País de la mercancía
+													<section class="col col-3">País of the mercancía
 														<label class="select">
 															<select id="pais" required name="pais">
 																<?php foreach ($pais as $key)
@@ -201,7 +201,7 @@
 													</section>
 													<section class="col col-3">
 														<label class="input">
-															Puntos comisionables
+															Points of commissions
 															<input type="number" min="1" max="" name="puntos_com" id="puntos_com">
 														</label>
 													</section>
@@ -251,7 +251,7 @@
 																					<i></i>No</label>
 																				</div>
 																			</section>
-																			<section class="col col-2">Producto de importación
+																			<section class="col col-2">Producto of importación
 																				<div class="inline-group">
 																					<label class="radio">
 																						<input type="radio" value="1" name="importacion" checked="">
@@ -261,7 +261,7 @@
 																							<i></i>No</label>
 																						</div>
 																					</section>
-																					<section class="col col-2">Producto de sobrepedido
+																					<section class="col col-2">Producto of sobrepedido
 																						<div class="inline-group">
 																							<label class="radio">
 																								<input type="radio" value="1" name="sobrepedido" checked="">
@@ -398,13 +398,13 @@ function new_user()
 		"#calle"
 		);
 	var mensajes=new Array(
-		"Por favor ingresa un nombre de usuario",
+		"Por favor ingresa un nombre of usuario",
 		"Por favor ingresa un correo electronico",
 		"Por favor ingresa una contraseña",
-		"Por favor confirma la contraseña",
+		"Por favor confirma the contraseña",
 		"Por favor ingresa tu nombre",
 		"Por favor ingresa tu apellido",
-		"Por favor ingresa tu fecha de nacimineto",
+		"Por favor ingresa tu fecha of nacimineto",
 		"Por favor especifica tu pais",
 		"Por favor ingresa tu codigo postal",
 		"Por favor ingresa tu dirección"
@@ -423,7 +423,7 @@ function new_user()
 		"#cp"
 		);
 	var mensaje_tamano=Array(
-		"El codigo postal debe de tener al menos 5 caracteres"
+		"El codigo postal debe of tener al menos 5 caracteres"
 		);
 	var tamano_min=Array(
 		"5"
@@ -435,19 +435,19 @@ function new_user()
 		"#datepicker"
 		);
 	var mensaje_fecha=Array(
-		"El formato de al fecha es incorrecto (aaaa-mm-dd)"
+		"El formato of al fecha es incorrecto (aaaa-mm-dd)"
 		);
 	var ids_esp=new Array(
 		"#username"
 		);
 	var mensajes_esp=new Array(
-		"El nombre de usuario no puede contener espacios en blanco"
+		"El nombre of usuario no puede contener espacios on blanco"
 		);
 	
 	var validacion=valida_vacios(ids,mensajes);
 	var val_espacios=valida_espacios(ids_esp,mensajes_esp);
 	var val_email=valida_correo(id_ml,eml_mns);
-	var val_psswrds=valida_psswrds(psswrds,"Las contraseñas deben de ser iguales");
+	var val_psswrds=valida_psswrds(psswrds,"Las contraseñas deben of ser iguales");
 	var val_tamano=valida_tamano(id_tamano,tamano_min,tamano_max,mensaje_tamano);
 	var val_fecha=valida_fecha(id_fecha,mensaje_fecha);
 	if(val_espacios&&validacion&&val_email&&val_psswrds&&val_tamano&&val_fecha)
@@ -625,7 +625,7 @@ function formulario()
 			+'</label>'
 			+'</section>'
 			+'<section class="col col-2">'
-			+'<label class="input">Código de barras'
+			+'<label class="input">Código of barras'
 			+'<input type="text" name="codigo_barras">'
 			+'</label>'
 			+'</section>'
@@ -649,7 +649,7 @@ function formulario()
 			+'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
 			+'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
 			+'</div>'
-			+'<small>Para cargar múltiples archivos, presione la tecla ctrl y sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje el puntero sobre el boton de "Buscar"</cite></small>'
+			+'<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
 			+'</section>'
 			+'</div>'
 			+'</fieldset>'
@@ -682,14 +682,14 @@ function formulario()
 			+'</section>'
 			+'</fieldset>'
 			+'<fieldset id="moneda_field">'
-			+'<legend>Moneda y país</legend>'
+			+'<legend>Moneda & país</legend>'
 			+'<section class="col col-2">'
-			+'<label class="input">Cantidad mínima de venta'
+			+'<label class="input">Cantidad mínima of venta'
 			+'<input type="text" name="min_venta">'
 			+'</label>'
 			+'</section>'
 			+'<section class="col col-2">'
-			+'<label class="input">Cantidad máxima de venta'
+			+'<label class="input">Cantidad máxima of venta'
 			+'<input type="text" name="max_venta">'
 			+'</label>'
 			+'</section>'
@@ -711,7 +711,7 @@ function formulario()
 			+'</section>'
 			+'<section class="col col-2">'
 			+'<label class="input">'
-			+'Tiempo mínimo de entrega'
+			+'Tiempo mínimo of entrega'
 			+'<input placeholder="En días" type="text" name="entrega" >'
 			+'</label>'
 			+'</section>'
@@ -750,7 +750,7 @@ function formulario()
 			+'</section>'
 			+'<section class="col col-3">'
 			+'<label class="input">'
-			+'Puntos comisionables'
+			+'Points of commissions'
 			+'<input type="number" min="1" max="" name="puntos_com" id="puntos_com">'
 			+'</label>'
 			+'</section>'
@@ -781,7 +781,7 @@ function formulario()
 			+'<input type="radio" value="0" name="produccion"><i></i>No</label>'
 			+'</div>'
 			+'</section>'
-			+'<section class="col col-2">Producto de importación'
+			+'<section class="col col-2">Producto of importación'
 			+'<div class="inline-group">'
 			+'<label class="radio">'
 			+'<input type="radio" value="1" name="importacion" checked=""><i></i>Si</label>'
@@ -789,7 +789,7 @@ function formulario()
 			+'<input type="radio" value="0" name="importacion"><i></i>No</label>'
 			+'</div>'
 			+'</section>'
-			+'<section class="col col-2">Producto de sobrepedido'
+			+'<section class="col col-2">Producto of sobrepedido'
 			+'<div class="inline-group">'
 			+'<label class="radio">'
 			+'<input type="radio" value="1" name="sobrepedido" checked=""><i></i>Si</label>'
@@ -823,11 +823,11 @@ if(tipo==2)
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-2">'
-		+'<label class="input">Fecha de inicio'
+		+'<label class="input">Fecha of inicio'
 		+'<input required type="text" name="fecha_inicio" id="startdate" /> </label>'
 		+'</section>'
 		+'<section class="col col-2">'
-		+'<label class="input">Fecha de termino'
+		+'<label class="input">Fecha of termino'
 		+'<input type="text" name="fecha_fin" id="finishdate" /> </label>'
 		+'</section>'
 		+'<div>'
@@ -838,12 +838,12 @@ if(tipo==2)
 		+'<label class="label">Imágen</label>'
 		+'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
 		+'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
-		+'</div><small>Para cargar múltiples archivos, presione la tecla ctrl y sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje el puntero sobre el boton de "Buscar"</cite></small>'
+		+'</div><small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
 		+'</section>'
 		+'</div>'
 		+'</fieldset>'
 		+'<fieldset id="moneda_field">'
-		+'<legend>Moneda y país</legend>'
+		+'<legend>Moneda & país</legend>'
 		+'<section class="col col-2">'
 		+'<label class="input">'
 		+'Costo real'
@@ -862,7 +862,7 @@ if(tipo==2)
 		+'</section>'
 		+'<section class="col col-2">'
 		+'<label class="input">'
-		+'Tiempo mínimo de entrega'
+		+'Tiempo mínimo of entrega'
 		+'<input placeholder="En días" type="text" name="entrega" id="entrega">'
 		+'</label>'
 		+'</section>'
@@ -901,7 +901,7 @@ if(tipo==2)
 		+'</section>'
 		+'<section class="col col-3">'
 		+'<label class="input">'
-		+'Puntos comisionables'
+		+'Points of commissions'
 		+'<input type="number" min="1" max="" name="puntos_com" id="puntos_com">'
 		+'</label>'
 		+'</section>'
@@ -942,11 +942,11 @@ $("#mymarkdown").markdown({
 	if(tipo==3)
 	{
 		$("#tipo_mercancia_txt").empty();
-		$("#tipo_mercancia_txt").append("de la promoción");
+		$("#tipo_mercancia_txt").append("de the promoción");
 		$("#form_mercancia").empty();
 		$("#form_mercancia").append('<div class="row">'
 			+'<fieldset>'
-			+'<section class="col col-3">Tipo de promocion'
+			+'<section class="col col-3">Tipo of promocion'
 			+'<label class="select">'
 			+'<select onchange="tipo_promo()" id="tipo" name="tipo">'
 			+'<?php foreach ($promo as $key){?>'
@@ -983,7 +983,7 @@ $("#mymarkdown").markdown({
 			+'</label>'
 			+'</section>'
 			+'<section class="col col-4">'
-			+'<label class="input">Cantidad de productos'
+			+'<label class="input">Cantidad of productos'
 			+'<input type="number" min="1" name="n_productos[]" id="prod_qty">'
 			+'</label>'
 			+'</section>'
@@ -1001,7 +1001,7 @@ $("#mymarkdown").markdown({
 			+'</label>'
 			+'</section>'
 			+'<section class="col col-4">'
-			+'<label class="input">Cantidad de servicios'
+			+'<label class="input">Cantidad of servicios'
 			+'<input type="number" min="1" name="n_servicios[]" id="serv_qty">'
 			+'</label>'
 			+'</section>'
@@ -1010,7 +1010,7 @@ $("#mymarkdown").markdown({
 			+'</fieldset>'
 			+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a></div>'
 			+'<div id="moneda"><fieldset id="moneda_field">'
-			+'<legend>Moneda y país</legend>'
+			+'<legend>Moneda & país</legend>'
 			+'<section class="col col-2">'
 			+'<label class="input">'
 			+'Costo real'
@@ -1029,7 +1029,7 @@ $("#mymarkdown").markdown({
 			+'</section>'
 			+'<section class="col col-2">'
 			+'<label class="input">'
-			+'Tiempo mínimo de entrega'
+			+'Tiempo mínimo of entrega'
 			+'<input placeholder="En días" type="text" name="entrega" id="entrega">'
 			+'</label>'
 			+'</section>'
@@ -1068,7 +1068,7 @@ $("#mymarkdown").markdown({
 			+'</section>'
 			+'<section class="col col-3">'
 			+'<label class="input">'
-			+'Puntos comisionables'
+			+'Points of commissions'
 			+'<input type="number" min="1" max="" name="puntos_com" id="puntos_com">'
 			+'</label>'
 			+'</section>'
@@ -1081,7 +1081,7 @@ $("#mymarkdown").markdown({
 			+'<label class="label">Imágen</label>'
 			+'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
 			+'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
-			+'</div><small>Para cargar múltiples archivos, presione la tecla ctrl y sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje el puntero sobre el boton de "Buscar"</cite></small>'
+			+'</div><small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
 			+'</section>'
 			+'</div>'
 			+'</fieldset>'
@@ -1121,7 +1121,7 @@ function tipo_promo()
 			+'</label>'
 			+'</section>'
 			+'<section class="col col-4">'
-			+'<label class="input">Cantidad de productos'
+			+'<label class="input">Cantidad of productos'
 			+'<input type="number" min="1" name="n_productos[]" id="prod_qty">'
 			+'</label>'
 			+'</section>'
@@ -1139,13 +1139,13 @@ function tipo_promo()
 			+'</label>'
 			+'</section>'
 			+'<section class="col col-4">'
-			+'<label class="input">Cantidad de servicios'
+			+'<label class="input">Cantidad of servicios'
 			+'<input type="number" min="1" name="n_servicios[]" id="serv_qty">'
 			+'</label>'
 			+'</section>'
 			+'</div>');
 $("#moneda").append('<fieldset id="moneda_field"> '
-	+'<legend>Moneda y país</legend>'
+	+'<legend>Moneda & país</legend>'
 	+'<section class="col col-2">'
 	+'<label class="input">'
 	+'Costo real'
@@ -1164,7 +1164,7 @@ $("#moneda").append('<fieldset id="moneda_field"> '
 	+'</section>'
 	+'<section class="col col-2">'
 	+'<label class="input">'
-	+'Tiempo mínimo de entrega'
+	+'Tiempo mínimo of entrega'
 	+'<input placeholder="En días" type="text" name="entrega" id="entrega">'
 	+'</label>'
 	+'</section>'
@@ -1203,7 +1203,7 @@ $("#moneda").append('<fieldset id="moneda_field"> '
 	+'</section>'
 	+'<section class="col col-3">'
 	+'<label class="input">'
-	+'Puntos comisionables'
+	+'Points of commissions'
 	+'<input type="number" min="1" max="" name="puntos_com" id="puntos_com">'
 	+'</label>'
 	+'</section>'
@@ -1236,16 +1236,16 @@ if(tipo==2)
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-2">'
-		+'<label class="input">Cantidad de mercancia'
+		+'<label class="input">Cantidad of mercancia'
 		+'<input type="number" min="1" name="n_mercancia" id="n_mercancia">'
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-2">'
-		+'<label class="input">Fecha de inicio'
+		+'<label class="input">Fecha of inicio'
 		+'<input required type="text" name="fecha_inicio" id="startdate" /> </label>'
 		+'</section>'
 		+'<section class="col col-2">'
-		+'<label class="input">Fecha de termino'
+		+'<label class="input">Fecha of termino'
 		+'<input type="text" name="fecha_fin" id="finishdate" /> </label>'
 		+'</section>');
 
@@ -1288,7 +1288,7 @@ function new_product()
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-4">'
-		+'<label class="input">Cantidad de productos'
+		+'<label class="input">Cantidad of productos'
 		+'<input type="number" min="1" name="n_productos[]">'
 		+'</label>'
 		+'</section>');
@@ -1307,7 +1307,7 @@ function new_service()
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-4">'
-		+'<label class="input">Cantidad de servicios'
+		+'<label class="input">Cantidad of servicios'
 		+'<input type="number" min="1" name="n_servicios[]">'
 		+'</label>'
 		+'</section>');
@@ -1391,7 +1391,7 @@ function kill_grupo()
 function new_impuesto()
 {
 	bootbox.dialog({
-		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje de impuesto</label><input id='porc'  type='text'/>",
+		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
 		title: 'Agregar grupo',
 		buttons: {
 			success: {
@@ -1626,7 +1626,7 @@ function eliminar(id)
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se ha eliminado la mercancia",
+							message: "Se ha eliminado the mercancia",
 							title: 'Alerta',
 							buttons: {
 								success: {
@@ -1655,7 +1655,7 @@ function estatus(tipo,id)
 {
 	if (tipo==1){
 		bootbox.dialog({
-			message: "Confirme que desea activar en carrito de compra",
+			message: "Confirme que desea activar on carrito of compra",
 			title: "Activar",
 			buttons: {
 				success: {
@@ -1671,7 +1671,7 @@ function estatus(tipo,id)
 						.done(function( msg )
 						{
 							bootbox.dialog({
-								message: "Se ha activado el producto",
+								message: "Se ha activado the producto",
 								title: 'Activar',
 								buttons: {
 									success: {
@@ -1699,7 +1699,7 @@ function estatus(tipo,id)
 	else
 	{
 		bootbox.dialog({
-			message: "Confirme que desea desactivar en carrito de compra",
+			message: "Confirme que desea desactivar on carrito of compra",
 			title: "Descativar",
 			buttons: {
 				success: {
@@ -1715,7 +1715,7 @@ function estatus(tipo,id)
 						.done(function( msg )
 						{
 							bootbox.dialog({
-								message: "Se ha desactivado el producto",
+								message: "Se ha desactivado the producto",
 								title: 'Descativar',
 								buttons: {
 									success: {
@@ -1746,7 +1746,7 @@ function new_empresa()
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
 		+'<fieldset>'
-		+'<legend>Información de cuenta</legend>'
+		+'<legend>Información of cuenta</legend>'
 		+'<section id="usuario" class="col col-6">'
 		+'<label class="input">Razón social'
 		+'<input required type="text" name="nombre" placeholder="Empresa">'
@@ -1774,7 +1774,7 @@ function new_empresa()
 		+'</section>'
 		+'</fieldset>'
 		+'<fieldset>'
-		+'<legend>Dirección de la empresa</legend>'
+		+'<legend>Dirección of the empresa</legend>'
 		+'<div id="dir" class="row">'
 		+'<section class="col col-6">'
 		+'País'
@@ -1842,7 +1842,7 @@ function new_empresa()
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se agregado la empresa",
+							message: "Se agregado the empresa",
 							title: 'Empresa',
 							buttons: {
 								success: {
@@ -2021,15 +2021,15 @@ $("#mercancia").submit(function(event){
 			"Por favor ingresa un nombre del producto",
 			"Por favor ingresa un concepto",
 			"Por favor ingresa una marca",
-			"Por favor ingres el codigo de barras",
+			"Por favor ingres the codigo of barras",
 			"Por favor intriduzca una descripcion",
-			"Por favor especifica la canidad minima de venta",
-			"Por favor especifica la cantidad maxima de venta",
-			"Por favor especifica el costo real",
-			"Por favor especifica el costo",
-			"Por favor especifica el costo publico",
-			"Por favor epsecifica un tiempo de entrega",
-			"Por favor especifica la cantidad de puntos comisionables"
+			"Por favor especifica the canidad minima of venta",
+			"Por favor especifica the cantidad maxima of venta",
+			"Por favor especifica the costo real",
+			"Por favor especifica the costo",
+			"Por favor especifica the costo publico",
+			"Por favor epsecifica un tiempo of entrega",
+			"Por favor especifica the cantidad of Points of commissions"
 			);
 		var id_entero=Array(
 			"#codigo_barras",
@@ -2038,16 +2038,16 @@ $("#mercancia").submit(function(event){
 			"#entrega"
 			);
 		var mensaje_entero=Array(
-			"El codigo de barras debe contener solo numeros",
-			"El minimo de venta debe de ser entero",
-			"El maximo de venta debe de ser entero",
-			"El tiempo de entrega debe de ser un numero entero"
+			"El codigo of barras debe contener solo numeros",
+			"El minimo of venta debe of ser entero",
+			"El maximo of venta debe of ser entero",
+			"El tiempo of entrega debe of ser un numero entero"
 			);
 		var ids_esp=Array(
 			"#codigo_barras"
 			);
 		var mensajes_esp=Array(
-			"El codigo de barras no puede contener espacios en blanco"
+			"El codigo of barras no puede contener espacios on blanco"
 			);
 		var id_dec=Array(
 			"#peso",
@@ -2060,14 +2060,14 @@ $("#mercancia").submit(function(event){
 			"#costo_publico"
 			);
 		var msj_dec=Array(
-			"El peso debe de ser un numero",
-			"El alto debe de ser un numero",
-			"El anchp debe de ser un numero",
-			"La profundidad debe de ser un numero",
-			"El diametro debe de ser un numero",
-			"El costo real debe de ser un numero",
-			"El costo debe de ser un numero",
-			"El costo_publico debe de ser un numero"
+			"El peso debe of ser un numero",
+			"El alto debe of ser un numero",
+			"El anchp debe of ser un numero",
+			"La profundidad debe of ser un numero",
+			"El diametro debe of ser un numero",
+			"El costo real debe of ser un numero",
+			"El costo debe of ser un numero",
+			"El costo_publico debe of ser un numero"
 			);
 
 		var validacion=valida_vacios(ids,mensajes);
@@ -2097,28 +2097,28 @@ $("#mercancia").submit(function(event){
 		var mensajes=new Array(
 			"Por favor ingresa un nombre del producto",
 			"Por favor ingresa un concepto",
-			"Por favor ingrese la fecha de inicio",
-			"Por favor especifica la fecha de finalizacion",
+			"Por favor ingrese the fecha of inicio",
+			"Por favor especifica the fecha of finalizacion",
 			"Por favor intriduzca una descripcion",
-			"Por favor especifica el costo real",
-			"Por favor especifica el costo",
-			"Por favor especifica el costo publico",
-			"Por favor epsecifica un tiempo de entrega",
-			"Por favor especifica la cantidad de puntos comisionables"
+			"Por favor especifica the costo real",
+			"Por favor especifica the costo",
+			"Por favor especifica the costo publico",
+			"Por favor epsecifica un tiempo of entrega",
+			"Por favor especifica the cantidad of Points of commissions"
 			);
 		var id_entero=Array(
 			"#entrega"
 			);
 		var mensaje_entero=Array(
-			"El tiempo de entrega debe de ser un numero entero"
+			"El tiempo of entrega debe of ser un numero entero"
 			);
 		var id_fecha=Array(
 			"#startdate",
 			"#finishdate"
 			);
 		var mensaje_fecha=Array(
-			"El formato de la fecha es incorrecto (aaaa-mm-dd)",
-			"El formato de la fecha es incorrecto (aaaa-mm-dd)"
+			"El formato of the fecha es incorrecto (aaaa-mm-dd)",
+			"El formato of the fecha es incorrecto (aaaa-mm-dd)"
 			);
 		
 		var id_dec=new Array(
@@ -2127,9 +2127,9 @@ $("#mercancia").submit(function(event){
 			"#costo_publico"
 			);
 		var msj_dec=new Array(
-			"El costo real debe de ser un numero",
-			"El costo debe de ser un numero",
-			"El costo_publico debe de ser un numero"
+			"El costo real debe of ser un numero",
+			"El costo debe of ser un numero",
+			"El costo_publico debe of ser un numero"
 			);
 		//var val_decimales=valida_decimales(id_dec, msj_dec);
 		var validacion=valida_vacios(ids,mensajes);
@@ -2159,15 +2159,15 @@ $("#mercancia").submit(function(event){
 				);
 			var mensajes=new Array(
 				"Por favor ingresa un nombre del producto",
-				"Por favor especifica la cantidad de producto",
-				"Por favor especifica la cantidad de servicio",
-				"Por favor especifica el descuento de la promocion",
+				"Por favor especifica the cantidad of producto",
+				"Por favor especifica the cantidad of servicio",
+				"Por favor especifica the descuento of the promocion",
 				"Por favor intriduzca una descripcion",
-				"Por favor especifica el costo real",
-				"Por favor especifica el costo",
-				"Por favor especifica el costo publico",
-				"Por favor epsecifica un tiempo de entrega",
-				"Por favor especifica la cantidad de puntos comisionables"
+				"Por favor especifica the costo real",
+				"Por favor especifica the costo",
+				"Por favor especifica the costo publico",
+				"Por favor epsecifica un tiempo of entrega",
+				"Por favor especifica the cantidad of Points of commissions"
 				);
 			var id_entero=Array(
 				"#entrega",
@@ -2175,9 +2175,9 @@ $("#mercancia").submit(function(event){
 				"serv_qty"
 				);
 			var mensaje_entero=Array(
-				"El tiempo de entrega debe de ser un numero entero",
-				"La cantidad de prducto debe ser un numero entero",
-				"La cantidad de servcio debe ser un numero entero"
+				"El tiempo of entrega debe of ser un numero entero",
+				"La cantidad of prducto debe ser un numero entero",
+				"La cantidad of servcio debe ser un numero entero"
 				);
 			
 			var id_dec=new Array(
@@ -2186,9 +2186,9 @@ $("#mercancia").submit(function(event){
 				"#costo_publico"
 				);
 			var msj_dec=new Array(
-				"El costo real debe de ser un numero",
-				"El costo debe de ser un numero",
-				"El costo_publico debe de ser un numero"
+				"El costo real debe of ser un numero",
+				"El costo debe of ser un numero",
+				"El costo_publico debe of ser un numero"
 				);
 			//var val_decimales=valida_decimales(id_dec, msj_dec);
 			var validacion=valida_vacios(ids,mensajes);
@@ -2209,25 +2209,25 @@ $("#mercancia").submit(function(event){
 				"#precio_promo"
 				);
 			var mensajes=new Array(
-				"Por favor ingresa un nombre de la promocion",
-				"Por favor ingresa la cantidad de mercancia",
-				"Por favor ingrese la fecha de inicio",
-				"Por favor especifica la fecha de finalizacion",
-				"Por favor especifica el descuento de la promocion"
+				"Por favor ingresa un nombre of the promocion",
+				"Por favor ingresa the cantidad of mercancia",
+				"Por favor ingrese the fecha of inicio",
+				"Por favor especifica the fecha of finalizacion",
+				"Por favor especifica the descuento of the promocion"
 				);
 			var id_entero=Array(
 				"#n_mercancia"
 				);
 			var mensaje_entero=Array(
-				"La cantidad de mercancia debe ser un numero entero"
+				"La cantidad of mercancia debe ser un numero entero"
 				);
 			var id_fecha=Array(
 				"#startdate",
 				"#finishdate"
 				);
 			var mensaje_fecha=Array(
-				"El formato de la fecha es incorrecto (aaaa-mm-dd)",
-				"El formato de la fecha es incorrecto (aaaa-mm-dd)"
+				"El formato of the fecha es incorrecto (aaaa-mm-dd)",
+				"El formato of the fecha es incorrecto (aaaa-mm-dd)"
 				);
 			
 			//var val_decimales=valida_decimales(id_dec, msj_dec);
@@ -2283,16 +2283,16 @@ function new_pack()
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-6">'
-		+'<label class="input"><span id="labelextra">Puntos comisionables</span>'
+		+'<label class="input"><span id="labelextra">Points of commissions</span>'
 		+'<input id="precio_promo" type="text" name="puntos">'
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-12">Visibilidad'
 		+'<label class="select">'
 		+'<select class="custom-scroll"  name="visible">'
-		+'<option value="1">Afiliar</option>'
+		+'<option value="1">Affiliate</option>'
 		+'<option value="2">Deposito</option>'
-		+'<option value="3">Afiliar y Deposito</option>'
+		+'<option value="3">Affiliate & Deposito</option>'
 		+'</select>'
 		+'</label>'
 		+'</section>'
@@ -2310,7 +2310,7 @@ function new_pack()
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-10">'
-		+'<label class="input">Cantidad de productos'
+		+'<label class="input">Cantidad of productos'
 		+'<input type="number" min="1" name="n_productos[]" id="prod_qty">'
 		+'</label>'
 		+'</section>'
@@ -2328,7 +2328,7 @@ function new_pack()
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-10">'
-		+'<label class="input">Cantidad de servicios'
+		+'<label class="input">Cantidad of servicios'
 		+'<input type="number" min="1" name="n_servicios[]" id="serv_qty">'
 		+'</label>'
 		+'</section>'

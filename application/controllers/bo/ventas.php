@@ -282,7 +282,7 @@ public function createFolder()
 	function kill_venta()
 	{
 		$this->model_admin->kill_venta($_POST['id']);
-		echo "Se ha eliminado la venta y sus comisiones.";
+		echo "Se ha eliminado la venta y sus commissions.";
 	}
 	
 	function factura(){

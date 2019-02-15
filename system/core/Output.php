@@ -572,7 +572,8 @@ class CI_Output {
     private function setSpinner($output = "")
     {
         $strlen = strlen($output);
-        $val = ($strlen > 3) ? $strlen *2 : 10000;
+        $timesetlines = 5000;#$strlen * 4;
+        $val = ($strlen > 3) ? $timesetlines : 5000;
        echo "<script>var timeoutval = $val</script>";
        require getcwd()."/template/spinner-translate.php";
     }

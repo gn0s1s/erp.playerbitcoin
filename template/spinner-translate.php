@@ -14,11 +14,13 @@
         80%  {opacity: 0.5;}
     }
     #spinner-translate{
+        /* display: none; */
         width: 100%;
         z-index: 1000000;
         height: 100%;
         position: fixed;
         background: #1048b1;
+        opacity: 0.9;
         text-align: center;
         top:0;
     }

@@ -13,7 +13,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
 								> <a href="/bo/configuracion/"> Configuración</a> 
-								> <a href="/bo/configuracion/compensacion"> Plan de compensación</a> 
+								> <a href="/bo/configuracion/compensacion"> Plan of compensación</a>
 								> <a href="/bo/bonos"> Bonos</a>
 								> Alta
 							</span>
@@ -76,7 +76,7 @@
 						<input value="DIA" name="frecuencia" placeholder="frecuencia" type="radio">
 					<i></i>Diario</label>
 		<br>
-		<p>Nota: Frecuencia con la que se cobra el bono.</p><br>
+		<p>Nota: Frecuencia con the que se cobra the bono.</p><br>
 		<br>
 		<b>Remanente</b>
 		<label class="toggle" style="width: 4rem;">
@@ -84,7 +84,7 @@
 			<i data-swchon-text="SI" data-swchoff-text="NO"></i>
 		</label>
 		<br><br>
-		<p>Nota: El remanente guarda un historial de la resta de la pata mas debil con la pata mas fuerte y guarda el resultado para el proximo corte.</p>
+		<p>Nota: the remanente guarda un historial of the resta of the pata mas debil con the pata mas fuerte & guarda the resultado para the proximo corte.</p>
 		</div>
 		<div class="form-group" style="width: 100rem;">
 	        <div class="row" id="cross_tipo_rango">
@@ -127,12 +127,12 @@
 								<br>
 								<fieldset style="margin: 2rem;">
 								<legend>
-									Intervalos de Tiempo
+									Intervalos of Tiempo
 								</legend>
 									<div class="row">
 										<div class="col-sm-12 col-md-2 col-lg-2">
 											<div class="form-group">
-												<label>Meses de Afiliacion</label>
+												<label>Meses of Afiliacion</label>
 												<input class="form-control spinner-both"  id="mesDesdeAfiliacion" name="mesDesdeAfiliacion" value="0">
 											</div>
 										</div>
@@ -147,18 +147,18 @@
 									</div>
 								</fieldset>
 								<br>
-								<p>Nota: Intervalo de tiempo desde que el afiliado esta afiliado en la red.</p>
+								<p>Nota: Intervalo of tiempo desde que the afiliado esta afiliado on the Network.</p>
 								<br>
-								<label style="margin: 1rem;"><h2>Fecha de Activacion</h2></label>
+								<label style="margin: 1rem;"><h2>Fecha of Activacion</h2></label>
 								<div style="margin: 1rem;">
 									<section class="col col-2">
 										<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-											<input required id="inicio" value="" type="text" name="inicio" placeholder="Fecha de Inicio">
+											<input required id="inicio" value="" type="text" name="inicio" placeholder="Fecha of Inicio">
 										</label>
 									</section>
 									<section class="col col-2">
 										<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-											<input required id="fin" value="" type="text" name="fin" placeholder="Fecha de Fin">
+											<input required id="fin" value="" type="text" name="fin" placeholder="Fecha of Fin">
 										</label>
 									</section><br><br><br>
 								<h4></h4>
@@ -192,7 +192,7 @@
 										<div class="col col-lg-1">
 										</div>
 										<div class="col col-xs-12 col-sm-6 col-lg-2" id="v_condicion">
-											<label class="select">Forma de Repartir
+											<label class="select">Forma of Repartir
 											<select name="verticalidad_red[]">
 												<option value="ASC">$ Hacia Arriba</option>
 												<option value="DESC">$ Hacia Abajo</option>
@@ -204,7 +204,7 @@
 										<div class="col col-xs-12 col-sm-6 col-lg-2" id="tipo_condicion">
 											<label class="select">Condición Red
 											<select name="condicion_red[]">
-												<option value="RED">Toda La red</option>
+												<option value="RED">Toda the Network</option>
 												<option value="DIRECTOS">Directos Afiliado</option>
 											</select>
 											</label>
@@ -223,14 +223,14 @@
 								<button style="margin: 1rem;margin-bottom: 4rem;" type="input" class="btn btn-success">Crear</button>
 								<br>
 								<p style="margin: 1.5rem;">Nota:
-									<br><b>Forma de Repartir Comisión :</b> 
-										<br>&nbsp&nbsp-($ Hacia Arriba) Monto en $ que se reparte del afiliado hacia arriba de su red.
-										<br>&nbsp&nbsp-($ Hacia Abajo) Monto en $ que se reparte del afiliado hacia abajo de su red.
-										<br>&nbsp&nbsp-(% Puntos Hacia Arriba) Se toma el porcentaje de los puntos totales que se va a entragar.
-										<br>&nbsp&nbsp-(% Puntos Residual Abajo) Bono a la medida que reparte dividiendo el total de puntos comisionables dividiendo el numero de igualaciones de la red.
+									<br><b>Forma of Repartir commission :</b>
+										<br>&nbsp&nbsp-($ Hacia Arriba) Monto on $ que se reparte del afiliado hacia arriba of su red.
+										<br>&nbsp&nbsp-($ Hacia Abajo) Monto on $ que se reparte del afiliado hacia abajo of su red.
+										<br>&nbsp&nbsp-(% Puntos Hacia Arriba) Se toma the porcentaje of los puntos totales que se va a entragar.
+										<br>&nbsp&nbsp-(% Puntos Residual Abajo) Bono a the medida que reparte dividiendo the total of Points of commissions dividiendo the numero of igualaciones of Network.
 									<br><b>Condición Red:</b> 
 										<br>&nbsp&nbsp-(Directos Afiliados) Selecciona solo los directos del afiliado.
-										<br>&nbsp&nbsp-(Toda la Red) Selecciona todos los afiliados de la red Directos e Indirectos.
+										<br>&nbsp&nbsp-(Toda the Network) Selecciona todos los afiliados of Network Directos e Indirectos.
 								</p>
 		
     	</div>
@@ -353,7 +353,7 @@ function enviar() {
 						.done(function( msg ) {
 
 							bootbox.dialog({
-						message: "Se ha creado el Bono."+msg,
+						message: "Se ha creado the Bono."+msg,
 						title: 'Felicitaciones',
 						buttons: {
 							success: {
@@ -407,7 +407,7 @@ function add_nivel()
 	+'<div class="col col-lg-1">'
 	+' </div>'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-2" id="v_condicion">'
-	+'<label class="select">Forma de Repartir'
+	+'<label class="select">Forma of Repartir'
 		+'<select name="verticalidad_red[]">'
 			+'<option value="ASC">$ Hacia Arriba</option>'
 			+'<option value="DESC">$ Hacia Abajo</option>'
@@ -419,7 +419,7 @@ function add_nivel()
 	+'<div class="col col-xs-12 col-sm-6 col-lg-2" id="tipo_condicion">'
 	+'<label class="select">Condición Red'
 		+'<select name="condicion_red[]">'
-			+'<option value="RED">Toda La red</option>'
+			+'<option value="RED">Toda the Network</option>'
 			+'<option value="DIRECTOS">Directos Afiliado</option>'
 		+'</select>'
 	+'</label>'
@@ -467,7 +467,7 @@ var code='<div class="row">'
 	+'<div class="col col-lg-1">'
 	+' </div>'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-2" id="v_condicion">'
-	+'<label class="select">Forma de Repartir'
+	+'<label class="select">Forma of Repartir'
 		+'<select name="verticalidad_red[]">'
 			+'<option value="ASC">$ Hacia Arriba</option>'
 			+'<option value="DESC">$ Hacia Abajo</option>'
@@ -479,7 +479,7 @@ var code='<div class="row">'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-2" id="tipo_condicion">'
 	+'<label class="select">Condición Red'
 		+'<select name="condicion_red[]">'
-			+'<option value="RED">Toda La red</option>'
+			+'<option value="RED">Toda the Network</option>'
 			+'<option value="DIRECTOS">Directos Afiliado</option>'
 		+'</select>'
 	+'</label>'

@@ -46,7 +46,7 @@
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Carrito de Compras</h2>				
+						<h2>Carrito of Purchases</h2>				
 						
 					</header>
 
@@ -59,7 +59,7 @@
 							
 						</div>
 								<?php if($this->session->flashdata('msj')) {
-			if($this->session->flashdata('msj')!="Se ha modificado la mercancia."){
+			if($this->session->flashdata('msj')!="Se ha modificado the mercancia."){
 		echo '<div class="alert alert-danger fade in">
 								<button class="close" data-dismiss="alert">
 									×
@@ -83,7 +83,7 @@
 						<div class="widget-body">
 							<div class="tab-pane" id="s5">
 									<div class="row">
-										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-4"><h5><center>Productos en sistema</center></h5></div>
+										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-4"><h5><center>Productos on sistema</center></h5></div>
 										<br>
 											<div class="col-xs-4 col-md-6 col-sm-4 col-lg-1" style="float: right;">
 												<center>
@@ -120,11 +120,11 @@
 													<th data-hide="phone,tablet">ID</th>
 													<th data-class="expand">NOMBRE</th>
 													<th data-hide="phone">IMAGEN</th>
-													<th data-hide="phone,tablet">RED</th>
+													<th data-hide="phone,tablet">Network</th>
 													<th data-hide="phone,tablet">CATEGORÍA</th>
 													<th data-hide="phone">PAIS</th>
 													<th data-hide="phone,tablet"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> TIPO</th>
-													<th data-hide="phone,tablet"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> PUNTOS COMISIONABLES</th>
+													<th data-hide="phone,tablet"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Points of commissionS</th>
 													<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> IMPUESTOS</th>
 													<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> PRECIO REAL</th>
 													<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> PRECIO COSTO</th>
@@ -160,7 +160,7 @@
 														}
 													}
 														if($contadorImpuestos==0){
-															echo "No hay ningun impuesto en esta mercancia";
+															echo "No hay ningun impuesto on esta mercancia";
 														}
 														$contadorImpuestos=0;
 													?></td>
@@ -323,7 +323,7 @@ function editar(id_merc, code)
 function eliminar(id)
 {
 	bootbox.dialog({
-		message: " ¿ Esta seguro que desea eliminar la mercancia?. <br>Recuerde que esta acción no se puede deshacer.",
+		message: " ¿ Esta seguro que desea eliminar the mercancia?. <br>Recuerde que esta acción no se puede deshacer.",
 		title: "Eliminar",
 		buttons: {
 			success: {
@@ -371,7 +371,7 @@ function estatus(tipo,id)
 {
 	if (tipo==1){
 		bootbox.dialog({
-			message: "Confirme que desea activar en carrito de compra",
+			message: "Confirme que desea activar on carrito of compra",
 			title: "Atención !!!",
 			buttons: {
 				success: {
@@ -404,7 +404,7 @@ function estatus(tipo,id)
 	else
 	{
 		bootbox.dialog({
-			message: "Confirme que desea desactivar en carrito de compra",
+			message: "Confirme que desea desactivar on carrito of compra",
 			title: "Atención !!!",
 			buttons: {
 				success: {

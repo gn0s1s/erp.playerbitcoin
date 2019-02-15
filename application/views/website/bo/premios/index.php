@@ -92,8 +92,8 @@
 											<thead>			                
 												<tr>
 													<th>ID</th>
-													<th data-class="expand">Red</th>
-													<th data-hide="phone,tablet">Nivel de Red</th>
+													<th data-class="expand">Network</th>
+													<th data-hide="phone,tablet">Nivel of Network</th>
 													<th data-hide="phone,tablet">Nombre</th>
 													<th data-hide="phone,tablet">Cant. afiliados</th>
 													<th data-hide="phone,tablet">Frecuencia</th>
@@ -138,14 +138,7 @@
 				<!-- end widget -->
 			</article>
 			<!-- END COL -->
-		</div>
-		<div class="row">         
-	        <!-- a blank row to get started -->
-	        <div class="col-sm-12">
-	            <br />
-	            <br />
-	        </div>
-        </div>            
+
 		<!-- END ROW -->
 	</section>
 	<!-- end widget grid -->
@@ -263,7 +256,7 @@ function eliminar(id, file) {
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el premio ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the premio ?'},
 		})
 		.done(function( msg )
 		{

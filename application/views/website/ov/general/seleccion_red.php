@@ -14,7 +14,7 @@
         <div class="row" style="background: rgb(255, 255, 255) none repeat scroll 0% 0%;margin-bottom:2rem;">	
             <div class="well">
                 <fieldset>
-                    <legend>Redes</legend>
+                    <legend>Networks</legend>
                     <div class="row">
                         <?php foreach ($redes_de_usuario as $red) { ?>
                             <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

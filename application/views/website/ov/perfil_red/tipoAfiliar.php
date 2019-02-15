@@ -11,7 +11,7 @@
 	</div>
 <div class="well">
  <fieldset>
-	<legend>Afiliar</legend>
+	<legend>Affiliate</legend>
 						<div class="col-lg-6 col-sm-4 col-md-4 col-xs-12">
 						<a href="afiliar?tipo=1">
 							<div class="well well-sm txt-color-white text-center link_dashboard" style="background:#60a917">

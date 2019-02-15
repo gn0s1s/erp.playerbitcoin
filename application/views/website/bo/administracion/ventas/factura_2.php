@@ -43,7 +43,7 @@
 				<img style="height: 5rem; height: auto; padding: 1rem;" src="/logo.png" alt="">
 			</td>
 			<td style="text-align: center">
-				<h1 class="font-300">Factura de venta</h1>
+				<h1 class="font-300">Factura of venta</h1>
 				<b><?=   "\t".$empresa[0]->nombre ?> </b>
 				<br> <abbr title="Phone">Identificador tributario:</abbr><?= $empresa[0]->id_tributaria ?>
 				<br> <abbr title="Phone">Dirección:</abbr><?=  $empresa[0]->direccion ?> 
@@ -73,10 +73,10 @@
 				</div>
 				<br/> 
 				<div class="">
-					<abbr title="Phone"><strong>Fecha de expedición:</strong></abbr>
+					<abbr title="Phone"><strong>Fecha of expedición:</strong></abbr>
 					<span class="pull-right"> <i></i> <?php echo $fecha;?> </span> 
 					<br/> 
-					<abbr title="Phone"><strong>Fecha de vencimiento:</strong></abbr>
+					<abbr title="Phone"><strong>Fecha of vencimiento:</strong></abbr>
 					<span class="pull-right"> <i></i> <?php echo $fecha;?> </span>
 				</div>
 

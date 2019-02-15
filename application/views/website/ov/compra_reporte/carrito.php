@@ -28,7 +28,7 @@
     height: auto !important;
 }
 </style>
-<!-- Estilos de la nueva integración del ERP-->
+<!-- Estilos of the nueva integración del ERP-->
 <link rel="stylesheet" type="text/css" href="/template/css/playerBitcoin.css">
 
 <div id="content" style="margin-top: 4em;">
@@ -98,7 +98,7 @@
 											1 => "Productos",
 											2 => "Servicios",
 											3 => "Combinados",
-											4 => "Paquetes de Inscripción",
+											4 => "Paquetes of Inscripción",
 											5 => "Membresías"
 										);
 
@@ -187,8 +187,8 @@
 <div class="row">
 	<div class="breadcrumbDiv col-lg-12">
       <ul class="breadcrumb">
-        <li><a href="/"><i class="fa fa-home"></i> Inicio</a> </li>
-        <li class="active"><i class="fa fa-shopping-cart"></i> Carrito de Compras </li>
+        <li><a href="/"><i class="fa fa-home"></i>Home</a> </li>
+        <li class="active"><i class="fa fa-shopping-cart"></i> Carrito of Purchases </li>
       </ul>
     </div>
 <article class="col-lg-12 col-sm-4 col-md-3 col-lg-3">
@@ -243,7 +243,7 @@
 				<div class="hide jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-arrows-v"></i> </span>
-						<h2 class="font-md"><i>Tipos de Mercancia</i></h2>				
+						<h2 class="font-md"><i>Tipos of Mercancia</i></h2>				
 					</header>
 
 					<!-- widget div-->
@@ -279,7 +279,7 @@
 				</div>
 				<!-- end widget -->
 				<div class="hide paymentMethodImg">
-				<h3>Métodos de pago</h3>
+				<h3>Métodos of pago</h3>
 					<img src="/template/img/payment/payu.jpg" alt="img" height="50"> 
 					<img src="/template/img/payment/blockchain.png" alt="img" height="30">
 					<img src="/template/img/payment/paypal.png" alt="img" height="30"> 
@@ -527,7 +527,7 @@
 							if(msg=="Error")
 							{
 								bootbox.dialog({
-									message: "¡Ooops! El producto se ha agotado, intente mas tarde porfavor.",
+									message: "¡Ooops! the producto se ha agotado, intente mas tarde porfavor.",
 									title: "Error",
 									className: "",
 									buttons: {
@@ -603,7 +603,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar la mercancia ?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the mercancia ?'},
 				})
 				.done(function( msg )
 				{
