@@ -17,7 +17,7 @@
     <head>
         <meta charset="utf-8">
         <title><?=$nombre_empresa?></title>
-        <meta name="description" content="Software especializado on Multinivel">
+        <meta name="description" content="Software especializado en Multinivel">
         <meta name="author" content="<?=$nombre_empresa?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
@@ -84,16 +84,16 @@
                                         if (isset($data['errors'])) {
                                             $pswd = "";
                                             if (isset($data['errors']['login'])) {
-                                                $login = 'Error on the cuenta. ';
+                                                $login = 'Error en la cuenta. ';
                                             }
                                             if (isset($data['errors']['password'])) {
-                                                $pswd = 'Error on the contraseña. ';
+                                                $pswd = 'Error en la contraseña. ';
                                             }
                                             if (isset($data['errors']['blocked'])) {
-                                                $pswd = 'Tu cuenta esta bloqueada , intenta ingresar on 30 Minutos.<br>';
+                                                $pswd = 'Tu cuenta esta bloqueada , intenta ingresar en 30 Minutos.<br>';
                                             }
                                             if (isset($data['errors']['attempts'])) {
-                                                $pswd .= 'Solo te queda ' . $data['errors']['attempts'] . ' intentos antes que se bloque the cuenta.<br>';
+                                                $pswd .= 'Solo te queda ' . $data['errors']['attempts'] . ' intentos antes que se bloque la cuenta.<br>';
                                             }
                                         }
                                         ?>
@@ -104,26 +104,26 @@
                                                  <img src="/template/img/empresario.jpg" alt="Empresario">
                                         </div>-->
                                         <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
-                                            <h2 class="tituloLogin"><i class="fa fa-lock txt-color-teal"></i> Iniciar sesión</h2>
+                                            <h2 class="tituloLogin"><i class="fa fa-lock txt-color-teal"></i> Log In</h2>
                                         </div>
                                         <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
                                             <div class="form-group grupoCajas">
-                                                <label for="login">Cuenta</label>
+                                                <label for="login">Account</label>
                                                 <input required class="form-control cajas" type="text" name="login" placeholder="Ingrese su id, usuario o correo" id="login">
                                             </div>
 
                                             <div class="form-group grupoCajas">
-                                                <label for="password">Contraseña</label>
-                                                <input required type="password" class="form-control cajas" placeholder="Ingrese the contraseña" name="password" id="password">
+                                                <label for="password">Password</label>
+                                                <input required type="password" class="form-control cajas" placeholder="Ingrese la contraseña" name="password" id="password">
                                             </div>
                                             <div class="form-group grupoCajas"><br>
                                                 <button id="enviar" type="submit" class="btn btnLogin">
-                                                    Ingresar
+                                                    Log In
                                                 </button>
                                             </div>
                                             <div class="form-group grupoCajas">
                                                 <hr>
-                                                    <a class="link_login" href="/auth/forgot_password">¿Olvidaste tu contraseña?</a>
+                                                    <a class="link_login" href="/auth/forgot_password">Forgot your password?</a>
                                             </div>
                                             
                                         </div>
@@ -133,7 +133,7 @@
                             <br>
                             <span class="derechos">
                             <small>Copyright © <?=date('Y')?> <a href="<?=$web?>" target="_blank">
-                                <?=$nombre_empresa?></a> . Todos los derechos reservados.  </small>
+                                <?=$nombre_empresa?></a>. All rights reserved.</small>
                             </span>
                     </div>
                     <div class="col col-lg-4 col-md-4"></div>
@@ -276,8 +276,8 @@
                     // Messages for form validation
                     messages: {
                         email: {
-                            required: 'Por favor ingresa una cuenta of correo',
-                            email: 'Porfavor ingresa una cuenta of correo valida'
+                            required: 'Por favor ingresa una cuenta de correo',
+                            email: 'Porfavor ingresa una cuenta de correo valida'
                         },
                         password: {
                             required: 'Por favor ingresa tu correo'
