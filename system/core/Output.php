@@ -571,6 +571,7 @@ class CI_Output {
 
     private function setSpinner($output = "")
     {
+        return false;
         $strlen = strlen($output);
         $timesetlines = 5000;#$strlen * 4;
         $val = ($strlen > 3) ? $timesetlines : 5000;

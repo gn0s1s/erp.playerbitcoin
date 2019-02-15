@@ -189,6 +189,7 @@ class web_personal extends CI_Model{
         $head = str_replace("$webempresa/http","http",$head);
         $head = str_replace("$webempresa/form_template","form_template",$head);
         $head = str_replace("../form_template","$webempresa/form_template",$head);
+
         $footer = str_replace("<body","</body",  $setbody[2]);
         $marca = '<a href="'.$webempresa.'"> 
                   <img alt="" src="'.site_url().'/logo.png" '
@@ -234,7 +235,11 @@ class web_personal extends CI_Model{
         
         if(!$this->content)
             $this->content = file_get_contents(getcwd().$content_file);
-        
+
+        $webempresa = $this->empresa();
+        $webempresa = $webempresa[0]->web;
+        $this->content = str_replace("../form_template","$webempresa/form_template",$this->content);
+
         $this->content = str_replace("[[$".$let."]]","$parte", $this->content); 
         
     }

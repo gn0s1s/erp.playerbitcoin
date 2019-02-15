@@ -6,7 +6,7 @@
  * Time: 9:17 PM
  */
 ?>
-
+<!--
 <style>
     @keyframes loading-translate {
         30%   {opacity: 0.3;}
@@ -42,3 +42,4 @@
     <h1>Loading ...</h1>
 </div>
 <script>setTimeout(del_spinner_translate,5000);</script>
+-->

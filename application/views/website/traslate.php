@@ -1,4 +1,4 @@
-<!-- GTranslate: https://gtranslate.io/ -->
+<!-- GTranslate: https://gtranslate.io/
 <li class="banderitas">
     <a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="gflag nturl"
        style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" alt="English"/></a>
@@ -46,7 +46,7 @@
         display: none !important;
     }
 
-    -->
+    />
 </style>
 
 <div id="google_translate_element2"></div>
@@ -90,3 +90,4 @@
         console.log('translated');
     }
 </script>
+-->

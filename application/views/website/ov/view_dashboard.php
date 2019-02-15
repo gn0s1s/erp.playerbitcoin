@@ -58,8 +58,8 @@
 																		</li>
 																		<li>
 																			<h5 class="text-muted">
-																				<i class="fa fa-globe"></i> Enlace of referidos:<br/></h5>
-																				<a href="<?=$link_personal;?>" ><?=$link_personal;?></a>
+																				<i class="fa fa-globe"></i> Refferal Link:<br/></h5>
+																				<a href="<?=$link_personal;?>" target="_blank"><?=$link_personal;?></a>
 																			<hr/>
 																		</li>
 																		<li>
@@ -74,18 +74,18 @@
 																		</li>
 																		<li>
 																			<p class="text-muted">
-																				<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Ultima sesión: <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment"><?=$ultima?></a></span>
+																				<i class="fa fa-calendar"></i>&nbsp;&nbsp;<span class="txt-color-darken">Last session: <a href="javascript:void(0);" rel="tooltip" title="" data-placement="top" data-original-title="Create an Appointment"><?=$ultima?></a></span>
 																			</p>
 																		</li>
 											                                <li>
 											                                <?php if($id_sponsor&&$name_sponsor){
 											                                if(($id_sponsor[0]->id_usuario!=1)){
 											                                ?>
-											                               <b>Patrocinador:</b>
+											                               <b>Sponsor:</b>
 											                              <?=$name_sponsor[0]->nombre?> <?=$name_sponsor[0]->apellido?> con id <?=$id_sponsor[0]->id_usuario?><br/>
 											
 											                              <?php }else{?>
-											                              Eres un nodo raíz, fuiste patrocinado por the empresa<br />
+											                              You're Network Head, Sponsored by The Business<br />
 											                              <?php }}?>
 											                                </li>
 		                                									<div class="row">
@@ -134,7 +134,7 @@
 																		</li>
 																	</ul>
 		                                                            <?php if (sizeof($ultimos_auspiciados)>0) :?>
-		                                                                <h1><small>Últimos Auspiciados</small></h1>
+		                                                                <h1><small>Last Sponsored</small></h1>
 		                                                                <ul class="list-inline friends-list">
 		                                                                    <?php
 		                                                                    foreach ($ultimos_auspiciados as $afiliado) {
@@ -148,7 +148,7 @@
 		                                                                <a href="/play/dashboard">
 		                                                                    <div id="play-boton" class="link_dashboard well well-sm txt-color-white text-center ">
 		                                                                        <i class="fa fa-btc fa-3x"></i>
-		                                                                        <h3>JUGAR</h3>
+		                                                                        <h3>Let's Play</h3>
 		                                                                    </div>
 		                                                                </a>
 		                                                            </div>
@@ -223,7 +223,7 @@
 															</div>
 															<!-- CHAT BODY -->
 															<div id="chat-body" class="chat-body custom-scroll">
-																<span id="" class="activity-dropdown"> <i class="fa fa-user"></i> Afiliados on Mi Red
+																<span id="" class="activity-dropdown"> <i class="fa fa-user"></i> My Network Members
 																<b class="badge bg-color-red bounceIn animated"> <?php echo $numeroAfiliadosRed;?> </b> </span>
 																<ul>
 																    <?php 
@@ -427,7 +427,7 @@
                                          <a href="surveys">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
                                                  <i class="fa fa-file-text-o fa-3x"></i>
-                                                 <h5>Encuestas</h5>
+                                                 <h5>Surveys</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -438,7 +438,7 @@
                                          <a href="archive">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
                                                  <i class="fa fa-archive fa-3x"></i>
-                                                 <h5>Archivero</h5>
+                                                 <h5>Files</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -452,7 +452,7 @@
                                          <a href="board">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
                                                  <i class="fa fa-cogs fa-3x"></i>
-                                                 <h5>Tablero</h5>
+                                                 <h5>Template</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -463,7 +463,7 @@
                                          <a href="share">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
                                                  <i class="fa  fa-folder-open-o  fa-3x"></i>
-                                                 <h5>Compartir</h5>
+                                                 <h5>SharePoint</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -489,7 +489,7 @@
 									<div class="well">
 										<div class="row">
 											<fieldset>
-												<legend><b>Comunicación</b></legend>
+												<legend><b>Comunications</b></legend>
 												<div class="col-sm-2">
 												</div>
 												
@@ -505,7 +505,7 @@
 													<a href="cgeneral/invitacion_afiliar">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-envelope fa-2x"></i>&nbsp;&nbsp;<i class="fa fa-sitemap fa-3x"></i>
-															<h5>Invitacion Affiliate</h5>
+															<h5>Affiliate Banner</h5>
 														</div>
 													</a>
 												</div>
@@ -527,7 +527,7 @@
                                                     <a href="javascript:void(0);"><!-- cgeneral/ganadores -->
                                                         <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
                                                             <i class="fa fa-trophy fa-3x"></i>
-                                                            <h5>Ganadores</h5>
+                                                            <h5>Winners</h5>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -546,7 +546,7 @@
 									<div class="well">
 										<div class="row">
 											<fieldset>
-												<legend><b>Información & capacitación</b></legend>
+												<legend><b>Informatión & Training</b></legend>
 												<div class="col-sm-2">
 												</div>
 												<?php $permiso=$ci->model_permissions->check($id,'informacion');
@@ -556,7 +556,7 @@
 													<a href="information">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-info fa-3x"></i>
-															<h5>Información</h5>
+															<h5>Informatión</h5>
 														</div>
 													</a>
 												</div>
@@ -567,7 +567,7 @@
 													<a href="presentations">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-desktop fa-3x"></i>
-															<h5>Presentaciones</h5>
+															<h5>Slideshow</h5>
 														</div>
 													</a>
 												</div>
@@ -589,7 +589,7 @@
 													<a href="downloads">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-download fa-3x"></i>
-															<h5>Descargas</h5>
+															<h5>Downloadable</h5>
 														</div>
 													</a>
 												</div>
@@ -607,7 +607,7 @@
 												<a href="events">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-calendar fa-3x"></i>
-														<h5>Eventos</h5>
+														<h5>Events</h5>
 													</div>
 												</a>
 											</div>
@@ -618,7 +618,7 @@
 												<a href="news">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 														<i class="fa fa-bullhorn fa-3x"></i>
-														<h5>Noticias</h5>
+														<h5>News</h5>
 													</div>
 												</a>
 											</div>
@@ -629,7 +629,7 @@
 													<a href="videos">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-file-video-o fa-3x"></i>
-															<h5>Vídeos</h5>
+															<h5>Videos</h5>
 														</div>
 													</a>
 												</div>
@@ -642,7 +642,7 @@
 													<a href="statistics">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-bar-chart-o fa-3x"></i>
-															<h5>Estadisticas</h5>
+															<h5>Statistics</h5>
 														</div>
 													</a>
 												</div>
