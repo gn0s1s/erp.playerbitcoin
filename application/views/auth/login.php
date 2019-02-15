@@ -109,12 +109,12 @@
                                         <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
                                             <div class="form-group grupoCajas">
                                                 <label for="login">Account</label>
-                                                <input required class="form-control cajas" type="text" name="login" placeholder="Ingrese su id, usuario o correo" id="login">
+                                                <input required class="form-control cajas" type="text" name="login" placeholder="Enter your id, user or email" id="login">
                                             </div>
 
                                             <div class="form-group grupoCajas">
                                                 <label for="password">Password</label>
-                                                <input required type="password" class="form-control cajas" placeholder="Ingrese la contraseña" name="password" id="password">
+                                                <input required type="password" class="form-control cajas" placeholder="Enter the password" name="password" id="password">
                                             </div>
                                             <div class="form-group grupoCajas"><br>
                                                 <button id="enviar" type="submit" class="btn btnLogin">
