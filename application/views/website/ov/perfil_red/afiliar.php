@@ -5,14 +5,14 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
-				> Afiliar
+				> Affiliate
 				</span>
 			</h1>
 		</div>
 	</div>
 <div class="well">
 				<fieldset>
-					<legend>Nuevo Afiliado</legend>
+					<legend>New Affiliate</legend>
 					<div class="row">
 						<div class="col-lg-2 col-sm-2 col-md-2 col-xs-12"></div>
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
@@ -21,7 +21,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Afiliar on Frontal</h5>
+									<h5>Affiliate in frontal</h5>
 								</div>
 							</a>
 						</div>
@@ -31,7 +31,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Afiliar on Network</h5>
+									<h5>Affiliate in network</h5>
 								</div>
 							</a>
 						</div>

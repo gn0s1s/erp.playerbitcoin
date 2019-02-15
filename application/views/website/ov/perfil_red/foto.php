@@ -8,7 +8,7 @@
 				<span>
 				> <a href="/ov/networkProfile">Profile</a>
 				>
-					Foto
+					Photo
 				</span>
                     </h1>
                 </div>
@@ -40,7 +40,7 @@
                                 -->
                                 <header>
                                     <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-                                    <h2>Tomar foto</h2>
+                                    <h2>Take a photo</h2>
 
                                 </header>
 
@@ -59,12 +59,12 @@
                                     <div id="mensaje">
                                     </div>
                                         <div id='botonera'>
-                                            <button class="btn btn-info" id='botonIniciar' type='button' >Iniciar  <li class="fa fa-play"></li></button>
-                                            <button class="btn btn-warning" id='botonDetener' type='button' value = 'Detener'>Detener  <li class="fa fa-pause"></li></button>
-                                            <button class="btn btn-success" id='botonFoto' type='button' value = 'Foto'>Capturar  <li class="fa fa-camera"></li></button>
+                                            <button class="btn btn-info" id='botonIniciar' type='button' >Start  <li class="fa fa-play"></li></button>
+                                            <button class="btn btn-warning" id='botonDetener' type='button' value = 'Detener'>Having  <li class="fa fa-pause"></li></button>
+                                            <button class="btn btn-success" id='botonFoto' type='button' value = 'Foto'>Capture  <li class="fa fa-camera"></li></button>
                                         </div><br />
                                         <div class="contenedor">
-                                            <div class="titulo">Cámara</div>
+                                            <div class="titulo">Camera</div>
                                             <video id="camara" autoplay controls></video>
                                         </div>
                                         <div class="contenedor">
@@ -110,7 +110,7 @@
                                 -->
                                 <header>
                                     <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-                                    <h2>Carga tu foto personal</h2>
+                                    <h2>Upload your personal photo</h2>
 
                                 </header>
 
@@ -132,7 +132,7 @@
                                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                         </div>
                                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                                            <h1>Arrastra tu imágen o da clic para cargarla</h1>
+                                            <h1>Drag your image or click to load it</h1>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                             </div><i class="fa fa-file-image-o fa-5x"></i>
                                         </div>
@@ -281,7 +281,7 @@ $(document).ready(function(){
 window.URL = window.URL || window.webkitURL;
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia ||
 function() {
-    alert('Su navegador no soporta está aplicación.');
+    alert('Your browser does not support this application.');
 };
 
 //Este objeto guardará algunos datos sobre the cámara
@@ -303,7 +303,7 @@ $('#botonIniciar').on('click', function(e) {
         $('#camara').attr('src', datosVideo.url);
 
     }, function() {
-        alert('No fue posible obtener acceso a the cámara.');
+        alert('It was not possible to get access to the camera.');
     });
 
 });
@@ -352,7 +352,7 @@ $('#botonDetener').on('click', function(e) {
 	                '                 ×  '+
 	                '</button>'+
 	                '<i class="fa-fw fa fa-check"></i>'+
-	                 '<strong>Felicitaciones !</strong> Se ha cambiado the foto of perfil.'+
+	                 '<strong>Congratulations!</strong> The profile photo has been changed.'+
 	               '</div>')
 			
 		}else{
@@ -361,7 +361,7 @@ $('#botonDetener').on('click', function(e) {
 	                '                 ×  '+
 	                '</button>'+
 	                '<i class="fa-fw fa fa-check"></i>'+
-	                 '<strong>Lo Lametamos !</strong>No se ha cambiado the foto of tu perfil.'+
+	                 '<strong>We sorry !</strong>Your profile photo has not been changed.'+
 	               '</div>')
 		}
 	});

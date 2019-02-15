@@ -27,7 +27,7 @@ $confirm_new_password = array(
 				<span>
 				> <a href="/ov/networkProfile">Profile</a>
 				>
-					Cambiar Contraseña
+					Change Password
 				</span>
 			</h1>
 		</div>
@@ -54,7 +54,7 @@ $confirm_new_password = array(
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Contraseña</h2>
+						<h2>Password</h2>
 
 					</header>
 
@@ -73,21 +73,21 @@ $confirm_new_password = array(
             </section>
             <section id="old_password" style="width: 20rem;">
               <label class="input"><i class="icon-prepend fa fa-lock"></i>
-               <input type="password" name="old_password" id="old_password" size="30" placeholder="Contraseña" value="">
+               <input type="password" name="old_password" id="old_password" size="30" placeholder="Password" value="">
               </label>
             </section><br>
             <section id="new_password">
               <label class="input"> <i class="icon-prepend fa fa-lock"></i>
-                <input style="width: 20rem;" placeholder="Nueva contraseña" name="new_password" id="newPassword" type="password">
+                <input style="width: 20rem;" placeholder="New Password" name="new_password" id="newPassword" type="password">
               </label>
             </section><br>
             <section id="confirm_new_password">
               <label class="input"> <i class="icon-prepend fa fa-lock"></i>
-                <input style="width: 20rem;" placeholder="Repita nueva contraseña" name="confirm_new_password" id="confirmNewPassword" type="password">
+                <input style="width: 20rem;" placeholder="Re-enter New Password" name="confirm_new_password" id="confirmNewPassword" type="password">
               </label>
             </section>
           </div>
-          <input name="change" value="Cambiar Contraseña" type="submit" class="btn-success">
+          <input name="change" value="Change Password" type="submit" class="btn-success">
       </form>
     </fieldset>
   </div>
