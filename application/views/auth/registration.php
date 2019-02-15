@@ -26,7 +26,7 @@
 					<header class="col col-md-12">
 						<span class="widget-icon "> <i class="fa fa-edit fa-2x"></i>
 						</span>						
-						<h2 class="pull-left">REGÍSTRATE</h2>
+						<h2 class="pull-left">SIGN UP</h2>
 						<h4 class="pull-right">Formulario de Afiliación:</h4>
 						 
 					</header>
