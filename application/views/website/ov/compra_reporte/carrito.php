@@ -24,12 +24,13 @@
 
 <!-- include pace script for automatic web page progress bar  -->
 <style>
-    #google_translate_element {
-        position: fixed;
-        z-index: 1000;
-        right: 0;
-    }
+#content,.item.active {
+    height: auto !important;
+}
 </style>
+<!-- Estilos de la nueva integración del ERP-->
+<link rel="stylesheet" type="text/css" href="/template/css/playerBitcoin.css">
+
 <div id="content" style="margin-top: 4em;">
  <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation" id="cart_cont" style="background: <?= $style[0]->btn_1_color;?> !important;">
     <div class="navbar-header">
@@ -78,7 +79,8 @@
           </table>
         </div>
         <!--/.miniCartTable-->
-        
+
+          <?php $this->load->view('website/traslate'); ?>
         <div class="miniCartFooter  miniCartFooterInMobile text-right">
           <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
           <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="a_comprar()"> <i class="fa fa-money fa"></i> PAGAR!  </a> </div>

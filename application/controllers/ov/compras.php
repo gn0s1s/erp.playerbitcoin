@@ -390,6 +390,8 @@ function index()
         }
 
         $id = $this->tank_auth->get_user_id();
+        $email = $this->general->get_email($id);
+        $email = $email[0]->email;
 
         $contenidoCarrito=$this->get_content_carrito ();
 
@@ -418,10 +420,20 @@ function index()
         $this->cart->destroy();
 
         $emailPagos = $this->general->emailPagos();
+        $emailPagos = $emailPagos[0]->email;
+
+        $typesec = $this->typeSERVER();
+        $SERVER_NAME = $_SERVER["SERVER_NAME"];
+
+        $view = "<h2>PURCHASE SUCCESS</h2><hr/><br/><h3># ORDER ID : $id_venta</h3>";
+        $factura = "$typesec://$SERVER_NAME/bo/ventas/factura?id=$id";
+        $view .= file_get_contents($factura);
+
+        $this->cemail->sendPHPmail($email,"PAY BACK EARNINGS",$view,$emailPagos);
 
         $saldo = number_format($saldo,2);
-        echo "<h2>MONTO TRANSFERIDO SATISFACTORIAMENTE</h2>
-               <br/>SALDO RESTANTE: <strong>$saldo</strong>";
+        echo "<h2>AMOUNT TRANSFERED SUCESSFULLY</h2>
+               <br/>WALLET AMOUNT: <strong>$saldo</strong>";
 	}
 	
 	function RegistrarVentaConsignacion(){
@@ -622,8 +634,10 @@ function index()
 
             $typesec = $this->typeSERVER();
             $SERVER_NAME = $_SERVER["SERVER_NAME"];
-            $view = "$typesec://$SERVER_NAME/ov/compras/respuestaBlockchain?id=$id";
-            $view = "<h2>COMPRA EXITOSA</h2><hr/><br/><h3># venta : $id_venta</h3>";
+
+            $view = "<h2>PURCHASE SUCCESS</h2><hr/><br/><h3># ORDER ID : $id_venta</h3>";
+            $factura = "$typesec://$SERVER_NAME/bo/ventas/factura?id=$id";
+            $view .= file_get_contents($factura);
 
             $this->cemail->sendPHPmail($email,$metodo_pago,$view);
             echo "OK";

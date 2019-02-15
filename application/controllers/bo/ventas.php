@@ -288,15 +288,22 @@ public function createFolder()
 	function factura(){
 
 
-		$id = $this->modelo_compras->get_datos_venta($_POST['id']);
-		$fecha_1=date_create($id[0]->fecha);
-		$fecha=date_format($fecha_1,'Y-m-d');
-		$id=$id[0]->id_user;
+        $id_venta = isset($_GET['id']) ? $_GET['id']: $_POST['id'];
+        $venta = $this->modelo_compras->get_datos_venta($id_venta);
+
+        if(!$venta){
+            echo "ORDER ID NOT FOUND";
+            return false;
+        }
+
+		$fecha=date_create($venta[0]->fecha);
+		$fecha=date_format($fecha,'Y-m-d');
+		$id=$venta[0]->id_user;
 
 		$datos_afiliado = $this->model_perfil_red->datos_perfil($id);
 		$this->template->set("datos_afiliado",$datos_afiliado);
 		
-		$mercanciaFactura = $this->modelo_compras->get_mercancia_venta($_POST['id']);
+		$mercanciaFactura = $this->modelo_compras->get_mercancia_venta($id_venta);
 		
 		$data=array();
 		$contador=0;
@@ -328,6 +335,7 @@ public function createFolder()
 		
 		}
 
+        $this->template->set("id_venta",$id_venta);
 		$this->template->set("mercanciaFactura",$mercanciaFactura);
 		$this->template->set("info_mercancia",$info_mercancia);
 		

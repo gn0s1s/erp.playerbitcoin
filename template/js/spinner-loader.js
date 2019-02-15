@@ -6,7 +6,7 @@ function iniciarSpinner(){
 	
 	var code='<div id="spinner-div"></div>';
 	
-	$("#content").append(code)
+	$("#content").append(code);
 	
 	setiniciarSpinner();
 			

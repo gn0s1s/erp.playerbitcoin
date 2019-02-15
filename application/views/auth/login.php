@@ -141,7 +141,7 @@
             </div>
         </div>
 
-
+        <?php $this->load->view('website/traslate'); ?>
         <!-- <div id="footer" class="fade in">
             <br />
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">

@@ -413,7 +413,67 @@
 				</div>
 			  <!--Termina la seccion de compras y reportes-->
 
-
+             <div class="row">
+                 <div class="col-sm-12 col-md-12 col-lg-12">
+                     <!--Inica la seccion general-->
+                     <div class="well">
+                         <fieldset>
+                             <legend><b>General</b></legend>
+                             <div class="row">
+                                 <?php $permiso=$ci->model_permissions->check($id,'encuestas');
+                                 if($permiso){
+                                     ?>
+                                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                         <a href="surveys">
+                                             <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
+                                                 <i class="fa fa-file-text-o fa-3x"></i>
+                                                 <h5>Encuestas</h5>
+                                             </div>
+                                         </a>
+                                     </div>
+                                 <?php }$permiso=$ci->model_permissions->check($id,'archivero');
+                                 if($permiso){
+                                     ?>
+                                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                         <a href="archive">
+                                             <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
+                                                 <i class="fa fa-archive fa-3x"></i>
+                                                 <h5>Archivero</h5>
+                                             </div>
+                                         </a>
+                                     </div>
+                                 <?php }?>
+                             </div>
+                             <div class="row">
+                                 <?php $permiso=$ci->model_permissions->check($id,'tablero');
+                                 if($permiso){
+                                     ?>
+                                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                         <a href="board">
+                                             <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
+                                                 <i class="fa fa-cogs fa-3x"></i>
+                                                 <h5>Tablero</h5>
+                                             </div>
+                                         </a>
+                                     </div>
+                                 <?php }$permiso=$ci->model_permissions->check($id,'compartir');
+                                 if($permiso){
+                                     ?>
+                                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                                         <a href="share">
+                                             <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
+                                                 <i class="fa  fa-folder-open-o  fa-3x"></i>
+                                                 <h5>Compartir</h5>
+                                             </div>
+                                         </a>
+                                     </div>
+                                 <?php }?>
+                             </div>
+                         </fieldset>
+                     </div>
+                     <!--Termina la seccion general-->
+                 </div>
+             </div>
 
 		 </div>
         </div>
@@ -422,73 +482,7 @@
 				<div>
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-lg-12">
-							<div class="row">
-							   <div class="col-sm-12 col-md-12 col-lg-4">
-									
-								</div>
-								<div class="col-sm-12 col-md-12 col-lg-4">
-									
-								</div>
-                				<div class="col-sm-12 col-md-12 col-lg-4">
-									<!--Inica la seccion general-->
-									<div class="well">
-										<fieldset>
-											<legend><b>General</b></legend>
-											<div class="row">
-												<?php $permiso=$ci->model_permissions->check($id,'encuestas');
-												if($permiso){
-												?>
-												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="surveys">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<i class="fa fa-file-text-o fa-3x"></i>
-															<h5>Encuestas</h5>
-														</div>
-													</a>
-												</div>
-												<?php }$permiso=$ci->model_permissions->check($id,'archivero');
-												if($permiso){
-												?>
-												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="archive">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<i class="fa fa-archive fa-3x"></i>
-															<h5>Archivero</h5>
-														</div>
-													</a>
-												</div>
-												<?php }?>
-											</div>
-											<div class="row">
-												<?php $permiso=$ci->model_permissions->check($id,'tablero');
-												if($permiso){
-												?>
-												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="board">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
-															<i class="fa fa-cogs fa-3x"></i>
-															<h5>Tablero</h5>
-														</div>
-													</a>
-												</div>
-												<?php }$permiso=$ci->model_permissions->check($id,'compartir');
-												if($permiso){
-												?>
-												<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-													<a href="share">
-														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-															<i class="fa  fa-folder-open-o  fa-3x"></i>
-															<h5>Compartir</h5>
-														</div>
-													</a>
-												</div>
-												<?php }?>
-											</div>
-										</fieldset>
-									</div>
-								  <!--Termina la seccion general-->
-								</div>
-							</div>
+
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12">
 									<!--Inicia la seccion de comunicacion-->
