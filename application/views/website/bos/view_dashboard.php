@@ -41,10 +41,10 @@ $ci->load->model("model_permissions");?>
   									</div>
 									</div>
                 	<div class="col-sm-12 col-md-12 col-lg-8">
-									<!--Inica la secciion de la perfil y red-->
+									<!--Inica the secciion of the Profile & red-->
 								  	<div class="well" style="box-shadow: 0px 0px 0px !important;border-color: transparent;">
 										<fieldset>
-											<legend><b>Sistema Integral de Operaciones Soporte Técnico</b></legend>
+											<legend><b>Sistema Integral of Operaciones Support</b></legend>
 											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " style="padding-left: 13%;">
 											<div class="col-xs-10 col-sm-10 col-md-2 col-lg-8" style="padding-bottom: 3rem;">
 												<a href="/bo/configuracion/grupos_soporte_tecnico">

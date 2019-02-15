@@ -61,7 +61,7 @@
 										<th data-hide="phone">ID Venta</th>
 										<th data-class="expand">Afiliado</th>
 										<th data-hide="phone">Email</th>	
-										<th data-hide="phone">Banco</th>
+										<th data-hide="phone">bank</th>
 										<th data-hide="phone,tablet">N° Cuenta</th>
 										<th data-hide="phone,tablet">Titular</th>
 										<th data-hide="phone,tablet">CLABE</th>
@@ -69,7 +69,7 @@
 										<th data-hide="phone,tablet">Dirección postal</th>
 										<th data-hide="phone,tablet" style="width: 70px !important">Valor</th>
 										<th data-hide="phone,tablet">Fecha</th>
-										<th data-hide="phone,tablet">Estado</th>
+										<th data-hide="phone,tablet">Status</th>
 										<th>Acciones</th>
 
 									</tr>
@@ -207,8 +207,8 @@ $(document).ready(function() {
 	
 function estado_cobro(venta,historial, usuario)
 {
-	var msg = "¿Esta seguro de confirmar el pago?";
-	var	titulo = "Confirmacion de pago";
+	var msg = "¿Esta seguro of confirmar the pago?";
+	var	titulo = "Confirmacion of pago";
 
 	bootbox.dialog({
 		message: msg,
@@ -263,7 +263,7 @@ function estado_cobro(venta,historial, usuario)
 
 function cancelar_cobro(venta)
 {
-	var msg = "¿Esta seguro de eliminar los datos de la venta?";
+	var msg = "¿Esta seguro of eliminar los datos of the venta?";
 	var	titulo = "Eliminar Cobro";
 
 	bootbox.dialog({

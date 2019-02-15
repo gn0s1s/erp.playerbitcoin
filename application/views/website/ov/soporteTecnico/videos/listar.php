@@ -8,7 +8,7 @@
 								<a href="/ov/cgeneral/soporte_tecnico_ver_redes"> Ver Redes</a> >
 							</span>
 							<span>
-								<a href="/ov/cgeneral/soporte_tecnico?id_red=<?php echo $id_red;?>"> Soporte Técnico</a> >	Videos
+								<a href="/ov/cgeneral/soporte_tecnico?id_red=<?php echo $id_red;?>"> Support</a> >	Videos
 							</span>
 						</h1>
 					</div>

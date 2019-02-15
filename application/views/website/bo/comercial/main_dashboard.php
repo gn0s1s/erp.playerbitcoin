@@ -19,7 +19,7 @@
 						<div class="col-sm-12 col-md-12 col-lg-12">
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12">
-									<!--Inica la secciion de la perfil y red-->
+									<!--Inica the secciion of the Profile & red-->
 									<div class="well">
 										<div class="row">
 											<!--
@@ -35,7 +35,7 @@
 												<a href="/bo/mod_fin">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-money fa-5x"></i>
-														<h1>Puntos de venta</h1>
+														<h1>Points of venta</h1>
 													</div>
 												</a>
 											</div>
@@ -43,7 +43,7 @@
 												<a href="/bo/comercial/red">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-money fa-5x"></i>
-														<h1>Red</h1>
+														<h1>Network</h1>
 													</div>
 												</a>
 											</div>-->
@@ -63,7 +63,7 @@
 												<a href="/bo/mod_admon">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 														<i class="fa fa-edit fa-5x"></i>
-														<h1>Promocion y publicidad</h1>
+														<h1>Promocion & publicidad</h1>
 													</div>
 												</a>
 											</div>
@@ -79,7 +79,7 @@
 												<a href="/bo/mod_fin">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-money fa-5x"></i>
-														<h1>Estudios de mercado</h1>
+														<h1>Estudios of mercado</h1>
 													</div>
 												</a>
 											</div>
@@ -87,7 +87,7 @@
 												<a href="/bo/mod_fin">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-money fa-5x"></i>
-														<h1>Reportes</h1>
+														<h1>Reports</h1>
 													</div>
 												</a>
 											</div>
@@ -97,13 +97,13 @@
 												<a href="/bo/mod_fin">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-money fa-5x"></i>
-														<h1>Archivero</h1>
+														<h1>Files</h1>
 													</div>
 												</a>
 											</div>
 										</div>-->
 									</div>
-									<!--Termina la secciion de perfil y red-->
+									<!--Termina the secciion of Profile & red-->
 								</div>
 							</div>
 						</div>

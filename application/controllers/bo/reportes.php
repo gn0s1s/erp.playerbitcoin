@@ -340,7 +340,7 @@ class reportes extends CI_Controller {
 					"<th data-hide='phone,tablet'>Impuestos</th>" .
 					"<th data-hide='phone,tablet'>Total Ventas</th>" .
 					"<th data-hide='phone,tablet'>Comisiones</th>" .
-					"<th data-hide='phone,tablet'>Bonos</th>" .
+					"<th data-hide='phone,tablet'>Calculated Commissions</th>" .
 					"<th data-hide='phone,tablet'>Total Comisiones</th>" .
 					"<th data-hide='phone,tablet'>Transacciones</th>" .
 					"<th data-hide='phone,tablet'>Comisiones Pagadas</th>" .

@@ -225,7 +225,7 @@
 		<!-- PAGE RELATED PLUGIN(S) -->
 		</div>
 		
-		<!-- Scripts de la imaginacion chevre del autor de la pagina-->
+		<!-- Scripts of the imaginacion chevre del autor of the pagina-->
 			<script type="text/javascript">
  		$(document).ready(function() {
 				

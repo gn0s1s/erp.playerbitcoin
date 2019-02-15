@@ -246,13 +246,13 @@ $(document).ready(function() {
 	
 function estado_almacen(estatus, id)
 {
-	var msg = "¿Desea desactivar el cedi?";
+	var msg = "¿Desea desactivar the cedi?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el cedi?";
+		msg = "¿Desea desactivar the cedi?";
 		titulo = "Desactivar almacen";
 	}else{
-		msg = "¿Desea activar el cedi?";
+		msg = "¿Desea activar the cedi?";
 		titulo = "Activarcedi";
 	}
 		
@@ -315,7 +315,7 @@ function estado_almacen(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el cedi ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the cedi ?'},
 		})
 		.done(function( msg )
 		{

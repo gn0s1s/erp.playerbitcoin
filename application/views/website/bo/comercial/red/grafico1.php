@@ -10,13 +10,13 @@
 										<a href="/bo/comercial">Comercial</a>
 									</span>
 									<span>>
-										<a href="/bo/comercial/red">Red</a>
+										<a href="/bo/comercial/red">Network</a>
 									</span>
 									<span>>
 										<a href="/bo/comercial/red_tabla">Listar Afiliados</a>
 									</span>
 									<span>>
-										<a href="/bo/comercial/tipos_de_red_grafico_1?id_afiliado=<?php echo $id;?>">Selección de Red</a> > Grafico 1 <?php echo $nombre_red[0]->nombre;?>
+										<a href="/bo/comercial/tipos_de_red_grafico_1?id_afiliado=<?php echo $id;?>">Selección of Network</a> > Grafico 1 <?php echo $nombre_red[0]->nombre;?>
 									</span>
                               </h1>
                          </div>

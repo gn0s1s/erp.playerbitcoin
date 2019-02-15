@@ -45,7 +45,7 @@
 													<a href="/bo/configuracion/tipoRed">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-list fa-3x"></i>
-															<h1>Redes<br><br></h1>
+															<h1>Networks<br><br></h1>
 														</div>
 													</a>
 												</div>
@@ -53,7 +53,7 @@
 													<a href="/bo/configuracion/compensacion">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-money fa-3x"></i>
-															<h1>Plan de compensación<br></h1>
+															<h1>Plan of compensación<br></h1>
 														</div>
 													</a>
 												</div>
@@ -85,7 +85,7 @@
 													<a href="/bo/configuracion/formaspago"><!-- bancos/index -->
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-credit-card fa-3x"></i>
-															<h1>Formas de Pago <br></h1>
+															<h1>Formas of Pago <br></h1>
 														</div>
 													</a>
 												</div>
@@ -110,7 +110,7 @@
 													<a href="/bo/configuracion/soporte_tecnico">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-support fa-3x"></i>
-															<h1>Soporte Técnico<br></h1>
+															<h1>Support<br></h1>
 														</div>
 													</a>
 												</div>

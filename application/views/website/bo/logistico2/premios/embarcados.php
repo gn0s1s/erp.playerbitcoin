@@ -3,7 +3,7 @@
         <tr>
             <th data-hide="phone">ID</th>
             <th data-class="expand">Usuario</th>
-            <th data-hide="phone">Nombre y Apellido</th>
+            <th data-hide="phone">Nombre & Apellido</th>
             <th data-hide="phone">Telefono</th>
             <th data-hide="phone">email</th>
             <th data-hide="phone">Direción</th>

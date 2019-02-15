@@ -75,7 +75,7 @@
 														<form id="entradas" class="smart-form" method="post" action="new_entrada">
 															
 															<fieldset>
-																<legend>Datos de Entrada</legend>
+																<legend>Datos of Entrada</legend>
 																<section  class="col col-3">
 																	<label class="select">
 																		<select id="tipo_movimiento_in" required type="text" name="tipo_movimiento_in">
@@ -264,7 +264,7 @@
 														<form id="salidas" class="smart-form" method="post" action="new_salida">
 															
 															<fieldset>
-																<legend>Datos de Salida</legend>
+																<legend>Datos of Salida</legend>
 																<section  class="col col-3">
 																	<label class="select">
 																		<select id="tipo_movimiento_out" required type="text" name="tipo_movimiento_out">
@@ -669,7 +669,7 @@
 			success: function(msg)
 			{	
 				
-				if(msg=="La cantidad de salida es mayor que la existene en almacen"||msg=="Esta mercancia aun no tiene existencias en almacen")
+				if(msg=="La cantidad of salida es mayor que the existene on almacen"||msg=="Esta mercancia aun no tiene existencias on almacen")
 				{
 					
 					//event.preventDefault();
@@ -728,7 +728,7 @@
 			success: function(msg)
 			{	
 				alert("no");
-				if(msg=="La cantidad de salida es mayor que la existene en almacen"||msg=="Esta mercancia aun no tiene existencias en almacen")
+				if(msg=="La cantidad of salida es mayor que the existene on almacen"||msg=="Esta mercancia aun no tiene existencias on almacen")
 				{
 					alert("2");
 					event.preventDefault();

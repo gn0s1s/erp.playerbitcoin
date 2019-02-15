@@ -4,7 +4,7 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>> 
-					Carrito de Compras
+					Carrito of Purchases
 				</span>
 			</h1>
 		</div>
@@ -30,7 +30,7 @@
 ?>	
 <div class="well">
  <fieldset>
-	<legend>Carrito de Compras</legend>
+	<legend>Carrito of Purchases</legend>
 							<div class="row">
 							<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 								<a href="carrito?tipo=1">
@@ -85,7 +85,7 @@
 		else
 		{
 			var afiliado=$("#afiliado_id").val();
-			if (confirm('¿Seguro que desea realizar una compra para este afiliado?')) {
+			if (confirm('¿Seguro que desea realizar una Purchase para este afiliado?')) {
 			    window.location.assign("carrito?tipo=2&usr="+afiliado)
 			} else {
 			    // Do nothing!

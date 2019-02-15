@@ -25,7 +25,7 @@ $confirm_new_password = array(
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>
-				> <a href="/ov/networkProfile">Perfil</a>
+				> <a href="/ov/networkProfile">Profile</a>
 				>
 					Cambiar Contraseña
 				</span>
@@ -66,7 +66,7 @@ $confirm_new_password = array(
           <div>
             <section>
               <?php if(form_error($confirm_new_password['name'])){
-                echo "<span style='color:red;'>El password de confirmacion no conside con el nuevo password.</span><br>";
+                echo "<span style='color:red;'>El password of confirmacion no conside con the nuevo password.</span><br>";
               };
               ?><br>
             <!--	<?php echo isset($errors[$confirm_new_password['name']])?$errors[$confirm_new_password['name']]:''; ?>-->

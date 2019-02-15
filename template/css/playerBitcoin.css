@@ -14,4 +14,6 @@ body{background: #f6f6f6 !important}
 .banderitas{padding:10% 0 0 0;}
 .btnLogout{width: 6rem !important; height: 4rem !important;color: #fff !important; background: #ED8C17 !important;border:none !important;}
 .link_dashboard{background: #0B3480 !important;padding: 1px !important}
-.link_dashboard:hover{background: #ED8C17 !important}
+.link_dashboard{text-decoration: none !important}
+.link_dashboard:hover{background: #ED8C17 !important;text-decoration: none !important}
+.page-footer{background: #000 !important}

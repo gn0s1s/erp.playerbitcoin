@@ -32,7 +32,7 @@
                                                     <label class="label">Nombre</label><label
                                                         class="input">
                                                         <input type="text"
-                                                               placeholder="Nombre de la Encuesta" id="enc_nom" name="nombre" value="<?php echo $encuesta[0]->nombre; ?>">
+                                                               placeholder="Nombre of the Encuesta" id="enc_nom" name="nombre" value="<?php echo $encuesta[0]->nombre; ?>">
                                                     </label>
                                                 </section>
                                             </div>
@@ -50,7 +50,7 @@
 
                                                 <section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"
                                                          id="busquedatodos">
-                                                    <label class="label">Cantidad de preguntas</label>
+                                                    <label class="label">Cantidad of preguntas</label>
                                                     <label
                                                         class="input"><input type="number" id="preg_qty"
                                                                          min="1" max="30" value="<?php echo count($preguntas); ?>" readonly="readonly" name="cantidad">
@@ -178,7 +178,7 @@ src="/template/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></scri
                                                                 url: "actualizar_encuesta",
                                                                 success: function () {
                                                                     bootbox.dialog({
-                                                                        message: "Felicitaciones! La encuesta se a actualizado.",
+                                                                        message: "Felicitaciones! the encuesta se a actualizado.",
                                                                         title: 'Felicitaciones',
                                                                         buttons: {
                                                                             success: {

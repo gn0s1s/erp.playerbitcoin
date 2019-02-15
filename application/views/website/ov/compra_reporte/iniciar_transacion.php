@@ -165,7 +165,7 @@
 			<div class="row">
 				<div class="row">
 					<div class="col-lg-9 col-md-9 col-sm-7">
-					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> Comprar</span></h1>
+					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> Purchase</span></h1>
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-5 rightSidebar">
 					  <h4 class="caps"><a href="carrito?tipo=<?=$_GET["tipo"]?>"><i class="fa fa-chevron-left"></i> Volver al carrito </a></h4>
@@ -198,7 +198,7 @@
 											<a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Facturaci&oacute;n</span> </a>
 										</li>
 										<li data-target="#step3">
-											<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Forma de Pago</span> </a>
+											<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Forma of Pago</span> </a>
 										</li>
 										<li data-target="#step4">
 											<a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Confirmar</span> </a>
@@ -297,7 +297,7 @@
 											<div class="col-xs-12 col-sm-12">
 								                <label class="checkbox-inline" for="checkboxes-0">
 								                  <input name="envio_dir" id="envio_dir" value="1" type="checkbox">
-								                  Facturar a la direccion de envio </label>
+								                  Facturar a the direccion of envio </label>
 								                <hr>
 								            </div>
 							                <div class="col-xs-12 col-sm-6">
@@ -375,27 +375,27 @@
 									</div>
 									<div class="tab-pane" id="tab3">
 										<br>
-										<h3><strong>3</strong> - Forma de Pago</h3>
+										<h3><strong>3</strong> - Forma of Pago</h3>
 										<div class="row userInfo">
 										<? if($_GET['tipo']==3)
 									  	{?>
 								  			
 											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-group required" style="text-align:center;">
 								  				<section class="col col-lg-12 col-sm-12 col-xs-12 col-md-12">
-								  				<p><strong>Selecciona la fecha de la siguente compra</strong></p>
+								  				<p><strong>Selecciona the fecha of the siguente compra</strong></p>
 													<label class="input"> <i class="icon-append fa fa-calendar"></i>
-														<input class="form-control" type="text" name="startdate" id="startdate" required="" placeholder="Fecha de compra">
+														<input class="form-control" type="text" name="startdate" id="startdate" required="" placeholder="Fecha of compra">
 													</label>
 												</section>
 								  			</div>
 								  			<select class="form-control" required aria-required="true" id="pago" name="pago" style="display:none;">
-				                                  <option value="5">Deposito en Efectivo</option>
-				                                  <option value="1" selected="">Tarjeta de Credito</option>
-				                                  <option value="2">Tarjeta de Debito</option>
+				                                  <option value="5">Deposits on Efectivo</option>
+				                                  <option value="1" selected="">Tarjeta of Credito</option>
+				                                  <option value="2">Tarjeta of Debito</option>
 				                                  <option value="3">Paypal</option>
 			                                </select>
 											<div class="panel-body">
-					                        	<p>Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+					                        	<p>Todas las transacciones son seguras & encriptadas. Para saber mas, por favor ve nuestra politica of privacidad.</p>
 					                          	<br>
 					                          	<div class="panel open">
 					                            	<div class="creditCard">
@@ -403,21 +403,21 @@
 					                              		</div>
 					                              		<div class="col-xs-12 col-sm-6">
 										                  <div class="form-group required">
-											                  <label for="InputCountry">Banco<sup>*</sup> </label>
+											                  <label for="InputCountry">bank<sup>*</sup> </label>
 										                      <select class="form-control" required aria-required="true" id="banco_taj" name="banco_taj_c">
-								                                  <option value="">Banco</option>
+								                                  <option value="">bank</option>
 								                                  <option value="1">01 - VISA</option>
 								                                  <option value="2">02 - Master Card</option>
 								                                  <option value="3">03 - American Express</option>
 							                                  </select>
 				                  						  </div>
 										                  <div class="form-group required">
-										                    <label for="InputLastName">Numero de la Tarjeta<sup>*</sup> </label>
+										                    <label for="InputLastName">Numero of the Tarjeta<sup>*</sup> </label>
 										                    <input required id="numero_taj_c" class="form-control" type="text" name="numero_taj_c">
 										                  </div>
 				                  							
 										                  <div class="form-group required">
-										                    <label for="InputZip">Titular de la Tarjeta <sup>*</sup> </label>
+										                    <label for="InputZip">Titular of the Tarjeta <sup>*</sup> </label>
 										                    <input required type="text" class="form-control" name="titular_taj_c" id="titular_taj_c">
 										                  </div>
 				                  
@@ -427,7 +427,7 @@
 				                  
 										                  <div class="form-group required">
 										                  	<div class="col-xs-12 col-sm-6">
-											                    <label for="InputAddress">Mes de Vencimineto<sup>*</sup> </label>
+											                    <label for="InputAddress">Mes of Vencimineto<sup>*</sup> </label>
 											                    <select class="form-control" required aria-required="true" name="mes_taj_c" id="mes_taj_c">
 							                                      <option value="">Month</option>
 							                                      <option value="1">01 - Enero</option>
@@ -445,7 +445,7 @@
 							                                    </select>
 											                </div>
 											                <div class="col-xs-12 col-sm-6">
-											                    <label for="InputAddress">A&ntilde;o de vencimiento<sup>*</sup> </label>
+											                    <label for="InputAddress">A&ntilde;o of vencimiento<sup>*</sup> </label>
 											                    <select class="form-control" required aria-required="true" name="ano_taj_c" id="ano_taj_c">
 							                                      <option value="">Año</option>
 							                                      <option value="2013">2013</option>
@@ -463,13 +463,13 @@
 											                </div>
 										                  </div>
 										                  <div class="form-group required">
-										                    <label for="InputAddress2">Codigo de Verificacion<sup>*</sup> </label>
+										                    <label for="InputAddress2">Codigo of Verificacion<sup>*</sup> </label>
 										                    <input required type="text" class="form-control" name="code_taj_c" id="code_taj_c">
 										                  </div>
 						                  				 </div>
 						                  				 <div class="form-group">
 										                    <input type="checkbox" name="salvar_taj_c" id="salvar_taj_c">
-												            <label for="saveInfoid">&nbsp;Guardar la información de mi tarjeta de Crédito</label>
+												            <label for="saveInfoid">&nbsp;Guardar the información of my tarjeta of Crédito</label>
 										                  </div>
 										               </div>
 		                              		
@@ -484,13 +484,13 @@
 											{?>
 									            <div class="col-lg-12">
 												  	
-									               <p>Seleccione el metodo para pagar su orden.</p>
+									               <p>Seleccione the metodo para pagar su orden.</p>
 									                <hr>
 									            </div>
 									            <select class="form-control" required aria-required="true" id="pago" name="pago" style="display:none;">
-					                                  <option value="5" selected="">Deposito en Efectivo</option>
-					                                  <option value="1">Tarjeta de Credito</option>
-					                                  <option value="2">Tarjeta de Debito</option>
+					                                  <option value="5" selected="">Deposits on Efectivo</option>
+					                                  <option value="1">Tarjeta of Credito</option>
+					                                  <option value="2">Tarjeta of Debito</option>
 					                                  <option value="3">Paypal</option>
 				                                </select>
 									            <div class="col-xs-12 col-sm-12">
@@ -498,11 +498,11 @@
 									                  <div class="panel-group paymentMethod" id="accordion">
 									                  	<div class="panel panel-default">
 									                      <div class="panel-heading panel-heading-custom">
-									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_1" data-parent="#accordion" href="#collapseOne"> <span class="numberCircuil">Opcion 1</span> <strong>Deposito en Efectivo</strong> </a> </h4>
+									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_1" data-parent="#accordion" href="#collapseOne"> <span class="numberCircuil">Opcion 1</span> <strong>Deposits on Efectivo</strong> </a> </h4>
 									                      </div>
 									                      <div id="collapseOne" class="panel-collapse collapse in">
 									                        <div class="panel-body">
-									                          <p>Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+									                          <p>Todas las transacciones son seguras & encriptadas. Para saber mas, por favor ve nuestra politica of privacidad.</p>
 									                          <br>
 									                          <div class="panel open">
 									                          	
@@ -513,11 +513,11 @@
 									                    </div>
 									                    <div class="panel panel-default">
 									                      <div class="panel-heading panel-heading-custom">
-									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_2" data-parent="#accordion" href="#collapseTwo"> <span class="numberCircuil">Opcion 2</span> <strong>Tarjeta de Credito</strong> </a> </h4>
+									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_2" data-parent="#accordion" href="#collapseTwo"> <span class="numberCircuil">Opcion 2</span> <strong>Tarjeta of Credito</strong> </a> </h4>
 									                      </div>
 									                      <div id="collapseTwo" class="panel-collapse collapse">
 									                         <div class="panel-body">
-									                          <p>Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+									                          <p>Todas las transacciones son seguras & encriptadas. Para saber mas, por favor ve nuestra politica of privacidad.</p>
 									                          <br>
 									                          <div class="panel open">
 									                          	
@@ -526,9 +526,9 @@
 									                              </div>
 									                              <div class="col-xs-12 col-sm-6">
 													                  <div class="form-group required">
-														                  <label for="InputCountry">Banco<sup>*</sup> </label>
+														                  <label for="InputCountry">bank<sup>*</sup> </label>
 													                      <select class="form-control" required aria-required="true" id="banco_taj_c" name="banco_taj_c">
-											                                  <option value="">Banco</option>
+											                                  <option value="">bank</option>
 											                                  <option value="1">01 - VISA</option>
 											                                  <option value="2">02 - Master Card</option>
 											                                  <option value="3">03 - American Express</option>
@@ -536,11 +536,11 @@
 							                  						  </div>
 							                  						  
 													                  <div class="form-group required">
-													                    <label for="InputLastName">Numero de la Tarjeta<sup>*</sup> </label>
+													                    <label for="InputLastName">Numero of the Tarjeta<sup>*</sup> </label>
 													                    <input required id="numero_taj_c" class="form-control" type="text" name="numero_taj_c">
 													                  </div>
 							                  						  <div class="form-group required">
-													                    <label for="InputZip">Titular de la Tarjeta <sup>*</sup> </label>
+													                    <label for="InputZip">Titular of the Tarjeta <sup>*</sup> </label>
 													                    <input required type="text" class="form-control" name="titular_taj_c" id="titular_taj_c">
 													                  </div>
 							                  
@@ -550,7 +550,7 @@
 							                  
 													                  <div class="form-group required">
 													                  	<div class="col-xs-12 col-sm-6">
-														                    <label for="InputAddress">Mes de Vencimineto<sup>*</sup> </label>
+														                    <label for="InputAddress">Mes of Vencimineto<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="mes_taj_c" id="mes_taj_c">
 										                                      <option value="">Month</option>
 										                                      <option value="1">01 - Enero</option>
@@ -568,7 +568,7 @@
 										                                    </select>
 														                </div>
 														                <div class="col-xs-12 col-sm-6">
-														                    <label for="InputAddress">A&ntilde;o de vencimiento<sup>*</sup> </label>
+														                    <label for="InputAddress">A&ntilde;o of vencimiento<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="ano_taj_c" id="ano_taj_c">
 										                                      <option value="">Año</option>
 										                                      <option value="2013">2013</option>
@@ -586,13 +586,13 @@
 														                </div>
 													                  </div>
 													                  <div class="form-group required">
-													                    <label for="InputAddress2">Codigo de Verificacion<sup>*</sup> </label>
+													                    <label for="InputAddress2">Codigo of Verificacion<sup>*</sup> </label>
 													                    <input required type="text" class="form-control" name="code_taj_c" id="code_taj_c">
 													                  </div>
 									                  				 </div>
 									                  				 <div class="form-group">
 													                    <input type="checkbox" name="salvar_taj_c" id="salvar_taj_c">
-															            <label for="saveInfoid">&nbsp;Guardar la información de mi tarjeta de Crédito</label>
+															            <label for="saveInfoid">&nbsp;Guardar the información of my tarjeta of Crédito</label>
 													                  </div>
 													            	</div>
 									                         	</div> 
@@ -601,11 +601,11 @@
 									                    </div>
 									                    <div class="panel panel-default">
 									                      <div class="panel-heading panel-heading-custom">
-									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_3" data-parent="#accordion" href="#collapseThree"> <span class="numberCircuil">Opcion 3</span> <strong>Tarjeta de Debito</strong> </a> </h4>
+									                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" id="pago_3" data-parent="#accordion" href="#collapseThree"> <span class="numberCircuil">Opcion 3</span> <strong>Tarjeta of Debito</strong> </a> </h4>
 									                      </div>
 									                      <div id="collapseThree" class="panel-collapse collapse">
 									                        <div class="panel-body">
-									                          <p>Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+									                          <p>Todas las transacciones son seguras & encriptadas. Para saber mas, por favor ve nuestra politica of privacidad.</p>
 									                          <br>
 									                          <div class="panel open">
 									                          	
@@ -614,9 +614,9 @@
 									                              </div>
 									                              <div class="col-xs-12 col-sm-6">
 													                  <div class="form-group required">
-														                  <label for="InputCountry">Banco<sup>*</sup> </label>
+														                  <label for="InputCountry">bank<sup>*</sup> </label>
 													                      <select class="form-control" required aria-required="true" id="banco_taj" name="banco_taj">
-											                                  <option value="">Banco</option>
+											                                  <option value="">bank</option>
 											                                  <option value="1">01 - VISA</option>
 											                                  <option value="2">02 - Master Card</option>
 											                                  <option value="3">03 - American Express</option>
@@ -624,12 +624,12 @@
 							                  						  </div>
 							                  						  
 													                  <div class="form-group required">
-													                    <label for="InputLastName">Numero de la Tarjeta<sup>*</sup> </label>
+													                    <label for="InputLastName">Numero of the Tarjeta<sup>*</sup> </label>
 													                    <input required id="numero_taj" class="form-control" type="text" name="numero_taj">
 													                  </div>
 							                  
 							                  						  <div class="form-group required">
-													                    <label for="InputZip">Titular de la Tarjeta <sup>*</sup> </label>
+													                    <label for="InputZip">Titular of the Tarjeta <sup>*</sup> </label>
 													                    <input required type="text" class="form-control" name="titular_taj" id="titular_taj">
 													                  </div>
 													                </div>
@@ -637,7 +637,7 @@
 							                  
 													                  <div class="form-group required">
 													                  	<div class="col-xs-12 col-sm-6">
-														                    <label for="InputAddress">Mes de Vencimineto<sup>*</sup> </label>
+														                    <label for="InputAddress">Mes of Vencimineto<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="mes_taj" id="mes_taj">
 										                                      <option value="">Month</option>
 										                                      <option value="1">01 - Enero</option>
@@ -655,7 +655,7 @@
 										                                    </select>
 														                </div>
 														                <div class="col-xs-12 col-sm-6">
-														                    <label for="InputAddress">A&ntilde;o de vencimiento<sup>*</sup> </label>
+														                    <label for="InputAddress">A&ntilde;o of vencimiento<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="ano_taj" id="ano_taj">
 										                                      <option value="">Año</option>
 										                                      <option value="2013">2013</option>
@@ -673,13 +673,13 @@
 														                </div>
 													                  </div>
 													                  <div class="form-group required">
-													                    <label for="InputAddress2">Codigo de Verificacion<sup>*</sup> </label>
+													                    <label for="InputAddress2">Codigo of Verificacion<sup>*</sup> </label>
 													                    <input required type="text" class="form-control" name="code_taj" id="code_taj">
 													                  </div>
 									                  				 </div>
 									                  				 <div class="form-group">
 													                    <input type="checkbox" name="salvar_taj" id="salvar_taj">
-															            <label for="saveInfoid">&nbsp;Guardar la información de mi tarjeta de Crédito</label>
+															            <label for="saveInfoid">&nbsp;Guardar the información of my tarjeta of Crédito</label>
 													                  </div>
 													            	</div>
 									                         	</div> 
@@ -693,20 +693,20 @@
 									                      </div>
 									                      <div id="collapseFour" class="panel-collapse collapse">
 									                        <div class="panel-body">
-									                          <p> Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+									                          <p> Todas las transacciones son seguras & encriptadas. Para saber mas, por favor ve nuestra politica of privacidad.</p>
 									                          <br>
 									                          
 									                          <label class="radio-inline" for="radios-3">
 									                            <input name="radios" id="radios-3" value="4" type="radio">
-									                            <img src="images/site/payment/paypal-small.png" height="18" alt="paypal"> Comprar con Paypal </label>
+									                            <img src="images/site/payment/paypal-small.png" height="18" alt="paypal"> Purchase con Paypal </label>
 									                          <div class="form-group">
-									                            <label for="CommentsOrder2">Agrega comentarios acerca de tu orden</label>
+									                            <label for="CommentsOrder2">Agrega comentarios acerca of tu orden</label>
 									                            <textarea id="CommentsOrder2" class="form-control" name="CommentsOrder2" cols="26" rows="3"></textarea>
 									                          </div>
 									                          <div class="form-group clearfix">
 									                            <label class="checkbox-inline" for="checkboxes-0">
 									                              <input name="checkboxes" id="checkboxes-0" value="1" type="checkbox">
-									                              He leído y acepto los <a href="terms-conditions.html">Terminos y Condiciones</a> </label>
+									                              He leído & acepto los <a href="terms-conditions.html">Terminos & Condiciones</a> </label>
 									                          </div>
 									                          <div class="pull-right"> <a href="" class="btn btn-primary btn-small " > Procesar pago &nbsp; <i class="fa fa-arrow-circle-right"></i> </a> </div>
 									                        </div>
@@ -805,11 +805,11 @@
 							                        <div class="table-block" id="order-detail-content">
 							                          <table class="std table" id="cart-summary">
 							                            <tr >
-							                              <td>Costo de productos</td>
+							                              <td>Costo of productos</td>
 							                              <td  class="price">$<?=$this->cart->total() ?></td>
 							                            </tr>
 							                            <tr style="" >
-							                              <td>Costo de Envio</td>
+							                              <td>Costo of Envio</td>
 							                              <td  class="price"><span class="success">Envio Gratis!</span></td>
 							                            </tr>
 							                            
@@ -823,7 +823,7 @@
 							                        </div>
 							                      </div>
 							                      
-							                      <input type="submit" value="¡¡Comprar!!" class="btn btn-lg btn-success" style="float:right;">
+							                      <input type="submit" value="¡¡Purchase!!" class="btn btn-lg btn-success" style="float:right;">
 							                      <!--/costDetails-->
 							                      
 							
@@ -1059,7 +1059,7 @@
 				if(qty>max||qty<min)
 				{
 					bootbox.dialog({
-						message: 'La cantidad de pedido de esta mercancia debe estar entre '+min+' y '+max,
+						message: 'La cantidad of pedido of esta mercancia debe estar entre '+min+' & '+max,
 						title: "Error",
 						className: "",
 						buttons: {
@@ -1083,7 +1083,7 @@
 							if(msg=="Error")
 							{
 								bootbox.dialog({
-									message: "¡Ooops! El producto se ha agotado, intente mas tarde porfavor.",
+									message: "¡Ooops! the producto se ha agotado, intente mas tarde porfavor.",
 									title: "Error",
 									className: "",
 									buttons: {
@@ -1166,7 +1166,7 @@
 					success: function(msg){
 						bootbox.dialog({
 							message: msg,
-							title: "Metodo de pago",
+							title: "Metodo of pago",
 							className: "",
 						
 						});
@@ -1238,7 +1238,7 @@
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo de tarjeta');
+								alert('Seleccione una tipo of tarjeta');
 							}
 							else
 							{
@@ -1268,7 +1268,7 @@
 											{
 												if(!codigo)
 												{
-													alert('El codigo de seguridad es obligatorio');
+													alert('El codigo of seguridad es obligatorio');
 												}
 												else
 												{
@@ -1278,7 +1278,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La compra fue un exito!");
+															alert("La Purchase fue un exito!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});
@@ -1325,7 +1325,7 @@
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo de tarjeta');
+								alert('Seleccione una tipo of tarjeta');
 							}
 							else
 							{
@@ -1355,7 +1355,7 @@
 											{
 												if(!codigo)
 												{
-													alert('El codigo de seguridad es obligatorio');
+													alert('El codigo of seguridad es obligatorio');
 												}
 												else
 												{
@@ -1365,7 +1365,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La compra fue un exito!");
+															alert("La Purchase fue un exito!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});

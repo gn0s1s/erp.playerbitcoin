@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>PAGO DE COMISIONES</title>
+<title>PAGO of COMISIONES</title>
 
 <style>
 	/* ------------------------------------- 
@@ -248,7 +248,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<table bgcolor="#999999">
 					<tr>
 						<td><img style="width:200px; height:150px;" src="<?=site_url('/wl.png')?>" alt="Networksoft"/></td>
-						<td align="right"><h6 class="collapse">Pago de solicitud de dinero</h6></td>
+						<td align="right"><h6 class="collapse">Pago of solicitud of dinero</h6></td>
 					</tr>
 				</table>
 				</div>
@@ -271,25 +271,25 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<td>
 						
 						<h3>Hola, <?php echo $username; ?></h3>
-						<p class="lead">Su peticion de pago esta siendo procesada.</p>
+						<p class="lead">Su peticion of pago esta siendo procesada.</p>
 						
 						<!-- A Real Hero (and a real human being) -->
 						
 						<!-- Callout Panel -->
 						<p class="callout">
-							El pago se realizara en las proximas 24 horas con los siguientes datos:
+							El pago se realizara on las proximas 24 horas con los siguientes datos:
 						</p><!-- /Callout Panel -->
 						
-						<p><?php if (isset($id_cobro)) { ?>ID de Cobro: <?php echo $id_cobro; ?><br /><?php } ?></p>
-						<p><?php if (isset($fecha)) { ?>Fecha de Solicitud: <?php echo $fecha; ?><br /><?php } ?></p>
-						<p><?php if (strlen($username) > 0) { ?>Nombre de usuario: <?php echo $username; ?><br /><?php } ?></p>
+						<p><?php if (isset($id_cobro)) { ?>ID of Cobro: <?php echo $id_cobro; ?><br /><?php } ?></p>
+						<p><?php if (isset($fecha)) { ?>Fecha of Solicitud: <?php echo $fecha; ?><br /><?php } ?></p>
+						<p><?php if (strlen($username) > 0) { ?>Nombre of usuario: <?php echo $username; ?><br /><?php } ?></p>
 						<p>Correo: <?php echo $email; ?></p><br/>
-						<p><?php if (isset($nombre) && isset($apellido)) { ?>Nombre y apellido: <?php echo $nombre." ".$apellido; ?><br /><?php } ?>		</p>	
-						<p><?php if (isset($banco)) { ?>Banco: <?php echo $banco; ?><br /><?php } ?></p>
-						<p><?php if (isset($cuenta)) { ?>Numero de Cuenta: <?php echo $cuenta; ?><br /><?php } ?></p>
-						<p><?php if (isset($titular)) { ?>Titular de cuenta: <?php echo $titular; ?><br /><?php } ?></p>
+						<p><?php if (isset($nombre) && isset($apellido)) { ?>Nombre & apellido: <?php echo $nombre." ".$apellido; ?><br /><?php } ?>		</p>	
+						<p><?php if (isset($banco)) { ?>bank : <?php echo $banco; ?><br /><?php } ?></p>
+						<p><?php if (isset($cuenta)) { ?>Numero of Cuenta: <?php echo $cuenta; ?><br /><?php } ?></p>
+						<p><?php if (isset($titular)) { ?>Titular of cuenta: <?php echo $titular; ?><br /><?php } ?></p>
 						<p><?php if (isset($clave)) { ?>CLABE: <?php echo $clave; ?><br /><?php } ?></p><br/>
-						<p><?php if (isset($monto)) { ?>Valor de Cobro: $ <?php echo $monto; ?><br /><?php } ?></p> 
+						<p><?php if (isset($monto)) { ?>Valor of Cobro: $ <?php echo $monto; ?><br /><?php } ?></p>
 						<br/>							
 												 
 						<!-- social & contact -->

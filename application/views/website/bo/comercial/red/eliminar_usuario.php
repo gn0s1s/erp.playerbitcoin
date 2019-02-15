@@ -3,7 +3,7 @@
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 		<form action="/bo/comercial/kill_afiliado"  method="POST" id="edit" role="form" class="smart-form">
-			<legend>Por favor, Elija la red en la desea eliminar a este usuario.</legend>
+			<legend>Por favor, Elija the Network on the desea eliminar a este usuario.</legend>
 
 			<br><br>
 
@@ -14,7 +14,7 @@
 					
 											
 						<section style="width: 50%;" class="col col-2">
-							<label class="select" for="">Redes del usuario
+							<label class="select" for="">Networks del usuario
 							<select name="red" >
 								<option value="0">Todas las redes</option>
 								<?php foreach ($redes as $red){
@@ -47,7 +47,7 @@ function enviar(){
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar el Afiliado ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the Afiliado ?'},
 	})
 	.done(function( msg )
 	{

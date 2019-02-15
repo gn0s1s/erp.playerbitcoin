@@ -10,7 +10,7 @@
 								<a href="/bo/configuracion/">Configuración</a> 
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a>
+								<a href="/bo/configuracion/soporte_tecnico">Support</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/grupos_soporte_tecnico">Grupos</a> > Alta
@@ -46,13 +46,13 @@
 												<label class="select">
 													<label class="label">Seleccione una categoría</label>
 													<select name="tipo" id="tipo" required="">
-														<option value="INF">Información</option>
+														<option value="INF">Information</option>
 														<option value="VID">Videos</option>
 													</select>
 											</label><br>
 											
 											<label class="select">
-													<label class="label">Seleccione la red de la categoría</label>
+													<label class="label">Seleccione the Category Network</label>
 														<select name="red" id="red" required="">
 															<?php 
 																foreach ($redes as $red){

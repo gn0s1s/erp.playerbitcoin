@@ -70,7 +70,7 @@
 											<label class="select">Condición Red
 											<select id="condicion_red'.$i.'" name="condicion_red[]" >
 												<option value="DIRECTOS">Directos Afiliado</option>
-												<option value="RED">Toda La red</option>
+												<option value="RED">Toda the Network</option>
 											</select>
 											</label>
 										</div>
@@ -92,7 +92,7 @@
 											</label>
 										</div>';
 										if($i>1){
-											echo '<a style="cursor: pointer; color: red;" onclick="delete_rango('.$i.')">Eliminar Rango <i class="fa fa-minus"></i></a>';
+											echo '<a style="cursor: pointer; color: red;" onclick="delete_rango('.$i.')">Eliminar Ranking <i class="fa fa-minus"></i></a>';
 										}
 										
 										echo ''.'</label>'.'</div>'.'</div>';
@@ -191,14 +191,14 @@ function add_rango(id)
 	+'Valor<label for="" class="input">'
 		+'<i class="icon-prepend fa fa-sort"></i>'
 		+'<input type="number" class="form-control" name="valor_rango[]" placeholder=""class="form-control" required />'
-		+'<a style="cursor: pointer; color:red;" onclick="delete_rango1('+i+')">Eliminar Rango <i class="fa fa-minus"></i></a>'
+		+'<a style="cursor: pointer; color:red;" onclick="delete_rango1('+i+')">Eliminar Ranking <i class="fa fa-minus"></i></a>'
 	+'</label>'
 +'</div>'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-3">'
 	+'<label class="select">Condición Red'
 	+'<select name="condicion_red[]" >'
 		+'<option value="DIRECTOS">Directos Afiliado</option>'
-		+'<option value="RED">Toda La red</option>'
+		+'<option value="RED">Toda the Network</option>'
 	+'</select>'
 	+'</label>'
 	+'</div>'

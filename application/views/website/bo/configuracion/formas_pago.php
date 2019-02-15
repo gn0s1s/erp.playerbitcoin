@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/configuracion/">Configuración</a> > Formas de Pago
+								<a href="/bo/configuracion/">Configuración</a> > Formas of Pago
 							</span>
 						</h1>
 					</div>
@@ -40,7 +40,7 @@
 												<a href="/bo/bancos">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 														<i class="fa fa-bank fa-3x"></i>
-														<h1>Bancos</h1>
+														<h1>banks</h1>
 													</div>
 												</a>
 												</div>
@@ -53,7 +53,7 @@
 												</a>
 												</div>
 												</div>
-												<!-- ::: NO SE USA SINO EN COLOMBIA :::
+												<!-- ::: NO SE USA SINO on COLOMBIA :::
 
 												<div class="col-sm-2 link">
 												<a href="/bo/configuracion/Tucompra"><! /bo/tucompra >

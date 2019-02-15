@@ -5,7 +5,7 @@
 			<label> <b>Producto: </b><?= $detalle->producto;?> </label> <br/>
 			<label> <b>Cantidad: </b><?= $detalle->cantidad;?> </label> <br/>
 			<label> <b>Categoria:</b> <?= $detalle->red;?> </label> <br/>
-			<label> <b>Proveedor de mensajeria:</b> <?= $detalle->nombre_empresa;?> </label><br>
+			<label> <b>Proveedor of mensajeria:</b> <?= $detalle->nombre_empresa;?> </label><br>
 			<label> <b>Ciudad:</b> <?= $detalle->ciudad;?> </label> <br>
 			<label> <b>Tarifa: </b> $<?= $detalle->tarifa;?> </label>
 			<br><br>

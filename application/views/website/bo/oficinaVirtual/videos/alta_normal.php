@@ -64,7 +64,7 @@
 												<label class="textarea">								
 													<textarea rows="3" class="custom-scroll" name="desc_frm"></textarea> 
 												</label>
-												<label class="label">Archivo de Video</label>
+												<label class="label">Archivo of Video</label>
 												<section>
 													<div class="input input-file">
 														<span class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file" required>Buscar</span><input placeholder="Seleccione un archivo" readonly="" type="text">

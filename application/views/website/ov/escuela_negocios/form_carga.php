@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Formulario de Carga</title>
+<title>Formulario of Carga</title>
 </head>
 <body>
 <?=$error;?>

@@ -258,7 +258,7 @@ function eliminarProveedor(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar El proveedor ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the proveedor ?'},
 	})
 	.done(function( msg )
 	{
@@ -312,13 +312,13 @@ function estado(estatus, id)
 		
 
 
-	var msg = "¿Desea desactivar el Proveedor?";
+	var msg = "¿Desea desactivar the Proveedor?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el Proveedor?";
+		msg = "¿Desea desactivar the Proveedor?";
 		titulo = "Desactivar Proveedor";
 	}else{
-		msg = "¿Desea activar el Proveedor?";
+		msg = "¿Desea activar the Proveedor?";
 		titulo = "Activar Proveedor";
 	}
 		

@@ -14,8 +14,8 @@
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
-								<a href="/bo/configuracion/compensacion/">Plan de compensacion</a> >
-								<a href="/bo/planes/">Planes de Bonos</a>
+								<a href="/bo/configuracion/compensacion/">Plan of compensacion</a> >
+								<a href="/bo/planes/">Planes of Bonos</a>
 								> Nuevo Plan
 							</span>
 						</h1>
@@ -54,7 +54,7 @@
 
 		<div class="form-group" style="width: 100rem;">
 	        <div class="row" id="cross_plan_bonos">
-									<header>Bonos</header><br><br>
+									<header>Calculated Commissions</header><br><br>
 									<div class="row">
 										<div class="col col-lg-3 col-xs-2">
 										</div>																	

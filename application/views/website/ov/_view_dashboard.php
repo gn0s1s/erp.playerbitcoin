@@ -147,8 +147,10 @@
 		                                                            <div class="col-md-12">
 		                                                                <a href="/play/dashboard">
 		                                                                    <div id="play-boton" class="link_dashboard well well-sm txt-color-white text-center ">
-		                                                                        <i class="fa fa-btc "></i>
-		                                                                        <h3>Let's Play</h3>
+
+		                                                                        
+		                                                                        <h3><i class="fa fa-btc fa-3x"></i> Let's Play</h3>
+
 		                                                                    </div>
 		                                                                </a>
 		                                                            </div>
@@ -294,6 +296,7 @@
 		 <div class="col col-lg-6 col-md-6">
 
 		 	<!--Inica the seccion of the Profile & red-->
+
 				<div class="well" style="">
 					<fieldset>
 						<legend><b>Profile & Network</b></legend>
@@ -304,7 +307,9 @@
 							<div class="col-sm-6">
 								<a href="networkProfile/">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-										<h5><i class="fa fa-user "></i> Profile</h5>
+
+										
+										<h5><i class="fa fa-user fa-3x"></i> Profile</h5>
 									</div>
 								</a>
 							</div>
@@ -315,8 +320,10 @@
 						  	<div class="col-sm-6">
 								<a href="/ov/perfil_red/afiliar?tipo=1"> <!-- perfil_red/foto -->
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
+
 										 <!-- fa-camera -->
-										<h5><i class="fa fa-edit "></i> Affiliate</h5> <!-- Foto -->
+										<h5><i class="fa fa-edit fa-3x"></i> Affiliate</h5> <!-- Foto -->
+
 									</div>
 								</a>
 							</div> 
@@ -329,7 +336,10 @@
 							<div class="col-sm-6">
 								<a href="reports"> <!-- /ov/perfil_red/afiliar?tipo=1 -->
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-										<h5><i class="fa fa-table "></i> Reports</h5> <!-- Afiliar -->
+
+										
+										<h5><i class="fa fa-table fa-3x"></i> Reports</h5> <!-- Afiliar -->
+
 									</div>
 								</a>
 							</div>
@@ -339,7 +349,8 @@
 							<div class="col-sm-6">
 								<a href="/ov/red/index">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-										<h5><i class="fa fa-sitemap "></i> Network</h5>
+										<h5><i class="fa fa-sitemap fa-3x"></i> Network</h5>
+
 									</div>
 								</a>
 							</div>
@@ -361,7 +372,10 @@
 							<div class="col-sm-6">
 								<a href="/shoppingcart">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-										<h5><i class="fa fa-shopping-cart "></i> Deposits</h5>
+
+										
+										<h5><i class="fa fa-shopping-cart fa-3x"></i> Deposits</h5>
+
 									</div>
 								</a>
 							</div>
@@ -372,7 +386,10 @@
 							<div class="col-sm-6">
 								<a href="accountStatus">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-										<h5><i class="fa fa-money "></i> Profit Statement</h5>
+
+										
+										<h5><i class="fa fa-money fa-3x"></i> Profit Statement</h5>
+
 									</div>
 								</a>
 							</div>
@@ -384,8 +401,11 @@
 							?>
 							<div class="col-sm-6">
 								<a href="javascript:void(0);"> <!-- compras/reportes -->
+
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-										<h5><i class="fa fa-ticket "></i> Tickets/Cupons</h5> <!-- Reportes -->
+										<!-- fa-table -->
+										<h5><i class="fa fa-ticket fa-3x"></i> Tickets/Cupons</h5> <!-- Reportes -->
+
 									</div>
 								</a>
 							</div>
@@ -394,9 +414,12 @@
 							if($permiso){
 							?>
 							<div class="col-sm-6">
-								<a href="wallet" >
+								<a href="wallet">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
-										<h5><i class="fa fa-dollar "></i> Profit Wallet</h5>
+
+										
+										<h5><i class="fa fa-dollar fa-3x"></i> Profit Wallet</h5>
+
 									</div>
 								</a>
 							</div>
@@ -404,6 +427,115 @@
 						</div>
 					</fieldset>
 				</div>
+<<<<<<< HEAD
+			  <!--Termina la seccion de compras y reportes-->
+
+			  <!--Inica la seccion general-->
+				<div class="well">
+					<fieldset>
+						<legend><b>General</b></legend>
+						<div class="row">
+							<?php $permiso=$ci->model_permissions->check($id,'encuestas');
+							if($permiso){
+							?>
+							<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+								<a href="surveys">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
+										<h5><i class="fa fa-file-text-o"></i> Encuestas</h5>
+									</div>
+								</a>
+							</div>
+							<?php }$permiso=$ci->model_permissions->check($id,'archivero');
+							if($permiso){
+							?>
+							<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+								<a href="archive">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
+										<h5><i class="fa fa-archive"></i> Archivero</h5>
+									</div>
+								</a>
+							</div>
+							<?php }?>
+						</div>
+						<div class="row">
+							<?php $permiso=$ci->model_permissions->check($id,'tablero');
+							if($permiso){
+							?>
+							<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+								<a href="board">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
+										<h5><i class="fa fa-cogs"></i> Tablero</h5>
+									</div>
+								</a>
+							</div>
+							<?php }$permiso=$ci->model_permissions->check($id,'compartir');
+							if($permiso){
+							?>
+							<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+								<a href="share">
+									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
+										<h5><i class="fa  fa-folder-open-o "></i> Compartir</h5>
+									</div>
+								</a>
+							</div>
+							<?php }?>
+						</div>
+					</fieldset>
+				</div>
+			  <!--Termina la seccion general-->
+
+			  <!--Inicia la seccion de comunicacion-->
+			<div class="well">
+				<div class="row">
+					<fieldset>
+						<legend><b>Comunicación</b></legend>
+						<div class="col-sm-2">
+						</div>
+						
+						<div class="col-sm-2">
+							<a href="cgeneral/autoresponder">
+								<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
+									<h5><i class="fa fa-globe"></i> Autoresponder</h5>
+								</div>
+							</a>
+						</div>	
+						<div class="col-sm-2">
+							<a href="cgeneral/invitacion_afiliar">
+								<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
+									<h5><i class="fa fa-envelope fa-2x"></i>&nbsp;&nbsp;<i class="fa fa-sitemap"></i> Invitacion Afiliar</h5>
+								</div>
+							</a>
+						</div>
+						
+						<?php $permiso=$ci->model_permissions->check($id,'e_mail');
+						if($permiso){
+						?>
+						<div class="col-sm-2">
+							<a href="email">
+								<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
+									<h5><i class="fa fa-envelope"></i> E-mail</h5>
+								</div>
+							</a>
+						</div>
+						
+						<?php }?>
+                        <div class="col-sm-2">
+                            <a href="javascript:void(0);"><!-- cgeneral/ganadores -->
+                                <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
+                                    <h5><i class="fa fa-trophy"></i> Ganadores</h5>
+                                </div>
+                            </a>
+                        </div>
+
+                </div>
+
+					
+				</div>
+			</div>
+			<!--Termina la seccion de comunicacion-->
+
+			  <!--------------------->
+=======
 			  <!--Termina the seccion of Purchases & reportes-->
 
              <div class="row">
@@ -419,7 +551,8 @@
                                      <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                                          <a href="surveys">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-                                                 <h5><i class="fa fa-file-text-o "></i> Surveys</h5>
+                                                 <i class="fa fa-file-text-o fa-3x"></i>
+                                                 <h5>Surveys</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -429,7 +562,8 @@
                                      <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                                          <a href="archive">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-                                                 <h5><i class="fa fa-archive "></i> Files</h5>
+                                                 <i class="fa fa-archive fa-3x"></i>
+                                                 <h5>Files</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -442,7 +576,8 @@
                                      <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                                          <a href="board">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
-                                                 <h5><i class="fa fa-cogs "></i> Template</h5>
+                                                 <i class="fa fa-cogs fa-3x"></i>
+                                                 <h5>Template</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -452,7 +587,8 @@
                                      <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                                          <a href="share">
                                              <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-                                                 <h5><i class="fa  fa-folder-open-o  "></i> SharePoint</h5>
+                                                 <i class="fa  fa-folder-open-o  fa-3x"></i>
+                                                 <h5>SharePoint</h5>
                                              </div>
                                          </a>
                                      </div>
@@ -463,6 +599,7 @@
                      <!--Termina the seccion general-->
                  </div>
              </div>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 
 		 </div>
         </div>
@@ -471,6 +608,22 @@
 				<div>
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-lg-12">
+<<<<<<< HEAD
+							<div class="row">
+							   <div class="col-sm-12 col-md-12 col-lg-4">
+									
+								</div>
+								<div class="col-sm-12 col-md-12 col-lg-4">
+									
+								</div>
+                				<div class="col-sm-12 col-md-12 col-lg-4">
+									
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 col-md-12 col-lg-12">
+									
+=======
 
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12">
@@ -485,14 +638,16 @@
 												<div class="col-sm-2">
 													<a href="cgeneral/autoresponder">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-globe "></i> Autoresponder</h5>
+															<i class="fa fa-globe fa-3x"></i>
+															<h5>Autoresponder</h5>
 														</div>
 													</a>
 												</div>	
 												<div class="col-sm-2">
 													<a href="cgeneral/invitacion_afiliar">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-															<h5><i class="fa fa-envelope fa-2x"></i>&nbsp;&nbsp;<i class="fa fa-sitemap "></i> Affiliate Banner</h5>
+															<i class="fa fa-envelope fa-2x"></i>&nbsp;&nbsp;<i class="fa fa-sitemap fa-3x"></i>
+															<h5>Affiliate Banner</h5>
 														</div>
 													</a>
 												</div>
@@ -503,7 +658,8 @@
 												<div class="col-sm-2">
 													<a href="email">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-envelope "></i> E-mail</h5>
+															<i class="fa fa-envelope fa-3x"></i>
+															<h5>E-mail</h5>
 														</div>
 													</a>
 												</div>
@@ -512,7 +668,8 @@
                                                 <div class="col-sm-2">
                                                     <a href="javascript:void(0);"><!-- cgeneral/ganadores -->
                                                         <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-                                                            <h5><i class="fa fa-trophy "></i> Winners</h5>
+                                                            <i class="fa fa-trophy fa-3x"></i>
+                                                            <h5>Winners</h5>
                                                         </div>
                                                     </a>
                                                 </div>
@@ -523,6 +680,7 @@
 										</div>
 									</div>
 									<!--Termina the seccion of comunicacion-->
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 								</div>
 							
 							<div class="row">
@@ -540,7 +698,13 @@
 												<div class="col-sm-2">
 													<a href="information">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-info "></i> Informatión</h5>
+<<<<<<< HEAD
+															<i class="fa fa-info"></i>
+															<h5>Información</h5>
+=======
+															<i class="fa fa-info fa-3x"></i>
+															<h5>Informatión</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>
@@ -550,7 +714,13 @@
 												<div class="col-sm-2">
 													<a href="presentations">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<h5><i class="fa fa-desktop "></i> Slideshow</h5>
+<<<<<<< HEAD
+															<i class="fa fa-desktop"></i>
+															<h5>Presentaciones</h5>
+=======
+															<i class="fa fa-desktop fa-3x"></i>
+															<h5>Slideshow</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>
@@ -560,7 +730,8 @@
 												<div class="col-sm-2">
 													<a href="ebooks">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-book "></i> E-books</h5>
+															<i class="fa fa-book"></i>
+															<h5>E-books</h5>
 														</div>
 													</a>
 												</div>
@@ -570,7 +741,13 @@
 												<div class="col-sm-2">
 													<a href="downloads">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-															<h5><i class="fa fa-download "></i> Downloadable</h5>
+<<<<<<< HEAD
+															<i class="fa fa-download"></i>
+															<h5>Descargas</h5>
+=======
+															<i class="fa fa-download fa-3x"></i>
+															<h5>Downloadable</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>
@@ -587,7 +764,13 @@
 											<div class="col-sm-2">
 												<a href="events">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-														<h5><i class="fa fa-calendar "></i> Events</h5>
+<<<<<<< HEAD
+														<i class="fa fa-calendar"></i>
+														<h5>Eventos</h5>
+=======
+														<i class="fa fa-calendar fa-3x"></i>
+														<h5>Events</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 													</div>
 												</a>
 											</div>
@@ -597,7 +780,13 @@
 											<div class="col-sm-2">
 												<a href="news">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-														<h5><i class="fa fa-bullhorn "></i> News</h5>
+<<<<<<< HEAD
+														<i class="fa fa-bullhorn"></i>
+														<h5>Noticias</h5>
+=======
+														<i class="fa fa-bullhorn fa-3x"></i>
+														<h5>News</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 													</div>
 												</a>
 											</div>
@@ -607,7 +796,13 @@
 												<div class="col-sm-2">
 													<a href="videos">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<h5><i class="fa fa-file-video-o "></i> Videos</h5>
+<<<<<<< HEAD
+															<i class="fa fa-file-video-o"></i>
+															<h5>Vídeos</h5>
+=======
+															<i class="fa fa-file-video-o fa-3x"></i>
+															<h5>Videos</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>
@@ -619,7 +814,13 @@
 												<div class="col-sm-2">
 													<a href="statistics">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-bar-chart-o "></i> Statistics</h5>
+<<<<<<< HEAD
+															<i class="fa fa-bar-chart-o"></i>
+															<h5>Estadisticas</h5>
+=======
+															<i class="fa fa-bar-chart-o fa-3x"></i>
+															<h5>Statistics</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>
@@ -646,7 +847,13 @@
 											  	<div class="col-sm-2">
 													<a href="coupons"><!--   escuela_negocios/promociones -->
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-gift  "></i> Calculated Commissions</h5>
+<<<<<<< HEAD
+															<i class="fa fa-gift "></i>
+															<h5>Bonos</h5>
+=======
+															<i class="fa fa-gift  fa-3x"></i>
+															<h5>Calculated Commissions</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>  
@@ -657,7 +864,8 @@
 										  	<div class="col-sm-2">
 												<a href="acknowledgments">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-														<h5><i class="fa fa-star "></i> Reconocimientos</h5>
+														<i class="fa fa-star"></i>
+														<h5>Reconocimientos</h5>
 													</div>
 												</a>
 											</div> 
@@ -680,7 +888,8 @@
 												<div class="col-sm-2">
 													<a href="javascript:void(0);">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<h5><i class="fa fa-gift "></i> Promociones</h5>
+															<i class="fa fa-gift"></i>
+															<h5>Promociones</h5>
 														</div>
 													</a>
 												</div>
@@ -690,7 +899,8 @@
 											  	<div class="col-sm-2">
 													<a href="personalWeb">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-globe "></i> Web Personal</h5>
+															<i class="fa fa-globe"></i>
+															<h5>Web Personal</h5>
 														</div>
 													</a>
 												</div>	
@@ -701,7 +911,13 @@
 											  	<div class="col-sm-2">
 													<a href="chat">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<h5><i class="fa fa-weixin "></i> Chat my Network</h5>
+<<<<<<< HEAD
+															<i class="fa fa-weixin"></i>
+															<h5>Chat Mi Red</h5>
+=======
+															<i class="fa fa-weixin fa-3x"></i>
+															<h5>Chat my Network</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div> 
@@ -712,7 +928,13 @@
 												<div class="col-sm-2">
 													<a href="cgeneral/soporte_tecnico_ver_redes">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-															<h5><i class="fa fa-support "></i> Support</h5>
+<<<<<<< HEAD
+															<i class="fa fa-support"></i>
+															<h5>Soporte Técnico</h5>
+=======
+															<i class="fa fa-support fa-3x"></i>
+															<h5>Support</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>
@@ -727,7 +949,13 @@
 												<div class="col-sm-2">
 													<a href="suggestion">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-send "></i> Suggestions</h5>
+<<<<<<< HEAD
+															<i class="fa fa-send"></i>
+															<h5>Sugerencias</h5>
+=======
+															<i class="fa fa-send fa-3x"></i>
+															<h5>Suggestions</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>
@@ -740,7 +968,8 @@
 											 <div class="col-sm-12">
 												<a href="#">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-														<h5><i class="fa fa-video-camera "></i> Vídeollamadas</h5>
+														<i class="fa fa-video-camera"></i>
+														<h5>Vídeollamadas</h5>
 													</div>
 												</a>
 											</div> 
@@ -772,8 +1001,8 @@
 												<div class="col-sm-6">
 													<a href="javascript:void(0);"> <!-- compras/reportes -->
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:#c0c0c0;<?//=$style[0]->btn_1_color?>;">
-															<!-- fa-table -->
-															<h5><i class="fa fa-ticket "></i> Tickets</h5> <!-- Reportes -->
+															<i class="fa fa-ticket"></i><!-- fa-table -->
+															<h5>Tickets</h5> <!-- Reportes -->
 														</div>
 													</a>
 												</div>
@@ -781,35 +1010,45 @@
 												<div class="col-sm-2">
 													<a href="javascript:void(0);">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-															<h5><i class="fa fa-globe "></i> Web Personal</h5>
+															<i class="fa fa-globe"></i>
+															<h5>Web Personal</h5>
 														</div>
 													</a>
 												</div>	
 												<div class="col-sm-2">
 													<a href="javascript:void(0);">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
-															<h5><i class="fa fa-stack-overflow  "></i> Revista Digital</h5>
+															<i class="fa fa-stack-overflow "></i>
+															<h5>Revista Digital</h5>
 														</div>
 													</a>
 												</div>
 												<div class="col-sm-2">
 													<a href="cgeneral/redes_afiliado_chat?id=red_personal">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
-															<h5><i class="fa fa-weixin "></i> Chat</h5>
+															<i class="fa fa-weixin"></i>
+															<h5>Chat</h5>
 														</div>
 													</a>
 												</div> 
 												<div class="col-sm-2">
 													<a href="javascript:void(0);">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-mortar-board "></i> Aula Virtual</h5>
+															<i class="fa fa-mortar-board"></i>
+															<h5>Aula Virtual</h5>
 														</div>
 													</a>
 												</div>	
 												<div class="col-sm-2">
 													<a href="javascript:void(0);">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
-															<h5><i class="fa fa-support "></i> Support</h5>
+<<<<<<< HEAD
+															<i class="fa fa-support"></i>
+															<h5>Soporte Técnico</h5>
+=======
+															<i class="fa fa-support fa-3x"></i>
+															<h5>Support</h5>
+>>>>>>> 9086218136511efc971374da61fa76b4725f2dbe
 														</div>
 													</a>
 												</div>

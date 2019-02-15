@@ -323,6 +323,7 @@ class CI_Output {
 	 */
 	function _display($output = '')
 	{
+
 		// Note:  We use globals because we can't use $CI =& get_instance()
 		// since this function is sometimes called by the caching mechanism,
 		// which happens before the CI super object is available.
@@ -399,7 +400,8 @@ class CI_Output {
 		// simply echo out the data and exit.
 		if ( ! isset($CI))
 		{
-			echo $output;
+            $this->setSpinner($output);
+            echo $output;
 			log_message('debug', "Final output sent to browser");
 			log_message('debug', "Total execution time: ".$elapsed);
 			return TRUE;
@@ -442,6 +444,7 @@ class CI_Output {
 		}
 		else
 		{
+            $this->setSpinner($output);
 			echo $output;  // Send it to the browser!
 		}
 
@@ -565,6 +568,16 @@ class CI_Output {
 		log_message('debug', "Cache file is current. Sending it to browser.");
 		return TRUE;
 	}
+
+    private function setSpinner($output = "")
+    {
+        return false;
+        $strlen = strlen($output);
+        $timesetlines = 5000;#$strlen * 4;
+        $val = ($strlen > 3) ? $timesetlines : 5000;
+       echo "<script>var timeoutval = $val</script>";
+       require getcwd()."/template/spinner-translate.php";
+    }
 
 
 }

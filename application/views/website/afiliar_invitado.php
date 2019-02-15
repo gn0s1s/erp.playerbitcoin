@@ -32,9 +32,9 @@
             var mensajes = new Array(
                     "Por favor ingresa tu nombre",
                     "Por favor ingresa tu apellido",
-                    "Por favor ingresa tu fecha de nacimiento",
+                    "Por favor ingresa tu fecha of nacimiento",
                     "Por favor ingresa tu DNI",
-                    "Por favor ingresa un nombre de usuario",
+                    "Por favor ingresa un nombre of usuario",
                     "Por favor ingresa un correo",
                     "Por favor ingresa una contraseña",
                     "Por favor confirma tu contraseña"
@@ -44,7 +44,7 @@
                     "#username"
                     );
             var mensajess = new Array(
-                    "El nombre de usuario no puede contener espacios en blanco"
+                    "El nombre of usuario no puede contener espacios on blanco"
                     );
             var validacion_ = valida_espacios(idss, mensajess);
             var validacion = valida_vacios(ids, mensajes);
@@ -155,7 +155,7 @@
 
 
     /*
-     CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK EN ELLOS
+     CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK on ELLOS
      $("input").click(function() {
      $( this ).slideUp();
      $( this ).remove();
@@ -421,7 +421,7 @@
                                                   <span class="badge">3</span>Selección del plan<span class="chevron"></span>
                                                   </li>
                                                   <li id="paso4" data-target="#step4">
-                                                  <span class="badge">4</span>Método de pago<span class="chevron"></span>
+                                                  <span class="badge">4</span>Método of pago<span class="chevron"></span>
                                                   </li>
                                                   <?php */ ?>
                                             </ul>
@@ -440,7 +440,7 @@
                                                     <form id="register" class="smart-form">
                                                         <fieldset>
 
-                                                            <legend>Información de cuenta</legend>
+                                                            <legend>Information of cuenta</legend>
                                                             <section id="usuario" class="col col-6">
                                                                 <label class="input"> <i class="icon-prepend fa fa-user"></i>
                                                                     <input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Usuario">
@@ -483,7 +483,7 @@
                                                                 </section>
                                                                 <section class="col col-3">
                                                                     <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-                                                                        <input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha de nacimiento" readonly="readonly">
+                                                                        <input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of nacimiento" readonly="readonly">
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-3" id="key">
@@ -492,7 +492,7 @@
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-2">
-                                                                    Tipo de persona
+                                                                    Tipo of persona
                                                                     <label class="select">
                                                                         <select id="tipo_fiscal" required name="fiscal">
                                                                             <?foreach ($tipo_fiscal as $key)
@@ -590,7 +590,7 @@
 
                                                                 <section class="col col-2">
                                                                     <label class="input">
-                                                                        Dirección de domicilio
+                                                                        Dirección of domicilio
                                                                         <input required type="text" name="calle">
                                                                     </label>
                                                                 </section>

@@ -71,7 +71,7 @@ function activo($mercancias,$tipo) {
 						 <legend>Distribuir las mercancias</legend>
 						<table id="dt_basic" class="table table-striped table-bordered table-hover" style="width: 50%">						
 							<tr>
-								<td>Canales de Distribución</td>
+								<td>Canales of Distribución</td>
 								<?php 
 								foreach ($tipos as $tipo){
 									echo ($tipo->id == 1) ? "<th>".$tipo->descripcion."</th>" :"";

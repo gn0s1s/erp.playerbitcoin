@@ -496,7 +496,7 @@ class billetera2 extends CI_Controller
 		
 		echo "<hr/>";
 		
-		echo "<legend><b>Bonos</b></legend></br>";
+		echo "<legend><b>Calculated Commissions</b></legend></br>";
 		echo $bonos;
 	
 	}

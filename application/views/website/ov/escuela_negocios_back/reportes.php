@@ -31,10 +31,10 @@
 									
 									<label class="select">
 										<select id="tipo-reporte">
-											<option value="0" selected="" disabled="">Tipo de reporte</option>
+											<option value="0" selected="" disabled="">Tipo of reporte</option>
 											<option value="1">Afliados nuevos</option>
-											<option value="2">Compras personales</option>
-											<option value="3">Ventas de la red</option>
+											<option value="2">My Purchases</option>
+											<option value="3">Ventas of the Network</option>
 											<option value="4">Ventas web personal</option>
 										</select> <i></i> </label>
 								</section>
@@ -95,11 +95,11 @@
 								<table id="datatable_fixed_column" class="table table-striped table-bordered table-hover" width="100%">
 									<thead id="tablacabeza">
 										<th>ID</th>
-										<th>Fecha de Registro</th>
+										<th>Fecha of Registro</th>
 										<th>Usuario</th>
 										<th>Nombre</th>
 										<th>Apellido</th>
-										<th>Fecha de Nacimiento</th>
+										<th>Fecha of Nacimiento</th>
 										<th>Sexo</th>
 										<th>Estado Civil</th>
 									</thead>

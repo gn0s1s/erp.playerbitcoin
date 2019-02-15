@@ -6,7 +6,7 @@
                     <h1 class="page-title txt-color-blueDark">
                        	<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>
-				> <a href="/ov/networkProfile">Perfil</a>
+				> <a href="/ov/networkProfile">Profile</a>
 				>
 					Foto
 				</span>
@@ -68,7 +68,7 @@
                                             <video id="camara" autoplay controls></video>
                                         </div>
                                         <div class="contenedor">
-                                            <div class="titulo">Foto</div>
+                                            <div class="titulo">Profile Photo</div>
                                             <canvas id="foto" style="display:none" ></canvas>
 
                                           <form METHOD="POST" ENCTYPE="multipart/form-data" action="/ov/perfil_red/sube_foto_tomar/0" id="uploadPicture" name="picture">
@@ -168,7 +168,7 @@
 
                                 <header>
                                     <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-                                    <h2>Carga tu foto de fondo</h2>
+                                    <h2>Carga tu foto of fondo</h2>
 
                                 </header>
 
@@ -284,7 +284,7 @@ function() {
     alert('Su navegador no soporta está aplicación.');
 };
 
-//Este objeto guardará algunos datos sobre la cámara
+//Este objeto guardará algunos datos sobre the cámara
 window.datosVideo = {
     'StreamVideo': null,
     'url': null
@@ -293,7 +293,7 @@ window.datosVideo = {
 $('#botonIniciar').on('click', function(e) {
 
     //Pedimos al navegador que nos da acceso a
-    //algún dispositivo de video (la webcam)
+    //algún dispositivo of video (la webcam)
     navigator.getUserMedia({
         'audio': false,
         'video': true
@@ -303,7 +303,7 @@ $('#botonIniciar').on('click', function(e) {
         $('#camara').attr('src', datosVideo.url);
 
     }, function() {
-        alert('No fue posible obtener acceso a la cámara.');
+        alert('No fue posible obtener acceso a the cámara.');
     });
 
 });
@@ -352,7 +352,7 @@ $('#botonDetener').on('click', function(e) {
 	                '                 ×  '+
 	                '</button>'+
 	                '<i class="fa-fw fa fa-check"></i>'+
-	                 '<strong>Felicitaciones !</strong> Se ha cambiado la foto de perfil.'+
+	                 '<strong>Felicitaciones !</strong> Se ha cambiado the foto of perfil.'+
 	               '</div>')
 			
 		}else{
@@ -361,7 +361,7 @@ $('#botonDetener').on('click', function(e) {
 	                '                 ×  '+
 	                '</button>'+
 	                '<i class="fa-fw fa fa-check"></i>'+
-	                 '<strong>Lo Lametamos !</strong>No se ha cambiado la foto de tu perfil.'+
+	                 '<strong>Lo Lametamos !</strong>No se ha cambiado the foto of tu perfil.'+
 	               '</div>')
 		}
 	});

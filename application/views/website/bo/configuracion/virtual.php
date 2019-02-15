@@ -6,7 +6,7 @@
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
                                 > <a href="/bo/configuracion/">Configuración</a>
-                                > <a href="/bo/configuracion/formaspago">Formas de Pago</a>
+                                > <a href="/bo/configuracion/formaspago">Formas of Pago</a>
                                 > Virtual
 							</span>
 						</h1>
@@ -70,7 +70,7 @@
 													</div>
 												</a>
 												</div>
-												<!-- ::: NO SE USA SINO EN COLOMBIA :::
+												<!-- ::: NO SE USA SINO on COLOMBIA :::
 
 												<div class="col-sm-2 link">
 												<a href="/bo/configuracion/Tucompra"><! /bo/tucompra >

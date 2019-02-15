@@ -26,7 +26,7 @@
 <script type="text/javascript">
     function Enviar(id, nombre) {
         bootbox.dialog({
-            message: "Estas Seguro(a) que desea pagar con el # " + nombre+" ?",
+            message: "Estas Seguro(a) que desea pagar con the # " + nombre+" ?",
             title: "Confirmar Transacción",
             className: "",
             buttons: {

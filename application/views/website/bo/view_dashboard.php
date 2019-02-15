@@ -39,10 +39,10 @@
   									</div>
 									</div>
                 	<div class="col-sm-12 col-md-12 col-lg-8">
-									<!--Inica la secciion de la perfil y red-->
+									<!--Inica the secciion of the Profile & red-->
 									<div class="well" style="box-shadow: 0px 0px 0px !important;border-color: transparent;">
 										<fieldset>
-											<legend><b>Sistema Integral de Operaciones</b></legend>
+											<legend><b>Sistema Integral of Operaciones</b></legend>
 											<div class="row">
 												<div class="col-sm-4">
 													<a href="configuracion/">
@@ -92,13 +92,13 @@
 													<a href="/bo/reportes">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-book fa-3x"></i>
-															<h5>Reportes</h5>
+															<h5>Reports</h5>
 														</div>
 													</a>
 												</div>
 											</div>
 									</fieldset>
-									<!--Termina la secciion de perfil y red-->
+									<!--Termina the secciion of Profile & red-->
 									<footer>
 										<h3><b><i class="fa fa-group fa-3x"></i> Total Afiliados :</b><i> <?php echo $afiliados[0]->total;?></i></h3>
 									</footer>

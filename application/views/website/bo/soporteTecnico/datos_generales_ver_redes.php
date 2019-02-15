@@ -8,7 +8,7 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span>
                     > <a href="/bo/configuracion/">Configuración</a>
-                    > <a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> 
+                    > <a href="/bo/configuracion/soporte_tecnico">Support</a>
                     > Ver Redes
                 </span>
             </h1>
@@ -19,7 +19,7 @@
              style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; margin-bottom: 2rem;">
             <div class="well">
                 <fieldset>
-                    <legend>Tipos de Red</legend>
+                    <legend>Tipos of Network</legend>
                     <div class="row">
                         <?php foreach ($redes as $red) { ?>
                             <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

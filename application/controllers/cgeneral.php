@@ -345,13 +345,13 @@ class cgeneral extends CI_Controller
 		
 		$acceso = $this->model_user_webs_personales->traer_acceso_web_personal_afiliado($id);
 		
-		$mensaje = "Para tener acceso a mi tienda virtual debes acceder por medio de los siguientes datos,
+		$mensaje = "Para tener acceso a my tienda virtual debes acceder por medio de los siguientes datos,
 				 Username: ".$acceso[0]->username."
 				  Clave: ".$acceso[0]->clave;
 		
 		$this->email->message($mensaje);
 		
-		$this->email->subject("Invitación a mi tienda virtual en pekcell gold");
+		$this->email->subject("Invitación a my tienda virtual en pekcell gold");
 	
 		if($this->email->send()){
 			echo "Se ha enviado el email Exitosamente .";

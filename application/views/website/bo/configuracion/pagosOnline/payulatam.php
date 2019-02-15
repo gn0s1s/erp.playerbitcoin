@@ -11,7 +11,7 @@
 							<a href="/bo/configuracion">Configuración</a>
 							</span>
 							<span>>
-							<a href="/bo/configuracion/formaspago">Formas de Pago</a>
+							<a href="/bo/configuracion/formaspago">Formas of Pago</a>
 							</span>
 							<span>>
 							Payulatam 
@@ -59,7 +59,7 @@
 								 <input required type="text" name="apykey" placeholder="Apy key" value="<?=$payulatam[0]->apykey;?>" > 
 							 </label>
 							 <div class="note">
-								<strong>Nota:</strong> En estado test :6u39nqhq8ftd0hlvnjfs66eh8c.
+								<strong>Nota:</strong> on estado test :6u39nqhq8ftd0hlvnjfs66eh8c.
 							</div>
 						 </section>
 						 <section id="usuario" class="col col-6">
@@ -67,7 +67,7 @@
 								 <input required type="text" name="id_comercio" value="<?=$payulatam[0]->id_comercio;?>">
 							 </label> 
 							<div class="note">
-								<strong>Nota:</strong> En estado test : 500238.
+								<strong>Nota:</strong> on estado test : 500238.
 							</div>
 						 </section>
 						 <section id="usuario" class="col col-6">
@@ -75,7 +75,7 @@
 								 <input required type="text" name="id_cuenta" value="<?=$payulatam[0]->id_cuenta;?>">
 							 </label>
 							 <div class="note">
-								<strong>Nota:</strong> En estado test : 509171.
+								<strong>Nota:</strong> on estado test : 509171.
 							</div>
 						 </section>
 						 <section  class="col col-6">
@@ -113,7 +113,7 @@
 						 <section id="usuario" class="col col-6">
 							<label class="checkbox">
 								<input name="estatus" <?php if($payulatam[0]->estatus == 'ACT') echo "checked='checked'";?> type="checkbox">
-							<i></i>Mostrar en Carrito de Compras
+							<i></i>Mostrar on Carrito of Purchases
 							</label>
 						 </section>
 					 </fieldset>

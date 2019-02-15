@@ -18,7 +18,7 @@
         </div>
         <hr class="col-md-11"/>
         <div class="row">
-            <legend>Tasa(s) de cambio</legend>
+            <legend>Tasa(s) of cambio</legend>
                 <?php foreach ($rates as $cur => $ticker) : ?>
                     <?php $sym = $ticker->symbol; $cuk= " " . $cur; ?>
                     <div class="backHome">
@@ -45,7 +45,7 @@
 <div class="row">
     <section class="col-md-12">
         <h2 style="text-align: center">
-            ¿Deseas proceder con el pago? <br/> haz click en
+            ¿Deseas proceder con the pago? <br/> haz click en
             <strong class="txt-color-green">continuar</strong>.
         </h2>
     </section>

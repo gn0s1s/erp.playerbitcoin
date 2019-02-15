@@ -13,7 +13,7 @@
 
                 );
         var mensajes = new Array(
-                "Por favor ingresa un nombre de usuario",
+                "Por favor ingresa un nombre of usuario",
                 "Por favor ingresa un correo"
                 );
 
@@ -21,7 +21,7 @@
                 "#username"
                 );
         var mensajess = new Array(
-                "El nombre de usuario no puede contener espacios en blanco"
+                "El nombre of usuario no puede contener espacios on blanco"
                 );
         var validacion_ = valida_espacios(idss, mensajess);
         var validacion = valida_vacios(ids, mensajes);
@@ -75,7 +75,7 @@
 
 
     /*
-     CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK EN ELLOS
+     CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK on ELLOS
      $("input").click(function() {
      $( this ).slideUp();
      $( this ).remove();
@@ -153,7 +153,7 @@
                         })
                                 .done(function (msg)
                                 {
-                                    alert('Has Cambiado de fase' + msg);
+                                    alert('Has Cambiado of fase' + msg);
                                     location.reload();
                                 })
                     }
@@ -189,7 +189,7 @@
                     } else {
                         $("#usuario2").html('<div id="msg_usuario" class="alert alert-danger fade in">'
                                 + '<i class="fa-fw fa fa-check"></i>'
-                                + '<strong>Error </strong> Username no esta registrado en el sistema'
+                                + '<strong>Error </strong> Username no esta registrado on the sistema'
                                 + '</div>')
                     }
 
@@ -217,7 +217,7 @@
                         $("#correo2").html('<div id="msg_correo" class="alert alert-danger fade in">'
 
                                 + '<i class="fa-fw fa fa-check"></i>'
-                                + '<strong>Error </strong> Email no esta registrado en el sistema'
+                                + '<strong>Error </strong> Email no esta registrado on the sistema'
                                 + '</div>')
                     }
 
@@ -411,9 +411,9 @@
             <h1 class="page-title txt-color-blueDark">
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
                 <span>
-                    > <a href="/ov/perfil_red/TipoAfiliacion">Tipo de Afiliacion</a>
-                    > <a href="/ov/perfil_red/afiliar?tipo=2">Redes</a> 
-                    > <a href="/ov/perfil_red/afiliarExistente?id=<?php echo $_GET['id']; ?>">Afiliar Usuario</a>
+                    > <a href="/ov/perfil_red/TipoAfiliacion">Tipo of Afiliacion</a>
+                    > <a href="/ov/perfil_red/afiliar?tipo=2">Networks</a>
+                    > <a href="/ov/perfil_red/afiliarExistente?id=<?php echo $_GET['id']; ?>">Affiliate Usuario</a>
                     > Frontal
                 </span>
             </h1>
@@ -472,7 +472,7 @@
                                                         <form id="register" class="smart-form">
                                                             <fieldset>
 
-                                                                <legend>Información de cuenta</legend>
+                                                                <legend>Information of cuenta</legend>
                                                                 <section id="usuario" class="col col-6">
                                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
                                                                         <input id="username" onkeyup="use_username()" required
@@ -506,12 +506,12 @@
                                             <script type="text/javascript">
                                                 window.onload = function () {
                                                     SelecionarFase();
-                                                    // Puedes agregar mas eventos que se ejecutaran al cargar la pagina
+                                                    // Puedes agregar mas eventos que se ejecutaran al cargar the pagina
                                                 }
                                             </script>
                                             <a id="fases" onclick="SelecionarFase()">Mas informacion</a>
                                         <?php } else { ?>
-                                            <h1>   Solo puedes tener <?php echo $red_frontales[0]->frontal ?>, pero puedes afiliar en red"</h1>
+                                            <h1>   Solo puedes tener <?php echo $red_frontales[0]->frontal ?>, pero puedes afiliar on red"</h1>
                                         <?php } ?>
                                     </div>
                                 </div>

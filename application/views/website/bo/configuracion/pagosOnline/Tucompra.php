@@ -85,7 +85,7 @@
 								<section id="usuario" class="col col-6">
 									<label class="checkbox"> <input name="estatus"
 										<?php if($tucompra[0]->estatus == 'ACT') echo "checked='checked'";?>
-										type="checkbox"> <i></i>Mostrar en Carrito de Compras
+										type="checkbox"> <i></i>Mostrar on Carrito of Purchases
 									</label>
 								</section>
 							</fieldset>

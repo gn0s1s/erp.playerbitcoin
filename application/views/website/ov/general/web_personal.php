@@ -66,7 +66,7 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 								<br>
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4" style="margin-top: 2rem;">
 									
-										<label > Clave de mi Web Personal 
+										<label > Clave of my Web Personal
 										</label>
 									</section>
 									
@@ -138,7 +138,7 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4" style="margin-top: 0.5rem;">
 									
 										<label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-											<input name="email_receptor" placeholder="e-mail de tu cliente" type="email">
+											<input name="email_receptor" placeholder="e-mail of tu cliente" type="email">
 										</label>
 									</section>
 									
@@ -219,7 +219,7 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 										<th data-hide="phone,tablet">Cantidad</th>
 										<th data-hide="phone,tablet">Valor Unitario</th>
 										<th data-hide="phone,tablet">Costo</th>
-									    <th data-hide="phone,tablet">Estado</th>
+									    <th data-hide="phone,tablet">Status</th>
 									    <th data-hide="phone,tablet">Enviado</th>
 									</tr>
 								</thead>

@@ -5,7 +5,7 @@
             <th data-hide="phone">No. guia</th>
             <th data-hide="phone">Origen/Almacen</th>
             <th data-hide="phone">Usuario/Destino</th>
-            <th data-hide="phone,tablet">Dirección de envío</th>
+            <th data-hide="phone,tablet">Dirección of envío</th>
             <th data-hide="phone,tablet">Telefono</th>
             <th data-hide="phone,tablet">Email Usuario</th>
             <th data-hide="phone,tablet">Fecha</th> 

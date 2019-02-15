@@ -108,7 +108,7 @@
 											echo form_open($this->uri->uri_string()); ?>
 											<legend>Nuevo Agente Almacén</legend>
 											<fieldset>
-												<label class="label">Seleccione el Almacén al que pertenecerá</label>
+												<label class="label">Seleccione the Almacén al que pertenecerá</label>
 												<label class="select">
 													<select name="id_cedi" id="id_cedi" required>
 														<?php foreach ($almacenes as $almacen) {?>
@@ -133,7 +133,7 @@
 											</fieldset>
 											<fieldset>
 												<?php if ($use_username) { ?>
-												<label class="label">Nombre de Usuario</label>
+												<label class="label">Nombre of Usuario</label>
 												<label class="input">
 													<?php echo form_input($username); ?>
 												</label>
@@ -142,7 +142,7 @@
 												</label>
 												<br/>
 												<?php } ?>
-												<label class="label">Dirección de Correo Electrónico</label>
+												<label class="label">Dirección of Correo Electrónico</label>
 												<label class="input">
 													<?php echo form_input($email); ?>
 												</label>
@@ -151,7 +151,7 @@
 												</label>
 											</fieldset>
 											<fieldset>
-												<label class="label">Número de Identificación</label>
+												<label class="label">Número of Identificación</label>
 												<label class="input">
 													<input name="dni" value="" id="dni" maxlength="60" size="30" type="text" required /> 
 												</label>

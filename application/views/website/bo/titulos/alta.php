@@ -6,7 +6,7 @@
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
-								<a href="/bo/configuracion/compensacion/">Plan de compensacion</a> >
+								<a href="/bo/configuracion/compensacion/">Plan of compensacion</a> >
 								<a href="/bo/titulos/">Títulos</a>
 								> Nuevo Título
 							</span>
@@ -59,13 +59,13 @@
 						<input value="SEM" name="frecuencia" placeholder="frecuencia" type="radio">
 					<i></i>Semanal</label>
 		<br>
-		<p>Nota: Frecuencia con la que se cobra toman el tipo de Título.</p><br>
+		<p>Nota: Frecuencia con the que se cobra toman the tipo of Título.</p><br>
 			<label class="select">Tipo
 				<select name="tipo" style="width:200px; height:30px;">
-					<option value='PUNTOSP'>Puntos Personales</option>
-					<option value='PUNTOSR'>Puntos Red</option>
-					<option value='VENTASP'>Compras Personales</option>
-					<option value='VENTASR'>Ventas Red</option>
+					<option value='PUNTOSP'>My Points</option>
+					<option value='PUNTOSR'>Network Points</option>
+					<option value='VENTASP'>My Purchases</option>
+					<option value='VENTASR'>Ventas Network</option>
 				</select>
 			</label><br>
 			<label  class="select">Condicion Red
@@ -73,7 +73,7 @@
 				<option value='EQU'>Equilibrada</option>
 				<option value='DEB'>Pata Débil</option>
 			</select>
-			<p>Nota: Seleccionan todas las patas de la red (Equilibrada) o solo la pata mas débil (Débil) para cumplir la condición.</p><br>
+			<p>Nota: Seleccionan todas las patas of Network (Equilibrada) o solo the pata mas débil (Débil) para cumplir the condición.</p><br>
 			</label>
 			<label for="" class="input">(%) Porcentaje
 				<input id="porcentaje" type="number" class="form-control" name="porcentaje" min="0" max="100" step="0.1" placeholder=""class="form-control" required style="width:200px; height:30px;"/>
@@ -128,7 +128,7 @@ function enviar() {
 						.done(function( msg ) {
 							
 						bootbox.dialog({
-						message: "Se ha creado el Titulo."+msg,
+						message: "Se ha creado the Titulo."+msg,
 						title: 'Felicitaciones',
 						buttons: {
 							success: {

@@ -35,7 +35,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>   Perfil Usuario</h2>
+						<h2>   Profile Usuario</h2>
 
 					</header>
 
@@ -51,7 +51,7 @@
 						<!-- widget content -->
 						<div class="widget-body no-padding smart-form">
                 <fieldset>
-									<legend> Editar Perfil</legend>
+									<legend> Editar Profile</legend>
                   <div class="contenidoBotones">
 										<div class="row">
 											<div class="col-sm-1">
@@ -76,7 +76,7 @@
 												<a href="/ov/networkProfile/photo">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard primary botones" style="background: <?=$style[0]->btn_1_color?>">
 														<i class="fa fa-camera fa-4x"></i>
-														<h1>Foto</h1>
+														<h1>Profile Photo</h1>
 													</div>
 												</a>
 											</div>

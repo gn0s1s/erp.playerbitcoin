@@ -11,13 +11,13 @@
 								<a href="/bo/configuracion/">Configuración</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> 
+								<a href="/bo/configuracion/soporte_tecnico">Support</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/informacion_ver_redes?id=0">Ver Redes</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/informacion?id_red=<?php echo $id_red;?>">Información</a> > Alta
+								<a href="/bo/configuracion/informacion?id_red=<?php echo $id_red;?>">Information</a> > Alta
 							</span>
 						</h1>
 					</div>
@@ -66,7 +66,7 @@
 															<label class="label">Grupo</label> 
 															<label class="select">
 																<select name="grupo" id="grupo" required>
-																	<option value="0">Selecciona el grupo</option>
+																	<option value="0">Selecciona the grupo</option>
 																<?php foreach ($grupos as $grupo) {?>
 																	<option value="<?php echo $grupo->id; ?>"><?php echo $grupo->descripcion; ?></option>
 																<?php } ?>
@@ -111,7 +111,7 @@
 																	onchange="this.parentNode.nextSibling.value = this.value"
 																	name="userfile1" type="file" >Buscar
 																</span><input name="file_nme"
-																	placeholder="Seleccione el archivo"
+																	placeholder="Seleccione the archivo"
 																	type="text" id="file_frm" required readonly="readonly">
 															</div>
 														</section>

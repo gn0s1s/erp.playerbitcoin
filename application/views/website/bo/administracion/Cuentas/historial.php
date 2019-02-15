@@ -82,7 +82,7 @@
 										<th data-hide="phone">Usuario</th>
 										<th data-hide="phone,tablet">Metodo</th>
 										<th data-hide="phone,tablet">Valor</th>
-										<th data-hide="phone,tablet">Estado</th>
+										<th data-hide="phone,tablet">Status</th>
 									</tr>
 								</thead>
 								<tbody>

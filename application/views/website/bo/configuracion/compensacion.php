@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 					<span>> <a href="/bo/configuracion/"> Configuración </a>
-					> Plan de compensación
+					> Plan of compensación
 				</span>
 						</h1>
 					</div>
@@ -80,7 +80,7 @@
 												<a href="/bo/bonos">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 														<i class="fa fa-gift fa-3x"></i>
-														<h1>Bonos <br/><br/></h1>
+														<h1>Calculated Commissions <br/><br/></h1>
 													</div>
 												</a>
 												</div>

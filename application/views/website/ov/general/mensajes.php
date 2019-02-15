@@ -48,7 +48,7 @@
 						<div class="widget-body">
 							<ul id="myTab1" class="nav nav-tabs bordered">
 								<li class="active">
-									<a href="#s1" data-toggle="tab">Enviar</a>
+									<a href="#s1" data-toggle="tab">Submit</a>
 								</li>
 								<li>
 									<a href="#s2" data-toggle="tab">Mis mensajes</a>
@@ -78,7 +78,7 @@
 															<?}?>
 														</select> </label>
 													<div class="note">
-														<strong>Nota:</strong> Manten presionado la tecla ctrl y escoge tus opciones.
+														<strong>Nota:</strong> Manten presionado the tecla ctrl & escoge tus opciones.
 													</div>
 												</section>
 											</div>
@@ -101,7 +101,7 @@
 												<th class="text-center"><b>Enviado por</b></th>
 												<th class="text-center hidden-xs hidden-sm"><b>Título</b></th>
 												<th class="text-center hidden-xs hidden-sm"><b>Fecha</b></th>
-												<th class="text-center hidden-xs hidden-sm"><b>Estado</b></th>
+												<th class="text-center hidden-xs hidden-sm"><b>Status</b></th>
 												<th class="text-center"><b>Acción</b></th>
 											</tr>
 										</thead>

@@ -174,7 +174,7 @@ class perfil_red extends CI_Controller
 	
 	private function printEspacioParaAfiliar($sponsor,$id_afiliado, $lado) {
 		echo "<li>
-				<a onclick=\"botbox('".$sponsor[0]->nombre."',".$id_afiliado.",".$lado.")\" href='javascript:void(0)'>Afiliar Aqui</a>
+				<a onclick=\"botbox('".$sponsor[0]->nombre."',".$id_afiliado.",".$lado.")\" href='javascript:void(0)'>Affiliate Aqui</a>
 			  </li>	";
 	}
 
@@ -1598,7 +1598,7 @@ class perfil_red extends CI_Controller
 
                               <div>
                                 <input type="checkbox" name="saveInfo" id="saveInfoid" id="salvar_taj">
-                                <label for="saveInfoid">&nbsp;Guardar la información de mi tarjeta de Crédito</label>
+                                <label for="saveInfoid">&nbsp;Guardar la información de my tarjeta de Crédito</label>
                               </div>
                             </div>
                             <!--creditCard-->

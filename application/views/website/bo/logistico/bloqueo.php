@@ -137,7 +137,7 @@
 				.done(function(msg)
 				{
 					bootbox.dialog({
-						message: "Se ha hecho el bloqueo de mercancia exitosamente.",
+						message: "Se ha hecho the bloqueo of mercancia exitosamente.",
 						title: "Exito",
 						className: "",
 						buttons: {

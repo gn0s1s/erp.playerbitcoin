@@ -32,7 +32,7 @@ function botbox(nombre,id_debajo, lado)
 	{
 		bootbox.dialog({
 			message: msg,
-			title: "Invitar debajo de "+nombre,
+			title: "Invitar debajo of "+nombre,
 		});
 	});
 	
@@ -71,7 +71,7 @@ function detalles(id)
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
-				> <a href="/ov/cgeneral/invitacion_afiliar">Invitar a Afiliar</a>
+				> <a href="/ov/cgeneral/invitacion_afiliar">Invitar a Affiliate</a>
 				> Red
 				</span>
 			</h1>
@@ -145,7 +145,7 @@ function detalles(id)
 													if($afiliados==null||$id==2||$red_frontales[0]->frontal>count($afiliados))
                                                         {?>
 														<li>
-															<a onclick="botbox('Tí',<?=$id?>,<?=count($afiliados)?>)" href='javascript:void(0)'>Afiliar Aqui</a>
+															<a onclick="botbox('Tí',<?=$id?>,<?=count($afiliados)?>)" href='javascript:void(0)'>Affiliate Aqui</a>
 			 										 	</li>
 												<?}?>
 													</ul>

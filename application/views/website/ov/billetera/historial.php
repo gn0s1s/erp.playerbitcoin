@@ -6,7 +6,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<span>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<a href="/ov/wallet"> > Billetera</a>
+							<a href="/ov/wallet"> > Profit Wallet</a>
 							 > Historial</span>
 							
 						</h1>
@@ -93,12 +93,12 @@
 																	<tr>
 																		<th data-hide="expand"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> Fecha</th>
 																		<th><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i> Monto</th>
-																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Método de pago</th>
+																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Método of pago</th>
 																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Titular Cuenta</th>
 																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> # Cuenta</th>
 																		<th><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Banco</th>
 																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> CLABE</th>
-																		<th>Estado</th>
+																		<th>Status</th>
 																	</tr>
 																</thead>
 																<tbody>

@@ -247,7 +247,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<table bgcolor="#999999">
 					<tr>
 						<td aling="left"><img style="max-height: 90px" src="<?=site_url('/wl.png');?>" alt="<?=$site_name?>"/></td>
-						<td align="center"><h1 class="collapse">Tu nueva contraseña en <?php echo $site_name; ?></h1></td>
+						<td align="center"><h1 class="collapse">Tu nueva contraseña on <?php echo $site_name; ?></h1></td>
 					</tr>
 				</table>
 				</div>
@@ -263,9 +263,9 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 <tr>
 <td width="5%"></td>
 <td align="left" width="95%" style="font: 13px/18px Arial, Helvetica, sans-serif;">
-<h2 style="font: normal 20px/23px Arial, Helvetica, sans-serif; margin: 0; padding: 0 0 18px; color: black;">Tu nueva contraseña en <?php echo $site_name; ?></h2>
+<h2 style="font: normal 20px/23px Arial, Helvetica, sans-serif; margin: 0; padding: 0 0 18px; color: black;">Tu nueva contraseña on <?php echo $site_name; ?></h2>
 Has cambiado tu contraseña.<br />
-Por favor , mantenga en sus registros para que no se olvide.<br />
+Por favor , mantenga on sus registros para que no se olvide.<br />
 <br />
 <?php if (strlen($username) > 0) { ?>Tu usuario: <?php echo $username; ?><br /><?php } ?>
 Tu correo: <?php echo $email; ?><br />
@@ -273,7 +273,7 @@ Tu nueva contraseña: <?php echo $new_password; ?><br />
 <br />
 <br />
 Gracias,<br />
-Equipo de <?php echo $site_name; ?>
+Equipo of <?php echo $site_name; ?>
 </td>
 </tr>
 </table>

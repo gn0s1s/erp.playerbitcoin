@@ -98,7 +98,7 @@
 									</select> <i></i> 
 								</label>
 								<br>
-								Nivel de profundidad
+								Nivel of profundidad
 								
 								<label class="input" required>
 									
@@ -106,7 +106,7 @@
 								</label>
 								<br>
 								<label class="input" required>
-									Cantidad de afiliados necesarios
+									Cantidad of afiliados necesarios
 									<input style="width: 25rem;" required type="number" name="cantidad" placeholder="Cantidad"class="form-control" required>
 								</label>
 								<br>		

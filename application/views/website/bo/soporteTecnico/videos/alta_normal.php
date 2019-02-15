@@ -10,7 +10,7 @@
 								<a href="/bo/configuracion/">Configuración</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> 
+								<a href="/bo/configuracion/soporte_tecnico">Support</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/videos_ver_redes">Ver Redes</a>
@@ -77,16 +77,16 @@
 												<label class="textarea">								
 													<textarea rows="3" class="custom-scroll" name="desc_frm"></textarea> 
 												</label>
-												<label class="label">Archivo de Video</label>
+												<label class="label">Archivo of Video</label>
 												<section>
 													<div class="input input-file">
-														<span class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file" required>Buscar</span><input placeholder="Verifique que el nombre no tenga caracteres especiales" readonly="" type="text">
+														<span class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file" required>Buscar</span><input placeholder="Verifique que the nombre no tenga caracteres especiales" readonly="" type="text">
 													</div>
 												</section>
 												<label class="label">Imagen</label>
 												<section>
 													<div class="input input-file">
-														<span class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file" required>Buscar</span><input placeholder="Verifique que el nombre no tenga caracteres especiales" readonly="" type="text">
+														<span class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file" required>Buscar</span><input placeholder="Verifique que the nombre no tenga caracteres especiales" readonly="" type="text">
 													</div>
 												</section>
 												<br>

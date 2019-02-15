@@ -11,7 +11,7 @@
 								<a href="/bo/logistico">Modulo log&iacute;stico</a> 
 							</span>
 							<span>>
-								Surtido y Embarquess
+								Surtido & Embarquess
 							</span>
 						</h1>
 					</div>
@@ -213,7 +213,7 @@
 																						<th data-class="expand">Tipo</th>
 																						<th>Origen</th>
 																						<th data-hide="phone">Destino</th>
-																						<th data-hide="phone,tablet">Fecha de entrega</th>
+																						<th data-hide="phone,tablet">Fecha of entrega</th>
 																						<th data-hide="phone,tablet">Estatus</th>
 																						<th></th>
 																						
@@ -309,7 +309,7 @@
 																						<th data-class="expand">Tipo</th>
 																						<th>Origen</th>
 																						<th data-hide="phone">Destino</th>
-																						<th data-hide="phone,tablet">Fecha de entrega</th>
+																						<th data-hide="phone,tablet">Fecha of entrega</th>
 																						<th data-hide="phone,tablet">Estatus</th>
 																						
 																					</tr>
@@ -387,7 +387,7 @@
 			+'<form class="smart-form" novalidate="novalidate">'
 				+'<section class="col col-6">'
 					+'<label class="input"> <i class="icon-append fa fa-calendar"></i>'
-						+'<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha de entrega">'
+						+'<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of entrega">'
 					+'</label>'
 				+'</section>'
 			+'</form>'
@@ -404,7 +404,7 @@
 						var fecha=$("#datepicker").val();
 						if(fecha=="")
 						{
-							alert("Especifique una fecha de entrega");
+							alert("Especifique una fecha of entrega");
 						}
 						else
 						{
@@ -435,7 +435,7 @@
 							else
 							{
 								bootbox.dialog({
-									message: "¿Desea surtir toda la venta ahora?",
+									message: "¿Desea surtir toda the venta ahora?",
 									title: "Surtir",
 									className: "",
 									buttons: {

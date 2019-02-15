@@ -40,10 +40,10 @@ $ci->load->model("model_permissions");?>
   									</div>
 									</div>
                 	<div class="col-sm-12 col-md-12 col-lg-8">
-									<!--Inica la secciion de la perfil y red-->
+									<!--Inica the secciion of the Profile & red-->
 								  	<div class="well" style="box-shadow: 0px 0px 0px !important;border-color: transparent;">
 										<fieldset>
-											<legend><b>Sistema Integral de Operaciones Comercial</b></legend>
+											<legend><b>Sistema Integral of Operaciones Comercial</b></legend>
 																					<div class="row">
 											<div class="col-sm-2 link">
 											</div>
@@ -60,7 +60,7 @@ $ci->load->model("model_permissions");?>
 													<a href="/bo/comercial/red">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-sitemap fa-3x"></i>
-															<h1>Red</h1>
+															<h1>Network</h1>
 														</div>
 													</a>
 												</div>
@@ -68,7 +68,7 @@ $ci->load->model("model_permissions");?>
 													<a href="/bo/reportes">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-book fa-3x"></i>
-															<h1>Reportes</h1>
+															<h1>Reports</h1>
 														</div>
 													</a>
 												</div>
@@ -76,7 +76,7 @@ $ci->load->model("model_permissions");?>
 													<a href="/bo/comercial/carrito_de_compras">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-shopping-cart fa-3x"></i>
-															<h1>Carrito de Compras</h1>
+															<h1>Carrito of Purchases</h1>
 														</div>
 													</a>
 												</div>
@@ -92,7 +92,7 @@ $ci->load->model("model_permissions");?>
 													<a href="/bo/CuentasPagar/Archivero">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-folder fa-3x"></i>
-															<h1>Archivero <br>&nbsp</h1>
+															<h1>Files <br>&nbsp</h1>
 														</div>
 													</a>
 												</div>

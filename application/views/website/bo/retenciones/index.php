@@ -246,7 +246,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar la Retencion ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the Retencion ?'},
 	})
 	.done(function( msg )
 	{
@@ -267,7 +267,7 @@ function eliminar(id) {
 					.done(function( msg )
 					{
 						bootbox.dialog({
-						message: "Se ha eliminado la retencion.",
+						message: "Se ha eliminado the retencion.",
 						title: 'Felicitaciones',
 						buttons: {
 							success: {

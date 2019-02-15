@@ -121,9 +121,8 @@ class web_personal extends CI_Model{
         $custom = '<script src="https://www.google.com/recaptcha/api.js">'
                 .'</script>';
         
-        $sumario = 'DESPUÉS DE LA CONFIRMACIÓN POR E-MAIL, 
-                    USTED COMENZARÁ A RECIBIR INFORMACIONES
-                    REFERENTE AL PROYECTO.';
+        $sumario = 'WHEN YOU RECEIVE E-MAIL CONFIRMATION, 
+                    YOU\'LL CAN BE UPDATED FROM OUR BUSINESS NEWSLETTERS.';
         
         $this->setContentPagePersonal("SUMARIO", $sumario);
         $this->setContentPagePersonal("FORM", $form);
@@ -189,6 +188,7 @@ class web_personal extends CI_Model{
         $head = str_replace("$webempresa/http","http",$head);
         $head = str_replace("$webempresa/form_template","form_template",$head);
         $head = str_replace("../form_template","$webempresa/form_template",$head);
+
         $footer = str_replace("<body","</body",  $setbody[2]);
         $marca = '<a href="'.$webempresa.'"> 
                   <img alt="" src="'.site_url().'/logo.png" '
@@ -220,7 +220,7 @@ class web_personal extends CI_Model{
         
         $form = str_replace("[[G_KEY]]", $captcha, $form);
         $form = str_replace("</form>", $in_sponsor."</form>", $form);
-        $subtitle = "Patrocinador : $nombre_completo";
+        $subtitle = "Sponsor : $nombre_completo";
         $form = str_replace("Formulario de Afiliación:", $subtitle, $form);
 
         return $form;
@@ -234,7 +234,11 @@ class web_personal extends CI_Model{
         
         if(!$this->content)
             $this->content = file_get_contents(getcwd().$content_file);
-        
+
+        $webempresa = $this->empresa();
+        $webempresa = $webempresa[0]->web;
+        $this->content = str_replace("../form_template","$webempresa/form_template",$this->content);
+
         $this->content = str_replace("[[$".$let."]]","$parte", $this->content); 
         
     }

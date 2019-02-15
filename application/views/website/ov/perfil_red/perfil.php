@@ -5,7 +5,7 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> > 
-				<a href="/ov/networkProfile">Perfil</a>
+				<a href="/ov/networkProfile">Profile</a>
 				>
 					Datos Personales
 				</span>
@@ -70,7 +70,7 @@
 										</section>
 										<section class="col col-3">
 											<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-												<input required id="datepicker" value="<?=$usuario[0]->nacimiento?>" type="text" name="nacimiento" placeholder="Fecha de nacimiento">
+												<input required id="datepicker" value="<?=$usuario[0]->nacimiento?>" type="text" name="nacimiento" placeholder="Fecha of nacimiento">
 											</label>
 										</section>
 										<section class="col col-3">
@@ -144,7 +144,7 @@
 										</section>
 										<section class="col col-2">
 											<label class="input">
-												Dirección de domicilio
+												Dirección of domicilio
 												<input required type="text" name="calle" value="<?=$dir[0]->calle?>">
 											</label>
 										</section>
@@ -185,13 +185,13 @@
 								<fieldset>
 								<legend>Datos Bancarios</legend>
 									<div class="row">
-										<section class="col col-3">Nombre de titular
+										<section class="col col-3">Nombre of titular
 											<label class="input"><i class="icon-prepend fa fa-user"></i>												
 												<input required type="text" name="c_titular" value="<?=$cuenta[0]->titular?>">
 											</label>
 										</section>											
 										<section class="col col-3">
-											País de la Cuenta
+											País of the Cuenta
 											<label class="select">
 												<select id="" required name="c_pais">
 												<?php foreach ($pais as $key){													
@@ -208,12 +208,12 @@
 												</select>
 											</label>
 										</section>										
-										<section id="" class="col col-3">Número de la Cuenta
+										<section id="" class="col col-3">Número of the Cuenta
 											<label class="input"><i class="icon-prepend fa fa-credit-card"></i>													
 												<input type="text" name="c_cuenta" value="<?=$cuenta[0]->cuenta?>">
 											</label>
 										</section>
-										<section id="" class="col col-3">Nombre de Banco
+										<section id="" class="col col-3">Nombre of Banco
 											<label class="input"><i class="icon-prepend fa fa-bank"></i>												
 												<input type="text" name="c_banco" value="<?=$cuenta[0]->banco?>">
 											</label>
@@ -359,19 +359,19 @@
 									<div class="row">
 										<section class="col col-3">
 											<label class="input">
-												Color de fondo
+												Color of fondo
 												<input type="color" name="bg_color" value="<?=$usuario[0]->bg_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color de botones primarios
+												Color of botones primarios
 												<input type="color" name="color_1" value="<?=$usuario[0]->btn_1_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color de botones secundarios
+												Color of botones secundarios
 												<input type="color" name="color_2" value="<?=$usuario[0]->btn_2_color?>">
 											</label>
 										</section>
@@ -425,7 +425,7 @@ function actualizar()
 	var mensajes = new Array(
 		"Por favor ingresa tu nombre",
 	 	"Por favor ingresa tu apellido",
-	 	"Por favor ingresa tu fecha de nacimiento",
+	 	"Por favor ingresa tu fecha of nacimiento",
 	 	//"Por favor ingresa tu código postal"
 	 	"Por favor ingresa tu Identificacion Fiscal"
 	 );
@@ -465,7 +465,7 @@ function changepswd()
 		})
 		.done(function( msg ) {
 			bootbox.dialog({
-						message: "¿ Estas seguro que deseas cambiar la contraseña ?",
+						message: "¿ Estas seguro que deseas cambiar the contraseña ?",
 						title: "Atención",
 						buttons: {
 							success: {

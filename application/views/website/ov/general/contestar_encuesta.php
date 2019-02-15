@@ -6,7 +6,7 @@
 
 		<!-- col -->
 		<div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
-			<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-file-o"></i> <a href="encuestas">Encuestas</a> <span>>
+			<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><i class="fa-fw fa fa-file-o"></i> <a href="encuestas">Surveys</a> <span>>
 				<?php echo $encuesta[0]->nombre ?> </span></h1>
 		</div>
 		<!-- end col -->
@@ -64,7 +64,7 @@
 						?>
 						<tr>
 							<td></td>
-							<td><a onclick="enviar_encuesta(<?php echo $encuesta[0]->id_encuesta ?>)" class="btn btn-success pull-right"><i class="fa fa-check"></i> Enviar encuesta</a></td>
+							<td><a onclick="enviar_encuesta(<?php echo $encuesta[0]->id_encuesta ?>)" class="btn btn-success pull-right"><i class="fa fa-check"></i> Enviar Survey</a></td>
 						</tr>
 						
 						<!-- end Post -->
@@ -109,7 +109,7 @@
 		         type: "get",
 		         url: "guardar_encuesta",
 		         success: function(){
-		              alert("Se ha enviado la encuesta. Gracias por tu participación");
+		              alert("Se ha enviado the encuesta. Gracias por tu participación");
 		              window.location.href = '/ov/surveys';
 		         }
 			});

@@ -10,7 +10,7 @@
 								<a href="/bo/configuracion/">Configuración</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> 
+								<a href="/bo/configuracion/soporte_tecnico">Support</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/videos_ver_redes">Ver Redes</a>

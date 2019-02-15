@@ -104,26 +104,26 @@
                                                  <img src="/template/img/empresario.jpg" alt="Empresario">
                                         </div>-->
                                         <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
-                                            <h2 class="tituloLogin"><i class="fa fa-lock txt-color-teal"></i> Iniciar sesión</h2>
+                                            <h2 class="tituloLogin"><i class="fa fa-lock txt-color-teal"></i> Log In</h2>
                                         </div>
                                         <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12">
                                             <div class="form-group grupoCajas">
-                                                <label for="login">Cuenta</label>
+                                                <label for="login">Account</label>
                                                 <input required class="form-control cajas" type="text" name="login" placeholder="Ingrese su id, usuario o correo" id="login">
                                             </div>
 
                                             <div class="form-group grupoCajas">
-                                                <label for="password">Contraseña</label>
+                                                <label for="password">Password</label>
                                                 <input required type="password" class="form-control cajas" placeholder="Ingrese la contraseña" name="password" id="password">
                                             </div>
                                             <div class="form-group grupoCajas"><br>
                                                 <button id="enviar" type="submit" class="btn btnLogin">
-                                                    Ingresar
+                                                    Log In
                                                 </button>
                                             </div>
                                             <div class="form-group grupoCajas">
                                                 <hr>
-                                                    <a class="link_login" href="/auth/forgot_password">¿Olvidaste tu contraseña?</a>
+                                                    <a class="link_login" href="/auth/forgot_password">Forgot your password?</a>
                                             </div>
                                             
                                         </div>
@@ -133,7 +133,7 @@
                             <br>
                             <span class="derechos">
                             <small>Copyright © <?=date('Y')?> <a href="<?=$web?>" target="_blank">
-                                <?=$nombre_empresa?></a> . Todos los derechos reservados.  </small>
+                                <?=$nombre_empresa?></a>. All rights reserved.</small>
                             </span>
                     </div>
                     <div class="col col-lg-4 col-md-4"></div>
@@ -141,12 +141,12 @@
             </div>
         </div>
 
-
+        <?php $this->load->view('website/traslate'); ?>
         <!-- <div id="footer" class="fade in">
             <br />
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <small>Copyright © <?=date('Y')?> <a href="<?=$web?>" target="_blank">
-                        <?=$nombre_empresa?></a> . Todos los derechos reservados.  </small>
+                        <?=$nombre_empresa?></a> . All Rights Reserved.  </small>
             </div>
         </div> -->
         <!--================================================== -->	

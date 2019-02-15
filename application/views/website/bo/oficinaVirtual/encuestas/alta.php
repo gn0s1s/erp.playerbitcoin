@@ -39,7 +39,7 @@
                                                          id="busquedatodos">
                                                     <label class="label">Nombre</label><label
                                                         class="input"><input type="text"
-                                                                         placeholder="Nombre de la Encuesta" id="enc_nom">
+                                                                         placeholder="Nombre of the Encuesta" id="enc_nom">
                                                     </label>
                                                 </section>
                                             </div>
@@ -57,7 +57,7 @@
 
                                                 <section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"
                                                          id="busquedatodos">
-                                                    <label class="label">Cantidad de preguntas</label>
+                                                    <label class="label">Cantidad of preguntas</label>
                                                     <label
                                                         class="input"><input type="number" id="preg_qty"
                                                                          min="1" max="30">
@@ -133,7 +133,7 @@ src="/template/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></scri
                                                             {
                                                                 if (qty < 1 || qty > 30)
                                                                 {
-                                                                    alert("La cantidad de preguntas debe de estar entre 1 y 30")
+                                                                    alert("La cantidad of preguntas debe of estar entre 1 & 30")
                                                                 } else
                                                                 {
                                                                     $.ajax({

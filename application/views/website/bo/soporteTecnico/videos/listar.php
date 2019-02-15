@@ -10,7 +10,7 @@
 								<a href="/bo/configuracion/">Configuración</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> 
+								<a href="/bo/configuracion/soporte_tecnico">Support</a> 
 							</span>
 							<span>>
 								<a href="/bo/configuracion/videos_ver_redes">Ver Redes</a>
@@ -365,7 +365,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar el Video ?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the Video ?'},
 				})
 				.done(function( msg )
 				{
@@ -386,7 +386,7 @@
 								.done(function( msg )
 								{
 									bootbox.dialog({
-									message: "Se ha eliminado el Video.",
+									message: "Se ha eliminado the Video.",
 									title: 'Felicitaciones',
 									buttons: {
 										success: {
@@ -419,7 +419,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar el Comentario ?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the Comentario ?'},
 				})
 				.done(function( msg )
 				{
@@ -440,7 +440,7 @@
 								.done(function( msg )
 								{
 									bootbox.dialog({
-									message: "Se ha eliminado el Comentario.",
+									message: "Se ha eliminado the Comentario.",
 									title: 'Felicitaciones',
 									buttons: {
 										success: {

@@ -34,7 +34,7 @@
 										</label>
 									</section>
 									
-									<section class="col-sm-12 col-md-12 col-lg-12 ">País de residencia
+									<section class="col-sm-12 col-md-12 col-lg-12 ">País of residencia
 											<label class="select">
 												<select id="pais_comprador" name="pais_comprador" >
 													<option value="-" selected>-- Seleciona un pais --</option>
@@ -151,7 +151,7 @@ function buscar_persona()
 			$("#")
 		}
 	});
-		//va en la vista a_comprar
+		//va on the vista a_comprar
 }
 </script>
 	</html>

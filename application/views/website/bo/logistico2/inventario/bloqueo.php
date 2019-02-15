@@ -94,7 +94,7 @@
 							<fieldset>
 							
                               <fieldset>
-                                <legend>Datos de Entrada</legend>
+                                <legend>Datos of Entrada</legend>
                                 
                                 <section  class="col col-3">
                                   <label class="select">Almacen / CEDI

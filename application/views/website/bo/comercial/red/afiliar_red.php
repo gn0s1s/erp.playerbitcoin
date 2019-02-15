@@ -29,9 +29,9 @@ $(document).ready(function() {
 					var mensajes = new Array( 
 						"Por favor ingresa tu nombre",
 					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha de nacimiento",
-					 	"Por favor ingresa el DNI",
-					 	"Por favor ingresa un nombre de usuario",
+					 	"Por favor ingresa tu fecha of nacimiento",
+					 	"Por favor ingresa the DNI",
+					 	"Por favor ingresa un nombre of usuario",
 					 	"Por favor ingresa un correo",
 					 	"Por favor ingresa una contraseña",
 					 	"Por favor confirma tu contraseña"
@@ -41,7 +41,7 @@ $(document).ready(function() {
 						"#username"
 					);
 					var mensajess=new Array(
-						"El nombre de usuario no puede contener espacios en blanco"
+						"El nombre of usuario no puede contener espacios on blanco"
 					);
 					var validacion_=valida_espacios(idss,mensajess);
 					var validacion=valida_vacios(ids,mensajes);
@@ -149,7 +149,7 @@ $("#plan4").click(function(event) {
 
 
 /*
-CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK EN ELLOS
+CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK on ELLOS
 $("input").click(function() {
 $( this ).slideUp();
 $( this ).remove();
@@ -223,7 +223,7 @@ function faseCambio(fase){
 					})
 					.done(function(msg)
 					{
-						alert('Has Cambiado de fase'+msg);
+						alert('Has Cambiado of fase'+msg);
 						location.reload();
 					})
 				}
@@ -380,7 +380,7 @@ function botbox(nombre, id, lado)
 		+'<div id="myWizard" class="wizard wizard_r">'
 			+'<ul class="steps">'
 				+'<li data-target="#step1_r" class="active">'
-					+'<span class="badge badge-info">1</span>Datos de registro<span class="chevron"></span>'
+					+'<span class="badge badge-info">1</span>Datos of registro<span class="chevron"></span>'
 				+'</li>'
 				+'<li data-target="#step2_r">'
 					+'<span class="badge">2</span>Datos personales<span class="chevron"></span>'
@@ -401,7 +401,7 @@ function botbox(nombre, id, lado)
 				+'<div class="step-pane active" id="step1_r">'
 					+'<form id="register" class="smart-form">'
 						+'<fieldset>'
-							+'<legend>Información de cuenta</legend>'
+							+'<legend>Information of cuenta</legend>'
 							+'<section id="usuario" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
 								+'<input id="username" onkeyup="use_username()" required="" name="username" placeholder="Usuario" type="text">'
@@ -409,7 +409,7 @@ function botbox(nombre, id, lado)
 							+'</section>'
 							+'<section id="correo" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-envelope-o"></i>'
-								+'<input id="email" onkeyup="use_mail()" required="" name="email" placeholder="Dirección de Correo Electrónico" type="email">'
+								+'<input id="email" onkeyup="use_mail()" required="" name="email" placeholder="Dirección of Correo Electrónico" type="email">'
 								+'</label></section><section class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-lock"></i>'
 								+'<input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Contraseña">'
@@ -444,7 +444,7 @@ function botbox(nombre, id, lado)
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input"><i class="icon-append fa fa-calendar"></i>'
-									+'<input required id="datepicker" type="date"  name="nacimiento" placeholder="Fecha de nacimiento" readonly="readonly">'
+									+'<input required id="datepicker" type="date"  name="nacimiento" placeholder="Fecha of nacimiento" readonly="readonly">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-6" id="key_red">'
@@ -499,7 +499,7 @@ function botbox(nombre, id, lado)
 									+'<label class="toggle">'
 									+'<input type="checkbox" checked="checked" name="sponsor">'
 									+'<i data-swchoff-text="No" data-swchon-text="Si"></i>Soy su sponsor</label>'
-									+'<small>Si eres el sponsor de este afiliado, estará como frontal en tus comisiones</small>'
+									+'<small>Si eres the sponsor of este afiliado, estará como frontal on tus comisiones</small>'
 								+'</section>'
 						+'</fieldset>'
 						+'<fieldset>'
@@ -531,7 +531,7 @@ function botbox(nombre, id, lado)
 								+'</section>'
 
 								+'<section class="col col-6">'
-									+'<label class="input">Dirección de domicilio'
+									+'<label class="input">Dirección of domicilio'
 									+'<input required type="text" name="calle">'
 									+'(Calle, No. Exterior, No. Interior)'
 									+'</label>'
@@ -608,8 +608,8 @@ function botbox(nombre, id, lado)
 					                    +'</div>'
 										+'<div class="price-features">'
 											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> de ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> puntos de comisión</h1></li>'
+									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> of ganancia</h1></li>'
+									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> Points of commissions</h1></li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Aloe Detox (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Vita Live (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>'
@@ -635,8 +635,8 @@ function botbox(nombre, id, lado)
 					                    +'</div>'
 										+'<div class="price-features">'
 											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> de ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> puntos de comisión</h1></li>'
+									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> of ganancia</h1></li>'
+									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> Points of commissions</h1></li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>4</strong> Aloe Detox (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>3</strong> Vita Live (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>'
@@ -663,8 +663,8 @@ function botbox(nombre, id, lado)
 					                    +'</div>'
 										+'<div class="price-features">'
 											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> de ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> puntos de comisión</h1></li>'
+									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> of ganancia</h1></li>'
+									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> Points of commissions</h1></li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>10</strong> Aloe Detox (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>9</strong> Vita Live (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>4</strong> Linea Gala</li>'
@@ -689,12 +689,12 @@ function botbox(nombre, id, lado)
 					                    +'</div>'
 										+'<div class="price-features">'
 											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> de ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> puntos de comisión</h1></li>'
+									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> of ganancia</h1></li>'
+									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> Points of commissions</h1></li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>20</strong> Aloe Detox (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>20</strong> Vita Live (6 pack)</li>'
 									        	+'<li><i class="fa fa-check text-success"></i> <strong>8</strong> Linea Gala</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <small>Podrás modificar la cantidad de producto que tengan el mismo precio que no insida en el valor y puntaje del plan</small></li>'
+									        	+'<li><i class="fa fa-check text-success"></i> <small>Podrás modificar the cantidad of producto que tengan the mismo precio que no insida on the valor & puntaje del plan</small></li>'
 									        +'</ul>'
 										+'</div>'
 					                +'</div>'
@@ -705,12 +705,12 @@ function botbox(nombre, id, lado)
 					        +'</div>'		    	
 			    		+'</div>'
 			    		+'<br />'
-			    		+'<a id="remove_step_r" href="#" class="btn btn-primary btn-block" role="button">Comprar el plan después</span></a>'
+			    		+'<a id="remove_step_r" href="#" class="btn btn-primary btn-block" role="button">Purchase the plan después</span></a>'
 			    	+'</div>'
 				+'</div>'
 				+'<div class="step-pane" id="step4_r">'
 				+'<div class="well">'
-					+'<p>El pago se realizara despues en la enttrega de su primer pedido</p>'
+					+'<p>El pago se realizara despues on the enttrega of su primer pedido</p>'
 				+'</div>'
 				+'</div>'
 
@@ -750,9 +750,9 @@ function botbox(nombre, id, lado)
 					var mensajes = new Array( 
 						"Por favor ingresa tu nombre",
 					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha de nacimiento",
-					 	"Por favor ingresa el DNI",
-					 	"Por favor ingresa un nombre de usuario",
+					 	"Por favor ingresa tu fecha of nacimiento",
+					 	"Por favor ingresa the DNI",
+					 	"Por favor ingresa un nombre of usuario",
 					 	"Por favor ingresa un correo",
 					 	"Por favor ingresa una contraseña",
 					 	"Por favor confirma tu contraseña"
@@ -762,7 +762,7 @@ function botbox(nombre, id, lado)
 						"#username"
 					);
 					var mensajess=new Array(
-						"El nombre de usuario no puede contener espacios en blanco"
+						"El nombre of usuario no puede contener espacios on blanco"
 					);
 					var validacion_=valida_espacios(idss,mensajess);
 					var validacion=valida_vacios(ids,mensajes);
@@ -1001,9 +1001,9 @@ function InformarPremio(premio){
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>
 					> <a href="/bo/comercial">Comercial</a> 
-					> <a href="/bo/comercial/red">Red</a>
-					> <a href="/bo/usuarios/afiliar">Tipo de Afiliacion</a>
-					> Afiliar en Red
+					> <a href="/bo/comercial/red">Network</a>
+					> <a href="/bo/usuarios/afiliar">Tipo of Afiliacion</a>
+					>Spillover affiliate
 				</span>
 			</h1>
 		</div>
@@ -1081,12 +1081,12 @@ function InformarPremio(premio){
                                                                                             ?>
                                                                                             <li>
                                                                                                 <a onclick='botbox("<?php echo 'Tu'; ?>","<?php echo $id; ?>","<?php echo $i; ?> ")' 
-                                                                                                   href='javascript:void(0)'>Afiliar Aqui</a>
+                                                                                                   href='javascript:void(0)'>Affiliate Aqui</a>
                                                                                             </li>
 <?php } ?>
                                                                                         <li>
                                                                                             <a onclick='botbox("<?php echo 'Tu'; ?>","<?php echo $id; ?>","<?php echo $i; ?> ")' 
-                                                                                               href='javascript:void(0)'>Afiliar Aqui</a>
+                                                                                               href='javascript:void(0)'>Affiliate Aqui</a>
                                                                                         </li>
                                                                                     </ul>
                                                                                 </li>

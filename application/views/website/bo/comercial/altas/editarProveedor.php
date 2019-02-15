@@ -3,7 +3,7 @@
         <input type="text" class="hide" value="<?php echo $_POST['id']; ?>" name="id">
 
         <hr>
-        <h4>Datos de proveedor</h4>
+        <h4>Datos of proveedor</h4>
         <br>
         <div class="row">
 
@@ -36,7 +36,7 @@
                         <section class="col col-6">Teléfono
                             <label class="input"> <i class='icon-prepend fa fa-phone'></i>
                                 <input name="telefono[]" value="<?php echo $tel[$i]; ?> " 
-                                       id="telefono"  type="tel" pattern='[0-9]{7,50}' title='Por favor digite un numero de telefono valido'>
+                                       id="telefono"  type="tel" pattern='[0-9]{7,50}' title='Por favor digite un numero of telefono valido'>
                             </label>
                         </section>
                         <?php
@@ -51,10 +51,10 @@
             </section>									
         </div>
         <br>
-        <h4>Direccion de proveedor</h4>
+        <h4>Direccion of proveedor</h4>
         <div class="row">
             <div class="col col-6">
-                <label class="select">Selecciona el tipo de proveedor 
+                <label class="select">Selecciona the tipo of proveedor 
                     <select id="tipo_proveedor" required name="tipo_proveedor">
                         <?php
                         foreach ($tipo_proveedor as $key) {
@@ -72,7 +72,7 @@
                 </label>
             </div>
             <div class="col col-6">
-                <label class="select">Cambiar la empresa actual 
+                <label class="select">Cambiar the empresa actual 
                     <select id="empresa" required name="empresa">
                         <?
                         foreach ($empresa as $key) {
@@ -95,7 +95,7 @@
 
 
         <br>
-        <label class="input"> Comisión de producto
+        <label class="input"> commission of producto
             <input name="comision" value="<?php echo $datosProveedor[0]->comision ?>" id="comision" maxlength="60" size="30" required="" type="text">
             <br>
 
@@ -105,11 +105,11 @@
 
             <br>
             <hr>
-            <h4>Dirección de Proveedor</h4>
+            <h4>Dirección of Proveedor</h4>
             <br >
             <div class="row">
                 <div class="col col-6">
-                    <label class="input"> Dirección de domicilio
+                    <label class="input"> Dirección of domicilio
                         <input name="direccion" value="<?php echo $datosProveedor[0]->direccion ?>" id="direccion" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
@@ -156,7 +156,7 @@
             <hr>
             <br>
             <hr>
-            <h4>Datos fiscales de proveedor</h4>	
+            <h4>Datos fiscales of proveedor</h4>	
             <br>
             <div class="row">
                 <div class="col col-6">
@@ -206,7 +206,7 @@
 
                         <div class="col col-8">
                             <input type="text" class="hide" value="<?php echo $cuentaBanco[$i]->id ?>" name="id_cuenta[]">
-                            <label class="select">Bancos 
+                            <label class="select">bank s
                                 <select class="custom-scroll" name="banco[]" id="banco" required>
                                     <?php foreach ($bancos as $key) { ?>
                                         <?php if ($key->id_banco == $cuentaBanco[$i]->banco) { ?>							
@@ -256,22 +256,22 @@
 
             <br>
             <hr>
-            <h4>Datos de cobro</h4>
+            <h4>Datos of cobro</h4>
             <br>
-            <label class="input"> Condiciones de paso
+            <label class="input"> Condiciones of paso
                 <input name="condicionesdepago" value="<?php echo $datosProveedor[0]->condicion_pago ?>" id="condicion_pago" maxlength="60" size="30" required="" type="text">
             </label>
             <br>
             <div class="row">
 
                 <div class="col col-6">
-                    <label class="input"> Tiempo promedio de entrega
+                    <label class="input"> Tiempo promedio of entrega
                         <input name="tiempoprimediodeentrega" value="<?php echo $datosProveedor[0]->promedio_entrega ?>" id="promedio_entrega" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
 
                 <div class="col col-6">
-                    <label class="input"> Tiempo de entrega de documentación
+                    <label class="input"> Tiempo of entrega of documentación
                         <input name="tiempodeentregadedocumentos" value="<?php echo $datosProveedor[0]->promedio_entrega_documentacion ?>" id="promedio_entrega_documentacion" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
@@ -283,12 +283,12 @@
             <br>
             <div class="row">
                 <div class="col col-6">
-                    <label class="input"> Plazo de Pago
+                    <label class="input"> Plazo of Pago
                         <input name="plazodepago" value="<?php echo $datosProveedor[0]->plazo_pago ?>" id="plazo_pago" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
                 <div class="col col-6">
-                    <label class="input"> Plazo de suspensión
+                    <label class="input"> Plazo of suspensión
                         <input name="plazodesuspencion" value="<?php echo $datosProveedor[0]->plazo_suspencion ?>" id="plazo_suspencion" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
@@ -297,7 +297,7 @@
 
             <div class="row">
                 <div class="col col-6">
-                    <label class="input"> Plazo de suspensión de firma
+                    <label class="input"> Plazo of suspensión of firma
                         <input name="palzodesuspenciondefirma" value="<?php echo $datosProveedor[0]->plazo_suspencion_firma ?>" id="plazo_suspencion_firma" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
@@ -311,12 +311,12 @@
 
             <div class="row">
                 <div class="col col-6">
-                    <label class="input"> Día de corte
+                    <label class="input"> Día of corte
                         <input name="diadecorte" value="<?php echo $datosProveedor[0]->dia_corte ?>" id="plazo_pago" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
                 <div class="col col-6">
-                    <label class="input"> Día de pago
+                    <label class="input"> Día of pago
                         <input name="diadepago" value="<?php echo $datosProveedor[0]->dia_corte ?>" id="plazo_pago" maxlength="60" size="30" required="" type="text">
                     </label>
                 </div>
@@ -430,7 +430,7 @@
 
                                                                                     bootbox.dialog({
                                                                                         message: msg,
-                                                                                        title: "Modificacion de Proveedor",
+                                                                                        title: "Modificacion of Proveedor",
                                                                                         buttons: {
                                                                                             success: {
                                                                                                 label: "Ok!",
@@ -448,7 +448,7 @@
                                                                     function agregar_cuenta()
                                                                     {
 
-                                                                        $("#cuenta").append('<section class="col col-8">Banco'
+                                                                        $("#cuenta").append('<section class="col col-8">bank '
                                                                                 + '<input type="text" class="hide" value="0" name="id_cuenta[]">'
                                                                                 + '<label class="select"> '
                                                                                 + '<select class="custom-scroll" name="banco[]" id="banco" required>'
@@ -506,7 +506,7 @@
                                                                         bootbox.dialog({
                                                                             message: '<form id="form_empresa" method="post" class="smart-form">'
                                                                                     + '<fieldset>'
-                                                                                    + '<legend>Información de cuenta</legend>'
+                                                                                    + '<legend>Information of cuenta</legend>'
                                                                                     + '<section id="usuario" class="col col-6">'
                                                                                     + '<label class="input">Razón social'
                                                                                     + '<input required type="text" name="nombre" placeholder="Empresa">'
@@ -534,7 +534,7 @@
                                                                                     + '</section>'
                                                                                     + '</fieldset>'
                                                                                     + '<fieldset>'
-                                                                                    + '<legend>Dirección de la empresa</legend>'
+                                                                                    + '<legend>Dirección of the empresa</legend>'
                                                                                     + '<div id="dir" class="row">'
                                                                                     + '<section class="col col-6">'
                                                                                     + 'País'
@@ -605,7 +605,7 @@
                                                                                                     $("#empresa").append("<option value=" + empresa['id'] + ">" + empresa['nombre'] + "</option>");
                                                                                                     $("#empresa").val(empresa['id']);
                                                                                                     bootbox.dialog({
-                                                                                                        message: "Se agregado la empresa",
+                                                                                                        message: "Se agregado the empresa",
                                                                                                         title: 'Empresa',
                                                                                                         buttons: {
                                                                                                             success: {

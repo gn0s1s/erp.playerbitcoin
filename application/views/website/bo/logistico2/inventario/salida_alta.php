@@ -89,9 +89,9 @@
 							<form id="entradas" class="smart-form" method="post" action="new_salida" role="form">
                               
                               <fieldset>
-                                <legend>Datos de Salida</legend>
+                                <legend>Datos of Salida</legend>
                                 <section  class="col col-3">
-                                  <label class="select">Tipo de Entrada
+                                  <label class="select">Tipo of Entrada
                                     <select id="documento" required  name="documento">
                                       <option value="" >--------Escoja un tipo--------------</option>
                                                            <?php foreach ($documento as $key){?>

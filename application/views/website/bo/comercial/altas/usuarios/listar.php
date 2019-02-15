@@ -55,7 +55,7 @@
 											<thead>			                
 												<tr>
 													<th>ID</th>
-													<th data-class="expand">Nombre de Usuario</th>
+													<th data-class="expand">Nombre of Usuario</th>
 													<th data-hide="phone">Nombre</th>
 													<th data-hide="phone">Apellido</th>
 													<th data-hide="phone">Email</th>
@@ -217,7 +217,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar El usuario ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the usuario ?'},
 	})
 	.done(function( msg )
 	{
@@ -238,7 +238,7 @@ function eliminar(id) {
 					.done(function( msg )
 					{
 						bootbox.dialog({
-						message: "Se ha eliminado el Usuario.",
+						message: "Se ha eliminado the Usuario.",
 						title: 'Felicitaciones',
 						buttons: {
 							success: {

@@ -216,7 +216,7 @@
 
 									});
 
-					$('#pais').val("MEX");
+					$('#pais').val("USA");
 
 					pageSetUp();
 });

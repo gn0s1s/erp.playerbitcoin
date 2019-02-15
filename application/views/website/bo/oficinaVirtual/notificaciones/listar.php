@@ -66,7 +66,7 @@
 											<thead>			                
 												<tr>
 													<th>ID</th>
-													<th data-hide="phone,tablet">Inicio</th>
+													<th data-hide="phone,tablet">Home</th>
 													<th data-hide="phone,tablet">Fin</th>
 													<th data-class="expand">Nombre</th>
 													<th data-hide="phone,tablet">Descripcion</th>
@@ -107,14 +107,7 @@
 				<!-- end widget -->
 			</article>
 			<!-- END COL -->
-		</div>
-		<div class="row">         
-	        <!-- a blank row to get started -->
-	        <div class="col-sm-12">
-	            <br />
-	            <br />
-	        </div>
-        </div>            
+
 		<!-- END ROW -->
 	</section>
 	<!-- end widget grid -->
@@ -232,7 +225,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar la Notificación ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the Notificación ?'},
 	})
 	.done(function( msg )
 	{

@@ -116,7 +116,7 @@
                                     <section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">
                                         <div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
                                         <div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                                            <a onclick="insertar_encuesta()" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12">Subir encuesta</a>
+                                            <a onclick="insertar_encuesta()" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12">Subir Survey</a>
                                         </div>
                                     </section>
                                 </div>

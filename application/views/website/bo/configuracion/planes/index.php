@@ -8,7 +8,7 @@
 								<a href="/bo/configuracion/">Configuración</a> 
 							</span>
 							<span>>
-								<a href="/bo/configuracion/compensacion/">Plan de compensacion</a> > Planes de Bonos 
+								<a href="/bo/configuracion/compensacion/">Plan of compensacion</a> > Planes of Bonos 
 							</span>
 						</h1>
 					</div>

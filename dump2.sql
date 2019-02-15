@@ -2085,7 +2085,7 @@ CREATE TABLE `cross_dir_user` (
 -- Dumping data for table `cross_dir_user`
 --
 
-INSERT INTO `cross_dir_user` VALUES (2,'CDMX','','','','','COL');
+INSERT INTO `cross_dir_user` VALUES (2,'BOGOTA','','','','','COL');
 
 --
 -- Table structure for table `servicio`

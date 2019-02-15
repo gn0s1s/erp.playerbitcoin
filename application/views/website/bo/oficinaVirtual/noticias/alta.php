@@ -97,12 +97,12 @@
 													$.ajax({
 														type: "POST",
 														url: "/auth/show_dialog",
-														data: {message: 'No existe grupos para esta categoria, crea el grupo primero'},
+														data: {message: 'No existe grupos para esta categoria, crea the grupo primero'},
 													})
 													.done(function( msg )
 													{
 														bootbox.dialog({
-															message: "No existe grupos para esta categoria, crea el grupo primero",
+															message: "No existe grupos para esta categoria, crea the grupo primero",
 															title: 'Atención',
 															buttons: {
 																success: {

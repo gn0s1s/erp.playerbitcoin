@@ -55,7 +55,7 @@
 				<label class="select" style="padding-left: 50px;">
 						<select name="grupo_frm">
 							<option value="0">
-								Selecciona el grupo
+								Selecciona the grupo
 							</option>
 								<?php for($o=0;$o<sizeof($grupos);$o++)
 								{
@@ -71,7 +71,7 @@
 		<div class="row">
 			<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos" style="padding-right: 100px ! important;">
 				<label class="label" style="padding-left: 50px;">
-					Nombre de la presentacion
+					Nombre of the presentacion
 				</label>
 				
 				<label class="input" style="padding-left: 50px;">	
