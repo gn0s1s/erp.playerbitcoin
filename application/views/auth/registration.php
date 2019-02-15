@@ -65,7 +65,7 @@
 												</button>
 												<button type="button"
 													class="final btn btn-sm btn-success btn-next"
-													data-last="Registrarse" disabled="disabled">
+													data-last="Check in" disabled="disabled">
 													Next<i class="fa fa-arrow-right"></i>
 												</button>
 											</div>
