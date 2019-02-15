@@ -6,7 +6,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
-								<a href="/bo/configuracion/compensacion">Plan de compensacion</a> >
+								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
 								<a href="/bo/bonos">Bonos</a>
 								> Listar Bonos
 							</span>
@@ -103,8 +103,8 @@
 														foreach ($condicionesBono as $condicion){
 																
 																if($condicion['id_bono']==$bono->id){
-																	echo "-Completar el rango <b>".$condicion['nombreRango']."</b> cuando genera <b>".$condicion['condicionRango']."</b> <b>".$condicion['tipoRango']."</b> ";
-																	echo "en la red <b>".$condicion['nombreRed']."</b> en";
+																	echo "-Completar the rango <b>".$condicion['nombreRango']."</b> cuando genera <b>".$condicion['condicionRango']."</b> <b>".$condicion['tipoRango']."</b> ";
+																	echo "on the Network <b>".$condicion['nombreRed']."</b> en";
 																	foreach($condicion['condicion1'] as $con){
 																		echo ",<b> ".$con."</b>";
 																	}
@@ -279,7 +279,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar el Bono ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the Bono ?'},
 	})
 	.done(function( msg )
 	{

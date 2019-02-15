@@ -8,7 +8,7 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span>
                     > <a href="/bo/configuracion">Configuración</a>
-					> <a href="/bo/configuracion/formaspago">Formas de Pago</a>
+					> <a href="/bo/configuracion/formaspago">Formas of Pago</a>
 					> BlockChain
 				</span>
             </h1>
@@ -60,7 +60,7 @@
                                                value="<?= $blockchain[0]->apikey; ?>">
                                     </label>
                                     <div class="note">
-                                        <strong>Nota:</strong> En estado test : 78d9ce16-e1d6-47f7-acf1-f456409715f5
+                                        <strong>Nota:</strong> on estado test : 78d9ce16-e1d6-47f7-acf1-f456409715f5
                                     </div>
                                 </section>
                                 <?php
@@ -77,7 +77,7 @@
                                                       placeholder="111 caracteres"><?= $wallet->hashkey; ?></textarea>
                                     </label>
                                     <div class="note">
-                                        <strong>Nota:</strong> En estado test :
+                                        <strong>Nota:</strong> on estado test :
                                         <abbr title="xpub6DCYLGKBqULSb45X9tKkg5gCX2QP1o4gx7D9QTruw7xhA6Rp21crjvL6G94Uij4Di6jWZ566t4kFj7Az9BRnBDMcakL81Bs7vhCRnCmgQ26">?</abbr>
                                     </div>
                                 </section>
@@ -105,14 +105,14 @@
                                     <label class="checkbox">
                                         <input name="estatus" <?php if ($blockchain[0]->estatus == 'ACT') echo "checked='checked'"; ?>
                                                type="checkbox">
-                                        <i></i>Mostrar en Carrito de Compras
+                                        <i></i>Mostrar on Carrito of Purchases
                                     </label>
                                 </section>
                             </fieldset>
 
                             <fieldset class="fee_div">
                                 <div class="row buttonsfee">
-                                    <legend>Tasa de aumento</legend>
+                                    <legend>Tasa of aumento</legend>
                                     <div class="col col-lg-3 col-xs-2">
                                     </div>
                                     <div class="col col-lg-2 col-xs-2">
@@ -136,11 +136,11 @@
                                             <input required type="number" name="fee[]"
                                                    id="fee_<?=$id_data;?>" class="fee"
                                                    min="0" step="0.01"
-                                                   placeholder="si es el primero: 0"
+                                                   placeholder="si es the primero: 0"
                                                    value="<?= $tax->monto; ?>">
                                         </label>
                                         <div class="note">
-                                            <strong>Nota:</strong> En estado test :
+                                            <strong>Nota:</strong> on estado test :
                                             <abbr title="0">?</abbr>
                                         </div>
                                     </section>
@@ -207,7 +207,7 @@
         var sec = "section.wallet_"+data;
         var aler = "#alert_"+data;
         var value = $(tag).val();
-        var msg = "Por favor, Verifique y digite el Hash permitido.";
+        var msg = "Por favor, Verifique & digite the Hash permitido.";
         var warn = "<div class='txt-color-red' id='alert_"+data+"'>"+msg+"</div>";
 
         $(aler).remove();

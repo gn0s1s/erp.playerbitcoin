@@ -160,6 +160,6 @@ class comisionesPagadas extends CI_Controller
 	function kill_cobros()
 	{
 		$this->model_admin->kill_cobro($_POST['id']);
-		echo "Se ha eliminado el cobro de las comisiones.";
+		echo "Se ha eliminado el cobro de las commissions.";
 	}
 }

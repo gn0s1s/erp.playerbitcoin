@@ -109,7 +109,7 @@
 		         type: "get",
 		         url: "guardar_encuesta",
 		         success: function(){
-		              alert("Se ha enviado la encuesta. Gracias por tu participación");
+		              alert("Se ha enviado the encuesta. Gracias por tu participación");
 		              window.location.href = '/ov/surveys';
 		         }
 			});

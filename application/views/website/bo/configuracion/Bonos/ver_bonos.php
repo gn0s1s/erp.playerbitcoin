@@ -75,7 +75,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-						<h2>Historial de Transacciones</h2>
+						<h2>Historial of Transacciones</h2>
 	
 					</header>
 				
@@ -216,7 +216,7 @@
 				{					
 					bootbox.dialog({
 						message: msg,
-						title: 'Historial de Bono',
+						title: 'Historial of Bono',
 						buttons: {
 							danger: {
 								label: "Cerrar",
@@ -234,19 +234,19 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar El Historial del Bono ?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the Historial del Bono ?'},
 				})
 				.done(function( msg )
 				{
 					bootbox.dialog({
 					message: msg,
-					title: 'Eliminar Historial de Bono',
+					title: 'Eliminar Historial of Bono',
 					buttons: {
 						success: {
 						label: "Aceptar",
 						className: "btn-success",
 						callback: function() {
-							//alert('dentro de funcion');
+							//alert('dentro of funcion');
 							iniciarSpinner();
 								$.ajax({
 									type: "POST",

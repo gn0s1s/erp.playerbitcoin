@@ -43,7 +43,7 @@
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Categorias de productos</h2>				
+						<h2>Categorias of productos</h2>				
 						
 					</header>
 
@@ -93,7 +93,7 @@
 											<thead>			                
 												<tr>
 													<th>ID</th>
-													<th data-class="expand">Red</th>
+													<th data-class="expand">Network</th>
 													<th data-hide="phone,tablet">Nombre</th>
 													<th data-hide="phone,tablet">Estatus</th>
 													<th> Acciones</th>
@@ -257,7 +257,7 @@ function eliminar(id) {
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar la categoria ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the categoria ?'},
 		})
 		.done(function( msg )
 		{

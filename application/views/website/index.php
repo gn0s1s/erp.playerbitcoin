@@ -11,7 +11,7 @@
             <div class="row">
 
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                    <!--Inica la seccion de la perfil y red-->
+                    <!--Inica the seccion of the Profile & red-->
                     <div class="row well" class="text-center">
 
                         <div class="col col-md-12">
@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="col col-md-12 text-center margin-top-10 ">
-                            <h1>SELECCIONE UNA DE LAS OPCIONES</h1>
+                            <h1>SELECCIONE UNA of LAS OPCIONES</h1>
                         </div>
 
                         <div class="col col-md-12 margin-top-10">
@@ -42,7 +42,7 @@
                                         <div id="ov-boton"
                                              class="link_dashboard well well-sm txt-color-white text-center ">
                                             <i class="fa fa-tablet fa-3x"></i>
-                                            <h3>MESA DE JUEGO</h3>
+                                            <h3>MESA of JUEGO</h3>
                                         </div>
                                     </a>
                                 </div>

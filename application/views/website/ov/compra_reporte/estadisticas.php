@@ -18,7 +18,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Afiliados en Toda Mi Organizacion</h2>				
+						<h2>Afiliados on Toda Mi Organizacion</h2>
 						
 					</header>
 
@@ -48,7 +48,7 @@
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Afiliados en Tus Brazos</h2>				
+						<h2>Afiliados on Tus Brazos</h2>
 						
 					</header>
 
@@ -78,7 +78,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Puntos Totales en Mi Organizacion En el Mes</h2>				
+						<h2>Total Points on Mi Organizacion on the Mes</h2>
 						
 					</header>
 
@@ -108,7 +108,7 @@
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Puntos en Tus Brazos En el Mes</h2>				
+						<h2>Points on Tus Brazos on the Mes</h2>
 						
 					</header>
 
@@ -138,7 +138,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Puntos Totales en Mi Organizacion</h2>				
+						<h2>Total Points on Mi Organizacion</h2>
 						
 					</header>
 
@@ -168,7 +168,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Puntos en Tus Brazos</h2>				
+						<h2>Points on Tus Brazos</h2>
 						
 					</header>
 
@@ -198,7 +198,7 @@
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Ventas Totales en Mi Organizacion En el Mes</h2>				
+						<h2>Ventas Totales on Mi Organizacion on the Mes</h2>
 						
 					</header>
 
@@ -228,7 +228,7 @@
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Ventas en Tus Brazos En el Mes</h2>				
+						<h2>Ventas on Tus Brazos on the Mes</h2>
 						
 					</header>
 
@@ -258,7 +258,7 @@
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Ventas Totales en Mi Organizacion</h2>				
+						<h2>Ventas Totales on Mi Organizacion</h2>
 						
 					</header>
 
@@ -288,7 +288,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Ventas en Tus Brazos</h2>				
+						<h2>Ventas on Tus Brazos</h2>
 						
 					</header>
 
@@ -318,7 +318,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Remanente de La Red</h2>				
+						<h2>Remanente of the Network</h2>
 						
 					</header>
 
@@ -539,13 +539,13 @@
 	foreach ($patas as $pata){
 		if($i==0){
 			$text.= "{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_afiliados"]."'
+					    & : '".$pata["total_afiliados"]."'
                }";
 		
 		}else {
 			
 		$text.=  ",{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_afiliados"]."'
+					    & : '".$pata["total_afiliados"]."'
                }";
 		}
 			
@@ -567,7 +567,7 @@
 		});
 	}
 
-// PUNTOS EN EL MES
+// PUNTOS on the MES
 	if ($('#donut-graph-1').length) {
 		Morris.Donut({
 				element : 'donut-graph-1',
@@ -588,13 +588,13 @@
 	foreach ($patas as $pata){
 		if($i==0){
 			$text.= "{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_puntos_mes"]."'
+					    & : '".$pata["total_puntos_mes"]."'
                }";
 		
 		}else {
 			
 		$text.=  ",{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_puntos_mes"]."'
+					    & : '".$pata["total_puntos_mes"]."'
                }";
 		}
 			
@@ -612,7 +612,7 @@
 			],
 			xkey : 'x',
 			ykeys : ['y'],
-			labels : ['Puntos Comisionables'],
+			labels : ['Points of commissions'],
 		});
 	}
 
@@ -637,13 +637,13 @@
 	foreach ($patas as $pata){
 		if($i==0){
 			$text.= "{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_puntos"]."'
+					    & : '".$pata["total_puntos"]."'
                }";
 		
 		}else {
 			
 		$text.=  ",{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_puntos"]."'
+					    & : '".$pata["total_puntos"]."'
                }";
 		}
 			
@@ -661,11 +661,11 @@
 			],
 			xkey : 'x',
 			ykeys : ['y'],
-			labels : ['Puntos Comisionables'],
+			labels : ['Points of commissions'],
 		});
 	}
 
-	// Ventas EN EL MES
+	// Ventas on the MES
 	if ($('#donut-graph-3').length) {
 		Morris.Donut({
 				element : 'donut-graph-3',
@@ -686,13 +686,13 @@
 	foreach ($patas as $pata){
 		if($i==0){
 			$text.= "{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_ventas_mes"]."'
+					    & : '".$pata["total_ventas_mes"]."'
                }";
 		
 		}else {
 			
 		$text.=  ",{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_ventas_mes"]."'
+					    & : '".$pata["total_ventas_mes"]."'
                }";
 		}
 			
@@ -735,13 +735,13 @@
 	foreach ($patas as $pata){
 		if($i==0){
 			$text.= "{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_ventas_red"]."'
+					    & : '".$pata["total_ventas_red"]."'
                }";
 		
 		}else {
 			
 		$text.=  ",{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total_ventas_red"]."'
+					    & : '".$pata["total_ventas_red"]."'
                }";
 		}
 			
@@ -771,13 +771,13 @@
 	foreach ($remanentes as $pata){
 		if($i==0){
 			$text.= "{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total"]."'
+					    & : '".$pata["total"]."'
                }";
 		
 		}else {
 			
 		$text.=  ",{	x : 'Brazo ".$pata["id_pata"]." ".$pata["nombre_red"]."',
-					    y : '".$pata["total"]."'
+					    & : '".$pata["total"]."'
                }";
 		}
 			
@@ -934,7 +934,7 @@ if ($('#donut-graph2').length) {
 				x : 'Estudiante',
 				y : <?= $cantidad_estudiantes ?>
 			}, {
-				x : 'Ama de casa',
+				x : 'Ama of casa',
 				y : <?= $cantidad_amas_de_casa ?>
 			}, {
 				x : 'Empleado',

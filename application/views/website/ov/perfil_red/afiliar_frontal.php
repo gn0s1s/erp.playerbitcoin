@@ -30,9 +30,9 @@ $(document).ready(function() {
 					var mensajes = new Array( 
 						"Por favor ingresa tu nombre",
 					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha de nacimiento",
+					 	"Por favor ingresa tu fecha of nacimiento",
 					 	"Por favor ingresa tu DNI",
-					 	"Por favor ingresa un nombre de usuario",
+					 	"Por favor ingresa un nombre of usuario",
 					 	"Por favor ingresa un correo",
 					 	"Por favor ingresa una contraseña",
 					 	"Por favor confirma tu contraseña"
@@ -42,7 +42,7 @@ $(document).ready(function() {
 						"#username"
 					);
 					var mensajess=new Array(
-						"El nombre de usuario no puede contener espacios en blanco"
+						"El nombre of usuario no puede contener espacios on blanco"
 					);
 					var validacion_=valida_espacios(idss,mensajess);
 					var validacion=valida_vacios(ids,mensajes);
@@ -152,7 +152,7 @@ $("#plan4").click(function(event) {
 
 
 /*
-CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK EN ELLOS
+CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK on ELLOS
 $("input").click(function() {
 $( this ).slideUp();
 $( this ).remove();
@@ -214,7 +214,7 @@ function faseCambio(fase){
 					})
 					.done(function(msg)
 					{
-						alert('Has Cambiado de fase'+msg);
+						alert('Has Cambiado of fase'+msg);
 						location.reload();
 					})
 				}
@@ -455,7 +455,7 @@ function codpos_red()
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
-				> <a href="/ov/perfil_red/afiliar?tipo=1">Red</a>
+				> <a href="/ov/perfil_red/afiliar?tipo=1">Network</a>
 				> Frontal
 				</span>
 			</h1>
@@ -515,7 +515,7 @@ function codpos_red()
 													<span class="badge">3</span>Selección del plan<span class="chevron"></span>
 												</li>
 												<li id="paso4" data-target="#step4">
-													<span class="badge">4</span>Método de pago<span class="chevron"></span>
+													<span class="badge">4</span>Método of pago<span class="chevron"></span>
 												</li>
 												<?php */ ?>
 											</ul>
@@ -534,7 +534,7 @@ function codpos_red()
 													<form id="register" class="smart-form">
 														<fieldset>
 														
-															<legend>Información de cuenta</legend>
+															<legend>Información of cuenta</legend>
 															<section id="usuario" class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-user"></i>
 																	<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Usuario">
@@ -542,7 +542,7 @@ function codpos_red()
 															</section>
 															<section id="correo" class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-																	<input id="email" onkeyup="use_mail()" required type="email" name="email" placeholder="Dirección de Correo Electrónico">
+																	<input id="email" onkeyup="use_mail()" required type="email" name="email" placeholder="Dirección of Correo Electrónico">
 																</label>
 															</section>
 															<section class="col col-6">
@@ -575,16 +575,16 @@ function codpos_red()
 																</section>
 																<section class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-																		<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha de nacimiento" readonly="readonly">
+																		<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of nacimiento" readonly="readonly">
 																	</label>
 																</section>
 																<section class="col col-3" id="key">
 																	<label id="key_" class="input"> <i class="icon-prepend fa fa-barcode"></i>
-																		<input id="keyword" onkeyup="check_keyword()" placeholder="Número de identificación (IFE,CURP,RFC)" type="text" name="keyword">
+																		<input id="keyword" onkeyup="check_keyword()" placeholder="Número of identificación (IFE,CURP,RFC)" type="text" name="keyword">
 																	</label>
 																</section>
 																<section class="col col-2">
-																	Tipo de persona
+																	Tipo of persona
 																	<label class="select">
 																		<select id="tipo_fiscal" required name="fiscal">
 																		<?foreach ($tipo_fiscal as $key)
@@ -684,7 +684,7 @@ function codpos_red()
 
 																<section class="col col-2">
 																	<label class="input">
-																		Dirección de domicilio
+																		Dirección of domicilio
 																		<input required type="text" name="calle">
 																		(Calle,No. Exterior,No. Interior)
 																	</label>
@@ -787,8 +787,8 @@ function codpos_red()
 													                    </div>
 																		<div class="price-features">
 																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> de ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> puntos de comisión</h1></li>
+																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> of ganancia</h1></li>
+																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> Points of commissions</h1></li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Aloe Detox (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Vita Live (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>
@@ -815,8 +815,8 @@ function codpos_red()
 													                    </div>
 																		<div class="price-features">
 																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> de ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> puntos de comisión</h1></li>
+																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> of ganancia</h1></li>
+																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> Points of commissions</h1></li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>4</strong> Aloe Detox (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>3</strong> Vita Live (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>
@@ -843,8 +843,8 @@ function codpos_red()
 													                    </div>
 																		<div class="price-features">
 																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> de ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> puntos de comisión</h1></li>
+																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> of ganancia</h1></li>
+																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> Points of commissions</h1></li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>10</strong> Aloe Detox (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>9</strong> Vita Live (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>4</strong> Linea Gala</li>
@@ -871,12 +871,12 @@ function codpos_red()
 													                    </div>
 																		<div class="price-features">
 																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> de ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> puntos de comisión</h1></li>
+																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> of ganancia</h1></li>
+																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> Points of commissions</h1></li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>20</strong> Aloe Detox (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>20</strong> Vita Live (6 pack)</li>
 																	        	<li><i class="fa fa-check text-success"></i> <strong>8</strong> Linea Gala</li>
-																	        	<li><i class="fa fa-check text-success"></i> <small>Podrás modificar la cantidad de producto que tengan el mismo precio que no insida en el valor y puntaje del plan</small></li>
+																	        	<li><i class="fa fa-check text-success"></i> <small>Podrás modificar the cantidad of producto que tengan the mismo precio que no insida on the valor & puntaje del plan</small></li>
 																	        </ul>
 																		</div>
 													                </div>
@@ -887,12 +887,12 @@ function codpos_red()
 													        </div>		    	
 											    		</div>
 											    		<br />
-											    		<a id="remove_step" href="javascript:void(0);" class="btn btn-primary btn-block" role="button">Comprar el plan después</span></a>
+											    		<a id="remove_step" href="javascript:void(0);" class="btn btn-primary btn-block" role="button">Purchase the plan después</span></a>
 											    	</div>
 												</div>
 												<div class="step-pane" id="step4">
 													<div class="well">
--														<p>El pago se realizara despues en la enttrega de su primer pedido</p>
+-														<p>El pago se realizara despues on the enttrega of su primer pedido</p>
 -													</div>
 												</div>
 				

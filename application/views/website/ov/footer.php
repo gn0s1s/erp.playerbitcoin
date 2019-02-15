@@ -20,7 +20,7 @@ $style = array(
     <div class="row">
         <div class="col-xs-8 col-sm-8">
 					<span class="txt-color-white">
-			Copyright © <?=date('Y');?> <?=$nombre_empresa?> Todos los derechos reservados.
+			Copyright © <?=date('Y');?> <?=$nombre_empresa?> All Rights Reserved.
 		<a href="<?=$web?>" target="_BLANK"><?=$nombre_empresa?></a></span>
 				</div>
 				<div class="col-xs-4 col-sm-4">

@@ -6,7 +6,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
-								<a href="/bo/configuracion/compensacion">Plan de compensacion</a> >
+								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
 								<a href="/bo/rangos">Rangos</a>
 								> Listar Rangos
 							</span>
@@ -86,7 +86,7 @@
 																foreach ($cat_rango_tipo as $CatRangoTipo) {
 																	if($CatRangoTipo->id==$CrossRangoTipos->id_tipo_rango){
 																		echo $CatRangoTipo->nombre.'&nbsp&nbsp&nbspValor: '.$CrossRangoTipos->valor.'<br>';
-																		$condicion_Red=($CrossRangoTipos->condicion_red=='DIRECTOS') ? 'Directos de la red':'Toda la Red';
+																		$condicion_Red=($CrossRangoTipos->condicion_red=='DIRECTOS') ? 'Directos of Network':'Toda the Network';
 																		echo $condicion_Red.'&nbsp&nbsp&nbspValor: '.$CrossRangoTipos->nivel_red.'<br>';
 																	}
 																}
@@ -242,7 +242,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar el Rango ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the Rango ?'},
 	})
 	.done(function( msg )
 	{

@@ -241,7 +241,7 @@
                                                                     $.ajax({
                                                                         type: "POST",
                                                                         url: "/auth/show_dialog",
-                                                                        data: {message: '¿ Esta seguro que desea Eliminar El grupo ?'},
+                                                                        data: {message: '¿ Esta seguro que desea Eliminar the grupo ?'},
                                                                     })
                                                                             .done(function (msg)
                                                                             {
@@ -262,7 +262,7 @@
                                                                                                         .done(function (msg)
                                                                                                         {
                                                                                                             bootbox.dialog({
-                                                                                                                message: "Se ha eliminado el Grupo.",
+                                                                                                                message: "Se ha eliminado the Grupo.",
                                                                                                                 title: 'Felicitaciones',
                                                                                                                 buttons: {
                                                                                                                     success: {

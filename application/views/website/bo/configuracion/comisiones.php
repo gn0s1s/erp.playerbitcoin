@@ -31,7 +31,7 @@
     ?>		
     <div class="well">
         <fieldset>
-            <legend>Redes</legend>
+            <legend>Networks</legend>
             <div class="row">
 <?php foreach ($categorias as $categoria) { ?>
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

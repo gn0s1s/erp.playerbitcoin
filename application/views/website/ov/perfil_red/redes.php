@@ -12,7 +12,7 @@
     </div>
     <div class="well">
         <fieldset>
-            <legend>Red</legend>
+            <legend>Network</legend>
             <div class="row">
                 <?php foreach ($redes as $red) { ?>
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

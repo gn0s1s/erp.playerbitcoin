@@ -4,7 +4,7 @@
 			<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/red">Red</a>
+								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/red">Network</a>
 								> Listado Consecutivo
 							</span>
 			</h1>
@@ -107,7 +107,7 @@
 				<br>
 					<section style="width: 100%;">
 					
-						Campos de Busqueda
+						Campos of Busqueda
 						<label class="select"> 
 							<select name="campos_de_busqueda" id="campos_de_busqueda" onChange="Activar_Casilla()">
 								<option value='---'> ---

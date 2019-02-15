@@ -7,9 +7,9 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span>
                     > <a href="/bo/comercial">Comercial</a>
-                    > <a href="/bo/comercial/red">Red</a>
+                    > <a href="/bo/comercial/red">Network</a>
                     > <a href="/bo/comercial/red_tabla">Listar Afiliados</a> 
-                    > Selección de Red
+                    > Selección of Network
                 </span>
             </h1>
         </div>
@@ -19,7 +19,7 @@
              style="background: rgb(255, 255, 255) none repeat scroll 0% 0%; margin-bottom: 2rem;">
             <div class="well">
                 <fieldset>
-                    <legend>Tipos de Red</legend>
+                    <legend>Tipos of Network</legend>
                     <div class="row">
                         <?php foreach ($redes as $red) { ?>
                             <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

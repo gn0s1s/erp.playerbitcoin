@@ -362,7 +362,7 @@
 				});
 			}
 		</script>
-		<!-- Scripts de la imaginacion chevre del autor de la pagina-->
+		<!-- Scripts of the imaginacion chevre del autor of the pagina-->
 			<script type="text/javascript">
 		
 		// DO NOT REMOVE : GLOBAL FUNCTIONS!

@@ -58,7 +58,7 @@
                                                             <label class="label">Grupo</label> 
                                                             <label class="select">
                                                                 <select name="grupo" id="grupo" required>
-                                                                    <option value="0">Selecciona el grupo</option>
+                                                                    <option value="0">Selecciona the grupo</option>
                                                                     <?php foreach ($grupos as $grupo) { ?>
                                                                         <option value="<?php echo $grupo->id; ?>">
                                                                             <?php echo $grupo->descripcion; ?></option>
@@ -101,7 +101,7 @@
                                                                      onchange="this.parentNode.nextSibling.value = this.value"
                                                                      name="userfile1" type="file" >Buscar
                                                                 </span><input name="file_nme"
-                                                                  placeholder="Seleccione el archivo del e-book en formato pdf"
+                                                                  placeholder="Seleccione the archivo del e-book on formato pdf"
                                                                   type="text" id="file_frm" required readonly="readonly">
                                                             </div>
                                                         </section>
@@ -116,7 +116,7 @@
                                                                      onchange="this.parentNode.nextSibling.value = this.value"
                                                                      name="userfile2" type="file">Buscar
                                                                 </span><input name="file_nme_2"
-                                                                      placeholder="Seleccione una imagen para el e-book"
+                                                                      placeholder="Seleccione una imagen para the e-book"
                                                                       type="text" id="file_frm_2" required readonly="readonly">
                                                             </div>
                                                         </section>

@@ -61,7 +61,7 @@
 									<a href="#s1" data-toggle="tab">Encuestas Abiertas</a>
 								</li>
 								<li>
-									<a href="#s2" data-toggle="tab">Historico de Encuestas contestadas</a>
+									<a href="#s2" data-toggle="tab">Historico of Encuestas contestadas</a>
 								</li>
 							</ul>
 							<div id="myTabContent1" class="tab-content padding-10">
@@ -77,7 +77,7 @@
 														<tr>
 															<th colspan="2">Encuesta</th>
 															<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Usuario</th>
-															<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Fecha de creacion</th>
+															<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Fecha of creacion</th>
 															<th class="text-center hidden-xs hidden-sm" style="width: 200px;">Veces que se ha contestado</th>
 														</tr>
 													</thead>
@@ -132,7 +132,7 @@
 													<thead>
 														<tr>
 															<th colspan="2">Encuesta</th>
-															<th class="text-center hidden-xs hidden-sm" style="width: 250px;">Fecha en que se contesto</th>
+															<th class="text-center hidden-xs hidden-sm" style="width: 250px;">Fecha on que se contesto</th>
 															<th class="text-center hidden-xs hidden-sm" style="width: 150px;">Mas...</th>
 													</thead>
 													<tbody>

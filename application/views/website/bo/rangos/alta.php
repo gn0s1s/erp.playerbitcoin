@@ -13,7 +13,7 @@
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
-								<a href="/bo/configuracion/compensacion/">Plan de compensacion</a> >
+								<a href="/bo/configuracion/compensacion/">Plan of compensacion</a> >
 								<a href="/bo/rangos/">Rangos</a>
 								> Nuevo rango
 							</span>
@@ -58,7 +58,7 @@
 											<option value='EQU'>Equilibrada</option>
 											<option value='DEB'>Pata Débil</option>
 										</select>
-									<p>Nota: Seleccionan todas las patas de la red (Equilibrada) o solo la pata mas débil (Débil) para cumplir la condición.</p><br>
+									<p>Nota: Seleccionan todas las patas of Network (Equilibrada) o solo the pata mas débil (Débil) para cumplir the condición.</p><br>
 									</label>
 									
 									<div class="row">
@@ -100,7 +100,7 @@
 											<label class="select">Condición Red
 											<select name="condicion_red[]" >
 												<option value='DIRECTOS'>Directos Afiliado</option>
-												<option value='RED'>Toda La red</option>
+												<option value='RED'>Toda the Network</option>
 											</select>
 											</label>
 										</div>
@@ -133,14 +133,14 @@
 			<br>
 			<p style="margin: 1.5rem;">Nota:
 				<br><b>Tipo Condición :</b> 
-					<br>&nbsp&nbsp-(Afiliados en la red) Numero de Afiliados En toda la red del afiliado.
-					<br>&nbsp&nbsp-(Ventas en la red) Valor total en $ de las ventas de red del afiliado.
-					<br>&nbsp&nbsp-(Compras Personales) Valor total en $ de las compras personales del afiliado.
-					<br>&nbsp&nbsp-(Puntos Comisionables) Valor total de los puntos comisionables personales del afiliado.
-					<br>&nbsp&nbsp-(Puntos de la Red) Valor total de los puntos comisionables de la red del afiliado.
+					<br>&nbsp&nbsp-(Afiliados on the Network) Numero of Afiliados on toda the Referral Network.
+					<br>&nbsp&nbsp-(Ventas on the Network) Valor total on $ of las ventas of Referral Network.
+					<br>&nbsp&nbsp-(My Purchases) Valor total on $ of las Purchases personales del afiliado.
+					<br>&nbsp&nbsp-(Points of commissions) Valor total of los Points of commissions personales del afiliado.
+					<br>&nbsp&nbsp-(Points of Network) Valor total of los Points of commissions of the Referral Network.
 				<br><b>Condición Red:</b> 
 					<br>&nbsp&nbsp-(Directos Afiliados) Selecciona solo los directos del afiliado.
-					<br>&nbsp&nbsp-(Toda la Red) Selecciona todos los afiliados de la red Directos e Indirectos.
+					<br>&nbsp&nbsp-(Toda the Network) Selecciona todos los afiliados of Network Directos e Indirectos.
 			</p>
 		</form>
     </fieldset>
@@ -203,7 +203,7 @@ function enviar() {
 						.done(function( msg ) {
 							
 							bootbox.dialog({
-						message: "Se ha creado el rango."+msg,
+						message: "Se ha creado the rango."+msg,
 						title: 'Felicitaciones',
 						buttons: {
 							success: {
@@ -246,7 +246,7 @@ function add_rango()
 	+'<label class="select">Condición Red'
 	+'<select name="condicion_red[]" >'
 		+'<option value="DIRECTOS">Directos Afiliado</option>'
-		+'<option value="RED">Toda La red</option>'
+		+'<option value="RED">Toda the Network</option>'
 	+'</select>'
 	+'</label>'
 	+'</div>'

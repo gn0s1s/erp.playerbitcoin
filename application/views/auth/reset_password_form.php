@@ -73,7 +73,7 @@ $confirm_new_password = array(
 		<header id="header" class="fade in">
 			<br />
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h1>Sistema Integral de Operaciones</h1>
+				<h1>Sistema Integral of Operaciones</h1>
 			</div>
 		</header>
 

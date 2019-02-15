@@ -7,13 +7,13 @@
 										<section>
 												<div>
 														<fieldset>
-															<label class="label">Dirección de Correo Electrónico</label>
+															<label class="label">Dirección of Correo Electrónico</label>
 															<label class="input">
 																<input name="email" value="<?php echo $user[0]->email?>" id="email" maxlength="60" size="30" required type="email">
 															</label>
 															<label class="txt-color-red"></label>
 															<br>
-															<label class="label">Seleccione el Almacén al que pertenece</label>
+															<label class="label">Seleccione the Almacén al que pertenece</label>
 															<label class="select">
 																<select name="id_cedi" id="id_cedi" required>
 																<?php foreach ($almacenes as $cedi) {
@@ -50,7 +50,7 @@
 														</fieldset>
 														<input type="text" class="hide" value="<?php echo $user[0]->id; ?>" name="id">													
 														<fieldset>
-														<label class="label">Número de Identificación</label>
+														<label class="label">Número of Identificación</label>
 														<label class="input">
 															<input name="dni" value="<?php echo $user[0]->dni?>" id="dni" maxlength="60" size="30" type="text" required>
 														</label>

@@ -6,7 +6,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<span>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<a href="/ov/accountStatus"> > Estado de cuenta</a>
+							<a href="/ov/accountStatus"> > Estado of cuenta</a>
 							 > Estado</span>
 							
 						</h1>
@@ -54,7 +54,7 @@
 													<table class="table">
 													<thead>
 														<tr>
-															<th> <i class="fa fa-sitemap"></i> Red</th>
+															<th> <i class="fa fa-sitemap"></i> Network</th>
 															<th> <i class="fa fa-money"></i> Comision</th>
 														</tr>
 													</thead>
@@ -276,7 +276,7 @@
 				{					
 					bootbox.dialog({
 						message: msg,
-						title: 'Historial de Transacciones',
+						title: 'Historial of Transacciones',
 						buttons: {
 							danger: {
 								label: "Cerrar",
@@ -299,7 +299,7 @@
 				{					
 					bootbox.dialog({
 						message: msg,
-						title: 'Detalles de la Comisiones',
+						title: 'Detalles of the Comisiones',
 						buttons: {
 							danger: {
 								label: "Cerrar",

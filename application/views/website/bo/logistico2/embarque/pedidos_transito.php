@@ -9,21 +9,21 @@
 							<span>
 							
 								> <a href="/bo/logistico2/pedidos">Pedidos / Embarques</a>
-								> Pedidos en Transito
+								> Pedidos on Transito
 							</span>
 							<?php }else if($type=='8'||$type=='9'){
 						 	$index= ($type=='8') ? '/CEDI' : '/Almacen';?>
 								<a class="backHome" href="<?=$index?>"><i class="fa fa-home"></i> Menu</a>
 							<span>							
 								> <a href="<?=$index?>/embarques">Pedidos / Embarques</a>
-								> Pedidos en Transito
+								> Pedidos on Transito
 							</span>
 							<?php }else{?>
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
 								> <a href="/bol/dashboard/">Log&iacute;stico</a> 
 								> <a href="/bo/logistico2/pedidos">Pedidos / Embarques</a>
-								> Pedidos en Transito
+								> Pedidos on Transito
 							</span>
 							
 							<?php }?>	
@@ -122,7 +122,7 @@
 																						<th data-hide="phone">No. guia</th>
 																						<th data-hide="phone">Origen/Almacen</th>
 																						<th data-hide="phone">Usuario/Destino</th>
-																						<th data-hide="phone,tablet">Dirección de envío</th>
+																						<th data-hide="phone,tablet">Dirección of envío</th>
 																						<th data-hide="phone,tablet">Telefono</th>
 																						<th data-hide="phone,tablet">Email Usuario</th>
 																						<th data-hide="phone,tablet">Fecha</th>
@@ -466,7 +466,7 @@
 			success: function(msg){
 				bootbox.dialog({
 					message: msg,
-					title: "Detalles de la venta",
+					title: "Detalles of the venta",
 					className: "",
 					buttons: {
 						success: {

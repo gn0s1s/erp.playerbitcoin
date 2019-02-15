@@ -74,7 +74,7 @@
 											?>
 											<?php echo form_open($this->uri->uri_string()); ?>
 											<label class="select">
-													<label class="label">Seleccione un tipo de usuario</label>
+													<label class="label">Seleccione un tipo of usuario</label>
 													<select name="tipo" id="tipo" required="">
 													<?php foreach ($tiposUsuario as $tipo) {?>
 														<option value="<?php echo $tipo->id_tipo_usuario; ?>">
@@ -86,7 +86,7 @@
 											<table>
 												<?php if ($use_username) { ?>
 												<tr>
-													<td>Nombre de Usuario</td>
+													<td>Nombre of Usuario</td>
 													<td><?php echo form_input($username); ?></td>
 													<td style="color: red;"><?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></td>
 												</tr>

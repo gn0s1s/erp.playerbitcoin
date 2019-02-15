@@ -6,7 +6,7 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>>
 					<a href="/bo/configuracion/"> Configuracion </a>
-					> <a href="/bo/configuracion/tipoRed"> Tipo De Red </a>
+					> <a href="/bo/configuracion/tipoRed"> Tipo of Network </a>
 					> <a href="/bo/capacidadRed/index"> Frontalidad /
 					Profundidad </a>
 					> Configuracion
@@ -41,8 +41,8 @@
 						<fieldset id="pswd">
 							<form class="smart-form" action="/bo/capacidadRed/actualizar_capacidad_de_la_red" method="POST" role="form">
 
-								<legend>Capacidad de la Red </legend>
-								<spam>Nota: Si tu red es de frontalidad o profundidad es infinita, en la configuracion ponle 0.</spam>
+								<legend>Capacidad of Network </legend>
+								<spam>Nota: Si tu red es of frontalidad o profundidad es infinita, on the configuracion ponle 0.</spam>
 								<div class="form-group" style="width: 5rem; margin-top: 2rem;">
 									<label>Frontales</label> <input style="padding-left: 3rem;"
 										type="number" class="form-control" name="frontal"

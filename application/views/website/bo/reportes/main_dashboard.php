@@ -26,7 +26,7 @@
 									<select id="tipo-reporte" >
 										<option value="" selected="" disabled="">Selecciona Reporte </option>
 										<option value="7" >Afiliados</option>
-										<option value="8" onclick="tipo_reporte()">Afiliados nuevos en el mes</option>
+										<option value="8" onclick="tipo_reporte()">Afiliados nuevos on the mes</option>
 										<option value="15" onclick="tipo_reporte()" >Afiliados Activos</option>
 										<option value="16" onclick="tipo_reporte()" >Afiliados InActivos</option>
 										<option value="1" >Ventas por Oficinas Virtuales</option>
@@ -37,8 +37,8 @@
 										<option value="13" >Comisiones Por Pagar</option>
 										<option value="10" >Comisiones Pagadas</option>
 										<option value="17" >Bonos Pagados</option>
-										<option value="18" >Total Comisiones y Bonos</option>
-										<option value="11" >Comisiones Pagadas y Por Pagar</option>
+										<option value="18" >Total Comisiones & Bonos</option>
+										<option value="11" >Comisiones Pagadas & Por Pagar</option>
 										<!--  	
 											<option value="6" >Facturacion / Pedidos cobrados</option>
 											<option value="0" >Ventas empresa</option>
@@ -50,14 +50,14 @@
 											<option value="2">Usuarios Telemarketing</option>
 											<option value="3">Usuario CEDI</option>
 											<option value="4">Proveedores</option>
-											<option value="5">Productos y Servicios</option>
+											<option value="5">Productos & Servicios</option>
 											<option value="6">Almacenes</option>
 											<option value="7">CEDI's</option>
 											<option value="8">Embarques</option>
 											<option value="9">Afiliados / Distribuidores</option>
 											<option value="10">Bancos</option>
-											<option value="11">Orden de compra - Proveedores</option>
-											<option value="12">Requisici&oacute;n de compra</option>
+											<option value="11">Orden of Purchase - Proveedores</option>
+											<option value="12">Requisici&oacute;n of compra</option>
 											<option value="13">Pedidos</option>
 											<option value="14">Facturas Emitidas</option>
 											<option value="15">Pagos</option>
@@ -171,7 +171,7 @@
 							
 							
 							
-			<!-- comienzo de tabla -->
+			<!-- comienzo of tabla -->
 			<div class="jarviswidget jarviswidget-color-blueDark" id="nuevos_afiliados" data-widget-editbutton="false">
 					<!-- widget options:
 					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
@@ -188,7 +188,7 @@
 					-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-					<h2>Reportes</h2>
+					<h2>Reports</h2>
 	
 				</header>
 				
@@ -215,7 +215,7 @@
 				</div>
 						<!-- end widget div -->
 			</div>
-			<!-- finalizacion de tabla -->
+			<!-- finalizacion of tabla -->
 			
 			
 					<!-- end widget -->
@@ -365,13 +365,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{
@@ -592,7 +592,7 @@
 			}
 			break;
 			case "8" :{
-				//Afiliados en el mes
+				//Afiliados on the mes
 				var startdate = $('#startdate').val();
 				var finishdate = $('#finishdate').val();
 				window.location="/bo/reportes/reporte_afiliados_mes_excel?inicio="+startdate+"&&fin="+finishdate;
@@ -629,7 +629,7 @@
 			}
 			break;
 			case "11" :{
-				// Comisiones por pagar y pagadas
+				// Comisiones por pagar & pagadas
 				var startdate = $('#startdate').val();
 				var finishdate = $('#finishdate').val();
 				window.location="/bo/reportes/reporte_cobros_todos_excel?inicio="+startdate+"&&fin="+finishdate;
@@ -637,7 +637,7 @@
 			break;
 
 			case "14" :{
-				// Comisiones por pagar y pagadas
+				// Comisiones por pagar & pagadas
 				var startdate = $('#startdate').val();
 				var finishdate = $('#finishdate').val();
 				window.location="/bo/reportes/reporte_ventas_pagadas_online_excel?inicio="+startdate+"&&fin="+finishdate;
@@ -645,7 +645,7 @@
 			break;
 			
 			case "15" :{
-				// Comisiones por pagar y pagadas
+				// Comisiones por pagar & pagadas
 				var startdate = $('#startdate').val();
 				var finishdate = $('#finishdate').val();
 				window.location="/bo/reportes/afiliados_activos_excel?inicio="+startdate+"&&fin="+finishdate;
@@ -653,7 +653,7 @@
 			break;
 
 			case "16" :{
-				// Comisiones por pagar y pagadas
+				// Comisiones por pagar & pagadas
 				var startdate = $('#startdate').val();
 				var finishdate = $('#finishdate').val();
 				window.location="/bo/reportes/afiliados_inactivos_excel?inicio="+startdate+"&&fin="+finishdate;

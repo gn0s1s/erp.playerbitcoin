@@ -1,4 +1,4 @@
-<!-- GTranslate: https://gtranslate.io/ -->
+<!-- GTranslate: https://gtranslate.io/
 <li class="banderitas">
     <a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="gflag nturl"
        style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" alt="English"/></a>
@@ -46,7 +46,7 @@
         display: none !important;
     }
 
-    -->
+    />
 </style>
 
 <div id="google_translate_element2"></div>
@@ -75,13 +75,12 @@
             };
             c = 1
         }
-        ;
         while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]);
         return p
     }('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}', 43, 43, '||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'), 0, {}))
     /* ]]> */
 
-    doGTranslate('es|en-US');
+    //doGTranslate('es|en-US');
 
     <?php if(!isset($timeoutval)) $timeoutval = 10000; ?>
     setTimeout(del_spinner_translate,<?=$timeoutval?>);
@@ -91,3 +90,4 @@
         console.log('translated');
     }
 </script>
+-->

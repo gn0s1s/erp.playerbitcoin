@@ -11,7 +11,7 @@
 	</div>
 <div class="well">
  <fieldset>
-	<legend>Billetera</legend>
+	<legend>Profit Wallet</legend>
 						
 					<div class="col-lg-2 col-sm-4 col-md-4 col-xs-12">
 					</div>

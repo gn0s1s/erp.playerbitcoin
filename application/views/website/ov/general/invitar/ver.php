@@ -99,7 +99,7 @@ function enviar(){
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea enviar la Invitación?'},
+		data: {message: '¿ Esta seguro que desea enviar the Invitación?'},
 	})
 	.done(function( msg )
 	{

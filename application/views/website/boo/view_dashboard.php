@@ -41,10 +41,10 @@ $ci->load->model("model_permissions");?>
   									</div>
 									</div>
                 	<div class="col-sm-12 col-md-12 col-lg-8">
-									<!--Inica la secciion de la perfil y red-->
+									<!--Inica the secciion of the Profile & red-->
 								  	<div class="well" style="box-shadow: 0px 0px 0px !important;border-color: transparent;">
 										<fieldset>
-											<legend><b>Sistema Integral de Operaciones Oficina Virtual</b></legend>
+											<legend><b>Sistema Integral of Operaciones Oficina Virtual</b></legend>
 																					<div class="row">
 											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 link">
 												<div class="col-xs-10 col-sm-4 col-md-3 col-lg-9 link">	

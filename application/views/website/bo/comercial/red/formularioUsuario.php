@@ -58,7 +58,7 @@
 						</section>
 
 						<section style="width: 50%;" class="col col-2">
-						Fecha de nacimiento
+						Fecha of nacimiento
 							<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
 								<input required readonly id="datepicker" type="text" name="nacimiento" >
 							</label>
@@ -82,7 +82,7 @@
 						</section>
 		
 						<section style="width: 50%;" class="col col-2 hide">
-							Tipo de Usuario
+							Tipo of Usuario
 						
 							<label class="hide">
 								<select id="tipoUsuario"  name="tipoUsuario">
@@ -103,7 +103,7 @@
 		
 		
 						<section style="width: 50%;" class="col col-2">
-							Nivel de Estudios
+							Nivel of Estudios
 						
 							<label class="select">
 								<select id="estudio"  name="estudio">
@@ -137,7 +137,7 @@
 						</section>
 		
 						<section style="width: 50%;" class="col col-2">
-							Tiempo de Dedicación
+							Tiempo of Dedicación
 						
 							<label class="select">
 								<select id="tiempoDedicado"  name="tiempoDedicado">
@@ -154,7 +154,7 @@
 						</section>
 		
 						<section style="width: 50%;" class="col col-2">
-							Estado de Afiliado
+							Estado of Afiliado
 						
 							<label class="select">
 								<select id="estadoAfiliado"  name="estadoAfiliado">

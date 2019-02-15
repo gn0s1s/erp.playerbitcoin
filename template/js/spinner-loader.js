@@ -47,4 +47,6 @@ function FinalizarSpinner(){
 	$("#spinner-div").html('');
 	$("#spinner-div").removeClass("modal-backdrop fade in");
 	$("#spinner-div").remove();
+    //del_spinner_translate();
+
 }

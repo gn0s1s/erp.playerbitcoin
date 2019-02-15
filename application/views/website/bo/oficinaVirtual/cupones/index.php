@@ -6,7 +6,7 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span>
                     > <a href="/bo/oficinaVirtual/"> Oficina Virtual</a> 
-                    > Cupones / Boletos
+                    > Tickets/Cupons
                 </span>
             </h1>
         </div>

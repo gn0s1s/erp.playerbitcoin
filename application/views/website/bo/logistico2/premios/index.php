@@ -59,7 +59,7 @@
 												<a href="/bo/premios/premios_transito">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 														<i class="fa fa-check fa-3x"></i>
-														<h1>Premios en Transito</h1>
+														<h1>Premios on Transito</h1>
 													</div>
 												</a>
 												</div>

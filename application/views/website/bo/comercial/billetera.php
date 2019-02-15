@@ -41,7 +41,7 @@
 													<table class="table">
 													<thead>
 														<tr>
-															<th> <i class="fa fa-sitemap"></i> Red</th>
+															<th> <i class="fa fa-sitemap"></i> Network</th>
 															<th> <i class="fa fa-money"></i> Comision</th>
 														</tr>
 													</thead>
@@ -320,7 +320,7 @@ function enviar(){
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Realizar la Transacción ?'},
+		data: {message: '¿ Esta seguro que desea Realizar the Transacción ?'},
 	})
 	.done(function( msg )
 	{
@@ -378,7 +378,7 @@ function ventas(id){
 	{					
 		bootbox.dialog({
 			message: msg,
-			title: 'Detalles de la Comisiones',
+			title: 'Detalles of the Comisiones',
 			buttons: {
 				danger: {
 					label: "Cerrar",

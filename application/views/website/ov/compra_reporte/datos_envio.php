@@ -106,7 +106,7 @@
 					
 					class="fa fa-shopping-cart"> </i> VER CARRITO
 				</a> <a class="btn btn-sm btn-primary" onclick="a_comprar()">
-					COMPRAR! </a>
+					Purchase! </a>
 			</div>
 			<!--/.miniCartFooter-->
 
@@ -167,7 +167,7 @@
 						<a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i
 							class="fa fa-shopping-cart"> </i> VER CARRITO
 						</a> <a class="btn btn-sm btn-primary" onclick="a_comprar()">
-							COMPRAR! </a>
+							Purchase! </a>
 					</div>
 					<!--/.miniCartFooter-->
 
@@ -202,7 +202,7 @@
 <div class="row">
 
 	<div class="container main-container" style="background-color: #fff;">
-		<header>Datos de envio</header>
+		<header>Datos of envio</header>
 		<form class="smart-form" method="POST" action="guardarEnvio">
 			<fieldset>
 					<div class="col col-xs-12 col-md-6 col-lg-6">
@@ -269,7 +269,7 @@
 					
 				<div class="col col-xs-12 col-md-6 col-lg-6">
 					<label class="input">Numero Telefonico
-						<input required id="telefono" name="telefono"  type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido">
+						<input required id="telefono" name="telefono"  type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido">
 					</label>
 				</div>
 				

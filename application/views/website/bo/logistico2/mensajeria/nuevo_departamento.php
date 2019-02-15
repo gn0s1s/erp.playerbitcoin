@@ -1,6 +1,6 @@
 <form id="form_ciudad" method="post" class="smart-form">
 	<fieldset>
-		<legend>Datos De Departamento</legend>
+		<legend>Datos of Departamento</legend>
 		<div class="row">
 			<section class="col col-6">
 				País<label class="select">
@@ -13,8 +13,8 @@
 			</section>
 			
 			<section class="col col-6">
-				<label class="input">Nombre de departamento
-					<input required type="text" name="nombre" placeholder="Nombre de departamento">
+				<label class="input">Nombre of departamento
+					<input required type="text" name="nombre" placeholder="Nombre of departamento">
 				</label>
 			</section>
 			

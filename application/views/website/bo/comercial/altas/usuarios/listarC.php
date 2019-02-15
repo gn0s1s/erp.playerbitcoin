@@ -239,7 +239,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar El usuario ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the usuario ?'},
 	})
 	.done(function( msg )
 	{

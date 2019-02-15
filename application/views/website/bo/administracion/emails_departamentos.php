@@ -64,7 +64,7 @@
 	<div>
     <fieldset id="pswd">
 		<form class="smart-form" action="/bo/administracion/actualizar_emails_departamentos" method="POST" role="form">
-			<legend>Listado de emails por Departamentos </legend><br>
+			<legend>Listado of emails por Departamentos </legend><br>
 			<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" >
 				
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -110,7 +110,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento3" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[2]->nombre)){echo "";}else{echo $datos_departamentos[2]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento3" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[2]->nombre)){echo "";}else{echo $datos_departamentos[2]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1">
@@ -129,7 +129,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento4" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[3]->nombre)){echo "";}else{echo $datos_departamentos[3]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento4" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[3]->nombre)){echo "";}else{echo $datos_departamentos[3]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1">
@@ -148,7 +148,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento5" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[4]->nombre)){echo "";}else{echo $datos_departamentos[4]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento5" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[4]->nombre)){echo "";}else{echo $datos_departamentos[4]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1">
@@ -167,7 +167,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento6" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[5]->nombre)){echo "";}else{echo $datos_departamentos[5]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento6" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[5]->nombre)){echo "";}else{echo $datos_departamentos[5]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1">
@@ -186,7 +186,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento7" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[6]->nombre)){echo "";}else{echo $datos_departamentos[6]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento7" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[6]->nombre)){echo "";}else{echo $datos_departamentos[6]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1">
@@ -205,7 +205,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento8" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[7]->nombre)){echo "";}else{echo $datos_departamentos[7]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento8" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[7]->nombre)){echo "";}else{echo $datos_departamentos[7]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1">
@@ -224,7 +224,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento9" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[8]->nombre)){echo "";}else{echo $datos_departamentos[8]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento9" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[8]->nombre)){echo "";}else{echo $datos_departamentos[8]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1" >
@@ -243,7 +243,7 @@
 						<b>Nombre del Departamento</b>
 			        </label>
 					<label class="input col-xs-12 col-sm-9 col-md-3 col-lg-3">
-						<input type="text" class="form-control " name="departamento10" placeholder="Escribe el nombre del departamento" value='<?php if(!isset($datos_departamentos[9]->nombre)){echo "";}else{echo $datos_departamentos[9]->nombre;}?>'>
+						<input type="text" class="form-control " name="departamento10" placeholder="Escribe the nombre del departamento" value='<?php if(!isset($datos_departamentos[9]->nombre)){echo "";}else{echo $datos_departamentos[9]->nombre;}?>'>
 			        </label>
 			        
 			        <label  class="input col-xs-12 col-sm-9 col-md-1 col-lg-1" >

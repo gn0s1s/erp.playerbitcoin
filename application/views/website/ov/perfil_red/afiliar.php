@@ -21,7 +21,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Afiliar en Frontal</h5>
+									<h5>Afiliar on Frontal</h5>
 								</div>
 							</a>
 						</div>
@@ -31,7 +31,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Afiliar en Red</h5>
+									<h5>Afiliar on Network</h5>
 								</div>
 							</a>
 						</div>

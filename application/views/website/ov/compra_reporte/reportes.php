@@ -32,19 +32,19 @@
 									
 									<label class="select">
 										<select id="tipo-reporte">
-											<option value="0" selected="" disabled="">Tipo de reporte</option>
+											<option value="0" selected="" disabled="">Tipo of reporte</option>
 											<option value="9">Ver mis Directos</option>
-											<option value="6">Ver consecutivo de Mi red</option>
-											<option onclick="tipo_reporte()" value="10">Ver Afiliados Activos de Mi red</option>
-											<option onclick="tipo_reporte()" value="11">Ver Afiliados InActivos de Mi red</option>
-											<option value="12">Ver Bonos pagados de Mi red</option>
+											<option value="6">Ver consecutivo of Mi Network</option>
+											<option onclick="tipo_reporte()" value="10">Ver Afiliados Activos of Mi Network</option>
+											<option onclick="tipo_reporte()" value="11">Ver Afiliados InActivos of Mi Network</option>
+											<option value="12">Ver Bonos pagados of Mi Network</option>
 											<!--<option value="1">Afiados nuevos</option>-->
-											<!--<option value="7">Ver compras de mi red</option>-->
+											<!--<option value="7">Ver Purchases of mi Network</option>-->
 											<!--  <option value="4">Ventas web personal</option>-->
-											<option value="5">Compras por Banco</option>
-											<option value="8">Ver mis compras</option>
-                                                                                        <option value="4">Ver mis compras CEDI</option>
-											<option value="7">Ver compras de mi red</option>
+											<option value="5">Purchases from Bank</option>
+											<option value="8">Ver mis Purchases</option>
+                                                                                        <option value="4">Ver mis Purchases CEDI</option>
+											<option value="7">Ver Purchases of mi Network</option>
 										</select> <i></i> </label>
 								</section>
 								<section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
@@ -144,7 +144,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-						<h2>Reportes</h2>
+						<h2>Reports</h2>
 	
 					</header>
 				

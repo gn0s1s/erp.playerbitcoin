@@ -146,7 +146,7 @@
             <br />
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <small>Copyright © <?=date('Y')?> <a href="<?=$web?>" target="_blank">
-                        <?=$nombre_empresa?></a> . Todos los derechos reservados.  </small>
+                        <?=$nombre_empresa?></a> . All Rights Reserved.  </small>
             </div>
         </div> -->
         <!--================================================== -->	

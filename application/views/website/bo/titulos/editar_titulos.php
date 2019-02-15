@@ -28,13 +28,13 @@
 						<input value="SEM" <?php if($titulos[0]->frecuencia == 'SEM') echo 'checked=""';?> name="frecuencia" placeholder="frecuencia" type="radio">
 					<i></i>Semanal</label>
 		<br>
-		<p>Nota: Frecuencia con la que se cobra toman el tipo de Título.</p><br>
+		<p>Nota: Frecuencia con the que se cobra toman the tipo of Título.</p><br>
 			<label class="select">Tipo
 				<select name="tipo" style="width:200px; height:30px;">
-					<option value='PUNTOSP' <?php if($titulos[0]->tipo == 'PUNTOSP') echo 'selected=""';?>>Puntos Personales</option>
-					<option value='PUNTOSR' <?php if($titulos[0]->tipo == 'PUNTOSR') echo 'selected=""';?>>Puntos Red</option>
-					<option value='VENTASP' <?php if($titulos[0]->tipo == 'VENTASP') echo 'selected=""';?>>Compras Personales</option>
-					<option value='VENTASR' <?php if($titulos[0]->tipo == 'VENTASR') echo 'selected=""';?>>Ventas Red</option>
+					<option value='PUNTOSP' <?php if($titulos[0]->tipo == 'PUNTOSP') echo 'selected=""';?>>My Points</option>
+					<option value='PUNTOSR' <?php if($titulos[0]->tipo == 'PUNTOSR') echo 'selected=""';?>>Network Points</option>
+					<option value='VENTASP' <?php if($titulos[0]->tipo == 'VENTASP') echo 'selected=""';?>>My Purchases</option>
+					<option value='VENTASR' <?php if($titulos[0]->tipo == 'VENTASR') echo 'selected=""';?>>Ventas Network</option>
 				</select>
 			</label><br>
 			<label  class="select">Condicion Red
@@ -42,7 +42,7 @@
 				<option value='EQU' <?php if($titulos[0]->condicion_red_afilacion == 'EQU') echo 'selected=""';?>>Equilibrada</option>
 				<option value='DEB' <?php if($titulos[0]->condicion_red_afilacion == 'DEB') echo 'selected=""';?>>Pata Débil</option>
 			</select>
-			<p>Nota: Seleccionan todas las patas de la red (Equilibrada) o solo la pata mas débil (Débil) para cumplir la condición.</p><br>
+			<p>Nota: Seleccionan todas las patas of Network (Equilibrada) o solo the pata mas débil (Débil) para cumplir the condición.</p><br>
 			</label>
 			<label for="" class="input">(%) Porcentaje
 				<input id="porcentaje" type="number" value="<?php echo $titulos[0]->porcentaje; ?>" class="form-control" name="porcentaje" min="0" max="100" step="0.1" placeholder=""class="form-control" required style="width:200px; height:30px;"/>

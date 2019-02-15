@@ -11,7 +11,7 @@
 					<span class="badge">3</span>Selección del plan<span class="chevron"></span>
 				</li>
 				<li id="paso4_r" data-target="#step4_r">
-					<span class="badge">4</span>Método de pago<span class="chevron"></span>
+					<span class="badge">4</span>Método of pago<span class="chevron"></span>
 				</li>
 			</ul>
 			<div id="acciones_r" class="actions">
@@ -28,7 +28,7 @@
 				<div class="step-pane active" id="step1_r">
 					<form id="register_red" class="smart-form">
 						<fieldset>
-							<legend>Información de cuenta</legend>
+							<legend>Información of cuenta</legend>
 							<section id="usuario_r" class="col col-6">
 								<label class="input"><i class="icon-prepend fa fa-user"></i>
 								<input id="username_r" onkeyup="use_username_r()" required type="text" name="username" placeholder="Usuario">
@@ -71,7 +71,7 @@
 								</section>
 								<section class="col col-6">
 									<label class="input"><i class="icon-append fa fa-calendar"></i>
-									<input required id="datepicker_r" type="date" min="1920-12-31" max="1996-12-31" name="nacimiento" placeholder="Fecha de nacimiento">
+									<input required id="datepicker_r" type="date" min="1920-12-31" max="1996-12-31" name="nacimiento" placeholder="Fecha of nacimiento">
 									</label>
 								</section>
 								<section class="col col-6" id="key_red">
@@ -126,14 +126,14 @@
 									<label class="toggle">
 									<input type="checkbox" checked="checked" name="sponsor">
 									<i data-swchoff-text="No" data-swchon-text="Si"></i>Soy su sponsor</label>
-									<small>Si eres el sponsor de este afiliado, estará como frontal en tus comisiones</small>
+									<small>Si eres the sponsor of este afiliado, estará como frontal on tus comisiones</small>
 								</section>
 						</fieldset>
 						<fieldset>
 							<legend>Dirección del afiliado</legend>
 							<div id="dir_red" class="row">
 								<section class="col col-6">
-									<label class="input">Dirección de domicilio
+									<label class="input">Dirección of domicilio
 									<input required type="text" name="calle">
 									</label>
 								</section>
@@ -222,8 +222,8 @@
 					                    </div>
 										<div class="price-features">
 											<ul class="list-unstyled text-left">
-									          	<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> de ganancia</h1></li>
-									        	<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> puntos de comisión</h1></li>
+									          	<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> of ganancia</h1></li>
+									        	<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> Points of commissions</h1></li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Aloe Detox (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Vita Live (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>
@@ -249,8 +249,8 @@
 					                    </div>
 										<div class="price-features">
 											<ul class="list-unstyled text-left">
-									          	<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> de ganancia</h1></li>
-									        	<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> puntos de comisión</h1></li>
+									          	<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> of ganancia</h1></li>
+									        	<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> Points of commissions</h1></li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>4</strong> Aloe Detox (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>3</strong> Vita Live (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>
@@ -277,8 +277,8 @@
 					                    </div>
 										<div class="price-features">
 											<ul class="list-unstyled text-left">
-									          	<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> de ganancia</h1></li>
-									        	<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> puntos de comisión</h1></li>
+									          	<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> of ganancia</h1></li>
+									        	<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> Points of commissions</h1></li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>10</strong> Aloe Detox (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>9</strong> Vita Live (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>4</strong> Linea Gala</li>
@@ -303,12 +303,12 @@
 					                    </div>
 										<div class="price-features">
 											<ul class="list-unstyled text-left">
-									          	<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> de ganancia</h1></li>
-									        	<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> puntos de comisión</h1></li>
+									          	<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> of ganancia</h1></li>
+									        	<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> Points of commissions</h1></li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>20</strong> Aloe Detox (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>20</strong> Vita Live (6 pack)</li>
 									        	<li><i class="fa fa-check text-success"></i> <strong>8</strong> Linea Gala</li>
-									        	<li><i class="fa fa-check text-success"></i> <small>Podrás modificar la cantidad de producto que tengan el mismo precio que no insida en el valor y puntaje del plan</small></li>
+									        	<li><i class="fa fa-check text-success"></i> <small>Podrás modificar the cantidad of producto que tengan the mismo precio que no insida on the valor & puntaje del plan</small></li>
 									        </ul>
 										</div>
 					                </div>
@@ -319,7 +319,7 @@
 					        </div>		    	
 			    		</div>
 			    		<br />
-			    		<a id="remove_step_r" href="#" class="btn btn-primary btn-block" role="button">Comprar el plan después</span></a>
+			    		<a id="remove_step_r" href="#" class="btn btn-primary btn-block" role="button">Purchase the plan después</span></a>
 			    	</div>
 				</div>
 				<div class="step-pane" id="step4_r">
@@ -348,9 +348,9 @@
 			var mensajes = new Array( 
 				"Por favor ingresa tu nombre",
 			 	"Por favor ingresa tu apellido",
-			 	"Por favor ingresa tu fecha de nacimiento",
+			 	"Por favor ingresa tu fecha of nacimiento",
 			 	"Por favor ingresa tu código postal",
-			 	"Por favor ingresa un nombre de usuario",
+			 	"Por favor ingresa un nombre of usuario",
 			 	"Por favor ingresa un correo",
 			 	"Por favor ingresa una contraseña",
 			 	"Por favor confirma tu contraseña"
@@ -360,7 +360,7 @@
 				"#username_r"
 			);
 			var mensajess=new Array(
-				"El nombre de usuario no puede contener espacios en blanco"
+				"El nombre of usuario no puede contener espacios on blanco"
 			);
 			var validacion_=valida_espacios(idss,mensajess);
 			var validacion=valida_vacios(ids,mensajes);

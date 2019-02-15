@@ -6,7 +6,7 @@
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark">
 							<i class="fa fa-table fa-fw "></i> 
-								Escuela de negocios 
+								Escuela of negocios 
 							<span>> 
 								Descargas
 							</span>
@@ -562,7 +562,7 @@
 													<td>1-782-119-9191</td>
 													<td>A PC</td>
 													<td>14531</td>
-													<td>Águas Lindas de Goiás</td>
+													<td>Águas Lindas of Goiás</td>
 													<td>04/11/14</td>
 												</tr>
 												<tr>
@@ -877,7 +877,7 @@
 													<td>1-843-923-0038</td>
 													<td>Eget Metus PC</td>
 													<td>47936</td>
-													<td>Feira de Santana</td>
+													<td>Feira of Santana</td>
 													<td>06/27/14</td>
 												</tr>
 												<tr>

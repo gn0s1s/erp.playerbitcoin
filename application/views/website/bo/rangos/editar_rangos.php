@@ -70,7 +70,7 @@
 											<label class="select">Condición Red
 											<select id="condicion_red'.$i.'" name="condicion_red[]" >
 												<option value="DIRECTOS">Directos Afiliado</option>
-												<option value="RED">Toda La red</option>
+												<option value="RED">Toda the Network</option>
 											</select>
 											</label>
 										</div>
@@ -198,7 +198,7 @@ function add_rango(id)
 	+'<label class="select">Condición Red'
 	+'<select name="condicion_red[]" >'
 		+'<option value="DIRECTOS">Directos Afiliado</option>'
-		+'<option value="RED">Toda La red</option>'
+		+'<option value="RED">Toda the Network</option>'
 	+'</select>'
 	+'</label>'
 	+'</div>'

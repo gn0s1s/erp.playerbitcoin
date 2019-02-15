@@ -1085,14 +1085,14 @@ class comercial extends CI_Controller
 					<div class="col-xs-4">Grupo del perfil: </div><strong>'.$grupo[0]->grupo.'</strong>
 				</div>
 				<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px">
-					<div class="col-xs-4">Perfil actual: </div><strong>'.$perfil[0]->perfil.'</strong>
+					<div class="col-xs-4">Profileactual: </div><strong>'.$perfil[0]->perfil.'</strong>
 				</div>
 				<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px">
 					<div class="col-xs-4">Detalles del perfil: </div><strong><span class="txt-color-blue" style="cursor: pointer;" onclick="get_permisos('.$perfil[0]->id_perfil.')">Mostrar permisos</span></strong>
 				</div>
 				<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px">
-					<div class="col-xs-4">Acciones de perfiles: </div><strong><span class="txt-color-blue" style="cursor: pointer;" onclick="new_perfil()">Crear perfil</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<strong><span class="txt-color-red" style="cursor: pointer;" onclick="del_perfil()">Borrar perfil</span></strong>
+					<div class="col-xs-4">Acciones de perfiles: </div><strong><span class="txt-color-blue" style="cursor: pointer;" onclick="new_perfil()">Crear Profile</span></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<strong><span class="txt-color-red" style="cursor: pointer;" onclick="del_perfil()">Borrar Profile</span></strong>
 				</div>
 			</div>';
 			echo '<div class="row"><br /><br /><br /></div>';

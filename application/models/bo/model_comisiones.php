@@ -19,7 +19,7 @@ class model_comisiones extends CI_Model
 	}
 	function get_comisiones($id)
 	{
-		$q=$this->db->query("select * from comision where id_venta=".$id);
+		$q=$this->db->query("select * from  comision  where id_venta=".$id);
 		return $q->result();
 	}
 	function get_id_venta($id)

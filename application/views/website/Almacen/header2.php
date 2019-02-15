@@ -19,7 +19,7 @@
 						<ul class="nav navbar-nav">
 							<li class="text-center">
 								<a href="/">
-								<i style="font-size: 2rem;" class="fa fa-home"></i><br/>Inicio</a>
+								<i style="font-size: 2rem;" class="fa fa-home"></i><br/>Home</a>
 							</li>
 							<li class="text-center">
 								<a href="/Almacen/altas">
@@ -35,11 +35,11 @@
 							</li>
 							<!--  <li class="text-center">
 								<a href="ventas">
-								<i style="font-size: 2rem;" class="fa fa-desktop "></i> <br/>Puntos de Venta </a>
+								<i style="font-size: 2rem;" class="fa fa-desktop "></i> <br/>Points of Venta </a>
 							</li> -->
 							<li class="text-center">
 								<a href="/bo/reportes_logistico/"><!-- reportes-->
-								<i style="font-size: 2rem;" class="fa fa-book  "></i> <br/>Reportes</a>
+								<i style="font-size: 2rem;" class="fa fa-book  "></i> <br/>Reports</a>
 							</li>
 							<li class="text-center">
 								<a href="/bo/logistico/archivero"><!-- archivero -->

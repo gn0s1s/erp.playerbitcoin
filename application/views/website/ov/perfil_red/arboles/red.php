@@ -6,7 +6,7 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
-				> <a href="/ov/red/index">Redes</a>
+				> <a href="/ov/red/index">Networks</a>
 				> Arbol
 				</span>
 			</h1>
@@ -14,7 +14,7 @@
 	</div>
 	<div class="well">
 				<fieldset>
-					<legend>Red</legend>
+					<legend>Network</legend>
 										<div class="row">
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<a href="/ov/red/red_arbol1?id=<?php echo $_GET['id']; ?>">
@@ -22,7 +22,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Arbol de mi red</h5>
+									<h5>Arbol of mi Network</h5>
 								</div>
 							</a>
 						</div>		
@@ -32,7 +32,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Frontalidad de mi red</h5>
+									<h5>Frontalidad of mi Network</h5>
 								</div>
 							</a>
 						</div>				
@@ -42,7 +42,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Profundidad de mi red</h5>
+									<h5>Profundidad of mi Network</h5>
 								</div>
 							</a>
 						</div>

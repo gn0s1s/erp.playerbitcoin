@@ -1,5 +1,5 @@
 <!-- <h3 align="center">
-	<strong>Forma de Pago<br/>"Contado"</strong>
+	<strong>Forma of Pago<br/>"Contado"</strong>
 </h3>-->
 <div class="col-md-6">
 <h4 align="center" class="text-info">Cobro</h4>
@@ -70,7 +70,7 @@ function enviar(){
 	.done(function( msg2 )
 	{
 		bootbox.dialog({
-			message: "Se han Realizado la Venta # ".msg2,
+			message: "Se han Realizado the Venta # ".msg2,
 			title: "Descuento al Producto",
 			buttons: {
 				success: {

@@ -8,7 +8,7 @@
 							<span>
 							> <a href="/bo/administracion/"> Administración</a> 
 							> <a href="/bo/bonos/index_calculo_bonos"> Bonos</a> 
-								> Calculo de Bonos
+								> Calculo of Bonos
 							</span>
 						</h1>
 					</div>
@@ -72,7 +72,7 @@
 								<div style="margin: 1rem;">
 									<section class="col col-3">
 										<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-											<input required id="inicio" value="" type="text" name="fecha" placeholder="Fecha de Corte">
+											<input required id="inicio" value="" type="text" name="fecha" placeholder="Fecha of Corte">
 										</label>
 									</section>
 								<br><br>	
@@ -177,7 +177,7 @@ function enviar() {
 
 							bootbox.dialog({
 						message: msg,
-						title: 'Calculo de Bonos',
+						title: 'Calculo of Bonos',
 						buttons: {
 							success: {
 							label: "Aceptar",

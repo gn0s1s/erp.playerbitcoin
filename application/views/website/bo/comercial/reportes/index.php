@@ -106,7 +106,7 @@
 													<a href="#">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<i class="fa fa-users fa-3x"></i>
-															<h1>Afiliados nuevos en el mes</h1>
+															<h1>Afiliados nuevos on the mes</h1>
 														</div>
 													</a>
 												</div>	
