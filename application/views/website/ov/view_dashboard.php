@@ -147,8 +147,7 @@
 		                                                            <div class="col-md-12">
 		                                                                <a href="/play/dashboard">
 		                                                                    <div id="play-boton" class="link_dashboard well well-sm txt-color-white text-center ">
-		                                                                        <i class="fa fa-btc "></i>
-		                                                                        <h3>Let's Play</h3>
+		                                                                        <h3><i class="fa fa-btc "></i> Let's Play</h3>
 		                                                                    </div>
 		                                                                </a>
 		                                                            </div>
@@ -467,7 +466,14 @@
 		 </div>
         </div>
 		<!-- end row -->
+
+
+
           <!-- panel lateral info usuario-->
+
+          <!-- Descomentar esto para la segunda fase-->
+          <?php $a = 0; ?>
+          <?php if($a==1000){ ?>
 				<div>
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-lg-12">
@@ -824,6 +830,8 @@
 						</div>
 
 					</div>
+
+					<?}?><!-- Descomentar esto para la segunda fase-->
 				</div>
 				<div class="row">
 	        <!-- a blank row to get started -->
