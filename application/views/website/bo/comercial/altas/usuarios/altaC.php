@@ -183,7 +183,7 @@
 													<?php echo form_error($password['name']); ?>
 												</label>
 												<br/>
-												<label class="label">Confirmar contraseña</label>
+												<label class="label">Confirm Password</label>
 												<label class="input">
 													<?php echo form_password($confirm_password); ?>
 												</label>

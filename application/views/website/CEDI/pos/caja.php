@@ -572,7 +572,7 @@ function descuento(i)
 		buttons: {			
 			danger: {
 				label: "Cancel!",
-				id : 'cerrar',
+				id : 'Close',
 				className: "btn-danger cerrar",
 				callback: function() {
 

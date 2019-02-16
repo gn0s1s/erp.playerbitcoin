@@ -1,4 +1,4 @@
-<header style="height: 60px;background-color: #FAFAFA;">
+<header style="height: 60px;background-color: #1048b1;">
 <article class="col-sm-12" style="z-index: 1000;">
 
 			<div class="navbar navbar-default" style="border-color: rgb(255, 255, 255);">
@@ -18,7 +18,7 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a href="/"><i style="font-size: 2rem;" class="fa fa-home "></i> Inicio</a>
+								<a href="/"><i style="font-size: 2rem;" class="fa fa-home "></i>Home</a>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -46,7 +46,7 @@
 								<i style="font-size: 2rem;" class="fa fa-credit-card"></i> Compras y Comisiones <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/compras/carrito">Deposito</a>
+										<a href="/shoppingcart">Deposito</a>
 									</li>
 									<li class="divider"></li>
 									<li>

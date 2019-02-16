@@ -165,7 +165,7 @@
 			<div class="row">
 				<div class="row">
 					<div class="col-lg-9 col-md-9 col-sm-7">
-					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> Comprar</span></h1>
+					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i>Buy</span></h1>
 					</div>
 					<div class="col-lg-3 col-md-3 col-sm-5 rightSidebar">
 					  <h4 class="caps"><a href="carrito?tipo=<?=$_GET["tipo"]?>"><i class="fa fa-chevron-left"></i> Volver al carrito </a></h4>
@@ -201,7 +201,7 @@
 											<a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Forma de Pago</span> </a>
 										</li>
 										<li data-target="#step4">
-											<a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Confirmar</span> </a>
+											<a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Confirm</span> </a>
 										</li>
 									</ul>
 									<div class="clearfix"></div>
@@ -698,7 +698,7 @@
 									                          
 									                          <label class="radio-inline" for="radios-3">
 									                            <input name="radios" id="radios-3" value="4" type="radio">
-									                            <img src="images/site/payment/paypal-small.png" height="18" alt="paypal"> Comprar con Paypal </label>
+									                            <img src="images/site/payment/paypal-small.png" height="18" alt="paypal">Buy con Paypal </label>
 									                          <div class="form-group">
 									                            <label for="CommentsOrder2">Agrega comentarios acerca de tu orden</label>
 									                            <textarea id="CommentsOrder2" class="form-control" name="CommentsOrder2" cols="26" rows="3"></textarea>

@@ -47,7 +47,7 @@
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 											<center>
 											<a title="Pagado" class="txt-color-green" href="#"><i class="fa fa-check fa-3x"></i></a>
-											<br>Confirmar Pago</center>
+											<br>Confirm Payment</center>
 										</div>
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 										<center>	
@@ -207,7 +207,7 @@ $(document).ready(function() {
 	
 function estado_cobro(venta,historial, usuario)
 {
-	var msg = "¿Esta seguro de confirmar el pago?";
+	var msg = "Sure you confirm payment?";
 	var	titulo = "Confirmacion de pago";
 
 	bootbox.dialog({

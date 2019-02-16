@@ -296,7 +296,7 @@
 						title: 'Historial de Transacciones',
 						buttons: {
 							danger: {
-								label: "Cerrar",
+								label: "Close",
 								className: "btn-danger",
 								callback: function() {
 
@@ -319,7 +319,7 @@
 						title: 'Detalles de la Comisiones',
 						buttons: {
 							danger: {
-								label: "Cerrar",
+								label: "Close",
 								className: "btn-danger",
 								callback: function() {
 

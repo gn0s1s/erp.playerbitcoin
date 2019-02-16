@@ -192,7 +192,7 @@
 											
 												
 											<section class="input">
-												<label class="input">Confirmar contraseña
+												<label class="input">Confirm Password
 												<?php echo form_password($confirm_password); ?>
 												<input required type="password" name="password" id="startdate"  /> </label>
 											</section>

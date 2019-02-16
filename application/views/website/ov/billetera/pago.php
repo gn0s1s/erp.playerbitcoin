@@ -431,7 +431,7 @@ function ventas(id){
 			title: 'Detalles de la Comisiones',
 			buttons: {
 				danger: {
-					label: "Cerrar",
+					label: "Close",
 					className: "btn-danger",
 					callback: function() {
 

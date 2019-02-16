@@ -103,7 +103,7 @@
         
         <div class="miniCartFooter  miniCartFooterInMobile text-right">
           <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
+          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()">Buy! </a> </div>
         <!--/.miniCartFooter--> 
         
       </div>
@@ -158,7 +158,7 @@
             
             <div class="miniCartFooter text-right">
               <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
+              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()">Buy! </a> </div>
             <!--/.miniCartFooter--> 
             
           </div>
@@ -962,9 +962,9 @@
 					{
 						<? if(isset($_GET["usr"]))
 						{ ?>
-							window.location.href='/ov/compras/comprar?tipo=<?=1?>&usr=<?=$id_afiliado;?>'
+							window.location.href='/buy?tipo=<?=1?>&usr=<?=$id_afiliado;?>'
 						<? }else{?>
-							window.location.href='/ov/compras/comprar?tipo=<?=1?>'
+							window.location.href='/buy?tipo=<?=1?>'
 						<?}?>
 					}
 					else

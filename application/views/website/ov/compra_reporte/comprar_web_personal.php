@@ -164,7 +164,7 @@
 			<div class="row">
 				<div class="row">
 					<div class="col-lg-9 col-md-9 col-sm-7">
-					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i> Comprar</span></h1>
+					  <h1 class="section-title-inner"><span><i class="glyphicon glyphicon-shopping-cart"></i>Buy</span></h1>
 					</div>
 				</div> <!--/.row-->
 				<!-- widget edit box -->

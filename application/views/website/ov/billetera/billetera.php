@@ -10,7 +10,7 @@
 						<h1 class="page-title txt-color-blueDark">
 						<!-- PAGE HEADER -->
 						<a href="/ov/dashboard">
-						<i class="fa fa-home"></i> Inicio</a> > Billetera</h1>
+						<i class="fa fa-home"></i>Home</a> > Billetera</h1>
 					</div>
 					<!-- end col -->
 				</div>

@@ -965,7 +965,7 @@ function editar(id_merc)
 function eliminar(id)
 {
 	bootbox.dialog({
-		message: "Confirme eliminacion(esta acción no se puede deshacer)",
+		message: "Confirm removing (this action cannot undo)",
 		title: "Eliminar",
 		buttons: {
 			success: {

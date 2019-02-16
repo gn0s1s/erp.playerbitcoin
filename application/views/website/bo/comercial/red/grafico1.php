@@ -357,7 +357,7 @@ function detalles(id)
 			title: "Detalles",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";

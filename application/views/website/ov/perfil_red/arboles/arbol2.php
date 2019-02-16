@@ -428,7 +428,7 @@ function detalles(id)
 			title: "Información Personal",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";
@@ -453,7 +453,7 @@ function detalles2(id)
 			title: "Información Fiscal",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";

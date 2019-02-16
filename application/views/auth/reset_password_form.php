@@ -94,7 +94,7 @@ $confirm_new_password = array(
 		<td style="color: red;"><?php echo form_error($new_password['name']); ?><?php echo isset($errors[$new_password['name']])?$errors[$new_password['name']]:''; ?></td>
 	</tr>
 	<tr>
-		<td>Confirmar Nueva Contraseña</td>
+		<td>Confirm New Password</td>
 		<td><?php echo form_password($confirm_new_password); ?></td>
 		<td style="color: red;"><?php echo form_error($confirm_new_password['name']); ?><?php echo isset($errors[$confirm_new_password['name']])?$errors[$confirm_new_password['name']]:''; ?></td>
 	</tr>

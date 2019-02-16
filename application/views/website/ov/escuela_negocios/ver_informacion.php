@@ -6,7 +6,7 @@
 				
 					<!-- col -->
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><a href="/ov/dashboard"><i class="fa fa-home"></i> Inicio </a><span>>
+						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER --><a href="/ov/dashboard"><i class="fa fa-home"></i>Home </a><span>>
 							<a href="informacion">Informacion</a> > <?=$informacion[0]->nombre?></span></h1>
 					</div>
 					<!-- end col -->

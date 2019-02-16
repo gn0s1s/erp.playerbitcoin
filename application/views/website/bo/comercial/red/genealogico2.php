@@ -4,7 +4,7 @@
                     <div class="row">
                          <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
                               <h1 class="page-title txt-color-blueDark">
-                                   <a href="/bo/comercial/red"><i class="fa fa-home"></i> Inicio</a>
+                                   <a href="/bo/comercial/red"><i class="fa fa-home"></i>Home</a>
                                    <span>>
                                    Red
                                    </span>
@@ -360,7 +360,7 @@ function detalles(id)
 			title: "Detalles",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";

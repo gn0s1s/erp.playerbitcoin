@@ -27,7 +27,7 @@
     function Enviar(id, nombre) {
         bootbox.dialog({
             message: "Estas Seguro(a) que desea pagar con el # " + nombre+" ?",
-            title: "Confirmar Transacción",
+            title: "Confirm Transact",
             className: "",
             buttons: {
                 success: {
@@ -58,7 +58,7 @@
                 FinalizarSpinner();
                 bootbox.dialog({
                     message: msg,
-                    title: "Confirmar Transacción",
+                    title: "Confirm Transact",
                     className: "",
                     buttons: {
                         success: {

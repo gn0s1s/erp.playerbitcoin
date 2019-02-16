@@ -120,7 +120,7 @@
                         title: "Informacion Personal",
                         buttons: {
                             success: {
-                                label: "Cerrar!",
+                                label: "Close!",
                                 className: "hide",
                                 callback: function () {
                                     //location.href="";

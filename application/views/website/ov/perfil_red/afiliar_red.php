@@ -287,7 +287,7 @@ function botbox(nombre, id, lado)
 							+'</section>'
 							+'<section id="confirmar_password" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-lock"></i>'
-									+'<input id="confirm_password" onkeyup="confirm_pass()" required type="password" name="confirm_password" placeholder="Confirme contraseña">'
+									+'<input id="confirm_password" onkeyup="confirm_pass()" required type="password" name="confirm_password" placeholder="Confirm password">'
 								+'</label>'
 							+'</section>'
 						+'</fieldset>'
@@ -791,7 +791,7 @@ function detalles(id)
 			title: "Detalles",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";

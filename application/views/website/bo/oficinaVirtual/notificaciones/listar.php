@@ -66,7 +66,7 @@
 											<thead>			                
 												<tr>
 													<th>ID</th>
-													<th data-hide="phone,tablet">Inicio</th>
+													<th data-hide="phone,tablet">Home</th>
 													<th data-hide="phone,tablet">Fin</th>
 													<th data-class="expand">Nombre</th>
 													<th data-hide="phone,tablet">Descripcion</th>

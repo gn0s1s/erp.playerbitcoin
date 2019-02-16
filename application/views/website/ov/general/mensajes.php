@@ -248,7 +248,7 @@ function ver(id)
 		title: "Mensaje",
 		buttons: {
 			success: {
-			label: "Cerrar",
+			label: "Close",
 			className: "btn-success",
 			callback: function() {
 				}

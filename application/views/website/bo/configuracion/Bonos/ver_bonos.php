@@ -219,7 +219,7 @@
 						title: 'Historial de Bono',
 						buttons: {
 							danger: {
-								label: "Cerrar",
+								label: "Close",
 								className: "btn-danger",
 								callback: function() {
 

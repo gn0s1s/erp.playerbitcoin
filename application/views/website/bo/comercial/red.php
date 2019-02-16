@@ -565,7 +565,7 @@ function detalles(id)
 			title: "Detalles",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";
@@ -589,7 +589,7 @@ function detalle_usuario(id)
 			title: "Detalles",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";
@@ -628,7 +628,7 @@ function perfil_permiso(id)
 								title: "Detalles",
 								buttons: {
 									success: {
-									label: "Cerrar!",
+									label: "Close!",
 									className: "btn-success",
 									callback: function() {
 										location.href="";
@@ -640,7 +640,7 @@ function perfil_permiso(id)
 					}
 				},
 				danger: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -664,7 +664,7 @@ function get_permisos(id)
 			title: "Permisos",
 			buttons: {
 				success: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-success",
 				callback: function() {
 					//location.href="";
@@ -725,7 +725,7 @@ function new_perfil(id)
 								title: "Perfiles",
 								buttons: {
 									success: {
-									label: "Cerrar!",
+									label: "Close!",
 									className: "btn-success",
 									callback: function() {
 										location.href="";
@@ -737,7 +737,7 @@ function new_perfil(id)
 					}
 				},
 				danger: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -778,7 +778,7 @@ function del_perfil()
 								title: "Perfiles",
 								buttons: {
 									success: {
-									label: "Cerrar!",
+									label: "Close!",
 									className: "btn-success",
 									callback: function() {
 										location.href="";
@@ -790,7 +790,7 @@ function del_perfil()
 					}
 				},
 				danger: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -821,7 +821,7 @@ function desactivar(id)
 								title: "Atención",
 								buttons: {
 									success: {
-									label: "Cerrar!",
+									label: "Close!",
 									className: "btn-success",
 									callback: function() {
 										location.href="";
@@ -863,7 +863,7 @@ function activar(id)
 								title: "Atención",
 								buttons: {
 									success: {
-									label: "Cerrar!",
+									label: "Close!",
 									className: "btn-success",
 									callback: function() {
 										location.href="";
@@ -905,7 +905,7 @@ function eliminar(id)
 								title: "Atención",
 								buttons: {
 									success: {
-									label: "Cerrar!",
+									label: "Close!",
 									className: "btn-success",
 									callback: function() {
 										//location.href="";
@@ -955,7 +955,7 @@ function detalle_red(id)
 								title: "Atención",
 								buttons: {
 									success: {
-									label: "Cerrar!",
+									label: "Close!",
 									className: "btn-success",
 									callback: function() {
 										//location.href="";
@@ -967,7 +967,7 @@ function detalle_red(id)
 					}
 				},
 				danger: {
-				label: "Cerrar!",
+				label: "Close!",
 				className: "btn-danger",
 				callback: function() {
 					}

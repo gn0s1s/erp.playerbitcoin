@@ -19,7 +19,7 @@
 						<ul class="nav navbar-nav">
 							<li class="text-center">
 								<a href="/">
-								<i style="font-size: 2rem;" class="fa fa-home"></i><br/>Inicio</a>
+								<i style="font-size: 2rem;" class="fa fa-home"></i><br/>Home</a>
 							</li>
 							<li class="text-center">
 								<a href="/CEDI/POS">

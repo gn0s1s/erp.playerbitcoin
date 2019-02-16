@@ -4263,7 +4263,7 @@ function index()
 		if (!$this->tank_auth->is_logged_in())																	// logged in
 			redirect('/auth');
 		
-		redirect("/ov/compras/comprar");
+		redirect("/buy");
 	}
 	
 	function buscarProveedores(){

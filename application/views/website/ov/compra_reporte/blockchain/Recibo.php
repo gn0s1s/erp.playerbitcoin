@@ -2,7 +2,7 @@
     <form action="#" id="recibo-pago">
         <input type="hidden" name="id" class="hide" value="<?=$id?>" />
 
-    <h3>Pulsa en la imagen para redirigirte a confirmar el pago.</h3>
+    <h3>Push image for payment confirmation redirecting .</h3>
         <fieldset class="well" style="text-align: center">
             <img src="<?=$qr;?>"  alt="qr" width="80%" style="cursor:pointer;"
                  onclick="location.href='bitcoin:<?=$direccion?>'" />

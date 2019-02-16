@@ -146,7 +146,7 @@
 $(document).ready(function() {
 
 $.datepicker.regional['es'] = {
- closeText: 'Cerrar',
+ closeText: 'Close',
  prevText: 'Ant',
  nextText: 'Sig',
  currentText: 'Hoy',

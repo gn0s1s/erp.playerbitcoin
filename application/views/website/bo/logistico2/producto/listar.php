@@ -323,7 +323,7 @@ function editar(id_merc, code)
 function eliminar(id)
 {
 	bootbox.dialog({
-		message: " Sure you want to remove this item?. <br>Recuerde que esta acción no se puede deshacer.",
+		message: " Sure you want to remove this item?. <br>Remember this action cannot undo.",
 		title: "Eliminar",
 		buttons: {
 			success: {

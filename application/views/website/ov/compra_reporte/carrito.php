@@ -194,7 +194,7 @@
 <div class="row">
 	<div class="breadcrumbDiv col-lg-12">
       <ul class="breadcrumb">
-        <li><a href="/"><i class="fa fa-home"></i> Inicio</a> </li>
+        <li><a href="/"><i class="fa fa-home"></i>Home</a> </li>
         <li class="active"><i class="fa fa-shopping-cart"></i> Shopping cart </li>
       </ul>
     </div>
@@ -432,7 +432,7 @@
 								className: "div_info_merc",
 								buttons: {
 									success: {
-										label: "Cerrar",
+										label: "Close",
 										className: "btn-danger",
 										callback: function() {
 											}

@@ -186,7 +186,7 @@ $(document).ready(function() {
 	
 function estado_cobro(venta,historial, usuario)
 {
-	var msg = "¿Esta seguro de confirmar el pago?";
+	var msg = "Sure you confirm payment?";
 	var	titulo = "Confirmacion de pago";
 
 	bootbox.dialog({

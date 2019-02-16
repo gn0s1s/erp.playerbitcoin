@@ -172,7 +172,7 @@ class mGeneral extends CI_Model
             return "5";
         }else if($intentos[0]->attempts>=5){
             $this->locked();
-            return "ninguno";
+            return "None";
         }
         else {
             $intentos = ($intentos[0]->attempts) + 1;

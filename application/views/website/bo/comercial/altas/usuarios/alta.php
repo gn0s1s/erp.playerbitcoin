@@ -113,7 +113,7 @@
 													<td style="color: red;"><?php echo form_error($password['name']); ?></td>
 												</tr>
 												<tr>
-													<td>Confirmar contraseña</td>
+													<td>Confirm Password</td>
 													<td><?php echo form_password($confirm_password); ?></td>
 													<td style="color: red;"><?php echo form_error($confirm_password['name']); ?></td>
 												</tr>

@@ -889,10 +889,10 @@ function detalles(id)
 	{
 		bootbox.dialog({
 			message: msg,
-			title: "Información Personal",
+			title: "Profile Details",
 			buttons: {
 				success: {
-					label: "Cerrar!",
+					label: "Close!",
 					className: "btn-success",
 					callback: function() {
 					//location.href="";
