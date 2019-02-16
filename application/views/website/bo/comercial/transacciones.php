@@ -218,7 +218,7 @@
 					title: 'Eliminar Transacción',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							//alert('dentro de funcion');
@@ -236,7 +236,7 @@
 									title: 'Atención',
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 											location.href="/bo/comercial/transacciones_billetera";
@@ -249,7 +249,7 @@
 							}
 						},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 

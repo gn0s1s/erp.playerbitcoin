@@ -26,7 +26,7 @@
      padding-top: 5rem;padding-bottom: 10rem;margin-top: 3.5em;">
 <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation" id="cart_cont" style="background: #2980b9 ! important;">
     <div class="navbar-header">
-      <a style="color : #fff;margin-left:4rem;" class="navbar-brand titulo_carrito" href="/ov/compras/carrito"> <i class="fa fa-arrow-circle-left"></i> Atras &nbsp;</a> 
+      <a style="color : #fff;margin-left:4rem;" class="navbar-brand titulo_carrito" href="/ov/compras/carrito"> <i class="fa fa-arrow-circle-left"></i> Back &nbsp;</a>
       
       <!-- this part for mobile -
       <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -54,34 +54,34 @@
 				
 												<address>
 													<h4 class="semi-bold"><?=$empresa[0]->nombre?></h4>
-													<abbr title="Phone">Identificador tributario:</abbr><?="\t".$empresa[0]->id_tributaria?>
+													<abbr title="Phone">IDN:</abbr><?="\t".$empresa[0]->id_tributaria?>
 													<br>
-													<abbr title="Phone">Dirección:</abbr><?=$empresa[0]->direccion?>
+													<abbr title="Phone">Address:</abbr><?=$empresa[0]->direccion?>
 													<br>
-													<abbr title="Phone">Ciudad:</abbr><?=$empresa[0]->ciudad?>
+													<abbr title="Phone">City:</abbr><?=$empresa[0]->ciudad?>
 													<br>
 													<abbr title="Phone">Tel:</abbr>&nbsp;<?=$empresa[0]->fijo?>
 												</address>
 											</div>
 											<div class="pull-right">
-												<h1 class="font-400">Recibo de pago</h1>
+												<h1 class="font-400">Checkout</h1>
 											</div>
 											<div class="clearfix"></div>
 											<br>
 											<div class="row">
 												<div class="col-sm-9">
 													<address>
-														<strong>Facturar a:</strong>
+														<strong>Billing:</strong>
 														<br>
-														<strong>Señor (a). <?php echo $datos_afiliado[0]->nombre." ".$datos_afiliado[0]->apellido;?></strong>
+														<strong>Mr(s). <?php echo $datos_afiliado[0]->nombre." ".$datos_afiliado[0]->apellido;?></strong>
 														<br>
-														<abbr title="Phone">Número de identificación:</abbr> <?php echo $datos_afiliado[0]->keyword;?>
+														<abbr title="Phone">IDN:</abbr> <?php echo $datos_afiliado[0]->keyword;?>
 														<br>
-														<abbr title="Phone">Dirección:</abbr> <?php echo $pais_afiliado[0]->direccion;?>
+														<abbr title="Phone">Address:</abbr> <?php echo $pais_afiliado[0]->direccion;?>
 														<br>
-														<abbr title="Phone">País:</abbr> <?php echo $pais_afiliado[0]->nombrePais;?> <img class="flag flag-<?=strtolower($pais_afiliado[0]->codigo)?>">
+														<abbr title="Phone">Country:</abbr> <?php echo $pais_afiliado[0]->nombrePais;?> <img class="flag flag-<?=strtolower($pais_afiliado[0]->codigo)?>">
 														<br>
-														<abbr title="Phone">Email:</abbr> <?php echo $datos_afiliado[0]->email;?>
+														<abbr title="Phone">E-mail:</abbr> <?php echo $datos_afiliado[0]->email;?>
 													</address>
 												</div>
 												<div class="col-sm-3">
@@ -89,23 +89,23 @@
 													<div>
 														<div class="font-md">
 
-															<abbr title="Phone"><strong>Fecha de expedición:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
+															<abbr title="Phone"><strong>Billing date:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
 															<br>
 															<br>
-															<abbr title="Phone"><strong>Fecha de vencimiento:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
+															<abbr title="Phone"><strong>Expiring date:</strong></abbr><span class="pull-right"> <i></i> <?php echo date("Y-m-d");?> </span>
 														</div>
 				
 													</div>
 													<hr class="col-md-12" />
 													<div class="col-md-12 well well-sm  bg-color-darken txt-color-white no-border">
 														<div class="fa-lg">
-															Precio :
+															Price :
 															<span class="pull-right">$ <?php echo $this->cart->total(); ?> ** </span>
 														</div>
 													</div>
 													<div class="col-md-12 well well-sm  bg-color-green txt-color-white no-border">
 														<div class="fa-lg">
-															Puntos :
+															Points :
 															<span class="pull-right">** <?php echo $puntos; ?> ** </span>
 														</div>
 													</div>
@@ -119,12 +119,12 @@
 											<table class="table table-hover">
 												<thead>
 													<tr>
-														<th class="text-center">Cantidad</th>
+														<th class="text-center">QUANTITY</th>
 														<th>ITEM</th>
-														<th>DESCRIPCION</th>
-														<th>PUNTOS</th>
-														<th>PRECIO</th>
-														<th>IMPUESTO</th>
+														<th>DESCRIPTION</th>
+														<th>POINTS</th>
+														<th>PRICE</th>
+														<th>TAXES</th>
 														<th>SUBTOTAL</th>
 														<th></th>
 													</tr>
@@ -218,7 +218,7 @@
 				
 													<div class="col-sm-8">
 														<div class="payment-methods">
-															<h1 class="font-300">Metodos de Pago</h1>
+															<h1 class="font-300">PAYMENT METHODS</h1>
 															<a onclick="consignacion()"
                                                                style="margin-left: 1rem;" class="hide btn btn-success txt-color-blueLight">
                                                                 <img src="/template/img/payment/deposito-bancario.jpg"
@@ -228,7 +228,7 @@
                                                                style="margin-left: 1rem;padding: 1em;
                                                                background: #090;color:#000;font-weight: bold"
                                                                class="btn btn-success txt-color-bl">
-                                                                BILLETERA
+                                                                EARNINGS
                                                             </a>
                                                             <?php if($blockchain[0]->estatus=='ACT') {?>
                                                                 <a onclick="blockchain()" style="margin-left: 1rem;" class="btn btn-success txt-color-blueLight">
@@ -257,8 +257,10 @@
 													<div class="col-sm-4">
 														<div class="invoice-sum-total pull-right">
 															<h4><strong>Subtotal: <span class="text-default pull-right">$ <?php echo $total;?> </span></strong></h4>
-															<h4><strong>Gastos Envio: <span class="text-danger pull-right">$ <?php echo $envio;?> </span></strong></h4>															
-															<h3><strong>Total a Pagar: <span class="text-success pull-right">&nbsp;&nbsp;$ <?php echo $total+$envio;?> </span></strong></h3>
+															<!--<h4><strong>Gastos Envio:
+															<span class="text-danger pull-right">
+															$ <?php echo $envio;?> </span></strong></h4>-->
+															<h3><strong>Total: <span class="text-success pull-right">&nbsp;&nbsp;$ <?php echo $total+$envio;?> </span></strong></h3>
 														</div>
 													</div>
 				
@@ -266,7 +268,9 @@
 												
 												<div class="row">
 													<div class="col-sm-12">
-														<p class="note">**Para evitar cargos por exceso de penalización , por favor, hacer pagos dentro de los 30 días siguientes a la fecha de vencimiento. Habrá un cargo de interés del 2 % mensual sobre todas las facturas finales.</p>
+														<p class="note">**To avoid charges for excessive penalties,
+                                                            please make payments within 30 days of the due date.
+                                                            There will be an interest charge of 2% per month on all final invoices.</p>
 													</div>
 												</div>
 				
@@ -297,16 +301,16 @@
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar la mercancia ?'},
+			data: {message: 'Sure you want to remove this item ?'},
 		})
 		.done(function( msg )
 		{
 			bootbox.dialog({
 				message: msg,
-				title: 'Eliminar Mercancia',
+				title: '',
 				buttons: {
 					success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 						
@@ -323,7 +327,7 @@
 			
 					},
 						danger: {
-						label: "Cancelar!",
+						label: "Cancel!",
 						className: "btn-danger",
 						callback: function() {
 
@@ -381,7 +385,7 @@
 								className: "",
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "hide",
 									callback: function() {
 										 window.location="/ov/dashboard";
@@ -408,7 +412,7 @@
 					className: "",
 					buttons: {
 						success: {
-						label: "Cancelar",
+						label: "Cancel",
 						className: "btn-danger",
 						callback: function() {
 							}
@@ -434,7 +438,7 @@
 					className: "",
 					buttons: {
 						success: {
-						label: "Cancelar",
+						label: "Cancel",
 						className: "btn-danger",
 						callback: function() {
 							}
@@ -458,7 +462,7 @@
                     className: "",
                     buttons: {
                         danger: {
-                            label: "Cancelar",
+                            label: "Cancel",
                             className: "btn-danger",
                             callback: function() {
                             }
@@ -511,7 +515,7 @@
 					className: "",
 					buttons: {
 						success: {
-						label: "Cancelar",
+						label: "Cancel",
 						className: "btn-danger",
 						callback: function() {
 							}
@@ -535,7 +539,7 @@
 					className: "",
 					buttons: {
 						success: {
-						label: "Cancelar",
+						label: "Cancel",
 						className: "btn-danger",
 						callback: function() {
 							}

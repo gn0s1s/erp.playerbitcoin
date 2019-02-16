@@ -139,7 +139,7 @@ if ($this->session->flashdata('error')) {
             title: "Nueva Ciudad",
             buttons: {
                 submit: {
-                    label: "Aceptar",
+                    label: "Accept",
                     className: "btn-success",
                     callback: function () {
 
@@ -158,7 +158,7 @@ if ($this->session->flashdata('error')) {
                                         title: 'Ciudades',
                                         buttons: {
                                             success: {
-                                                label: "Aceptar",
+                                                label: "Accept",
                                                 className: "btn-success",
                                                 callback: function () {
                                                 }
@@ -171,7 +171,7 @@ if ($this->session->flashdata('error')) {
                     }
                 },
                 danger: {
-                    label: "Cancelar!",
+                    label: "Cancel!",
                     className: "btn-danger",
                     callback: function () {
 

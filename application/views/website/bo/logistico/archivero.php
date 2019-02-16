@@ -348,7 +348,7 @@ function borrar(id,link,name)
 		title: 'Eliminar Archivo',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				
@@ -363,7 +363,7 @@ function borrar(id,link,name)
 						title: 'Archivo eliminado con exito',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/logistico/archivero";
@@ -376,7 +376,7 @@ function borrar(id,link,name)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

@@ -223,7 +223,7 @@
 							className: "",
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function(){
 										window.location.href="pedidos_transito";
@@ -470,7 +470,7 @@
 					className: "",
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							}

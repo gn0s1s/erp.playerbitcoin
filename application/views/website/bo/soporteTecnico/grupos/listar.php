@@ -257,7 +257,7 @@ function eliminar(id) {
 		title: 'Eliminar Grupo',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -273,7 +273,7 @@ function eliminar(id) {
 						title: 'Alerta',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/configuracion/listar_grupos_soporte_tecnico";
@@ -286,7 +286,7 @@ function eliminar(id) {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

@@ -56,7 +56,7 @@ $chatrooms_language[47] = '¿Está usted desea Seguro que quieres borrar este me
 $chatrooms_language[48] = '<a href="javascript:void(0);" onclick="javascript:jqcc.cometchat.inviteChatroomUser()">Invite a los usuarios</a>';
 $chatrooms_language[49] = 'Por favor, no hagas spam en sala de chat';
 $chatrooms_language[50] = 'Por favor introduce el nombre de la habitación.';
-$chatrooms_language[51] = 'Cancelar';
+$chatrooms_language[51] = 'Cancel';
 $chatrooms_language[52] = 'nuevo';
 $chatrooms_language[53] = 'No chats disponible';
 $chatrooms_language[54] = 'Crear sala de chat ...';

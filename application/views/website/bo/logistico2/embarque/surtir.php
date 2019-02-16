@@ -83,7 +83,7 @@ function enviar() {
 				className: "",
 				buttons: {
 					success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							setiniciarSpinner();
@@ -105,7 +105,7 @@ function enviar() {
 									className: "",
 									buttons: {
 										success: {
-											label: "Aceptar",
+											label: "Accept",
 											className: "btn-success",
 											callback: function(){
 												FinalizarSpinner();
@@ -118,7 +118,7 @@ function enviar() {
 						}
 					},
 					danger:{
-						label: "Cancelar",
+						label: "Cancel",
 						className: "btn-danger",
 						callback: function(){
 							
@@ -151,7 +151,7 @@ function envio (id_surtido,id_venta,fecha,n_guia,$proveedor){
 			className: "",
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function(){
 						window.location.href="pedidos_pendientes";

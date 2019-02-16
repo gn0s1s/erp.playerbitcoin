@@ -1,4 +1,4 @@
-Bienvenido a <?php echo $site_name; ?>,
+Welcome a <?php echo $site_name; ?>,
 
 Gracias por afiliarte a <?php echo $site_name; ?>.
 

@@ -56,7 +56,7 @@ function enviar(){
 		title: 'Eliminar Afiliado',
 		buttons: {
 			success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 						setiniciarSpinner();
@@ -72,7 +72,7 @@ function enviar(){
 							title: 'Eliminar Afiliado',
 							buttons: {
 								success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function() {
 										location.href="/bo/comercial/red_tabla";
@@ -86,7 +86,7 @@ function enviar(){
 					}
 				},
 				danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 

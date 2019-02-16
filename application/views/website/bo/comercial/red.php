@@ -833,7 +833,7 @@ function desactivar(id)
 					}
 				},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 					}
@@ -875,7 +875,7 @@ function activar(id)
 					}
 				},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 					}
@@ -917,7 +917,7 @@ function eliminar(id)
 					}
 				},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 					}

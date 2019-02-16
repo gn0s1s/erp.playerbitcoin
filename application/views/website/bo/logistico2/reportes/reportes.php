@@ -276,7 +276,7 @@
 					className: "",
                                         buttons: {
                                             success: {
-                                                label: "Aceptar",
+                                                label: "Accept",
                                                 className: "hide",
                                                 callback: function() {
 
@@ -306,7 +306,7 @@
                                                     className: "",
                                                     buttons: {
 							success: {
-                                                            label: "Aceptar",
+                                                            label: "Accept",
                                                             className: "hide",
                                                             callback: function() {
                                                             
@@ -333,7 +333,7 @@
 					title: 'Eliminar Ventas',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							iniciarSpinner();
@@ -350,7 +350,7 @@
                                                                             title: 'Atención',
                                                                             buttons: {
                                                                                     success: {
-                                                                                        label: "Aceptar",
+                                                                                        label: "Accept",
                                                                                         className: "btn-success",
                                                                                         callback: function() {
                                                                                             tipo_reporte();
@@ -363,7 +363,7 @@
 							}
 						},
 						danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 

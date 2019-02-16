@@ -125,7 +125,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 										Enviar
 									</button>
 									<button type="button" onclick="location.href='/auth/login'" class="btn btn-danger">
-										Cancelar
+										Cancel
 									</button>
 								</footer>
 							</form>

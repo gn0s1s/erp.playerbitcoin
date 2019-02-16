@@ -121,7 +121,7 @@
 						title: "Información del Evento",
 						buttons: {
 							success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function() {
 									  

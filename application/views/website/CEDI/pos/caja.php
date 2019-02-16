@@ -571,7 +571,7 @@ function descuento(i)
 		title: 'Descuento al Producto',
 		buttons: {			
 			danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				id : 'cerrar',
 				className: "btn-danger cerrar",
 				callback: function() {
@@ -600,7 +600,7 @@ function crear_item()
 		title: 'Crear Producto',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 					/*
@@ -616,7 +616,7 @@ function crear_item()
 						title: nombre,
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								}
@@ -628,7 +628,7 @@ function crear_item()
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -653,7 +653,7 @@ function ver_compra()
 			title: 'Cobrar al Contado',
 			buttons: {
 				danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 	

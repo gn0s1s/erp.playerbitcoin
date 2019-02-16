@@ -7,7 +7,7 @@
 $avchat_language[0] = 'Iniciar llamada de audio/video';
 $avchat_language[1] = 'Espera la menos 10 segundos antes de llamar de nuevo.';
 $avchat_language[2] = 'te ha enviado una solicitud de chat de audio/video.';
-$avchat_language[3] = 'Clic aquí para aceptar';
+$avchat_language[3] = 'Clic aquí para Accept';
 $avchat_language[4] = 'o simplemente ignora este mensaje.';
 $avchat_language[5] = 'ha enviado con éxito una solicitud de chat de audio/video.';
 $avchat_language[6] = 'ha aceptado tu solicitud de chat de audio/video.';
@@ -55,7 +55,7 @@ $avchat_language[40] = 'El usuario no contesta la llamada en este momento. Por f
 $avchat_language[41] = 'Lo sentimos, no podemos enviar este mensaje.';
 $avchat_language[42] = 'Lo sentimos, su dispositivo no soporta esta característica.';
 $avchat_language[43] = 'haga clic aquí';
-$avchat_language[44] = 'Para cancelar la llamada saliente';
+$avchat_language[44] = 'Para Cancel la llamada saliente';
 $avchat_language[45] = 'Para rechazar la llamada';
 $avchat_language[46] = 'También puede simplemente ignorar este mensaje';
 $avchat_language[47] = 'Por favor, configure este plugin con el panel de administración antes de usar. Haga clic aquí para más información.';

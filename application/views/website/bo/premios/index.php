@@ -272,7 +272,7 @@ function eliminar(id, file) {
 			title: 'Eliminar Premio',
 			buttons: {
 				success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 
@@ -288,7 +288,7 @@ function eliminar(id, file) {
 								title: 'Atencion',
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 											location.href="/bo/premios/listar";	
@@ -301,7 +301,7 @@ function eliminar(id, file) {
 					}
 				},
 					danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 

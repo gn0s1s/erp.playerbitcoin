@@ -137,7 +137,7 @@
 											</div>
 											<div class="col-md-12"></div>
 											<div class="col-md-12">
-												<h4>Productos de Baja Existencia</h4>
+												<h4>productos de Baja Existencia</h4>
 												<br/>	
 												<section class="row well">																						
 												<table style="width: 100%" id="dt_basic" class="table table-striped table-bordered table-hover">

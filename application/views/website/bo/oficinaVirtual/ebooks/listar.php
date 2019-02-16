@@ -245,7 +245,7 @@ function estado_ebook(estatus, id)
 		title: titulo,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				
@@ -266,7 +266,7 @@ function estado_ebook(estatus, id)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -309,7 +309,7 @@ function estado_ebook(estatus, id)
 			title: 'Eliminar E-Book',
 			buttons: {
 				success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 					
@@ -324,7 +324,7 @@ function estado_ebook(estatus, id)
 							title: 'Felicitaciones',
 							buttons: {
 								success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function() {
 									location.href="/bo/ebooks/listar";
@@ -337,7 +337,7 @@ function estado_ebook(estatus, id)
 					}
 				},
 					danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 

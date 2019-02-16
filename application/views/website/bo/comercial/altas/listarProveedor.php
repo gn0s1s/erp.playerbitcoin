@@ -267,7 +267,7 @@ function eliminarProveedor(id) {
 		title: 'Eliminar Proveedor',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -283,7 +283,7 @@ function eliminarProveedor(id) {
 						title: 'Proveedor',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/comercial/listarProveedor";
@@ -296,7 +296,7 @@ function eliminarProveedor(id) {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -327,7 +327,7 @@ function estado(estatus, id)
 		title: titulo,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				
@@ -347,7 +347,7 @@ function estado(estatus, id)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

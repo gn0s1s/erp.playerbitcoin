@@ -237,7 +237,7 @@
 					title: "Atencion !!",
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							var inicio=$("#startdate").val();
@@ -274,7 +274,7 @@
 						}
 				},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 

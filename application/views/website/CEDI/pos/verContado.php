@@ -74,7 +74,7 @@ function enviar(){
 			title: "Descuento al Producto",
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 						FinalizarSpinner();

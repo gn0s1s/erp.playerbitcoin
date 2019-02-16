@@ -248,7 +248,7 @@ function estado_banco(estatus, id)
 		title: titulo,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				
@@ -268,7 +268,7 @@ function estado_banco(estatus, id)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -311,7 +311,7 @@ function estado_banco(estatus, id)
 			title: 'Eliminar Banco',
 			buttons: {
 				success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 					
@@ -326,7 +326,7 @@ function estado_banco(estatus, id)
 							title: 'Felicitaciones',
 							buttons: {
 								success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function() {
 									location.href="listar";
@@ -339,7 +339,7 @@ function estado_banco(estatus, id)
 					}
 				},
 					danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 
@@ -377,7 +377,7 @@ function estado_banco(estatus, id)
 					title: 'Atención !!',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							location.href="listar";

@@ -362,7 +362,7 @@
 					title: 'Eliminar Video',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 
@@ -378,7 +378,7 @@
 									title: 'Felicitaciones',
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 											location.href="/bo/videos/listar";
@@ -391,7 +391,7 @@
 							}
 						},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 
@@ -416,7 +416,7 @@
 					title: 'Eliminar Comentario',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 
@@ -432,7 +432,7 @@
 									title: 'Felicitaciones',
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 											location.href="/bo/videos/listar";
@@ -445,7 +445,7 @@
 							}
 						},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 

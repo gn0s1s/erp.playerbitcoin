@@ -22,14 +22,14 @@
             className: "",
             buttons: {
                 success: {
-                    label: "Aceptar",
+                    label: "Accept",
                     className: "btn-success",
                     callback: function () {
                         Registrar(id, cantidad, banco, dni, id_afiliado);
                     }
                 },
-                cancelar: {
-                    label: "Cancelar",
+                Cancel: {
+                    label: "Cancel",
                     className: "btn-danger",
                     callback: function () {
                     }
@@ -60,7 +60,7 @@
                     className: "",
                     buttons: {
                         success: {
-                            label: "Aceptar",
+                            label: "Accept",
                             className: "btn-success",
                             callback: function () {
                                 window.location = "";

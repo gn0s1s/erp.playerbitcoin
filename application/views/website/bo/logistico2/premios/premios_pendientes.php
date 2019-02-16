@@ -206,7 +206,7 @@
 			className: "",
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function(){
 						var fecha=$("#datepicker").val();
@@ -223,7 +223,7 @@
 									className: "",
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 											$.ajax({
@@ -238,7 +238,7 @@
 													className: "",
 													buttons: {
 														success: {
-															label: "Aceptar",
+															label: "Accept",
 															className: "btn-success",
 															callback: function(){
 																window.location.href="premios_pendientes";
@@ -250,7 +250,7 @@
 											}
 										},
 										danger:{
-											label: "Cancelar",
+											label: "Cancel",
 											className: "btn-danger",
 											callback: function(){
 												
@@ -262,7 +262,7 @@
 					}
 				},
 				danger: {
-					label: "Cancelar",
+					label: "Cancel",
 					className : "btn-danger",
 					callback: function(){
 						
@@ -306,7 +306,7 @@
 							className: "",
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function(){
 										window.location.href="/bo/logistico/surtido_embarques";

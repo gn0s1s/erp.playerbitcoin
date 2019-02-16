@@ -341,14 +341,14 @@ function add_proveedor(){
 			title: "Nuevo proveedor",
 			buttons: {
 				submit: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 					new_proveedor()
 					}
 				},
 					danger: {
-					label: "Cancelar",
+					label: "Cancel",
 					className: "btn-danger",
 					callback: function() {
 

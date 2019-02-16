@@ -135,7 +135,7 @@ $codigoHTML.='</table>
 <br /><br />
     <table width="100%" border="1" class="table table-striped table-bordered table-hover">
           <tr>
-            <td colspan="6"><strong>Productos de Baja Existencia</strong></td>
+            <td colspan="6"><strong>productos de Baja Existencia</strong></td>
           </tr>
           <tr>
             <td width="15%"><strong>Codigo</strong></td>

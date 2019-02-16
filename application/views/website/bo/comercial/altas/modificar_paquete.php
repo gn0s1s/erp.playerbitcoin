@@ -406,7 +406,7 @@ function new_product(i)
 {
 	
 	$('#prods').append('<div id="'+ia+'aj">'
-		+'<section class="col col-8" style="width: 50%" id="ProductosPais'+ia+'" name="ProductosPais'+ia+'">Productos'
+		+'<section class="col col-8" style="width: 50%" id="ProductosPais'+ia+'" name="ProductosPais'+ia+'">productos'
 		+'<label class="select">'
 		+'<select class="custom-scroll"  name="producto[]">'
 		+'<?php foreach ($producto as $key){?>'
@@ -452,7 +452,7 @@ function new_service(i)
 {
 
 	$('#servs').append('<div id="'+ib+'bj">'
-		+'<section class="col col-8" style="width: 50%" id="ServicioPais'+ib+'" name="ServicioPais'+ib+'">Servicios'
+		+'<section class="col col-8" style="width: 50%" id="ServicioPais'+ib+'" name="ServicioPais'+ib+'">Services'
 		+'<label class="select">'
 		+'<select class="custom-scroll" name="servicio[]">'
 		+'<?php foreach ($servicio as $key){?>'
@@ -933,7 +933,7 @@ function enviar() {
 						title: 'Felicitaciones',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								

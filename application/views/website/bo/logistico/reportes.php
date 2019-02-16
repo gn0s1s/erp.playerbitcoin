@@ -35,7 +35,7 @@
 													<option value="2">Usuarios Telemarketing</option>
 													<option value="3">Usuario CEDI</option>
 													<option value="4">Proveedores</option>
-													<option value="5">Productos y Servicios</option>
+													<option value="5">productos y Servicios</option>
 													<option value="6">Almacenes</option>
 													<option value="7">CEDI's</option>
 													<option value="8">Embarques</option>
@@ -314,7 +314,7 @@
 						className: "",
 						buttons: {
 							success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function(){
 									
@@ -332,7 +332,7 @@
 						className: "",
 						buttons: {
 							success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function(){
 									

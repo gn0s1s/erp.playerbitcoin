@@ -255,7 +255,7 @@ function eliminar(id) {
 		title: 'Eliminar Retencion',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -271,7 +271,7 @@ function eliminar(id) {
 						title: 'Felicitaciones',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/configuracion/listar_retenciones";
@@ -284,7 +284,7 @@ function eliminar(id) {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

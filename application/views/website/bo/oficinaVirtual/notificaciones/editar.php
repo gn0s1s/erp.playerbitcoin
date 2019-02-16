@@ -131,7 +131,7 @@ function enviar(){
 			title: 'ATENCION',
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {										
 							location.href="/bo/notificaciones/listar";

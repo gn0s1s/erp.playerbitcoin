@@ -290,7 +290,7 @@
 				title: 'Eliminar Presentacion',
 				buttons: {
 					success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 							var datos={'id':id,'file':file};
@@ -306,7 +306,7 @@
 								title: 'Felicitaciones',
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 										location.href="/bo/presentaciones/listar";
@@ -319,7 +319,7 @@
 						}
 					},
 						danger: {
-						label: "Cancelar!",
+						label: "Cancel!",
 						className: "btn-danger",
 						callback: function() {
 

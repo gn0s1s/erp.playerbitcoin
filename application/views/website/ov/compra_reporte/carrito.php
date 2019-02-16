@@ -29,12 +29,15 @@
         z-index: 1000;
         right: 0;
     }
+    #content{
+        height: auto !important;
+    }
 </style>
-<div id="content" style="margin-top: 4em;">
+<div id="content" style="margin-top: 4em;;">
  <div class="navbar navbar-tshop navbar-fixed-top megamenu" role="navigation" id="cart_cont" style="background: <?= $style[0]->btn_1_color;?> !important;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-cart"> <i style="color : #fff;" class="fa fa-shopping-cart fa-2x"> </i> <span style="color : #fff;" class="cartRespons"> Cart (<?php echo $this->cart->total_items(); ?> ) </span> </button>
-      <a style="color : #fff;margin-left:4rem;" class="navbar-brand titulo_carrito" href="/ov/dashboard" > <i class="fa fa-arrow-circle-left"></i> Atras &nbsp;</a> 
+      <a style="color : #fff;margin-left:4rem;" class="navbar-brand titulo_carrito" href="/ov/dashboard" > <i class="fa fa-arrow-circle-left"></i> Back &nbsp;</a>
       
       <!-- this part for mobile -
       <div class="search-box pull-right hidden-lg hidden-md hidden-sm">
@@ -81,7 +84,10 @@
         
         <div class="miniCartFooter  miniCartFooterInMobile text-right">
           <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="a_comprar()"> <i class="fa fa-money fa"></i> PAGAR!  </a> </div>
+          <a class="btn btn-sm btn-danger" onclick="ver_cart()">
+              <i class="fa fa-shopping-cart"> </i> SHOW CART </a>
+            <a class="btn btn-sm btn-primary" onclick="a_comprar()">
+                <i class="fa fa-money fa"></i> PAY IT!  </a> </div>
         <!--/.miniCartFooter--> 
         
       </div>
@@ -93,11 +99,11 @@
       <ul class="nav navbar-nav">
       <?php
       									$tiposMercancia = array(
-											1 => "Productos",
-											2 => "Servicios",
-											3 => "Combinados",
-											4 => "Paquetes de Inscripción",
-											5 => "Membresías"
+											1 => "Products",
+											2 => "Services",
+											#3 => "Combined",
+											#4 => "Packs",
+											5 => "Membership"
 										);
 
 								if(isset($mostrarMercancia)){									
@@ -159,7 +165,10 @@
             
             <div class="miniCartFooter text-right">
               <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="a_comprar()"> <i class="fa fa-money fa"></i> PAGAR!  </a> </div>
+              <a class="btn btn-sm btn-danger" onclick="ver_cart()">
+                  <i class="fa fa-shopping-cart"> </i> SHOW CART </a>
+                <a class="btn btn-sm btn-primary" onclick="a_comprar()">
+                    <i class="fa fa-money fa"></i> PAY IT!  </a> </div>
             <!--/.miniCartFooter--> 
             
           </div>
@@ -186,7 +195,7 @@
 	<div class="breadcrumbDiv col-lg-12">
       <ul class="breadcrumb">
         <li><a href="/"><i class="fa fa-home"></i> Inicio</a> </li>
-        <li class="active"><i class="fa fa-shopping-cart"></i> Carrito de Compras </li>
+        <li class="active"><i class="fa fa-shopping-cart"></i> Shopping cart </li>
       </ul>
     </div>
 <article class="col-lg-12 col-sm-4 col-md-3 col-lg-3">
@@ -199,7 +208,7 @@
 				<div class="jarviswidget jarviswidget-color-darken" id="wid-id-2" data-widget-editbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-fullscreenbutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-arrows-v"></i> </span>
-						<h2 class="font-md"><i>Categorias</i></h2>				
+						<h2 class="font-md"><i>Categories</i></h2>
 					</header>
 
 					<!-- widget div-->
@@ -449,7 +458,7 @@
 								className: "div_info_merc",
 								buttons: {
 									danger: {
-										label: "Cancelar",
+										label: "Cancel",
 										className: "btn-danger",
 										callback: function() {
 											}
@@ -541,8 +550,8 @@
 							else
 							{
 								bootbox.dialog({
-									message: "El producto se ha añadido al carrito",
-									title: "Exito",
+									message: "The items has been added to cart",
+									title: "success",
 									className: "",
 									buttons: {
 										success: {
@@ -571,7 +580,7 @@
 								className: "",
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 										}
@@ -601,7 +610,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar la mercancia ?'},
+					data: {message: 'Sure you want to remove this item ?'},
 				})
 				.done(function( msg )
 				{
@@ -610,7 +619,7 @@
 						title: 'Eliminar Mercancia',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								
@@ -627,7 +636,7 @@
 					
 							},
 								danger: {
-								label: "Cancelar!",
+								label: "Cancel!",
 								className: "btn-danger",
 								callback: function() {
 
@@ -651,7 +660,7 @@
 		$(document).ready(function() {
 			
 			pageSetUp();
-			
+            show_todos_categoria(3);
 			/*
 			 * Autostart Carousel
 			 */

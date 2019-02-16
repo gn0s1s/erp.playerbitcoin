@@ -457,7 +457,7 @@ function cobrar() {
 		title: 'Transacion',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 					iniciarSpinner();
@@ -474,7 +474,7 @@ function cobrar() {
 						title: '',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href='historial';
@@ -487,7 +487,7 @@ function cobrar() {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

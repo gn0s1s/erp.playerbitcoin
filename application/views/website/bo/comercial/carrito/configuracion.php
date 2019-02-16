@@ -155,7 +155,7 @@ function enviar()
 						title: 'Empresa',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								FinalizarSpinner();

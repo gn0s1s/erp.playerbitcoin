@@ -108,7 +108,7 @@ function enviar(){
 		title: 'Enviar Invitacion',
 		buttons: {
 			success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 						setiniciarSpinner();
@@ -125,7 +125,7 @@ function enviar(){
 							title: 'Enviando..',
 							buttons: {
 								success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function() {
 										location.href="/ov/cgeneral/invitacion_afiliar";
@@ -139,7 +139,7 @@ function enviar(){
 					}
 				},
 				danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 

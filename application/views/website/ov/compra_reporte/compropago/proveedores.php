@@ -23,15 +23,15 @@
             className: "",
             buttons: {
                 success: {
-                    label: "Aceptar",
+                    label: "Accept",
                     className: "btn-success",
                     callback: function () {
                         setiniciarSpinner();
                         Registrar(id);
                     }
                 },
-                cancelar: {
-                    label: "Cancelar",
+                Cancel: {
+                    label: "Cancel",
                     className: "btn-danger",
                     callback: function () {
                     }
@@ -54,7 +54,7 @@
                     className: "",
                     buttons: {
                         success: {
-                            label: "Aceptar",
+                            label: "Accept",
                             className: "btn-success",
                             callback: function () {
                                 window.location = "/ov/dashboard";

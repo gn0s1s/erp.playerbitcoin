@@ -185,7 +185,7 @@ function enviar()
 			title: 'Atención !!!',
 			buttons: {
 				success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 					location.href="/bo/configuracion/banner";

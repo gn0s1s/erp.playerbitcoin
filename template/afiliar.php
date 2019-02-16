@@ -34,11 +34,11 @@ try {
     //$body             = file_get_contents('contents.html');
 	//$body             = preg_replace('/\\\\/','', $body); //Strip backslashes
 	$Destination = 'contacto@smart-owner.com';
-	$Subject = 'BIENVENIDO A [[website]]';
+	$Subject = 'Welcome A [[website]]';
 	$Content = '
 	
 	<div style=\"background: #449; color: #fff\">
-        <h3>Bienvenido, '.$userData['username'].' Ha sido registrado en nuestro sistema</h3></div>
+        <h3>Welcome, '.$userData['username'].' Ha sido registrado en nuestro sistema</h3></div>
 	<p class="callout">
 			<strong>Para ingresar al sitio de clic <a class="btn btn-primary" href="'.$erplink.'">Aqui!</a></strong>
 						</p><!-- /Callout Panel -->						

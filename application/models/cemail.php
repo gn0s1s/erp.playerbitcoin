@@ -107,7 +107,7 @@ class Cemail extends CI_Model
 	function Sumarios ($type,$data){
 		$q = array(
 				($type==0) ? "Hola ".$data['username'].", te damos la bienvenida a tu oficina virtual de ".$data['site_name']."." : "", //welcome 
-				($type==1) ? "Bienvenido, ".$data['username']." Ha sido registrado en nuestro sistema." : "", //activate
+				($type==1) ? "Welcome, ".$data['username']." Ha sido registrado en nuestro sistema." : "", //activate
 				($type==2) ? "Your new email address on ".$data['site_name']."." : "", //change-email
 				($type==3) ? "Hola ".$data['username'].", Su peticion de pago esta siendo procesada." : "", //cobros
 				($type==4) ? "Hola ".$data['username'].", Su pago se ha recibido." : "", //cuentas-cobrar

@@ -332,7 +332,7 @@ function eliminar_afiliado(id){
 				title: 'Eliminar Afiliado',
 				/*buttons: {
 					success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							location.href="/bo/comercial/red_tabla";

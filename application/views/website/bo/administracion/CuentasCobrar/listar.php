@@ -52,7 +52,7 @@
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 										<center>	
 											<a title="Eliminar" href="#" class="txt-color-red"><i class="fa fa-times fa-3x"></i></a>
-											<br>Cancelar Pago</center>
+											<br>Cancel Pago</center>
 										</div>
 							</div>
 							<table  id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
@@ -91,7 +91,7 @@
 										<td><?php echo $cobro->estado; ?></td>
 										<td class='text-center'>
 											<a  style='cursor: pointer;' onclick="estado_cobro('<?php echo $cobro->id_venta; ?>','<?php echo $cobro->id; ?>')"  title = "Cambiar a Pago" class="txt-color-green"><i class="fa fa-check fa-3x"></i></a>
-											<a  style='cursor: pointer;' onclick="cancelar_cobro('<?php echo $cobro->id_venta; ?>')" title = "Cancelar Pago" class="txt-color-red"><i class="fa fa-times fa-3x"></i></a>
+											<a  style='cursor: pointer;' onclick="Cancel_cobro('<?php echo $cobro->id_venta; ?>')" title = "Cancel Pago" class="txt-color-red"><i class="fa fa-times fa-3x"></i></a>
 										</td>
 									</tr>
 									<?php } ?>
@@ -215,7 +215,7 @@ function estado_cobro(venta,historial, usuario)
 		title: titulo,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				iniciarSpinner();
@@ -249,7 +249,7 @@ function estado_cobro(venta,historial, usuario)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -261,7 +261,7 @@ function estado_cobro(venta,historial, usuario)
 	
 	}
 
-function cancelar_cobro(venta)
+function Cancel_cobro(venta)
 {
 	var msg = "¿Esta seguro de eliminar los datos de la venta?";
 	var	titulo = "Eliminar Cobro";
@@ -271,7 +271,7 @@ function cancelar_cobro(venta)
 		title: titulo,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				iniciarSpinner();
@@ -303,7 +303,7 @@ function cancelar_cobro(venta)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

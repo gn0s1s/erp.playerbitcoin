@@ -103,7 +103,7 @@
         
         <div class="miniCartFooter  miniCartFooterInMobile text-right">
           <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
+          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
         <!--/.miniCartFooter--> 
         
       </div>
@@ -158,7 +158,7 @@
             
             <div class="miniCartFooter text-right">
               <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
+              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="datos_comprador()"> COMPRAR! </a> </div>
             <!--/.miniCartFooter--> 
             
           </div>
@@ -417,7 +417,7 @@
 								className: "div_info_merc",
 								buttons: {
 									danger: {
-										label: "Cancelar",
+										label: "Cancel",
 										className: "btn-danger",
 										callback: function() {
 											}
@@ -623,7 +623,7 @@
 								className: "",
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 										}
@@ -938,7 +938,7 @@
 						className: "div",
 						buttons: {
 							danger: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "hide",
 								callback: function() {
 									}
@@ -975,7 +975,7 @@
 							className: "div_info_merc",
 							buttons: {
 								danger: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-danger",
 									callback: function() {
 										}

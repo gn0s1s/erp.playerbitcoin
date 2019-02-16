@@ -254,7 +254,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                         title: titulo,
                                                         buttons: {
                                                             success: {
-                                                                label: "Aceptar",
+                                                                label: "Accept",
                                                                 className: "btn-success",
                                                                 callback: function () {
 
@@ -273,7 +273,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                                 }
                                                             },
                                                             danger: {
-                                                                label: "Cancelar!",
+                                                                label: "Cancel!",
                                                                 className: "btn-danger",
                                                                 callback: function () {
 
@@ -316,7 +316,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                                     title: 'Eliminar Archivo',
                                                                     buttons: {
                                                                         success: {
-                                                                            label: "Aceptar",
+                                                                            label: "Accept",
                                                                             className: "btn-success",
                                                                             callback: function () {
 
@@ -331,7 +331,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                                                         title: 'Felicitaciones',
                                                                                         buttons: {
                                                                                             success: {
-                                                                                                label: "Aceptar",
+                                                                                                label: "Accept",
                                                                                                 className: "btn-success",
                                                                                                 callback: function () {
                                                                                                     location.href = "/bo/descargas/listar";
@@ -344,7 +344,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                                             }
                                                                         },
                                                                         danger: {
-                                                                            label: "Cancelar!",
+                                                                            label: "Cancel!",
                                                                             className: "btn-danger",
                                                                             callback: function () {
 

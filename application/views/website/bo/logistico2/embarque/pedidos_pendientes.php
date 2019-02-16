@@ -211,7 +211,7 @@
 				className: "",
 				buttons: {
 					danger: {
-						label: "Cancelar",
+						label: "Cancel",
 						className : "btn-danger",
 						callback: function(){
 							
@@ -246,7 +246,7 @@
 							className: "",
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function(){
 										window.location.href="/bo/logistico/surtido_embarques";
@@ -286,7 +286,7 @@
 							className: "",
 							buttons: {
 								success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "hide",
 								callback: function() {
 									}
@@ -313,7 +313,7 @@
 					className: "",
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							 

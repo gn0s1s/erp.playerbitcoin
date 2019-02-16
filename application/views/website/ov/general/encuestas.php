@@ -217,7 +217,7 @@
 		          	title: "Error!",
 		          	buttons: {
 							danger: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-danger",
 							callback: function() {
 									

@@ -119,7 +119,7 @@ function eliminar(id) {
 		title: 'Atención !!!',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -135,7 +135,7 @@ function eliminar(id) {
 						title: 'Atención !!!',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/tipo_red/mostrar_redes";
@@ -148,7 +148,7 @@ function eliminar(id) {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -175,7 +175,7 @@ function estado(estatus, id)
 				title: 'Atención !!!',
 				buttons: {
 					success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 						location.href="/bo/tipo_red/mostrar_redes";

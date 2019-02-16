@@ -180,7 +180,7 @@ function enviar() {
 						title: 'Calculo de Bonos',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								

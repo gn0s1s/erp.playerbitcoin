@@ -100,7 +100,7 @@
 																	</div>
 																</section>
 																<?php }?>
-																<section class="col col-2">Activo
+																<section class="col col-2">Active
 																	<div class="inline-group">
 																		<label class="radio">
 																		<input type="radio" value="1" name="activo" checked="">
@@ -267,7 +267,7 @@
 				className: "",
 				buttons: {
 					success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 						$.ajax({
@@ -282,7 +282,7 @@
 								className: "",
 								buttons: {
 									success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function(){
 											window.location.href="/bo/logistico/altas";
@@ -294,7 +294,7 @@
 					}
 				},
 				danger: {
-					label: "Cancelar",
+					label: "Cancel",
 					className: "btn-danger",
 					callback: function(){
 					
@@ -333,7 +333,7 @@
 							className: "",
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function(){
 										window.location.href="/bo/logistico/altas";
@@ -385,7 +385,7 @@
 							className: "",
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function(){
 										window.location.href="/bo/logistico/altas";

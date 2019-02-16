@@ -55,7 +55,7 @@
 						 <legend>Compras obligatorias</legend>
 						 <input type="hidden" value="<?=$empresa[0]->id_tributaria;?>" name="id" >
 						 <section id="usuario" class="col col-3">
-							 <label><h4>Membresia</h4>
+							 <label><h4>membership</h4>
 								 <input style="margin-left: 4rem;" type="checkbox" name="membresia" <?=$empresa[0]->membresia == 'ACT' ? "checked" : "";?> > 
 							 </label>
 						 </section>
@@ -146,7 +146,7 @@ function enviar()
 						title: 'Empresa',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/configuracion/entorno";

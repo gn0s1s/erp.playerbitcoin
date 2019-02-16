@@ -452,7 +452,7 @@
                                                                                             title: "Nueva Ciudad",
                                                                                             buttons: {
                                                                                                 submit: {
-                                                                                                    label: "Aceptar",
+                                                                                                    label: "Accept",
                                                                                                     className: "btn-success",
                                                                                                     callback: function () {
 
@@ -471,7 +471,7 @@
                                                                                                                         title: 'Ciudades',
                                                                                                                         buttons: {
                                                                                                                             success: {
-                                                                                                                                label: "Aceptar",
+                                                                                                                                label: "Accept",
                                                                                                                                 className: "btn-success",
                                                                                                                                 callback: function () {
                                                                                                                                 }
@@ -484,7 +484,7 @@
                                                                                                     }
                                                                                                 },
                                                                                                 danger: {
-                                                                                                    label: "Cancelar!",
+                                                                                                    label: "Cancel!",
                                                                                                     className: "btn-danger",
                                                                                                     callback: function () {
 
@@ -523,7 +523,7 @@
                                                                                             title: "Nuevo Estado",
                                                                                             buttons: {
                                                                                                 submit: {
-                                                                                                    label: "Aceptar",
+                                                                                                    label: "Accept",
                                                                                                     className: "btn-success",
                                                                                                     callback: function () {
 
@@ -542,7 +542,7 @@
                                                                                                                         title: 'Estados / Departamentos',
                                                                                                                         buttons: {
                                                                                                                             success: {
-                                                                                                                                label: "Aceptar",
+                                                                                                                                label: "Accept",
                                                                                                                                 className: "btn-success",
                                                                                                                                 callback: function () {
                                                                                                                                 }
@@ -555,7 +555,7 @@
                                                                                                     }
                                                                                                 },
                                                                                                 danger: {
-                                                                                                    label: "Cancelar!",
+                                                                                                    label: "Cancel!",
                                                                                                     className: "btn-danger",
                                                                                                     callback: function () {
 

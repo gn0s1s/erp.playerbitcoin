@@ -314,7 +314,7 @@
 					className: "",
                                         buttons: {
                                             success: {
-                                                label: "Aceptar",
+                                                label: "Accept",
                                                 className: "hide",
                                                 callback: function() {
 
@@ -344,7 +344,7 @@
                                                     className: "",
                                                     buttons: {
 							success: {
-                                                            label: "Aceptar",
+                                                            label: "Accept",
                                                             className: "hide",
                                                             callback: function() {
                                                             
@@ -515,7 +515,7 @@
 									className: "",
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "hide",
 										callback: function() {
 											}

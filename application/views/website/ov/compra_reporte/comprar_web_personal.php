@@ -87,7 +87,7 @@
         
         <div class="miniCartFooter  miniCartFooterInMobile text-right">
           <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a>
+          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a>
         </div>
         <!--/.miniCartFooter--> 
         
@@ -135,7 +135,7 @@
             
             <div class="miniCartFooter text-right">
               <h3 class="text-right subtotal"> Subtotal: $<?php echo $this->cart->total(); ?> </h3>
-              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> 
+              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a>
             </div>
             <!--/.miniCartFooter--> 
             
@@ -457,7 +457,7 @@
 								className: "div_info_merc",
 								buttons: {
 									danger: {
-										label: "Cancelar",
+										label: "Cancel",
 										className: "btn-danger",
 										callback: function() {
 											}
@@ -660,7 +660,7 @@
 								className: "",
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 										}
@@ -1085,7 +1085,7 @@
 								className: "",
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "hide",
 									callback: function() {
 										 window.location="/bo/administracion/login_web_personal";

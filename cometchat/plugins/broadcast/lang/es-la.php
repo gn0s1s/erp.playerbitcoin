@@ -7,7 +7,7 @@
 $broadcast_language[0] = 'Inicio de una transmisión de audio / vídeo';
 $broadcast_language[1] = 'Por favor, espere lo menos 10 segundos antes de intentar transmitir de nuevo.';
 $broadcast_language[2] = 'te ha enviado una solicitud de difusión de audio / video.';
-$broadcast_language[3] = 'Haga clic aquí para aceptarlo';
+$broadcast_language[3] = 'Haga clic aquí para Acceptlo';
 $broadcast_language[4] = 'o simplemente ignorar este mensaje.';
 $broadcast_language[5] = 'ha enviado correctamente una solicitud de transmisión de audio / video.';
 $broadcast_language[6] = 'ha aceptado tu solicitud de difusión de audio / video.';

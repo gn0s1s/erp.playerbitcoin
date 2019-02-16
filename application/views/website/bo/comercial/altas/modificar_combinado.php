@@ -92,7 +92,7 @@ $item = $mercancia[0];
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="prods">
                                     <?php  foreach($prods as $key_1) {?>
                                     <div id="<?= $i1 = $i1 + 1 ?>b">
-                                        <section class="col col-8"  style="width: 50%" id="ProductosPais" name="ProductosPais">Productos
+                                        <section class="col col-8"  style="width: 50%" id="ProductosPais" name="ProductosPais">productos
                                             <label class="select">
                                                 <select class="custom-scroll"  name="producto[]" id="producto[]">
                                                     <?php
@@ -141,7 +141,7 @@ $item = $mercancia[0];
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="servs"> 
                                     <?php foreach($servs as $key_1) {?>
                                     <div id="<?= $i2=$i2+1?>a">
-                                        <section class="col col-8"  style="width: 50%" id="ServicioPais" name="ServicioPais">Servicios
+                                        <section class="col col-8"  style="width: 50%" id="ServicioPais" name="ServicioPais">Services
                                                 <label class="select">
                                                     <select class="custom-scroll" name="servicio[]" id="servicio[]">
                                                         <?php foreach ($servicio as $key) {
@@ -381,7 +381,7 @@ function new_product(id)
 	
 
 	$('#prods').append('<div id="'+ib+'bj">'
-		+'<section class="col col-8" style="width: 50%" id="ProductosPais'+ib+'" name="ProductosPais'+ib+'">Productos'
+		+'<section class="col col-8" style="width: 50%" id="ProductosPais'+ib+'" name="ProductosPais'+ib+'">productos'
 		+'<label class="select">'
 		+'<select class="custom-scroll"  name="producto[]" id="producto[]">'
 		+'<!--<?php //foreach ($producto as $key){?>'
@@ -412,7 +412,7 @@ function new_service(id)
 {
 
 	$('#servs').append('<div id="'+ia+'aj" >'
-		+'<section class="col col-8" style="width: 50%" id="ServicioPais'+ia+'" name="ServicioPais'+ia+'">Servicios'
+		+'<section class="col col-8" style="width: 50%" id="ServicioPais'+ia+'" name="ServicioPais'+ia+'">Services'
 		+'<label class="select">'
 		+'<select class="custom-scroll" name="servicio[]" id="servicio[]">'
 		+'<!--<?php //foreach ($servicio as $key){?>'
@@ -913,7 +913,7 @@ function enviar() {
 						title: 'Felicitaciones',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								

@@ -268,7 +268,7 @@ function estado_proveedor(estatus, id)
 		title: titulo,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				
@@ -288,7 +288,7 @@ function estado_proveedor(estatus, id)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -331,7 +331,7 @@ function estado_proveedor(estatus, id)
 			title: 'Eliminar Proveedor de Mensajeria',
 			buttons: {
 				success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 					
@@ -346,7 +346,7 @@ function estado_proveedor(estatus, id)
 							title: 'Felicitaciones',
 							buttons: {
 								success: {
-								label: "Aceptar",
+								label: "Accept",
 								className: "btn-success",
 								callback: function() {
 									location.href="listar";
@@ -359,7 +359,7 @@ function estado_proveedor(estatus, id)
 					}
 				},
 					danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 
@@ -411,7 +411,7 @@ function estado_proveedor(estatus, id)
 					title: 'Atención !!',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							//location.href="listar";

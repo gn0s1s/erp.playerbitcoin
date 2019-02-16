@@ -162,7 +162,7 @@ src="/template/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></scri
                                                                 title: 'Atencion !!!',
                                                                 buttons: {
                                                                     success: {
-                                                                        label: "Aceptar",
+                                                                        label: "Accept",
                                                                         className: "btn-success",
                                                                         callback: function (msg) {
 
@@ -182,7 +182,7 @@ src="/template/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></scri
                                                                         title: 'Felicitaciones',
                                                                         buttons: {
                                                                             success: {
-                                                                                label: "Aceptar",
+                                                                                label: "Accept",
                                                                                 className: "btn-success",
                                                                                 callback: function (msg) {
 

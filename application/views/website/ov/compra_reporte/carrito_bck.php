@@ -28,17 +28,17 @@
 								</section>
 								<section class="col col-lg-2 col-md-2 col-sm-6 col-xs-12">
 									<label class="input">
-										<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="show_prod()"><i class='fa fa-search '></i>Productos</a>
+										<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="show_prod()"><i class='fa fa-search '></i>productos</a>
 									</label>
 								</section>
 								<section class="col col-lg-2 col-md-2 col-sm-6 col-xs-12">
 									<label class="input">
-										<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="show_serv()"><i class='fa fa-search '></i>Servicios</a>
+										<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="show_serv()"><i class='fa fa-search '></i>Services</a>
 									</label>
 								</section>
 								<section class="col col-lg-2 col-md-2 col-sm-6 col-xs-12">
 									<label class="input">
-										<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="show_comb()"><i class='fa fa-search '></i>Combinados</a>
+										<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="show_comb()"><i class='fa fa-search '></i>packs</a>
 									</label>
 								</section>			
 								<section class="col col-lg-2 col-md-2 col-sm-6 col-xs-12" id="busquedatodos">

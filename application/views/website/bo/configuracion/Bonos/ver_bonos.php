@@ -243,7 +243,7 @@
 					title: 'Eliminar Historial de Bono',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							//alert('dentro de funcion');
@@ -261,7 +261,7 @@
 									title: 'Atención',
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 											location.href="/bo/bonos/historial";
@@ -274,7 +274,7 @@
 							}
 						},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 

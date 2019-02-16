@@ -251,7 +251,7 @@ function eliminar(id) {
 		title: 'Eliminar Rango',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -267,7 +267,7 @@ function eliminar(id) {
 						title: '¡Atención!',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/rangos/listar";
@@ -280,7 +280,7 @@ function eliminar(id) {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

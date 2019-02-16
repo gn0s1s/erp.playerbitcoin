@@ -212,7 +212,7 @@ function new_ciudad(){
 				title: "Nueva Ciudad",
 				buttons: {
 					submit: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 
@@ -231,7 +231,7 @@ function new_ciudad(){
 								title: 'Ciudades',
 								buttons: {
 									success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 											}
@@ -244,7 +244,7 @@ function new_ciudad(){
 						}
 					},
 						danger: {
-						label: "Cancelar!",
+						label: "Cancel!",
 						className: "btn-danger",
 						callback: function() {
 

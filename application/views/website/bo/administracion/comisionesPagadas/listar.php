@@ -224,7 +224,7 @@
 					title: 'Eliminar Cobro',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							iniciarSpinner();
@@ -241,7 +241,7 @@
 									title: 'Atención',
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 											location.href="/bo/comisionesPagadas/index";
@@ -254,7 +254,7 @@
 							}
 						},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 

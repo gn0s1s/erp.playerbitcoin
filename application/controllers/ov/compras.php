@@ -3179,12 +3179,12 @@ function index()
 
             $variable = "";
             if($isVariable)
-                $variable = "Digite el monto a depositar en Dolares
+                $variable = "Enter amount in USD
                 <br/><hr/>
                 <i class='icon-prepend fa fa-dollar'></i>
                 <input id='costo_variable' onkeyup='validar_variable()'
                     name='costo_unidad' type='number' min='5' 
-                    placeholder='Digite monto en Dolares' class='input' />                         
+                    placeholder='at least 5 USD' class='input' />                         
                 <script>validar_variable();</script>";
 
             echo '<div class="product">
@@ -3236,7 +3236,7 @@ function index()
 		echo "<div class='row'><br>
                 <a id='agregar_item' class='btn btn-success'
                  onclick='comprar(".$id_mercancia.",".$id_tipo_mercancia.")'>
-                    <i class='fa fa-shopping-cart'></i> Comprar
+                    <i class='fa fa-shopping-cart'></i> ADD
                  </a>
              </div>
 			</form>";
@@ -3614,7 +3614,7 @@ function index()
 
             if($isVariable)
                 $puntos_comisionables = "<span style='font-size: 1.5rem;'>
-                        PUNTOS Y COSTO VARIABLES
+                        Specify the value
                         </span>";
 
             $imprimir ='	<div class="item col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -3647,7 +3647,7 @@ function index()
 						<a style="font-size: 1.7rem;" class="btn btn-'.$btn.'" onclick="'.$boton.'"> 
 						<span class="add2cart">
 						<i class="glyphicon glyphicon-shopping-cart"> 
-						</i> Depositar </span> </a> </div>
+						</i> Deposit </span> </a> </div>
 				 	</div>
 				</div>
 				';
@@ -3876,7 +3876,7 @@ function index()
         
         <div class="miniCartFooter  miniCartFooterInMobile text-right">
           <h3 class="text-right subtotal"> Subtotal: $'.$this->cart->total().' </h3>
-          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="a_comprar()"> COMPRAR! </a> </div>
+          <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="a_comprar()"> ADD! </a> </div>
         <!--/.miniCartFooter--> 
         
       </div>';
@@ -3957,7 +3957,7 @@ function index()
             
 	            <div class="miniCartFooter text-right">
 	              <h3 class="text-right subtotal"> Subtotal: $ '.$this->cart->total().' </h3>
-	              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i> VER CARRITO </a> <a class="btn btn-sm btn-primary" onclick="a_comprar()"> COMPRAR! </a> </div>
+	              <a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i class="fa fa-shopping-cart"> </i>SHOW CART</a> <a class="btn btn-sm btn-primary" onclick="a_comprar()"> ADD! </a> </div>
 	            <!--/.miniCartFooter--> 
             
           		</div>

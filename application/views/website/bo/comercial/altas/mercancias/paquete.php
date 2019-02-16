@@ -129,7 +129,7 @@
 															<section class="col col-xs-12 col-md-6 col-lg-6" id="ProductosPais" name="ProductosPais">
 																Productos <label class="select"> <select
 																	class="custom-scroll" name="producto[]">
-																		<option value="0">Ninguno</option>
+																		<option value="0">None</option>
 																<!--<?//foreach ($producto as $key){?>
 																	<option value="<?//=$key->id?>">
 																	<?//=$key->nombre?></option>
@@ -153,7 +153,7 @@
 															<section class="col col col-xs-12 col-md-6 col-lg-6" id="ServicioPais" name="ServicioPais">
 																Servicios <label class="select"> <select
 																	class="custom-scroll" name="servicio[]">
-																		<option value="0">Ninguno</option>
+																		<option value="0">None</option>
 																<!--<?//foreach ($servicio as $key){?>
 																<option value="<?//=$key->id?>">
 																<?//=$key->nombre?></option>
@@ -641,10 +641,10 @@ $(function()
 function new_product()
 {
 	$('#prods').append('<div id="'+ipj+'pj">'
-		+'<section class="col col-8" id="ProductosPais'+ipj+'" name="ProductosPais'+ipj+'">Productos'
+		+'<section class="col col-8" id="ProductosPais'+ipj+'" name="ProductosPais'+ipj+'">productos'
 		+'<label class="select">'
 		+'<select class="custom-scroll"  name="producto[]">'
-		+'<option value="0">Ninguno</option>'
+		+'<option value="0">None</option>'
 		+'<?php foreach ($producto as $key){?>'
 		+'<option value="<?=$key->id?>">'
 		+'<?=$key->nombre?></option>'
@@ -665,10 +665,10 @@ function new_product()
 function new_service()
 {
 	$('#servs').append('<div id="'+isj+'sj">'
-		+'<section class="col col-8" id="ServicioPais'+isj+'" name="ServicioPais'+isj+'">Servicios'
+		+'<section class="col col-8" id="ServicioPais'+isj+'" name="ServicioPais'+isj+'">Services'
 		+'<label class="select">'
 		+'<select class="custom-scroll" name="servicio[]">'
-		+'<option value="0">Ninguno</option>'
+		+'<option value="0">None</option>'
 		+'<?php foreach ($servicio as $key){?>'
 		+'<option value="<?=$key->id?>">'
 		+'<?=$key->nombre?></option>'
@@ -865,7 +865,7 @@ function dato_pais(codigo,nombre)
 			title: nombre,
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 
@@ -881,7 +881,7 @@ function dato_pais(codigo,nombre)
 								title: nombre,
 								buttons: {
 									success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 										}
@@ -893,7 +893,7 @@ function dato_pais(codigo,nombre)
 					}
 				},
 				danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 
@@ -923,7 +923,7 @@ $.ajax({
 		title: "Editar",
 		buttons: {
 			success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 				/*bootbox.dialog({
@@ -948,7 +948,7 @@ $.ajax({
 		title: "Prueba",
 		buttons: {
 			success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 				}
@@ -958,7 +958,7 @@ $.ajax({
 }
 },
 danger: {
-	label: "Cancelar!",
+	label: "Cancel!",
 	className: "btn-danger",
 	callback: function() {
 
@@ -982,7 +982,7 @@ function editar(id_merc)
 			title: 'Edicion',
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 						$("#update_merc").submit();
@@ -999,7 +999,7 @@ function eliminar(id)
 		title: "Eliminar",
 		buttons: {
 			success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 
@@ -1015,7 +1015,7 @@ function eliminar(id)
 							title: 'Alerta',
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 									}
@@ -1027,7 +1027,7 @@ function eliminar(id)
 				}
 			},
 			danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -1044,7 +1044,7 @@ function estatus(tipo,id)
 			title: "Activar",
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 
@@ -1060,7 +1060,7 @@ function estatus(tipo,id)
 								title: 'Activar',
 								buttons: {
 									success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 										}
@@ -1072,7 +1072,7 @@ function estatus(tipo,id)
 					}
 				},
 				danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 
@@ -1088,7 +1088,7 @@ function estatus(tipo,id)
 			title: "Descativar",
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function() {
 
@@ -1104,7 +1104,7 @@ function estatus(tipo,id)
 								title: 'Descativar',
 								buttons: {
 									success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 										}
@@ -1116,7 +1116,7 @@ function estatus(tipo,id)
 					}
 				},
 				danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 
@@ -1215,7 +1215,7 @@ function new_empresa()
 		title: "Editar",
 		buttons: {
 			submit: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 
@@ -1231,7 +1231,7 @@ function new_empresa()
 							title: 'Empresa',
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 									}
@@ -1243,7 +1243,7 @@ function new_empresa()
 				}
 			},
 			danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -1693,10 +1693,10 @@ function new_pack()
 		+'</section>'
 		+'<div class="row"><br /></div>'
 		+'<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="prods">'
-		+'<section class="col col-10">Productos'
+		+'<section class="col col-10">productos'
 		+'<label class="select">'
 		+'<select class="custom-scroll"  name="producto[]">'
-		+'<option value="0">Ninguno</option>'
+		+'<option value="0">None</option>'
 		+'<?php foreach ($producto as $key){?>'
 		+'<option value="<?=$key->id_mercancia?>">'
 		+'<?=$key->nombre?></option>'
@@ -1711,10 +1711,10 @@ function new_pack()
 		+'</section>'
 		+'</div>'
 		+'<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="servs">'
-		+'<section class="col col-10">Servicios'
+		+'<section class="col col-10">Services'
 		+'<label class="select">'
 		+'<select class="custom-scroll" name="servicio[]">'
-		+'<option value="0">Ninguno</option>'
+		+'<option value="0">None</option>'
 		+'<?php foreach ($servicio as $key){?>'
 		+'<option value="<?=$key->id_mercancia?>">'
 		+'<?=$key->nombre?></option>'
@@ -1737,7 +1737,7 @@ function new_pack()
 		title: "Agregar paquete",
 		buttons: {
 			submit: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 
@@ -1753,7 +1753,7 @@ function new_pack()
 							title: 'Paquete',
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function() {
 									}
@@ -1765,7 +1765,7 @@ function new_pack()
 				}
 			},
 			danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

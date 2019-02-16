@@ -63,7 +63,7 @@
 						<div class="widget-body">
 							<div class="tab-pane" id="s5">
 									<div class="row">
-										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-4"><h5><center>Productos en sistema</center></h5></div>
+										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-4"><h5><center>productos en sistema</center></h5></div>
 										<br>
 											<div class="col-xs-4 col-md-6 col-sm-4 col-lg-1" style="float: right;">
 												<center>
@@ -479,11 +479,11 @@ function editar(id_merc, code)
 function eliminar(id)
 {
 	bootbox.dialog({
-		message: " ¿ Esta seguro que desea eliminar la mercancia?. <br>Recuerde que esta acción no se puede deshacer.",
+		message: " Sure you want to remove this item?. <br>Recuerde que esta acción no se puede deshacer.",
 		title: "Eliminar",
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -500,7 +500,7 @@ function eliminar(id)
 						title: 'Atención !!!',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href = "/bo/comercial/listarMercancia";
@@ -513,7 +513,7 @@ function eliminar(id)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -531,7 +531,7 @@ function estatus(tipo,id)
 			title: "Atención !!!",
 			buttons: {
 				success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 
@@ -548,7 +548,7 @@ function estatus(tipo,id)
 					}
 				},
 					danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 
@@ -564,7 +564,7 @@ function estatus(tipo,id)
 			title: "Atención !!!",
 			buttons: {
 				success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 
@@ -582,7 +582,7 @@ function estatus(tipo,id)
 					}
 				},
 					danger: {
-					label: "Cancelar!",
+					label: "Cancel!",
 					className: "btn-danger",
 					callback: function() {
 

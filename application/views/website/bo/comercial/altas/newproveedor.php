@@ -516,7 +516,7 @@ function new_empresa()
 		title: "Nueva Empresa",
 		buttons: {
 			submit: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -535,7 +535,7 @@ function new_empresa()
 						title: 'Empresa',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									}
@@ -548,7 +548,7 @@ function new_empresa()
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

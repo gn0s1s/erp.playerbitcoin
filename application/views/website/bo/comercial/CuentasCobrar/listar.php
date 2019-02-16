@@ -194,7 +194,7 @@ function estado_cobro(venta,historial, usuario)
 		title: titulo,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				
@@ -227,7 +227,7 @@ function estado_cobro(venta,historial, usuario)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

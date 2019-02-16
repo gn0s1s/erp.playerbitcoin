@@ -169,7 +169,7 @@ function enviar()
 						title: 'Compropago',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/configuracion/compropago";

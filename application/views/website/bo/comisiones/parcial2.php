@@ -100,7 +100,7 @@
 								                <td><?=$nombres[$venta->id_user][0]->nombre." ".$nombres[$venta->id_user][0]->apellido?></td>
 								                <td><?=$rango[$venta->id_user]->rango?></td>
 								                <td><?=$segundo_sandwich[$venta->id_user]?></td>
-								                <td>Ninguno</td>
+								                <td>None</td>
 								                <td><?=$segundo_sandwich[$venta->id_user]?></td>
 								                <td>Banco</td>
 								                <td>Cuenta</td>

@@ -248,7 +248,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<table bgcolor="#999999">
 					<tr>
 						<td><img style="width:200px; height:150px;" src="<?=site_url('/wl.png')?>" alt="Networksoft"/></td>
-						<td align="right"><h6 class="collapse">Bienvenido</h6></td>
+						<td align="right"><h6 class="collapse">Welcome</h6></td>
 					</tr>
 				</table>
 				</div>
@@ -270,7 +270,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 				<tr>
 					<td>
 						
-						<h3>Bienvenido, <?php echo $username; ?></h3>
+						<h3>Welcome, <?php echo $username; ?></h3>
 						<p class="lead">Ha sido registrado en nuestro sistema.</p>
 						
 						<!-- A Real Hero (and a real human being) -->

@@ -139,7 +139,7 @@ function enviar()
 						title: 'paypal',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/configuracion/paypal";

@@ -225,7 +225,7 @@ function eliminar(id) {
 		title: 'Eliminar titulo',
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -241,7 +241,7 @@ function eliminar(id) {
 						title: '¡Atención!',
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								location.href="/bo/titulos/listar";
@@ -254,7 +254,7 @@ function eliminar(id) {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

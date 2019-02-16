@@ -590,7 +590,7 @@
                                                                             title: "Nueva Empresa",
                                                                             buttons: {
                                                                                 submit: {
-                                                                                    label: "Aceptar",
+                                                                                    label: "Accept",
                                                                                     className: "btn-success",
                                                                                     callback: function () {
 
@@ -609,7 +609,7 @@
                                                                                                         title: 'Empresa',
                                                                                                         buttons: {
                                                                                                             success: {
-                                                                                                                label: "Aceptar",
+                                                                                                                label: "Accept",
                                                                                                                 className: "btn-success",
                                                                                                                 callback: function () {
                                                                                                                 }
@@ -622,7 +622,7 @@
                                                                                     }
                                                                                 },
                                                                                 danger: {
-                                                                                    label: "Cancelar!",
+                                                                                    label: "Cancel!",
                                                                                     className: "btn-danger",
                                                                                     callback: function () {
 

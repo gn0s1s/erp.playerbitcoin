@@ -1539,7 +1539,7 @@ where(a.id_pais=b.Code)");
 	
 	function kill_impuesto()
 	{	
-		if(!$this->ProductosConImpuesto($_POST["id"])){
+		if(!$this->productosConImpuesto($_POST["id"])){
 			$this->db->query("delete from cat_impuesto where id_impuesto=".$_POST["id"]);
 			return true;
 		}else{

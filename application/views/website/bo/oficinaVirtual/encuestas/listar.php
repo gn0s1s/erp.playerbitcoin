@@ -184,7 +184,7 @@
 						title: "Activar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									
@@ -201,7 +201,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -217,7 +217,7 @@
 						title: "Descativar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									var datos={'tipo':'DES','id':id};
@@ -233,7 +233,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -251,7 +251,7 @@
 					title: "Eliminar Encuesta",
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 							$.ajax({
@@ -264,7 +264,7 @@
 										title: 'Eliminar Encuesta',
 										buttons: {
 											success: {
-											label: "Aceptar",
+											label: "Accept",
 											className: "btn-success",
 											callback: function(msg) {
 												
@@ -278,7 +278,7 @@
 							})
 							}
 						}, danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 								

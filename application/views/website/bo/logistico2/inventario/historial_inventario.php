@@ -332,7 +332,7 @@
 								className: "",
 								buttons: {
 									success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function(){
 											window.location.href="reportes";

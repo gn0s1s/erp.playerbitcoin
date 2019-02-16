@@ -249,7 +249,7 @@ function eliminar(id) {
 		title: 'Eliminar Usuario',
 		buttons: {
 			success: {
-				label: "Aceptar",
+				label: "Accept",
 				className: "btn-success",
 				callback: function() {
 				iniciarSpinner();
@@ -268,7 +268,7 @@ function eliminar(id) {
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 					FinalizarSpinner();

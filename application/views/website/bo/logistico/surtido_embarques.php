@@ -398,7 +398,7 @@
 			className: "",
 			buttons: {
 				success: {
-					label: "Aceptar",
+					label: "Accept",
 					className: "btn-success",
 					callback: function(){
 						var fecha=$("#datepicker").val();
@@ -422,7 +422,7 @@
 										className: "",
 										buttons: {
 											success: {
-												label: "Aceptar",
+												label: "Accept",
 												className: "btn-success",
 												callback: function(){
 													window.location.href="/bo/logistico/surtido_embarques";
@@ -455,7 +455,7 @@
 													className: "",
 													buttons: {
 														success: {
-															label: "Aceptar",
+															label: "Accept",
 															className: "btn-success",
 															callback: function(){
 																window.location.href="/bo/logistico/surtido_embarques";
@@ -482,7 +482,7 @@
 														className: "",
 														buttons: {
 															success: {
-																label: "Aceptar",
+																label: "Accept",
 																className: "btn-success",
 																callback: function(){
 																	window.location.href="/bo/logistico/surtido_embarques";
@@ -494,7 +494,7 @@
 											}
 										},
 										danger:{
-											label: "Cancelar",
+											label: "Cancel",
 											className: "btn-danger",
 											callback: function(){
 												
@@ -507,7 +507,7 @@
 					}
 				},
 				danger: {
-					label: "Cancelar",
+					label: "Cancel",
 					className : "btn-danger",
 					callback: function(){
 						
@@ -549,7 +549,7 @@
 							className: "",
 							buttons: {
 								success: {
-									label: "Aceptar",
+									label: "Accept",
 									className: "btn-success",
 									callback: function(){
 										window.location.href="/bo/logistico/surtido_embarques";

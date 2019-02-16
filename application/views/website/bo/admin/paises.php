@@ -77,7 +77,7 @@ function dato_pais(codigo,nombre)
 		title: nombre,
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 
@@ -93,7 +93,7 @@ function dato_pais(codigo,nombre)
 						title: nombre,
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								}
@@ -105,7 +105,7 @@ function dato_pais(codigo,nombre)
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 
@@ -134,7 +134,7 @@ function dato_pais_multiple(){
 		title: "Editar",
 		buttons: {
 			success: {
-			label: "Aceptar",
+			label: "Accept",
 			className: "btn-success",
 			callback: function() {
 				/*bootbox.dialog({
@@ -159,7 +159,7 @@ function dato_pais_multiple(){
 						title: "Prueba",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 								}
@@ -169,7 +169,7 @@ function dato_pais_multiple(){
 				}
 			},
 				danger: {
-				label: "Cancelar!",
+				label: "Cancel!",
 				className: "btn-danger",
 				callback: function() {
 

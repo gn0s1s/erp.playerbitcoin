@@ -250,7 +250,7 @@
                                                                                     title: 'Eliminar Grupo',
                                                                                     buttons: {
                                                                                         success: {
-                                                                                            label: "Aceptar",
+                                                                                            label: "Accept",
                                                                                             className: "btn-success",
                                                                                             callback: function () {
 
@@ -266,7 +266,7 @@
                                                                                                                 title: 'Felicitaciones',
                                                                                                                 buttons: {
                                                                                                                     success: {
-                                                                                                                        label: "Aceptar",
+                                                                                                                        label: "Accept",
                                                                                                                         className: "btn-success",
                                                                                                                         callback: function () {
                                                                                                                             location.href = "/bo/grupos/listar";
@@ -279,7 +279,7 @@
                                                                                             }
                                                                                         },
                                                                                         danger: {
-                                                                                            label: "Cancelar!",
+                                                                                            label: "Cancel!",
                                                                                             className: "btn-danger",
                                                                                             callback: function () {
 

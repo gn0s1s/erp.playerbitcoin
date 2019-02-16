@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head><title>BIENVENIDO A TU PROYECTO</title></head>
+	<head><title>Welcome A TU PROYECTO</title></head>
 	<body>
 		<div style="font-size-adjust: verdena; padding: 250px; border-radius:25px; border:25px; background-color: Lavender;">
 		<img src="http://oficina.pekcellgold.com/template/img/login.jpg" alt="login.jpg" width="500" height="200">

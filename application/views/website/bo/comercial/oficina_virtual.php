@@ -1392,7 +1392,7 @@
 						title: "Activar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									
@@ -1409,7 +1409,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -1425,7 +1425,7 @@
 						title: "Descativar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									var datos={'tipo':'DES','id':id};
@@ -1441,7 +1441,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -1459,7 +1459,7 @@
 						title: "Activar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									
@@ -1476,7 +1476,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -1492,7 +1492,7 @@
 						title: "Descativar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									var datos={'tipo':'DES','id':id};
@@ -1508,7 +1508,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -1526,7 +1526,7 @@
 						title: "Activar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									
@@ -1543,7 +1543,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -1559,7 +1559,7 @@
 						title: "Descativar",
 						buttons: {
 							success: {
-							label: "Aceptar",
+							label: "Accept",
 							className: "btn-success",
 							callback: function() {
 									var datos={'tipo':'DES','id':id};
@@ -1575,7 +1575,7 @@
 								}
 							},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 									
@@ -3182,7 +3182,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="checkbox">'
 													+'<input type="checkbox" id="activo" checked="checked" name="checkbox">'
-													+'<i></i>Activo</label>'
+													+'<i></i>Active</label>'
 											+'</section>'
 										+'</div>'
 										+'<div class="row">'
@@ -3248,7 +3248,7 @@
 													+'Publicar'
 												+'</button>'								
 												+'<button class="btn btn-sm btn-danger pull-left" type="button">'
-													+'Cancelar'
+													+'Cancel'
 												+'</button>'	
 											+'</div>'
 										+'</div>'

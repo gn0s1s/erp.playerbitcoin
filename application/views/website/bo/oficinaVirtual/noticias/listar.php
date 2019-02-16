@@ -176,7 +176,7 @@
 					title: 'Eliminar Noticia',
 					buttons: {
 						success: {
-						label: "Aceptar",
+						label: "Accept",
 						className: "btn-success",
 						callback: function() {
 								$.ajax({
@@ -191,7 +191,7 @@
 									title: 'Felicitaciones',
 									buttons: {
 										success: {
-										label: "Aceptar",
+										label: "Accept",
 										className: "btn-success",
 										callback: function() {
 											location.href="/bo/noticias/listar";
@@ -204,7 +204,7 @@
 							}
 						},
 							danger: {
-							label: "Cancelar!",
+							label: "Cancel!",
 							className: "btn-danger",
 							callback: function() {
 

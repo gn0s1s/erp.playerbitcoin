@@ -747,7 +747,7 @@ pt.id = cve.id_tarifa and co.Code = pm.id_pais and pm.estado = es.id and pm.muni
 			$this->estatusSurtidobyVenta (2,$venta);
 		}
 		
-		$productos = $this->productoSurtido ($embarque);
+		$productos = $this->productosurtido ($embarque);
 		
 		foreach($productos as $producto)
 		{
