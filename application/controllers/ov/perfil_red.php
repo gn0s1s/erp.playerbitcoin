@@ -174,7 +174,7 @@ class perfil_red extends CI_Controller
 	
 	private function printEspacioParaAfiliar($sponsor,$id_afiliado, $lado) {
 		echo "<li>
-				<a onclick=\"botbox('".$sponsor[0]->nombre."',".$id_afiliado.",".$lado.")\" href='javascript:void(0)'>Afiliar Aqui</a>
+				<a onclick=\"botbox('".$sponsor[0]->nombre."',".$id_afiliado.",".$lado.")\" href='javascript:void(0)'>Affiliate Aqui</a>
 			  </li>	";
 	}
 
@@ -505,7 +505,7 @@ class perfil_red extends CI_Controller
 		$id=$this->tank_auth->get_user_id();
 		
 		 if($this->general->isActived($id)!=0){
-		 	redirect('/ov/compras/carrito');
+		 	redirect('/shoppingcart');
 		 } 
 		
 		$id = $this->tank_auth->get_user_id();
@@ -594,7 +594,7 @@ class perfil_red extends CI_Controller
 		$id              = $this->tank_auth->get_user_id();
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 	
@@ -619,7 +619,7 @@ class perfil_red extends CI_Controller
 		$id = $this->tank_auth->get_user_id();
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$id_red          = $_GET['id'];
@@ -752,7 +752,7 @@ class perfil_red extends CI_Controller
 		$id              = $this->tank_auth->get_user_id();
 		
 		if($this->general->isActived($id)!=0){
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 	
 		$id_red          = $_GET['id'];
@@ -1598,7 +1598,7 @@ class perfil_red extends CI_Controller
 
                               <div>
                                 <input type="checkbox" name="saveInfo" id="saveInfoid" id="salvar_taj">
-                                <label for="saveInfoid">&nbsp;Guardar la información de mi tarjeta de Crédito</label>
+                                <label for="saveInfoid">&nbsp;Guardar la información de my tarjeta de Crédito</label>
                               </div>
                             </div>
                             <!--creditCard-->

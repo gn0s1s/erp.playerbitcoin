@@ -38,14 +38,14 @@
                     <header>
                         <span class="widget-icon"> <i class="fa fa-bookmark"></i>
                         </span>
-                        <h2>Datos de la Empresa Multinivel</h2>
+                        <h2>Datos of the Empresa Multinivel</h2>
                     </header>
 
                     <!-- widget div-->
                     <div>
                         <form id="form_empresa" method="post" action="/bo/admin/empresa_multinivel" role="form" class="smart-form">
                             <fieldset>
-                                <legend>Información de la factura de la Empresa</legend>
+                                <legend>Information of the factura of the Empresa</legend>
                                 <input type="hidden" value="<?= $empresa[0]->id_tributaria; ?>" name="id" >
                                 <section id="usuario" class="col col-3">
                                     <label class="input">Identificación Tributaria
@@ -89,7 +89,7 @@
                                          </section>-->
                             </fieldset>
                             <fieldset>
-                                <legend>Dirección de la empresa</legend>
+                                <legend>Dirección of the empresa</legend>
                                 <div id="dir" class="row">
                                     <section class="col col-3">
                                         País

@@ -6,7 +6,7 @@ function iniciarSpinner(){
 	
 	var code='<div id="spinner-div"></div>';
 	
-	$("#content").append(code)
+	$("#content").append(code);
 	
 	setiniciarSpinner();
 			
@@ -47,4 +47,6 @@ function FinalizarSpinner(){
 	$("#spinner-div").html('');
 	$("#spinner-div").removeClass("modal-backdrop fade in");
 	$("#spinner-div").remove();
+    //del_spinner_translate();
+
 }

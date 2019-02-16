@@ -4,51 +4,51 @@
 				
 												<address>
 													<h4 class="semi-bold"><?=$empresa[0]->nombre?></h4>
-													<abbr title="Phone">Identificador tributario:</abbr><?="\t".$empresa[0]->id_tributaria?>
+													<abbr title="Phone">IDN:</abbr><?="\t".$empresa[0]->id_tributaria?>
 													<br>
-													<abbr title="Phone">Dirección:</abbr><?=$empresa[0]->direccion?>
+													<abbr title="Phone">Address/Street:</abbr><?=$empresa[0]->direccion?>
 													<br>
-													<abbr title="Phone">Ciudad:</abbr><?=$empresa[0]->ciudad?>
+													<abbr title="Phone">City/Town:</abbr><?=$empresa[0]->ciudad?>
 													<br>
 													<abbr title="Phone">Tel:</abbr>&nbsp;<?=$empresa[0]->fijo?>
 												</address>
 											</div>
 											</br>
 											<div class="pull-right">
-												<h1 class="font-300">Factura de venta</h1>
+												<h1 class="font-300">Shopping Bill</h1>
 											</div>
 											<div class="clearfix"></div>
 											<br>
 											<div class="row">
 												<div class="col-sm-9">
 													<address>
-														<strong>Facturar a:</strong>
+														<strong>invoice :</strong>
 														<br>
 														<strong>Señor (a). <?php echo $datos_afiliado[0]->nombre." ".$datos_afiliado[0]->apellido;?></strong>
 														<br>
-														<abbr title="Phone">DNI:</abbr><?php echo $datos_afiliado[0]->keyword;?>
+														<abbr title="Phone">IDN:</abbr><?php echo $datos_afiliado[0]->keyword;?>
 														<br>
-														<abbr title="Phone">Dirección:</abbr><?php echo $pais_afiliado[0]->direccion;?>
+														<abbr title="Phone">Address/State:</abbr><?php echo $pais_afiliado[0]->direccion;?>
 														<br>
-														<abbr title="Phone">País:</abbr><?php echo $pais_afiliado[0]->nombrePais;?> <img class="flag flag-<?=strtolower($pais_afiliado[0]->codigo)?>">
+														<abbr title="Phone">Country:</abbr><?php echo $pais_afiliado[0]->nombrePais;?> <img class="flag flag-<?=strtolower($pais_afiliado[0]->codigo)?>">
 														<br>
-														<abbr title="Phone">Email:</abbr> <?php echo $datos_afiliado[0]->email;?>
+														<abbr title="Phone">E-mail:</abbr> <?php echo $datos_afiliado[0]->email;?>
 													</address>
 												</div>
 												<div class="col-sm-3">
 													<div>
 														<div>
-															<strong>FACTURA NO :</strong>
-															<span class="pull-right"> <?php echo $_POST['id'];?> </span>
+															<strong>order # :</strong>
+															<span class="pull-right"> <?php echo $id_venta;?> </span>
 														</div>
 				
 													</div>
 													<div>
 														<div class="">
-															<abbr title="Phone"><strong>Fecha de expedición:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
+															<abbr title="Phone"><strong>Invoicing date:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
 															<br>
 															<br>
-															<abbr title="Phone"><strong>Fecha de vencimiento:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
+															<abbr title="Phone"><strong>Expiring date:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
 														</div>
 				
 													</div>
@@ -66,11 +66,11 @@
 											<table class="table table-hover">
 												<thead>
 													<tr>
-														<th class="text-center">Cantidad</th>
+														<th class="text-center">QUANTITY</th>
 														<th>ITEM</th>
-														<th>DESCRIPCION</th>
-														<th>PRECIO</th>
-														<th>IMPUESTO</th>
+														<th>DESCRIPTION</th>
+														<th>PRICE</th>
+														<th>TAXES</th>
 														<th>SUBTOTAL</th>
 														<th></th>
 													</tr>
@@ -106,7 +106,7 @@
 												<div class="row">
 													<div class="col-sm-12">
 														<div class="invoice-sum-total pull-right">
-															<h3><strong>Total a Pagar: <span class="text-success">$ <?php echo $total;?></span></strong></h3>
+															<h3><strong>Total Purchase: <span class="text-success">$ <?php echo $total;?></span></strong></h3>
 														</div>
 													</div>
 				
@@ -115,7 +115,7 @@
 											</div>
 											<div class="panel panel-default">
   												<div class="panel-body">
-													<abbr title="Phone">Observaciones:</abbr><span class="center"> <?php echo $empresa[0]->comentarios;?> </span>
+													<abbr title="Phone">notes:</abbr><span class="center"> <?php echo $empresa[0]->comentarios;?> </span>
   												</div>
 											</div>
 										</div>

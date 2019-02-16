@@ -39,7 +39,7 @@ $item = $mercancia[0];
                                 <legend>País</span></legend>
                                 <fieldset>
                                     <section class="col col-12" style="width: 50%;">
-                                        País de la mercancía 
+                                        País of the mercancía 
                                         <label class="select"> 
                                             <select id="pais2" required name="pais" onChange="select_pais()">
                                                 <?php
@@ -59,7 +59,7 @@ $item = $mercancia[0];
                                         </label>
                                     </section>
                                 </fieldset>
-                                <legend>Datos del Paquete de inscripcion</legend>
+                                <legend>Datos del Paquete of inscripcion</legend>
                                 <fieldset>
 
                                     <section class="col col-6" style="width: 50%">
@@ -68,12 +68,12 @@ $item = $mercancia[0];
                                         </label>
                                     </section>
                                     <section class="col col-6" style="width: 50%">
-                                        <label class="input">Tiempo de caducidad
+                                        <label class="input">Tiempo of caducidad
                                             <input required placeholder="En días" type="text" id="caducidad" name="caducidad" value='<?php echo $data_merc[0]->caducidad ?>'>
                                         </label>
                                         <p class="note">
                                             <strong>Nota:</strong>
-                                            Si no tiene tiempo de caducidad, por favor coloque un 0 (cero)
+                                            Si no tiene tiempo of caducidad, por favor coloque un 0 (cero)
                                         </p>
                                     </section>
 
@@ -131,7 +131,7 @@ $item = $mercancia[0];
                                                 </section>
 
                                                 <section class="col col-4" style="width: 50%">
-                                                    <label class="input">Cantidad de productos <input
+                                                    <label class="input">Cantidad of productos <input
                                                             required type="number" min="1" name="n_productos[]" id="prod_qty"
                                                             value='<?= $key_1->cantidad ?>'>
                                                     </label>
@@ -181,7 +181,7 @@ $item = $mercancia[0];
                                                 </section>
 
                                                 <section class="col col-4" style="width: 50%">
-                                                    <label class="input">Cantidad de servicios <input
+                                                    <label class="input">Cantidad of servicios <input
                                                             required type="number" min="1" name="n_servicios[]" id="serv_qty"
                                                             value='<?= $key_1->cantidad ?>'>
                                                     </label>
@@ -232,14 +232,14 @@ $item = $mercancia[0];
                                         </section>
 
                                         <section class="col col-2" style="width: 50%;">
-                                            <label class="input"> Tiempo mínimo de entrega 
+                                            <label class="input"> Tiempo mínimo of entrega 
                                                 <input placeholder="En días" type="number" name="entrega"
                                                     id="entrega" value='<?= $item->entrega ?>'>
                                             </label>
                                         </section>		
 
                                         <section class="col col-3" style="width: 50%;">
-                                            <label class="input"> Puntos comisionables 
+                                            <label class="input"> Points of commissions 
                                                 <input type="number" min="0" max="" name="puntos_com"
                                                     id="puntos_com"
                                                     value='<?= $item->puntos_comisionables ?>'>
@@ -369,8 +369,8 @@ $item = $mercancia[0];
                                             </span><input id="imagen_mr"
                                                   placeholder="Agregar alguna imágen" type="text">
                                         </div>
-                                        <small><cite title="Source Title">Para ver el archivo que va a
-                                                cargar, pulse con el puntero en el boton de "Buscar"</cite>
+                                        <small><cite title="Source Title">Para ver the archivo que va a
+                                                cargar, pulse con the puntero on the boton of "Buscar"</cite>
                                         </small>
                                     </section>
 
@@ -417,7 +417,7 @@ function new_product(i)
 		+'</label>'
 		+'</section>'
 		+'<section class="col col-4" style="width: 50%">'
-		+'<label class="input">Cantidad de productos'
+		+'<label class="input">Cantidad of productos'
 		+'<input type="number" min="1" name="n_productos[]" id="prod_qty" >'
 		+'</label>'
 		+'</section>'
@@ -464,7 +464,7 @@ function new_service(i)
 		+'</section>'
 		
 		+'<section class="col col-4" style="width: 50%">'
-		+'<label class="input">Cantidad de servicios'
+		+'<label class="input">Cantidad of servicios'
 		+'<input type="number" min="1" name="n_servicios[]" id="serv_qty" >'
 		+'</label>'
 		+'</section>'
@@ -885,7 +885,7 @@ ImpuestosPais();
 		enviar();
 
 	}else{
-		alert("No hay ningun producto o servicio para este pais, debe darlo de alta primero");
+		alert("No hay ningun producto o servicio para este pais, debe darlo of alta primero");
 	}
 
 });*/
@@ -929,7 +929,7 @@ function enviar() {
 						.done(function( msg ) {
 
 							bootbox.dialog({
-						message: "Se ha modificado el paquete.",
+						message: "Se ha modificado the paquete.",
 						title: 'Felicitaciones',
 						buttons: {
 							success: {

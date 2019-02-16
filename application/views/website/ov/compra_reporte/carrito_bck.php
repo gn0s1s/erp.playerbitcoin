@@ -456,7 +456,7 @@
 				{
 					if(qty>5||qty<1)
 					{
-						alert('La cantidad de mercancia de un tipo añadida al carrito debe de estar entre 1 y 5');
+						alert('La cantidad of mercancia of un tipo añadida al carrito debe of estar entre 1 & 5');
 					}
 					else
 					{

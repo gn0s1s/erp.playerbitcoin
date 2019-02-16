@@ -244,7 +244,7 @@ function eliminar(id) {
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el impuesto ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the impuesto ?'},
 		})
 		.done(function( msg )
 		{

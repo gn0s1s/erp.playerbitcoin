@@ -10,7 +10,7 @@
 						<h1 class="page-title txt-color-blueDark">
 						<!-- PAGE HEADER -->
 						<a href="/ov/dashboard">
-						<i class="fa fa-home"></i>Home</a> > Billetera</h1>
+						<i class="fa fa-home"></i>Home</a> > Profit Wallet</h1>
 					</div>
 					<!-- end col -->
 				</div>
@@ -46,7 +46,7 @@
 											-->
 											<header>
 												<span class="widget-icon"> </span>
-												<h2>Billetera</h2>
+												<h2>Profit Wallet</h2>
 							
 											</header>
 							

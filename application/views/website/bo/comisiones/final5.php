@@ -24,7 +24,7 @@
 						<div class="col-sm-12 col-md-12 col-lg-12">
 							<div class="row">
 								<div class="col-sm-12 col-md-12 col-lg-12">
-									<!--Inica la secciion de la perfil y red-->
+									<!--Inica the secciion of the Profile & red-->
 									<div class="well">
 										<div class="row">
 											<div class="col-sm-3">
@@ -47,7 +47,7 @@
 											</div>
 										</div>
 									</div>
-									<!--Termina la secciion de perfil y red-->
+									<!--Termina the secciion of Profile & red-->
 								</div>
 							</div>
 						</div>

@@ -357,12 +357,12 @@
 			         url: "insert_coment",
 			         success: function(){
 			              alert("Tu comentario fue añadido con exito");
-			              location.href="/ov/escuela_negocios/videos";
+			              location.href="/ov/videos";
 			         }
 				});
 			}
 		</script>
-		<!-- Scripts de la imaginacion chevre del autor de la pagina-->
+		<!-- Scripts of the imaginacion chevre del autor of the pagina-->
 			<script type="text/javascript">
 		
 		// DO NOT REMOVE : GLOBAL FUNCTIONS!

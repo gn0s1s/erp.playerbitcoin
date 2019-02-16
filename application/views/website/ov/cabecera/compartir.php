@@ -177,7 +177,7 @@
 										                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 										                    </div>
 										                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-										                        <h1>Arrastra tus archivos o da clic para buscarlos en tu computadora</h1>
+										                        <h1>Arrastra tus archivos o da clic para buscarlos on tu computadora</h1>
 										                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 										                        </div><i class="fa fa-file fa-5x"></i>
 										                    </div>

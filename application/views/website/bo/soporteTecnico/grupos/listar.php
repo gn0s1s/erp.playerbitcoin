@@ -10,7 +10,7 @@
 								<a href="/bo/configuracion/">Configuración</a> 
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a>
+								<a href="/bo/configuracion/soporte_tecnico">Support</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/grupos_soporte_tecnico">Grupos</a> > Listar
@@ -74,7 +74,7 @@
 													<th>ID</th>
 													<th>Nombre</th>
 													<th>Tipo</th>
-													<th>Red</th>
+													<th>Network</th>
 													<th>Acciones</th>
 												</tr>
 											</thead>
@@ -248,7 +248,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar El grupo ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the grupo ?'},
 	})
 	.done(function( msg )
 	{

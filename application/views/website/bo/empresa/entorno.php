@@ -52,7 +52,7 @@
 					<div>
 						<form id="form_empresa" method="post" action="/bo/admin/entorno_empresa" role="form" class="smart-form">
 					 <fieldset>
-						 <legend>Compras obligatorias</legend>
+						 <legend>Required Purchases </legend>
 						 <input type="hidden" value="<?=$empresa[0]->id_tributaria;?>" name="id" >
 						 <section id="usuario" class="col col-3">
 							 <label><h4>membership</h4>
@@ -91,7 +91,7 @@
 					 </fieldset>
 					 
 					 <fieldset>
-						 <legend>Puntos Comisionables personales en el MES</legend>
+						 <legend>Points of commissions personales on the MES</legend>
 						 <label style="margin: 1rem;width: 10rem;" for="" class="input">
 							<i class="icon-prepend fa fa-sort-numeric-asc"></i>
 							<input id="puntos_personales" class="form-control" name="puntos_personales" placeholder="" required="" type="number" value="<?=$empresa[0]->puntos_personales;?>">

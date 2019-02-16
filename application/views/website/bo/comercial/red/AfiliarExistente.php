@@ -8,14 +8,14 @@
 				<?php if($this->tank_auth->get_user_id()<2){?>
 				<span>
 					> <a href="/bo/comercial">Comercial</a> 
-					> <a href="/bo/comercial/red">Red</a>
-					> <a href="/bo/usuarios/afiliar">Tipo de Afiliacion</a>
+					> <a href="/bo/comercial/red">Network</a>
+					> <a href="/bo/usuarios/afiliar">Tipo of Afiliacion</a>
 					> Afiliar Existente
 				</span>
 				<?php }else {?>
 				<span>
-					> <a href="/ov/perfil_red/afiliar?tipo=1">Afiliar</a> 
-					> Seleccion de Red
+					> <a href="/ov/perfil_red/afiliar?tipo=1">Affiliate</a>
+					> Seleccion of Network
 				</span>
 				<?php }?>
 			</h1>
@@ -69,7 +69,7 @@
 													<form id="register" class="smart-form">
 														<fieldset>
 
-															<legend>Información de cuenta</legend>
+															<legend>Information of cuenta</legend>
 															<section class="col col-4">
 																<label class="input">RED
 																	<select class="form-control input-sm" id="red" name="red" onchange="use_username()">
@@ -256,7 +256,7 @@ function Crear() {
 				 	
 				 );
 				var mensajes = new Array( 
-					"Por favor ingresa un nombre de usuario",
+					"Por favor ingresa un nombre of usuario",
 				 	"Por favor ingresa un correo"
 				 );
 
@@ -264,7 +264,7 @@ function Crear() {
 					"#username"
 				);
 				var mensajess=new Array(
-					"El nombre de usuario no puede contener espacios en blanco"
+					"El nombre of usuario no puede contener espacios on blanco"
 				);
 				var validacion_=valida_espacios(idss,mensajess);
 				var validacion=valida_vacios(ids,mensajes);
@@ -334,7 +334,7 @@ $("#plan4").click(function(event) {
 });
 
 /*
-CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK EN ELLOS
+CODIGO PARA QUITAR ELEMENTO HACIENDO CLICK on ELLOS
 $("input").click(function() {
 $( this ).slideUp();
 $( this ).remove();
@@ -382,7 +382,7 @@ function use_username()
 		}else{
 			$("#usuario2").html('<div id="msg_usuario" class="alert alert-danger fade in">'
 						+'<i class="fa-fw fa fa-check"></i>'
-						+'<strong>Error </strong> Username no esta registrado en el sistema o Ya esta registrado en la red.'
+						+'<strong>Error </strong> Username no esta registrado on the sistema o Ya esta registrado on the Network.'
 					+'</div>')
 			$('#boton').attr('disabled','disabled');
 			}
@@ -411,7 +411,7 @@ function use_mail()
 			$("#correo2").html('<div id="msg_correo" class="alert alert-danger fade in">'
 					
 						+'<i class="fa-fw fa fa-check"></i>'
-						+'<strong>Error </strong> Email no esta registrado en el sistema'
+						+'<strong>Error </strong> Email no esta registrado on the sistema'
 					+'</div>')
 			}
 		

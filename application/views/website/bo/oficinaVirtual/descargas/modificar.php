@@ -18,7 +18,7 @@
                          id="busquedatodos">
                     <label class="label">Grupo</label> <label class="select"> 
                         <select name="grupo" id="grupo" required>
-                            <option value="0">Selecciona el grupo</option>
+                            <option value="0">Selecciona the grupo</option>
                             <?php foreach ($grupos as $grupo) {
                                 if ($grupo->id == $archivo[0]->id_grupo) {
                                     ?>
@@ -54,7 +54,7 @@
             <div class="row">
                 <section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"
                          id="busquedatodos">
-                    <label class="label">Estado</label> <label class="select"> 
+                    <label class="label">Status</label> <label class="select"> 
                         <select name="estado" id="estado" required>
                             <?php if ($archivo[0]->status == "ACT") { ?>
                                 <option value="ACT" selected>Activado</option>
@@ -77,7 +77,7 @@
                             <input id="file" onchange="this.parentNode.nextSibling.value = this.value" 
                                    name="userfile1" type="file" >Buscar
                         </span><input name="file_nme"
-                              placeholder="Seleccione el archivo"
+                              placeholder="Seleccione the archivo"
                               type="text" id="file_frm" required readonly="readonly">
                     </div>
                 </section>

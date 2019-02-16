@@ -95,9 +95,9 @@ if ($this->session->flashdata ( 'error' )) {
 							<form id="entradas" class="smart-form" method="POST" role="form">
 
 								<fieldset>
-									<legend>Datos de Entrada</legend>
+									<legend>Datos of Entrada</legend>
 									<section class="col col-3">
-										<label class="select">Tipo de Entrada <select id="documento"
+										<label class="select">Tipo of Entrada <select id="documento"
 											required name="documento">
 												<option value="" >--------Elije un tipo--------------</option>
                                                            <?php foreach ($documento as $key){?>

@@ -230,13 +230,13 @@ $(document).ready(function() {
 	
 function estado_ebook(estatus, id)
 {
-	var msg = "¿Desea desactivar el ebook?";
+	var msg = "¿Desea desactivar the ebook?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el ebook?";
+		msg = "¿Desea desactivar the ebook?";
 		titulo = "Desactivar Ebook";
 	}else{
-		msg = "¿Desea activar el ebook?";
+		msg = "¿Desea activar the ebook?";
 		titulo = "Activar Ebook";
 	}
 		
@@ -300,7 +300,7 @@ function estado_ebook(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el ebook ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the ebook ?'},
 		})
 		.done(function( msg )
 		{
@@ -320,7 +320,7 @@ function estado_ebook(estatus, id)
 						}).done(function( msg )
 						{
 							bootbox.dialog({
-							message: "Se ha eliminado el E-Book.",
+							message: "Se ha eliminado the E-Book.",
 							title: 'Felicitaciones',
 							buttons: {
 								success: {

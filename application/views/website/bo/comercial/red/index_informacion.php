@@ -11,10 +11,10 @@
 								<a href="/bo/comercial">Comercial</a>
 							</span>
 							<span>>
-								<a href="/bo/comercial/red">Red</a>
+								<a href="/bo/comercial/red">Network</a>
 							</span>
 							<span>>
-								<a href="/bo/comercial/tipos_de_red">Selección de Red</a> > Información
+								<a href="/bo/comercial/tipos_de_red">Selección of Network</a> > Información
 							</span>
 						</h1>
 					</div>

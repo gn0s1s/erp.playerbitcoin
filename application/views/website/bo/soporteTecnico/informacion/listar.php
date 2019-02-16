@@ -11,13 +11,13 @@
 								<a href="/bo/configuracion/">Configuración</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> 
+								<a href="/bo/configuracion/soporte_tecnico">Support</a> 
 							</span>
 							<span>>
 								<a href="/bo/configuracion/informacion_ver_redes?id=0">Ver Redes</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/informacion?id_red=<?php echo $id_red;?>">Información</a> > Listar
+								<a href="/bo/configuracion/informacion?id_red=<?php echo $id_red;?>">Information</a> > Listar
 							</span>
 						</h1>
 					</div>
@@ -237,13 +237,13 @@ $(document).ready(function() {
 	
 function estado_archivo(estatus, id)
 {
-	var msg = "¿Desea desactivar el archivo?";
+	var msg = "¿Desea desactivar the archivo?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el archivo?";
+		msg = "¿Desea desactivar the archivo?";
 		titulo = "Desactivar archivo";
 	}else{
-		msg = "¿Desea activar el archivo?";
+		msg = "¿Desea activar the archivo?";
 		titulo = "Activar archivo";
 	}
 		
@@ -305,7 +305,7 @@ function estado_archivo(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el archivo ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the archivo ?'},
 		})
 		.done(function( msg )
 		{
@@ -325,7 +325,7 @@ function estado_archivo(estatus, id)
 						}).done(function( msg )
 						{
 							bootbox.dialog({
-							message: "Se ha eliminado el Archivo.",
+							message: "Se ha eliminado the Archivo.",
 							title: 'Felicitaciones',
 							buttons: {
 								success: {

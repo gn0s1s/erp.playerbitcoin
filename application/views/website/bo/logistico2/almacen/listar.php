@@ -247,13 +247,13 @@ $(document).ready(function() {
 	
 function estado_almacen(estatus, id)
 {
-	var msg = "¿Desea desactivar el almacen?";
+	var msg = "¿Desea desactivar the almacen?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el almacen?";
+		msg = "¿Desea desactivar the almacen?";
 		titulo = "Desactivar almacen";
 	}else{
-		msg = "¿Desea activar el almacen?";
+		msg = "¿Desea activar the almacen?";
 		titulo = "Activarcedi";
 	}
 		
@@ -315,7 +315,7 @@ function editar_almacen(id){
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el almacen ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the almacen ?'},
 		})
 		.done(function( msg )
 		{

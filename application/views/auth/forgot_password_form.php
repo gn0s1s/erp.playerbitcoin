@@ -72,7 +72,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 		<header id="header" class="fade in">
 			<br />
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h1>Sistema Integral de Operaciones</h1>
+				<h1>Sistema Integral of Operaciones</h1>
 			</div>
 		</header>
 
@@ -87,7 +87,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 						<div class="well no-padding">
 							<form id="login-form" method="POST" action="/auth/forgot_password" class="smart-form client-form">
 								<header>
-									Recuperar mi contraseña
+									Recuperar my contraseña
 								</header>
 
 								<fieldset>
@@ -104,7 +104,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 									×
 								</button>
 								<i class="fa-fw fa fa-times"></i>
-								<strong>Error!</strong> El email no existe.
+								<strong>Error!</strong> the email no existe.
 							</div>';
 					}
 				}
@@ -114,7 +114,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 										<label class="label">Correo</label>
 										<label class="input"> <i class="icon-append fa fa-user"></i>
 											<input required type="email" name="login" id="login">
-											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Ingrese su cuenta de correo</b></label>
+											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Ingrese su cuenta of correo</b></label>
 									</section>
 								</fieldset>
 								<footer>
@@ -211,8 +211,8 @@ if ($this->config->item('use_username', 'tank_auth')) {
 					// Messages for form validation
 					messages : {
 						email : {
-							required : 'Por favor ingresa una cuenta de correo',
-							email : 'Porfavor ingresa una cuenta de correo valida'
+							required : 'Por favor ingresa una cuenta of correo',
+							email : 'Porfavor ingresa una cuenta of correo valida'
 						}
 					},
 

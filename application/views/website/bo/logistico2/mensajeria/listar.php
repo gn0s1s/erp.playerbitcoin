@@ -8,7 +8,7 @@
 							<a class="backHome" href="/bol"><i class="fa fa-home"></i> Menu</a>
 							<span> 
 								> <a href="/bo/logistico2/alta"> Alta</a>
-								> <a href="/bo/proveedor_mensajeria/"> Proveedor de Mensajeria </a>
+								> <a href="/bo/proveedor_mensajeria/"> Proveedor of Mensajeria </a>
 								> Listar
 							</span>
 						 <?php }else if($type=='8'||$type=='9'){
@@ -17,7 +17,7 @@
 							<a class="backHome" href="<?=$index?>"><i class="fa fa-home"></i> Menu</a>
 							<span> 
 								> <a href="<?=$index?>/altas"> Altas</a>
-								> <a href="/bo/proveedor_mensajeria/"> Proveedor de Mensajeria </a>
+								> <a href="/bo/proveedor_mensajeria/"> Proveedor of Mensajeria </a>
 								> Listar
 							</span>
 						 <?php }else{?>
@@ -25,7 +25,7 @@
 								<span>
 								> <a href="/bol/"> Logistico </a>
 								> <a href="/bo/logistico2/alta"> Alta </a>
-								> <a href="/bo/proveedor_mensajeria/"> Proveedor de Mensajeria </a>
+								> <a href="/bo/proveedor_mensajeria/"> Proveedor of Mensajeria </a>
 								> Listar
 								</span>
 						 <?php }?>	
@@ -253,14 +253,14 @@ $(document).ready(function() {
 	
 function estado_proveedor(estatus, id)
 {
-	var msg = "¿Desea desactivar el Proveedor de mensajeria?";
+	var msg = "¿Desea desactivar the Proveedor of mensajeria?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el Proveedor de mensajeria?";
-		titulo = "Desactivar Proveedor de Mensajeria";
+		msg = "¿Desea desactivar the Proveedor of mensajeria?";
+		titulo = "Desactivar Proveedor of Mensajeria";
 	}else{
-		msg = "¿Desea activar el Proveedor de mensajeria?";
-		titulo = "Activar Proveedor de Mensajeria";
+		msg = "¿Desea activar the Proveedor of mensajeria?";
+		titulo = "Activar Proveedor of Mensajeria";
 	}
 		
 	bootbox.dialog({
@@ -312,7 +312,7 @@ function estado_proveedor(estatus, id)
 		.done(function( msg ) {
 			bootbox.dialog({
 				message: msg,
-				title: 'Modificar Proveedor de Mensajeria',
+				title: 'Modificar Proveedor of Mensajeria',
 					});
 		});//fin Done ajax
 	}
@@ -322,13 +322,13 @@ function estado_proveedor(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea Eliminar el Proveedor de mensajeria ?'},
+			data: {message: '¿ Esta seguro que desea Eliminar the Proveedor of mensajeria ?'},
 		})
 		.done(function( msg )
 		{
 			bootbox.dialog({
 			message: msg,
-			title: 'Eliminar Proveedor de Mensajeria',
+			title: 'Eliminar Proveedor of Mensajeria',
 			buttons: {
 				success: {
 				label: "Accept",

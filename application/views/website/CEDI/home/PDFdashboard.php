@@ -6,14 +6,14 @@ $logo = BASEPATH.'../logo.png';
 
 $dias = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado");
 $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-$hoy = $dias[date('w')] . " " . date('d') . " de " . $meses[date('n') - 1] . " del " . date('Y');
+$hoy = $dias[date('w')] . " " . date('d') . " of " . $meses[date('n') - 1] . " del " . date('Y');
 
 $codigoHTML = '
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Reporte</title>
+<title>Report</title>
 <style type="text/css">
 .text {
 	font-family: Verdana, Geneva, sans-serif;
@@ -48,7 +48,7 @@ $codigoHTML = '
 <body>
 <div align="center" class="text" >
     <table width="100%"  >
-		<caption class="text"><strong>Listado de Existencias/Inventario</strong></caption>
+		<caption class="text"><strong>Listado of Existencias/Inventario</strong></caption>
 		  <tr>
 			<td colspan="2"><img src="'.$logo.'" width="200px" alt="logo"></td>
 		  </tr>
@@ -58,7 +58,7 @@ $codigoHTML = '
 				<span class="text">' . $empresa[0]->nombre . ' Nit. ' . $empresa[0]->id_tributaria . '</span><br />
 				<span class="text">Ciudad: ' . $empresa[0]->ciudad . ' Direccion: ' . $empresa[0]->direccion . ' </span><br />
 				<span class="text">TEL: ' . $empresa[0]->fijo . ' TEL2: ' . $empresa[0]->movil . '</span><br />
-				<span class="text">Reporte Impreso el ' . $hoy . ' por ' . $user . '</span>
+				<span class="text">Report Impreso the ' . $hoy . ' por ' . $user . '</span>
 			  </div>
 			</td>
 		  </tr>
@@ -135,7 +135,7 @@ $codigoHTML.='</table>
 <br /><br />
     <table width="100%" border="1" class="table table-striped table-bordered table-hover">
           <tr>
-            <td colspan="6"><strong>productos de Baja Existencia</strong></td>
+            <td colspan="6"><strong>Low stock products</strong></td>
           </tr>
           <tr>
             <td width="15%"><strong>Codigo</strong></td>
@@ -206,7 +206,7 @@ $codigoHTML.='</table>
 
         <table width="100%" border="1" class="table table-striped table-bordered table-hover">
           <tr>
-            <td colspan="6"><strong>Listado y Totales de Productos</strong></td>
+            <td colspan="6"><strong>Listado & Totales of Productos</strong></td>
             </tr>
           <tr>
             <td width="15%"><strong>Codigo</strong></td>

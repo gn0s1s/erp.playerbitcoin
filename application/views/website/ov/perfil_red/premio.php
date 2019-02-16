@@ -36,7 +36,7 @@
 						<div class="widget-body">
 							<?php foreach ($infoPremios as $infoPremio){?>
 								<div class="row">
-									<h1 class="alert alert-success">Has ganado un <?php echo $infoPremio->nombre?> en la red <?php echo $infoPremio->nombre_red?></h1>
+									<h1 class="alert alert-success">Has ganado un <?php echo $infoPremio->nombre?> on the Network <?php echo $infoPremio->nombre_red?></h1>
 									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 										<img style="height: 15rem;" src="<?php echo $infoPremio->imagen; ?>" alt="<?php echo $infoPremio->nombre; ?>"></img>
 									</div>
@@ -47,7 +47,7 @@
 								</div>
 							<?php }?>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-										<p class="text-danger">Nota: Verifica tus datos personales de tu perfil: direccion, telefonos, email</p>
+										<p class="text-danger">Nota: Verifica tus datos personales of tu perfil: direccion, telefonos, email</p>
 									</div>
 						</div>
 						

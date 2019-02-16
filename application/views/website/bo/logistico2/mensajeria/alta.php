@@ -8,7 +8,7 @@
                     <a class="backHome" href="/bol"><i class="fa fa-home"></i> Menu</a>
                     <span> 
                         > <a href="/bo/logistico2/alta"> Alta</a>
-                        > <a href="/bo/proveedor_mensajeria/"> Proveedor de Mensajería </a>
+                        > <a href="/bo/proveedor_mensajeria/"> Proveedor of Mensajería </a>
                         > Alta
                     </span>
                 <?php
@@ -18,7 +18,7 @@
                     <a class="backHome" href="<?= $index ?>"><i class="fa fa-home"></i> Menu</a>
                     <span> 
                         > <a href="<?= $index ?>/altas"> Altas</a>
-                        > <a href="/bo/proveedor_mensajeria/"> Proveedor de Mensajería </a>
+                        > <a href="/bo/proveedor_mensajeria/"> Proveedor of Mensajería </a>
                         > Alta
                     </span>
 <?php } else { ?>
@@ -26,7 +26,7 @@
                     <span>
                         > <a href="/bol/"> Logístico </a>
                         > <a href="/bo/logistico2/alta"> Alta </a>
-                        > <a href="/bo/proveedor_mensajeria/"> Proveedor de Mensajería </a>
+                        > <a href="/bo/proveedor_mensajeria/"> Proveedor of Mensajería </a>
                         > Alta
                     </span>
 <?php } ?>	
@@ -68,7 +68,7 @@
                     -->
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Nuevo Proveedor de Mensajería</h2>				
+                        <h2>Nuevo Proveedor of Mensajería</h2>				
 
                     </header>
 
@@ -90,8 +90,8 @@
 
                                     <div class="row">
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
-                                            <label for="" class="input">Nombre de empresa
-                                                <input type="text" class="form-control" name="nombre" placeholder="Nombre de empresa"class="form-control" required />
+                                            <label for="" class="input">Nombre of empresa
+                                                <input type="text" class="form-control" name="nombre" placeholder="Nombre of empresa"class="form-control" required />
                                             </label>
                                         </div>
 
@@ -144,7 +144,7 @@
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
                                             <label for="" class="input">Dirección
-                                                <input type="text" class="form-control" name="direccion" placeholder="Direccion de empresa"class="form-control" required />
+                                                <input type="text" class="form-control" name="direccion" placeholder="Direccion of empresa"class="form-control" required />
                                             </label>
                                         </div>
 
@@ -166,55 +166,55 @@
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
                                             <label for="" class="input">Nombre
-                                                <input type="text" class="form-control" name="nommbre_contacto1" placeholder="Nombre de persona de contacto"class="form-control" required />
+                                                <input type="text" class="form-control" name="nommbre_contacto1" placeholder="Nombre of persona of contacto"class="form-control" required />
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
                                             <label for="" class="input">Apellido
-                                                <input type="text" class="form-control" name="apellido_contacto1" placeholder="Apellido de persona de contacto" class="form-control" required />
+                                                <input type="text" class="form-control" name="apellido_contacto1" placeholder="Apellido of persona of contacto" class="form-control" required />
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Movil<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonomovil1[]" placeholder="Teléfono Movil 1" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido"  required>
+                                                <input name="telefonomovil1[]" placeholder="Teléfono Movil 1" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido"  required>
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Movil<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonomovil1[]" placeholder="Teléfono movil 2" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonomovil1[]" placeholder="Teléfono movil 2" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Movil<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonomovil1[]" placeholder="Teléfono movil 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonomovil1[]" placeholder="Teléfono movil 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Fijo<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonofijo1[]" placeholder="Teléfono Fijo 1" data-mask=" (999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido"  required>
+                                                <input name="telefonofijo1[]" placeholder="Teléfono Fijo 1" data-mask=" (999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido"  required>
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Fijo<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonofijo1[]" placeholder="Teléfono fijo 2" data-mask="(999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonofijo1[]" placeholder="Teléfono fijo 2" data-mask="(999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Fijo<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonofijo1[]" placeholder="Teléfono Fijo 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonofijo1[]" placeholder="Teléfono Fijo 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
@@ -222,12 +222,12 @@
                                             E-mail
                                             <label for="" class="input">
                                                 <i class="icon-prepend fa fa-envelope-o"></i>
-                                                <input type="email" class="form-control" name="email_contacto1" placeholder="Email de la persona de contacto"class="form-control" required />
+                                                <input type="email" class="form-control" name="email_contacto1" placeholder="Email of the persona of contacto"class="form-control" required />
                                             </label>
                                         </div>
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             <label for="" class="input">Puesto
-                                                <input type="text" class="form-control" name="puesto_contacto1" placeholder="Puesto de la persona de contacto"class="form-control" />
+                                                <input type="text" class="form-control" name="puesto_contacto1" placeholder="Puesto of the persona of contacto"class="form-control" />
                                             </label>
                                         </div>
                                     </div>
@@ -237,67 +237,67 @@
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
                                             <label for="" class="input">Nombre
-                                                <input type="text" class="form-control" name="nommbre_contacto2" placeholder="Nombre de persona de contacto"class="form-control" />
+                                                <input type="text" class="form-control" name="nommbre_contacto2" placeholder="Nombre of persona of contacto"class="form-control" />
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
                                             <label for="" class="input">Apellido
-                                                <input type="text" class="form-control" name="apellido_contacto2" placeholder="Apellido de persona de contacto"class="form-control" />
+                                                <input type="text" class="form-control" name="apellido_contacto2" placeholder="Apellido of persona of contacto"class="form-control" />
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Movil<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonomovil2[]" placeholder="Teléfono Movil 1" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonomovil2[]" placeholder="Teléfono Movil 1" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Movil<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonomovil2[]" placeholder="Teléfono movil 2" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonomovil2[]" placeholder="Teléfono movil 2" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Movil<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonomovil2[]" placeholder="Teléfono movil 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonomovil2[]" placeholder="Teléfono movil 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Fijo<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonofijo2[]" placeholder="Teléfono Fijo 1" data-mask=" (999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
-                                            </label>
-                                        </div>
-
-                                        <div class="col col-xs-12 col-sm-6 col-lg-3">
-                                            Teléfono Fijo<label for="" class="input">
-                                                <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonofijo2[]" placeholder="Teléfono fijo 2" data-mask="(999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonofijo2[]" placeholder="Teléfono Fijo 1" data-mask=" (999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Teléfono Fijo<label for="" class="input">
                                                 <i class="icon-prepend fa fa-phone"></i>
-                                                <input name="telefonofijo2[]" placeholder="Teléfono Fijo 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" >
+                                                <input name="telefonofijo2[]" placeholder="Teléfono fijo 2" data-mask="(999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
+                                            </label>
+                                        </div>
+
+                                        <div class="col col-xs-12 col-sm-6 col-lg-3">
+                                            Teléfono Fijo<label for="" class="input">
+                                                <i class="icon-prepend fa fa-phone"></i>
+                                                <input name="telefonofijo2[]" placeholder="Teléfono Fijo 3" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" >
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             E-mail<label for="" class="input">
                                                 <i class="icon-prepend fa fa-envelope-o"></i>
-                                                <input type="email" class="form-control" name="email_contacto2" placeholder="Email de la persona de contacto"class="form-control" />
+                                                <input type="email" class="form-control" name="email_contacto2" placeholder="Email of the persona of contacto"class="form-control" />
                                             </label>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-3">
                                             Puesto<label for="" class="input">
-                                                <input type="text" class="form-control" name="puesto_contacto2" placeholder="Puesto de la persona de contacto"class="form-control" />
+                                                <input type="text" class="form-control" name="puesto_contacto2" placeholder="Puesto of the persona of contacto"class="form-control" />
                                             </label>
                                         </div>
                                     </div>
@@ -467,7 +467,7 @@
                                                                                                                     //$("#empresa").append("<option value="+empresa['id']+">"+empresa['nombre']+"</option>");
                                                                                                                     //$("#empresa").val(empresa['id']);
                                                                                                                     bootbox.dialog({
-                                                                                                                        message: "Se agrego la ciudad correctamente",
+                                                                                                                        message: "Se agrego the ciudad correctamente",
                                                                                                                         title: 'Ciudades',
                                                                                                                         buttons: {
                                                                                                                             success: {
@@ -499,7 +499,7 @@
                                                                                         bootbox.dialog({
                                                                                             message: '<form id="form_depto" method="post" class="smart-form">'
                                                                                                     + '<fieldset>'
-                                                                                                    + '<legend>Datos De Estado/Departamento</legend>'
+                                                                                                    + '<legend>Datos of Estado/Departamento</legend>'
                                                                                                     + '<div class="row">'
                                                                                                     + '<section class="col col-6">'
                                                                                                     + 'País<label class="select">'
@@ -512,7 +512,7 @@
                                                                                                     + '</section>'
 
                                                                                                     + '<section class="col col-6">'
-                                                                                                    + '<label class="input">Nombre de departamento'
+                                                                                                    + '<label class="input">Nombre of departamento'
                                                                                                     + '<input required type="text" name="nombre" placeholder="Nombre del estado/departamento">'
                                                                                                     + '</label>'
                                                                                                     + '</section>'
@@ -538,7 +538,7 @@
                                                                                                                     //$("#empresa").append("<option value="+empresa['id']+">"+empresa['nombre']+"</option>");
                                                                                                                     //$("#empresa").val(empresa['id']);
                                                                                                                     bootbox.dialog({
-                                                                                                                        message: "Se agrego el estado/departamento correctamente",
+                                                                                                                        message: "Se agrego the estado/departamento correctamente",
                                                                                                                         title: 'Estados / Departamentos',
                                                                                                                         buttons: {
                                                                                                                             success: {

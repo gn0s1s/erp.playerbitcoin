@@ -38,7 +38,7 @@
 								-->
 								<header>
 									<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-									<h2>Información</h2>
+									<h2>Information</h2>
 				
 								</header>
 				

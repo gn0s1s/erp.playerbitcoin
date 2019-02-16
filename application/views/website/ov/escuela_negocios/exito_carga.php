@@ -1,5 +1,5 @@
 <head>
-<title>Formulario de Carga</title>
+<title>Formulario of Carga</title>
 </head>
 <body>
 <h3>Su archivo fue exitosamente subido!</h3>

@@ -3,7 +3,7 @@
 			<h1 class="page-title txt-color-blueDark">
 					<a href="/ov/dashboard"><i class="fa fa-home"></i>Home</a>
 				<span>>
-					<a href="/ov/cgeneral/chat">Menu chat</a>
+					<a href="/ov/chat">Menu chat</a>
 				</span>
 				<span>>
 					chat

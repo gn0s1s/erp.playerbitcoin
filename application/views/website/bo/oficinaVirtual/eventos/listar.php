@@ -244,7 +244,7 @@
                                             $.ajax({
                                                 type: "POST",
                                                 url: "/auth/show_dialog",
-                                                data: {message: '¿ Esta seguro que desea Eliminar el Evento ?'},
+                                                data: {message: '¿ Esta seguro que desea Eliminar the Evento ?'},
                                             })
                                                     .done(function (msg)
                                                     {
@@ -265,7 +265,7 @@
                                                                                 .done(function (msg)
                                                                                 {
                                                                                     bootbox.dialog({
-                                                                                        message: "Se ha eliminado el Evento.",
+                                                                                        message: "Se ha eliminado the Evento.",
                                                                                         title: 'Felicitaciones',
                                                                                         buttons: {
                                                                                             success: {

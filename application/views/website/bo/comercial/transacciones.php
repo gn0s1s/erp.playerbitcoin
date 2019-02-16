@@ -5,7 +5,7 @@
 			<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/comercial">Comercial</a> > Transacciones en billetera
+								<a href="/bo/comercial">Comercial</a> > Transacciones on billetera
 							</span>
 			</h1>
 		</div>
@@ -73,7 +73,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-						<h2>Historial de Transacciones</h2>
+						<h2>Historial of Transacciones</h2>
 	
 					</header>
 				
@@ -209,7 +209,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar la Transacción ?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the Transacción ?'},
 				})
 				.done(function( msg )
 				{
@@ -221,7 +221,7 @@
 						label: "Accept",
 						className: "btn-success",
 						callback: function() {
-							//alert('dentro de funcion');
+							//alert('dentro of funcion');
 							iniciarSpinner();
 								$.ajax({
 									type: "POST",

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>TE DAMOS LA BIENVENIDA</title>
+<title>TE DAMOS the BIENVENIDA</title>
 
 <style>
 	/* ------------------------------------- 
@@ -271,8 +271,8 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<td>
 						
 						<h3>Welcome, <?php echo $username; ?></h3>
-						<p class="lead">Ha sido registrado en nuestro sistema.</p>
-						
+						<p class="lead">Ha sido registrado on nuestro sistema.</p>
+
 						<!-- A Real Hero (and a real human being) -->
 						
 						<!-- Callout Panel -->
@@ -280,10 +280,10 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 							Para completar tu registro ingresa a este link <a class="btn" href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>"><h3>Aqui!</h3></a>
 						</p><!-- /Callout Panel -->
 						
-						<p>Si el link no funciona copie y pegue la siguiente direccion en su navegador <a href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>"></a><?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?></p>
+						<p>Si the link no funciona copie & pegue the siguiente direccion on su navegador <a href="<?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?>"></a><?php echo site_url('/auth/activate/'.$user_id.'/'.$new_email_key); ?></p>
 						
-						<p class="callout">El link funcionara durante <?php echo $activation_period; ?> horas, de no ser activada su cuenta tu registro sera invalido y deberas ser afiliado por otro usuario nuevamente.</p>
-						<p><?php if (strlen($username) > 0) { ?>Nombre de usuario: <?php echo $username; ?><br /><?php } ?></p>
+						<p class="callout">El link funcionara durante <?php echo $activation_period; ?> horas, of no ser activada su cuenta tu registro sera invalido & deberas ser afiliado por otro usuario nuevamente.</p>
+						<p><?php if (strlen($username) > 0) { ?>Nombre of usuario: <?php echo $username; ?><br /><?php } ?></p>
 						<p>Correo: <?php echo $email; ?></p><br />
 						<p><?php if (isset($password)) { ?>Contraseña: <?php echo $password; ?><br /><?php } ?>		</p>	
 						

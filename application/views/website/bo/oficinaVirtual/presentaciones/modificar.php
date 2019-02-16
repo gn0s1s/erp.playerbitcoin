@@ -45,7 +45,7 @@
 		<div class="row">
 			<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos" style="padding-right: 70px ! important;">
 				<label class="label" style="padding-left: 50px;">
-					Nombre de la presentacion
+					Nombre of the presentacion
 				</label>
 				
 				<label class="input" style="padding-left: 50px;">	
@@ -121,19 +121,19 @@ function agregar_presentacion()
 	
 	if(grupo==0)
 	{
-		alert('Olvidaste elegir un grupo para la presentacion');
+		alert('Olvidaste elegir un grupo para the presentacion');
 	}
 	else
 	{
 		if(nombre_publico=='')
 		{
-			alert('Olvidaste escribir un nombre para la presentacion');
+			alert('Olvidaste escribir un nombre para the presentacion');
 		}
 		else
 		{
 			if(descripcion=='')
 			{
-				alert('Olvidaste escribir una descripcion para la presentacion');
+				alert('Olvidaste escribir una descripcion para the presentacion');
 			}
 			else
 			{

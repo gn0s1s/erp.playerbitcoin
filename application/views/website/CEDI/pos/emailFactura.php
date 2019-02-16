@@ -33,7 +33,7 @@
 												<h3><?=$dialogo?></h3>
 												<a href="/CEDI/POS" class="btn btn-primary">
 													<i class="fa fa-desktop"></i>
-													VOLVER AL PUNTO DE VENTA
+													VOLVER AL PUNTO of VENTA
 												</a>
 											
 											</section>

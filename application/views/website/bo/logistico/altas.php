@@ -67,7 +67,7 @@
 													<div class="row">
 														<form id="almacen_register" class="smart-form" method="post" action="new_almacen">
 															<fieldset>
-																<legend>Información del almacen</legend>
+																<legend>Information del almacen</legend>
 																<section id="usuario" class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-user"></i>
 																		<input id="nombre" required type="text" name="nombre" placeholder="Nombre del Almacen">
@@ -380,7 +380,7 @@
 					})
 					.done(function(msg){
 						bootbox.dialog({
-							message: "Se ha cambiado el estatus de este almacen exitosamente.",
+							message: "Se ha cambiado the estatus of este almacen exitosamente.",
 							title: "Exito",
 							className: "",
 							buttons: {

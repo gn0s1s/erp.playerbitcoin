@@ -58,15 +58,15 @@
 							</li>
 							<!--  <li class="text-center">
 								<a href="ventas">
-								<i style="font-size: 2rem;" class="fa fa-desktop "></i> <br/>Puntos de Venta </a>
+								<i style="font-size: 2rem;" class="fa fa-desktop "></i> <br/>Points of Venta </a>
 							</li> -->
 							<li class="text-center">
 								<a href="/bo/reportes_logistico/"><!-- reportes-->
-								<i style="font-size: 2rem;" class="fa fa-book  "></i> <br/>Reportes</a>
+								<i style="font-size: 2rem;" class="fa fa-book  "></i> <br/>Reports</a>
 							</li>
 							<li class="text-center">
 								<a href="/bo/logistico/archivero"><!-- archivero -->
-								<i style="font-size: 2rem;" class="fa fa-folder"></i> <br/>Archivero </a>
+								<i style="font-size: 2rem;" class="fa fa-folder"></i> <br/>Files </a>
 							</li>
 
 						</ul>
@@ -79,8 +79,8 @@
 							<div id="logout" class="btn-header transparent" style="background: rgb(206, 53, 44);">
 								<span> 
 									<a style="width: 6rem !important; height: 4rem;color: rgb(255, 255, 255); background: rgb(206, 53, 44) none repeat scroll 0% 0%;border: none" 
-									href="/auth/logout" title="Salir" data-action="userLogout" 
-									data-logout-msg="¿ Realmente desea salir ?">
+									href="/auth/logout" title="sign out" data-action="userLogout"
+									data-logout-msg="Do you really want to sign out ?">
 									<i class="fa fa-sign-out fa-3x"></i>
 									</a> 
 									</span>

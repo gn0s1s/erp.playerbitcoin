@@ -281,7 +281,7 @@
 			$.ajax({
 				type: "POST",
 				url: "/auth/show_dialog",
-				data: {message: '¿ Esta seguro que desea Eliminar la presentacion ?'},
+				data: {message: '¿ Esta seguro que desea Eliminar the presentacion ?'},
 			})
 			.done(function( msg )
 			{
@@ -302,7 +302,7 @@
 							.done(function( msg )
 							{
 								bootbox.dialog({
-								message: "Se ha eliminado la Presentacion.",
+								message: "Se ha eliminado the Presentacion.",
 								title: 'Felicitaciones',
 								buttons: {
 									success: {

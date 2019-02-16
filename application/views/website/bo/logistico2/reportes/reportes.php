@@ -49,7 +49,7 @@
 										<option value="3" >Salidas</option>
 										<option value="4" >Entradas/Salidas</option>
 										<option value="5" >Pedidos por entregar</option>
-										<option value="6" >Pedidos en transito</option>
+										<option value="6" >Pedidos on transito</option>
 										<option value="7" >Pedidos embarcados</option>
 										
 									</select> 
@@ -151,7 +151,7 @@
 							
 							
 							
-			<!-- comienzo de tabla -->
+			<!-- comienzo of tabla -->
 			<div class="jarviswidget jarviswidget-color-blueDark" id="nuevos_afiliados" data-widget-editbutton="false">
 					<!-- widget options:
 					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
@@ -168,7 +168,7 @@
 					-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-					<h2>Reportes</h2>
+					<h2>Reports</h2>
 	
 				</header>
 				
@@ -195,7 +195,7 @@
 				</div>
 						<!-- end widget div -->
 			</div>
-			<!-- finalizacion de tabla -->
+			<!-- finalizacion of tabla -->
 			
 			
 					<!-- end widget -->
@@ -324,7 +324,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar la Venta?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the Venta?'},
 				})
 				.done(function( msg )
 				{
@@ -599,13 +599,13 @@
 					var fin=$("#finishdate").val();
 					if(inicio=='')
 					{
-						alert('Introduzca fecha de inicio');
+						alert('Introduzca fecha of inicio');
 					}
 					else
 					{
 						if(fin=='')
 						{
-							alert('Introduzca fecha de fin');
+							alert('Introduzca fecha of fin');
 						}
 						else
 						{
@@ -629,13 +629,13 @@
 					var fin=$("#finishdate").val();
 					if(inicio=='')
 					{
-						alert('Introduzca fecha de inicio');
+						alert('Introduzca fecha of inicio');
 					}
 					else
 					{
 						if(fin=='')
 						{
-							alert('Introduzca fecha de fin');
+							alert('Introduzca fecha of fin');
 						}
 						else
 						{
@@ -662,13 +662,13 @@
 					var fin=$("#finishdate").val();
 					if(inicio=='')
 					{
-						alert('Introduzca fecha de inicio');
+						alert('Introduzca fecha of inicio');
 					}
 					else
 					{
 						if(fin=='')
 						{
-							alert('Introduzca fecha de fin');
+							alert('Introduzca fecha of fin');
 						}
 						else
 						{
@@ -738,13 +738,13 @@
 					var fin=$("#finishdate").val();
 					if(inicio=='')
 					{
-						alert('Introduzca fecha de inicio');
+						alert('Introduzca fecha of inicio');
 					}
 					else
 					{
 						if(fin=='')
 						{
-							alert('Introduzca fecha de fin');
+							alert('Introduzca fecha of fin');
 						}
 						else
 						{

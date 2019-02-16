@@ -113,7 +113,7 @@
 																					<tr>
 																						<th data-hide="phone">ID</th>
 																						<th data-class="expand">Usuario</th>
-																						<th data-hide="phone">Nombre y Apellido</th>
+																						<th data-hide="phone">Nombre & Apellido</th>
 																						<th data-hide="phone">Telefono</th>
 																						<th data-hide="phone">email</th>
 																						<th data-hide="phone">Direción</th>
@@ -195,7 +195,7 @@
 			+'<form class="smart-form" novalidate="novalidate">'
 				+'<section class="col col-6">'
 					+'<label class="input"> <i class="icon-append fa fa-calendar"></i>'
-						+'<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha de entrega">'
+						+'<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of entrega">'
 					+'</label>'
 				+'</section>'
 			+'</form>'
@@ -212,13 +212,13 @@
 						var fecha=$("#datepicker").val();
 						if(fecha=="")
 						{
-							alert("Especifique una fecha de entrega");
+							alert("Especifique una fecha of entrega");
 						}
 						else
 						{
 
 								bootbox.dialog({
-									message: "¿Desea enviar el premio ahora?",
+									message: "¿Desea enviar the premio ahora?",
 									title: "Surtir",
 									className: "",
 									buttons: {

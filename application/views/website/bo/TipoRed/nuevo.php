@@ -5,7 +5,7 @@
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>> <a href="/bo/configuracion/"> Configuración </a>
-				> <a href="/bo/configuracion/tipoRed"> Tipo De Red </a>
+				> <a href="/bo/configuracion/tipoRed"> Tipo of Network </a>
 				>	Alta
 				</span>
 			</h1>
@@ -36,7 +36,7 @@
 	<div>
     <fieldset id="pswd">
 		<form class="smart-form" action="" method="POST" role="form" id="nueva"><!-- /bo/tipo_red/guardar_red -->
-			<legend>Nuevo Tipo de Red </legend><br>
+			<legend>Nuevo Tipo of Network </legend><br>
 			<div class="form-group" style="width: 20rem;">
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
 				<input type="text" class="form-control" name="nombre" size="30" placeholder="Nombre" required>
@@ -45,28 +45,28 @@
 				<textarea style="margin-left: 1rem;" rows="6" class="custom-scroll" name="descripcion" size="30" required placeholder="Descripcion"></textarea> 
 			</label>
 			<br>
-			<p>Nota: Si la red es de frontalidad o profundidad infinita colocar 0.</p><br>
+			<p>Nota: Si the Network es of frontalidad o profundidad infinita colocar 0.</p><br>
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-arrow-right"></i>
 				<input type="number" class="form-control" name="frontal" size="30" min="0" placeholder="frontalidad" required>
 	        </label>
 	        <label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-arrow-down"></i>
 				<input type="number" class="form-control" name="profundidad" size="30" min="0" placeholder="profundidad" required>
 	        </label><br>
-	        <p>Elije tipo de plan de compensación.</p><br>
+	        <p>Elije tipo of plan of compensación.</p><br>
 	        <label class="radio">
-	        <input type="radio" name="tipo_plan" value="BIN" placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="BIN" placeholder="tipo of plan">
 	        <i></i>Binario</label>
 	       <!-- <label class="radio">
-	        <input type="radio" name="tipo_plan" value="BEQ" placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="BEQ" placeholder="tipo of plan">
 	        <i></i>Binario Equilibrado</label>- --> 
 	        <label class="radio">
-	        <input type="radio" name="tipo_plan" value="MAT" checked placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="MAT" checked placeholder="tipo of plan">
 	        <i></i>Matricial</label>
 	        <label class="radio">
-	        <input type="radio" name="tipo_plan" value="UNI" placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="UNI" placeholder="tipo of plan">
 	        <i></i>Unilevel</label>
 			<br>
-			<p>Valor del Punto Comisionable.</p><br>
+			<p>Valor del Punto of commission.</p><br>
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-dollar"></i>
 				<input type="number" class="form-control" min="1" name="valor_punto" size="30" placeholder="Valor del Punto" required>
 	        </label>															

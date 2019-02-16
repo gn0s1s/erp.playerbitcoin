@@ -106,7 +106,7 @@
 					
 					class="fa fa-shopping-cart"> </i> VER CARRITO
 				</a> <a class="btn btn-sm btn-primary" onclick="a_comprar()">
-					COMPRAR! </a>
+					Purchase! </a>
 			</div>
 			<!--/.miniCartFooter-->
 
@@ -167,7 +167,7 @@
 						<a class="btn btn-sm btn-danger" onclick="ver_cart()"> <i
 							class="fa fa-shopping-cart"> </i> VER CARRITO
 						</a> <a class="btn btn-sm btn-primary" onclick="a_comprar()">
-							COMPRAR! </a>
+							Purchase! </a>
 					</div>
 					<!--/.miniCartFooter-->
 
@@ -188,8 +188,8 @@
 				<span> <a
 					style="color: rgb(255, 255, 255); background: rgb(206, 53, 44) none repeat scroll 0% 0%;"
 					class="btn btn-default btn-circle btn-lg"
-					href="/index.php/auth/logout" title="Salir"
-					data-action="userLogout" data-logout-msg="¿Realmente desea salir?">
+					href="/index.php/auth/logout" title="sign out"
+					data-action="userLogout" data-logout-msg="Do you really want to sign out?">
 						<i style="font-size: 3rem;" class="fa fa-sign-out"></i>
 				</a>
 				</span>
@@ -202,7 +202,7 @@
 <div class="row">
 
 	<div class="container main-container" style="background-color: #fff;">
-		<header>Datos de envio</header>
+		<header>Datos of envio</header>
 		<form class="smart-form" method="POST" action="guardarEnvio">
 			<fieldset>
 					<div class="col col-xs-12 col-md-6 col-lg-6">
@@ -269,7 +269,7 @@
 					
 				<div class="col col-xs-12 col-md-6 col-lg-6">
 					<label class="input">Numero Telefonico
-						<input required id="telefono" name="telefono"  type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido">
+						<input required id="telefono" name="telefono"  type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido">
 					</label>
 				</div>
 				

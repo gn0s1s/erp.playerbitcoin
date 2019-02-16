@@ -62,7 +62,7 @@ code {
 											</div>
 											</br>
 											<div class="pull-right">
-												<h1 class="font-300">Factura de venta</h1>
+												<h1 class="font-300">Factura of venta</h1>
 											</div>
 											<div class="clearfix"></div>
 											<br>
@@ -92,10 +92,10 @@ code {
 													</div>
 													<div>
 														<div class="">
-															<abbr title="Phone"><strong>Fecha de expedición:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
+															<abbr title="Phone"><strong>Fecha of expedición:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
 															<br>
 															<br>
-															<abbr title="Phone"><strong>Fecha de vencimiento:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
+															<abbr title="Phone"><strong>Fecha of vencimiento:</strong></abbr><span class="pull-right"> <i ></i> <?php echo $fecha;?> </span>
 														</div>
 				
 													</div>

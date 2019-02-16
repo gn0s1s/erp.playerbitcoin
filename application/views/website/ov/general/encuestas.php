@@ -39,7 +39,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Encuestas</h2>				
+						<h2>Surveys</h2>
 						
 					</header>
 
@@ -58,10 +58,10 @@
 						<div class="widget-body">
 							<ul id="myTab1" class="nav nav-tabs bordered">
 								<li class="active">
-									<a href="#s1" data-toggle="tab">Encuestas Abiertas</a>
+									<a href="#s1" data-toggle="tab">Surveys Abiertas</a>
 								</li>
 								<li>
-									<a href="#s2" data-toggle="tab">Historico de Encuestas contestadas</a>
+									<a href="#s2" data-toggle="tab">Historico of Encuestas contestadas</a>
 								</li>
 							</ul>
 							<div id="myTabContent1" class="tab-content padding-10">
@@ -75,9 +75,9 @@
 												<table class="table table-striped table-forum">
 													<thead>
 														<tr>
-															<th colspan="2">Encuesta</th>
+															<th colspan="2">Survey</th>
 															<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Usuario</th>
-															<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Fecha de creacion</th>
+															<th class="text-center hidden-xs hidden-sm" style="width: 100px;">Fecha of creacion</th>
 															<th class="text-center hidden-xs hidden-sm" style="width: 200px;">Veces que se ha contestado</th>
 														</tr>
 													</thead>
@@ -131,8 +131,8 @@
 												<table class="table table-striped table-forum">
 													<thead>
 														<tr>
-															<th colspan="2">Encuesta</th>
-															<th class="text-center hidden-xs hidden-sm" style="width: 250px;">Fecha en que se contesto</th>
+															<th colspan="2">Survey</th>
+															<th class="text-center hidden-xs hidden-sm" style="width: 250px;">Fecha on que se contesto</th>
 															<th class="text-center hidden-xs hidden-sm" style="width: 150px;">Mas...</th>
 													</thead>
 													<tbody>

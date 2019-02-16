@@ -55,16 +55,16 @@
 			}
 		} ?>
 		</div><br>
-		<div class="row">Compras: $ <b><?=number_format($compras,2);?></b></div>
+		<div class="row">Purchases: $ <b><?=number_format($compras,2);?></b></div>
 		<div class="row">Comisiones: $ <b><?=number_format($comision+$bonos,2);?></b></div>
-		<div class="row">Puntos comisionables:  <b><?=number_format($puntos,2);?></b></div>
+		<div class="row">Points of commissions:  <b><?=number_format($puntos,2);?></b></div>
 		<?php		
 		
 		if($titulo!=NULL){
 		
 			echo '<ul id="sparks" class="">
 					<li class="sparks-info">
-					 <h5>RANGO<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
+					 <h5>Ranking<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
 					 <div class="sparkline txt-color-yellow hidden-mobile hidden-md hidden-sm"></div>
 					</li>
 				</ul>';

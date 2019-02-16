@@ -4,7 +4,7 @@
 			<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/red">Red</a>
+								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/red">Network</a>
 								> Listado Consecutivo
 							</span>
 			</h1>
@@ -112,7 +112,7 @@
 				<br>
 			
 					<section style="width: 100%;">
-						Campos de Busqueda
+						Campos of Busqueda
 						<label class="select"> 
 							<select name="campos_de_busqueda" id="campos_de_busqueda" onChange="Activar_Casilla()">
 								<option value='---'> ---
@@ -175,7 +175,7 @@
                                     <th data-hide="phone,tablet">Sponsor</th>
                                     <th data-hide="phone,tablet">Contraseña</th>
                                     <th data-hide="phone,tablet">e-mail</th>
-                                    <th data-hide="phone">Redes</th>
+                                    <th data-hide="phone">Networks</th>
                                     <th>Accion</th>
                                 </tr>
                             </thead>
@@ -198,7 +198,7 @@
 				        
                                         <td><img style="width: 10rem; height: 10rem;" src="<?php echo $afiliados_imagen ?>"></img></td>
                                         <td><?php echo $afiliado->nombre . " " . $afiliado->apellido . " (" . $afiliado->username . ")" ?></td>
-                                        <td><?php echo $afiliado->id == 2 ? "Eres la Empresa" : $afiliado->sponsor ?></td>
+                                        <td><?php echo $afiliado->id == 2 ? "Eres the Empresa" : $afiliado->sponsor ?></td>
                                         <td><?php echo $afiliado->recovery ? $afiliado->recovery : "<em class='txt-color-red'>Debe Cambiarse</em>" ?></td>
                                         <td><?php echo $afiliado->email ?></td>
                                         <td><?php echo $afiliado->redes ?></td>
@@ -301,14 +301,14 @@ $.ajax({
 {
 	//location.href = "/bo/comercial/red_tabla";
 	bootbox.dialog({
-	  message: "La modificación del estado en el afiliado ha sido exitosa.",
+	  message: "La modificación del estado on the afiliado ha sido exitosa.",
 	  title: "Cambiar estado del afiliado",
 	  buttons: {
 	    success: {
 	      label: "Ok",
 	      className: "btn-success",
 	      callback: function() {
-	    	  location.href="/bo/comercial/red_tabla?id_red="+<?=$id_red?>+"";
+	    	  location.href="/bo/comercial/red_tabla?id_red=<?=$id_red?>";
 	      }
 	    }
 	  }

@@ -167,7 +167,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar la noticia ?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the noticia ?'},
 				})
 				.done(function( msg )
 				{
@@ -187,7 +187,7 @@
 								.done(function( msg )
 								{
 									bootbox.dialog({
-									message: "Se ha eliminado la Noticia.",
+									message: "Se ha eliminado the Noticia.",
 									title: 'Felicitaciones',
 									buttons: {
 										success: {

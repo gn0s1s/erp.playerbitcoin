@@ -196,13 +196,13 @@
 				var fin=$("#finishdate").val();
 					if(inicio=='')
 					{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 					}
 					else
 					{
 						if(fin=='')
 						{
-							alert('Introduzca fecha de fin');
+							alert('Introduzca fecha of fin');
 						}
 						else
 						{
@@ -233,7 +233,7 @@
 			function reporte_excel_comprar_usr()
 			{
 				bootbox.dialog({
-					message: "¿Estas seguro de realizar el pago de todas la peticiones de pago?",
+					message: "¿Estas seguro of realizar the pago of todas the peticiones of pago?",
 					title: "Atencion !!",
 					buttons: {
 						success: {

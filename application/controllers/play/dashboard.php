@@ -190,17 +190,105 @@ private $test = true;
         $bienvenido = "Welcome, $nombre_completo";
         $imgbtc="<img src=\"https://games.playerbitcoin.com/template/btc.PNG\"/>";
 
+        $empresa = $this->web_personal->empresa();
         $web = "https://playerbitcoin.com/";
-        $web .= 'dashboard/';
-        $s = file_get_contents($web);
-        $s = str_replace('href="', 'href="' . $web . '', $s);
-        $s = str_replace('href="' . $web . 'http', 'href="http', $s);
-        $s = str_replace('src="', 'src="' . $web . '', $s);
-        $s = str_replace('src="' . $web . 'http', 'src="http', $s);
-        echo $s;
+        #$web = $this->general->issetVar($empresa,"web",$web);
+
+        $web .= '/dashboard/';
+        $home = $this->setFormatDashboard($web);
+
+        $this->setStylesDashboard();
+        $this->setJQueryDashboard($id);
+    }
+
+    private function printTranslateElement()
+    {
+        echo '<script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement(
+                    {
+                        pageLanguage: \'es\',
+                        layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+                        multilanguagePage: true,
+                        gaTrack: true,
+                        gaId: \'UA-85400219-1\'
+                    },
+                    \'google_translate_element\'
+                );
+            }
+        </script>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <style>
+            #google_translate_element{
+                background: #fff;
+                padding: .5rem;
+                border-radius: 5px 0 0 5px;
+                z-index: 10000;
+                right: 0;
+            }
+        </style>
+<div class="pull-right" id="google_translate_element"></div>';
+    }
+
+
+    private function setFormatDashboard($web)
+    {
+        $web = $this->setWeb($web,"/ov/dashboard");
+        $home = file_get_contents($web);
+        $home = str_replace('href="', 'href="' . $web . '', $home);
+        $home = str_replace('href="' . $web . 'http', 'href="http', $home);
+        $home = str_replace('src="', 'src="' . $web . '', $home);
+        $home = str_replace('src="' . $web . 'http', 'src="http', $home);
+
+        echo $home;
+
+        return $home;
+    }
+
+    private function setWeb($web,$return = 'auth/login/') {
+
+        set_error_handler(
+            create_function(
+                '$severity, $message, $file, $line',
+                'throw new ErrorException($message, $severity, $severity, $file, $line);'
+            )
+        );
+
+        try {
+            $s = file_get_contents($web);
+            #log_message('ERROR',strlen($s));
+            return $web;
+        }
+        catch (Exception $e) {
+            redirect($return);
+            #log_message('ERROR','page not found : '.$web);
+        }
+
+        restore_error_handler();
+    }
+
+
+    private function setStylesDashboard()
+    {
         echo '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
  crossorigin="anonymous">';
+    }
+
+
+    private function setJQueryDashboard($id)
+    {
+        $usuario=$this->general->get_username($id);
+
+        $nombre_completo = $usuario[0]->nombre." ".$usuario[0]->apellido;
+        $bienvenido = "<div class=\"row\"><h2 class=\"horizon h1txt\" style=\"color:#000\">"
+            ."Bienvenido, $nombre_completo"
+            ."</h2></div>";
+        $imgbtc="<img src=\"https://mesadejuego.playerbitcoin.com/template/btc.PNG\"/>";
+        $logoutbutton = "<div class=\"row\"><a href=\"/auth/logout\" class=\"btn btn-danger\" ".
+            "style=\"float: right;padding: 1em 2em !important\">".
+            "SALIR</a></div>";
+
         echo "<script>
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
                 $('#nuevaClase').attr('href','/ov/dashboard');

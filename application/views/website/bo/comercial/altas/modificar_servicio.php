@@ -54,12 +54,12 @@ $item = $mercancia[0];
                                             </section>
 													
                                             <section class="col col-2" style="width: 50%;">
-                                                <label class="input">Fecha de inicio
+                                                <label class="input">Fecha of inicio
                                                     <input required name="fecha_inicio" id="startdate" readonly="readonly" type="date" value='<?php echo $data_merc[0]->fecha_inicio ?>'> </label>
                                             </section>
 													
                                             <section class="col col-2" style="width: 50%;">
-                                                <label class="input">Fecha de termino
+                                                <label class="input">Fecha of termino
                                                     <input name="fecha_fin" required id="finishdate" readonly="readonly" type="text" value='<?php echo $data_merc[0]->fecha_fin ?>'> </label>
                                             </section>
 													
@@ -118,14 +118,14 @@ $item = $mercancia[0];
                                                                   placeholder="Agregar alguna imágen" type="text">
                                                     </div>
                                                     <small>
-                                                        <cite title="Source Title">Para ver el archivo que va a cargar, pulse con el puntero en el boton de "Buscar"</cite>
+                                                        <cite title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
                                                     </small>
                                                 </section>					
                                             </div>
                                         </fieldset>
 												
                                         <fieldset id="moneda_field">
-                                            <legend>Moneda y país</legend>
+                                            <legend>Moneda & país</legend>
 													
                                             <section class="col col-2" style="width: 50%;">
                                                 <label class="input">
@@ -147,7 +147,7 @@ $item = $mercancia[0];
                                             </section>
                                             <section class="col col-2" style="width: 50%;">
                                                 <label class="input">
-                                                    Tiempo mínimo de entrega
+                                                    Tiempo mínimo of entrega
                                                     <input placeholder="En días" type="number" value='<?php echo $item->entrega ?>' name="entrega" >
                                                 </label>
                                             </section>
@@ -173,7 +173,7 @@ $item = $mercancia[0];
                                             
                                             <section class="col col-3" style="width: 50%;">
                                                 <label class="input">
-                                                    Puntos comisionables
+                                                    Points of commissions
                                                     <input type="number" min="0" max="" value='<?= $item->puntos_comisionables ?>' name="puntos_com" id="puntos_com">
                                                 </label>
                                             </section>
@@ -181,7 +181,7 @@ $item = $mercancia[0];
                                         <fieldset id="impuesto_field">
                                             <legend>Impuesto</legend>
 
-                                            <section class="col col-12" style="width: 50%;">País de la mercancía
+                                            <section class="col col-12" style="width: 50%;">País of the mercancía
                                                 <label class="select">
                                                     <select id="pais2" required name="pais" onChange="select_pais()">
                                                         <?php foreach ($pais as $key) {
@@ -533,7 +533,7 @@ function enviar() {
 						.done(function( msg ) {
 
 							bootbox.dialog({
-						message: "Se ha modificado el servicio.",
+						message: "Se ha modificado the servicio.",
 						title: 'Felicitaciones',
 						buttons: {
 							success: {

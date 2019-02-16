@@ -50,7 +50,7 @@
 									
 									<label class="select">
 										<select id="tipo-reporte">
-											<option value="0" selected disabled>Tipo de Historial</option>
+											<option value="0" selected disabled>Tipo of Historial</option>
 											<option value="2">Entradas</option>
 											<option value="3">Salidas</option>
 											<option value="4">Entradas/Salidas</option>
@@ -461,13 +461,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{
@@ -558,13 +558,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{
@@ -653,13 +653,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{
@@ -1021,13 +1021,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{

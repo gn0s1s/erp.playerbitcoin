@@ -19,7 +19,7 @@
 		</div>
 	</div>
 		<?php if($this->session->flashdata('error')) {
-			if($this->session->flashdata('error')!="Se ha modificado el banner."){
+			if($this->session->flashdata('error')!="Se ha modificado the banner."){
 		echo '<div class="alert alert-danger fade in">
 								<button class="close" data-dismiss="alert">
 									×
@@ -122,7 +122,7 @@
 																placeholder="Agregar alguna imágen" value="<?=$img[0]->nombre_banner?>" type="text">
 														</div>
 														<small><cite
-															title="Source Title">Para ver el archivo que va a cargar, pulse con el puntero en el boton de "Buscar"</cite>
+															title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
 														</small>
 													</section>
 							</div>

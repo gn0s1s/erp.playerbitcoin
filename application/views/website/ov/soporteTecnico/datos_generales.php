@@ -10,7 +10,7 @@
 								<a href="/bo/configuracion/">Configuracion</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/soporte_tecnico">Soporte Técnico</a> 
+								<a href="/bo/configuracion/soporte_tecnico">Support</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/datos_generales_ver_redes">Ver Redes</a> > Datos Generales
@@ -69,22 +69,22 @@
 					<b>Pekey</b>
 		        </label>
 		        <label style="margin: 1rem;" class="input col-xs-10 col-sm-10 col-md-10 col-lg-10"><i class="icon-prepend fa fa-check-circle-o"></i>
-					<input type="text" class="form-control" name="pekey" placeholder="Numero de Telefono" value='<?php if(!isset($datos_generales[0]->pekey)){echo ""; $vacio=$vacio+1;}else{echo $datos_generales[0]->pekey;}?>'>
+					<input type="text" class="form-control" name="pekey" placeholder="Numero of Telefono" value='<?php if(!isset($datos_generales[0]->pekey)){echo ""; $vacio=$vacio+1;}else{echo $datos_generales[0]->pekey;}?>'>
 		        </label>
 		        
 		        <label style=" width: 50%; margin: 1rem;" class="input col-xs-10 col-sm-10 col-md-10 col-lg-10">
 					<b>Pinkost</b>
 		        </label>
 		        <label style="margin: 1rem;" class="input col-xs-10 col-sm-10 col-md-10 col-lg-10"><i class="icon-prepend fa fa-check-circle-o"></i>
-					<input type="text" class="form-control" name="pinkost" placeholder="Numero de Telefono" value='<?php if(!isset($datos_generales[0]->pinkost)){echo ""; $vacio=$vacio+1;}else{echo $datos_generales[0]->pinkost;}?>'>
+					<input type="text" class="form-control" name="pinkost" placeholder="Numero of Telefono" value='<?php if(!isset($datos_generales[0]->pinkost)){echo ""; $vacio=$vacio+1;}else{echo $datos_generales[0]->pinkost;}?>'>
 		        </label>
 		        
 		        <label style="margin: 1rem;" class="input col-xs-10 col-sm-10 col-md-10 col-lg-10">
-					<input type="text" class="hide" name="vacio" placeholder="Numero de Telefono" value='<?php echo $vacio?>'>
+					<input type="text" class="hide" name="vacio" placeholder="Numero of Telefono" value='<?php echo $vacio?>'>
 		        </label>
 		        
 		        <label style="margin: 1rem;" class="input col-xs-10 col-sm-10 col-md-10 col-lg-10">
-					<input type="text" class="hide" name="id_red" placeholder="Numero de Telefono" value='<?php echo $id_red?>'>
+					<input type="text" class="hide" name="id_red" placeholder="Numero of Telefono" value='<?php echo $id_red?>'>
 		        </label>
 		        
 				<button style="margin: 1rem;margin-bottom: 4rem;" type="submit" class="btn btn-success  col-xs-10 col-sm-10 col-md-10 col-lg-10">Actualizar</button>

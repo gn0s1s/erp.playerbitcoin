@@ -1,4 +1,4 @@
-<header style="height: 60px;background-color: #1048b1;">
+<header class="mainHeaderPlayer">
 <article class="col-sm-12" style="z-index: 1000;">
 
 			<div class="navbar navbar-default" style="border-color: rgb(255, 255, 255);">
@@ -22,43 +22,43 @@
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-group "></i> Perfil y Red <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-group "></i> Profile & Network<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/perfil_red/">Perfil</a>
+										<a href="/ov/networkProfile">Profile</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/perfil_red/foto">Foto</a>
+										<a href="/ov/networkProfile/photo">Profile Photo</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/perfil_red/afiliar?tipo=1">Afiliar</a>
+										<a href="/ov/perfil_red/afiliar?tipo=1">Affiliate</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/red/index">Redes</a>
+										<a href="/ov/red/index">Networks</a>
 									</li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-credit-card"></i> Compras y Comisiones <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-credit-card"></i> Purchases & commissions <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/shoppingcart">Deposito</a>
+										<a href="/shoppingcart">Deposits</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/billetera2/index_estado">Estado de Cuenta</a>
+										<a href="/ov/accountStatus">Profit Statement</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/billetera2/index">Billetera</a>
+										<a href="/ov/wallet">Profit Wallet</a>
 									</li>
 									<li class="divider"></li>
 									 <li>
-										<a href="/ov/compras/reportes">Reportes</a>
+										<a href="/ov/reports">Reports</a>
 									</li>
 										
 								</ul>
@@ -68,103 +68,101 @@
 								<i style="font-size: 2rem;" class="fa fa-th-large"></i> General <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/cgeneral/encuestas">Encuestas</a>
+										<a href="/ov/surveys">Surveys</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/archivo">Archivero</a>
+										<a href="/ov/archive">Files</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/tablero">Tablero</a>
+										<a href="/ov/board">Template</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/compartir">Compartir</a>
+										<a href="/ov/share">SharePoint</a>
 									</li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-envelope-square"></i> Comunicación <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-envelope-square"></i> Comunications <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/cgeneral/web_personal">Web Personal</a>
+										<a href="/ov/personalWeb">Web Personal</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cgeneral/chat">Chat mi Red</a>
+										<a href="/ov/chat">Chat my Network</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/email">Email</a>
+										<a href="/ov/email">Email</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cgeneral/soporte_tecnico_ver_redes/">Soporte Técnico</a>
+										<a href="/ov/cgeneral/soporte_tecnico_ver_redes/">Support</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/cabecera/email">Sugerencias</a>
+										<a href="/ov/email">Suggestions</a>
 									</li>
 								</ul>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Información y Capacitación <span class="caret"></span></a>
+								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Information & Training <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li>
-										<a href="/ov/escuela_negocios/informacion">Información</a>
+										<a href="/ov/information">Information</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/presentaciones">Presentaciones</a>
+										<a href="/ov/presentations">Slideshow</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/ebooks">E-books</a>
+										<a href="/ov/ebooks">E-books</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/descargas">Descargas</a>
+										<a href="/ov/downloads">Downloadable</a>
+									</li>
+									<li class="divider"></li>
+									<li class="hide">
+										<a href="/ov/coupons">Calculated Commissions</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/bonos">Bonos</a>
+										<a href="/ov/events">Events</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/eventos">Eventos</a>
+										<a href="/ov/news">News</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/noticias">Noticias</a>
+										<a href="/ov/videos">Videos</a>
+									</li>
+									<li class="divider"></li>
+									<li class="hide">
+										<a href="/ov/acknowledgments">Reconocimientos</a>
 									</li>
 									<li class="divider"></li>
 									<li>
-										<a href="/ov/escuela_negocios/videos">Vídeos</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="/ov/escuela_negocios/reconocimientos">Reconocimientos</a>
-									</li>
-									<li class="divider"></li>
-									<li>
-										<a href="/ov/compras/estadistica">Estadisticas</a>
+										<a href="/ov/statistics">Statistics</a>
 									</li>
 								</ul>
 							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li style="margin-right: 2rem; margin-top: 0.3rem;" class="">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/template/img/blank.gif" class="flag flag-es" alt="Spanish"><span> Español </span></a>
-							</li>
+							<!--<li style="margin-right: 2rem; margin-top: 0.3rem;" class="">-->
+							<?php $this->load->view('website/traslate'); ?>
+							<!-- </li>-->
 							<li class="dropdown">
 							<div id="logout" class="btn-header transparent">
 								<span> 
-									<a style="width: 6rem !important; height: 4rem;color: rgb(255, 255, 255); background: rgb(206, 53, 44) none repeat scroll 0% 0%;" 
-									href="/auth/logout" title="Salir" data-action="userLogout" 
-									data-logout-msg="¿ Realmente desea salir ?">
+									<a class="btnLogout" href="/auth/logout" title="sign out" data-action="userLogout" data-logout-msg="Do you really want to sign out ?">
 									<i class="fa fa-sign-out fa-2x"></i>
 									</a> 
 									</span>

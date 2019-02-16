@@ -15,12 +15,14 @@
 <!-- styles needed by mCustomScrollbar -->
 <link href="/cart/HTML/assets/css/jquery.mCustomScrollbar.css" rel="stylesheet">
 <style>
-    #google_translate_element {
-        position: fixed;
-        z-index: 1000;
-        right: 0;
+    #content{
+        height: auto !important;
     }
 </style>
+<!-- Estilos of the nueva integración del ERP-->
+<link rel="stylesheet" type="text/css" media="screen" href="/template/css/playerBitcoin.css">
+
+
 <div id="content" class="container main-container"
      style="background-color: #fff;min-height: auto ! important;
      padding-top: 5rem;padding-bottom: 10rem;margin-top: 3.5em;">
@@ -40,7 +42,7 @@
     
     <!-- this part is duplicate from cartMenu  keep it for mobile -->
     <div class="navbar-cart  collapse">
-      <!--/.cartMenu--> 
+        <?php $this->load->view('website/traslate'); ?>
     </div>
     <!--/.navbar-cart-->
     
@@ -356,7 +358,6 @@
                     buttons: {
                         success: {
                             label: "Success",
-                            className: "hide",
                             callback: function() {
                                 window.location="/ov/dashboard";
                             }
@@ -399,7 +400,7 @@
 	}
 
 	function compropago(){
-		//alert('Medio de Pago en Desarrollo');
+		//alert('Medio of Pago on Desarrollo');
 		iniciarSpinner();
 		$.ajax({
 			type:"post",
@@ -425,7 +426,7 @@
 
 
 	function tucompra(){
-		//alert('Medio de Pago en Desarrollo');
+		//alert('Medio of Pago on Desarrollo');
 		iniciarSpinner();
 		$.ajax({
 			type:"post",

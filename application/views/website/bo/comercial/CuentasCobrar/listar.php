@@ -50,10 +50,10 @@
 										<th data-hide="phone,tablet">Fecha</th>
 										<th data-class="expand">Afiliado</th>
 										<th data-hide="phone">Email</th>	
-										<th data-hide="phone">Banco</th>
+										<th data-hide="phone">bank </th>
 										<th data-hide="phone,tablet">N° Cuenta</th>
 										<th data-hide="phone,tablet">Valor</th>
-										<th data-hide="phone,tablet">Estado</th>
+										<th data-hide="phone,tablet">Status</th>
 										<th></th>
 
 									</tr>

@@ -30,17 +30,17 @@
 											
 											<label class="select">
 												<select id="tipo-reporte">
-													<option value="0" selected="" disabled="">Tipo de reporte</option>
+													<option value="0" selected="" disabled="">Tipo of reporte</option>
 													<option value="1">Usuarios SIO</option>
 													<option value="2">Usuarios Telemarketing</option>
 													<option value="3">Usuario CEDI</option>
 													<option value="4">Proveedores</option>
-													<option value="5">productos y Servicios</option>
+													<option value="5">Productos & Servicios</option>
 													<option value="6">Almacenes</option>
 													<option value="7">CEDI's</option>
 													<option value="8">Embarques</option>
-													<option value="9">Orden de compra - Proveedores</option>
-													<option value="10">Requisici&oacute;n de compra</option>
+													<option value="9">Orden of Purchase - Proveedores</option>
+													<option value="10">Requisici&oacute;n of compra</option>
 													<option value="11">Pedidos</option>
 													<option value="12">Facturas Emitidas</option>
 													<option value="13">Pagos</option>
@@ -309,7 +309,7 @@
 				if(inicio=='')
 				{
 					bootbox.dialog({
-						message: "Porfavor, introduzca una fecha de inicio.",
+						message: "Porfavor, introduzca una fecha of inicio.",
 						title: "Error",
 						className: "",
 						buttons: {
@@ -327,7 +327,7 @@
 				if(fin=='')
 				{
 					bootbox.dialog({
-						message: "Porfavor, introduzca una fecha de fin.",
+						message: "Porfavor, introduzca una fecha of fin.",
 						title: "Error",
 						className: "",
 						buttons: {

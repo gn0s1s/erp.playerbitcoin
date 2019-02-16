@@ -6,7 +6,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
 								> <a href="/bo/configuracion/"> Configuración</a> 
-								> <a href="/bo/configuracion/formaspago"> Formas de Pago</a> 
+								> <a href="/bo/configuracion/formaspago"> Formas of Pago</a> 
 								> <a href="/bo/bancos/index"> Bancos </a>
 								> Alta
 							</span>
@@ -41,14 +41,14 @@
 												<form id="add-event-form" class="smart-form col-sm-6 col-md-6 col-lg-6">
 													<fieldset>
 														<div class="form-group">
-															<b>Nombre de Banco</b>
+															<b>Nombre of Banco</b>
 															<input class="form-control"  id="banco" name="banco" type="text" placeholder="Nombre del banco">
 														</div><br>
 														<div class="form-group">
 															<label class="label"><b>Pais</b></label> 
 															<label class="select">
 																<select name="pais" id="pais" required>
-																	<option value="0">Selecciona el pais</option>
+																	<option value="0">Selecciona the pais</option>
 																	<?php foreach ($paices as $pais) {?>
 																		<option value="<?php echo $pais->Code; ?>"><?php echo $pais->Name; ?></option>
 																	<?php } ?>
@@ -57,8 +57,8 @@
 														</div>
 														<br>
 														<div class="form-group">
-															<b>N° de Cuenta</b>
-															<input class="form-control"  id="cuenta" name="cuenta"  type="number" placeholder="Numero de cuenta" onChange="validarSiNumero(this.value);">
+															<b>N° of Cuenta</b>
+															<input class="form-control"  id="cuenta" name="cuenta"  type="number" placeholder="Numero of cuenta" onChange="validarSiNumero(this.value);">
 														</div><br>
 														<div class="form-group">
 															Titular
@@ -127,14 +127,14 @@
 <script type="text/javascript">
 function ValidarVacio(banco, pais, cuenta){
 	if(banco == ''){
-		alert('Campo Nombre de Banco es requerido');
+		alert('Campo Nombre of bank es requerido');
 		return false;
 	}else if(pais == '0'){
 		alert('Seleciona un pais');
 		return false;
 	}else if(cuenta == ''){
 		
-		alert('Campo Numero de Cuenta es requerido');
+		alert('Campo Numero of Cuenta es requerido');
 		return false;
 	}else{
 		return true;
@@ -144,7 +144,7 @@ function ValidarVacio(banco, pais, cuenta){
 function agregar_banco()
 {
 	
-	var banco = $("#banco").val();
+	var banco= $("#banco").val();
 	var cuenta = $("#cuenta").val();
 	var pais = $("#pais").val();
 	var clabe = $("#clabe").val();

@@ -7,7 +7,7 @@
 							<!-- PAGE HEADER -->
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/configuracion/">Configuración</a> > Tipo de Red
+								<a href="/bo/configuracion/">Configuración</a> > Tipo of Network
 							</span>
 						</h1>
 					</div>
@@ -42,7 +42,7 @@
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-edit fa-3x"></i>
 															<h1>Alta</h1>
-															<h1>Red</h1><br>
+															<h1>Network</h1><br>
 														</div>
 													</a>
 												</div>
@@ -51,7 +51,7 @@
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-list-alt fa-3x"></i>
 															<h1>Listar</h1>
-															<h1>Redes</h1>
+															<h1>Networks</h1>
 															<br>
 														</div>
 													</a>

@@ -7,7 +7,7 @@
 			
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>&gt;
-								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/carrito_de_compras?co=c"> Carrito de Compras </a>
+								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/carrito_de_compras?co=c"> Carrito of Purchases </a>
 								> <a href="/bo/mercancia/index?co=c" >Alta</a> > Membresía
 				</span>
 			</h1>
@@ -44,7 +44,7 @@
 								<input type="text" class="hide" value="<?php echo $_GET['id']; ?>" name="tipo_mercancia">
 									
 								<fieldset>
-									<legend>Datos de la Membresía</legend>
+									<legend>Datos of the Membresía</legend>
 									<div id="form_mercancia">
 										<div class="row">
 												<fieldset>
@@ -54,7 +54,7 @@
 														</label>
 													</section>
 														<section class="col col-2">
-														<label class="input">Tiempo de caducidad
+														<label class="input">Tiempo of caducidad
 															<input required placeholder="En días" type="number"  id="caducidad" name="caducidad">
 														</label>
 													</section>
@@ -70,7 +70,7 @@
 															</label>
 													</section>
 													<section class="col col-2">
-														<label class="input"><span id="labelextra">Descuento de la membresía</span>
+														<label class="input"><span id="labelextra">Descuento of the membresía</span>
 														<input required id="precio_promo" type="number" min="0" name="descuento">
 														</label>
 													</section>
@@ -85,13 +85,13 @@
 															<span class="button">
 																<input id="img" name="img" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Agregar alguna imágen" type="text" required>
 															</div>
-															<small>Para cargar múltiples archivos, presione la tecla ctrl y sin soltar selecione sus archivos.<br /><cite title="Source Title">Para ver los archivos que va a cargar, deje el puntero sobre el boton de "Buscar"</cite></small>
+															<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br /><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>
 														</section>
 													</div>
 														
 												</fieldset>
 												<fieldset id="moneda_field">
-													<legend>Moneda y país</legend>
+													<legend>Moneda & país</legend>
 													<section class="col col-2">
 														<label class="input">
 														Costo distribuidores
@@ -100,7 +100,7 @@
 													</section>			
 													<section class="col col-3">
 														<label class="input">
-														Puntos comisionables
+														Points of commissions
 															<input type="number" min="0" max="" name="puntos_com" id="puntos_com" required>
 														</label>
 													</section>
@@ -109,7 +109,7 @@
 
 													<fieldset>
 													<div class="row" id="impuesto_agregar">
-														<section class="col col-2">País de la membresía
+														<section class="col col-2">País of the membresía
 														<label class="select">
 															<select id="pais" required name="pais" onChange="select_pais()">
 															<option value="-" selected>-- Seleciona un pais --</option>
@@ -375,7 +375,7 @@ function new_proveedor()
 		 	"Por favor ingresa tu apellido",
 		 	"Por favor seleciona un pais",
 		 	"Por favor ingresa tu código postal",
-		 	"Por favor seleciona el tipo de proveedor",
+		 	"Por favor seleciona the tipo of proveedor",
 		 	"Por favor ingresa un correo",
 		 	"Por favor seleciona una empresa"
 		 );

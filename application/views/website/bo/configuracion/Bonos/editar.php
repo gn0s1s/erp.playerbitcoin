@@ -45,7 +45,7 @@ var j=0;
 		</div>
 		<div class="form-group">
 	        <div class="row" id="cross_tipo_rango">
-									<header>Rangos</header><br><br>
+									<header>Ranking</header><br><br>
 									<div class="row">
 										<div class="col col-lg-3 col-xs-2">
 										</div>																	
@@ -84,12 +84,12 @@ var j=0;
 								<br>
 								<fieldset style="margin: 2rem;">
 								<legend>
-									Intervalos de Tiempo
+									Intervalos of Tiempo
 								</legend>
 									<div class="row">
 										<div class="col-sm-12 col-md-3 col-lg-3">
 											<div class="form-group">
-												<label>Meses de Afiliacion</label>
+												<label>Meses of Afiliacion</label>
 												<input class="form-control spinner-both"  id="mesDesdeAfiliacion" name="mesDesdeAfiliacion" value="<?php echo $bono[0]->mes_desde_afiliacion;?>">
 											</div>
 										</div>
@@ -97,28 +97,28 @@ var j=0;
 										</div>
 										<div class="col-sm-12 col-md-3 col-lg-3">
 											<div class="form-group">
-												<label>Meses Activo</label>
+												<label>Actived Months</label>
 												<input class="form-control spinner-both"  id="mesDesdeActivacion" name="mesDesdeActivacion" value="<?php echo $bono[0]->mes_desde_activacion;?>">
 											</div>
 										</div>
 									</div>
 								</fieldset>
 								<br>
-								<label style="margin: 1rem;"><h2>Fecha de Activacion</h2></label>
+								<label style="margin: 1rem;"><h2>Fecha of Activacion</h2></label>
 								<div style="margin: 1rem;">
 									<section class="col col-4">
 										<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-											<input required id="inicio" value="<?php echo $bono[0]->inicio;?>" type="text" name="inicio" placeholder="Fecha de Inicio">
+											<input required id="inicio" value="<?php echo $bono[0]->inicio;?>" type="text" name="inicio" placeholder="Fecha of Inicio">
 										</label>
 									</section>
 									<section class="col col-4">
 										<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-											<input required id="fin" value="<?php echo $bono[0]->fin;?>" type="text" name="fin" placeholder="Fecha de Fin">
+											<input required id="fin" value="<?php echo $bono[0]->fin;?>" type="text" name="fin" placeholder="Fecha of Fin">
 										</label>
 									</section><br><br><br>
 								<h4></h4>
 								
-								<header>Bonos Por Nivel</header><br><br>
+								<header>Calculated Commissions Por Nivel</header><br><br>
 									<div class="row">
 										<div class="col col-lg-3 col-xs-2">
 										</div>																	
@@ -189,9 +189,9 @@ var j=0;
 												
 												<?php
 												if($nivel->condicion_red=="RED")
-													echo "<option value='RED' selected>Toda La red</option>";
+													echo "<option value='RED' selected>Toda the Network</option>";
 												else 
-													echo "<option value='RED'>Toda La red</option>";
+													echo "<option value='RED'>Toda the Network</option>";
 												
 												if($nivel->condicion_red=="DIRECTOS")
 													echo "<option value='DIRECTOS' selected>Directos Afiliado</option>";
@@ -301,7 +301,7 @@ function enviar() {
 						.done(function( msg ) {
 
 							bootbox.dialog({
-						message: "Se ha Modificado el Bono."+msg,
+						message: "Se ha Modificado the Bono."+msg,
 						title: 'Felicitaciones',
 						buttons: {
 							success: {
@@ -328,13 +328,13 @@ function add_rango()
 	+'<div class="col col-xs-12 col-sm-12 col-lg-10">'
 		+'<label class="select">Nombre Rango'
 		+'<select id="id_rango'+i+'" style="max-width: 20rem;" name="id_rango[]" onChange="set_rango($(this).val(),\'rango'+i+'\');">'
-		+'<option value="0">--- Seleccione Rango ---</option>'
+		+'<option value="0">--- Seleccione Ranking ---</option>'
 		+'<?php	echo $rangos; ?>'
 	+'</select>'
 	+'</label>'
 	+'<div id="rango'+i+'" style="margin: 1rem;">'
 	+'</div>'
-	+'<a style="cursor: pointer;color: red;" onclick="delete_rango('+i+')">Eliminar Rango <i class="fa fa-minus"></i></a>'
+	+'<a style="cursor: pointer;color: red;" onclick="delete_rango('+i+')">Eliminar Ranking <i class="fa fa-minus"></i></a>'
 	+'</div>'
 	+'</div>';
 	$("#rango").append(code);
@@ -365,7 +365,7 @@ function add_nivel()
 	+'<div class="col col-xs-12 col-sm-6 col-lg-2" id="tipo_condicion">'
 	+'<label class="select">Condición'
 		+'<select name="condicion_red[]" style="width: 10rem;">'
-			+'<option value="RED">Toda La red</option>'
+			+'<option value="RED">Toda the Network</option>'
 			+'<option value="DIRECTOS">Directos Afiliado</option>'
 		+'</select>'
 	+'</label>'
@@ -423,7 +423,7 @@ var code='<div class="row">'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-2" id="tipo_condicion">'
 	+'<label class="select">Condición'
 		+'<select name="condicion_red[]" style="width: 10rem;">'
-			+'<option value="RED">Toda La red</option>'
+			+'<option value="RED">Toda the Network</option>'
 			+'<option value="DIRECTOS">Directos Afiliado</option>'
 		+'</select>'
 	+'</label>'

@@ -7,7 +7,7 @@
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
-				> <a href="/ov/red/index">Redes</a>
+				> <a href="/ov/red/index">Networks</a>
 				> <a href="/ov/red/mi_red?id=<?php echo $_GET['id']; ?>">Arbol</a>
 				> Genealogico
 				</span>

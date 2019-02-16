@@ -11,7 +11,7 @@
 							<a href="/bo/configuracion">Configuración</a>
 							</span>
 							<span>>
-							<a href="/bo/configuracion/formaspago">Formas de Pago</a>
+							<a href="/bo/configuracion/formaspago">Formas of Pago</a>
 							</span>
 							<span>>
 							Paypal
@@ -59,7 +59,7 @@
 								 <input required type="email" name="email" placeholder="Email" value="<?=$paypal[0]->email;?>" > 
 							 </label>
 							 <div class="note">
-								<strong>Nota:</strong> En estado test :seonetworksoft-facilitator@gmail.com.
+								<strong>Nota:</strong> on estado test :seonetworksoft-facilitator@gmail.com.
 							</div>
 						 </section>
 						 <section  class="col col-6">
@@ -84,7 +84,7 @@
 						 <section id="usuario" class="col col-6">
 							<label class="checkbox">
 								<input name="estatus" <?php if($paypal[0]->estatus == 'ACT') echo "checked='checked'";?> type="checkbox">
-							<i></i>Mostrar en Carrito de Compras
+							<i></i>Mostrar on Carrito of Purchases
 							</label>
 						 </section>
 					 </fieldset>

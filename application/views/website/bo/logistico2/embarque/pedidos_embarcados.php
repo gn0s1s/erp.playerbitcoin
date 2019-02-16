@@ -464,7 +464,7 @@
 					success: function(msg){
 						bootbox.dialog({
 							message: msg,
-							title: "Detalles de la venta",
+							title: "Detalles of the venta",
 							className: "",
 							buttons: {
 								success: {

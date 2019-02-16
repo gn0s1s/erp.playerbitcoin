@@ -59,7 +59,7 @@
 												<a href="/bo/logistico2/pedidos_transito">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 														<i class="fa fa-truck fa-3x"></i>
-														<h1>Pedidos en Transito</h1>
+														<h1>Pedidos on Transito</h1>
 													</div>
 												</a>
 												</div>

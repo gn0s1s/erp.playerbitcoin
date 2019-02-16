@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<a href="/ov/dashboard"><i class="fa fa-home"></i>Home</a>
 							<span>> 
-								Cupones - Boletos
+								Tickets/Cupons
 							</span>
 						</h1>
 					</div>

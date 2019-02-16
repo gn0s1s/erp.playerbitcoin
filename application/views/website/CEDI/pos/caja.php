@@ -53,7 +53,7 @@
 													<label> 
 														<input type="text" autofocus class="input-xlarge"
 														id="codigo" name="codigo" list="characters"
-														placeholder="Codigo de barra o Nombre del producto"
+														placeholder="Codigo of barra o Nombre del producto"
 														autocomplete="off"> 
 														<datalist id="characters">
 
@@ -129,7 +129,7 @@
 											
 											<section class="col-md-5 col-xs-5" style="padding-left: 2em">
 												<div class="pull-right">
-													<h5>Tipo de Compra:</h5>
+													<h5>Tipo of Compra:</h5>
 													<br />
 													<button type="button" class="btn btn-primary"
 														onclick="tipo_venta('DETAL')">P.
@@ -168,7 +168,7 @@
 
 
 											<section class="col-md-4 col-xs-7">
-												<pre class="pull-left" style="padding: 1em; font-size: 24px" id="art">0 Articulos en venta</pre>
+												<pre class="pull-left" style="padding: 1em; font-size: 24px" id="art">0 Articulos on venta</pre>
 											</section>
 											<section class="col-md-4 col-xs-6 text-center">
 												<div style="padding: 0.5em;">

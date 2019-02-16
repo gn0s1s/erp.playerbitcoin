@@ -11,7 +11,7 @@
 		<div class="row">
 			<section class="col col-lg-6 col-md-6 col-sm-6 col-xs-12" id="" style="padding-right: 100px ! important;">
 				<label class="label" style="padding-left: 50px;">
-					Fecha de Inicio
+					Fecha of Inicio
 				</label>
 				
 				<label class="input" style="padding-left: 50px;">	
@@ -21,7 +21,7 @@
 		
 			<section class="col col-lg-6 col-md-6 col-sm-6 col-xs-12" id="" style="padding-right: 100px ! important;">
 				<label class="label" style="padding-left: 50px;">
-					Fecha de Finalizacion
+					Fecha of Finalizacion
 				</label>
 				<label class="input" style="padding-left: 50px;">	
 					<input required name="fecha_fin" placeholder="Finalizacion" type="text" id="fecha_fin" value="<?=$notify[0]->fecha_fin?>">

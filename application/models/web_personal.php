@@ -55,7 +55,7 @@ class web_personal extends CI_Model{
         return $q && isset($q[0]->webfolder) ? $q[0]->webfolder : false;
     }
     
-    private function empresa()
+    function empresa()
     {
         $tipos = $this->db->get('empresa_multinivel');        
         $q = $tipos->result();
@@ -94,7 +94,7 @@ class web_personal extends CI_Model{
         
         $miWeb = $this->configDirPersonal($id);
         $miPagina = $miWeb . $this->sys_dir . "index.php";
-        
+        $webDir = $this->sys_dir ."refferal";
         $miPaginaWeb = $this->configPagePersonal($id);      
         
         #echo $miPaginaWeb;exit();               
@@ -107,7 +107,7 @@ class web_personal extends CI_Model{
         $webempresa = $webempresa[0]->web; # "http://[[website]]";
         
         $milink = explode($this->sys_dir, $miWeb);        
-        $milink = $webempresa.$this->sys_dir.end($milink);
+        $milink = $webempresa.$webDir.$this->sys_dir.end($milink);
         
         return $milink;
     }
@@ -121,9 +121,8 @@ class web_personal extends CI_Model{
         $custom = '<script src="https://www.google.com/recaptcha/api.js">'
                 .'</script>';
         
-        $sumario = 'DESPUÉS DE LA CONFIRMACIÓN POR E-MAIL, 
-                    USTED COMENZARÁ A RECIBIR INFORMACIONES
-                    REFERENTE AL PROYECTO.';
+        $sumario = 'WHEN YOU RECEIVE E-MAIL CONFIRMATION, 
+                    YOU\'LL CAN BE UPDATED FROM OUR BUSINESS NEWSLETTERS.';
         
         $this->setContentPagePersonal("SUMARIO", $sumario);
         $this->setContentPagePersonal("FORM", $form);
@@ -184,7 +183,12 @@ class web_personal extends CI_Model{
         $setbody = str_replace("<body","¬<body", $setbody);
         $setbody = explode("¬", $setbody);
         
-        $head = $setbody[0];       
+        $head = $setbody[0];
+        $head = str_replace('href="','href="'.$webempresa.'/',$head);
+        $head = str_replace("$webempresa/http","http",$head);
+        $head = str_replace("$webempresa/form_template","form_template",$head);
+        $head = str_replace("../form_template","$webempresa/form_template",$head);
+
         $footer = str_replace("<body","</body",  $setbody[2]);
         $marca = '<a href="'.$webempresa.'"> 
                   <img alt="" src="'.site_url().'/logo.png" '
@@ -216,9 +220,9 @@ class web_personal extends CI_Model{
         
         $form = str_replace("[[G_KEY]]", $captcha, $form);
         $form = str_replace("</form>", $in_sponsor."</form>", $form);
-        $subtitle = "Patrocinador : $nombre_completo";
+        $subtitle = "Sponsor : $nombre_completo";
         $form = str_replace("Formulario de Afiliación:", $subtitle, $form);
-        
+
         return $form;
         
     }
@@ -230,7 +234,11 @@ class web_personal extends CI_Model{
         
         if(!$this->content)
             $this->content = file_get_contents(getcwd().$content_file);
-        
+
+        $webempresa = $this->empresa();
+        $webempresa = $webempresa[0]->web;
+        $this->content = str_replace("../form_template","$webempresa/form_template",$this->content);
+
         $this->content = str_replace("[[$".$let."]]","$parte", $this->content); 
         
     }
@@ -239,9 +247,17 @@ class web_personal extends CI_Model{
     {
         $mifolder = $this->traer_afiliado_username($id);
         $mifolder = strtolower($mifolder);
-        
-        $miWeb = $this->web_dir.$this->sys_dir.$mifolder;       
-        
+        $webDir = $this->sys_dir ."refferal";
+
+        $misite = $this->web_dir . $webDir;
+        $miWeb = $misite .$this->sys_dir.$mifolder;
+
+        if(!is_dir($misite))
+        {
+            mkdir($misite, 0777); #
+            log_message('DEV',"refferal : ".$misite);
+        }
+
         if(!is_dir($miWeb))
         {
             mkdir($miWeb, 0777); #

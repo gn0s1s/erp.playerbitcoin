@@ -21,7 +21,7 @@
 							
 							
 							
-			<!-- comienzo de tabla -->
+			<!-- comienzo of tabla -->
 			<div class="jarviswidget jarviswidget-color-blueDark" id="nuevos_afiliados" data-widget-editbutton="false">
 					<!-- widget options:
 					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
@@ -38,7 +38,7 @@
 					-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-					<h2>Reportes</h2>
+					<h2>Reports</h2>
 	
 				</header>
 				
@@ -59,7 +59,7 @@
 						<table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
 							<thead>
 								<tr>
-								 	<th data-class="expand">Red</th>
+								 	<th data-class="expand">Network</th>
 					                <th data-hide="phone,tablet">Servicio</th>
 					                <th data-hide="phone,tablet">Cantidad</th>
 						            <th data-hide="phone,tablet">Subtotal</th>
@@ -116,7 +116,7 @@
 				</div>
 						<!-- end widget div -->
 			</div>
-			<!-- finalizacion de tabla -->
+			<!-- finalizacion of tabla -->
 			
 			
 					<!-- end widget -->
@@ -284,13 +284,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{
@@ -379,13 +379,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{
@@ -785,13 +785,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha de fin');
+								alert('Introduzca fecha of fin');
 							}
 							else
 							{

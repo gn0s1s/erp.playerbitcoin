@@ -6,7 +6,7 @@
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>>
-					Perfil
+					Profile
 				</span>
 			</h1>
 		</div>
@@ -35,7 +35,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>   Perfil Usuario</h2>
+						<h2>   User profile</h2>
 
 					</header>
 
@@ -51,16 +51,16 @@
 						<!-- widget content -->
 						<div class="widget-body no-padding smart-form">
                 <fieldset>
-									<legend> Editar Perfil</legend>
+									<legend> Edit profile</legend>
                   <div class="contenidoBotones">
 										<div class="row">
 											<div class="col-sm-1">
 											</div>
 											<div class="col-sm-3">
-												<a href="/ov/perfil_red/perfil">
+												<a href="/ov/networkProfile/profile">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard primary botones" style="background: <?=$style[0]->btn_1_color?>">
 														<i class="fa fa-user fa-4x"></i>
-														<h1>Datos Personales</h1>
+														<h1>Personal information</h1>
 													</div>
 												</a>
 											</div>
@@ -68,15 +68,15 @@
 												<a href="/auth/change_password">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard primary botones" style="background: <?=$style[0]->btn_1_color?>">
 														<i class="fa fa-unlock fa-4x"></i>
-														<h1>Cambiar Contraseña</h1>
+														<h1>Change Password</h1>
 													</div>
 												</a>
 											</div>
 											<div class="col-sm-3 link">
-												<a href="/ov/perfil_red/foto">
+												<a href="/ov/networkProfile/photo">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard primary botones" style="background: <?=$style[0]->btn_1_color?>">
 														<i class="fa fa-camera fa-4x"></i>
-														<h1>Foto</h1>
+														<h1>Profile Photo</h1>
 													</div>
 												</a>
 											</div>

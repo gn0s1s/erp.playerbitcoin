@@ -57,7 +57,7 @@
 												<br/>
 												<div class="alert alert-success text-center">
 													<strong>Pago realizado con exito</strong><br>
-													<a onclick="location.href='/CEDI/POS'">Regresar a la caja</a>
+													<a onclick="location.href='/CEDI/POS'">Regresar a the caja</a>
 												</div>
 														
 											</section>
@@ -155,7 +155,7 @@
 																	<td colspan="3">
 																		<table width="100%">
 																			<td style="text-align:center">
-																				NO. DE ARTICULOS: <strong><?=$articulos?></strong><br/>
+																				NO. of ARTICULOS: <strong><?=$articulos?></strong><br/>
 																				PUNTOS: <strong><?=$item->total_puntos?></strong>
 																			</td>
 																			<td style="text-align:center">

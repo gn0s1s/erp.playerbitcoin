@@ -10,7 +10,7 @@
 							 
 								<a class="backHome" href="/ov/dashboard"> <i class="fa-fw fa fa-home"></i> Menu</a> 
 							<span>>
-								<a href="/ov/escuela_negocios/eventos"> Eventos</a> > Ver
+								<a href="/ov/events"> Eventos</a> > Ver
 							</span>
 						</h1>
 					</div>
@@ -148,7 +148,7 @@
 			    var date = new Date();
 			    var d = date.getDate();
 			    var m = date.getMonth();
-			    var y = date.getFullYear();
+			    var y= date.getFullYear();
 			
 			    var hdr = {
 			        left: 'title',

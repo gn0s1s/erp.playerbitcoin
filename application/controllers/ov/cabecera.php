@@ -256,7 +256,7 @@ class cabecera extends CI_Controller
 			{
 				case "general": $departamento="Dirección general"; break;
 				case "comercial": $departamento="Dirección comercial"; break;
-				case "soporte": $departamento="Soporte técnico"; break;
+				case "soporte": $departamento="Support"; break;
 			}
 		
 			$subject= $_POST['subject'].'. '.$departamento;

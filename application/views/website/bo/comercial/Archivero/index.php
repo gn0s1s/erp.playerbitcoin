@@ -40,7 +40,7 @@
 													<a href="/bo/CuentasPagar/Archivos">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<i class="fa fa-archive fa-3x"></i>
-															<h1>Historial De Pagos</h1>
+															<h1>Historial of Pagos</h1>
 														</div>
 													</a>
 												</div>

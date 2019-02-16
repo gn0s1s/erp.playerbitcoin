@@ -6,7 +6,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Configuración</a> > 
-								<a href="/bo/configuracion/compensacion">Plan de compensacion</a> >
+								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
 								<a href="/bo/titulos">Títulos</a>
 								> Listar Títulos
 							</span>
@@ -216,7 +216,7 @@ function eliminar(id) {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Eliminar el titulo ?'},
+		data: {message: '¿ Esta seguro que desea Eliminar the titulo ?'},
 	})
 	.done(function( msg )
 	{

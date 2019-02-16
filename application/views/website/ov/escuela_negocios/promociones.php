@@ -60,7 +60,7 @@
 										<!-- SuperBox -->
 										<div class="superbox col-sm-12">
 											<div class="superbox-list">
-												<img src="/media/carrito/Desert.jpg" data-img="/media/carrito/Desert.jpg" alt="Participa en esta promocion" title="Promocion 1" class="superbox-img">
+												<img src="/media/carrito/Desert.jpg" data-img="/media/carrito/Desert.jpg" alt="Participa on esta promocion" title="Promocion 1" class="superbox-img">
 											</div>
 											<div class="superbox-float"></div>
 										</div>
@@ -112,7 +112,7 @@ function mes()
 	var msg='<div class="row">'
 				+'<div class="superbox col-sm-12">'
 					+'<div class="superbox-list">'
-						+'<img src="/media/carrito/Desert.jpg" data-img="/media/carrito/Desert.jpg" alt="Participa en esta promocion" title="Promocion 1" class="superbox-img">'
+						+'<img src="/media/carrito/Desert.jpg" data-img="/media/carrito/Desert.jpg" alt="Participa on esta promocion" title="Promocion 1" class="superbox-img">'
 					+'</div>'
 					+'<div class="superbox-float"></div>'
 				+'</div>'
@@ -127,10 +127,10 @@ function historico()
 	var msg='<div class="row">'
 				+'<div class="superbox col-sm-12">'
 					+'<div class="superbox-list">'
-						+'<img src="/template/img/superbox/superbox-full-2.jpg" data-img="/template/img/superbox/superbox-full-2.jpg" alt="Participa en esta promocion" title="Promocion 1" class="superbox-img">'
+						+'<img src="/template/img/superbox/superbox-full-2.jpg" data-img="/template/img/superbox/superbox-full-2.jpg" alt="Participa on esta promocion" title="Promocion 1" class="superbox-img">'
 					+'</div>'
 					+'<div class="superbox-list">'
-						+'<img src="/media/carrito/Desert.jpg" data-img="/media/carrito/Desert.jpg" alt="Participa en esta promocion" title="Promocion 2" class="superbox-img">'
+						+'<img src="/media/carrito/Desert.jpg" data-img="/media/carrito/Desert.jpg" alt="Participa on esta promocion" title="Promocion 2" class="superbox-img">'
 					+'</div>'
 					+'<div class="superbox-float"></div>'
 				'</div>'

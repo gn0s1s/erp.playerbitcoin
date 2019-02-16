@@ -6,15 +6,15 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span>
                     > <a href="/bo/comercial">Comercial</a> 
-                    > <a href="/bo/comercial/red">Red</a>
-                    > Tipo de Afiliación
+                    > <a href="/bo/comercial/red">Network</a>
+                    > Tipo of Afiliación
                 </span>
             </h1>
         </div>
     </div>
     <div class="well">
         <fieldset>
-            <legend>Red</legend>
+            <legend>Network</legend>
             <div class="row">
                 <?php foreach ($redes as $red) { ?>
                     <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">

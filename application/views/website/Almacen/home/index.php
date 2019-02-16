@@ -32,16 +32,16 @@
 												align="center">
 												<button type="button" class="btn btn-primary"
 													onClick="window.location='dato_empresa.php'">Actualizar
-													Datos de la Empresa</button>
+													Datos of the Empresa</button>
 												<button type="button" class="btn btn-primary"
 													onClick="window.location='seccion.php'">Administrar
-													Secciones de Inventarios</button>
+													Secciones of Inventarios</button>
 												<button type="button" class="btn btn-primary"
 													onClick="window.location='caja.php?ddes=0'">Ventas</button>
 											</div>
 											<hr /> --><!-- Button to trigger modal -->
 											<div class="col-md-12">
-												<h4>productos de Baja Existencia</h4>
+												<h4>Low stock products</h4>
 												<br/>	
 												<section class="row well">																						
 												<table style="width: 100%" id="dt_basic" class="table table-striped table-bordered table-hover">
@@ -139,7 +139,7 @@
 												</div>
 												<div class="col-md-12"></div>
 												<div class="col-md-12">
-												<h4>Listado y Totales de Productos</h4>
+												<h4>Listado & Totales of Productos</h4>
 												<br/>
 												<section class="row well">
 													<table style="width: 100%" id="dt_basic2" class="table table-striped table-bordered table-hover">

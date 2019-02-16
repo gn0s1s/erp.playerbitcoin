@@ -6,7 +6,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<span>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<a href="/ov/billetera2/index_estado"> > Estado de cuenta</a>
+							<a href="/ov/accountStatus"> > Estado of cuenta</a>
 							 > Estado</span>
 							
 						</h1>
@@ -54,7 +54,7 @@
 													<table class="table">
 													<thead>
 														<tr>
-															<th> <i class="fa fa-sitemap"></i> Red</th>
+															<th> <i class="fa fa-sitemap"></i> Network</th>
 															<th> <i class="fa fa-money"></i> Comision</th>
 														</tr>
 													</thead>
@@ -104,7 +104,7 @@
 														
 														if($comision_todo["bonos"][$i]){
 															echo '<tr class="success" >
-																<td colspan="2"><i class="fa fa-gift"></i>Bonos</td>
+																<td colspan="2"><i class="fa fa-gift"></i>Calculated Commissions</td>
 															</tr>';
 															for ($k=0;$k<sizeof($comision_todo["bonos"][$i]);$k++){
 																if($comision_todo["bonos"][$i][$k]->valor<>0){
@@ -276,7 +276,7 @@
 				{					
 					bootbox.dialog({
 						message: msg,
-						title: 'Historial de Transacciones',
+						title: 'Historial of Transacciones',
 						buttons: {
 							danger: {
 								label: "Close",
@@ -299,7 +299,7 @@
 				{					
 					bootbox.dialog({
 						message: msg,
-						title: 'Detalles de la Comisiones',
+						title: 'Detalles of the Comisiones',
 						buttons: {
 							danger: {
 								label: "Close",

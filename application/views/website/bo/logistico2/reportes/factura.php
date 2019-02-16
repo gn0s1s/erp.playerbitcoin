@@ -122,7 +122,7 @@ foreach ($items as $item) {
                 <td colspan="3">
                     <table width="100%">
                         <td style="text-align:center">
-                            NO. DE ARTICULOS: <strong><?= $articulos ?></strong><br/>
+                            NO. of ARTICULOS: <strong><?= $articulos ?></strong><br/>
                             PUNTOS: <strong><?= $item->total_puntos ?></strong>
                         </td>
                         <td style="text-align:center">

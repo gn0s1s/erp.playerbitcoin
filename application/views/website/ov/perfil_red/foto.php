@@ -6,9 +6,9 @@
                     <h1 class="page-title txt-color-blueDark">
                        	<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>
-				> <a href="/ov/perfil_red/">Perfil</a>
+				> <a href="/ov/networkProfile">Profile</a>
 				>
-					Foto
+					Photo
 				</span>
                     </h1>
                 </div>
@@ -40,7 +40,7 @@
                                 -->
                                 <header>
                                     <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-                                    <h2>Tomar foto</h2>
+                                    <h2>Take a photo</h2>
 
                                 </header>
 
@@ -59,16 +59,16 @@
                                     <div id="mensaje">
                                     </div>
                                         <div id='botonera'>
-                                            <button class="btn btn-info" id='botonIniciar' type='button' >Iniciar  <li class="fa fa-play"></li></button>
-                                            <button class="btn btn-warning" id='botonDetener' type='button' value = 'Detener'>Detener  <li class="fa fa-pause"></li></button>
-                                            <button class="btn btn-success" id='botonFoto' type='button' value = 'Foto'>Capturar  <li class="fa fa-camera"></li></button>
+                                            <button class="btn btn-info" id='botonIniciar' type='button' >Start  <li class="fa fa-play"></li></button>
+                                            <button class="btn btn-warning" id='botonDetener' type='button' value = 'Detener'>Having  <li class="fa fa-pause"></li></button>
+                                            <button class="btn btn-success" id='botonFoto' type='button' value = 'Foto'>Capture  <li class="fa fa-camera"></li></button>
                                         </div><br />
                                         <div class="contenedor">
-                                            <div class="titulo">Cámara</div>
+                                            <div class="titulo">Camera</div>
                                             <video id="camara" autoplay controls></video>
                                         </div>
                                         <div class="contenedor">
-                                            <div class="titulo">Foto</div>
+                                            <div class="titulo">Profile Photo</div>
                                             <canvas id="foto" style="display:none" ></canvas>
 
                                           <form METHOD="POST" ENCTYPE="multipart/form-data" action="/ov/perfil_red/sube_foto_tomar/0" id="uploadPicture" name="picture">
@@ -110,7 +110,7 @@
                                 -->
                                 <header>
                                     <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-                                    <h2>Carga tu foto personal</h2>
+                                    <h2>Upload your personal photo</h2>
 
                                 </header>
 
@@ -132,7 +132,7 @@
                                         <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                                         </div>
                                         <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
-                                            <h1>Arrastra tu imágen o da clic para cargarla</h1>
+                                            <h1>Drag your image or click to load it</h1>
                                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                                             </div><i class="fa fa-file-image-o fa-5x"></i>
                                         </div>
@@ -168,7 +168,7 @@
 
                                 <header>
                                     <span class="widget-icon"> <i class="fa fa-comments"></i> </span>
-                                    <h2>Carga tu foto de fondo</h2>
+                                    <h2>Carga tu foto of fondo</h2>
 
                                 </header>
 
@@ -281,10 +281,10 @@ $(document).ready(function(){
 window.URL = window.URL || window.webkitURL;
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia ||
 function() {
-    alert('Su navegador no soporta está aplicación.');
+    alert('Your browser does not support this application.');
 };
 
-//Este objeto guardará algunos datos sobre la cámara
+//Este objeto guardará algunos datos sobre the cámara
 window.datosVideo = {
     'StreamVideo': null,
     'url': null
@@ -293,7 +293,7 @@ window.datosVideo = {
 $('#botonIniciar').on('click', function(e) {
 
     //Pedimos al navegador que nos da acceso a
-    //algún dispositivo de video (la webcam)
+    //algún dispositivo of video (la webcam)
     navigator.getUserMedia({
         'audio': false,
         'video': true
@@ -303,7 +303,7 @@ $('#botonIniciar').on('click', function(e) {
         $('#camara').attr('src', datosVideo.url);
 
     }, function() {
-        alert('No fue posible obtener acceso a la cámara.');
+        alert('It was not possible to get access to the camera.');
     });
 
 });
@@ -352,7 +352,7 @@ $('#botonDetener').on('click', function(e) {
 	                '                 ×  '+
 	                '</button>'+
 	                '<i class="fa-fw fa fa-check"></i>'+
-	                 '<strong>Felicitaciones !</strong> Se ha cambiado la foto de perfil.'+
+	                 '<strong>Congratulations!</strong> The profile photo has been changed.'+
 	               '</div>')
 			
 		}else{
@@ -361,7 +361,7 @@ $('#botonDetener').on('click', function(e) {
 	                '                 ×  '+
 	                '</button>'+
 	                '<i class="fa-fw fa fa-check"></i>'+
-	                 '<strong>Lo Lametamos !</strong>No se ha cambiado la foto de tu perfil.'+
+	                 '<strong>We sorry !</strong>Your profile photo has not been changed.'+
 	               '</div>')
 		}
 	});

@@ -3,8 +3,8 @@
         <input type="text" name="id" class="hide" value="<?php echo $proveedor[0]->id; ?>"/>
         <div class="row">
             <div class="col col-xs-12 col-sm-6 col-lg-6">
-                <label for="" class="input">Nombre de empresa
-                    <input type="text" class="form-control" name="nombre" placeholder="Nombre de empresa"class="form-control" value="<?php echo $proveedor[0]->nombre_empresa; ?>" required />
+                <label for="" class="input">Nombre of empresa
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre of empresa"class="form-control" value="<?php echo $proveedor[0]->nombre_empresa; ?>" required />
                 </label>
             </div>
 
@@ -77,7 +77,7 @@
 
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 <label for="" class="input">Dirección
-                    <input type="text" class="form-control" name="direccion" placeholder="Direccion de empresa"class="form-control" value="<?php echo $proveedor[0]->direccion; ?>" required />
+                    <input type="text" class="form-control" name="direccion" placeholder="Direccion of empresa"class="form-control" value="<?php echo $proveedor[0]->direccion; ?>" required />
                 </label>
             </div>
 
@@ -100,13 +100,13 @@
             <input type="text" name="id_contacto1" class="hide" value="<?php echo $contactos[0]->id; ?>" />
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 <label for="" class="input">Nombre
-                    <input type="text" class="form-control" name="nommbre_contacto1" placeholder="Nombre de persona de contacto" class="form-control" value="<?php echo $contactos[0]->nombre; ?>" required />
+                    <input type="text" class="form-control" name="nommbre_contacto1" placeholder="Nombre of persona of contacto" class="form-control" value="<?php echo $contactos[0]->nombre; ?>" required />
                 </label>
             </div>
 
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 <label for="" class="input">Apellido
-                    <input type="text" class="form-control" name="apellido_contacto1" placeholder="Apellido de persona de contacto" class="form-control" value="<?php echo $contactos[0]->apellido; ?>" required />
+                    <input type="text" class="form-control" name="apellido_contacto1" placeholder="Apellido of persona of contacto" class="form-control" value="<?php echo $contactos[0]->apellido; ?>" required />
                 </label>
             </div>
 
@@ -117,7 +117,7 @@ foreach ($telefono_movil as $telefono) {
                 <div class="col col-xs-12 col-sm-6 col-lg-6">
                     Teléfono Movil<label for="" class="input">
                         <i class="icon-prepend fa fa-phone"></i>
-                        <input name="telefonomovil1[]" placeholder="Teléfono Movil" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" value="<?php echo $telefono; ?>">
+                        <input name="telefonomovil1[]" placeholder="Teléfono Movil" data-mask="999 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" value="<?php echo $telefono; ?>">
                     </label>
                 </div>
 <?php } ?>
@@ -128,7 +128,7 @@ foreach ($telefono_movil as $telefono) {
                 <div class="col col-xs-12 col-sm-6 col-lg-6">
                     Teléfono Fijo<label for="" class="input">
                         <i class="icon-prepend fa fa-phone"></i>
-                        <input name="telefonofijo1[]" placeholder="Teléfono Fijo" data-mask=" (999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero de telefono valido" value="<?php echo $telefono; ?>">
+                        <input name="telefonofijo1[]" placeholder="Teléfono Fijo" data-mask=" (999) 999-9999" type="tel" pattern="[0-9]{7,50}" title="Por favor digite un numero of telefono valido" value="<?php echo $telefono; ?>">
                     </label>
                 </div>
 <?php } ?>
@@ -137,12 +137,12 @@ foreach ($telefono_movil as $telefono) {
                 E-mail
                 <label for="" class="input">
                     <i class="icon-prepend fa fa-envelope-o"></i>
-                    <input type="email" class="form-control" name="email_contacto1" placeholder="Email de la persona de contacto"class="form-control" value="<?php echo $contactos[0]->mail; ?>" required />
+                    <input type="email" class="form-control" name="email_contacto1" placeholder="Email of the persona of contacto"class="form-control" value="<?php echo $contactos[0]->mail; ?>" required />
                 </label>
             </div>
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 <label for="" class="input">Puesto
-                    <input type="text" class="form-control" name="puesto_contacto1" placeholder="Puesto de la persona de contacto" class="form-control" value="<?php echo $contactos[0]->puesto; ?>" />
+                    <input type="text" class="form-control" name="puesto_contacto1" placeholder="Puesto of the persona of contacto" class="form-control" value="<?php echo $contactos[0]->puesto; ?>" />
                 </label>
             </div>
         </div>
@@ -153,13 +153,13 @@ foreach ($telefono_movil as $telefono) {
             <input type="text" name="id_contacto2" class="hide" value="<?php echo count($contactos) == 2 ? $contactos[1]->id : ''; ?>" />
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 <label for="" class="input">Nombre
-                    <input type="text" class="form-control" name="nommbre_contacto2" placeholder="Nombre de persona de contacto"class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->nombre : ''; ?>" />
+                    <input type="text" class="form-control" name="nommbre_contacto2" placeholder="Nombre of persona of contacto"class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->nombre : ''; ?>" />
                 </label>
             </div>
 
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 <label for="" class="input">Apellido
-                    <input type="text" class="form-control" name="apellido_contacto2" placeholder="Apellido de persona de contacto"class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->apellido : ''; ?>" />
+                    <input type="text" class="form-control" name="apellido_contacto2" placeholder="Apellido of persona of contacto"class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->apellido : ''; ?>" />
                 </label>
             </div>
             <?php
@@ -188,13 +188,13 @@ foreach ($telefono_movil as $telefono) {
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 E-mail<label for="" class="input">
                     <i class="icon-prepend fa fa-envelope-o"></i>
-                    <input type="email" class="form-control" name="email_contacto2" placeholder="Email de la persona de contacto" class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->mail : ''; ?>" />
+                    <input type="email" class="form-control" name="email_contacto2" placeholder="Email of the persona of contacto" class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->mail : ''; ?>" />
                 </label>
             </div>
 
             <div class="col col-xs-12 col-sm-6 col-lg-6">
                 Puesto<label for="" class="input">
-                    <input type="text" class="form-control" name="puesto_contacto2" placeholder="Puesto de la persona de contacto"class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->puesto : ''; ?>" />
+                    <input type="text" class="form-control" name="puesto_contacto2" placeholder="Puesto of the persona of contacto"class="form-control" value="<?php echo count($contactos) == 2 ? $contactos[1]->puesto : ''; ?>" />
                 </label>
             </div>
         </div>

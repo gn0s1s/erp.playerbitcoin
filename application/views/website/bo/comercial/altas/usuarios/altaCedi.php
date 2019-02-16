@@ -80,7 +80,7 @@
 											?>
 											<?php echo form_open($this->uri->uri_string()); ?>
 											<label class="select">
-												<label class="label">Seleccione el CEDI al que pertenecerá</label>
+												<label class="label">Seleccione the CEDI al que pertenecerá</label>
 												<select name="id_cedi" id="id_cedi" required="">
 													<?php foreach ($cedis as $cedi) {?>
 														<option value="<?php echo $cedi->id_cedi; ?>">
@@ -176,7 +176,7 @@
 											<br>
 											
 											<section class="input">
-												<label class="input">Fecha de inicio
+												<label class="input">Fecha of inicio
 												<input required type="text" name="fecha_alta" id="startdate"  /> </label>
 											</section>
 											

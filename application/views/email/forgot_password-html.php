@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Correo de prueba</title>
+<title>Correo of prueba</title>
 	
 <style>
 	/* ------------------------------------- 
@@ -273,11 +273,11 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 						<h3></h3>				
 	<a href="<?php echo site_url('/auth/reset_password/'.$user_id.'/'.$new_pass_key); ?>" style="color: #3366cc;"><h5>Da click aquí para recuperar tu contraseña</h5></a><br />
 	<br />
-	¿El link no funciona? Copia y pega en la barra de direcciones de tu navegador el siguiente link.<br />
+	¿El link no funciona? Copia & pega on the barra of direcciones of tu navegador the siguiente link.<br />
 	El link solo funciona una sola vez.<br />
 	<nobr><a href="<?php echo site_url('/auth/reset_password/'.$user_id.'/'.$new_pass_key); ?>" style="color: #3366cc;"><?php echo site_url('/auth/reset_password/'.$user_id.'/'.$new_pass_key); ?></a></nobr><br />
 
-	Has recibido este correo desde <a href="<?php echo site_url(''); ?>" style="color: #3366cc;"><?php echo $site_name; ?></a> como solicitud de una recuperación de contraseña, si no has sido tú, puedes ignorarlo.<br />
+	Has recibido este correo desde <a href="<?php echo site_url(''); ?>" style="color: #3366cc;"><?php echo $site_name; ?></a> como solicitud of una recuperación of contraseña, si no has sido tú, puedes ignorarlo.<br />
 
 					</td>
 				</tr>

@@ -100,7 +100,7 @@ class cuentasporcobrar extends compras{
 			
 			echo  $confirmacion ? "...EMAIL ENVIADO..." : "...EMAIL NO ENVIADO...";
 			
-			echo  "La petición se ha cambiado de estado a pago y ha calculado las comisiones.";
+			echo  "La petición se ha cambiado de estado a pago y ha calculado las commissions.";
 		
 		}else{
 			echo  "No se ha podido realizar el cambio de estado de la peticion.";

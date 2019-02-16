@@ -151,7 +151,7 @@ class cgeneral extends CI_Controller
 		
 		if($this->general->isAValidUser($id,"OV") == false)
 		{
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$style=$this->general->get_style($id);
@@ -223,7 +223,7 @@ class cgeneral extends CI_Controller
 		
 		if($this->general->isAValidUser($id,"OV") == false)
 		{
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$style=$this->general->get_style($id);
@@ -291,7 +291,7 @@ class cgeneral extends CI_Controller
 		
 		if($this->general->isAValidUser($id,"OV") == false)
 		{
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$style=$this->general->get_style($id);
@@ -328,7 +328,7 @@ class cgeneral extends CI_Controller
 		
 		if($this->general->isAValidUser($id,"OV") == false)
 		{
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$usuario=$this->general->get_username($id);
@@ -343,7 +343,7 @@ class cgeneral extends CI_Controller
 		$success = "El cambio se ha efectuado satisfactoriamente.";
 		$this->session->set_flashdata('success', $success);
 	
-		redirect('/ov/cgeneral/web_personal');
+		redirect('/ov/personalWeb');
 	}
 	
 	function envia_mail_invitacion_web_personal()
@@ -354,7 +354,7 @@ class cgeneral extends CI_Controller
 		
 		if($this->general->isAValidUser($id,"OV") == false)
 		{
-			redirect('/ov/compras/carrito');
+			redirect('/shoppingcart');
 		}
 		
 		$email = $this->model_cabecera->get_mail($id);
@@ -373,25 +373,25 @@ class cgeneral extends CI_Controller
 		
 		$acceso = $this->model_user_webs_personales->traer_acceso_web_personal_afiliado($username);
 		
-		$mensaje = "Para tener acceso a mi tienda virtual debes acceder por medio de los siguientes datos:<br><br>
+		$mensaje = "Para tener acceso a my tienda virtual debes acceder por medio de los siguientes datos:<br><br>
 				 Username: ".$acceso[0]->username."<br>
 				  Clave: ".$acceso[0]->clave;
 		
 		$this->email->message($mensaje);
 		
-		$this->email->subject("Invitación a mi tienda virtual en pekcell gold");
+		$this->email->subject("Invitación a my tienda virtual en pekcell gold");
 	
 		if($this->email->send()){
 			$success = "Se ha enviado el email Exitosamente .";
 
 			$this->session->set_flashdata('success', $success);
 			
-			redirect('/ov/cgeneral/web_personal');
+			redirect('/ov/personalWeb');
 		}else{
 			$error = "Por favor verificar la informacion e intentar nuevamente .";
 		$this->session->set_flashdata('error', $error);
 	
-		redirect('/ov/cgeneral/web_personal');
+		redirect('/ov/personalWeb');
 
 		}
 	}

@@ -19,7 +19,7 @@
                          id="busquedatodos">
                     <label class="label">Grupo</label> <label class="select"> <select
                             name="grupo" id="grupo" required>
-                            <option value="0">Selecciona el grupo</option>
+                            <option value="0">Selecciona the grupo</option>
                             <?php
                             foreach ($grupos as $grupo) {
 
@@ -64,7 +64,7 @@
                                  onchange="this.parentNode.nextSibling.value = this.value"
                                  name="userfile1" type="file" >Buscar
                         </span><input name="file_nme_2"
-                                      placeholder="Seleccione una imagen para el e-book" type="text"
+                                      placeholder="Seleccione una imagen para the e-book" type="text"
                                       id="file_frm_2" >
                     </div>
                 </section>
@@ -83,7 +83,7 @@
                                  onchange="this.parentNode.nextSibling.value = this.value"
                                  name="userfile2" type="file" >Buscar
                         </span><input name="file_nme_2"
-                                      placeholder="Seleccione una imagen para el e-book" type="text"
+                                      placeholder="Seleccione una imagen para the e-book" type="text"
                                       id="file_frm_2" value="<?php echo $ebook[0]->nombre_completo; ?>"
                                       required>
                     </div>

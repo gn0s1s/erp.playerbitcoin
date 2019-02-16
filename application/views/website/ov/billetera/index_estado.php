@@ -5,26 +5,26 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>
-					> Estado de Cuenta
+					> Estado of Cuenta
 				</span>
 			</h1>
 		</div>
 	</div>
 <div class="well">
  <fieldset>
-	<legend>Estado de Cuenta</legend>
+	<legend>Profit Statement</legend>
 						<div class="col-lg-2 col-sm-4 col-md-4 col-xs-12">
 						</div>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-						<a href="estado">
+						<a href="accountStatus/status">
 							<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 								<i class="fa fa-dollar fa-3x"></i>
-								<h5>Estado de Cuenta</h5>
+								<h5>Profit Statement</h5>
 							</div>	
 						</a>
 					</div>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-						<a href="/ov/billetera2/historial_cuenta">
+						<a href="/ov/accountStatus/accountHistory">
 							<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 								<i class="fa fa-calendar fa-3x"></i>
 								<h5>Historial Cuenta</h5>

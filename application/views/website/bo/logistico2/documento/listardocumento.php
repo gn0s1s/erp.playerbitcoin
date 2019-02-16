@@ -244,13 +244,13 @@ $(document).ready(function() {
 	
 function estado_almacen(estatus, id)
 {
-	var msg = "¿Desea desactivar el Documento?";
+	var msg = "¿Desea desactivar the Documento?";
 	var titulo;
 	if(estatus == "DES"){
-		msg = "¿Desea desactivar el Documento?";
+		msg = "¿Desea desactivar the Documento?";
 		titulo = "Desactivar Documento";
 	}else{
-		msg = "¿Desea activar el Documento?";
+		msg = "¿Desea activar the Documento?";
 		titulo = "Activar Documento";
 	}
 		
@@ -313,7 +313,7 @@ function estado_almacen(estatus, id)
 		$.ajax({
 			type: "POST",
 			url: "/auth/show_dialog",
-			data: {message: '¿ Esta seguro que desea eliminar el documento ?'},
+			data: {message: '¿ Esta seguro que desea eliminar the documento ?'},
 		})
 		.done(function( msg )
 		{

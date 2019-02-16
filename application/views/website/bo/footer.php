@@ -20,7 +20,7 @@ $style = array(
                 <span class="pull-right txt-color-white">Hola: <?=$nombre?> tu última sesión fue: <?=$sesion?></span>
             <?}?>
             <span class="txt-color-white">
-			Copyright © <?=date('Y');?> <?=$nombre_empresa?> Todos los derechos reservados.
+			Copyright © <?=date('Y');?> <?=$nombre_empresa?> All Rights Reserved.
 		<a href="<?=$web?>" target="_BLANK"><?=$nombre_empresa?></a></span>
 				</div>
 			</div>

@@ -16,7 +16,7 @@
 		</div>		
 		<div class="form-group">			
 			<div class="col-md-5"><br>
-			<p>Nota: Si tu red es de frontalidad o profundidad es infinita, en la configuracion ponle 0.</p><br>
+			<p>Nota: Si tu red es of frontalidad o profundidad es infinita, on the configuracion ponle 0.</p><br>
 				<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-arrow-right"></i>
 					<input type="number" class="form-control" name="frontal" size="30" min="0" placeholder="frontalidad" value="<?= $datosDeRed[0]->frontal;?>" required>
 		        </label>
@@ -27,25 +27,25 @@
 			<div class="col-md-1"><br>
 			</div>	        
 			<div class="col-md-5"><br>
-			<p>Elije tipo de plan de compensación.</p><br>
+			<p>Elije tipo of plan of compensación.</p><br>
 	        <label class="radio">
-	        <input type="radio" name="tipo_plan" value="BIN" <?=($datosDeRed[0]->plan=="BIN") ? 'checked' : '' ?> placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="BIN" <?=($datosDeRed[0]->plan=="BIN") ? 'checked' : '' ?> placeholder="tipo of plan">
 	        <i></i>Binario</label>
 	        <!-- <label class="radio">
-	        <input type="radio" name="tipo_plan" value="BEQ" <?/*($datosDeRed[0]->plan=="BEQ") ? 'checked' : '' */?> placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="BEQ" <?/*($datosDeRed[0]->plan=="BEQ") ? 'checked' : '' */?> placeholder="tipo of plan">
 	        <i></i>Binario Equilibrado</label>-->
 	        <label class="radio">
-	        <input type="radio" name="tipo_plan" value="MAT" <?=($datosDeRed[0]->plan=="MAT") ? 'checked' : '' ?> placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="MAT" <?=($datosDeRed[0]->plan=="MAT") ? 'checked' : '' ?> placeholder="tipo of plan">
 	        <i></i>Matricial</label>
 	        <label class="radio">
-	        <input type="radio" name="tipo_plan" value="UNI" <?=($datosDeRed[0]->plan=="UNI") ? 'checked' : '' ?> placeholder="tipo de plan">
+	        <input type="radio" name="tipo_plan" value="UNI" <?=($datosDeRed[0]->plan=="UNI") ? 'checked' : '' ?> placeholder="tipo of plan">
 	        <i></i>Unilevel</label></div>
 	       
 		</div>
 		</div>		
 			<div class="row">	
 		<div class="form-group">
-			<br><p>Valor del Punto Comisionable.</p><br>
+			<br><p>Valor del Punto of commission.</p><br>
 			<div class="col-md-5">
 				<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-dollar"></i>
 					<input type="number" min="1" class="form-control" name="valor_punto" size="10" placeholder="Valor del Punto" value="<?= $datosDeRed[0]->valor_punto;?>" required>

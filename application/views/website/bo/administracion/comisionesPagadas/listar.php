@@ -178,13 +178,13 @@
 				var fin=$("#finishdate").val();
 					if(inicio=='')
 					{
-							alert('Introduzca fecha de inicio');
+							alert('Introduzca fecha of inicio');
 					}
 					else
 					{
 						if(fin=='')
 						{
-							alert('Introduzca fecha de fin');
+							alert('Introduzca fecha of fin');
 						}
 						else
 						{
@@ -215,7 +215,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar la venta con sus respectivas comisiones ?'},
+					data: {message: '¿ Esta seguro que desea Eliminar the venta con sus respectivas comisiones ?'},
 				})
 				.done(function( msg )
 				{

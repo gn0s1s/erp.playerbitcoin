@@ -227,7 +227,7 @@ function new_ciudad(){
 								//$("#empresa").append("<option value="+empresa['id']+">"+empresa['nombre']+"</option>");
 								//$("#empresa").val(empresa['id']);
 								bootbox.dialog({
-								message: "Se agrego la ciudad correctamente",
+								message: "Se agrego the ciudad correctamente",
 								title: 'Ciudades',
 								buttons: {
 									success: {

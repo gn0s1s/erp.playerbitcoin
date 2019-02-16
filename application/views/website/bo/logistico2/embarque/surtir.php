@@ -9,7 +9,7 @@
 						<label class="input"> 
 						<i class="icon-append fa fa-calendar"></i> 
 						<input required class="col col-6" id="datepicker" type="text"
-							name="nacimiento" placeholder="Fecha de entrega">
+							name="nacimiento" placeholder="Fecha of entrega">
 						</label>
 					</section>
 
@@ -17,15 +17,15 @@
 						<label class="input">
 						<i class="icon-append fa fa-paste"></i>  
 						<input required class="col col-6" id="n_guia" type="text" 
-							name="n_guia" placeholder="número de guia">
+							name="n_guia" placeholder="número of guia">
 						</label>
 					</section>
 					
 					<section class="col-md-3"></section>
 					<section class="col-md-6">
-						<label class="select">Proveedor de mensajería
+						<label class="select">Proveedor of mensajería
 							<select id="proveedor" required name="proveedor">
-								<option value="" >Elije un Proveedor de mensajería</option>
+								<option value="" >Elije un Proveedor of mensajería</option>
                               	<?php 
                               	foreach ($proveedores as $proveedor){
                               		echo "<option value='".$proveedor->id."'>".$proveedor->nombre_empresa."</option>";
@@ -73,12 +73,12 @@ function enviar() {
 	var id_venta=<?=$venta?>;
 	
 	if(fecha==""){
-		alert("Especifique una fecha de entrega");
+		alert("Especifique una fecha of entrega");
 	}else if(n_guia==""){
-		alert("Especifique un número de guia");
+		alert("Especifique un número of guia");
 	}else{
 		bootbox.dialog({
-				message: "¿Desea surtir toda la venta ahora?",
+				message: "¿Desea surtir toda the venta ahora?",
 				title: "Surtir",
 				className: "",
 				buttons: {

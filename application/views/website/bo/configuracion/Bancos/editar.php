@@ -7,7 +7,7 @@
 			<input type="hidden" name="id_banco" id="id_banco" value="<?php echo $banco[0]->id_banco; ?>">
 			<fieldset>
 				<div class="form-group">
-					<b>Nombre de Banco</b> <input class="form-control" id="banco"
+					<b>Nombre of Banco</b> <input class="form-control" id="banco"
 						name="banco" type="text" placeholder="Nombre del banco" value="<?php echo $banco[0]->descripcion?>">
 				</div>
 				<br>
@@ -27,9 +27,9 @@
 				</div>
 				<br>
 				<div class="form-group">
-					<b>N° de Cuenta</b>
+					<b>N° of Cuenta</b>
 					<input class="form-control" id="cuenta"
-						name="cuenta" type="number" placeholder="Numero de cuenta"
+						name="cuenta" type="number" placeholder="Numero of cuenta"
 						onChange="validarSiNumero(this.value);"
 						value="<?php echo $banco[0]->cuenta?>">
 				</div>
@@ -93,14 +93,14 @@ function validarSiNumero(numero){
   }
 function ValidarVacio(banco, pais, cuenta){
 	if(banco == ''){
-		alert('Campo Nombre de Banco es requerido');
+		alert('Campo Nombre of bank es requerido');
 		return false;
 	}else if(pais == '0'){
 		alert('Seleciona un pais');
 		return false;
 	}else if(cuenta == ''){
 		
-		alert('Campo Numero de Cuenta es requerido y debe ser un numero');
+		alert('Campo Numero of Cuenta es requerido & debe ser un numero');
 		return false;
 	}else{
 		return true;
@@ -111,7 +111,7 @@ function ValidarVacio(banco, pais, cuenta){
 function enviar()
 {
 	var id_banco = $("#id_banco").val();
-	var banco = $("#banco").val();
+	var banco= $("#banco").val();
 	var cuenta = $("#cuenta").val();
 	var pais = $("#pais").val();
 	var clabe = $("#clabe").val();
