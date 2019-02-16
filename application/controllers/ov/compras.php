@@ -222,12 +222,14 @@ function index()
 		$costosImpuestos=$this->modelo_compras->getCostosImpuestos($pais[0]->pais,$items['id']);
 		
 		$cantidad=$items['qty'];
+         $categoria = isset($detalles[0]->id_red) ? $detalles[0]->id_red : $detalles[0]->id_grupo;
 
-		$info_compras[$contador]=Array(
+            $info_compras[$contador]=array(
 				"imagen" => $imagenes[0]->url,
 				"nombre" => $detalles[0]->nombre,
 				"puntos" => $detalles[0]->puntos_comisionables,
 				"descripcion" => $detalles[0]->descripcion,
+                "categoria" => $categoria,
 				"costos" => $costosImpuestos,
 				"cantidad" => $cantidad
 		);
@@ -395,7 +397,14 @@ function index()
 
         $contenidoCarrito=$this->get_content_carrito ();
 
-        $totalCarrito=$this->get_valor_total_contenido_carrito($contenidoCarrito);
+        $deposits = 3;
+        $totalCarrito=$this->get_valor_total_contenido_carrito($contenidoCarrito,false, $deposits);
+
+        if($totalCarrito<=0){
+            log_message('DEV',"deposits do not pay itself :: ".json_encode($contenidoCarrito));
+            echo "Payment option do not apply.";
+            return false;
+        }
 
         $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
         $saldo =  $billetera["add"];
@@ -405,7 +414,7 @@ function index()
 
         if($saldo<0){
             log_message('DEV',"refunds earnings :: ".json_encode($billetera));
-            echo "SALDO INSUFICIENTE";
+            echo "Insufficient Balance";
             return false;
         }
 
@@ -421,6 +430,8 @@ function index()
 
         $emailPagos = $this->general->emailPagos();
         $emailPagos = $emailPagos[0]->email;
+
+        $this->pagarComisionVenta($id_venta,$id);
 
         $typesec = $this->typeSERVER();
         $SERVER_NAME = $_SERVER["SERVER_NAME"];
@@ -601,7 +612,16 @@ function index()
             $fecha = date("Y-m-d");
 
             $proceso = $this->getCarritoProceso($id_pago);
+
+            if(!$proceso){
+                $error = "Blockchain process not found :::: $id_pago";
+                echo "ERROR -> ".$error;
+                log_message('DEV', $error);
+                return false;
+            }
+
             $id = $proceso[0]->id_usuario;
+            $requested= $proceso[0]->confirmations;
             $email = $this->general->get_email($id);
             $email = $email[0]->email;
             $referencia = json_encode($proceso[0]->carrito);
@@ -619,7 +639,68 @@ function index()
                 log_message('DEV', $error);
                 return false;
             }
+
+            $myAPI = $this->getExploreBlockchain();
+            $tx = $myAPI->getAddressHash($address);
+
+            if(!$tx){
+                $error = "Blockchain API ERROR -> address:$address";
+                echo "ERROR -> ".$error;
+                log_message('DEV', $error);
+                redirect("/auth");
+                exit();
+            }
+
+            $exp = pow(10,8);
+            $received = isset($tx->total_received) ? $tx->total_received*$exp : 0;
+
+            $requerido = $this->getAmountCarrito($carrito);
+
+            $myAPI = false;
+            $myAPI = $this->getRatesBlockchain();
+            $currency = "USD";$to="BTC";
+            $recibido = $myAPI->convertFrom($received,$currency);
+
+            $incompleto = ($recibido < $requerido);
+
+            log_message('DEV',"data :: $recibido -> $requerido");
+
+            if($incompleto){
+                $error = "Blockchain: Payment Insufficient -> id:$id";
+                echo "ERROR -> ".$error;
+                log_message('DEV', $error);
+
+                $faltante = $requerido - $recibido;
+                $view = "<h2>Address : $address</h2><hr/><br/>
+                                <h3>You must pay the purchase required amount</h3>
+                                <b>Required Amount: <strong>$ $faltante $currency</strong></b>";
+                $this->cemail->sendPHPmail($email,$metodo_pago,$view);
+                redirect("/auth");
+                exit();
+            }
+
+            $where = "AND transaction_id = '$code'";
+            $isRepeated = $this->modelo_compras->getPagoOnlineBy($id, $where);
+            if($isRepeated){
+                $error = "Blockchain BOT DETECTED : $id_pago -> $code";
+                echo "ERROR -> ".$error;
+                log_message('DEV', $error);
+                redirect("/auth");
+                exit();
+            }
+
+            $confirmed = 3;
+            $requested++;
+            $this->addConfirmationOnline($id_pago,$requested);
+            if($requested < $confirmed){
+                $error = "Blockchain confirmations ($requested | $confirmed): id:$id p:$id_pago";
+                echo "DEV -> ".$error;
+                log_message('DEV', $error);
+                return false;
+            }
+
             unset($carrito[0]);
+
             $id_venta = $this->modelo_compras->registrar_venta_pago_online($id,$metodo_pago,$fecha);
 
             $this->modelo_compras->registrar_pago_online
@@ -646,6 +727,57 @@ function index()
         echo "FAIL";
         return false;
 
+    }
+
+    public function getExploreBlockchain()
+    {
+        $blockchain = $this->modelo_pagosonline->get_datos_blockchain();
+        $api_key = $blockchain[0]->apikey;
+
+        $link = getcwd() . "/BlockchainSdk/exec/explorer.php";
+        $myAPI = false;
+        require $link;
+
+        if (!$myAPI) {
+            echo "<b>.::: Blockchain in Built :::.</b>";
+            log_message('DEV', "Blockchain API ERROR");
+            return false;
+        }
+
+        return $myAPI;
+    }
+
+    public function getRatesBlockchain()
+    {
+        $blockchain = $this->modelo_pagosonline->get_datos_blockchain();
+        $api_key = $blockchain[0]->apikey;
+
+        $link = getcwd() . "/BlockchainSdk/exec/rates.php";
+        $myAPI = false;
+        require $link;
+
+        if (!$myAPI) {
+            echo "<b>.::: Blockchain in Built :::.</b>";
+            log_message('DEV', "Blockchain API ERROR");
+            return false;
+        }
+
+        return $myAPI;
+    }
+
+    public function getAmountCarrito($carrito)
+    {
+        $amount = isset($carrito[0]["amount"]) ? $carrito[0]["amount"] : false;
+        $montoPago = isset($carrito[0]->amount) ? $carrito[0]->amount : $amount;
+        if (!$montoPago) {
+            $montoPago = 0;
+            foreach ($carrito as $cart) {
+                if (isset($cart["price"])) {
+                    $montoPago += $cart["price"] * $cart["qty"];
+                }
+            }
+        }
+        return $montoPago;
     }
 
     function comprobarBlockchain(){
@@ -700,7 +832,7 @@ function index()
 
         if(!$this->cart->contents()){
             echo "<script>window.location='/shoppingcart';</script>";
-            echo "La compra no puedo ser registrada";
+            echo "The purchase couldn't success!";
             return 0;
         }
 
@@ -1485,7 +1617,7 @@ function index()
 		}
 	}
 
-    private function get_valor_total_contenido_carrito($contenidoCarrito, $fee = false)
+    private function get_valor_total_contenido_carrito($contenidoCarrito, $fee = false,$exception = false)
     {
         $contador = 0;
         $total = 0;
@@ -1498,11 +1630,12 @@ function index()
 
             $precioUnidad = $items['price'];#TODO: $contenidoCarrito['compras'][$contador]['costos'][0]->costo;
 
-            foreach ($contenidoCarrito['compras'][$contador]['costos'] as $impuesto) {
+            $itemCartData = $contenidoCarrito['compras'][$contador];
+            foreach ($itemCartData['costos'] as $impuesto) {
                 $costoImpuesto += $impuesto->costoImpuesto;
             }
 
-            if ($contenidoCarrito['compras'][$contador]['costos'][0]->iva != 'MAS') {
+            if ($itemCartData['costos'][0]->iva != 'MAS') {
                 $precioUnidad -= $costoImpuesto;
             }
 
@@ -1514,6 +1647,9 @@ function index()
                 $where = "estatus = 'ACT'";
                 $totalItem = $this->setBlockchainFee($totalItem, $where);
             }
+
+            if($itemCartData['categoria'] == $exception)
+                $totalItem = 0;
 
             $total += $totalItem;
             $contador++;
@@ -4358,15 +4494,22 @@ function index()
             $tipo_plan = $tipo_plan[0]->plan;
             $isMatricial = $tipo_plan == $MATRICIAL;
             $isUnilevel = $tipo_plan == $UNILEVEL;
-            if ($isMatricial || $isUnilevel) {
+            $categoria = $mercancia->categoria;
+
+            log_message('DEV',"categoria ($categoria) tipo -> $id_red_item");
+
+            $isPSR = $categoria == 2;
+            $isAvailable = $isMatricial || $isUnilevel;
+
+            if ($isAvailable && $isPSR) {
 
                 $costoVenta = $mercancia->costo_unidad_total;
                 $this->calcularComisionAfiliado($id_venta, $id_red_item, $costoVenta, $id_afiliado);
 
             }
-            $categoria = $mercancia->categoria;
-            log_message('DEV',"categoria compra :: $id_red_item");
-            if($categoria == 3)
+
+            $isDeposit = $categoria == 3;
+            if($isDeposit)
                 $this->setDepositoCompra($id_afiliado, $mercancia);
 
         }
@@ -4521,6 +4664,14 @@ function index()
 
         return $valor;
 
+    }
+
+    private function addConfirmationOnline($id_pago,$valor)
+    {
+        $query = "UPDATE pago_online_proceso 
+                            SET confirmations = $valor
+                            WHERE id = $id_pago";
+        $this->db->query($query);
     }
 
 }

@@ -131,7 +131,7 @@ class autobono
 			$historial = $this->newHistorialBono ( $id_bono, $fechaInicio, $fechaFin );
 		
 		if ($valor > 0)
-			echo "PAGO $id_usuario : $ $valor | OK! \n\n";
+			echo "Payment on $id_usuario : $ $valor | OK! \n\n";
 		
 		$data = "INSERT INTO comision_bono
 				(id_usuario,id_bono,id_bono_historial,valor)

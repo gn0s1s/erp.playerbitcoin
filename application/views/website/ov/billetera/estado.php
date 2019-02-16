@@ -136,7 +136,7 @@
 															</div>
 															<?php if($total !== 0){?>
 															<div class="col-md-1">
-																<a title='Ver detalles' style='cursor: pointer;' class='txt-color-green' 
+																<a title='Show Details' style='cursor: pointer;' class='txt-color-green'
 																		onclick='ventas(<?=$id?>,"<?=$fecha?>");'>
 																	<i class='fa fa-eye fa-3x'></i>
 																</a>
@@ -149,7 +149,7 @@
 														<tr class="warning">
 															<td ><b>Wallet movements</b></td>
 															<td >
-																<a title='Ver detalles' style='cursor: pointer;' class='txt-color-green' onclick='ver(<?=$id?>);'>
+																<a title='Show Details' style='cursor: pointer;' class='txt-color-green' onclick='ver(<?=$id?>);'>
 																				<i class='fa fa-eye fa-3x'></i>
 																</a>
 															</td>
@@ -299,7 +299,7 @@
 				{					
 					bootbox.dialog({
 						message: msg,
-						title: 'Detalles of the Comisiones',
+						title: 'Commission Details',
 						buttons: {
 							danger: {
 								label: "Close",

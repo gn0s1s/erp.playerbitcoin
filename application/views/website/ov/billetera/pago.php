@@ -147,7 +147,7 @@
 														</div>
 														<?php if($total !== 0){?>
 														<div class="col-md-1">
-															<a title='Ver detalles' style='cursor: pointer;' class='txt-color-green' onclick='ventas(<?=$id?>);'>
+															<a title='Show Details' style='cursor: pointer;' class='txt-color-green' onclick='ventas(<?=$id?>);'>
 																<i class='fa fa-eye fa-3x'></i>
 															</a>
 														</div>		
@@ -440,7 +440,7 @@ function ventas(id){
 	{					
 		bootbox.dialog({
 			message: msg,
-			title: 'Detalles of the Comisiones',
+			title: 'Commission Details',
 			buttons: {
 				danger: {
 					label: "Close",

@@ -281,18 +281,16 @@ private $test = true;
         $usuario=$this->general->get_username($id);
 
         $nombre_completo = $usuario[0]->nombre." ".$usuario[0]->apellido;
-        $bienvenido = "<div class=\"row\"><h2 class=\"horizon h1txt\" style=\"color:#000\">"
-            ."Bienvenido, $nombre_completo"
-            ."</h2></div>";
-        $imgbtc="<img src=\"https://mesadejuego.playerbitcoin.com/template/btc.PNG\"/>";
+        $bienvenido = "Welcome, $nombre_completo";
+        $imgbtc="<img src=\"https://games.playerbitcoin.com/template/btc.PNG\"/>";
         $logoutbutton = "<div class=\"row\"><a href=\"/auth/logout\" class=\"btn btn-danger\" ".
             "style=\"float: right;padding: 1em 2em !important\">".
-            "SALIR</a></div>";
+            "LOGOUT</a></div>";
 
         echo "<script>
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
                 $('#nuevaClase').attr('href','/ov/dashboard');
-                $('.btn.btn-registro6').attr('href','/ov/compras/carrito');
+                $('.btn.btn-registro6').attr('href','/shoppingcart');
                 $('.btn.btn-registro6').removeAttr('data-target');
                 $('.btn.btn-registro6').removeAttr('data-toggle');
                 $('#txtUsuario').html('$bienvenido');

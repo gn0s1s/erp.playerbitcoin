@@ -458,10 +458,10 @@ class billetera2 extends CI_Controller
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='80%'>
 				<thead id='tablacabeza'>
 					<th data-class='expand'>ID</th>
-					<th data-hide='phone,tablet'>Fecha</th>
-					<th data-hide='phone,tablet'>Tipo de Transacción</th>
-					<th data-hide='phone,tablet'>Motivo</th>
-					<th data-hide='phone,tablet'>Valor</th>
+					<th data-hide='phone,tablet'>date</th>
+					<th data-hide='phone,tablet'>Type</th>
+					<th data-hide='phone,tablet'>Subject</th>
+					<th data-hide='phone,tablet'>Value</th>
 				</thead>
 				<tbody>";
 		
@@ -491,7 +491,7 @@ class billetera2 extends CI_Controller
 		$ventas = $this->ventas_comisiones();
 		$bonos = $this->bonos_comisiones();
 		
-		echo "<legend><b>Ventas</b></legend></br>";
+		echo "<legend><b>Purchases</b></legend></br>";
 		echo $ventas;
 		
 		echo "<hr/>";
@@ -516,17 +516,17 @@ class billetera2 extends CI_Controller
 		$total = 0 ;
 		$ventas_table = "";
 	
-		if(!$ventas){return "<div class=''>No existen ventas registradas</div>";}
+		if(!$ventas){return "<div class=''>Purchases have not been found</div>";}
 	
 		$ventas_table .=
 		"<div style='overflow-y: scroll; height: 100px;'><table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='80%'>
 				<thead id='tablacabeza'>
-					<th data-class='expand'>ID Venta</th>
-					<th data-hide='phone,tablet'>Afiliado</th>
-					<th data-hide='phone,tablet'>Red</th>
+					<th data-class='expand'>ID</th>
+					<th data-hide='phone,tablet'>User</th>
+					<th data-hide='phone,tablet'>Network</th>
 					<th data-hide='phone,tablet'>Items</th>
 					<th data-hide='phone,tablet'>Total</th>
-					<th data-hide='phone,tablet'>Comision</th>
+					<th data-hide='phone,tablet'>Commission</th>
 				</thead>
 				<tbody>";
 	
@@ -589,19 +589,19 @@ class billetera2 extends CI_Controller
 		$total = 0 ;
 		$bonos_table = "";
 		
-		if(!$bonos||$bonos[0]->valor==0){return "<div class=''>No hay Bonos registrados o no ha aplicado ninguno</div>";}
+		if(!$bonos||$bonos[0]->valor==0){return "<div class=''>Calculated Commissions haven't been found.</div>";}
 	
 		$bonos_table .=
 		"<div style='overflow-y: scroll; height: 100px;'><table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='80%'>
 				<thead id='tablacabeza'>
-					<th data-class='expand'>ID Historial</th>
-					<th data-hide='phone,tablet'>Bono</th>
-					<th data-hide='phone,tablet'>Descripcion</th>
-					<th data-hide='phone,tablet'>Dia</th>
-					<th data-hide='phone,tablet'>Mes</th>
-					<th data-hide='phone,tablet'>Año</th>
-					<th data-hide='phone,tablet'>Fecha</th>
-					<th data-hide='phone,tablet'>Valor</th>
+					<th data-class='expand'>ID Report</th>
+					<th data-hide='phone,tablet'>Name</th>
+					<th data-hide='phone,tablet'>Description</th>
+					<th data-hide='phone,tablet'>Day</th>
+					<th data-hide='phone,tablet'>Month</th>
+					<th data-hide='phone,tablet'>Year</th>
+					<th data-hide='phone,tablet'>Date</th>
+					<th data-hide='phone,tablet'>Value</th>
 				</thead>
 				<tbody>";
 	

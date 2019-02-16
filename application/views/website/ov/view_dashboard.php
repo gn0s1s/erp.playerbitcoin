@@ -82,7 +82,7 @@
 											                                if(($id_sponsor[0]->id_usuario!=1)){
 											                                ?>
 											                               <b>Sponsor:</b>
-											                              <?=$name_sponsor[0]->nombre?> <?=$name_sponsor[0]->apellido?> con id <?=$id_sponsor[0]->id_usuario?><br/>
+											                              <?=$name_sponsor[0]->nombre?> <?=$name_sponsor[0]->apellido?>, ID <?=$id_sponsor[0]->id_usuario?><br/>
 
 											                              <?php }else{?>
 											                              You're Network Head, Sponsored by The Business<br />
@@ -95,7 +95,10 @@
 																			</div>
 																			<div class="col-sm-12">
 																				<br>
-																				<?php if($titulo!=NULL)
+																				<?php
+                                                                                $isTitulo = $titulo != "None";
+                                                                                $isTitulo &= $titulo != NULL;
+                                                                                if($isTitulo)
 																					echo '<ul id="sparks" class="">
 																						<li class="sparks-info">
 																						<h5>Ranking<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
@@ -115,16 +118,16 @@
 																	<br>
 																</div>
 																<div class="col-sm-4">
-																<h1><small>My Points of commissions</small>  <i class='fa fa-user'></i></h1>
+																<h1><small>My Balance</small>  <i class='fa fa-user'></i></h1>
 																	<ul class="list-inline friends-list">
-																		<li><span class="font-md"><i>On Week :</i></span> <?=intval($puntos_semana)?>
+																		<li class="hide"><span class="font-md"><i>On Week :</i></span> <?=intval($puntos_semana)?>
 																		</li>
-																		<li><span class="font-md"><i>On Month :</i></span> <?=intval($puntos_mes)?>
+																		<li class="hide"><span class="font-md"><i>On Month :</i></span> <?=intval($puntos_mes)?>
 																		</li>
-																		<li><span class="font-md"><i>Total :</i></span> <?=intval($puntos_total)?>
+																		<li><span class="font-md"><i>Total :</i></span> <?=intval($balance)?>
 																		</li>
 																	</ul>
-																<h1><small>Points of commissions on the Network </small>  <i class='fa fa-sitemap'></i></h1>
+																<h1><small>Purchases on the Network </small>  <i class='fa fa-sitemap'></i></h1>
 																	<ul class="list-inline friends-list">
 																		<li><span class="font-md"><i>On Week :</i></span> <?=$puntos_red_semana?>
 																		</li>
@@ -134,8 +137,8 @@
 																		</li>
 																	</ul>
 		                                                            <?php if (sizeof($ultimos_auspiciados)>0) :?>
-		                                                                <h1><small>Last Sponsored</small></h1>
-		                                                                <ul class="list-inline friends-list">
+		                                                                <h1 class="hide"><small>Last Sponsored</small></h1>
+		                                                                <ul class="hide list-inline friends-list">
 		                                                                    <?php
 		                                                                    foreach ($ultimos_auspiciados as $afiliado) {
 		                                                                        echo '<li><a onclick="detalles('.$afiliado["id"].')"><img src="'.$afiliado["foto"].'"></a>

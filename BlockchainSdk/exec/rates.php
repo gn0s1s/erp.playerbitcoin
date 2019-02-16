@@ -31,6 +31,13 @@ class rates{
         return $amount;
     }
 
+    function convertFrom($units = 500,$currency = 'USD',$to = "BTC"){
+        // Convert a fiat amount to BTC
+        $funct = "from".$to;
+        $amount = $this->Blockchain->Rates->$funct($units, $currency);
+        return $amount;
+    }
+
     function getRates($cur = false){
         // Get Exchanges Rates
         $rates = $this->Blockchain->Rates->get($cur);

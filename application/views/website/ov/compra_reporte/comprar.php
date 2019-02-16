@@ -211,7 +211,7 @@
 											</table>
 															<div class="panel panel-default">
   												<div class="panel-body">
-													<abbr title="Phone">Observaciones:</abbr><span class="center"> <?php echo $empresa[0]->comentarios;?> </span>
+													<abbr title="Phone">comments:</abbr><span class="center"> <?php echo $empresa[0]->comentarios;?> </span>
   												</div>
 											</div>
 											<div class="invoice-footer">
@@ -270,7 +270,7 @@
 												
 												<div class="row">
 													<div class="col-sm-12">
-														<p class="note">**To avoid charges for excessive penalties,
+														<p class="hide note">**To avoid charges for excessive penalties,
                                                             please make payments within 30 days of the due date.
                                                             There will be an interest charge of 2% per month on all final invoices.</p>
 													</div>
@@ -409,7 +409,7 @@
 				FinalizarSpinner();
 				bootbox.dialog({
 					message: msg,
-					title: "Pago Via Compropago",
+					title: "Payment on Via Compropago",
 					className: "",
 					buttons: {
 						success: {
@@ -435,7 +435,7 @@
 				FinalizarSpinner();
 				bootbox.dialog({
 					message: msg,
-					title: "Pago Tu Compra",
+					title: "Payment on Tu Compra",
 					className: "",
 					buttons: {
 						success: {
@@ -459,7 +459,7 @@
                 FinalizarSpinner();
                 bootbox.dialog({
                     message: msg,
-                    title: "Cotizar Blockchain",
+                    title: "Payment on Blockchain",
                     className: "",
                     buttons: {
                         danger: {
@@ -469,7 +469,7 @@
                             }
                         },
                         success: {
-                            label: "Continuar",
+                            label: "Continue",
                             className: "btn-success",
                             callback: function() {
 
@@ -481,7 +481,7 @@
                                         FinalizarSpinner();
                                         bootbox.dialog({
                                             message: msg,
-                                            title: "Pago Blockchain",
+                                            title: "Payment on Blockchain",
                                             className: "",
                                             buttons: {
                                                 danger: {
@@ -512,7 +512,7 @@
 				FinalizarSpinner();
 				bootbox.dialog({
 					message: msg,
-					title: "Pago PayuLatam",
+					title: "Payment on PayuLatam",
 					className: "",
 					buttons: {
 						success: {
@@ -536,7 +536,7 @@
 				FinalizarSpinner();
 				bootbox.dialog({
 					message: msg,
-					title: "Pago PayPal",
+					title: "Payment on PayPal",
 					className: "",
 					buttons: {
 						success: {

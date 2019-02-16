@@ -7,13 +7,13 @@
             <img src="<?=$qr;?>"  alt="qr" width="80%" style="cursor:pointer;"
                  onclick="location.href='bitcoin:<?=$direccion?>?label=Playerbitcoin&amount=<?=$total?>'" />
         </fieldset>
-        <p>dirección: </p>
+        <p>address: </p>
         <textarea id="dir" name="code" readonly><?=$direccion?></textarea>
         <hr/>
-        <input type="submit" class="btn btn-success" value="Copiar dirección" />
+        <input type="submit" class="btn btn-success" value="Copy address" />
     </form>
     <hr/>
-    <h4>Si deseas copiar the dirección pulsa the boton.</h4>
+    <h4>Push boton for Address copying.</h4>
 </div>
 <style>
     #dir{   

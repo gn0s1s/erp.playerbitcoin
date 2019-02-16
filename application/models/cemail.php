@@ -91,7 +91,7 @@ class Cemail extends CI_Model
 				"TE DAMOS LA BIENVENIDA", //welcome
 				"ACTIVACIÓN", //activate
 				"CONFIRMACIÓN NUEVO EMAIL", //change-email
-				"PAGO DE SOLICITUD DE DINERO", //cobros
+				"Payment on DE SOLICITUD DE DINERO", //cobros
 				"CONFIRMACIÓN DE PAGO POR BANCO", //cuentas-cobrar
 				"RECUPERACIÓN DE CONTRASEÑA", //forgot-password
 				"CONFIRMACIÓN DE NUEVA CONTRASEÑA", //reset-password

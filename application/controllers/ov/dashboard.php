@@ -14,6 +14,7 @@ class dashboard extends CI_Controller
 		$this->load->model('ov/modelo_dashboard');
 		$this->load->model('ov/general');
 		$this->load->model('ov/modelo_compras');
+		$this->load->model('ov/modelo_billetera');
 		$this->load->model('modelo_premios');
 		$this->load->model('model_tipo_red');
 		$this->load->model('bo/model_admin');
@@ -159,11 +160,16 @@ class dashboard extends CI_Controller
                 
 		$actividad=$this->modelo_compras->is_afiliado_activo($id,date('Y-m-d'));
 
-		$puntos_semana=$this->modelo_dashboard->get_puntos_personales_semana($id);
-		$puntos_mes=$this->modelo_dashboard->get_puntos_personales_mes($id);
-		$puntos_total=$this->modelo_dashboard->get_puntos_personales_total($id);
-		
-		$puntos_red_semana=$this->modelo_dashboard->get_puntos_red_semana($id);
+		$puntos_semana=0;#$this->modelo_dashboard->get_puntos_personales_semana($id);
+		$puntos_mes=0;#$this->modelo_dashboard->get_puntos_personales_mes($id);
+		$puntos_total=0;#$this->modelo_dashboard->get_puntos_personales_total($id);
+
+        $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
+        $saldo =  $billetera["add"];
+        $saldo -=   $billetera["sub"];
+        $this->template->set("balance",$saldo);
+
+        $puntos_red_semana=$this->modelo_dashboard->get_puntos_red_semana($id);
 		$puntos_red_mes=$this->modelo_dashboard->get_puntos_red_mes($id);
 		$puntos_red_total=$this->modelo_dashboard->get_puntos_red_total($id);
 		

@@ -401,7 +401,16 @@ where a.id_paquete = e.id_paquete and d.sku= a.id_paquete and d.estatus="ACT" an
 		$q=$this->db->query('SELECT a.*,b.id,b.costo_publico,b.costo,b.puntos_comisionables from servicio a, mercancia b where a.id=b.sku and b.id='.$i);
 		return $q->result();
 	}
-	
+
+    function getPagoOnlineBy($id,$where = false){
+        $query = "SELECT * FROM pago_online_transaccion 
+                    WHERE id_usuario = $id ";
+        if($where)
+            $query .= $where;
+        $q =  $this->db->query($query);
+        return  $q->result();
+    }
+
 	function comb_espec($i)
 	{
 		$q_sku=$this->db->query('SELECT sku FROM mercancia where id='.$i);

@@ -1,6 +1,6 @@
 <div id="spinner-div"></div>
 <div>
-    <legend>Total a Pagar</legend>
+    <legend>Total</legend>
     <fieldset class="col col-md-12">
         <div class="row">
             <div class="col-md-6">
@@ -18,7 +18,7 @@
         </div>
         <hr class="col-md-11"/>
         <div class="row">
-            <legend>Tasa(s) of cambio</legend>
+            <legend>Exchange</legend>
                 <?php foreach ($rates as $cur => $ticker) : ?>
                     <?php $sym = $ticker->symbol; $cuk= " " . $cur; ?>
                     <div class="backHome">
@@ -29,9 +29,9 @@
                         <div class="col-md-12" >
                             <table>
                                 <tr>
-                                    <td>precio: <?=  $sym.round($ticker->last,2).$cuk; ?></td>
-                                    <td>compra: <?= $sym.round($ticker->buy,2).$cuk; ?></td>
-                                    <td>venta: <?= $sym.round($ticker->sell,2).$cuk; ?></td>
+                                    <td>Price: <?=  $sym.round($ticker->last,2).$cuk; ?></td>
+                                    <td>Billing: <?= $sym.round($ticker->buy,2).$cuk; ?></td>
+                                    <td>Order: <?= $sym.round($ticker->sell,2).$cuk; ?></td>
                                 </tr>
                             </table>
                         </div>
@@ -45,8 +45,8 @@
 <div class="row">
     <section class="col-md-12">
         <h2 style="text-align: center">
-            ¿Deseas proceder con the pago? <br/> haz click en
-            <strong class="txt-color-green">continuar</strong>.
+            Do you want to process payment? <br/> Click on
+            <strong class="txt-color-green">Continue</strong>.
         </h2>
     </section>
 </div>

@@ -3,6 +3,15 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+16-02-2019
+-
+### online payment confirmations
+```mysql
+ALTER TABLE pago_online_proceso 
+ADD confirmations int DEFAULT 1 NULL 
+COMMENT 'repeats ex: blockchain = 3';
+```
+
 24-10-2018
 -
 ### update hashkey
@@ -10,7 +19,6 @@ _ERP BASE MLM - Versión: 3.9 -
 ALTER TABLE blockchain_wallet 
 MODIFY hashkey varchar(120) DEFAULT '0';
 ```
-
 23-10-2018
 -
 ### create wallets
