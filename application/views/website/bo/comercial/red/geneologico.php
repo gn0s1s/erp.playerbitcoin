@@ -17,7 +17,7 @@
                     
                          <!-- row -->
                          <div class="row">
-                              <!-- NEW WIDGET START -->
+                              <!-- new  WIDGET START -->
                               <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     
                                    <!-- Widget ID (each widget will need unique ID)-->
@@ -69,7 +69,7 @@
                                                                         <ul>
                                                                             <li>
                                                                                 <a style="background: url('<?= $img_perfil ?>'); background-size: cover; background-position: center;" href="#">
-                                                                                    <div class="nombre">Tú</div></a>
+                                                                                    <div class="nombre">You</div></a>
                                                                                 <ul>
                                                                                         <?php
                                                                                         $aux = 0;
@@ -84,7 +84,7 @@
                                                                                                        onclick="subtree(<?= $key->id_afiliado ?>, <?php echo $red->id; ?>)" href="#"></a>
                                                                                                     <div onclick="detalles(<?= $key->id_afiliado ?>)" 
                                                                                                          class="<?= ($key->directo == 0) ? 'todo' : 'todo1' ?>">
-                                                                                                               <?= $key->afiliado ?> <?= $key->afiliado_p ?><br />Detalles
+                                                                                                               <?= $key->afiliado ?> <?= $key->afiliado_p ?><br />Details
                                                                                                     </div>
                                                                                                 </li>
                                                                                                 <?php

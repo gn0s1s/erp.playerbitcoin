@@ -26,7 +26,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -83,7 +83,7 @@
 														<label class="label">Imágen</label>
 														<div class="input input-file">
 															<span class="button">
-																<input id="img" name="img" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Agregar alguna imágen" type="text" required>
+																<input id="img" name="img" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Add alguna imágen" type="text" required>
 															</div>
 															<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br /><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>
 														</section>
@@ -91,7 +91,7 @@
 														
 												</fieldset>
 												<fieldset id="moneda_field">
-													<legend>Moneda & país</legend>
+													<legend>Moneda & Country</legend>
 													<section class="col col-2">
 														<label class="input">
 														Costo distribuidores
@@ -109,7 +109,7 @@
 
 													<fieldset>
 													<div class="row" id="impuesto_agregar">
-														<section class="col col-2">País of the membresía
+														<section class="col col-2">Country of the membresía
 														<label class="select">
 															<select id="pais" required name="pais" onChange="select_pais()">
 															<option value="-" selected>-- Seleciona un pais --</option>
@@ -137,7 +137,7 @@
 															</select>
 															
 														</label>-->
-														<a style="cursor: pointer;" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>
+														<a style="cursor: pointer;" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>
 													<!--</section>-->
 																	</div>
 																	<div class="row">
@@ -230,7 +230,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -262,7 +262,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -359,9 +359,9 @@ function add_proveedor(){
 	});
 }
 
-function new_proveedor()
+function new _proveedor()
 {
-		var ids = new Array( 
+		var ids = new  Array(
 			"#nombre",
 		 	"#apellido",
 		 	"#pais",
@@ -370,11 +370,11 @@ function new_proveedor()
 		 	"#email",
 		 	"#empresa"
 		 );
-		var mensajes = new Array( 
+		var mensajes = new  Array(
 			"Por favor ingresa tu nombre",
 		 	"Por favor ingresa tu apellido",
 		 	"Por favor seleciona un pais",
-		 	"Por favor ingresa tu código postal",
+		 	"Por favor ingresa tu ZIPCODE",
 		 	"Por favor seleciona the tipo of proveedor",
 		 	"Por favor ingresa un correo",
 		 	"Por favor seleciona una empresa"
@@ -394,7 +394,7 @@ function new_proveedor()
 				$("#proveedor_select").append(msg1);
 					bootbox.dialog({
 						message: "El proveedor ha sido creado",
-						title: "Atención",
+						title: "Attention",
 						buttons: {
 							success: {
 								label: "Ok!",
@@ -409,7 +409,7 @@ function new_proveedor()
 			});
 		}else{
 			$.smallBox({
-			      title: "<h1>Atención</h1>",
+			      title: "<h1>Attention</h1>",
 			      content: "<h3>Por favor reviza que todos los datos estén correctos</h3>",
 			      color: "#C46A69",
 			      icon : "fa fa-warning fadeInLeft animated",
@@ -419,7 +419,7 @@ function new_proveedor()
 
 }
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	
@@ -512,7 +512,7 @@ function ImpuestosPais2(id){
 	calcular_precio_total();
 }
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	

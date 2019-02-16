@@ -21,7 +21,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Affiliate in frontal</h5>
+									<h5>Affiliate inin first line</h5>
 								</div>
 							</a>
 						</div>

@@ -49,7 +49,7 @@
 				</label>
 				
 				<label class="input" style="padding-left: 50px;">	
-					<input required name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico" value='<?php echo $presentacion[0]->nombre_publico;?>'>
+					<input required name="nombre_publico" placeholder="Name" type="text" id="nombre_publico" value='<?php echo $presentacion[0]->nombre_publico;?>'>
 				</label>	
 			</section>
 		</div>

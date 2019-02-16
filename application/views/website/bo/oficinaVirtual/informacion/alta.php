@@ -26,7 +26,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -53,7 +53,7 @@
                                                     <section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">
                                                         <label class="label">Nombre</label>
                                                         <label class="input">
-                                                            <input required type="text" placeholder="Nombre"  name="nombre_frm">
+                                                            <input required type="text" placeholder="Name"  name="nombre_frm">
                                                         </label>
                                                     </section>
                                                 </div>
@@ -75,7 +75,7 @@
                                                             <span class="button"><input id="file" name="userfile" 
                                                                                         onchange="this.parentNode.nextSibling.value = this.value" 
                                                                                         type="file">Buscar</span><input required 
-                                                                                            placeholder="Seleccione un archivo" readonly="" type="text" 
+                                                                                            placeholder="choose un archivo" readonly="" type="text"
                                                                                             id="file_frm" name="file_nme">
                                                         </div>
                                                     </section>
@@ -86,7 +86,7 @@
                                                         <div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
                                                         <div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4" >
                                                             <input required type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" 
-                                                                   id="boton_subir" value="Agregar informacion">
+                                                                   id="boton_subir" value="Add informacion">
                                                         </div>
                                                     </section>
                                                 </div>

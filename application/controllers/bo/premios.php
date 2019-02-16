@@ -229,7 +229,7 @@ class premios extends CI_Controller
 		$red = $this->model_tipo_red->traerRed($_POST['red']);
 	
 		if ($_POST['nombre']==""){
-			$error = "Debe agregar un nombre a la categoria.";
+			$error = "Debe Add un nombre a la categoria.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/bo/premios/nuevo_premio');
 		}

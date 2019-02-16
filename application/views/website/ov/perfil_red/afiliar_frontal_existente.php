@@ -7,21 +7,21 @@
 
     function Crear() {
 
-        var ids = new Array(
+        var ids = new  Array(
                 "#username",
                 "#email"
 
                 );
-        var mensajes = new Array(
-                "Por favor ingresa un nombre of usuario",
-                "Por favor ingresa un correo"
+        var mensajes = new  Array(
+                "Please enter username",
+                "Please enter E-mail"
                 );
 
-        var idss = new Array(
+        var idss = new  Array(
                 "#username"
                 );
-        var mensajess = new Array(
-                "El nombre of usuario no puede contener espacios on blanco"
+        var mensajess = new  Array(
+                "Username cannot contain whitespaces"
                 );
         var validacion_ = valida_espacios(idss, mensajess);
         var validacion = valida_vacios(ids, mensajes);
@@ -38,7 +38,7 @@
                         $("#progress").attr('style', 'width: 100%');
                         bootbox.dialog({
                             message: msg1,
-                            title: "Atención",
+                            title: "Attention",
                             buttons: {
                                 success: {
                                     label: "Ok!",
@@ -57,8 +57,8 @@
         } else
         {
             $.smallBox({
-                title: "<h1>Atención</h1>",
-                content: "<h3>Por favor reviza que todos los datos estén correctos</h3>",
+                title: "<h1>Attention</h1>",
+                content: "<h3>Please check that all data is correct</h3>",
                 color: "#C46A69",
                 icon: "fa fa-warning fadeInLeft animated",
                 timeout: 4000
@@ -117,7 +117,7 @@
                 {
                     bootbox.dialog({
                         message: msg,
-                        title: "Informacion Personal",
+                        title: "Personal Data",
                         buttons: {
                             success: {
                                 label: "Close!",
@@ -134,8 +134,8 @@
     function faseCambio(fase) {
 
         bootbox.dialog({
-            message: "¿Estas Seguro?",
-            title: "Atención",
+            message: "¿Sure?",
+            title: "Attention",
             buttons: {
                 success: {
                     label: "Si",
@@ -153,7 +153,7 @@
                         })
                                 .done(function (msg)
                                 {
-                                    alert('Has Cambiado of fase' + msg);
+                                    alert('You has changed phase' + msg);
                                     location.reload();
                                 })
                     }
@@ -184,12 +184,12 @@
                     if (msg != '') {
                         $("#usuario2").html('<div id="msg_usuario" class="alert alert-success fade in">'
                                 + '<i class="fa-fw fa fa-check"></i>'
-                                + '<strong>Corecto </strong> Username Correcto'
+                                + '<strong>Corecto </strong> Username Correct'
                                 + '</div>')
                     } else {
                         $("#usuario2").html('<div id="msg_usuario" class="alert alert-danger fade in">'
                                 + '<i class="fa-fw fa fa-check"></i>'
-                                + '<strong>Error </strong> Username no esta registrado on the sistema'
+                                + '<strong>Error </strong> Username is not registered'
                                 + '</div>')
                     }
 
@@ -287,7 +287,7 @@
     }
     $(function ()
     {
-        a = new Date();
+        a = new  Date();
         año = a.getFullYear() - 19;
         $("#datepicker").datepicker({
             changeMonth: true,
@@ -414,7 +414,7 @@
                     > <a href="/ov/perfil_red/TipoAfiliacion">Tipo of Afiliacion</a>
                     > <a href="/ov/perfil_red/afiliar?tipo=2">Networks</a>
                     > <a href="/ov/perfil_red/afiliarExistente?id=<?php echo $_GET['id']; ?>">Affiliate Usuario</a>
-                    > Frontal
+                    > first line
                 </span>
             </h1>
         </div>
@@ -423,7 +423,7 @@
         <!-- START ROW -->
         <div class="row">
 
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1"
@@ -445,7 +445,7 @@
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i>
                         </span>
-                        <h2>Datos personales</h2>
+                        <h2>Personal Info</h2>
                     </header>
 
                     <!-- widget div-->
@@ -476,7 +476,7 @@
                                                                 <section id="usuario" class="col col-6">
                                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
                                                                         <input id="username" onkeyup="use_username()" required
-                                                                               type="text" name="username" placeholder="Usuario">
+                                                                               type="text" name="username" placeholder="Username">
                                                                     </label>
                                                                     <div id="usuario2"></div>
                                                                 </section>
@@ -506,7 +506,7 @@
                                             <script type="text/javascript">
                                                 window.onload = function () {
                                                     SelecionarFase();
-                                                    // Puedes agregar mas eventos que se ejecutaran al cargar the pagina
+                                                    // Puedes Add mas eventos que se ejecutaran al cargar the pagina
                                                 }
                                             </script>
                                             <a id="fases" onclick="SelecionarFase()">Mas informacion</a>

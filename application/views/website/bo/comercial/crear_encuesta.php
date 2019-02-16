@@ -131,7 +131,7 @@
 	         url: "insertar_encuesta",
 	         success: function(){
 	        	 $.smallBox({
-	       	      title: "Felicitaciones! the encuesta se a creado",
+	       	      title: "Congratulations! the encuesta se a creado",
 	       	      content: "<i class='fa fa-clock-o'></i> <i></i>",
 	       	      color: "#5F895F",
 	       	      iconSmall: "fa fa-check bounce animated",

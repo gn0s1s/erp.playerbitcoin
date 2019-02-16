@@ -21,9 +21,9 @@
             </div>
 
             <div class="col col-xs-12 col-sm-6 col-lg-6">
-                <label class="select">País
+                <label class="select">Country
                     <select id="pais" required name="pais" onChange="CiudadesPais()">
-                        <option value="-" selected>-- Seleciona un país --</option>
+                        <option value="-" selected>-- Seleciona un Country --</option>
                         <?php foreach ($paises as $key) {
                             if ($proveedor[0]->id_pais == $key->Code) {
                                 ?>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="col col-xs-12 col-sm-6 col-lg-6">
-                <label for="" class="input">Colonia
+                <label for="" class="input">Town/District 
                     <input type="text" class="form-control" name="colonia" placeholder="Colonia"class="form-control" value="<?php echo $proveedor[0]->colonia; ?>" required />
                 </label>
             </div>
@@ -82,7 +82,7 @@
             </div>
 
             <div class="col col-xs-12 col-sm-6 col-lg-6">
-                <label for="" class="input">Código Postal
+                <label for="" class="input">ZIPCODE
                     <input type="text" class="form-control" name="codigo_postal" placeholder="Codigo Postal" class="form-control" value="<?php echo $proveedor[0]->codigo_postal; ?>" required />
                 </label>
             </div>
@@ -205,7 +205,7 @@ foreach ($telefono_movil as $telefono) {
             </div>
             <div class="row">
                 <div class="col col-lg-6 col-xs-6">
-                    <a style="cursor: pointer;" onclick="add_tarifa()">Agregar Tarifa <i class="fa fa-plus"></i></a>
+                    <a style="cursor: pointer;" onclick="add_tarifa()">Add Tarifa <i class="fa fa-plus"></i></a>
                 </div>
 
             </div>

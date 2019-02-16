@@ -654,7 +654,7 @@ class Auth extends CI_Controller
 						$this->form_validation->set_value('old_password'),
 						$this->form_validation->set_value('new_password'))) {	// success
 						//$this->_show_message($this->lang->line('auth_message_password_changed'));
-						$this->session->set_flashdata('success', 'La nueva contraseña es : '.$this->form_validation->set_value('new_password'));
+						$this->session->set_flashdata('success', 'La nueva Password es : '.$this->form_validation->set_value('new_password'));
             redirect('/ov/perfil_red/perfil');
 
 				} else {														// fail

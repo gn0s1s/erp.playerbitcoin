@@ -24,7 +24,7 @@
 <section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -101,7 +101,7 @@ $.ajax({
 {
 	bootbox.dialog({
 	message: msg,
-	title: 'Atención !!!',
+	title: 'Attention !!!',
 })//fin done ajax
 });//Fin callback bootbox
 }
@@ -116,7 +116,7 @@ function eliminar(id) {
 	{
 		bootbox.dialog({
 		message: msg,
-		title: 'Atención !!!',
+		title: 'Attention !!!',
 		buttons: {
 			success: {
 			label: "Accept",
@@ -132,7 +132,7 @@ function eliminar(id) {
 					{
 						bootbox.dialog({
 						message: msg,
-						title: 'Atención !!!',
+						title: 'Attention !!!',
 						buttons: {
 							success: {
 							label: "Accept",
@@ -172,7 +172,7 @@ function estado(estatus, id)
 		}).done(function( msg ){
 			bootbox.dialog({
 				message: msg,
-				title: 'Atención !!!',
+				title: 'Attention !!!',
 				buttons: {
 					success: {
 					label: "Accept",

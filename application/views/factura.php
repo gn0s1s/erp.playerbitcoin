@@ -77,7 +77,7 @@ code {
 														<br>
 														<abbr title="Phone">Dirección:</abbr><?php echo $pais_afiliado[0]->direccion;?>
 														<br>
-														<abbr title="Phone">País:</abbr><?php echo $pais_afiliado[0]->nombrePais;?> <img class="flag flag-<?=strtolower($pais_afiliado[0]->codigo)?>">
+														<abbr title="Phone">Country:</abbr><?php echo $pais_afiliado[0]->nombrePais;?> <img class="flag flag-<?=strtolower($pais_afiliado[0]->codigo)?>">
 														<br>
 														<abbr title="Phone">Email:</abbr> <?php echo $datos_afiliado[0]->email;?>
 													</address>

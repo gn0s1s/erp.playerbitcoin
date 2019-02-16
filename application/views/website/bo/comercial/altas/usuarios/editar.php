@@ -3,7 +3,7 @@
 							<fieldset>
 								<input type="text" class="hide" value="<?php echo $_POST['id']; ?>" name="id">
 								<label class="select">
-								<label class="label">Seleccione un tipo of usuario</label>
+								<label class="label">choose un tipo of usuario</label>
 									<select name="tipo" id="tipo" required="">
 										<?php foreach ($tiposUsuario as $tipo) {?>
 											<option value="<?php echo $tipo->id_tipo_usuario; ?>" <?php if($tipo->id_tipo_usuario==$user[0]->tipoId)echo 'selected="selected"';?>>
@@ -47,7 +47,7 @@ function enviar() {
 							
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

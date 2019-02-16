@@ -249,7 +249,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 					<table bgcolor="#999999">
 					<tr>
 						<td aling="left"><img style="max-height: 90px" src="<?=site_url('/wl.png')?>" alt="<?=$site_name?>"/></td>
-						<td align="center"><h1 class="collapse">Recuperar contraseña</h1></td>
+						<td align="center"><h1 class="collapse">Recuperar Password</h1></td>
 					</tr>
 				</table>
 				</div>
@@ -271,13 +271,13 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 				<tr>
 					<td>
 						<h3></h3>				
-	<a href="<?php echo site_url('/auth/reset_password/'.$user_id.'/'.$new_pass_key); ?>" style="color: #3366cc;"><h5>Da click aquí para recuperar tu contraseña</h5></a><br />
+	<a href="<?php echo site_url('/auth/reset_password/'.$user_id.'/'.$new_pass_key); ?>" style="color: #3366cc;"><h5>Da click aquí para recuperar tu Password</h5></a><br />
 	<br />
 	¿El link no funciona? Copia & pega on the barra of direcciones of tu navegador the siguiente link.<br />
 	El link solo funciona una sola vez.<br />
 	<nobr><a href="<?php echo site_url('/auth/reset_password/'.$user_id.'/'.$new_pass_key); ?>" style="color: #3366cc;"><?php echo site_url('/auth/reset_password/'.$user_id.'/'.$new_pass_key); ?></a></nobr><br />
 
-	Has recibido este correo desde <a href="<?php echo site_url(''); ?>" style="color: #3366cc;"><?php echo $site_name; ?></a> como solicitud of una recuperación of contraseña, si no has sido tú, puedes ignorarlo.<br />
+	Has recibido este correo desde <a href="<?php echo site_url(''); ?>" style="color: #3366cc;"><?php echo $site_name; ?></a> como solicitud of una recuperación of Password, si no has sido You, puedes ignorarlo.<br />
 
 					</td>
 				</tr>

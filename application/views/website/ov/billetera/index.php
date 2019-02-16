@@ -4,7 +4,7 @@
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-				<span>> Billetera
+				<span>> Wallet
 				</span>
 			</h1>
 		</div>
@@ -19,7 +19,7 @@
 						<a href="wallet/requestPayment">
 							<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 								<i class="fa fa-money fa-3x"></i>
-								<h5>Pedir Dinero</h5> 
+								<h5>Withdrawals</h5>
 							</div>	
 						</a>
 					</div>
@@ -27,7 +27,7 @@
 						<a href="/ov/wallet/history">
 							<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 								<i class="fa fa-calendar fa-3x"></i>
-								<h5>Historial Pedir Dinero</h5>
+								<h5>Withdrawals Report</h5>
 							</div>	
 						</a>
 					</div>

@@ -3,7 +3,7 @@
 		<!-- START ROW -->
 		<div class="row">
 			
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -47,7 +47,7 @@
 								</div>
 							<?php }?>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-										<p class="text-danger">Nota: Verifica tus datos personales of tu perfil: direccion, telefonos, email</p>
+										<p class="text-danger">Nota: Verifica tus Personal Info of tu perfil: direccion, telefonos, email</p>
 									</div>
 						</div>
 						

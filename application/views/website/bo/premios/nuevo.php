@@ -26,7 +26,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				
 			<div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -66,7 +66,7 @@
 							<fieldset>
 								<label class="input" required>
 									Nombre
-									<input style="width: 25rem;" type="text" name="nombre" placeholder="Nombre"class="form-control" required>
+									<input style="width: 25rem;" type="text" name="nombre" placeholder="Name"class="form-control" required>
 								</label>
 								
 								<div class="row" style="width: 28rem;">
@@ -83,7 +83,7 @@
 									<section>
 										<label class="label">Imagen</label>
 										<div class="input input-file">
-											<span class="button"><input id="file" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar</span><input required placeholder="Seleccione un archivo" readonly="" type="text" id="file_frm" name="file_nme">
+											<span class="button"><input id="file" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar</span><input required placeholder="choose un archivo" readonly="" type="text" id="file_frm" name="file_nme">
 										</div>
 									</section>
 								</div>

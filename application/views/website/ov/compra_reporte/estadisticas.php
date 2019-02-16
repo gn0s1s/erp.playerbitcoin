@@ -12,7 +12,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-					<!-- NEW COL START -->
+					<!-- new  COL START -->
 			<article class="col-sm-12 col-md-6 col-lg-6">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -408,7 +408,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Estado civil</h2>				
+						<h2>Civil Status</h2>
 						
 					</header>
 
@@ -437,7 +437,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Ocupación</h2>				
+						<h2>Occupation</h2>
 						
 					</header>
 
@@ -467,7 +467,7 @@
 				<div class="jarviswidget" data-widget-editbutton="false" data-widget-custombutton="false">
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Tiempo dedicado</h2>				
+						<h2>Working time</h2>
 						
 					</header>
 
@@ -493,8 +493,8 @@
 				<!-- end widget -->
 			</article>
 			<!-- END COL -->
-			<!-- NEW COL START -->
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
+			<!-- new  COL START -->
 
 			<!-- END COL -->
 			
@@ -828,7 +828,7 @@ if ($('#donut-graph-0').length) {
 			});
 }
 			
-//estado civil
+//Civil Status
 if ($('#donut-graph1').length) {
 	Morris.Donut({
 		element : 'donut-graph1',
@@ -853,7 +853,7 @@ if ($('#donut-graph1').length) {
 		}
 	});
 }
-//tiempo dedicado
+//Working time
 
 if ($('#donut-graph2').length) {
 	Morris.Donut({
@@ -925,7 +925,7 @@ if ($('#donut-graph2').length) {
 		});
 	}
 	// bar graph color
-	//ocupación
+	//Occupation
 	if ($('#bar-graph1').length) {
 
 		Morris.Bar({

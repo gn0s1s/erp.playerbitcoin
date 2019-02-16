@@ -16,7 +16,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -79,7 +79,7 @@
 													</fieldset>
 													
 													<button style="margin-left: 3rem;" class="btn btn-success" type="button" id="new_evento" onclick="agregar_banco()" >
-														Agregar Banco
+														Add Banco
 													</button>
 												</form>
 											</div>
@@ -169,7 +169,7 @@ function agregar_banco()
 	         success: function(msg){
 	        	 bootbox.dialog({
 						message: msg,
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",

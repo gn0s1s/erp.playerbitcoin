@@ -36,7 +36,7 @@
 				</label>
 				
 				<label class="input" style="padding-left: 50px;">	
-					<input required name="nombre" placeholder="Nombre" type="text" id="nombre" value="<?=$notify[0]->nombre?>">
+					<input required name="nombre" placeholder="Name" type="text" id="nombre" value="<?=$notify[0]->nombre?>">
 				</label>	
 			</section>
 		</div>
@@ -88,7 +88,7 @@
 
 $(function()
 		 {
-		 	a = new Date();
+		 	a = new  Date();
 			año = a.getFullYear()+20;
 			$( "#fecha_inicio" ).datepicker({
 			changeMonth: true,
@@ -102,7 +102,7 @@ $(function()
 
 $(function()
 		 {
-		 	a = new Date();
+		 	a = new  Date();
 			año = a.getFullYear()+20;
 			$( "#fecha_fin" ).datepicker({
 			changeMonth: true,

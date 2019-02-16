@@ -13,7 +13,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -66,7 +66,7 @@
 														<a href="/bo/CuentasPagar/PorPagar">
 															<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 																<i class="fa fa-money fa-3x"></i>
-																<h1>Comisiones por Pagar</h1>
+																<h1>Commissions por Pagar</h1>
 															</div>
 														</a>
 												</div>

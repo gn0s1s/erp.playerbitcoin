@@ -27,7 +27,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->
@@ -138,7 +138,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->

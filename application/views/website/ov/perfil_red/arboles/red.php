@@ -7,7 +7,7 @@
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
 				> <a href="/ov/red/index">Networks</a>
-				> Arbol
+				> Tree
 				</span>
 			</h1>
 		</div>
@@ -22,7 +22,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Arbol of my Network</h5>
+									<h5>Tree of my Network</h5>
 								</div>
 							</a>
 						</div>		
@@ -32,7 +32,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Frontalidad of my Network</h5>
+									<h5>sponsored members of my Network</h5>
 								</div>
 							</a>
 						</div>				
@@ -42,7 +42,7 @@
 									class="well well-sm txt-color-white text-center link_dashboard"
 									style="background: <?=$style[0]->btn_1_color?>">
 									<i class="fa fa-sitemap fa-3x"></i>
-									<h5>Profundidad of my Network</h5>
+									<h5>Spillover of my Network</h5>
 								</div>
 							</a>
 						</div>

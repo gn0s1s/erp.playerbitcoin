@@ -23,7 +23,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -60,7 +60,7 @@
 														<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">
 															<label class="label">Nombre</label>
 															<label class="input">
-																<input required type="text" placeholder="Nombre"  name="nombre_frm">
+																<input required type="text" placeholder="Name"  name="nombre_frm">
 															</label>
 														</section>
 													</div>
@@ -78,7 +78,7 @@
 														<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">
 															<label class="label">Imagen</label>
 															<div class="input input-file">
-																<span class="button"><input required id="userfile" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar</span><input placeholder="Seleccione un archivo" readonly="" type="text" id="file_frm" name="file_nme">
+																<span class="button"><input required id="userfile" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar</span><input placeholder="choose un archivo" readonly="" type="text" id="file_frm" name="file_nme">
 															</div>
 														</section>
 													</div>
@@ -87,7 +87,7 @@
 														<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="div_subir">
 															<div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
 															<div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4" >
-																<input type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Agregar noticia">
+																<input type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Add noticia">
 															</div>
 														</section>
 													</div>
@@ -103,7 +103,7 @@
 													{
 														bootbox.dialog({
 															message: "No existe grupos para esta categoria, crea the grupo primero",
-															title: 'Atención',
+															title: 'Attention',
 															buttons: {
 																success: {
 																label: "Accept",

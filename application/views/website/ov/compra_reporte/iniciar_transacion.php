@@ -216,7 +216,7 @@
 							                <div class="col-xs-12 col-sm-6">
 							                  <div class="form-group required">
 							                    <label for="InputName">Nombre <sup>*</sup> </label>
-							                    <input required type="text" class="form-control" name="nombre_envio" id="nombre_envio" placeholder="Nombre" value="<?=$direccion[0]->nombre?>">
+							                    <input required type="text" class="form-control" name="nombre_envio" id="nombre_envio" placeholder="Name" value="<?=$direccion[0]->nombre?>">
 							                  </div>
 							                  <div class="form-group required">
 							                    <label for="InputLastName">Apellidos <sup>*</sup> </label>
@@ -242,7 +242,7 @@
 							                <div class="col-xs-12 col-sm-6">
 							                  
 							                  <div class="form-group required">
-							                    <label for="InputCountry">País<sup>*</sup> </label>
+							                    <label for="InputCountry">Country<sup>*</sup> </label>
 							                      <select required class="form-control" required aria-required="true" id="pais_envio" name="pais_envio">
 							                      	<option value="">Selecciona un Pais</option>
 							                      	<?foreach ($pais as $key)
@@ -303,7 +303,7 @@
 							                <div class="col-xs-12 col-sm-6">
 							                  <div class="form-group required">
 							                    <label for="InputName">Nombre <sup>*</sup> </label>
-							                    <input required type="text" class="form-control" name="nombre_fac" id="nombre_fac" placeholder="Nombre" value="<?=$direccion[0]->nombre?>">
+							                    <input required type="text" class="form-control" name="nombre_fac" id="nombre_fac" placeholder="Name" value="<?=$direccion[0]->nombre?>">
 							                  </div>
 							                  <div class="form-group required">
 							                    <label for="InputLastName">Apellidos <sup>*</sup> </label>
@@ -330,7 +330,7 @@
 							                <div class="col-xs-12 col-sm-6">
 							                  
 							                  <div class="form-group required">
-							                    <label for="InputCountry">País<sup>*</sup> </label>
+							                    <label for="InputCountry">Country<sup>*</sup> </label>
 							                      <select required class="form-control" required aria-required="true" id="pais_fac" name="pais_fac">
 							                      <option value="">Selecciona un Pais</option>
 							                      <?foreach ($pais as $key)
@@ -447,7 +447,7 @@
 											                <div class="col-xs-12 col-sm-6">
 											                    <label for="InputAddress">A&ntilde;o of vencimiento<sup>*</sup> </label>
 											                    <select class="form-control" required aria-required="true" name="ano_taj_c" id="ano_taj_c">
-							                                      <option value="">Año</option>
+							                                      <option value="">Year</option>
 							                                      <option value="2013">2013</option>
 							                                      <option value="2014">2014</option>
 							                                      <option value="2015">2015</option>
@@ -484,7 +484,7 @@
 											{?>
 									            <div class="col-lg-12">
 												  	
-									               <p>Seleccione the metodo para pagar su orden.</p>
+									               <p>choose the metodo para pagar su orden.</p>
 									                <hr>
 									            </div>
 									            <select class="form-control" required aria-required="true" id="pago" name="pago" style="display:none;">
@@ -570,7 +570,7 @@
 														                <div class="col-xs-12 col-sm-6">
 														                    <label for="InputAddress">A&ntilde;o of vencimiento<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="ano_taj_c" id="ano_taj_c">
-										                                      <option value="">Año</option>
+										                                      <option value="">Year</option>
 										                                      <option value="2013">2013</option>
 										                                      <option value="2014">2014</option>
 										                                      <option value="2015">2015</option>
@@ -657,7 +657,7 @@
 														                <div class="col-xs-12 col-sm-6">
 														                    <label for="InputAddress">A&ntilde;o of vencimiento<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="ano_taj" id="ano_taj">
-										                                      <option value="">Año</option>
+										                                      <option value="">Year</option>
 										                                      <option value="2013">2013</option>
 										                                      <option value="2014">2014</option>
 										                                      <option value="2015">2015</option>
@@ -1232,13 +1232,13 @@
 						}
 						if(!banco)
 						{
-							alert('Seleccione una empresa bancaria');
+							alert('choose una empresa bancaria');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo of tarjeta');
+								alert('choose una tipo of tarjeta');
 							}
 							else
 							{
@@ -1256,13 +1256,13 @@
 									{
 										if(!mes)
 										{
-											alert('Seleccione un mes');
+											alert('choose un mes');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('Seleccione un año');
+												alert('choose un año');
 											}
 											else
 											{
@@ -1319,13 +1319,13 @@
 						}
 						if(!banco)
 						{
-							alert('Seleccione una empresa bancaria');
+							alert('choose una empresa bancaria');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo of tarjeta');
+								alert('choose una tipo of tarjeta');
 							}
 							else
 							{
@@ -1343,13 +1343,13 @@
 									{
 										if(!mes)
 										{
-											alert('Seleccione un mes');
+											alert('choose un mes');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('Seleccione un año');
+												alert('choose un año');
 											}
 											else
 											{

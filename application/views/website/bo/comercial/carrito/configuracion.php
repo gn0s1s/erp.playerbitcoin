@@ -39,7 +39,7 @@ function activo($mercancias,$tipo) {
 		<!-- START ROW -->
 		<div class="row">
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"

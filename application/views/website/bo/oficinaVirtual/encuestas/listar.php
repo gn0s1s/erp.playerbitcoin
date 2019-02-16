@@ -14,7 +14,7 @@
 	<section id="widget-grid">
 		<!-- START ROW -->
 		<div class="container row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -336,7 +336,7 @@
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -368,7 +368,7 @@
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {

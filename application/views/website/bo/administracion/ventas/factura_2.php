@@ -62,7 +62,7 @@
 					<?=  $datos_afiliado[0]->nombre." ".$datos_afiliado[0]->apellido ?> </strong>
 				<br> <abbr title="Phone">DNI:</abbr><?=  $datos_afiliado[0]->keyword ?> 
 				<br> <abbr title="Phone">Dirección:</abbr><?=  $pais_afiliado[0]->direccion ?> 
-				<br> <abbr title="Phone">País:</abbr><?=  $pais_afiliado[0]->nombrePais ?> 
+				<br> <abbr title="Phone">Country:</abbr><?=  $pais_afiliado[0]->nombrePais ?>
 				<img class="flag flag-<?=strtolower($pais_afiliado[0]->codigo)?>"> <br>
 				<abbr title="Phone">Email:</abbr><?=  $datos_afiliado[0]->email ?> 
 		</div>

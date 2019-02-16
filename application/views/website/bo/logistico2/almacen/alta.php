@@ -45,7 +45,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				
 			<div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -84,7 +84,7 @@
 						<form id="nueva" class="smart-form" method="POST" action="/bo/almacen/crear_almacen" enctype="multipart/form-data">
 							<fieldset>
 								<label class="input">Nombre
-									<input style="width: 25rem;" type="text" name="nombre" placeholder="Nombre"class="form-control" required>
+									<input style="width: 25rem;" type="text" name="nombre" placeholder="Name"class="form-control" required>
 								</label>
 								
 								<div class="row" style="width: 28rem;">
@@ -176,14 +176,14 @@
 <script src="/template/js/validacion.js"></script>
 <script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 <script type="text/javascript">
-function new_ciudad(){
+function new _ciudad(){
 	bootbox.dialog({
 		message: '<form id="form_ciudad" method="post" class="smart-form">'
 					+'<fieldset>'
 						+'<legend>Datos Ciudad</legend>'
 							+'<div  class="row">'
 								+'<section class="col col-6">'
-									+'País'
+									+'Country'
 									+'<label class="select">'
 										+'<select id="pais" required name="pais">'
 										+'<?php foreach ($pais as $key){?>'
@@ -209,7 +209,7 @@ function new_ciudad(){
 							+'</div>'
 						+'</fieldset>'
 				+'</form>',
-				title: "Nueva Ciudad",
+				title: "newCiudad",
 				buttons: {
 					submit: {
 					label: "Accept",

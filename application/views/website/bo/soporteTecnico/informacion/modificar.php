@@ -39,7 +39,7 @@
 				<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"
 					id="busquedatodos">
 					<label class="label">Nombre del archivo</label> <label class="input">
-						<input name="nombre" placeholder="Nombre" type="text"
+						<input name="nombre" placeholder="Name" type="text"
 						id="nombre_publico"
 						value="<?php echo $archivo[0]->nombre_publico; ?>" required>
 					</label>

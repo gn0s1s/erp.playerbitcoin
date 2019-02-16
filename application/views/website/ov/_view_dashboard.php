@@ -816,7 +816,7 @@
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 <<<<<<< HEAD
 															<i class="fa fa-bar-chart-o"></i>
-															<h5>Estadisticas</h5>
+															<h5>Statistics</h5>
 =======
 															<i class="fa fa-bar-chart-o fa-3x"></i>
 															<h5>Statistics</h5>

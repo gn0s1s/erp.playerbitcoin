@@ -9,7 +9,7 @@
 				<i class="fa-fw fa fa-pencil-square-o"></i> 
 					<a href="/bo/dashboard">Dashboard</a>
 				<span>>
-					<a href="/bo/comisiones">Comisiones</a>
+					<a href="/bo/comisiones">Commissions</a>
 				</span>
 				<span>>
 					<a href="/bo/comisiones/cuatro">Bono cuatro</a>
@@ -23,7 +23,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-01" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -84,7 +84,7 @@
 								            	<th class="text-center">ID</th>
 							                    <th class="text-center">Nombre</th>
 							                    <th class="text-center">Nivel</th>
-							                    <th class="text-center">Comision</th>
+							                    <th class="text-center">Commission</th>
 							                    <th class="text-center">Impuesto</th>
 							                    <th class="text-center">Total</th>
 							                    <th class="text-center">bank </th>

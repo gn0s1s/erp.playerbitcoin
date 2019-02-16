@@ -19,7 +19,7 @@
         height: auto !important;
     }
 </style>
-<!-- Estilos of the nueva integración del ERP-->
+<!-- Estilos of the new integración del ERP-->
 <link rel="stylesheet" type="text/css" media="screen" href="/template/css/playerBitcoin.css">
 
 
@@ -382,7 +382,7 @@
 							
 							bootbox.dialog({
 								message: msg,
-								title: "Seleccione Banco",
+								title: "choose Banco",
 								className: "",
 								buttons: {
 									success: {

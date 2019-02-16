@@ -350,7 +350,7 @@ ul.sidebar li a h1, ul.sidebar li a h2, ul.sidebar li a h3, ul.sidebar li a h4,
 						<tr>
 							<td><img style="width: 200px; height: 150px;"
 								src="<?=site_url('/wl.png')?>" alt="Networksoft" /></td>
-							<td align="right"><h6 class="collapse">Felicitaciones</h6></td>
+							<td align="right"><h6 class="collapse">Congratulations</h6></td>
 						</tr>
 					</table>
 				</div>
@@ -374,7 +374,7 @@ ul.sidebar li a h1, ul.sidebar li a h2, ul.sidebar li a h3, ul.sidebar li a h4,
 							<td>
 
 								<h3>Hola, <?php echo $usuario; ?></h3>
-								<p class="lead">Felicitaciones has ganado un <?php echo $premio; ?>.</p>
+								<p class="lead">Congratulations has ganado un <?php echo $premio; ?>.</p>
 								<img src="<?php echo $imagen?>" alt="premio" />
 								<p><?php echo $descripcion; ?></p>
 								<p>por tu tu excelente trabajo con nosotros</p>

@@ -20,7 +20,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- nueva COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -86,7 +86,7 @@
 															<?php }?>
 														</select>
 													</label>
-													<a href="#" onclick="new_grupo()">Agregar grupo <i class="fa fa-plus"></i></a>
+													<a href="#" onclick="new_grupo()">Add grupo <i class="fa fa-plus"></i></a>
 													<a href="#" class="pull-right" onclick="kill_grupo()">Eliminar grupo <i class="fa fa-minus"></i></a>
 												</section>
 												<div>
@@ -98,7 +98,7 @@
 														<label class="label">Imágen</label>
 														<div class="input input-file">
 															<span class="button">
-																<input id="img" name="img[]" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">
+																<input id="img" name="img[]" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">
 															</div>
 															<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br /><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>
 														</section>
@@ -138,7 +138,7 @@
 													</section>
 												</fieldset>
 												<fieldset id="moneda_field">
-													<legend>Moneda & país</legend>
+													<legend>Moneda & Country</legend>
 													<section class="col col-2">
 														<label class="input">
 															Cantidad mínima of venta
@@ -187,7 +187,7 @@
 														</label>
 													</section>
 													
-													<section class="col col-3">País of the mercancía
+													<section class="col col-3">Country of the mercancía
 														<label class="select">
 															<select id="pais" required name="pais">
 																<?php foreach ($pais as $key)
@@ -214,7 +214,7 @@
 																<?php }?>
 															</select>
 														</label>
-														<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>
+														<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>
 														<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>
 														<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>
 													</section>
@@ -335,7 +335,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = nueva ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -367,7 +367,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = nueva ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -383,9 +383,9 @@ $(document).ready(function() {
 	pageSetUp();
 
 })
-function new_user()
+function nueva_user()
 {
-	var ids=new Array(
+	var ids=nuevaArray(
 		"#username",
 		"#email",
 		"#password",
@@ -397,11 +397,11 @@ function new_user()
 		"#cp",
 		"#calle"
 		);
-	var mensajes=new Array(
+	var mensajes=nuevaArray(
 		"Por favor ingresa un nombre of usuario",
 		"Por favor ingresa un correo electronico",
-		"Por favor ingresa una contraseña",
-		"Por favor confirma the contraseña",
+		"Por favor ingresa una Password",
+		"Por favor confirma the Password",
 		"Por favor ingresa tu nombre",
 		"Por favor ingresa tu apellido",
 		"Por favor ingresa tu fecha of nacimineto",
@@ -409,13 +409,13 @@ function new_user()
 		"Por favor ingresa tu codigo postal",
 		"Por favor ingresa tu dirección"
 		);
-	var id_ml=new Array(
+	var id_ml=nuevaArray(
 		"#email"
 		);
-	var eml_mns=new Array(
+	var eml_mns=nuevaArray(
 		"Por favor ingrese un correo valido"
 		);
-	var psswrds=new Array(
+	var psswrds=nuevaArray(
 		"#password",
 		"#confirm_password"
 		);
@@ -437,17 +437,17 @@ function new_user()
 	var mensaje_fecha=Array(
 		"El formato of al fecha es incorrecto (aaaa-mm-dd)"
 		);
-	var ids_esp=new Array(
+	var ids_esp=nuevaArray(
 		"#username"
 		);
-	var mensajes_esp=new Array(
+	var mensajes_esp=nuevaArray(
 		"El nombre of usuario no puede contener espacios on blanco"
 		);
 	
 	var validacion=valida_vacios(ids,mensajes);
 	var val_espacios=valida_espacios(ids_esp,mensajes_esp);
 	var val_email=valida_correo(id_ml,eml_mns);
-	var val_psswrds=valida_psswrds(psswrds,"Las contraseñas deben of ser iguales");
+	var val_psswrds=valida_psswrds(psswrds,"Las Passwords deben of ser iguales");
 	var val_tamano=valida_tamano(id_tamano,tamano_min,tamano_max,mensaje_tamano);
 	var val_fecha=valida_fecha(id_fecha,mensaje_fecha);
 	if(val_espacios&&validacion&&val_email&&val_psswrds&&val_tamano&&val_fecha)
@@ -472,7 +472,7 @@ function new_user()
 				$("#progress").attr('style','width: 100%');
 				bootbox.dialog({
 					message: "El usuario ha sido registrado",
-					title: "Atención",
+					title: "Attention",
 					buttons: {
 						success: {
 							label: "Ok!",
@@ -637,7 +637,7 @@ function formulario()
 			+'<?php }?>'
 			+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="new_grupo()">Agregar grupo <i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="new_grupo()">Add grupo <i class="fa fa-plus"></i></a>'
 			+'<a href="#" class="pull-right" onclick="kill_grupo()">Eliminar grupo <i class="fa fa-minus"></i></a>'
 			+'</section>'
 			+'<div>'
@@ -647,7 +647,7 @@ function formulario()
 			+'<section id="imagenes" class="col col-6">'
 			+'<label class="label">Imágen</label>'
 			+'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
-			+'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
+			+'<input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">'
 			+'</div>'
 			+'<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
 			+'</section>'
@@ -682,7 +682,7 @@ function formulario()
 			+'</section>'
 			+'</fieldset>'
 			+'<fieldset id="moneda_field">'
-			+'<legend>Moneda & país</legend>'
+			+'<legend>Moneda & Country</legend>'
 			+'<section class="col col-2">'
 			+'<label class="input">Cantidad mínima of venta'
 			+'<input type="text" name="min_venta">'
@@ -723,7 +723,7 @@ function formulario()
 			+'<?php }?>'
 			+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 			+'</section>'
@@ -738,7 +738,7 @@ function formulario()
 			+'</select>'
 			+'</label>'
 			+'</section>'
-			+'<section class="col col-3">País del producto'
+			+'<section class="col col-3">Country del producto'
 			+'<label class="select">'
 			+'<select id="pais" required name="pais">'
 			+'<?php foreach ($pais as $key){?>'
@@ -837,13 +837,13 @@ if(tipo==2)
 		+'<section id="imagenes" class="col col-6">'
 		+'<label class="label">Imágen</label>'
 		+'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
-		+'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
+		+'<input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">'
 		+'</div><small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
 		+'</section>'
 		+'</div>'
 		+'</fieldset>'
 		+'<fieldset id="moneda_field">'
-		+'<legend>Moneda & país</legend>'
+		+'<legend>Moneda & Country</legend>'
 		+'<section class="col col-2">'
 		+'<label class="input">'
 		+'Costo real'
@@ -874,7 +874,7 @@ if(tipo==2)
 		+'<?php }?>'
 		+'</select>'
 		+'</label>'
-		+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+		+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 		+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 		+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 		+'</section>'
@@ -889,7 +889,7 @@ if(tipo==2)
 		+'</select>'
 		+'</label>'
 		+'</section>'
-		+'<section class="col col-3">País del producto'
+		+'<section class="col col-3">Country del producto'
 		+'<label class="select">'
 		+'<select id="pais" required name="pais">'
 		+'<?php foreach ($pais as $key){?>'
@@ -1008,9 +1008,9 @@ $("#mymarkdown").markdown({
 			+'</div>'
 			+'</div>'
 			+'</fieldset>'
-			+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a></div>'
+			+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a></div>'
 			+'<div id="moneda"><fieldset id="moneda_field">'
-			+'<legend>Moneda & país</legend>'
+			+'<legend>Moneda & Country</legend>'
 			+'<section class="col col-2">'
 			+'<label class="input">'
 			+'Costo real'
@@ -1041,7 +1041,7 @@ $("#mymarkdown").markdown({
 			+'<?php }?>'
 			+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 			+'</section>'
@@ -1056,7 +1056,7 @@ $("#mymarkdown").markdown({
 			+'</select>'
 			+'</label>'
 			+'</section>'
-			+'<section class="col col-3">País del producto'
+			+'<section class="col col-3">Country del producto'
 			+'<label class="select">'
 			+'<select id="pais" required name="pais">'
 			+'<?php foreach ($pais as $key){?>'
@@ -1080,7 +1080,7 @@ $("#mymarkdown").markdown({
 			+'<section id="imagenes" class="col col-6">'
 			+'<label class="label">Imágen</label>'
 			+'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
-			+'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
+			+'<input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">'
 			+'</div><small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
 			+'</section>'
 			+'</div>'
@@ -1101,7 +1101,7 @@ function tipo_promo()
 		$("#tipo_promo").empty();
 		$("#labelextra").empty();
 		$("#labelextra").append('Descuento del paquete');
-		$('#agregar').append('<a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a>');
+		$('#agregar').append('<a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a>');
 		$('#precio_promo').attr('name','descuento')
 		$("#tipo_promo").append('<section class="col col-2">'
 			+'<label class="input"><span id="labelextra">Descuento del paquete</span>'
@@ -1145,7 +1145,7 @@ function tipo_promo()
 			+'</section>'
 			+'</div>');
 $("#moneda").append('<fieldset id="moneda_field"> '
-	+'<legend>Moneda & país</legend>'
+	+'<legend>Moneda & Country</legend>'
 	+'<section class="col col-2">'
 	+'<label class="input">'
 	+'Costo real'
@@ -1176,7 +1176,7 @@ $("#moneda").append('<fieldset id="moneda_field"> '
 	+'<?php }?>'
 	+'</select>'
 	+'</label>'
-	+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+	+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 	+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 	+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 	+'</section>'
@@ -1191,7 +1191,7 @@ $("#moneda").append('<fieldset id="moneda_field"> '
 	+'</select>'
 	+'</label>'
 	+'</section>'
-	+'<section class="col col-3">País del producto'
+	+'<section class="col col-3">Country del producto'
 	+'<label class="select">'
 	+'<select id="pais" required name="pais">'
 	+'<?php foreach ($pais as $key){?>'
@@ -1274,7 +1274,7 @@ $('#finishdate').datepicker({
 });
 }
 }
-function new_product()
+function nueva_product()
 {
 	$('#prods').append('<section class="col col-8">productos'
 		+'<label class="select">'
@@ -1293,7 +1293,7 @@ function new_product()
 		+'</label>'
 		+'</section>');
 }
-function new_service()
+function nueva_service()
 {
 	$('#servs').append('<section class="col col-8">Services'
 		+'<label class="select">'
@@ -1312,11 +1312,11 @@ function new_service()
 		+'</label>'
 		+'</section>');
 }
-function new_grupo()
+function nueva_grupo()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del grupo</label><input id='desc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 				label: "Agregar",
@@ -1332,7 +1332,7 @@ function new_grupo()
 					{
 						bootbox.dialog({
 							message: "El grupo fue añadido con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -1370,7 +1370,7 @@ function kill_grupo()
 					{
 						bootbox.dialog({
 							message: "El grupo fue eliminado con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -1388,11 +1388,11 @@ function kill_grupo()
 		}
 	})
 }
-function new_impuesto()
+function nueva_impuesto()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 				label: "Agregar",
@@ -1409,7 +1409,7 @@ function new_impuesto()
 					{
 						bootbox.dialog({
 							message: "El impuesto fue añadido con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -1447,7 +1447,7 @@ function kill_impuesto()
 					{
 						bootbox.dialog({
 							message: "El impuesto fue eliminado con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -1741,7 +1741,7 @@ function estatus(tipo,id)
 		})
 	}
 }
-function new_empresa()
+function nueva_empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
@@ -1777,7 +1777,7 @@ function new_empresa()
 		+'<legend>Dirección of the empresa</legend>'
 		+'<div id="dir" class="row">'
 		+'<section class="col col-6">'
-		+'País'
+		+'Country'
 		+'<label class="select">'
 		+'<select id="pais" required name="pais">'
 		+'<?php foreach ($pais as $key){?>'
@@ -1790,7 +1790,7 @@ function new_empresa()
 		+'</section>'
 		+'<section class="col col-6">'
 		+'<label class="input">'
-		+'Código postal'
+		+'ZIPCODE'
 		+'<input required  type="text" id="cp" name="cp">'
 		+'</label>'
 		+'</section>'
@@ -1842,7 +1842,7 @@ function new_empresa()
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se agregado the empresa",
+							message: "Se Added the empresa",
 							title: 'Empresa',
 							buttons: {
 								success: {
@@ -1911,7 +1911,7 @@ function check_keyword_co()
 		$("#ajax_1").remove();
 	});
 }
-function new_proveedor()
+function nueva_proveedor()
 {
 	$.ajax({
 		type: "POST",
@@ -1929,7 +1929,7 @@ function new_proveedor()
 		.done(function( msg ) {
 			bootbox.dialog({
 				message: "Se ha afiliado al usuario",
-				title: "Atención",
+				title: "Attention",
 				buttons: {
 					success: {
 						label: "Ok!",
@@ -2082,7 +2082,7 @@ $("#mercancia").submit(function(event){
 	}
 	if(tipo_merc==2)
 	{
-		var ids=new Array(
+		var ids=nuevaArray(
 			"#nombre_s",
 			"#concepto",
 			"#startdate",
@@ -2094,7 +2094,7 @@ $("#mercancia").submit(function(event){
 			"#entrega",
 			"#puntos_com"
 			);
-		var mensajes=new Array(
+		var mensajes=nuevaArray(
 			"Por favor ingresa un nombre del producto",
 			"Por favor ingresa un concepto",
 			"Por favor ingrese the fecha of inicio",
@@ -2121,12 +2121,12 @@ $("#mercancia").submit(function(event){
 			"El formato of the fecha es incorrecto (aaaa-mm-dd)"
 			);
 		
-		var id_dec=new Array(
+		var id_dec=nuevaArray(
 			"#real",
 			"#costo",
 			"#costo_publico"
 			);
-		var msj_dec=new Array(
+		var msj_dec=nuevaArray(
 			"El costo real debe of ser un numero",
 			"El costo debe of ser un numero",
 			"El costo_publico debe of ser un numero"
@@ -2146,7 +2146,7 @@ $("#mercancia").submit(function(event){
 		var tipo_promo=("#tipo").val();
 		if(tipo_promo==1)
 		{
-			var ids=new Array(
+			var ids=nuevaArray(
 				"#nombre_pr",
 				"#prod_qty",
 				"#serv_qty",
@@ -2157,7 +2157,7 @@ $("#mercancia").submit(function(event){
 				"#entrega",
 				"#puntos_com"
 				);
-			var mensajes=new Array(
+			var mensajes=nuevaArray(
 				"Por favor ingresa un nombre del producto",
 				"Por favor especifica the cantidad of producto",
 				"Por favor especifica the cantidad of servicio",
@@ -2180,12 +2180,12 @@ $("#mercancia").submit(function(event){
 				"La cantidad of servcio debe ser un numero entero"
 				);
 			
-			var id_dec=new Array(
+			var id_dec=nuevaArray(
 				"#real",
 				"#costo",
 				"#costo_publico"
 				);
-			var msj_dec=new Array(
+			var msj_dec=nuevaArray(
 				"El costo real debe of ser un numero",
 				"El costo debe of ser un numero",
 				"El costo_publico debe of ser un numero"
@@ -2201,14 +2201,14 @@ $("#mercancia").submit(function(event){
 		}
 		if(tipo_promo==2)
 		{
-			var ids=new Array(
+			var ids=nuevaArray(
 				"#nombre_pr",
 				"#n_mercancia",
 				"#startdate",
 				"#finishdate",
 				"#precio_promo"
 				);
-			var mensajes=new Array(
+			var mensajes=nuevaArray(
 				"Por favor ingresa un nombre of the promocion",
 				"Por favor ingresa the cantidad of mercancia",
 				"Por favor ingrese the fecha of inicio",
@@ -2254,7 +2254,7 @@ $("#mercancia").submit(function(event){
 
 	});
 
-function new_pack()
+function nueva_pack()
 {
 	bootbox.dialog({
 		message: '<form id="form_paquete" method="post" action="/bo/admin/alta_paquete" class="smart-form">'
@@ -2335,11 +2335,11 @@ function new_pack()
 		+'</div>'
 		+'</div>'
 		+'</fieldset>'
-		+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a></div>'
+		+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a></div>'
 		+'</fieldset>'
 		+'</div>'
 		+'</form>',
-		title: "Agregar paquete",
+		title: "Add paquete",
 		buttons: {
 			submit: {
 				label: "Accept",

@@ -7,7 +7,7 @@
                 <span> 
                     > <a href="/bo/configuracion">Configuracion</a>
                     > <a href="/bo/configuracion/tipoRed">Tipo of Network</a>
-                    > Frontalidad/Profundidad
+                    > first line/Profundidad
                 </span>
             </h1>
         </div>

@@ -81,7 +81,7 @@ function detalles(id)
 		<!-- START ROW -->
 		<div class="row">
 			
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -100,7 +100,7 @@ function detalles(id)
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>
+						<h2>Personal Info</h2>
 					</header>
 
 					<!-- widget div-->
@@ -125,7 +125,7 @@ function detalles(id)
 										<div class="tree1" style="width: 10000rem;">
 											<ul>
 												<li>
-													<a style="background: url('<?=$img_perfil?>'); background-size: cover; background-position: center;" href="#"><div class="nombre">Tú</div></a>
+													<a style="background: url('<?=$img_perfil?>'); background-size: cover; background-position: center;" href="#"><div class="nombre">You</div></a>
 													<ul>
 													<?
 													$aux =0;
@@ -138,7 +138,7 @@ function detalles(id)
                                                         {?>
 														<li id="<?=$key->id_afiliado?>">
 															<a class="quitar" style="background: url('<?=$img?>'); background-size: cover; background-position: center;" onclick="subred(<?=$key->id_afiliado?>, 1)" href="#"></a>
-															<div onclick="detalles(<?=$key->id_afiliado?>)" class="<?=($key->directo==0) ? 'todo' : 'todo1'?>"><?=$key->afiliado?> <?=$key->afiliado_p?><br />Detalles</div>
+															<div onclick="detalles(<?=$key->id_afiliado?>)" class="<?=($key->directo==0) ? 'todo' : 'todo1'?>"><?=$key->afiliado?> <?=$key->afiliado_p?><br />Details</div>
 														</li>
 														<?}
                                                     }

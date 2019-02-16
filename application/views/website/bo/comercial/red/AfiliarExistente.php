@@ -25,7 +25,7 @@
 		<!-- START ROW -->
 		<div class="row">
 			
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -44,7 +44,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>
+						<h2>Personal Info</h2>
 					</header>
 
 					<!-- widget div-->
@@ -83,7 +83,7 @@
 																Username
 																<label class="input"><i class="icon-prepend fa fa-user"></i>
 																	<input id="username" onkeyup="use_username()" required
-																	type="text" name="username" placeholder="Usuario">
+																	type="text" name="username" placeholder="Username">
 																</label>
 																<div id="usuario2"></div>
 															</section>
@@ -249,13 +249,13 @@ Thanks :)*/
 
 function Crear() {
 	
-	var ids = new Array( 
+	var ids = new  Array( 
 					
 				 	"#username",
 				 	"#email"
 				 	
 				 );
-				var mensajes = new Array( 
+				var mensajes = new  Array( 
 					"Por favor ingresa un nombre of usuario",
 				 	"Por favor ingresa un correo"
 				 );
@@ -277,7 +277,7 @@ function Crear() {
 				else
 				{
 					$.smallBox({
-				      title: "<h1>Atención</h1>",
+				      title: "<h1>Attention</h1>",
 				      content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
 				      color: "#C46A69",
 				      icon : "fa fa-warning fadeInLeft animated",
@@ -485,7 +485,7 @@ function agregar_red(tipo)
 }
  $(function()
  {
- 	var a = new Date();
+ 	var a = new  Date();
  	año = a.getFullYear()-19;
 	$( "#datepicker" ).datepicker({
 	changeMonth: true,

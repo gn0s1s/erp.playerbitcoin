@@ -87,7 +87,7 @@
                                                 $login = 'Error en la cuenta. ';
                                             }
                                             if (isset($data['errors']['password'])) {
-                                                $pswd = 'Error en la contraseña. ';
+                                                $pswd = 'Error en la Password. ';
                                             }
                                             if (isset($data['errors']['blocked'])) {
                                                 $pswd = 'Tu cuenta esta bloqueada , intenta ingresar en 30 Minutos.<br>';

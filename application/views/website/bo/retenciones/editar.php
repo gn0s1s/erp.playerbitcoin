@@ -3,7 +3,7 @@
 							<fieldset>
 								<input type="text" class="hide" value="<?php echo $_POST['id']; ?>" name="id">
 								<label class="input"> Nombre
-								<input type="text" name="nombre" required placeholder="Nombre" style="width: 50%;" class="form-control" value="<?php echo $retencion[0]->descripcion; ?>" required>
+								<input type="text" name="nombre" required placeholder="Name" style="width: 50%;" class="form-control" value="<?php echo $retencion[0]->descripcion; ?>" required>
 								<label class="input"> Valor
 								<input type="number" name="porcentaje" required placeholder="valor" style="width: 50%;" class="form-control" value="<?php echo $retencion[0]->porcentaje; ?>" required>
 								<br><div class="inline-group">
@@ -57,7 +57,7 @@ function enviar() {
 							
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

@@ -14,7 +14,7 @@
   	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -39,13 +39,13 @@
 			<legend>Nuevo Tipo of Network </legend><br>
 			<div class="form-group" style="width: 20rem;">
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
-				<input type="text" class="form-control" name="nombre" size="30" placeholder="Nombre" required>
+				<input type="text" class="form-control" name="nombre" size="30" placeholder="Name" required>
 	        </label>
 	        <label class="textarea"> 										
 				<textarea style="margin-left: 1rem;" rows="6" class="custom-scroll" name="descripcion" size="30" required placeholder="Descripcion"></textarea> 
 			</label>
 			<br>
-			<p>Nota: Si the Network es of frontalidad o profundidad infinita colocar 0.</p><br>
+			<p>Nota: Si the Network es of first lineidad o profundidad infinita colocar 0.</p><br>
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-arrow-right"></i>
 				<input type="number" class="form-control" name="frontal" size="30" min="0" placeholder="frontalidad" required>
 	        </label>
@@ -78,7 +78,6 @@
   </div>
   </div>
 </article>
-</div>
 </section>
 </div>
 

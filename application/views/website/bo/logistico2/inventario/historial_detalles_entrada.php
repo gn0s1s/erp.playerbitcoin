@@ -135,7 +135,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -163,7 +163,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -198,7 +198,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -241,7 +241,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {

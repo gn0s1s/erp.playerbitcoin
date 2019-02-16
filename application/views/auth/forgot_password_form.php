@@ -16,7 +16,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 <html lang="en-us" id="extr-page">
 	<head>
 		<meta charset="utf-8">
-		<title>Recuperar Contraseña</title>
+		<title>Recuperar Password</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -87,7 +87,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 						<div class="well no-padding">
 							<form id="login-form" method="POST" action="/auth/forgot_password" class="smart-form client-form">
 								<header>
-									Recuperar my contraseña
+									Recuperar my Password
 								</header>
 
 								<fieldset>

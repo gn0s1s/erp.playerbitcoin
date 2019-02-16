@@ -7,7 +7,7 @@
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>>
 					<a href="/bo/configuracion/"> Configuracion </a>
 					> <a href="/bo/configuracion/tipoRed"> Tipo of Network </a>
-					> <a href="/bo/capacidadRed/index"> Frontalidad /
+					> <a href="/bo/capacidadRed/index"> first line /
 					Profundidad </a>
 					> Configuracion
 				</span>
@@ -17,7 +17,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -42,7 +42,7 @@
 							<form class="smart-form" action="/bo/capacidadRed/actualizar_capacidad_de_la_red" method="POST" role="form">
 
 								<legend>Capacidad of Network </legend>
-								<spam>Nota: Si tu red es of frontalidad o profundidad es infinita, on the configuracion ponle 0.</spam>
+								<spam>Nota: Si tu red es of first line o profundidad es infinita, on the configuracion ponle 0.</spam>
 								<div class="form-group" style="width: 5rem; margin-top: 2rem;">
 									<label>Frontales</label> <input style="padding-left: 3rem;"
 										type="number" class="form-control" name="frontal"

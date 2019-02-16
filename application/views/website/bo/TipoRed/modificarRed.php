@@ -16,7 +16,7 @@
 		</div>		
 		<div class="form-group">			
 			<div class="col-md-5"><br>
-			<p>Nota: Si tu red es of frontalidad o profundidad es infinita, on the configuracion ponle 0.</p><br>
+			<p>Nota: Si tu red es of first lineidad o profundidad es infinita, on the configuracion ponle 0.</p><br>
 				<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-arrow-right"></i>
 					<input type="number" class="form-control" name="frontal" size="30" min="0" placeholder="frontalidad" value="<?= $datosDeRed[0]->frontal;?>" required>
 		        </label>

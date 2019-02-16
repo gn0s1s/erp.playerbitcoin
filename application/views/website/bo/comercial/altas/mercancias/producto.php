@@ -48,7 +48,7 @@ if ($this->session->flashdata ( 'error' )) {
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -120,7 +120,7 @@ if ($this->session->flashdata ( 'error' )) {
 														onchange="this.parentNode.nextSibling.value = this.value"
 														type="file" multiple>Buscar
 													</span><input id="imagen_mr"
-														placeholder="Agregar alguna imágen" type="text" required>
+														placeholder="Add alguna imágen" type="text" required>
 												</div>
 												<small><cite title="Source Title">Para ver the archivo que va
 														a cargar, pulse con the puntero on the boton of "Buscar"</cite></small>
@@ -193,7 +193,7 @@ if ($this->session->flashdata ( 'error' )) {
 									</section>
 								</fieldset>
 								<fieldset id="moneda_field">
-									<legend>Moneda & país</legend>
+									<legend>Moneda & Country</legend>
 									<section class="col col-2">
 										<label class="input"> Cantidad mínima of venta <input
 											type="number" name="min_venta" min="1" id="min_venta"
@@ -255,7 +255,7 @@ if ($this->session->flashdata ( 'error' )) {
 
 
 											<section class="col col-2">
-												País of the mercancía <label class="select"> <select
+												Country of the mercancía <label class="select"> <select
 													id="pais" name="pais" onChange="select_pais()" required>
 														<option value="-" selected>-- Seleciona un pais --</option>
 																<?php foreach ( $pais as $key ) {
@@ -440,7 +440,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -472,7 +472,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -488,7 +488,7 @@ $(document).ready(function() {
 	pageSetUp();
 
 })
-function new_user()
+function new _user()
 {
 	var ids=new Array(
 		"#username",
@@ -505,8 +505,8 @@ function new_user()
 	var mensajes=new Array(
 		"Por favor ingresa un nombre of usuario",
 		"Por favor ingresa un correo electronico",
-		"Por favor ingresa una contraseña",
-		"Por favor confirma the contraseña",
+		"Por favor ingresa una Password",
+		"Por favor confirma the Password",
 		"Por favor ingresa tu nombre",
 		"Por favor ingresa tu apellido",
 		"Por favor ingresa tu fecha of nacimineto",
@@ -552,7 +552,7 @@ function new_user()
 	var validacion=valida_vacios(ids,mensajes);
 	var val_espacios=valida_espacios(ids_esp,mensajes_esp);
 	var val_email=valida_correo(id_ml,eml_mns);
-	var val_psswrds=valida_psswrds(psswrds,"Las contraseñas deben of ser iguales");
+	var val_psswrds=valida_psswrds(psswrds,"Las Passwords deben of ser iguales");
 	var val_tamano=valida_tamano(id_tamano,tamano_min,tamano_max,mensaje_tamano);
 	var val_fecha=valida_fecha(id_fecha,mensaje_fecha);
 	if(val_espacios&&validacion&&val_email&&val_psswrds&&val_tamano&&val_fecha)
@@ -577,7 +577,7 @@ function new_user()
 				$("#progress").attr('style','width: 100%');
 				bootbox.dialog({
 					message: "El usuario ha sido registrado",
-					title: "Atención",
+					title: "Attention",
 					buttons: {
 						success: {
 							label: "Ok!",
@@ -705,7 +705,7 @@ $(function()
 	});
 });
 
-function new_product()
+function new _product()
 {
 	$('#prods').append('<section class="col col-8">productos'
 		+'<label class="select">'
@@ -724,7 +724,7 @@ function new_product()
 		+'</label>'
 		+'</section>');
 }
-function new_service()
+function new _service()
 {
 	$('#servs').append('<section class="col col-8">Services'
 		+'<label class="select">'
@@ -743,11 +743,11 @@ function new_service()
 		+'</label>'
 		+'</section>');
 }
-function new_grupo()
+function new _grupo()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del grupo</label><input id='desc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 				label: "Agregar",
@@ -763,7 +763,7 @@ function new_grupo()
 					{
 						bootbox.dialog({
 							message: "El grupo fue añadido con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -782,11 +782,11 @@ function new_grupo()
 	})
 }
 
-function new_impuesto()
+function new _impuesto()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 				label: "Agregar",
@@ -803,7 +803,7 @@ function new_impuesto()
 					{
 						bootbox.dialog({
 							message: "El impuesto fue añadido con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -841,7 +841,7 @@ function kill_impuesto()
 					{
 						bootbox.dialog({
 							message: "El impuesto fue eliminado con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -1135,7 +1135,7 @@ function estatus(tipo,id)
 		})
 	}
 }
-function new_empresa()
+function new _empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
@@ -1171,7 +1171,7 @@ function new_empresa()
 		+'<legend>Dirección of the empresa</legend>'
 		+'<div id="dir" class="row">'
 		+'<section class="col col-6">'
-		+'País'
+		+'Country'
 		+'<label class="select">'
 		+'<select id="pais" required name="pais">'
 		+'<?php foreach ($pais as $key){?>'
@@ -1184,7 +1184,7 @@ function new_empresa()
 		+'</section>'
 		+'<section class="col col-6">'
 		+'<label class="input">'
-		+'Código postal'
+		+'ZIPCODE'
 		+'<input required  type="text" id="cp" name="cp">'
 		+'</label>'
 		+'</section>'
@@ -1236,7 +1236,7 @@ function new_empresa()
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se agregado the empresa",
+							message: "Se Added the empresa",
 							title: 'Empresa',
 							buttons: {
 								success: {
@@ -1305,7 +1305,7 @@ function check_keyword_co()
 		$("#ajax_1").remove();
 	});
 }
-function new_proveedor()
+function new _proveedor()
 {
 	$.ajax({
 		type: "POST",
@@ -1323,7 +1323,7 @@ function new_proveedor()
 		.done(function( msg ) {
 			bootbox.dialog({
 				message: "Se ha afiliado al usuario",
-				title: "Atención",
+				title: "Attention",
 				buttons: {
 					success: {
 						label: "Ok!",
@@ -1660,7 +1660,7 @@ $("#mercancia").submit(function(event){
 
 	});
 
-function new_pack()
+function new _pack()
 {
 	bootbox.dialog({
 		message: '<form id="form_paquete" method="post" action="/bo/admin/alta_paquete" class="smart-form">'
@@ -1741,11 +1741,11 @@ function new_pack()
 		+'</div>'
 		+'</div>'
 		+'</fieldset>'
-		+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a></div>'
+		+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a></div>'
 		+'</fieldset>'
 		+'</div>'
 		+'</form>',
-		title: "Agregar paquete",
+		title: "Add paquete",
 		buttons: {
 			submit: {
 				label: "Accept",
@@ -1840,7 +1840,7 @@ function ImpuestosPais2(id){
 	calcular_precio_total();
 }
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	

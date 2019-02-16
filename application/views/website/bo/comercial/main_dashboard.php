@@ -71,7 +71,7 @@
 												<a href="/bo/mod_fin">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-money fa-5x"></i>
-														<h1>Atención al afiliado</h1>
+														<h1>Attention al afiliado</h1>
 													</div>
 												</a>
 											</div>
@@ -79,7 +79,7 @@
 												<a href="/bo/mod_fin">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<i class="fa fa-money fa-5x"></i>
-														<h1>Estudios of mercado</h1>
+														<h1>schooling of mercado</h1>
 													</div>
 												</a>
 											</div>

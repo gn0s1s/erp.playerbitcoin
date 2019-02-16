@@ -24,7 +24,7 @@
 	<section id="widget-grid" class="">
 	  <div id="myTabContent1" class="tab-content padding-10" style="margin-bottom: 6rem;">
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -78,22 +78,22 @@
 				
 				<div class="col-xs-4 col-md-1 col-sm-2 col-lg-1">
 					<center>
-						<a title="Genealogico"  class="txt-color-gray"><i class="fa fa-sitemap fa-3x"></i></a>
-						<br>Genealogico
+						<a title="Spillover"  class="txt-color-gray"><i class="fa fa-sitemap fa-3x"></i></a>
+						<br>Spillover
 					</center>
 				</div> -->	
 				
 				<div class="col-xs-4 col-md-1 col-sm-2 col-lg-1">
 					<center>
 						<a title="Arbol 1"  class="txt-color-gray"><i class="fa fa-sitemap fa-3x"></i></a>
-						<br>Arbol 1
+						<br>Tree 1
 					</center>
 				</div>
 				
 				<div class="col-xs-4 col-md-1 col-sm-2 col-lg-1">
 					<center>
 						<a title="Arbol 2" class="txt-color-green"><i class="fa fa-sitemap fa-3x"></i></a>
-						<br>Arbol 2
+						<br>Tree 2
 					</center>
 				</div>
 				
@@ -173,7 +173,7 @@
                                     <th data-class="expand">Imagen</th>
                                     <th data-hide="phone">Usuario</th>
                                     <th data-hide="phone,tablet">Sponsor</th>
-                                    <th data-hide="phone,tablet">Contraseña</th>
+                                    <th data-hide="phone,tablet">Password</th>
                                     <th data-hide="phone,tablet">e-mail</th>
                                     <th data-hide="phone">Networks</th>
                                     <th>Accion</th>
@@ -220,7 +220,7 @@
                                                onclick="eliminar_afiliado(<?php echo $afiliado->id;?>)" class="txt-color-red">
                                                 <i class="fa fa-trash-o fa-3x"></i></a>
                                             </br>
-                                            <a title="Genealogico" style='cursor: pointer;' 
+                                            <a title="Spillover" style='cursor: pointer;'
                                                href="/bo/comercial/tipos_de_red_grafico_1?id_afiliado=<?php echo $afiliado->id;?>" 
                                                class="txt-color-gray"><i class="fa fa-sitemap fa-3x"></i></a>
                                             <!-- <a title="Arbol 1" style='cursor: pointer;' href="/bo/comercial/tipos_de_red_grafico_2?id_afiliado=<?php echo $afiliado->id;?>" class="txt-color-red"><i class="fa fa-sitemap fa-3x"></i></a> -->
@@ -399,7 +399,7 @@ $(document).ready(function() {
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -427,7 +427,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 			// Initialize the responsive datatables helper once.
 			if (!responsiveHelper_datatable_fixed_column) {
-				responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+				responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 			}
 		},
 		"rowCallback" : function(nRow) {
@@ -462,7 +462,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 			// Initialize the responsive datatables helper once.
 			if (!responsiveHelper_datatable_col_reorder) {
-				responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+				responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 			}
 		},
 		"rowCallback" : function(nRow) {
@@ -505,7 +505,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 			// Initialize the responsive datatables helper once.
 			if (!responsiveHelper_datatable_tabletools) {
-				responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+				responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 			}
 		},
 		"rowCallback" : function(nRow) {

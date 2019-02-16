@@ -8,7 +8,7 @@
 				<i class="fa-fw fa fa-pencil-square-o"></i> 
 					<a href="/bo/dashboard">Dashboard</a>
 				<span>>
-					<a href="/bo/comisiones">Comisiones</a>
+					<a href="/bo/comisiones">Commissions</a>
 				</span>
 				<span>>
 					Bono cuatro

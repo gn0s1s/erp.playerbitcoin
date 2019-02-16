@@ -280,7 +280,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 						
 						<p><?php if (strlen($username) > 0) { ?>Nombre of usuario: <?php echo $username; ?><br /><?php } ?></p>
 						<p>Correo: <?php echo $email; ?></p>
-						<p><?php if (isset($password)) { ?>Contraseña: <?php echo $password; ?><br /><?php } ?>		</p>
+						<p><?php if (isset($password)) { ?>Password: <?php echo $password; ?><br /><?php } ?>		</p>
 						<p>Id del Usuario: <?php echo $lst_id[0]->id; ?></p>
 												
 						<br/>

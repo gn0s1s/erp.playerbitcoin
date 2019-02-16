@@ -6,8 +6,8 @@
 						<h1 class="page-title txt-color-blueDark">
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-							<a href="/ov/accountStatus"> > Estado of Cuenta</a>
-							 > Historial Cuenta</span>
+							<a href="/ov/accountStatus"> > Wallet Status</a>
+							 > Wallet Report</span>
 							
 						</h1>
 					</div>
@@ -29,7 +29,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->
@@ -47,17 +47,17 @@
 												<div class="widget-body">
 													<div id="myTabContent1" class="tab-content padding-10">
 															<div class="col-lg-6 col-sm-6 col-md-12 col-xs-12">
-																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Año
+																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Year
 																	<select id="año" onChange="buscar()" class="form-control">
-																		<option value="">-- Selecione Año --</option>
+																		<option value="">-- Choose Year--</option>
 																	<? foreach ($años as $key) {?>
 																			<option value="<?=$key->año?>"><?=$key->año?></option>
 																	<?}?>
 																	</select>
 																</label>
-																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Mes
+																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Month
 																	<select id="mes" onChange="buscarmes()" class="form-control">
-																		<option value="">-- Selecione Mes --</option>
+																		<option value="">-- Choose Month --</option>
 																		<option value="01">Enero</option>
 																		<option value="02">Febrero</option>
 																		<option value="03">Marzo</option>
@@ -76,8 +76,8 @@
 															<table id="dt_basic" class="table table-striped table-bordered table-hover">
 																<thead>			                
 																	<tr>
-																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> Fecha</th>
-																		<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Valor Total</th>
+																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> Date</th>
+																		<th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Total</th>
 																		<th></th>
 																	</tr>
 																</thead>
@@ -167,7 +167,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {

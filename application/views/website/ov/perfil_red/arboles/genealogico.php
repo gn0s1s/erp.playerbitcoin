@@ -8,8 +8,8 @@
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
 				> <a href="/ov/red/index">Networks</a>
-				> <a href="/ov/red/mi_red?id=<?php echo $_GET['id']; ?>">Arbol</a>
-				> Genealogico
+				> <a href="/ov/red/mi_red?id=<?php echo $_GET['id']; ?>">Tree</a>
+				>Spillover
 				</span>
 			</h1>
 		</div>
@@ -19,7 +19,7 @@
 
 		<!-- row -->
 		<div class="row">
-			<!-- NEW WIDGET START -->
+			<!-- new  WIDGET START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 				<!-- Widget ID (each widget will need unique ID)-->
@@ -41,7 +41,6 @@
 					<header>
 						<span class="widget-icon"> <i class="fa fa-sitemap"></i>
 						</span>
-						<h2>Listado dinámico</h2>
 
 					</header>
 
@@ -61,7 +60,7 @@
 								<div class="tab-pane fade in active" id="s1">
 									<div class="tree smart-form">
 										<ul>
-											<li><span><i class="fa fa-lg fa-folder-open"></i>Tú</span>
+											<li><span><i class="fa fa-lg fa-folder-open"></i>You</span>
 												<ul> 
 												<? foreach ( $afiliados as $key ) {
 													if ($key->debajo_de == $id) { ?>

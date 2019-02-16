@@ -6,8 +6,8 @@
 						<h1 class="page-title txt-color-blueDark">
 							<span>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<a href="/ov/accountStatus"> > Estado of cuenta</a>
-							 > Estado</span>
+							<a href="/ov/accountStatus"> > Wallet Status</a>
+							 > Status</span>
 							
 						</h1>
 					</div>
@@ -27,7 +27,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->
@@ -55,7 +55,7 @@
 													<thead>
 														<tr>
 															<th> <i class="fa fa-sitemap"></i> Network</th>
-															<th> <i class="fa fa-money"></i> Comision</th>
+															<th> <i class="fa fa-money"></i> Commission</th>
 														</tr>
 													</thead>
 													<tbody>
@@ -82,16 +82,16 @@
 														
 														if($comision_todo["ganancias"][$i][0]->valor<>0){
 															echo '<tr class="success" >
-																<td colspan="2"><i class="fa fa-money"></i>Comisiones</td>
+																<td colspan="2"><i class="fa fa-money"></i>Commissions</td>
 															</tr>';
 														
 															echo '<tr class="success">
-															<td>&nbsp;&nbsp;Comisiones Directas</td>
+															<td>&nbsp;&nbsp;Sponsored Commissions</td>
 																<td>$ '.number_format($comision_todo["directos"][$i][0]->valor,2).'</td>
 															</tr>';
 														
 															echo '<tr class="success">
-															<td>&nbsp;&nbsp;Comisiones Indirectas</td>
+															<td>&nbsp;&nbsp;Spillover Commissions</td>
 																<td>$ '.number_format($comision_todo["ganancias"][$i][0]->valor - $comision_todo["directos"][$i][0]->valor,2).'</td>
 															</tr>';
 														
@@ -147,7 +147,7 @@
 													
 													<?php if ($transaction) { ?>	
 														<tr class="warning">
-															<td ><b>TRANSACCIONES EMPRESA</b></td>
+															<td ><b>Wallet movements</b></td>
 															<td >
 																<a title='Ver detalles' style='cursor: pointer;' class='txt-color-green' onclick='ver(<?=$id?>);'>
 																				<i class='fa fa-eye fa-3x'></i>
@@ -158,7 +158,7 @@
 															$total_transact+=$transaction['add'];
 														?>
 														<tr class="warning">
-															<td ><b>Total Agregado</b></td>
+															<td ><b>Total Added</b></td>
 															<td ><b style="color: green">$ <?php echo number_format($transaction['add'],2);?></b></td>
 														</tr>
 													<?php } 
@@ -166,7 +166,7 @@
 														$total_transact-=$transaction['sub'];
 														?>
 														<tr class="warning" >
-															<td ><b>Total Quitado</b></td>
+															<td ><b>Total removed</b></td>
 															<td ><b style="color: red">$ <?php echo number_format($transaction['sub'],2);?></b></td>
 														</tr>
 													<?php } ?>
@@ -198,7 +198,7 @@
 																	} ?>
 																
 																	<tr class="danger">
-																		<td><b>Cobros Pendientes</b></td>
+																		<td><b>Pending Withdrawal</b></td>
 																		<td></td>
 																		<td>$ <?php 
 																		if($cobroPendientes==null)
@@ -211,7 +211,7 @@
 																	<?php foreach ($cobro as $cobros){
 																	?>
 																	<tr class="danger">
-																		<td><b>Cobros Pagos</b></td>
+																		<td><b>Succeeded Withdrawal</b></td>
 																		<td></td>
 																		<td>$ 
 																		<?php 
@@ -228,7 +228,7 @@
 																	<?php 
 																	}?>
 																	<tr class="info">
-																		<td><h4><b>Saldo Neto</b></h4>
+																		<td><h4><b>Clear Status </b></h4>
 																		<td></td>
 																		<td><h4><b>$ <?php echo number_format(($total-($cobro+$retenciones_total+$cobroPendientes)+($total_transact)),2); ?></b></h4></td>
 																	</tr>

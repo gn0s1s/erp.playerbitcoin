@@ -35,7 +35,7 @@ $confirm_new_password = array(
   	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -66,7 +66,7 @@ $confirm_new_password = array(
           <div>
             <section>
               <?php if(form_error($confirm_new_password['name'])){
-                echo "<span style='color:red;'>El password of confirmacion no conside con the nuevo password.</span><br>";
+                echo "<span style='color:red;'>Both password fields do not match.</span><br>";
               };
               ?><br>
             <!--	<?php echo isset($errors[$confirm_new_password['name']])?$errors[$confirm_new_password['name']]:''; ?>-->
@@ -83,7 +83,7 @@ $confirm_new_password = array(
             </section><br>
             <section id="confirm_new_password">
               <label class="input"> <i class="icon-prepend fa fa-lock"></i>
-                <input style="width: 20rem;" placeholder="Re-enter New Password" name="confirm_new_password" id="confirmNewPassword" type="password">
+                <input style="width: 20rem;" placeholder="Re-enter new  Password" name="confirm_new_password" id="confirmNewPassword" type="password">
               </label>
             </section>
           </div>

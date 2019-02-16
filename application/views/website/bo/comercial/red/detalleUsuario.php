@@ -23,12 +23,12 @@
 						</section>
 						
 						<section id="password_" style="width: 50%;" class="col col-2">
-							<label for="">Contraseña</label>
+							<label for="">Password</label>
 							<input onkeyup="confirm_pass()" type="password" class="form-control" name="password" id="password" >
 						</section>
 						
 						<section id="confirmar_password" style="width: 50%;" class="col col-2">
-							<label for="">Repita Contraseña</label>
+							<label for="">Repita Password</label>
 							<input onkeyup="confirm_pass()" type="password" class="form-control" name="confirm_password" id="confirm_password" >
 						</section>
 						
@@ -101,7 +101,7 @@ function enviar(){
 
 $(function()
 {
-	var a = new Date();
+	var a = new  Date();
  	año = a.getFullYear()-19;
 	$( "#datepicker" ).datepicker({
 		changeMonth: true,

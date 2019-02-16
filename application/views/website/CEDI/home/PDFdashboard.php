@@ -275,7 +275,7 @@ $codigoHTML.='</table>
 
 $codigoHTML = utf8_decode($codigoHTML);
 $fech = date('Ymdhis');
-$dompdf = new DOMPDF();
+$dompdf = new  DOMPDF();
 $dompdf->load_html($codigoHTML);
 ini_set("memory_limit", "128M");
 $dompdf->render();

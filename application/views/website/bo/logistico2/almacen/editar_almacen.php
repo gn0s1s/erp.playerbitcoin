@@ -13,7 +13,7 @@ if ($this->session->flashdata('error')) {
     <form id="actualizar" class="smart-form" method="POST" action="/bo/almacen/actualizar_almacen">
         <fieldset class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <label class="input">Nombre
-                <input style="width: 25rem;" type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" value="<?php echo $cedi[0]->nombre; ?>" required>
+                <input style="width: 25rem;" type="text" name="nombre" id="nombre" placeholder="Name" class="form-control" value="<?php echo $cedi[0]->nombre; ?>" required>
             </label>
 
             <div class="row" style="width: 28rem;">
@@ -36,9 +36,9 @@ if ($this->session->flashdata('error')) {
 
 
             <div style="width: 25rem;">
-                <label class="select">País 
+                <label class="select">Country 
                     <select id="pais" required name="pais" onChange="Departamentos()">
-                        <option value="-" selected>-- Seleciona un país --</option>
+                        <option value="-" selected>-- Seleciona un Country --</option>
                         <?php foreach ($pais as $key) {
                             if ($PaisCiudad[0]->CountryCode == $key->Code) {
                                 ?>
@@ -84,7 +84,7 @@ if ($this->session->flashdata('error')) {
                     </select>
                 </label>
             </div>
-            <label class="input">Código Postal
+            <label class="input">ZIPCODE
                 <input style="width: 25rem;" type="text" name="codigo_postal" id="codigo_postal" placeholder="Codigo Postal" class="form-control" value="<?php echo $cedi[0]->codigo_postal; ?>" required>
             </label>
 
@@ -103,14 +103,14 @@ if ($this->session->flashdata('error')) {
     </form>
 </div>
 <script type="text/javascript">
-    function new_ciudad() {
+    function new _ciudad() {
         bootbox.dialog({
             message: '<form id="form_ciudad" method="post" class="smart-form">'
                     + '<fieldset>'
                     + '<legend>Datos Ciudad</legend>'
                     + '<div  class="row">'
                     + '<section class="col col-6">'
-                    + 'País'
+                    + 'Country'
                     + '<label class="select">'
                     + '<select id="pais" required name="pais">'
                     + '<?php foreach ($pais as $key) { ?>'
@@ -136,7 +136,7 @@ if ($this->session->flashdata('error')) {
                     + '</div>'
                     + '</fieldset>'
                     + '</form>',
-            title: "Nueva Ciudad",
+            title: "newCiudad",
             buttons: {
                 submit: {
                     label: "Accept",

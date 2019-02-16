@@ -3,7 +3,7 @@
 							<fieldset>
 								<input type="text" class="hide" value="<?php echo $_POST['id']; ?>" name="id">
 								<label class="input" required> Nombre
-											<input type="text" name="nombre"  placeholder="Nombre"class="form-control" value="<?php echo $categoria[0]->descripcion; ?>" required>
+											<input type="text" name="nombre"  placeholder="Name"class="form-control" value="<?php echo $categoria[0]->descripcion; ?>" required>
 										</label>
 										 Selecione Red
 										<label class="select">
@@ -56,7 +56,7 @@ function enviar() {
 							
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

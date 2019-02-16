@@ -30,7 +30,7 @@
 			
 
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="well">
 					<div class="row">
@@ -132,7 +132,7 @@
 		
 				</article>
 				
-				<!-- NEW WIDGET START -->
+				<!-- new  WIDGET START -->
 						<!-- WIDGET END -->
 		
 
@@ -238,7 +238,7 @@
 									FinalizarSpinner();
 									bootbox.dialog({
 									message: msg,
-									title: 'Atención',
+									title: 'Attention',
 									buttons: {
 										success: {
 										label: "Accept",
@@ -334,7 +334,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -390,7 +390,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -425,7 +425,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -468,7 +468,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {

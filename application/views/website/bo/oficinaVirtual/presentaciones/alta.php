@@ -23,7 +23,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -75,7 +75,7 @@
 				</label>
 				
 				<label class="input" style="padding-left: 50px;">	
-					<input required name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico">
+					<input required name="nombre_publico" placeholder="Name" type="text" id="nombre_publico">
 				</label>	
 			</section>
 		</div>
@@ -97,7 +97,7 @@
 		
 			<label class="label" style="padding-left: 65px;">Archivo</label>
 			<div class="input input-file" style="padding-left: 65px;">
-			<span class="button"><input required id="file" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar</span><input name="file_nme" placeholder="Seleccione un archivo" readonly="" id="file_frm" type="text">
+			<span class="button"><input required id="file" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar</span><input name="file_nme" placeholder="choose un archivo" readonly="" id="file_frm" type="text">
 			</div>
 		</section>
 

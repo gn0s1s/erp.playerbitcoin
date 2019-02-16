@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 				  $( ".invalid" ).remove();
 
-			  	var ids = new Array( 
+			  	var ids = new  Array(
 						"#nombre",
 					 	"#apellido",
 					 	"#datepicker",
@@ -27,22 +27,22 @@ $(document).ready(function() {
 					 	"#confirm_password"
 					 	
 					 );
-					var mensajes = new Array( 
-						"Por favor ingresa tu nombre",
-					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha of nacimiento",
-					 	"Por favor ingresa tu DNI",
-					 	"Por favor ingresa un nombre of usuario",
-					 	"Por favor ingresa un correo",
-					 	"Por favor ingresa una contraseña",
-					 	"Por favor confirma tu contraseña"
+					var mensajes = new  Array(
+						"Please enter your name",
+					 	"Please enter your lastname",
+					 	"Please enter your birthdate",
+					 	"Please enter your idn",
+					 	"Please enter an username",
+					 	"Please enter an e-mail",
+					 	"Please enter a Password",
+					 	"Please confirm your Password"
 					 );
 
 					var idss=new Array(
 						"#username"
 					);
 					var mensajess=new Array(
-						"El nombre of usuario no puede contener espacios on blanco"
+						"Username cannot contain whitespaces"
 					);
 					var validacion_=valida_espacios(idss,mensajess);
 					var validacion=valida_vacios(ids,mensajes);
@@ -74,7 +74,7 @@ $(document).ready(function() {
 									$("#progress").attr('style','width: 100%');
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",
@@ -92,8 +92,8 @@ $(document).ready(function() {
 					else
 					{
 						$.smallBox({
-					      title: "<h1>Atención</h1>",
-					      content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
+					      title: "<h1>Attention</h1>",
+					      content: "<h3>Please check that all data is correct</h3>",
 					      color: "#C46A69",
 					      icon : "fa fa-warning fadeInLeft animated",
 					      timeout: 4000
@@ -178,7 +178,7 @@ function SelecionarFase()
 	{
 		bootbox.dialog({
 			message: msg,
-			title: "Informacion Personal",
+			title: "Personal Data",
 			buttons: {
 				success: {
 				label: "Close!",
@@ -195,8 +195,8 @@ function SelecionarFase()
 function faseCambio(fase){
 	
 	bootbox.dialog({
-		message: "¿Estas Seguro?",
-		title: "Atención",
+		message: "¿Sure?",
+		title: "Attention",
 		buttons: {
 			success: {
 			label: "Si",
@@ -214,7 +214,7 @@ function faseCambio(fase){
 					})
 					.done(function(msg)
 					{
-						alert('Has Cambiado of fase'+msg);
+						alert('You have changed phase'+msg);
 						location.reload();
 					})
 				}
@@ -330,7 +330,7 @@ function agregar_red(tipo)
 }
  $(function()
  {
- 	a = new Date();
+ 	a = new  Date();
 	año = a.getFullYear()-18;
 	$( "#datepicker" ).datepicker({
 	changeMonth: true,
@@ -456,7 +456,7 @@ function codpos_red()
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
 				> <a href="/ov/perfil_red/afiliar?tipo=1">Network</a>
-				> Frontal
+				> first line
 				</span>
 			</h1>
 		</div>
@@ -465,7 +465,7 @@ function codpos_red()
 		<!-- START ROW -->
 		<div class="row">
 			
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -482,10 +482,7 @@ function codpos_red()
 						data-widget-sortable="false"
 						
 					-->
-					<header>
-						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>
-					</header>
+
 
 					<!-- widget div-->
 					<div>
@@ -506,10 +503,10 @@ function codpos_red()
 											<ul class="steps">
 											
 												<li data-target="#step1" class="active">
-													<span class="badge badge-info">1</span>Datos del registro<span class="chevron"></span>
+													<span class="badge badge-info">1</span>Sign up Data<span class="chevron"></span>
 												</li>
 												<li data-target="#step2">
-													<span class="badge">2</span>Datos personales<span class="chevron"></span>
+													<span class="badge">2</span>Personal Data<span class="chevron"></span>
 												</li>
 												<?php /* ocultar afiliado ?><li data-target="#step3">
 													<span class="badge">3</span>Selección del plan<span class="chevron"></span>
@@ -521,10 +518,10 @@ function codpos_red()
 											</ul>
 											<div id="acciones" class="actions">
 												<button type="button" class="final btn btn-sm btn-primary btn-prev">
-													<i class="fa fa-arrow-left"></i>Anterior
+													<i class="fa fa-arrow-left"></i>Previous
 												</button>
-												<button type="button" class="final btn btn-sm btn-success btn-next" data-last="Afiliar" disabled="disabled">
-													Siguiente<i class="fa fa-arrow-right"></i>
+												<button type="button" class="final btn btn-sm btn-success btn-next" data-last="Sign up" disabled="disabled">
+													Next<i class="fa fa-arrow-right"></i>
 												</button>
 											</div>
 										</div>
@@ -534,20 +531,20 @@ function codpos_red()
 													<form id="register" class="smart-form">
 														<fieldset>
 														
-															<legend>Information of cuenta</legend>
+															<legend>Account Info</legend>
 															<section id="usuario" class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-user"></i>
-																	<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Usuario">
+																	<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Username">
 																</label>
 															</section>
 															<section id="correo" class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-																	<input id="email" onkeyup="use_mail()" required type="email" name="email" placeholder="Dirección of Correo Electrónico">
+																	<input id="email" onkeyup="use_mail()" required type="email" name="email" placeholder="Account E-mail">
 																</label>
 															</section>
 															<section class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-																	<input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Contraseña">
+																	<input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Password">
 																</label>
 															</section>
 															<section id="confirmar_password" class="col col-6">
@@ -561,30 +558,30 @@ function codpos_red()
 												<div class="step-pane" id="step2">
 													<form method="POST" action="/perfil_red/afiliar_nuevo" id="checkout-form" class="smart-form" novalidate="novalidate">
 														<fieldset>
-															<legend>Datos personales del afiliado</legend>
+															<legend>Personal Info</legend>
 															<div class="row">
 																<section class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-user"></i>
-																		<input id="nombre" required type="text" name="nombre" placeholder="Nombre(s)">
+																		<input id="nombre" required type="text" name="nombre" placeholder="Name">
 																	</label>
 																</section>
 																<section class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-user"></i>
-																		<input id="apellido" required type="text" name="apellido" placeholder="Apellidos (paterno y/o materno)">
+																		<input id="apellido" required type="text" name="apellido" placeholder="Lastname">
 																	</label>
 																</section>
 																<section class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-																		<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of nacimiento" readonly="readonly">
+																		<input required id="datepicker" type="text" name="nacimiento" placeholder="Birthdate" readonly="readonly">
 																	</label>
 																</section>
 																<section class="col col-3" id="key">
 																	<label id="key_" class="input"> <i class="icon-prepend fa fa-barcode"></i>
-																		<input id="keyword" onkeyup="check_keyword()" placeholder="Número of identificación (IFE,CURP,RFC)" type="text" name="keyword">
+																		<input id="keyword" onkeyup="check_keyword()" placeholder="IDN" type="text" name="keyword">
 																	</label>
 																</section>
 																<section class="col col-2">
-																	Tipo of persona
+																	Law Type
 																	<label class="select">
 																		<select id="tipo_fiscal" required name="fiscal">
 																		<?foreach ($tipo_fiscal as $key)
@@ -615,10 +612,10 @@ function codpos_red()
 
 																<section class="col col-3">
 																	<button type="button" onclick="agregar('1')" class="btn btn-primary">
-																		&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+																		&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 																	</button>
 																	<button type="button" onclick="agregar('2')" class="btn btn-primary">
-																		&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+																		&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 																	</button>
 																</section>
 															</div>
@@ -630,27 +627,27 @@ function codpos_red()
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input">
-																		<input placeholder="Nombre" type="text" name="nombre_co">
+																		<input placeholder="Name" type="text" name="nombre_co">
 																	</label>
 																</section>
 																<section class="col col-4">
 																	<label class="input"> 
-																		<input placeholder="Apellido" type="text" name="apellido_co">
+																		<input placeholder="Lastname" type="text" name="apellido_co">
 																	</label>
 																</section>
 																<section class="col col-4" id="key_co">
 																	<label id="key_1" class="input"> <i class=" icon-prepend fa fa-users"></i>
-																	<!-- check_keyword_co() -->	<input onkeyup="" placeholder="parentesco" type="text" name="keyword_co" id="keyword_co">
+																	<!-- check_keyword_co() -->	<input onkeyup="" placeholder="relationship" type="text" name="keyword_co" id="keyword_co">
 																	</label>
 																</section>
 															</div>
 														</fieldset>
 														<fieldset>
-														<legend>Dirección del afiliado</legend>
+														<legend>Home Adress</legend>
 															<div id="dir" class="row">
 																<section class="col col-2">
 																	<div class="form-group">
-																		<label>País</label>
+																		<label>Country</label>
 																		<select style="width:100%" class="select2" id="pais" required name="pais">
 																			<?foreach ($pais as $key)
 																			{?>
@@ -663,36 +660,36 @@ function codpos_red()
 																</section>
 																<section id="municipio" class="col col-2">
 																	<label class="input">
-																		Ciudad - Estado
+																		City/State
 																		<input type="text" name="estado" >
 																	</label>
 																</section>
 
 																<section id="municipio" class="col col-2">
 																	<label class="input">
-																		Delegación o Municipio
+																		Town/District
 																		<input type="text" name="municipio" >
 																	</label>
 																</section>
 
 																<section id="colonia" class="col col-2">
 																	<label class="input">
-																		Colonia
+																		Town/District
 																		<input type="text" name="colonia" >
 																	</label>
 																</section>
 
 																<section class="col col-2">
 																	<label class="input">
-																		Dirección of domicilio
+																		Street Address
 																		<input required type="text" name="calle">
-																		(Calle,No. Exterior,No. Interior)
+																		()
 																	</label>
 																</section>
 																
 																<section class="col col-2">
 																	<label class="input">
-																		Código postal
+																		ZIPCODE
 																		<input required type="text" id="cp" name="cp">
 																	</label>
 																</section>
@@ -700,9 +697,9 @@ function codpos_red()
 															</div>
 														</fieldset>
 														<fieldset>
-															<legend>Estadistica</legend>
+															<legend>Statistics</legend>
 															<div class="row">
-																<section class="col col-3">Estado civil
+																<section class="col col-3">Civil Status
 																	<label class="select">
 																		<select name="civil">
 																		<?foreach ($civil as $key)
@@ -715,7 +712,7 @@ function codpos_red()
 																		</select>
 																	</label>
 																</section>
-																<section class="col col-2">Género&nbsp;
+																<section class="col col-2">Gender&nbsp;
 																	<div class="inline-group">
 																		<?
 																		foreach ($sexo as $value)
@@ -726,7 +723,7 @@ function codpos_red()
 																		<?}?>
 																		</div>
 																</section>
-																<section class="col col-2">Estudio&nbsp;
+																<section class="col col-2">schooling&nbsp;
 																	<div class="inline-group">
 																		<?
 																		foreach ($estudios as $value)
@@ -737,7 +734,7 @@ function codpos_red()
 																		<?}?>
 																		</div>
 																</section>
-																<section class="col col-2">Ocupación&nbsp;
+																<section class="col col-2">Occupation&nbsp;
 																	<div class="inline-group">
 																		<?
 																		foreach ($ocupacion as $value)
@@ -748,7 +745,7 @@ function codpos_red()
 																		<?}?>
 																		</div>
 																</section>
-																<section class="col col-2">Tiempo dedicado&nbsp;
+																<section class="col col-2">Working time
 																	<div class="inline-group">
 																		<?
 																		foreach ($tiempo_dedicado as $value)
@@ -766,136 +763,7 @@ function codpos_red()
 															
 													</form>
 												</div>
-												<div class="step-pane" id="step3">
 
-													<div class="row">
-														<br/>
-													</div>
-													<div class="hidden-xs hidden-sm hidden-md col-lg-1"></div>
-													<div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
-														<div class="row">
-													        <div id="planuno" class="col-xs-12 col-sm-6 col-md-3">
-													            <div class="panel panel-success pricing-big">
-													                <div class="panel-heading">
-													                    <h3 class="panel-title">
-													                       <i class="fa fa-plane"></i> Plan despegue</h3>
-													                </div>
-													                <div class="panel-body no-padding text-align-center">
-													                    <div class="the-price">
-													                        <h1>
-													                            <strong>$85.25 USD</strong></h1>
-													                    </div>
-																		<div class="price-features">
-																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> of ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> Points of commissions</h1></li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Aloe Detox (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Vita Live (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>
-																	        </ul>
-																		</div>
-													                </div>
-													                <div class="panel-footer text-align-center">
-													                    <a id="plan1" href="javascript:void(0);" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>
-													                </div>
-													            </div>
-													        </div>
-													        
-													        <div id="plandos" class="col-xs-12 col-sm-6 col-md-3">
-													            <div class="panel panel-teal pricing-big">
-													            	
-													                <div class="panel-heading">
-													                    <h3 class="panel-title">
-													                        <i class="fa fa-bar-chart-o"></i> Plan avance</h3>
-													                </div>
-													                <div class="panel-body no-padding text-align-center">
-													                    <div class="the-price">
-													                        <h1>
-													                            <strong>$164.00 USD</strong></h1>
-													                    </div>
-																		<div class="price-features">
-																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> of ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> Points of commissions</h1></li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>4</strong> Aloe Detox (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>3</strong> Vita Live (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>
-																	        </ul>
-																		</div>
-													                </div>
-													                <div class="panel-footer text-align-center">
-													                    <a id="plan2" href="javascript:void(0);" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>
-													                </div>
-													            </div>
-													        </div>
-													        
-													        <div id="plantres" class="col-xs-12 col-sm-6 col-md-3">
-													            <div class="panel panel-primary pricing-big">
-													            	<img src="/template/img/ribbon.png" class="ribbon" alt="">
-													                <div class="panel-heading">
-													                    <h3 class="panel-title">
-													                        <i class="fa fa-suitcase"></i> Plan empresarial</h3>
-													                </div>
-													                <div class="panel-body no-padding text-align-center">
-													                    <div class="the-price">
-													                        <h1>
-													                            <strong>$454.25 USD</strong></h1>
-													                    </div>
-																		<div class="price-features">
-																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> of ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> Points of commissions</h1></li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>10</strong> Aloe Detox (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>9</strong> Vita Live (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>4</strong> Linea Gala</li>
-																	        </ul>
-																		</div>
-													                </div>
-													                <div class="panel-footer text-align-center">
-													                    <a id="plan3" href="javascript:void(0);" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>
-													                </div>
-													            </div>
-													        </div>
-													        
-													        <div id="plancuatro" class="col-xs-12 col-sm-6 col-md-3">
-													            <div class="panel panel-darken pricing-big">
-													            	
-													                <div class="panel-heading">
-													                    <h3 class="panel-title">
-													                        <i class="fa fa-signal"></i> <i class="fa fa-male"></i> Plan inversionista</h3>
-													                </div>
-													                <div class="panel-body no-padding text-align-center">
-													                    <div class="the-price">
-													                        <h1>
-													                            <strong>$920.00 USD</strong></h1>
-													                    </div>
-																		<div class="price-features">
-																			<ul class="list-unstyled text-left">
-																	          	<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> of ganancia</h1></li>
-																	        	<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> Points of commissions</h1></li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>20</strong> Aloe Detox (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>20</strong> Vita Live (6 pack)</li>
-																	        	<li><i class="fa fa-check text-success"></i> <strong>8</strong> Linea Gala</li>
-																	        	<li><i class="fa fa-check text-success"></i> <small>Podrás modificar the cantidad of producto que tengan the mismo precio que no insida on the valor & puntaje del plan</small></li>
-																	        </ul>
-																		</div>
-													                </div>
-													                <div class="panel-footer text-align-center">
-													                    <a id="plan4" href="javascript:void(0);" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>
-													                </div>
-													            </div>
-													        </div>		    	
-											    		</div>
-											    		<br />
-											    		<a id="remove_step" href="javascript:void(0);" class="btn btn-primary btn-block" role="button">Purchase the plan después</span></a>
-											    	</div>
-												</div>
-												<div class="step-pane" id="step4">
-													<div class="well">
--														<p>El pago se realizara despues on the enttrega of su primer pedido</p>
--													</div>
-												</div>
-				
 											</div>
 										</div>
 									</div>

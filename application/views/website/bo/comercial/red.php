@@ -20,7 +20,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- nueva COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -39,7 +39,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<!--<h2>Datos personales</h2>-->				
+						<!--<h2>Personal Info</h2>-->
 						
 					</header>
 
@@ -62,7 +62,7 @@
 									<a href="#s2" data-toggle="tab">Listado consecutivo</a>
 								</li>
 								<li>
-									<a href="#s3" data-toggle="tab">Genealógico</a>
+									<a href="#s3" data-toggle="tab">Spillover</a>
 								</li>
 								<li>
 									<a href="#s4" data-toggle="tab">Gráfico</a>
@@ -156,7 +156,7 @@
 									<div class="tree smart-form">
                                     <ul>
                                         <li>
-                                            <span><i class="fa fa-lg fa-folder-open"></i>Tú</span>
+                                            <span><i class="fa fa-lg fa-folder-open"></i>You</span>
                                             <ul>
                                                 <?php foreach ($afiliados as $key) 
                                                     {
@@ -179,7 +179,7 @@
 										<div class="tree1">
 											<ul>
 												<li>
-													<a style="background: url('<?=$img_perfil?>'); background-size: cover; background-position: center;" href="#"><div class="nombre">Tú</div></a>
+													<a style="background: url('<?=$img_perfil?>'); background-size: cover; background-position: center;" href="#"><div class="nombre">You</div></a>
 													<ul>
 													<?php foreach ($afiliados as $key) 
                                                     {
@@ -188,7 +188,7 @@
                                                         {?>
 														<li id="t<?=$key->id_afiliado?>">
 															<a class="quitar" style="background: url('<?=$img?>'); background-size: cover; background-position: center;" onclick="subtree(<?=$key->id_afiliado?>)" href="#"><div class="nombre"><?=$key->afiliado?> <?=$key->afiliado_p?></div></a>
-															<div onclick="detalles(<?=$key->id_afiliado?>)" class="todo">Detalles</div>
+															<div onclick="detalles(<?=$key->id_afiliado?>)" class="todo">Details</div>
 														</li>
 														<?php }
 													}?>
@@ -674,7 +674,7 @@ function get_permisos(id)
 		});
 	});
 }
-function new_perfil(id)
+function nueva_perfil(id)
 {
 		bootbox.dialog({
 			message: '<div class="row"><form class="smart-form" id="datos_perfil" action ="/bo/comercial/new_perfil" method="POST">'
@@ -803,7 +803,7 @@ function desactivar(id)
 {
 	bootbox.dialog({
 			message: "Confirme que desactivará al usuario con the id <b>"+id+"</b>",
-			title: "Atención",
+			title: "Attention",
 			buttons: {
 				success: {
 				label: "Desactivar!",
@@ -818,7 +818,7 @@ function desactivar(id)
 						{
 							bootbox.dialog({
 								message: msg,
-								title: "Atención",
+								title: "Attention",
 								buttons: {
 									success: {
 									label: "Close!",
@@ -845,7 +845,7 @@ function activar(id)
 {
 	bootbox.dialog({
 			message: "Confirme que activará al usuario con the id <b>"+id+"</b>",
-			title: "Atención",
+			title: "Attention",
 			buttons: {
 				success: {
 				label: "Actualizar!",
@@ -860,7 +860,7 @@ function activar(id)
 						{
 							bootbox.dialog({
 								message: msg,
-								title: "Atención",
+								title: "Attention",
 								buttons: {
 									success: {
 									label: "Close!",
@@ -887,7 +887,7 @@ function eliminar(id)
 {
 	bootbox.dialog({
 			message: "Confirme que <b>eliminará</b> al usuario con the id <b>"+id+"</b>",
-			title: "Atención",
+			title: "Attention",
 			buttons: {
 				success: {
 				label: "Eliminar!",
@@ -902,7 +902,7 @@ function eliminar(id)
 						{
 							bootbox.dialog({
 								message: msg,
-								title: "Atención",
+								title: "Attention",
 								buttons: {
 									success: {
 									label: "Close!",
@@ -952,7 +952,7 @@ function detalle_red(id)
 						{
 							bootbox.dialog({
 								message: msg,
-								title: "Atención",
+								title: "Attention",
 								buttons: {
 									success: {
 									label: "Close!",

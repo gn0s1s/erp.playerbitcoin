@@ -8,7 +8,7 @@ $item = $mercancia[0];
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -115,7 +115,7 @@ $item = $mercancia[0];
                                                         <span class="button"><input id="img" name="img" 
                                                             onchange="this.parentNode.nextSibling.value = this.value" 
                                                             type="file" multiple>Buscar</span><input id="imagen_mr" 
-                                                                  placeholder="Agregar alguna imágen" type="text">
+                                                                  placeholder="Add alguna imágen" type="text">
                                                     </div>
                                                     <small>
                                                         <cite title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
@@ -125,7 +125,7 @@ $item = $mercancia[0];
                                         </fieldset>
 												
                                         <fieldset id="moneda_field">
-                                            <legend>Moneda & país</legend>
+                                            <legend>Moneda & Country</legend>
 													
                                             <section class="col col-2" style="width: 50%;">
                                                 <label class="input">
@@ -181,7 +181,7 @@ $item = $mercancia[0];
                                         <fieldset id="impuesto_field">
                                             <legend>Impuesto</legend>
 
-                                            <section class="col col-12" style="width: 50%;">País of the mercancía
+                                            <section class="col col-12" style="width: 50%;">Country of the mercancía
                                                 <label class="select">
                                                     <select id="pais2" required name="pais" onChange="select_pais()">
                                                         <?php foreach ($pais as $key) {
@@ -236,7 +236,7 @@ $item = $mercancia[0];
                                             <section class="col col-6" style="width: 50%">
                                                 <br>
                                                 <br>
-                                                <a onclick="add_impuesto()" style='cursor: pointer;'>Agregar impuesto<i class="fa fa-plus"></i></a>
+                                                <a onclick="add_impuesto()" style='cursor: pointer;'>Add impuesto<i class="fa fa-plus"></i></a>
                                             </section>
                                             <?php
                                                 $real = $item->real;
@@ -424,7 +424,7 @@ function ImpuestosPais2(id){
 }
 
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	
@@ -534,7 +534,7 @@ function enviar() {
 
 							bootbox.dialog({
 						message: "Se ha modificado the servicio.",
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",

@@ -14,7 +14,7 @@
 								</label>
 								<input type="text" class="hide" value="<?php echo $_POST['id']; ?>" name="id">
 								<label class="input"> Nombre
-								<input type="text" name="nombre" required placeholder="Nombre" style="width: 50%;" class="form-control" value="<?php echo $impuesto[0]->descripcion; ?>" required>
+								<input type="text" name="nombre" required placeholder="Name" style="width: 50%;" class="form-control" value="<?php echo $impuesto[0]->descripcion; ?>" required>
 								<label class="input"> Porcentaje
 								<input type="number" name="porcentaje" required placeholder="porcentaje" style="width: 50%;" class="form-control" value="<?php echo $impuesto[0]->porcentaje; ?>" required>
 							</fieldset>
@@ -44,7 +44,7 @@ function enviar() {
 							
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

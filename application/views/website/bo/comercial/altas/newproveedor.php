@@ -46,7 +46,7 @@
 		<!-- START ROW -->
 		<div class="row">
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -75,18 +75,18 @@
 					<div>
 						<form method="POST" id="proveedor" class="smart-form" >
 							<fieldset>
-								<legend>Datos personales del proveedor</legend>
+								<legend>Personal Info del proveedor</legend>
 								<div class="row">
 									<section class="col col-3">
 										<label class="input"> <i class="icon-prepend fa fa-user"></i>
 											<input required type="text" name="nombre" id="nombre"
-											placeholder="Nombre">
+											placeholder="Name">
 										</label>
 									</section>
 									<section class="col col-3">
 										<label class="input"> <i class="icon-prepend fa fa-user"></i>
 											<input required type="text" name="apellido" id="apellido"
-											placeholder="Apellido">
+											placeholder="Lastname">
 										</label>
 									</section>
 									<section id="correo1" class="col col-3">
@@ -114,11 +114,11 @@
 									<section class="col col-3">
 										<button type="button" onclick="agregar1('1')"
 											class="btn btn-primary">
-											&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+											&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 										</button>
 										<button type="button" onclick="agregar1('2')"
 											class="btn btn-primary">
-											&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+											&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 										</button>
 									</section>
 								</div>
@@ -143,7 +143,7 @@
 								}
 								?>
 							</select>
-									</label> <a href="#" onclick="new_empresa()">Agregar empresa <i
+									</label> <a href="#" onclick="new_empresa()">Add empresa <i
 										class="fa fa-plus"></i></a>
 								</section>
 								<section class="col col-3">
@@ -156,7 +156,7 @@
 								<legend>Dirección del proveedor</legend>
 								<div id="dir" class="row">
 									<section class="col col-4">
-										<label class="input"> Dirección of domicilio <input required
+										<label class="input"> Street Address <input required
 											type="text" name="calle">
 										</label>
 									</section>
@@ -170,12 +170,12 @@
 										</label>
 									</section>
 									<section class="col col-2">
-										<label class="input"> Código postal <input required
+										<label class="input"> ZIPCODE <input required
 											onkeyup="codpos()" type="text" id="cp" name="cp">
 										</label>
 									</section>
 									<section class="col col-2">
-										País <label class="select"> <select id="pais" required
+										Country <label class="select"> <select id="pais" required
 											name="pais" onChange="ImpuestosPais()"> 
 												<option value="-" selected>-- Seleciona un pais --</option>
 													<?php foreach ( $pais as $key ) { ?>
@@ -247,7 +247,7 @@
 									</div>
 									<section class="col col-3">
 										<button type="button" onclick="agregar_cuenta()"
-											class="btn btn-primary">&nbsp;Agregar cuenta &nbsp;</button>
+											class="btn btn-primary">&nbsp;Add cuenta &nbsp;</button>
 									</section>
 								</div>
 							</fieldset>
@@ -312,7 +312,7 @@
 									<section class="col col-3">
 										<label class="select">Impuesto 
 										<select name="impuesto" id="impuesto">
-									<option value="">Selecciona primero the País</option>
+									<option value="">Selecciona primero the Country</option>
 								</select>
 										</label>
 									</section>
@@ -368,9 +368,9 @@
 <script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 
 <script type="text/javascript">
-function new_proveedor()
+function new _proveedor()
 {
-		var ids = new Array( 
+		var ids = new  Array(
 			"#nombre",
 		 	"#apellido",
 		 	"#pais",
@@ -379,11 +379,11 @@ function new_proveedor()
 		 	"#email",
 		 	"#empresa"
 		 );
-		var mensajes = new Array( 
+		var mensajes = new  Array(
 			"Por favor ingresa tu nombre",
 		 	"Por favor ingresa tu apellido",
 		 	"Por favor seleciona un pais",
-		 	"Por favor ingresa tu código postal",
+		 	"Por favor ingresa tu ZIPCODE",
 		 	"Por favor seleciona the tipo of proveedor",
 		 	"Por favor ingresa un correo",
 		 	"Por favor seleciona una empresa"
@@ -403,7 +403,7 @@ function new_proveedor()
 				
 					bootbox.dialog({
 						message: msg1,
-						title: "Atención",
+						title: "Attention",
 						buttons: {
 							success: {
 								label: "Ok!",
@@ -418,7 +418,7 @@ function new_proveedor()
 			});
 		}else{
 			$.smallBox({
-			      title: "<h1>Atención</h1>",
+			      title: "<h1>Attention</h1>",
 			      content: "<h3>Por favor reviza que todos los datos estén correctos</h3>",
 			      color: "#C46A69",
 			      icon : "fa fa-warning fadeInLeft animated",
@@ -427,7 +427,7 @@ function new_proveedor()
 			}
 }
 
-function new_empresa()
+function new _empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" class="smart-form">'
@@ -463,7 +463,7 @@ function new_empresa()
 						+'<legend>Dirección of the empresa</legend>'
 							+'<div id="dir" class="row">'
 								+'<section class="col col-6">'
-									+'País'
+									+'Country'
 									+'<label class="select">'
 										+'<select id="pais" required name="pais">'
 										+'<?php foreach ($pais as $key){?>'
@@ -476,7 +476,7 @@ function new_empresa()
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input">'
-										+'Código postal'
+										+'ZIPCODE'
 										+'<input required  type="text" id="cp" name="cp">'
 									+'</label>'
 								+'</section>'
@@ -513,7 +513,7 @@ function new_empresa()
 							+'</div>'
 						+'</fieldset>'
 				+'</form>',
-		title: "Nueva Empresa",
+		title: "newEmpresa",
 		buttons: {
 			submit: {
 			label: "Accept",
@@ -531,7 +531,7 @@ function new_empresa()
 						$("#empresa").append("<option value="+empresa['id']+">"+empresa['nombre']+"</option>");
 						$("#empresa").val(empresa['id']);
 						bootbox.dialog({
-						message: "Se agregado the empresa",
+						message: "Se Added the empresa",
 						title: 'Empresa',
 						buttons: {
 							success: {
@@ -591,7 +591,7 @@ function agregar_cuenta()
 
  $(function()
  {
- 	var a = new Date();
+ 	var a = new  Date();
  	año = a.getFullYear()-19;
  	
 	$( "#datepicker1" ).datepicker({

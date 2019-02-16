@@ -26,7 +26,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -47,7 +47,7 @@
 					<div class="widget-body">
 						<div class="tab-pane">
 							<div class="col-lg-6 col-sm-6 col-md-12 col-xs-12">
-																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Año
+																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Year
 																	<select id="año" onChange="buscar()" class="form-control">
 																		<option value="" selected>Selecione año</option>
 																	<?php foreach ($años as $key) {?>
@@ -55,7 +55,7 @@
 																	<?php }?>
 																	</select>
 																</label>
-																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Mes
+																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Month
 																	<select id="mes" onChange="buscarmes()" class="form-control">
 																		<option value="01">Enero</option>
 																		<option value="02">Febrero</option>
@@ -157,7 +157,7 @@ $(document).ready(function() {
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -189,7 +189,7 @@ $(document).ready(function() {
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {

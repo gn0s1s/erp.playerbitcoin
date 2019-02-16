@@ -146,7 +146,7 @@
 							<!-- end widget -->
 				
 						</article>
-						<!-- NEW WIDGET START -->
+						<!-- new  WIDGET START -->
 						
 						
 						<!-- WIDGET END -->

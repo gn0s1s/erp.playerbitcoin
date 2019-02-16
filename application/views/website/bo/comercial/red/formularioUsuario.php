@@ -58,14 +58,14 @@
 						</section>
 
 						<section style="width: 50%;" class="col col-2">
-						Fecha of nacimiento
+						Birthdate
 							<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
 								<input required readonly id="datepicker" type="text" name="nacimiento" >
 							</label>
 						</section>
 		
 						<section style="width: 50%;" class="col col-2">
-							Estado Civil
+							Civil Status
 		
 							<label class="select">
 								<select id="estadoCivil"  name="estadoCivil">
@@ -120,7 +120,7 @@
 						</section>
 		
 						<section style="width: 50%;" class="col col-2">
-							Ocupación
+							Occupation
 						
 							<label class="select">
 								<select id="ocupacion"  name="ocupacion">
@@ -197,7 +197,7 @@
 
 $(function()
 {
-	var a = new Date();
+	var a = new  Date();
  	año = a.getFullYear()-19;
 	$( "#datepicker" ).datepicker({
 		changeMonth: true,

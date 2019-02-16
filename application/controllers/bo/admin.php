@@ -605,7 +605,7 @@ class admin extends CI_Controller
 				$id_estado=$busqueda[0]->id_estado;
 				$estado=$this->model_admin->estado($id_estado);
 
-				echo '<section id="colonia" class="col col-2">Colonia
+				echo '<section id="colonia" class="col col-2">Town/District 
 						<label class="select">
 						<select name="colonia">';
 				foreach ($busqueda as $key)
@@ -638,7 +638,7 @@ class admin extends CI_Controller
 			{
 				echo'<section id="colonia" class="col col-2">
 					<label class="input">
-						Colonia
+						Town/District 
 						<input type="text" name="colonia" >
 					</label>
 				</section>
@@ -667,7 +667,7 @@ class admin extends CI_Controller
 				$id_estado=$busqueda[0]->id_estado;
 				$estado=$this->model_admin->estado($id_estado);
 
-				echo '<section id="colonia_proveedor" class="col col-2">Colonia
+				echo '<section id="colonia_proveedor" class="col col-2">Town/District 
 						<label class="select">
 						<select name="colonia">';
 				foreach ($busqueda as $key)
@@ -700,7 +700,7 @@ class admin extends CI_Controller
 			{
 				echo '<section id="colonia_proveedor" class="col col-2">
 					<label class="input">
-						Colonia
+						Town/District 
 						<input type="text" name="colonia" >
 					</label>
 				</section>

@@ -14,7 +14,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				
@@ -61,7 +61,7 @@
 														<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">
 															<label class="label">Nombre</label>
 															<label class="input">
-																<input required type="text" placeholder="Nombre"  name="nombre_frm" value='<?= html_entity_decode($noticia[0]->nombre);?>'>
+																<input required type="text" placeholder="Name"  name="nombre_frm" value='<?= html_entity_decode($noticia[0]->nombre);?>'>
 															</label>
 														</section>
 													</div>

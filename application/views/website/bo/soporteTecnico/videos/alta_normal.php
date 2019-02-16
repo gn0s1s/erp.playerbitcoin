@@ -37,7 +37,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -71,7 +71,7 @@
 												</label>
 												<label class="label">Nombre del video</label>
 												<label class="input">	
-													<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico" required>
+													<input name="nombre_publico" placeholder="Name" type="text" id="nombre_publico" required>
 												</label>	
 												<label class="label">Descripción</label>
 												<label class="textarea">								

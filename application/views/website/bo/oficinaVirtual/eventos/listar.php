@@ -16,7 +16,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -111,14 +111,7 @@
         <!-- end widget -->
         </article>
         <!-- END COL -->
-</div>
-<div class="row">         
-    <!-- a blank row to get started -->
-    <div class="col-sm-12">
-        <br />
-        <br />
-    </div>
-</div>            
+
 <!-- END ROW -->
 </section>
 <!-- end widget grid -->
@@ -157,7 +150,7 @@
                                                 "preDrawCallback": function () {
                                                     // Initialize the responsive datatables helper once.
                                                     if (!responsiveHelper_dt_basic) {
-                                                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                                                        responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
                                                     }
                                                 },
                                                 "rowCallback": function (nRow) {
@@ -189,7 +182,7 @@
                                                 "preDrawCallback": function () {
                                                     // Initialize the responsive datatables helper once.
                                                     if (!responsiveHelper_dt_basic) {
-                                                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                                                        responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
                                                     }
                                                 },
                                                 "rowCallback": function (nRow) {
@@ -266,7 +259,7 @@
                                                                                 {
                                                                                     bootbox.dialog({
                                                                                         message: "Se ha eliminado the Evento.",
-                                                                                        title: 'Felicitaciones',
+                                                                                        title: 'Congratulations',
                                                                                         buttons: {
                                                                                             success: {
                                                                                                 label: "Accept",

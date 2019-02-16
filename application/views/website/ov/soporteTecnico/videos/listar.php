@@ -16,7 +16,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -98,7 +98,7 @@
 															</div>
 															<div class="col-xs-12 col-sm-12 col-md-12 col-lg-5">
 
-																<!-- new widget -->
+																<!-- new  widget -->
 																<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="false">							
 																	<header>
 																		<span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>

@@ -8,7 +8,7 @@
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span> 
 					> <a href="/ov/red/index">Networks</a>
-					> <a href="/ov/red/mi_red?id=<?php echo $_GET['id']; ?>">Arbol</a>
+					> <a href="/ov/red/mi_red?id=<?php echo $_GET['id']; ?>">Tree</a>
 					> 1
 				</span>
 			</h1>
@@ -19,7 +19,7 @@
 
 		<!-- row -->
 		<div class="row">
-			<!-- NEW WIDGET START -->
+			<!-- new  WIDGET START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 				<!-- Widget ID (each widget will need unique ID)-->
@@ -38,10 +38,9 @@
                                         data-widget-sortable="false"
                     
                                     -->
-                                    <header>
+                                   <header>
                                     	<span class="widget-icon"> <i class="fa fa-sitemap"></i>
                                     	</span>
-                                    	<h2>Listado dinámico</h2>
 
                                     </header>
 
@@ -65,7 +64,7 @@
                                     						<ul>
                                     							<li>
                                     								<a style="background: url('<?=$img_perfil?>'); background-size: cover; background-position: center;" href="#">
-                                    									<div class="nombre">Tú</div>
+                                    									<div class="nombre">You</div>
                                     								</a>
                                     								<ul>
                                     									<? $aux = 0;

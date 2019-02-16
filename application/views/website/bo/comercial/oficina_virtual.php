@@ -19,7 +19,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -38,7 +38,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<!--<h2>Datos personales</h2>-->				
+						<!--<h2>Personal Info</h2>-->
 						
 					</header>
 
@@ -97,7 +97,7 @@
 										<!-- row -->
 										<div class="row">
 									
-											<!-- NEW WIDGET START -->
+											<!-- new  WIDGET START -->
 											<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					
 												<!-- Widget ID (each widget will need unique ID)-->
@@ -191,7 +191,7 @@
 																	<label class="input">
 																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="nuevo_archivo(1)">
 																		<i class='fa fa-desktop'>
-																		</i>&nbsp;Nueva Presentacion</a>
+																		</i>&nbsp;newPresentacion</a>
 																	</label>
 																</section>
 															</div>
@@ -213,7 +213,7 @@
 										<!-- row -->
 										<div class="row">
 									
-											<!-- NEW WIDGET START -->
+											<!-- new  WIDGET START -->
 											<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					
 												<!-- Widget ID (each widget will need unique ID)-->
@@ -354,7 +354,7 @@
 										<!-- row -->
 										<div class="row">
 									
-											<!-- NEW WIDGET START -->
+											<!-- new  WIDGET START -->
 											<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					
 												<!-- Widget ID (each widget will need unique ID)-->
@@ -470,7 +470,7 @@
 										<!-- row -->
 										<div class="row">
 									
-											<!-- NEW WIDGET START -->
+											<!-- new  WIDGET START -->
 											<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					
 												<!-- Widget ID (each widget will need unique ID)-->
@@ -567,7 +567,7 @@
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12" id="buscarcomb">
 																	<label class="input">
-																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="nuevo_archivo(6)"><i class='fa fa-info'></i>&nbsp;Nueva Informaci&oacute;n</a>
+																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="nuevo_archivo(6)"><i class='fa fa-info'></i>&nbsp;newInformaci&oacute;n</a>
 																	</label>
 																</section>
 															</div>
@@ -665,7 +665,7 @@
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12" id="buscarcomb">
 																	<label class="input">
-																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="nuevo_archivo(3)"><i class='fa fa-bullhorn'></i>&nbsp;Nueva Noticia</a>
+																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="nuevo_archivo(3)"><i class='fa fa-bullhorn'></i>&nbsp;newNoticia</a>
 																	</label>
 																</section>
 															</div>
@@ -781,7 +781,7 @@
 															</div>
 															<div class="col-sm-12 col-md-5 col-lg-5 col-xs-12">
 
-																<!-- new widget -->
+																<!-- new  widget -->
 																<div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="false">							
 																	<header>
 																		<span class="widget-icon"> <i class="fa fa-comments txt-color-white"></i> </span>
@@ -937,7 +937,7 @@
 										<div class="row">
 											<div class="col-sm-12 col-md-12 col-lg-12">
 						
-												<!-- new widget -->
+												<!-- new  widget -->
 												<div class="jarviswidget jarviswidget-color-blueDark">
 										
 													<!-- widget options:
@@ -1034,7 +1034,7 @@
 										<!-- row -->
 										<div class="row">
 									
-											<!-- NEW WIDGET START -->
+											<!-- new  WIDGET START -->
 											<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					
 												<!-- Widget ID (each widget will need unique ID)-->
@@ -1150,7 +1150,7 @@
 									<section id="widget-grid" class="">
 										<!-- START ROW -->
 										<div class="row">
-											<!-- NEW COL START -->
+											<!-- new  COL START -->
 											<article class="col-sm-12 col-md-12 col-lg-12">
 												<!-- Widget ID (each widget will need unique ID)-->
 												
@@ -1234,7 +1234,7 @@
 																</section>
 																<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12" id="buscarcomb">
 																	<label class="input">
-																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="agregar_encuesta()"><i class='fa fa-info'></i>&nbsp;Nueva Survey</a>
+																		<a id="eliminar_carro" class="btn btn-primary btn-sm col-xs-12 col-lg-12 col-md-12 col-sm-12" onclick="agregar_encuesta()"><i class='fa fa-info'></i>&nbsp;newSurvey</a>
 																	</label>
 																</section>
 															</div>
@@ -1303,7 +1303,7 @@
 		<script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 <script src="/template/js/plugin/jquery-form/jquery-form.min.js"></script>
 		<script type="text/javascript">
-			function new_grupo()
+			function new _grupo()
 			{
 				var grupo=$("#grupo").val();
 				if(grupo!="")
@@ -1359,7 +1359,7 @@
 						+'</div>';
 				bootbox.dialog({
 					message: form1,
-					title: "Nueva Encuesta",
+					title: "newEncuesta",
 					className: "",
 				});
 			}
@@ -1745,7 +1745,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre</label>'
 												+'<label class="input">'
-													+'<input type="text" placeholder="Nombre"  id="grupo_frm">'
+													+'<input type="text" placeholder="Name"  id="grupo_frm">'
 												+'</label>'
 											+'</section>'
 										+'</div>'
@@ -1775,7 +1775,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre</label>'
 												+'<label class="input">'
-													+'<input type="text" placeholder="Nombre"  id="grupo_frm">'
+													+'<input type="text" placeholder="Name"  id="grupo_frm">'
 												+'</label>'
 											+'</section>'
 										+'</div>'
@@ -1858,7 +1858,7 @@
 			{
 				var editarevento= '<div class="jarviswidget jarviswidget-color-blueDark">'
 										+'<header>'
-											+'<h2> Agregar Evento </h2>'
+											+'<h2> Add Evento </h2>'
 										+'</header>'
 										+'<div>'
 											+'<div class="widget-body">'
@@ -2326,7 +2326,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre of the presentacion</label>'
 												+'<label class="input">'	
-													+'<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico">'
+													+'<input name="nombre_publico" placeholder="Name" type="text" id="nombre_publico">'
 												+'</label>'	
 											+'</section>'
 										+'</div>'
@@ -2345,7 +2345,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme" placeholder="Seleccione un archivo" readonly=""  type="text" id="file_frm">'
+													+'<input name="file_nme" placeholder="choose un archivo" readonly=""  type="text" id="file_frm">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2384,7 +2384,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre del video</label>'
 												+'<label class="input">'	
-													+'<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico">'
+													+'<input name="nombre_publico" placeholder="Name" type="text" id="nombre_publico">'
 												+'</label>'	
 											+'</section>'
 										+'</div>'
@@ -2403,7 +2403,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme" placeholder="Seleccione un archivo" readonly=""  type="text" id="file_frm">'
+													+'<input name="file_nme" placeholder="choose un archivo" readonly=""  type="text" id="file_frm">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2414,7 +2414,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme_2" placeholder="Seleccione una imagen para the video" readonly=""  type="text" id="file_frm_2">'
+													+'<input name="file_nme_2" placeholder="choose una imagen para the video" readonly=""  type="text" id="file_frm_2">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2436,7 +2436,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre</label>'
 												+'<label class="input">'
-													+'<input type="text" placeholder="Nombre"  name="nombre_frm">'
+													+'<input type="text" placeholder="Name"  name="nombre_frm">'
 												+'</label>'
 											+'</section>'
 										+'</div>'
@@ -2455,7 +2455,7 @@
 													+'<span class="button">'
 														+'<input id="file" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar'
 													+'</span>'
-													+'<input placeholder="Seleccione un archivo" readonly="" type="text" id="file_frm" name="file_nme">'
+													+'<input placeholder="choose un archivo" readonly="" type="text" id="file_frm" name="file_nme">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2463,7 +2463,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="div_subir">'
 												+'<div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>'
 												+'<div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4" >'
-													+'<input type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Agregar noticia">'
+													+'<input type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Add noticia">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2494,7 +2494,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre del e-book</label>'
 												+'<label class="input">'	
-													+'<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico">'
+													+'<input name="nombre_publico" placeholder="Name" type="text" id="nombre_publico">'
 												+'</label>'	
 											+'</section>'
 										+'</div>'
@@ -2513,7 +2513,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme" placeholder="Seleccione un archivo" readonly=""  type="text" id="file_frm">'
+													+'<input name="file_nme" placeholder="choose un archivo" readonly=""  type="text" id="file_frm">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2524,7 +2524,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile[]" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme_2" placeholder="Seleccione una imagen para the e-book" readonly=""  type="text" id="file_frm_2">'
+													+'<input name="file_nme_2" placeholder="choose una imagen para the e-book" readonly=""  type="text" id="file_frm_2">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2563,7 +2563,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre del archivo</label>'
 												+'<label class="input">'	
-													+'<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico">'
+													+'<input name="nombre_publico" placeholder="Name" type="text" id="nombre_publico">'
 												+'</label>'	
 											+'</section>'
 										+'</div>'
@@ -2582,7 +2582,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme" placeholder="Seleccione un archivo" readonly=""  type="text" id="file_frm">'
+													+'<input name="file_nme" placeholder="choose un archivo" readonly=""  type="text" id="file_frm">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2604,7 +2604,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre</label>'
 												+'<label class="input">'
-													+'<input type="text" placeholder="Nombre"  name="nombre_frm">'
+													+'<input type="text" placeholder="Name"  name="nombre_frm">'
 												+'</label>'
 											+'</section>'
 										+'</div>'
@@ -2623,7 +2623,7 @@
 													+'<span class="button">'
 														+'<input id="file" name="userfile" onchange="this.parentNode.nextSibling.value = this.value" type="file">Buscar'
 													+'</span>'
-													+'<input placeholder="Seleccione un archivo" readonly="" type="text" id="file_frm" name="file_nme">'
+													+'<input placeholder="choose un archivo" readonly="" type="text" id="file_frm" name="file_nme">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2631,7 +2631,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="div_subir">'
 												+'<div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>'
 												+'<div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4" >'
-													+'<input type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Agregar informacion">'
+													+'<input type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Add informacion">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2662,7 +2662,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<label class="label">Nombre del video</label>'
 												+'<label class="input">'	
-													+'<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico">'
+													+'<input name="nombre_publico" placeholder="Name" type="text" id="nombre_publico">'
 												+'</label>'	
 											+'</section>'
 										+'</div>'
@@ -2689,7 +2689,7 @@
 													+'<span class="button">'
 														+'<input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile" type="file">Buscar'
 													+'</span>'
-													+'<input name="file_nme_2" placeholder="Seleccione una imagen para the video" readonly=""  type="text" id="file_frm_2">'
+													+'<input name="file_nme_2" placeholder="choose una imagen para the video" readonly=""  type="text" id="file_frm_2">'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -2719,7 +2719,7 @@
 			{
 				var nuevoevento= '<div class="jarviswidget jarviswidget-color-blueDark">'
 										+'<header>'
-											+'<h2> Agregar Evento </h2>'
+											+'<h2> Add Evento </h2>'
 										+'</header>'
 										+'<div>'
 											+'<div class="widget-body">'
@@ -3189,7 +3189,7 @@
 											+'<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">'
 												+'<div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>'
 												+'<div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4">'
-													+'<a onclick="cupon_nuevo()" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12">Agregar cupon</a>'
+													+'<a onclick="cupon_nuevo()" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12">Add cupon</a>'
 												+'</div>'
 											+'</section>'
 										+'</div>'
@@ -3440,7 +3440,7 @@
 			*/	
 			"use strict";
 			
-			    var date = new Date();
+			    var date = new  Date();
 			    var d = date.getDate();
 			    var m = date.getMonth();
 			    var y= date.getFullYear();
@@ -3533,8 +3533,8 @@
 			        	echo 
 			        	"{
 			        		title: '".$eventos[$i]->nombre."',
-				            start: new Date(".substr($eventos[$i]->inicio,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->inicio,8,-9).", ".(substr($eventos[$i]->inicio,11,-6)*1).", ".(substr($eventos[$i]->inicio,14,-3)*1)."),
-				            end: new Date(".substr($eventos[$i]->fin,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->fin,8,-9).", ".(substr($eventos[$i]->fin,11,-6)*1).", ".(substr($eventos[$i]->fin,14,-3)*1)."),
+				            start: new  Date(".substr($eventos[$i]->inicio,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->inicio,8,-9).", ".(substr($eventos[$i]->inicio,11,-6)*1).", ".(substr($eventos[$i]->inicio,14,-3)*1)."),
+				            end: new  Date(".substr($eventos[$i]->fin,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->fin,8,-9).", ".(substr($eventos[$i]->fin,11,-6)*1).", ".(substr($eventos[$i]->fin,14,-3)*1)."),
 				            description: '".$eventos[$i]->descripcion."',
 				            className: ['event', '".$color."'],
 				            icon: '".$icono."'
@@ -3610,7 +3610,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -3638,7 +3638,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -3664,7 +3664,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -3690,7 +3690,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -3715,7 +3715,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -3740,7 +3740,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -3765,7 +3765,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -3799,7 +3799,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -3842,7 +3842,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {

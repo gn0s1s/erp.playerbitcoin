@@ -9,7 +9,7 @@
 				<input id="orden" type="number" value="<?php echo $titulos[0]->orden; ?>" class="form-control" name="orden" min="0" placeholder=""class="form-control" required style="width:200px; height:30px;"/>
 			</label><br>
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
-				<input id='nombre' class="form-control" value="<?php echo $titulos[0]->nombre; ?>" name="nombre" style="width:200px; height:30px;" placeholder="Nombre" type="text" required>
+				<input id='nombre' class="form-control" value="<?php echo $titulos[0]->nombre; ?>" name="nombre" style="width:200px; height:30px;" placeholder="Name" type="text" required>
 	        </label>
 			<label style="margin: 1rem;">
 				<textarea id='descripcion' class="form-control" name="descripcion" size="20" cols="20" rows="10" placeholder="Descripción" type="text" required><?php echo $titulos[0]->descripcion; ?></textarea>
@@ -87,7 +87,7 @@ function enviar() {
 							FinalizarSpinner();
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

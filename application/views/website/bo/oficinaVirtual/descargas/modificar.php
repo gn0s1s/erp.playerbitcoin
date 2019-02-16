@@ -36,7 +36,7 @@
                 <section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"
                          id="busquedatodos">
                     <label class="label">Nombre del archivo</label> <label class="input">
-                        <input name="nombre" placeholder="Nombre" type="text"
+                        <input name="nombre" placeholder="Name" type="text"
                                id="nombre_publico"
                                value="<?php echo $archivo[0]->nombre_publico; ?>" required>
                     </label>
@@ -77,7 +77,7 @@
                             <input id="file" onchange="this.parentNode.nextSibling.value = this.value" 
                                    name="userfile1" type="file" >Buscar
                         </span><input name="file_nme"
-                              placeholder="Seleccione the archivo"
+                              placeholder="choose the archivo"
                               type="text" id="file_frm" required readonly="readonly">
                     </div>
                 </section>

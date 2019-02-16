@@ -23,7 +23,7 @@
 			</div>'; 
 	}
 ?>	
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -188,7 +188,7 @@
 								{
 									bootbox.dialog({
 									message: "Se ha eliminado the Noticia.",
-									title: 'Felicitaciones',
+									title: 'Congratulations',
 									buttons: {
 										success: {
 										label: "Accept",

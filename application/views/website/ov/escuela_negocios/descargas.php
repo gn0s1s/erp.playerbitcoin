@@ -171,7 +171,7 @@
 																	"preDrawCallback" : function() {
 																		// Initialize the responsive datatables helper once.
 																		if (!responsiveHelper_dt_basic) {
-																			responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic<?php echo $grupo->id; ?>'), breakpointDefinition);
+																			responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic<?php echo $grupo->id; ?>'), breakpointDefinition);
 																		}
 																	},
 																	"rowCallback" : function(nRow) {
@@ -207,7 +207,7 @@
 							<!-- end widget -->
 				
 						</article>
-						<!-- NEW WIDGET START -->
+						<!-- new  WIDGET START -->
 						
 						
 						<!-- WIDGET END -->
@@ -260,7 +260,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {

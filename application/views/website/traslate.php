@@ -52,7 +52,7 @@
 <div id="google_translate_element2"></div>
 <script type="text/javascript">
     function googleTranslateElementInit2() {
-        new google.translate.TranslateElement({pageLanguage: 'es', autoDisplay: false}, 'google_translate_element2');
+        new  google.translate.TranslateElement({pageLanguage: 'es', autoDisplay: false}, 'google_translate_element2');
     }
 </script>
 <script type="text/javascript"

@@ -16,7 +16,7 @@
 										<a href="/bo/comercial/red_tabla">Listar Afiliados</a>
 									</span>
 									<span>>
-										<a href="/bo/comercial/tipos_de_red_grafico_1?id_afiliado=<?php echo $id;?>">Selección of Network</a> > Genealogico <?php echo $nombre_red[0]->nombre;?>
+										<a href="/bo/comercial/tipos_de_red_grafico_1?id_afiliado=<?php echo $id;?>">Selección of Network</a> >Spillover <?php echo $nombre_red[0]->nombre;?>
 									</span>
                               </h1>
                          </div>
@@ -26,7 +26,7 @@
                     
                          <!-- row -->
                          <div class="row">
-                              <!-- NEW WIDGET START -->
+                              <!-- new  WIDGET START -->
                               <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     
                                    <!-- Widget ID (each widget will need unique ID)-->
@@ -69,7 +69,7 @@
 
                                                          <ul>
                                                              <li>
-                                                                 <span><i class="fa fa-lg fa-folder-open"></i>Tú</span>
+                                                                 <span><i class="fa fa-lg fa-folder-open"></i>You</span>
                                                                  <ul>
                                                                      <?php
                                                                      foreach ($afiliados[$id_red] as $key) {
@@ -99,16 +99,7 @@
                                    <!-- end widget -->
                               </article>
                               <!-- WIDGET END -->
-                         </div>
-                         <!-- end row -->
-                         <!-- row -->
-                         <div class="row">         
-	        <!-- a blank row to get started -->
-					        <div class="col-sm-12">
-					            <br />
-					            <br />
-					        </div>
-				        </div> 
+
                          <!-- end row -->
                     </section>
                     <!-- end widget grid -->

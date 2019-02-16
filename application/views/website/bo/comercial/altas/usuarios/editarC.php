@@ -7,13 +7,13 @@
 										<section>
 												<div>
 														<fieldset>
-															<label class="label">Dirección of Correo Electrónico</label>
+															<label class="label">Account E-mail</label>
 															<label class="input">
 																<input name="email" value="<?php echo $user[0]->email?>" id="email" maxlength="60" size="30" required type="email">
 															</label>
 															<label class="txt-color-red"></label>
 															<br>
-															<label class="label">Seleccione the CEDI al que pertenece</label>
+															<label class="label">choose the CEDI al que pertenece</label>
 															<label class="select">
 																<select name="id_cedi" id="id_cedi" required>
 																<?php foreach ($cedis as $cedi) {
@@ -30,7 +30,7 @@
 																</select>
 															</label>
 															<br>
-															<label class="label">País</label>
+															<label class="label">Country</label>
 															<label class="select">
 																	<select name="id_pais" id="id_pais" required>
 																		<?php foreach ($paises as $pais) {
@@ -50,13 +50,13 @@
 														</fieldset>
 														<input type="text" class="hide" value="<?php echo $user[0]->id; ?>" name="id">													
 														<fieldset>
-														<label class="label">Número of Identificación</label>
+														<label class="label">IDN</label>
 														<label class="input">
 															<input name="dni" value="<?php echo $user[0]->dni?>" id="dni" maxlength="60" size="30" type="text" required>
 														</label>
 														<label class="txt-color-red"></label>
 														<br>
-														<label class="label">Nombre(s)</label>
+														<label class="label">Name</label>
 														<label class="input">
 															<input name="nombre" value="<?php echo $user[0]->nombre?>" id="username" maxlength="60" size="30" type="text" required>
 														</label>
@@ -108,7 +108,7 @@ function enviar() {
 									bootbox.dialog({
 										//location.href="/bo/usuarios/listarCedi";
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

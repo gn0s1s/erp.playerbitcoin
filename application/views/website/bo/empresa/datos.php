@@ -16,7 +16,7 @@
         <!-- START ROW -->
         <div class="row">
 
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1"
@@ -92,7 +92,7 @@
                                 <legend>Dirección of the empresa</legend>
                                 <div id="dir" class="row">
                                     <section class="col col-3">
-                                        País
+                                        Country
                                         <label class="select">
                                             <select id="pais" required name="pais">
                                                 <?php foreach ($pais as $key) { ?>
@@ -111,7 +111,7 @@
                                     </section>
                                     <section class="col col-3">
                                         <label class="input">
-                                            Código postal
+                                            ZIPCODE
                                             <input type="text" id="postal" name="postal" value="<?= $empresa[0]->postal; ?>">
                                         </label>
                                     </section>

@@ -22,7 +22,7 @@
 					
 					<div class="col-sm-12 col-md-12 col-lg-12">
 				
-						<!-- new widget -->
+						<!-- new  widget -->
 						<div class="jarviswidget jarviswidget-color-blueDark">
 				
 							<!-- widget options:
@@ -145,7 +145,7 @@
 
 			  "use strict";
 			
-			    var date = new Date();
+			    var date = new  Date();
 			    var d = date.getDate();
 			    var m = date.getMonth();
 			    var y= date.getFullYear();
@@ -238,8 +238,8 @@
 			        	echo 
 			        	"{
 			        		title: '".$eventos[$i]->nombre."',
-				            start: new Date(".substr($eventos[$i]->inicio,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->inicio,8,-9).", ".(substr($eventos[$i]->inicio,11,-6)*1).", ".(substr($eventos[$i]->inicio,14,-3)*1)."),
-				            end: new Date(".substr($eventos[$i]->fin,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->fin,8,-9).", ".(substr($eventos[$i]->fin,11,-6)*1).", ".(substr($eventos[$i]->fin,14,-3)*1)."),
+				            start: new  Date(".substr($eventos[$i]->inicio,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->inicio,8,-9).", ".(substr($eventos[$i]->inicio,11,-6)*1).", ".(substr($eventos[$i]->inicio,14,-3)*1)."),
+				            end: new  Date(".substr($eventos[$i]->fin,0,-15).", ".(substr($eventos[$i]->inicio,5,-12)-1).", ".substr($eventos[$i]->fin,8,-9).", ".(substr($eventos[$i]->fin,11,-6)*1).", ".(substr($eventos[$i]->fin,14,-3)*1)."),
 				            description: '".$eventos[$i]->descripcion."<br><h1><a onclick=\"ver_evento(\'".$eventos[$i]->id."\');\">Ver</a></h1>',
 				            className: ['event', '".$color."'],
 				            icon: '".$icono."'

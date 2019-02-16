@@ -47,7 +47,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				
 			<div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -66,7 +66,7 @@
 				-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-					<h2>Nueva Salida</h2>				
+					<h2>newSalida</h2>
 					
 				</header>
 
@@ -259,7 +259,7 @@ function OrigenAlmacen(){
 		        $(this).remove();
 		});
 		datos=$.parseJSON(msg);
-		$('#destino').append('<option value="">-- Seleccione--</option>');
+		$('#destino').append('<option value="">-- choose--</option>');
 	      for(var i in datos){
 		      $('#destino').append('<option value="'+datos[i]['id_cedi']+'">'+datos[i]['nombre']+'</option>'); 		        
 	      }

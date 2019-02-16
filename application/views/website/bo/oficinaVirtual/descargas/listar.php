@@ -27,7 +27,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1"
@@ -187,7 +187,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                         "preDrawCallback": function () {
                                                             // Initialize the responsive datatables helper once.
                                                             if (!responsiveHelper_dt_basic) {
-                                                                responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                                                                responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
                                                             }
                                                         },
                                                         "rowCallback": function (nRow) {
@@ -219,7 +219,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                         "preDrawCallback": function () {
                                                             // Initialize the responsive datatables helper once.
                                                             if (!responsiveHelper_dt_basic) {
-                                                                responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                                                                responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
                                                             }
                                                         },
                                                         "rowCallback": function (nRow) {
@@ -328,7 +328,7 @@ src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></sc
                                                                                 {
                                                                                     bootbox.dialog({
                                                                                         message: "Se ha eliminado the Archivo.",
-                                                                                        title: 'Felicitaciones',
+                                                                                        title: 'Congratulations',
                                                                                         buttons: {
                                                                                             success: {
                                                                                                 label: "Accept",

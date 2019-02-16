@@ -89,17 +89,17 @@ $confirm_new_password = array(
 <?php echo form_open($this->uri->uri_string()); ?>
 <table>
 	<tr>
-		<td>Nueva contraseña</td>
+		<td>newPassword</td>
 		<td><?php echo form_password($new_password); ?></td>
 		<td style="color: red;"><?php echo form_error($new_password['name']); ?><?php echo isset($errors[$new_password['name']])?$errors[$new_password['name']]:''; ?></td>
 	</tr>
 	<tr>
-		<td>Confirm New Password</td>
+		<td>Confirm new  Password</td>
 		<td><?php echo form_password($confirm_new_password); ?></td>
 		<td style="color: red;"><?php echo form_error($confirm_new_password['name']); ?><?php echo isset($errors[$confirm_new_password['name']])?$errors[$confirm_new_password['name']]:''; ?></td>
 	</tr>
 </table><br>
-<input name="change" value="Cambiar Contraseña" type="submit" class="btn btn-success">
+<input name="change" value="Cambiar Password" type="submit" class="btn btn-success">
 <?php echo form_close(); ?>
 
 

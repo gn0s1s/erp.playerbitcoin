@@ -39,7 +39,7 @@
                 <section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"
                          id="busquedatodos">
                     <label class="label">Nombre del e-book</label> <label class="input">
-                        <input name="nombre" id="nombre" placeholder="Nombre" type="text"
+                        <input name="nombre" id="nombre" placeholder="Name" type="text"
                                id="nombre_publico"
                                value="<?php echo $ebook[0]->nombre_publico; ?>" required>
                     </label>
@@ -64,7 +64,7 @@
                                  onchange="this.parentNode.nextSibling.value = this.value"
                                  name="userfile1" type="file" >Buscar
                         </span><input name="file_nme_2"
-                                      placeholder="Seleccione una imagen para the e-book" type="text"
+                                      placeholder="choose una imagen para the e-book" type="text"
                                       id="file_frm_2" >
                     </div>
                 </section>
@@ -83,7 +83,7 @@
                                  onchange="this.parentNode.nextSibling.value = this.value"
                                  name="userfile2" type="file" >Buscar
                         </span><input name="file_nme_2"
-                                      placeholder="Seleccione una imagen para the e-book" type="text"
+                                      placeholder="choose una imagen para the e-book" type="text"
                                       id="file_frm_2" value="<?php echo $ebook[0]->nombre_completo; ?>"
                                       required>
                     </div>

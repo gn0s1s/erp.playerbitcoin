@@ -13,7 +13,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				
@@ -41,7 +41,7 @@
 														<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">
 															<label class="label">Nombre</label>
 															<label class="input">
-																<input required type="text" placeholder="Nombre"  name="nombre_frm" value='<?= $informacion[0]->nombre;?>'>
+																<input required type="text" placeholder="Name"  name="nombre_frm" value='<?= $informacion[0]->nombre;?>'>
 															</label>
 														</section>
 													</div>
@@ -69,7 +69,7 @@
 														<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="div_subir">
 															<div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
 															<div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4" >
-																<input required type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Agregar informacion">
+																<input required type="submit" class="btn btn-success col-lg-12 col-md-12 col-sm-12 col-xs-12" id="boton_subir" value="Add informacion">
 															</div>
 														</section>
 													</div>
@@ -89,14 +89,7 @@
 				<!-- end widget -->
 			</article>
 			<!-- END COL -->
-		</div>
-				<div class="row">         
-			        <!-- a blank row to get started -->
-			        <div class="col-sm-12">
-			            <br />
-			            <br />
-			        </div>
-		        </div>
+
 			</div>
 			<!-- END MAIN CONTENT -->
 <style>

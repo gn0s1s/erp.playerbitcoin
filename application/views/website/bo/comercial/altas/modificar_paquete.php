@@ -8,7 +8,7 @@ $item = $mercancia[0];
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
 
@@ -36,10 +36,10 @@ $item = $mercancia[0];
                             </section>
 
                             <fieldset>
-                                <legend>País</span></legend>
+                                <legend>Country</span></legend>
                                 <fieldset>
                                     <section class="col col-12" style="width: 50%;">
-                                        País of the mercancía 
+                                        Country of the mercancía 
                                         <label class="select"> 
                                             <select id="pais2" required name="pais" onChange="select_pais()">
                                                 <?php
@@ -268,7 +268,7 @@ $item = $mercancia[0];
                                         <section class="col col-6" style="width: 50%">
                                             <br>
                                             <br>
-                                            <a onclick="add_impuesto()" style='cursor: pointer;'>Agregar impuesto<i class="fa fa-plus"></i></a>
+                                            <a onclick="add_impuesto()" style='cursor: pointer;'>Add impuesto<i class="fa fa-plus"></i></a>
                                         </section>
 																		
                                         <?php $i = 0 ?>
@@ -367,7 +367,7 @@ $item = $mercancia[0];
                                                  onchange="this.parentNode.nextSibling.value = this.value"
                                                  type="file" multiple>Buscar
                                             </span><input id="imagen_mr"
-                                                  placeholder="Agregar alguna imágen" type="text">
+                                                  placeholder="Add alguna imágen" type="text">
                                         </div>
                                         <small><cite title="Source Title">Para ver the archivo que va a
                                                 cargar, pulse con the puntero on the boton of "Buscar"</cite>
@@ -402,7 +402,7 @@ var ia=0;
 var ib=0;
 // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-function new_product(i)
+function new _product(i)
 {
 	
 	$('#prods').append('<div id="'+ia+'aj">'
@@ -448,7 +448,7 @@ function delete_product_adicional(id){
 	}
 }
 
-function new_service(i)
+function new _service(i)
 {
 
 	$('#servs').append('<div id="'+ib+'bj">'
@@ -576,7 +576,7 @@ function ImpuestosPais2(id){
 }
 
 function validar_productos(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 	var contador=0;
 $('select[name="producto[]"]').each(function() {	
 	Impuesto.push($(this).val());
@@ -585,7 +585,7 @@ $('select[name="producto[]"]').each(function() {
 return contador;
 }
 function validar_servicios(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 	var contador=0;
 $('select[name="servicio[]"]').each(function() {	
 	Impuesto.push($(this).val());
@@ -785,7 +785,7 @@ function ServicioPorPaisAgregado(id){
 }
 
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	
@@ -930,7 +930,7 @@ function enviar() {
 
 							bootbox.dialog({
 						message: "Se ha modificado the paquete.",
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",

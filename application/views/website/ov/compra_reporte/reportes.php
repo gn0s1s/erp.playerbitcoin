@@ -6,9 +6,9 @@
 			<h1 class="page-title txt-color-blueDark">
 				
 				<!-- PAGE HEADER -->
-				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
+				<a class="backHome" href="/ov"><i class="fa fa-home"></i> Menu</a>
 				<span>> 
-					Reportes
+					Reports
 				</span>
 			</h1>
 		</div>
@@ -22,7 +22,7 @@
 			
 
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="well">
 					<div class="row">
@@ -32,34 +32,34 @@
 									
 									<label class="select">
 										<select id="tipo-reporte">
-											<option value="0" selected="" disabled="">Tipo of reporte</option>
-											<option value="9">Ver mis Directos</option>
-											<option value="6">Ver consecutivo of my Network</option>
-											<option onclick="tipo_reporte()" value="10">Ver Afiliados Activos of my Network</option>
-											<option onclick="tipo_reporte()" value="11">Ver Afiliados InActivos of my Network</option>
-											<option value="12">Ver Bonos pagados of my Network</option>
+											<option value="0" selected="" disabled="">choose Type</option>
+											<option value="9">My Sponsored Members</option>
+											<option value="6">List of my Network Members</option>
+											<option onclick="tipo_reporte()" value="10">my Network Actived Members </option>
+											<option onclick="tipo_reporte()" value="11">my Network inactived Members</option>
+											<option value="12">Commsions earned of my Network</option>
 											<!--<option value="1">Afiados nuevos</option>-->
 											<!--<option value="7">Ver Purchases of my Network</option>-->
 											<!--  <option value="4">Ventas web personal</option>-->
 											<option value="5">Purchases from Bank</option>
-											<option value="8">Ver mis Purchases</option>
-                                                                                        <option value="4">Ver mis Purchases CEDI</option>
-											<option value="7">Ver Purchases of my Network</option>
+											<option value="8">My Purchases</option>
+                                            <option value="4">My CEDI Purchases</option>
+											<option value="7">my Network Purchases</option>
 										</select> <i></i> </label>
 								</section>
 								<section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
 									<label class="input"> <i class="icon-append fa fa-calendar"></i>
-										<input type="text" name="startdate" id="startdate" placeholder="Del">
+										<input type="text" name="startdate" id="startdate" placeholder="From">
 									</label>
 								</section>
 								<section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
 									<label class="input"> <i class="icon-append fa fa-calendar"></i>
-										<input type="text" name="finishdate" id="finishdate" placeholder="Al">
+										<input type="text" name="finishdate" id="finishdate" placeholder="To">
 									</label>
 								</section>
 								<section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
 									<label class="input">
-										<a id="genera-reporte" class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12">Generar Reporte</a>
+										<a id="genera-reporte" class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12">Generate</a>
 									</label>
 								</section>
 							</div>
@@ -275,7 +275,7 @@
 		
 				</article>
 				
-				<!-- NEW WIDGET START -->
+				<!-- new  WIDGET START -->
 						<!-- WIDGET END -->
 		
 
@@ -586,7 +586,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -614,7 +614,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -649,7 +649,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -692,7 +692,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -749,7 +749,7 @@
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_datatable_fixed_column) {
-					responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+					responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {

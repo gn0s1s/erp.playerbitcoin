@@ -8,7 +8,7 @@ $item = $mercancia[0];
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
 
@@ -35,9 +35,9 @@ $item = $mercancia[0];
                                 </label>
                             </section>
 
-                            <legend>País</legend>
+                            <legend>Country</legend>
                             <fieldset>
-                                <section class="col col-12" style="width: 50%;">País of the mercancía
+                                <section class="col col-12" style="width: 50%;">Country of the mercancía
                                     <label class="select">
                                         <select id="pais2" required name="pais" onChange="select_pais()" required>
                                             <?php foreach ($pais as $key) {
@@ -131,7 +131,7 @@ $item = $mercancia[0];
                                     <?php }?>
                                 </div>
                                 <div id="agregar" class=" text-center row">
-                                    <a onclick="new_product(<?= $i1 ?>)" style='cursor: pointer;'>Agregar producto 
+                                    <a onclick="new_product(<?= $i1 ?>)" style='cursor: pointer;'>Add producto 
                                         <i class="fa fa-plus">
                                         </i>
                                     </a>  
@@ -177,7 +177,7 @@ $item = $mercancia[0];
                                 </div>
 												
                                 <div id="agregar1" class=" text-center row">
-                                    <a  onclick="new_service(<?= $i2 ?>)" style='cursor: pointer;'>Agregar servicio 
+                                    <a  onclick="new_service(<?= $i2 ?>)" style='cursor: pointer;'>Add servicio 
                                         <i class="fa fa-plus">
                                         </i>
                                     </a>
@@ -240,9 +240,9 @@ $item = $mercancia[0];
                                         <section class="col col-6" style="width: 50%">
                                             <br>
                                             <br>
-                                            <a onclick="add_impuesto()" style='cursor: pointer;'>Agregar impuesto<i class="fa fa-plus"></i></a>
+                                            <a onclick="add_impuesto()" style='cursor: pointer;'>Add impuesto<i class="fa fa-plus"></i></a>
                                         </section>	
-					<!--<a style="cursor: pointer;" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>-->
+					<!--<a style="cursor: pointer;" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>-->
                                         <?php $i=0?>
 					
                                         <?php foreach($impuestos_merc as $merc) {?>	
@@ -337,7 +337,7 @@ $item = $mercancia[0];
                                                 onchange="this.parentNode.nextSibling.value = this.value"
                                                 type="file" multiple>Buscar
                                             </span><input id="imagen_mr"
-                                               placeholder="Agregar alguna imágen" type="text">
+                                               placeholder="Add alguna imágen" type="text">
                                         </div>
                                         <small><cite
                                                 title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
@@ -376,7 +376,7 @@ var ib=0;
 
 // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-function new_product(id)
+function new _product(id)
 {
 	
 
@@ -408,7 +408,7 @@ function new_product(id)
 
 }
 
-function new_service(id)
+function new _service(id)
 {
 
 	$('#servs').append('<div id="'+ia+'aj" >'
@@ -549,7 +549,7 @@ function ImpuestosPais2(id){
 	});
 }
 function validar_productos(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 	var contador=0;
 $('select[name="producto[]"]').each(function() {	
 	Impuesto.push($(this).val());
@@ -558,7 +558,7 @@ $('select[name="producto[]"]').each(function() {
 return contador;
 }
 function validar_servicios(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 	var contador=0;
 $('select[name="servicio[]"]').each(function() {	
 	Impuesto.push($(this).val());
@@ -765,7 +765,7 @@ function ServicioPorPaisAgregado(id){
 	});
 }
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	
@@ -910,7 +910,7 @@ function enviar() {
 
 							bootbox.dialog({
 						message: "Se ha modificado the combinado.",
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",

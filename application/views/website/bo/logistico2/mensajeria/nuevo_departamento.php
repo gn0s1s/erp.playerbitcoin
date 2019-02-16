@@ -3,7 +3,7 @@
 		<legend>Datos of Departamento</legend>
 		<div class="row">
 			<section class="col col-6">
-				País<label class="select">
+				Country<label class="select">
 					<select id="pais" required name="pais">'
 						<?php foreach ($paises as $key){?>'
 							<option value="<?=$key->Code?>"><?=$key->Name?></option>

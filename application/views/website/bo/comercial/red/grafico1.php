@@ -26,7 +26,7 @@
                     
                          <!-- row -->
                          <div class="row">
-                              <!-- NEW WIDGET START -->
+                              <!-- new  WIDGET START -->
                               <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     
                                    <!-- Widget ID (each widget will need unique ID)-->
@@ -76,7 +76,7 @@
                                                              <div class="tree smart-form">
                                                                  <ul>
                                                                      <li>
-                                                                         <span><i class="fa fa-lg fa-folder-open"></i>Tú</span>
+                                                                         <span><i class="fa fa-lg fa-folder-open"></i>You</span>
                                                                              <ul>
                                                                                  <?php
                                                                                  foreach ($afiliados[$red->id] as $key) {

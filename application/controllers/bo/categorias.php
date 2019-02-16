@@ -73,7 +73,7 @@ class categorias extends CI_Controller
 	function crear_categoria(){
 		
 		if ($_POST['nombre']==""){
-			$error = "Debe agregar un nombre a la categoria.";
+			$error = "Debe Add un nombre a la categoria.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/bo/categorias/nueva_categoria');
 		}
@@ -98,7 +98,7 @@ class categorias extends CI_Controller
 	
 	function actualizar_categoria(){
 		if ($_POST['nombre']==""){
-			$error = "Debe agregar un nombre a la categoria.";
+			$error = "Debe Add un nombre a la categoria.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/bo/categorias/index');
 		}

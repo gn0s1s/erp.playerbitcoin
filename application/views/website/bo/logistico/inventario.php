@@ -20,7 +20,7 @@
 					<section id="widget-grid" class="">
 						<!-- START ROW -->
 						<div class="row">
-							<!-- NEW COL START -->
+							<!-- new  COL START -->
 							<article class="col-sm-12 col-md-12 col-lg-12">
 								<!-- Widget ID (each widget will need unique ID)-->
 								<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -39,7 +39,7 @@
 									-->
 									<header>
 										<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-										<!--<h2>Datos personales</h2>-->				
+										<!--<h2>Personal Info</h2>-->
 										
 									</header>
 				
@@ -168,7 +168,7 @@
 														<!-- row -->
 														<div class="row">
 													
-															<!-- NEW WIDGET START -->
+															<!-- new  WIDGET START -->
 															<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									
 																<!-- Widget ID (each widget will need unique ID)-->
@@ -358,7 +358,7 @@
 														<!-- row -->
 														<div class="row">
 													
-															<!-- NEW WIDGET START -->
+															<!-- new  WIDGET START -->
 															<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									
 																<!-- Widget ID (each widget will need unique ID)-->
@@ -810,7 +810,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -838,7 +838,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -863,7 +863,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -897,7 +897,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -940,7 +940,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {

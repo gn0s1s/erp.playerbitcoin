@@ -577,10 +577,10 @@ class logistico extends CI_Controller
 					<th>Apellido</th>
 					<th>Fecha de Nacimiento</th>
 					<th>Sexo</th>
-					<th>Estado Civil</th>
-					<th>Estudios</th>
+					<th>Civil Status</th>
+					<th>schooling</th>
 					<th>Ocupacion</th>
-					<th>Tiempo Dedicado</th>
+					<th>Working time</th>
 					<th>Estatus</th>
 				</thead>
 				<tbody>";

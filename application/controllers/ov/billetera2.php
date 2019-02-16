@@ -253,27 +253,27 @@ class billetera2 extends CI_Controller
 		}
 		
 		if($_POST['cobro']<=0){
-			echo "ERROR <br>Valor del cobro invalido.";
+			echo "ERROR <br>Invalid Withdrawal value.";
 			exit();
 		}
 	
 		if($_POST['ctitular']==""){
-			echo "ERROR <br>Falta ingresar el nombre del titular de la cuenta.";
+			echo "ERROR <br>Please enter account titular.";
 			exit();
 		}
 		
 		if(is_numeric($_POST['ctitular'])){
-			echo "ERROR <br>El titular de la cuenta no debe contener valores numericos.";
+			echo "ERROR <br>The account titular field must not be numeric.";
 			exit();
 		}
 		
 		if($_POST['cbanco']==""){
-			echo "ERROR <br>Falta ingresar el banco de la cuenta.";
+			echo "ERROR <br>Please enter account bank.";
 			exit();
 		}
 		
 		if(intval($_POST['ncuenta'])==0){
-			echo "ERROR <br>El numero de la cuenta debe ser un numero valido.";
+			echo "ERROR <br>Account number must be trusted.";
 			exit();
 		}
 	
@@ -297,9 +297,9 @@ class billetera2 extends CI_Controller
  
 		if((($comisiones-($retenciones+$cobrosPagos+$_POST['cobro']+$cobroPendientes))+($total_transact)+$total_bonos)>0){
 			$this->modelo_billetera->cobrar($id,$_POST['ncuenta'],$_POST['ctitular'],$_POST['cbanco'],$_POST['cclabe']);
-			echo "Felicitaciones<br> Tu cobro se esta procesando.";
+			echo "Congratulations<br> Withdrawal successfully.";
 		}else {
-			echo "ERROR <br>No hay saldo para realizar el cobro.";
+			echo "ERROR <br>Balance Insufficient.";
 		}
 
 	}

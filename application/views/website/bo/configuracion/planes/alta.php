@@ -24,7 +24,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -46,7 +46,7 @@
 			<legend>Nuevo Plan</legend><br>
 			
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
-				<input id='nombre' class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Nombre" type="text" required>
+				<input id='nombre' class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Name" type="text" required>
 	        </label>
 			<label style="margin: 1rem;">
 				<textarea id='desc' class="form-control" name="desc" size="20" cols="20" rows="10" placeholder="Descripción" type="text" required></textarea>
@@ -72,7 +72,7 @@
 											<div class="col col-lg-2">
 											</div>
 											<div class="col col-xs-12 col-sm-6 col-lg-3" id="bono_plan">
-												<label class="select">Seleccione Bono
+												<label class="select">choose Bono
 												<select name="id_bono_plan[]" onChange="set_bono($(this).val(),'bono0');" onclick="set_bono($(this).val(),'bono0');" required>
 														<?php	
 															foreach($bonos_plan as $categoria){
@@ -83,7 +83,7 @@
 												</label>
 											</div>											
 											<div class="col col-lg-2 col-xs-2">
-												<a style="cursor: pointer;" onclick="add_bono()"> Agregar Bono <i class="fa fa-plus"></i></a>
+												<a style="cursor: pointer;" onclick="add_bono()"> Add Bono <i class="fa fa-plus"></i></a>
 											</div>
 											<div id="bono0" class="col col-xs-12 col-sm-6 col-lg-4">
 	        								</div>																			
@@ -141,7 +141,7 @@ $( "#planes" ).submit(function( event ) {
 	enviar();
 });
 function validar_bonos_repetidos(){
-		var bonos = new Array();
+		var bonos = new  Array();
 		var bono_repetido=false;
 $('select[name="id_bono_plan[]"]').each(function() {	
 	bonos.push($(this).val());
@@ -218,7 +218,7 @@ i = i + 1;
 	+'<div class="col col-lg-2">'
 	+'</div>'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-3"><hr/><br/>'
-		+'<label class="select">Seleccione Bono'
+		+'<label class="select">choose Bono'
 		+'<select name="id_bono_plan[]" required onChange="set_bono($(this).val(),\'bono'+i+'\')" onmouseenter="set_bono($(this).val(),\'bono'+i+'\')";>'		
 		+'<?php	echo $select_bonos; ?>'
 	+'</select>'

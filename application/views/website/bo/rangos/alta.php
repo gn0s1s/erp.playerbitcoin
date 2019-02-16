@@ -23,7 +23,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -45,7 +45,7 @@
 			<legend>Nuevo Rango</legend><br>
 			
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
-				<input id='nombre' class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Nombre" type="text" required>
+				<input id='nombre' class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Name" type="text" required>
 	        </label>
 			<label style="margin: 1rem;">
 				<textarea id='desc' class="form-control" name="desc" size="20" cols="20" rows="10" placeholder="Descripción" type="text" required></textarea>
@@ -71,7 +71,7 @@
 										<div class="col col-lg-3 col-xs-2">
 										</div>
 									<!-- <div class="col col-lg-2 col-xs-2">
-											<a style="cursor: pointer;" onclick="add_rango()"> Agregar Condición <i class="fa fa-plus"></i></a>
+											<a style="cursor: pointer;" onclick="add_rango()"> Add Condición <i class="fa fa-plus"></i></a>
 										</div>
 										-->
 									</div>
@@ -174,7 +174,7 @@ $( "#rangos" ).submit(function( event ) {
 	enviar();
 });
 function validar_rangos_repetidos(){
-		var  rangos = new Array();
+		var  rangos = new  Array();
 		var rango_repetido=false;
 $('select[name="id_tipo_condicion[]"]').each(function() {	
 	rangos.push($(this).val());
@@ -204,7 +204,7 @@ function enviar() {
 							
 							bootbox.dialog({
 						message: "Se ha creado the rango."+msg,
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",

@@ -48,7 +48,7 @@ Puntos : <strong><?=$puntos;?></strong>
 		</section>				
 		<br> 
 		<?php if($valor>0){?>
-		<input type="submit" class="btn btn-success" value="Cobrar Dinero Recibido" />
+		<input type="submit" class="btn btn-success" value="Submit Dinero Recibido" />
 		<?php } ?>
 	</form>
 </div>

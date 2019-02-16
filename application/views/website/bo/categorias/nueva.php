@@ -27,7 +27,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				
 			<div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -46,7 +46,7 @@
 				-->
 				<header>
 					<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-					<h2>Nueva Categoría</h2>				
+					<h2>newCategoría</h2>
 					
 				</header>
 
@@ -66,7 +66,7 @@
 						<form id="nueva" class="smart-form"  novalidate="novalidate" method="POST" action="/bo/categorias/crear_categoria">
 							<fieldset>
 								<label class="input" required> Nombre
-											<input style="width: 25rem;" type="text" name="nombre" placeholder="Nombre"class="form-control" required>
+											<input style="width: 25rem;" type="text" name="nombre" placeholder="Name"class="form-control" required>
 										</label>
 										Selecione Red
 										<label class="select" style="width: 25rem;"> 

@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<form action="/bo/tipo_red/guardar_red" method="POST" role="form">
-		<legend>Nueva Network</legend>
+		<legend>newNetwork</legend>
 	
 		<div class="form-group">
 			<label for="">Nombre</label>

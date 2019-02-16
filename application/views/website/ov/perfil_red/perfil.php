@@ -15,7 +15,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -415,18 +415,18 @@ $(document).ready(function() {
 function actualizar()
 {
 	$
-	var ids = new Array(
+	var ids = new  Array(
 		"#nombre",
 	 	"#apellido",
 	 	"#datepicker",
 	 	//"#cp"
 	 	"#keyword"
 	 );
-	var mensajes = new Array(
+	var mensajes = new  Array(
 		"Por favor ingresa tu nombre",
 	 	"Por favor ingresa tu apellido",
-	 	"Por favor ingresa tu fecha of nacimiento",
-	 	//"Por favor ingresa tu código postal"
+	 	"Por favor ingresa tu Birthdate",
+	 	//"Por favor ingresa tu ZIPCODE"
 	 	"Por favor ingresa tu Identificacion Fiscal"
 	 );
 
@@ -441,7 +441,7 @@ function actualizar()
 		.done(function( msg ) {
 		bootbox.dialog({
 					message: msg,
-					title: "Atención",
+					title: "Attention",
 					buttons: {
 						success: {
 						label: "Ok!",
@@ -465,8 +465,8 @@ function changepswd()
 		})
 		.done(function( msg ) {
 			bootbox.dialog({
-						message: "¿ Estas seguro que deseas cambiar the contraseña ?",
-						title: "Atención",
+						message: "¿ Estas seguro que deseas cambiar the Password ?",
+						title: "Attention",
 						buttons: {
 							success: {
 							label: "Ok!",
@@ -519,7 +519,7 @@ function delete_telefono(id){
 
 $(function()
  {
- 	a = new Date();
+ 	a = new  Date();
 	año = a.getFullYear()-18;
 	$( "#datepicker" ).datepicker({
 	changeMonth: true,

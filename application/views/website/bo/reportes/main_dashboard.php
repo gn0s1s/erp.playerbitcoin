@@ -14,7 +14,7 @@
 	
 		<!-- START ROW -->
 	<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="well">
 				<div class="row">
@@ -34,11 +34,11 @@
 										<option value="9" onclick="tipo_reporte()">Ventas Por Cobrar Bancos</option>
 										<option value="12">Ventas Pagadas Bancos</option>
 										<option value="14">Ventas Pagos Enlinea</option>
-										<option value="13" >Comisiones Por Pagar</option>
-										<option value="10" >Comisiones Pagadas</option>
+										<option value="13" >Commissions Por Pagar</option>
+										<option value="10" >Commissions Pagadas</option>
 										<option value="17" >Calculated Commissions Pagados</option>
 										<option value="18" >Total Comisiones & Bonos</option>
-										<option value="11" >Comisiones Pagadas & Por Pagar</option>
+										<option value="11" >Commissions Pagadas & Por Pagar</option>
 										<!--  	
 											<option value="6" >Facturacion / Pedidos cobrados</option>
 											<option value="0" >Ventas empresa</option>
@@ -61,7 +61,7 @@
 											<option value="13">Pedidos</option>
 											<option value="14">Facturas Emitidas</option>
 											<option value="15">Pagos</option>
-											<option value="16">Comisiones</option>
+											<option value="16">Commissions</option>
 											<option value="17">Usuarios</option>
 											<option value="18">Ventas por Empresa</option>
 											<option value="19">Ventas por Oficina Virtual</option>
@@ -246,7 +246,7 @@
 			</div>
 		
 		</article>		
-				<!-- NEW WIDGET START -->
+				<!-- new  WIDGET START -->
 			<!-- WIDGET END -->
 	</div>
 </div>
@@ -428,7 +428,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -456,7 +456,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -491,7 +491,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -534,7 +534,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -688,7 +688,7 @@
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_datatable_fixed_column) {
-					responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+					responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {

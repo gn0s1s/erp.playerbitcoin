@@ -20,7 +20,7 @@
 					<section id="widget-grid" class="">
 						<!-- START ROW -->
 						<div class="row">
-							<!-- NEW COL START -->
+							<!-- new  COL START -->
 							<article class="col-sm-12 col-md-12 col-lg-12">
 								<!-- Widget ID (each widget will need unique ID)-->
 								<div class="jarviswidget"  data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -39,7 +39,7 @@
 									-->
 									<header>
 										<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-										<!--<h2>Datos personales</h2>-->				
+										<!--<h2>Personal Info</h2>-->
 										
 									</header>
 				
@@ -113,7 +113,7 @@
 															</fieldset>
 															<footer>
 																<button type="submit" class="btn btn-primary">
-																	Agregar Almacen 
+																	Add Almacen
 																</button>
 															</footer>
 														</form>
@@ -125,7 +125,7 @@
 														<!-- row -->
 														<div class="row">
 													
-															<!-- NEW WIDGET START -->
+															<!-- new  WIDGET START -->
 															<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 									
 																<!-- Widget ID (each widget will need unique ID)-->

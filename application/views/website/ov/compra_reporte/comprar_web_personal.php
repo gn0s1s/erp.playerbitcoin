@@ -200,7 +200,7 @@
 							                          <thead>
 							                          	<tr class="CartProduct cartTableHeader">
 							                              <th data-hide="phone,tablet"> Productos </th>
-							                              <th data-class="expand" class="checkoutReviewTdDetails" >Detalles</th>
+							                              <th data-class="expand" class="checkoutReviewTdDetails" >Details</th>
 							                              <th data-hide="phone,tablet" >Valor Unitario</th>
 							                              <th data-hide="phone,tablet" >Cantidad</th>
 							                              <th data-hide="phone,tablet" >Descuento</th>
@@ -352,7 +352,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_dt_basic) {
-						responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+						responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -384,7 +384,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_dt_basic) {
-						responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+						responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -761,13 +761,13 @@
 						}
 						if(!banco)
 						{
-							alert('Seleccione una empresa bancaria');
+							alert('choose una empresa bancaria');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo of tarjeta');
+								alert('choose una tipo of tarjeta');
 							}
 							else
 							{
@@ -785,13 +785,13 @@
 									{
 										if(!mes)
 										{
-											alert('Seleccione un mes');
+											alert('choose un mes');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('Seleccione un año');
+												alert('choose un año');
 											}
 											else
 											{
@@ -848,13 +848,13 @@
 						}
 						if(!banco)
 						{
-							alert('Seleccione una empresa bancaria');
+							alert('choose una empresa bancaria');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo of tarjeta');
+								alert('choose una tipo of tarjeta');
 							}
 							else
 							{
@@ -872,13 +872,13 @@
 									{
 										if(!mes)
 										{
-											alert('Seleccione un mes');
+											alert('choose un mes');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('Seleccione un año');
+												alert('choose un año');
 											}
 											else
 											{

@@ -363,7 +363,7 @@
 
 	<div class="row">
 
-		<!-- NEW COL START -->
+		<!-- new  COL START -->
 		<article class="col-sm-12 col-md-12 col-lg-6">
 			
 			<!-- Widget ID (each widget will need unique ID)-->
@@ -608,7 +608,7 @@
 												<option value="163">Palau</option>
 												<option value="247">Palestinian Territory, Occupied</option>
 												<option value="164">Panama</option>
-												<option value="165">Papua New Guinea</option>
+												<option value="165">Papua new  Guinea</option>
 												<option value="166">Paraguay</option>
 												<option value="167">Peru</option>
 												<option value="168">Philippines</option>
@@ -1047,7 +1047,7 @@
 		</article>
 		<!-- END COL -->
 
-		<!-- NEW COL START -->
+		<!-- new  COL START -->
 		<article class="col-sm-12 col-md-12 col-lg-6">
 			
 			<!-- Widget ID (each widget will need unique ID)-->
@@ -1151,7 +1151,7 @@
 								<section>
 									<label class="checkbox">
 										<input type="checkbox" name="subscription" id="subscription">
-										<i></i>I want to receive news and special offers</label>
+										<i></i>I want to receive new s and special offers</label>
 									<label class="checkbox">
 										<input type="checkbox" name="terms" id="terms">
 										<i></i>I agree with the Terms and Conditions</label>

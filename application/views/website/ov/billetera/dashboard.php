@@ -13,7 +13,7 @@
 					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-8">
 						<ul id="sparks" class="">
 							<li class="sparks-info">
-								<h5> Mis ganancias <span class="txt-color-blue"><?=number_format($ganancias,2)?></span></h5>
+								<h5> My Earnings<span class="txt-color-blue"><?=number_format($ganancias,2)?></span></h5>
 							</li>
 							<li class="sparks-info">
 								<h5><span class="txt-color-blue"><a href="/ov/billetera/logout_billetera">sign out of Profit Wallet</a></span></h5>
@@ -33,7 +33,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->
@@ -76,7 +76,7 @@
 															<a href="#s2" data-toggle="tab">Historial</a>
 														</li>
 														<li>
-															<a href="#s3" data-toggle="tab">Pedir dinero</a>
+															<a href="#s3" data-toggle="tab">Withdrawals</a>
 														</li>
 													</ul>
 														<div id="myTabContent1" class="tab-content padding-10">
@@ -235,7 +235,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {

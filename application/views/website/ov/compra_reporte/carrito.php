@@ -33,7 +33,7 @@
         height: auto !important;
     }
 </style>
-<!-- Estilos of the nueva integración del ERP-->
+<!-- Estilos of the new integración del ERP-->
 <link rel="stylesheet" type="text/css" href="/template/css/playerBitcoin.css">
 
 <div id="content" style="margin-top: 4em;">

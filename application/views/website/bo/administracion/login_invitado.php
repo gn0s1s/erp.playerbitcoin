@@ -27,7 +27,7 @@
 											<label class="label">Clave</label>
 											<label class="input"> <i class="icon-append fa fa-lock"></i>
 												<input required type="password" placeholder="Clave of Afiliado" name="password_invitado">
-												<b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Ingrese the contraseña</b> </label>
+												<b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Ingrese the Password</b> </label>
 											
 										</section>
 									</div>

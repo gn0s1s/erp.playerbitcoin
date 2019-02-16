@@ -48,7 +48,7 @@
 <script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 <script type="text/javascript">
 
-var fecha = new Date();
+var fecha = new  Date();
 
 $( "#datepicker" ).datepicker({
 			changeMonth: true,

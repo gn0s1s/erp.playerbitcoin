@@ -16,7 +16,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -40,7 +40,7 @@
 				<input id="orden" type="number" class="form-control" name="orden" min="0" placeholder=""class="form-control" required style="width:200px; height:30px;"/>
 			</label><br>
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
-				<input id='nombre' class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Nombre" type="text" required>
+				<input id='nombre' class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Name" type="text" required>
 	        </label>
 			<label style="margin: 1rem;">
 				<textarea id='descripcion' class="form-control" name="descripcion" size="20" cols="20" rows="10" placeholder="Descripción" type="text" required></textarea>
@@ -129,7 +129,7 @@ function enviar() {
 							
 						bootbox.dialog({
 						message: "Se ha creado the Titulo."+msg,
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",

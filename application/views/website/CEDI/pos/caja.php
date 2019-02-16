@@ -4,7 +4,7 @@
 	<section id="widget-grid">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -29,7 +29,7 @@
 										<div class="col-sm-11 link" style="padding-left: 2em">
 											<!--<section class="col-md-3" style="padding-left: 2em">
 												<a href="#" class="btn" onclick="crear_item()"> <i
-													class="fa fa-tag"></i> Agregar Producto
+													class="fa fa-tag"></i> Add Producto
 												</a>
 											</section>-->
 											<section class="col-md-3 col-xs-6" style="padding-left: 2em">
@@ -301,7 +301,7 @@ function setTabla(){
 		"preDrawCallback" : function() {
 			// Initialize the responsive datatables helper once.
 			if (!responsiveHelper_dt_basic) {
-				responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+				responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 			}
 		},
 		"rowCallback" : function(nRow) {

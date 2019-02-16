@@ -99,7 +99,7 @@ class testSetupRedDeAfiliacionBaseDeDatos extends CI_Controller {
 		echo $this->unit->run("Test de Red Binaria",$resultado, 'Test set Base de datos descripcion Red','Resultado es :'.$resultado);
 		
 		$resultado=$red->getFrontal();
-		echo $this->unit->run(2,$resultado, 'Test set Base de datos frontal red','Resultado es :'.$resultado);
+		echo $this->unit->run(2,$resultado, 'Test set Base de datos first line red','Resultado es :'.$resultado);
 		
 		$resultado=$red->getProfundidad();
 		echo $this->unit->run(0,$resultado, 'Test set Base de datos Profundidad red','Resultado es :'.$resultado);
@@ -129,7 +129,7 @@ class testSetupRedDeAfiliacionBaseDeDatos extends CI_Controller {
 		echo $this->unit->run("Test de Red Binaria",$resultado, 'Test set Base de datos descripcion Red','Resultado es :'.$resultado);
 		
 		$resultado=$red->getFrontal();
-		echo $this->unit->run(2,$resultado, 'Test set Base de datos frontal red','Resultado es :'.$resultado);
+		echo $this->unit->run(2,$resultado, 'Test set Base de datos first line red','Resultado es :'.$resultado);
 		
 		$resultado=$red->getProfundidad();
 		echo $this->unit->run(0,$resultado, 'Test set Base de datos Profundidad red','Resultado es :'.$resultado);

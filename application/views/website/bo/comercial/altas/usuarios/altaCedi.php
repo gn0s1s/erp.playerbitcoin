@@ -20,7 +20,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- nueva COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -80,7 +80,7 @@
 											?>
 											<?php echo form_open($this->uri->uri_string()); ?>
 											<label class="select">
-												<label class="label">Seleccione the CEDI al que pertenecerá</label>
+												<label class="label">choose the CEDI al que pertenecerá</label>
 												<select name="id_cedi" id="id_cedi" required="">
 													<?php foreach ($cedis as $cedi) {?>
 														<option value="<?php echo $cedi->id_cedi; ?>">
@@ -149,14 +149,14 @@
 											<br>
 											
 											<section class="input">
-												<label class="input">ocupación
+												<label class="input">Occupation
 												<input required type="text" name="ocupacion" id="ocupacion"  /> </label>
 											</section>
 											
 											<br>
 											
 											<label class="select">
-												<label class="label">País</label>
+												<label class="label">Country</label>
 												<select name="id_pais" id="id_pais" required="">
 													<?php foreach ($paises as $pais) {?>
 														<option value="<?php echo $pais->Code; ?>">
@@ -186,11 +186,11 @@
 											</section>
 											
 											<section class="input">
-												<label class="input">Contraseña
+												<label class="input">Password
 													<?php echo form_password($password); ?>
 													><?php echo form_error($password['name']); ?>
 											
-												
+                                                </label></section>
 											<section class="input">
 												<label class="input">Confirm Password
 												<?php echo form_password($confirm_password); ?>
@@ -250,7 +250,7 @@
 					nextText : '<i class="fa fa-chevron-right"></i>'
 				});
 				
-				function new_user()
+				function nueva_user()
 				{
 					var tipo=$("#tipo").val();
 					if(tipo!="")

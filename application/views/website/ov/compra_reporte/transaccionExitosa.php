@@ -17,7 +17,7 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="text-center error-box">
-									<h1 class="error-text tada animated"><i class="fa fa-check-circle text-success success-icon-shadow"></i> Felicitaciones</h1>
+									<h1 class="error-text tada animated"><i class="fa fa-check-circle text-success success-icon-shadow"></i> Congratulations</h1>
 									<br>
 									<p class="lead semi-bold">
 										<strong>Tu transaccion ha sido exitosa.</strong><br><br>

@@ -15,7 +15,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -39,7 +39,7 @@
                                             <section>
                                                 <div>
                                                     <label class="select">
-                                                        <label class="label">Seleccione una categoria</label>
+                                                        <label class="label">choose una categoria</label>
                                                         <select name="tipo" id="tipo" required="">
                                                             <option value="PRE">Presentaciones</option>
                                                             <option value="DES">Descargas</option>
@@ -82,7 +82,7 @@
 </div>
 <!-- END MAIN CONTENT -->
 <<script type="text/javascript">
-    function new_grupo()
+    function new _grupo()
     {
         var grupo = $("#grupo").val();
         var tipo = $("#tipo").val();

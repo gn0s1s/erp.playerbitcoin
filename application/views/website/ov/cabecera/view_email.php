@@ -12,7 +12,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -167,7 +167,7 @@ $("#contact-form").submit(function(event){
   event.preventDefault();
  
   //grab all form data  
-  var formData = new FormData($(this)[0]);
+  var formData = new  FormData($(this)[0]);
  
   $.ajax({
     url: '/ov/cabecera/envia_mail',

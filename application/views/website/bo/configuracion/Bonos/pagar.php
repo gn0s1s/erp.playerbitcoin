@@ -16,7 +16,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -47,7 +47,7 @@
 										<div class="col col-xs-12 col-sm-12 col-lg-10" id="tipo_condicion">
 											<label class="select">
 											<select style="max-width: 20rem;" name="id_bono" >
-											<option value='0' selected>--- Seleccione Bono ---</option>
+											<option value='0' selected>--- choose Bono ---</option>
 													<?php	
 														foreach($bonos as $bono){
 															echo "<option value='".$bono->id."'>".$bono->nombre."</option>";

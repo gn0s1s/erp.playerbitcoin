@@ -18,7 +18,7 @@
         <!-- START ROW -->
         <div class="row">
 
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1"
@@ -118,7 +118,7 @@
                                     <div class="col col-lg-2 col-xs-2">
                                         <a style="cursor: pointer;"
                                            onclick="add_fee()">
-                                            Agregar Tasa
+                                            Add Tasa
                                             <i class="fa fa-plus"></i></a>
                                     </div>
 

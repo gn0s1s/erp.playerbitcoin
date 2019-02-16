@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 				  $( ".invalid" ).remove();
 				  
-			  	var ids = new Array( 
+			  	var ids = new  Array(
 						"#nombre",
 					 	"#apellido",
 					 	"#datepicker",
@@ -26,15 +26,15 @@ $(document).ready(function() {
 					 	"#confirm_password"
 					 	
 					 );
-					var mensajes = new Array( 
+					var mensajes = new  Array(
 						"Por favor ingresa tu nombre",
 					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha of nacimiento",
+					 	"Por favor ingresa tu Birthdate",
 					 	"Por favor ingresa the DNI",
 					 	"Por favor ingresa un nombre of usuario",
 					 	"Por favor ingresa un correo",
-					 	"Por favor ingresa una contraseña",
-					 	"Por favor confirma tu contraseña"
+					 	"Por favor ingresa una Password",
+					 	"Por favor confirma tu Password"
 					 );
 
 					var idss=new Array(
@@ -72,7 +72,7 @@ $(document).ready(function() {
 									$("#progress").attr('style','width: 100%');
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",
@@ -89,7 +89,7 @@ $(document).ready(function() {
 					else
 					{
 						$.smallBox({
-					      title: "<h1>Atención</h1>",
+					      title: "<h1>Attention</h1>",
 					      content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
 					      color: "#C46A69",
 					      icon : "fa fa-warning fadeInLeft animated",
@@ -205,7 +205,7 @@ function faseCambio(fase){
 	
 	bootbox.dialog({
 		message: "¿Estas Seguro?",
-		title: "Atención",
+		title: "Attention",
 		buttons: {
 			success: {
 			label: "Si",
@@ -346,7 +346,7 @@ function delete_telefono(id){
 /*
  $(function()
  {
- 	a = new Date();
+ 	a = new  Date();
 	año = a.getFullYear()-19;
 	$( "#datepicker" ).datepicker({
 	changeMonth: true,
@@ -383,7 +383,7 @@ function botbox(nombre, id, lado)
 					+'<span class="badge badge-info">1</span>Datos of registro<span class="chevron"></span>'
 				+'</li>'
 				+'<li data-target="#step2_r">'
-					+'<span class="badge">2</span>Datos personales<span class="chevron"></span>'
+					+'<span class="badge">2</span>Personal Info<span class="chevron"></span>'
 				+'</li>'
 				
 			+'</ul>'
@@ -404,15 +404,15 @@ function botbox(nombre, id, lado)
 							+'<legend>Information of cuenta</legend>'
 							+'<section id="usuario" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
-								+'<input id="username" onkeyup="use_username()" required="" name="username" placeholder="Usuario" type="text">'
+								+'<input id="username" onkeyup="use_username()" required="" name="username" placeholder="Username" type="text">'
 								+'</label>'
 							+'</section>'
 							+'<section id="correo" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-envelope-o"></i>'
-								+'<input id="email" onkeyup="use_mail()" required="" name="email" placeholder="Dirección of Correo Electrónico" type="email">'
+								+'<input id="email" onkeyup="use_mail()" required="" name="email" placeholder="Account E-mail" type="email">'
 								+'</label></section><section class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-lock"></i>'
-								+'<input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Contraseña">'
+								+'<input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Password">'
 								+'</label>'
 							+'</section>'
 							+'<section id="confirmar_password" class="col col-6">'
@@ -426,11 +426,11 @@ function botbox(nombre, id, lado)
 				+'<div class="step-pane" id="step2_r">'
 					+'<form method="POST" action="/perfil_red/afiliar_nuevo_r/'+id+'" id="afiliar_red" class="smart-form" novalidate="novalidate">'
 						+'<fieldset>'
-							+'<legend>Datos personales del afiliado</legend>'
+							+'<legend>Personal Info del afiliado</legend>'
 							+'<div class="row">'
 								+'<section class="col col-6">'
 									+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
-									+'<input id="nombre" required type="text" name="nombre" placeholder="Nombre(s)">'
+									+'<input id="nombre" required type="text" name="nombre" placeholder="Name">'
 									+'<input required type="hidden" id="id" name="afiliados" value="'+id+'">'
 									//+'<input id="mail_important" required type="hidden" name="mail_important" value="">'
 									+'<input id="lado" required type="hidden" name="lado" value="'+lado+'">'
@@ -439,12 +439,12 @@ function botbox(nombre, id, lado)
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
-									+'<input id="apellido" required type="text" name="apellido" placeholder="Apellidos (paterno y/o materno)">'
+									+'<input id="apellido" required type="text" name="apellido" placeholder="Lastname">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input"><i class="icon-append fa fa-calendar"></i>'
-									+'<input required id="datepicker" type="date"  name="nacimiento" placeholder="Fecha of nacimiento" readonly="readonly">'
+									+'<input required id="datepicker" type="date"  name="nacimiento" placeholder="Birthdate" readonly="readonly">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-6" id="key_red">'
@@ -468,8 +468,8 @@ function botbox(nombre, id, lado)
 									+'</section>'
 								+'</div>'
 								+'<section class="col col-12">'
-									+'<button type="button" onclick="agregar_red(1)" class="btn btn-primary">&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;</button>&nbsp;'
-									+'<button type="button" onclick="agregar_red(2)" class="btn btn-primary">&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;</button>'
+									+'<button type="button" onclick="agregar_red(1)" class="btn btn-primary">&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;</button>&nbsp;'
+									+'<button type="button" onclick="agregar_red(2)" class="btn btn-primary">&nbsp;Add <i class="fa fa-phone"></i>&nbsp;</button>'
 								+'</section>'
 							+'</div>'
 						+'</fieldset>'
@@ -478,7 +478,7 @@ function botbox(nombre, id, lado)
 							+'<div class="row">'
 								+'<section class="col col-4">'
 									+'<label class="input">'
-										+'<input placeholder="Nombre(s)" type="text" name="nombre_co">'
+										+'<input placeholder="Name" type="text" name="nombre_co">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-4">'
@@ -488,7 +488,7 @@ function botbox(nombre, id, lado)
 								+'</section>'
 								+'<section class="col col-4" id="key_red_co">'
 									+'<label id="key_3" class="input"> <i class=" icon-prepend fa fa-users"></i>'
-										+'<!-- check_keyword_red_co() --><input onkeyup="" placeholder="Parentesco" type="text" name="keyword_co" id="keyword_red_co">'
+										+'<!-- check_keyword_red_co() --><input onkeyup="" placeholder="relationship" type="text" name="keyword_co" id="keyword_red_co">'
 									+'</label>'
 								+'</section>'
 							+'</div>'
@@ -498,14 +498,14 @@ function botbox(nombre, id, lado)
 								+'<section class="col col-12">'
 									+'<label class="toggle">'
 									+'<input type="checkbox" checked="checked" name="sponsor">'
-									+'<i data-swchoff-text="No" data-swchon-text="Si"></i>Soy su sponsor</label>'
-									+'<small>Si eres the sponsor of este afiliado, estará como frontal on tus comisiones</small>'
+									+'<i data-swchoff-text="No" data-swchon-text="Si"></i>I'm Sponsor</label>'
+									+'<small>if I'm Sponsor, i can get direct earnings from this member</small>'
 								+'</section>'
 						+'</fieldset>'
 						+'<fieldset>'
-							+'<legend>Dirección del afiliado</legend>'
+							+'<legend>Home Adress</legend>'
 							+'<div id="dir_red" class="row">'
-								+'<section class="col col-6">País'
+								+'<section class="col col-6">Country'
 									+'<label class="select">'
 										+'<select id="pais_red" required name="pais"><?php foreach ($pais as $key){?>'
 											+'<option value="<?=$key->Code?>"><?=$key->Name?></option><?php }?>'
@@ -514,12 +514,12 @@ function botbox(nombre, id, lado)
 								+'</section>'
 								+'<section id="municipio" class="col col-6">'
 									+'<label class="input">'
-									+'Ciudad - Estado'
+									+'City/State'
 										+'<input type="text" name="estado" >'
 									+'</label>'
 								+'</section>'
 								+'<section id="municipio_red" class="col col-6">'
-									+'<label class="input">Delegación o Municipio'
+									+'<label class="input">Town/District'
 									+'<input type="text" name="municipio" >'
 									+'</label>'
 								+'</section>'
@@ -531,14 +531,14 @@ function botbox(nombre, id, lado)
 								+'</section>'
 
 								+'<section class="col col-6">'
-									+'<label class="input">Dirección of domicilio'
+									+'<label class="input">Street Address'
 									+'<input required type="text" name="calle">'
 									+'(Calle, No. Exterior, No. Interior)'
 									+'</label>'
 								+'</section>'
 								
 								+'<section class="col col-6">'
-									+'<label class="input">Código postal'
+									+'<label class="input">ZIPCODE'
 										+'<input required type="text" id="cp_red" name="cp">'
 									+'</label>'
 								+'</section>'
@@ -546,37 +546,37 @@ function botbox(nombre, id, lado)
 							+'</div>'
 						+'</fieldset>'
 						+'<fieldset>'
-							+'<legend>Estadistica</legend>'
+							+'<legend>Statistics</legend>'
 							+'<div class="row">'
-								+'<section class="col col-6">Estado civil'
+								+'<section class="col col-6">Civil Status'
 									+'<label class="select">'
 									+'<select name="civil"><?php foreach ($civil as $key){?>'
 									+'<option value="<?=$key->id_edo_civil?>"><?=$key->descripcion?></option><?php }?>'
 									+'</select>'
 									+'</label>'
 								+'</section>'
-								+'<section class="col col-6">Género&nbsp;'
+								+'<section class="col col-6">Gender&nbsp;'
 									+'<div class="inline-group"><?php foreach ($sexo as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_sexo==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_sexo?>" name="sexo" placeholder="sexo"><i></i><?=$value->descripcion?>'
 									+'</label><?php }?>'
 									+'</div>'
 								+'</section>'
-								+'<section class="col col-12">Estudio&nbsp;'
+								+'<section class="col col-12">schooling&nbsp;'
 									+'<div class="inline-group"><?php foreach ($estudios as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_estudio==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_estudio?>" name="estudios"><i></i><?=$value->descripcion?>'
 									+'</label><?php }?>'
 									+'</div>'
 								+'</section>'
-								+'<section class="col col-6">Ocupación&nbsp;'
+								+'<section class="col col-6">Occupation&nbsp;'
 									+'<div class="inline-group"><?php foreach ($ocupacion as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_ocupacion==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_ocupacion?>" name="ocupacion"><i></i><?=$value->descripcion?>'
 									+'</label><?php }?>'
 									+'</div>'
 								+'</section>'
-								+'<section class="col col-6">Tiempo dedicado&nbsp;'
+								+'<section class="col col-6">Working time&nbsp;'
 									+'<div class="inline-group"><?php foreach ($tiempo_dedicado as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_tiempo_dedicado==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_tiempo_dedicado?>" name="tiempo_dedicado"><i></i><?=$value->descripcion?>'
@@ -720,7 +720,7 @@ function botbox(nombre, id, lado)
 		+'<script>'
 		+' $(function()'
 		+ '{'
-		 +	'a = new Date();'
+		 +	'a = new  Date();'
 			+'año = a.getFullYear()-19;'
 			+'$( "#datepicker" ).datepicker({'
 			+'changeMonth: true,'
@@ -736,7 +736,7 @@ function botbox(nombre, id, lado)
 
 		  $( ".invalid" ).remove();
 			
-			  		var ids = new Array( 
+			  		var ids = new  Array(
 					"#nombre",
 				 	"#apellido",
 				 	"#datepicker",
@@ -747,15 +747,15 @@ function botbox(nombre, id, lado)
 				 	"#confirm_password"
 				 	
 					 );
-					var mensajes = new Array( 
+					var mensajes = new  Array(
 						"Por favor ingresa tu nombre",
 					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha of nacimiento",
+					 	"Por favor ingresa tu Birthdate",
 					 	"Por favor ingresa the DNI",
 					 	"Por favor ingresa un nombre of usuario",
 					 	"Por favor ingresa un correo",
-					 	"Por favor ingresa una contraseña",
-					 	"Por favor confirma tu contraseña"
+					 	"Por favor ingresa una Password",
+					 	"Por favor confirma tu Password"
 					 );
 
 					var idss=new Array(
@@ -785,7 +785,7 @@ function botbox(nombre, id, lado)
 			                       type:"POST"}).done(function( msg ) {
 			                       	bootbox.dialog({
 											message: msg,
-											title: "Atención",
+											title: "Attention",
 											buttons: {
 												success: {
 												label: "Ok!",
@@ -805,7 +805,7 @@ function botbox(nombre, id, lado)
 				else
 				{
 					$.smallBox({
-				      title: "<h1>Atención</h1>",
+				      title: "<h1>Attention</h1>",
 				      content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
 				      color: "#C46A69",
 				      icon : "fa fa-warning fadeInLeft animated",
@@ -979,7 +979,7 @@ function InformarPremio(premio){
 	{
 		bootbox.dialog({
 			message: msg,
-			title: "Felicitaciones",
+			title: "Congratulations",
 			buttons: {
 				success: {
 				label: "Close!",
@@ -1012,7 +1012,7 @@ function InformarPremio(premio){
 		<!-- START ROW -->
 		<div class="row">
 			
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -1031,7 +1031,7 @@ function InformarPremio(premio){
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>
+						<h2>Personal Info</h2>
 					</header>
 
 					<!-- widget div-->
@@ -1057,7 +1057,7 @@ function InformarPremio(premio){
                                                                             <ul>
                                                                                 <li>
                                                                                     <a style="background: url('<?= $img_perfil ?>'); background-size: cover; background-position: center;" href="#">
-                                                                                        <div class="nombre">Tú</div></a>
+                                                                                        <div class="nombre">You</div></a>
                                                                                     <ul>
                                                                                         <?php
                                                                                         $aux = 0;
@@ -1071,7 +1071,7 @@ function InformarPremio(premio){
                                                                                                        onclick="subred(<?= $key->id_afiliado ?>)" href="#"></a>
                                                                                                     <div onclick="detalles(<?= $key->id_afiliado ?>)" 
                                                                                                          class="<?= ($key->directo == 0) ? 'todo' : 'todo1' ?>">
-                                                                                                            <?= $key->afiliado ?> <?= $key->afiliado_p ?><br />Detalles
+                                                                                                            <?= $key->afiliado ?> <?= $key->afiliado_p ?><br />Details
                                                                                                     </div>
                                                                                                 </li>
                                                                                             <?php

@@ -51,7 +51,7 @@ if ($this->session->flashdata ( 'error' )) {
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 
 				<div class="jarviswidget" id="wid-id-3"
@@ -72,7 +72,7 @@ if ($this->session->flashdata ( 'error' )) {
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i>
 						</span>
-						<h2>Nueva Entrada</h2>
+						<h2>newEntrada</h2>
 
 					</header>
 
@@ -225,7 +225,7 @@ function OrigenAlmacen(){
 		        $(this).remove();
 		});
 		datos=$.parseJSON(msg);
-		$('#origen').append('<option value="">-- Seleccione--</option>');
+		$('#origen').append('<option value="">-- choose--</option>');
 	      for(var i in datos){
 		      $('#origen').append('<option value="'+datos[i]['id_cedi']+'">'+datos[i]['nombre']+'</option>'); 		        
 	      }

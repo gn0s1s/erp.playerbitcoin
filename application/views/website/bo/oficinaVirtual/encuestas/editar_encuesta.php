@@ -5,7 +5,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1"
@@ -178,8 +178,8 @@ src="/template/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></scri
                                                                 url: "actualizar_encuesta",
                                                                 success: function () {
                                                                     bootbox.dialog({
-                                                                        message: "Felicitaciones! the encuesta se a actualizado.",
-                                                                        title: 'Felicitaciones',
+                                                                        message: "Congratulations! the encuesta se a actualizado.",
+                                                                        title: 'Congratulations',
                                                                         buttons: {
                                                                             success: {
                                                                                 label: "Accept",

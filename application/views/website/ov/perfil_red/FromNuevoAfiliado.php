@@ -5,7 +5,7 @@
 					<span class="badge badge-info">1</span>Datos del registro<span class="chevron"></span>
 				</li>
 				<li data-target="#step2_r">
-					<span class="badge">2</span>Datos personales<span class="chevron"></span>
+					<span class="badge">2</span>Personal Info<span class="chevron"></span>
 				</li>
 				<li data-target="#step3_r">
 					<span class="badge">3</span>Selección del plan<span class="chevron"></span>
@@ -31,7 +31,7 @@
 							<legend>Information of cuenta</legend>
 							<section id="usuario_r" class="col col-6">
 								<label class="input"><i class="icon-prepend fa fa-user"></i>
-								<input id="username_r" onkeyup="use_username_r()" required type="text" name="username" placeholder="Usuario">
+								<input id="username_r" onkeyup="use_username_r()" required type="text" name="username" placeholder="Username">
 								</label>
 							</section>
 							<section id="correo_r" class="col col-6">
@@ -39,12 +39,12 @@
 								<input id="email_r" onkeyup="use_mail_r()" required type="email" name="email" placeholder="Email">
 								</label></section><section class="col col-6">
 								<label class="input"><i class="icon-prepend fa fa-lock"></i>
-								<input id="password_r" required type="password" name="password" placeholder="Contraseña">
+								<input id="password_r" required type="password" name="password" placeholder="Password">
 								</label>
 							</section>
 							<section class="col col-6">
 								<label class="input"><i class="icon-prepend fa fa-lock"></i>
-									<input id="confirm_password_r" required type="password" name="confirm_password" placeholder="Repite contraseña">
+									<input id="confirm_password_r" required type="password" name="confirm_password" placeholder="Repite Password">
 								</label>
 							</section>
 						</fieldset>
@@ -53,11 +53,11 @@
 				<div class="step-pane" id="step2_r">
 					<form method="POST" action="/perfil_red/afiliar_nuevo_r/+id" id="afiliar_red" class="smart-form" novalidate="novalidate">
 						<fieldset>
-							<legend>Datos personales del afiliado</legend>
+							<legend>Personal Info del afiliado</legend>
 							<div class="row">
 								<section class="col col-6">
 									<label class="input"><i class="icon-prepend fa fa-user"></i>
-									<input id="nombre_r" required type="text" name="nombre" placeholder="Nombre">
+									<input id="nombre_r" required type="text" name="nombre" placeholder="Name">
 									<input required type="hidden" id="id" name="afiliados" value="+id">
 									//<input id="mail_important" required type="hidden" name="mail_important" value="">
 									<input id="lado" required type="hidden" name="lado" value="+lado">
@@ -66,12 +66,12 @@
 								</section>
 								<section class="col col-6">
 									<label class="input"><i class="icon-prepend fa fa-user"></i>
-									<input id="apellido_r" required type="text" name="apellido" placeholder="Apellido">
+									<input id="apellido_r" required type="text" name="apellido" placeholder="Lastname">
 									</label>
 								</section>
 								<section class="col col-6">
 									<label class="input"><i class="icon-append fa fa-calendar"></i>
-									<input required id="datepicker_r" type="date" min="1920-12-31" max="1996-12-31" name="nacimiento" placeholder="Fecha of nacimiento">
+									<input required id="datepicker_r" type="date" min="1920-12-31" max="1996-12-31" name="nacimiento" placeholder="Birthdate">
 									</label>
 								</section>
 								<section class="col col-6" id="key_red">
@@ -95,8 +95,8 @@
 									</section>
 								</div>
 								<section class="col col-12">
-									<button type="button" onclick="agregar_red(1)" class="btn btn-primary">&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;</button>&nbsp;
-									<button type="button" onclick="agregar_red(2)" class="btn btn-primary">&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;</button>
+									<button type="button" onclick="agregar_red(1)" class="btn btn-primary">&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;</button>&nbsp;
+									<button type="button" onclick="agregar_red(2)" class="btn btn-primary">&nbsp;Add <i class="fa fa-phone"></i>&nbsp;</button>
 								</section>
 							</div>
 						</fieldset>
@@ -105,12 +105,12 @@
 							<div class="row">
 								<section class="col col-4">
 									<label class="input">
-										<input placeholder="Nombre" type="text" name="nombre_co">
+										<input placeholder="Name" type="text" name="nombre_co">
 									</label>
 								</section>
 								<section class="col col-4">
 									<label class="input"> 
-										<input placeholder="Apellido" type="text" name="apellido_co">
+										<input placeholder="Lastname" type="text" name="apellido_co">
 									</label>
 								</section>
 								<section class="col col-4" id="key_red_co">
@@ -125,15 +125,15 @@
 								<section class="col col-12">
 									<label class="toggle">
 									<input type="checkbox" checked="checked" name="sponsor">
-									<i data-swchoff-text="No" data-swchon-text="Si"></i>Soy su sponsor</label>
-									<small>Si eres the sponsor of este afiliado, estará como frontal on tus comisiones</small>
+									<i data-swchoff-text="No" data-swchon-text="Si"></i>I'm Sponsor</label>
+									<small>if I'm Sponsor, i can get direct earnings from this member</small>
 								</section>
 						</fieldset>
 						<fieldset>
-							<legend>Dirección del afiliado</legend>
+							<legend>Home Adress</legend>
 							<div id="dir_red" class="row">
 								<section class="col col-6">
-									<label class="input">Dirección of domicilio
+									<label class="input">Street Address
 									<input required type="text" name="calle">
 									</label>
 								</section>
@@ -148,11 +148,11 @@
 									</label>
 								</section>
 								<section class="col col-6">
-									<label class="input">Código postal
+									<label class="input">ZIPCODE
 										<input required onkeyup="codpos_red()" type="text" id="cp_red" name="cp">
 									</label>
 								</section>
-								<section class="col col-6">País
+								<section class="col col-6">Country
 									<label class="select">
 										<select id="pais_red" required name="pais"><?foreach ($pais as $key){?>
 											<option value="<?=$key->Code?>"><?=$key->Name?></option><?}?>
@@ -162,9 +162,9 @@
 							</div>
 						</fieldset>
 						<fieldset>
-							<legend>Estadistica</legend>
+							<legend>Statistics</legend>
 							<div class="row">
-								<section class="col col-6">Estado civil
+								<section class="col col-6">Civil Status
 									<label class="select">
 									<select name="civil"><?foreach ($civil as $key){?>
 									<option value="<?=$key->id_edo_civil?>"><?=$key->descripcion?></option><?}?>
@@ -178,21 +178,21 @@
 									</label><?}?>
 									</div>
 								</section>
-								<section class="col col-12">Estudio&nbsp;
+								<section class="col col-12">schooling&nbsp;
 									<div class="inline-group"><?foreach ($estudios as $value){?>
 									<label class="radio">
 									<input <?=($value->id_estudio==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_estudio?>" name="estudios"><i></i><?=$value->descripcion?>
 									</label><?}?>
 									</div>
 								</section>
-								<section class="col col-6">Ocupación&nbsp;
+								<section class="col col-6">Occupation&nbsp;
 									<div class="inline-group"><?foreach ($ocupacion as $value){?>
 									<label class="radio">
 									<input <?=($value->id_ocupacion==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_ocupacion?>" name="ocupacion"><i></i><?=$value->descripcion?>
 									</label><?}?>
 									</div>
 								</section>
-								<section class="col col-6">Tiempo dedicado&nbsp;
+								<section class="col col-6">Working time&nbsp;
 									<div class="inline-group"><?foreach ($tiempo_dedicado as $value){?>
 									<label class="radio">
 									<input <?=($value->id_tiempo_dedicado==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_tiempo_dedicado?>" name="tiempo_dedicado"><i></i><?=$value->descripcion?>
@@ -334,7 +334,7 @@
 					defaultDate: "1970-01-01",});
 
 		$('.wizard_r').on('finished.fu.wizard', function (e, data) {
-	  		var ids = new Array( 
+	  		var ids = new  Array(
 			"#nombre_r",
 		 	"#apellido_r",
 		 	"#datepicker_r",
@@ -345,15 +345,15 @@
 		 	"#confirm_password_r"
 		 	
 			 );
-			var mensajes = new Array( 
+			var mensajes = new  Array(
 				"Por favor ingresa tu nombre",
 			 	"Por favor ingresa tu apellido",
-			 	"Por favor ingresa tu fecha of nacimiento",
-			 	"Por favor ingresa tu código postal",
+			 	"Por favor ingresa tu Birthdate",
+			 	"Por favor ingresa tu ZIPCODE",
 			 	"Por favor ingresa un nombre of usuario",
 			 	"Por favor ingresa un correo",
-			 	"Por favor ingresa una contraseña",
-			 	"Por favor confirma tu contraseña"
+			 	"Por favor ingresa una Password",
+			 	"Por favor confirma tu Password"
 			 );
 
 			var idss=new Array(
@@ -384,7 +384,7 @@
                        success:function(response){
 							bootbox.dialog({
 								message: response,
-								title: "Atención",
+								title: "Attention",
 								buttons: {
 									success: {
 									label: "Ok!",
@@ -401,7 +401,7 @@
 		else
 		{
 			$.smallBox({
-		      title: "<h1>Atención</h1>",
+		      title: "<h1>Attention</h1>",
 		      content: "<h3>Por favor reviza que todos los datos estén correctos</h3>",
 		      color: "#C46A69",
 		      icon : "fa fa-warning fadeInLeft animated",

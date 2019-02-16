@@ -27,7 +27,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
 
                 <div class="jarviswidget" id="wid-id-3" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -85,9 +85,9 @@
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
-                                            <label class="select">País
+                                            <label class="select">Country
                                                 <select id="pais" required name="pais" onChange="CiudadesPais()">
-                                                    <option value="-" selected>-- Seleciona un país --</option>
+                                                    <option value="-" selected>-- Seleciona un Country --</option>
                                                     <?php foreach ($paises as $key) { ?>
                                                         <option value="<?= $key->Code ?>"><?= $key->Name ?></option>
 <?php } ?>
@@ -110,11 +110,11 @@
 
                                                 </select>
                                             </label>
-                                            <a style="cursor: pointer;" onclick="new_ciudad()"> Nueva Ciudad <i class="fa fa-plus"></i></a>
+                                            <a style="cursor: pointer;" onclick="new_ciudad()"> new Ciudad <i class="fa fa-plus"></i></a>
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
-                                            <label for="" class="input">Colonia
+                                            <label for="" class="input">Town/District 
                                                 <input type="text" class="form-control" name="colonia" placeholder="Colonia"class="form-control" required />
                                             </label>
                                         </div>
@@ -126,7 +126,7 @@
                                         </div>
 
                                         <div class="col col-xs-12 col-sm-6 col-lg-6">
-                                            <label for="" class="input">Código Postal
+                                            <label for="" class="input">ZIPCODE
                                                 <input type="text" class="form-control" name="codigo_postal" placeholder="Codigo Postal" class="form-control" required />
                                             </label>
                                         </div>
@@ -286,10 +286,10 @@
                                             <div class="col col-lg-3 col-xs-2">
                                             </div>
                                             <div class="col col-lg-2 col-xs-2">
-                                                <a style="cursor: pointer;" onclick="add_tarifa()"> Agregar Tarifa <i class="fa fa-plus"></i></a>
+                                                <a style="cursor: pointer;" onclick="add_tarifa()"> Add Tarifa <i class="fa fa-plus"></i></a>
                                             </div>
                                             <div class="col col-lg-2 col-xs-2">
-                                                <a style="cursor: pointer;" onclick="new_ciudad()"> Nueva Ciudad <i class="fa fa-plus"></i></a>
+                                                <a style="cursor: pointer;" onclick="new_ciudad()"> new Ciudad <i class="fa fa-plus"></i></a>
                                             </div>
 
                                         </div>
@@ -426,14 +426,14 @@
                                                                                                 Departamentos()
                                                                                             }
 
-                                                                                            function new_ciudad() {
+                                                                                            function new _ciudad() {
                                                                                                 bootbox.dialog({
                                                                                                     message: '<form id="form_ciudad" method="post" class="smart-form">'
                                                                                                             + '<fieldset>'
                                                                                                             + '<legend>Datos Ciudad</legend>'
                                                                                                             + '<div  class="row">'
                                                                                                             + '<section class="col col-6">'
-                                                                                                            + 'País'
+                                                                                                            + 'Country'
                                                                                                             + '<label class="select">'
                                                                                                             + '<select id="pais2" required name="pais" onChange="Departamentos2()">'
                                                                                                             + '<?php foreach ($paises as $key) { ?>'
@@ -461,7 +461,7 @@
                                                                                                             + '</div>'
                                                                                                             + '</fieldset>'
                                                                                                             + '</form>',
-                                                                                                    title: "Nueva Ciudad",
+                                                                                                    title: "newCiudad",
                                                                                                     buttons: {
                                                                                                         submit: {
                                                                                                             label: "Accept",
@@ -507,14 +507,14 @@
 
                                                                                             }
 
-                                                                                            function new_departamento() {
+                                                                                            function new _departamento() {
                                                                                                 bootbox.dialog({
                                                                                                     message: '<form id="form_depto" method="post" class="smart-form">'
                                                                                                             + '<fieldset>'
                                                                                                             + '<legend>Datos of Estado/Departamento</legend>'
                                                                                                             + '<div class="row">'
                                                                                                             + '<section class="col col-6">'
-                                                                                                            + 'País<label class="select">'
+                                                                                                            + 'Country<label class="select">'
                                                                                                             + '<select id="pais" required name="pais">'
                                                                                                             + '<?php foreach ($paises as $key) { ?>'
                                                                                                                 + '<option value="<?= $key->Code ?>"><?= $key->Name ?></option>'

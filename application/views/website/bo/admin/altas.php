@@ -20,7 +20,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false"	>
@@ -39,7 +39,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>				
+						<h2>Personal Info</h2>
 						
 					</header>
 
@@ -56,7 +56,7 @@
 						<div class="widget-body">
 							<ul id="myTab1" class="nav nav-tabs bordered">
 								<li class="active">
-									<a href="#s1" data-toggle="tab">País</a>
+									<a href="#s1" data-toggle="tab">Country</a>
 								</li>
 								<li>
 									<a href="#s2" data-toggle="tab">Usuario</a>
@@ -77,7 +77,7 @@
 							<div id="myTabContent1" class="tab-content padding-10">
 								<div class="tab-pane fade in active" id="s1">
 									<div class="row">
-									<h5 class="col-xs-12 col-sm-12 col-md-8 col-lg-8">De click on the bandera del país para editar</h5>
+									<h5 class="col-xs-12 col-sm-12 col-md-8 col-lg-8">De click on the bandera del Country para editar</h5>
 									<a onclick="dato_pais_multiple()" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 pull-right text-blue" href="#"><h5>Edicion multiple <i class="fa fa-check-square-o"></i></h5></a>
 								</div>
 								<hr />
@@ -104,7 +104,7 @@
 												<legend>Information of cuenta</legend>
 												<section id="usuario" class="col col-3">
 													<label class="input"> <i class="icon-prepend fa fa-user"></i>
-														<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Usuario">
+														<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Username">
 													</label>
 												</section>
 												<section id="correo" class="col col-3">
@@ -114,12 +114,12 @@
 												</section>
 												<section class="col col-3">
 													<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-														<input required type="password" name="password" placeholder="Contraseña" id="password">
+														<input required type="password" name="password" placeholder="Password" id="password">
 													</label>
 												</section>
 												<section class="col col-3">
 													<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-														<input required type="password" name="confirm_password" id="confirm_password" placeholder="Repite contraseña">
+														<input required type="password" name="confirm_password" id="confirm_password" placeholder="Repite Password">
 													</label>
 												</section>
 											</fieldset>
@@ -139,21 +139,21 @@
 												</section>
 											</fieldset>-->
 											<fieldset>
-											<legend>Datos personales del Usuario</legend>
+											<legend>Personal Info del Usuario</legend>
 												<div class="row">
 													<section class="col col-3">
 														<label class="input"> <i class="icon-prepend fa fa-user"></i>
-															<input required type="text" name="nombre" id="nombre" placeholder="Nombre">
+															<input required type="text" name="nombre" id="nombre" placeholder="Name">
 														</label>
 													</section>
 													<section class="col col-3">
 														<label class="input"> <i class="icon-prepend fa fa-user"></i>
-															<input required type="text" name="apellido" id="apellido" placeholder="Apellido">
+															<input required type="text" name="apellido" id="apellido" placeholder="Lastname">
 														</label>
 													</section>
 													<section class="col col-3">
 														<label class="input"> <i class="icon-append fa fa-calendar"></i>
-															<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of nacimiento">
+															<input required id="datepicker" type="text" name="nacimiento" placeholder="Birthdate">
 														</label>
 													</section>
 													<section class="col col-3" id="key">
@@ -177,10 +177,10 @@
 												</div>
 												<section class="col col-3">
 													<button type="button" onclick="agregar('1')" class="btn btn-primary">
-														&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+														&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 													</button>
 													<button type="button" onclick="agregar('2')" class="btn btn-primary">
-														&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+														&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 													</button>
 												</section>
 												</div>
@@ -190,12 +190,12 @@
 												<div class="row">
 													<section class="col col-4">
 														<label class="input">
-															<input placeholder="Nombre" type="text" name="nombre_co">
+															<input placeholder="Name" type="text" name="nombre_co">
 														</label>
 													</section>
 													<section class="col col-4">
 														<label class="input"> 
-															<input placeholder="Apellido" type="text" name="apellido_co">
+															<input placeholder="Lastname" type="text" name="apellido_co">
 														</label>
 													</section>
 													<section class="col col-4" id="key_co">
@@ -210,7 +210,7 @@
 												<div id="dir" class="row">
 													<section class="col col-4">
 														<label class="input">
-															Dirección of domicilio
+															Street Address
 															<input required type="text" name="calle">
 														</label>
 													</section>
@@ -228,12 +228,12 @@
 													</section>
 													<section class="col col-2">
 														<label class="input">
-															Código postal
+															ZIPCODE
 															<input required onkeyup="codpos()" type="text" id="cp" name="cp">
 														</label>
 													</section>
 													<section class="col col-2">
-														País
+														Country
 														<label class="select">
 															<select id="pais" required name="pais">
 															<?php foreach ($pais as $key)
@@ -248,9 +248,9 @@
 												</div>
 											</fieldset>
 											<!--<fieldset>
-												<legend>Estadistica</legend>
+												<legend>Statistics</legend>
 												<div class="row">
-													<section class="col col-3">Estado civil
+													<section class="col col-3">Civil Status
 														<label class="select">
 															<select name="civil" id="civil">
 															<?php foreach ($civil as $key)
@@ -275,7 +275,7 @@
 															<?php }?>
 															</div>
 													</section>
-													<section class="col col-2">Estudio&nbsp;
+													<section class="col col-2">schooling&nbsp;
 														<div class="inline-group">
 															<?php 
 															foreach ($estudios as $value)
@@ -286,7 +286,7 @@
 															<?php }?>
 															</div>
 													</section>
-													<section class="col col-2">Ocupación&nbsp;
+													<section class="col col-2">Occupation&nbsp;
 														<div class="inline-group">
 															<?php 
 															foreach ($ocupacion as $value)
@@ -297,7 +297,7 @@
 															<?php }?>
 															</div>
 													</section>
-													<section class="col col-2">Tiempo dedicado&nbsp;
+													<section class="col col-2">Working time&nbsp;
 														<div class="inline-group">
 															<?php 
 															foreach ($tiempo_dedicado as $value)
@@ -371,7 +371,7 @@
 															<?php }?>
 															</select>
 														</label>
-														<a href="#" onclick="new_grupo()">Agregar grupo <i class="fa fa-plus"></i></a>
+														<a href="#" onclick="new_grupo()">Add grupo <i class="fa fa-plus"></i></a>
 														<a href="#" class="pull-right" onclick="kill_grupo()">Eliminar grupo <i class="fa fa-minus"></i></a>
 													</section>
 													<div>
@@ -383,7 +383,7 @@
 															<label class="label">Imágen</label>
 															<div class="input input-file">
 																<span class="button">
-																	<input id="img" name="img[]" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">
+																	<input id="img" name="img[]" onchange="this.parentNode.nextSibling.value = this.value" type="file" multiple>Buscar</span><input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">
 															</div>
 															<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br /><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>
 														</section>
@@ -423,7 +423,7 @@
 													</section>
 												</fieldset>
 												<fieldset id="moneda_field">
-													<legend>Moneda & país</legend>
+													<legend>Moneda & Country</legend>
 													<section class="col col-2">
 														<label class="input">
 															Cantidad mínima of venta
@@ -472,7 +472,7 @@
 														</label>
 													</section>
 													
-													<section class="col col-3">País of the mercancía
+													<section class="col col-3">Country of the mercancía
 														<label class="select">
 															<select id="pais" required name="pais">
 																<?php foreach ($pais as $key)
@@ -499,7 +499,7 @@
 															<?php }?>
 															</select>
 														</label>
-														<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>
+														<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>
 														<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>
 														<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>
 													</section>
@@ -569,7 +569,7 @@
 								</div>
 								<div class="tab-pane fade" id="s4">
 									<div class="row">
-										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-9"><a href="javascript:void(0)"><h5 onclick="new_pack()">Agregar un nuevo paquete <i class="fa fa-plus"></i></h5></a></div>
+										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-9"><a href="javascript:void(0)"><h5 onclick="new_pack()">Add un nuevo paquete <i class="fa fa-plus"></i></h5></a></div>
 										<div class="col-xs-12 col-md-6 col-sm-4 col-lg-3">
 											Editar <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
 											Eliminar <a title="Eliminar" href="#" class="txt-color-red"><i class="fa fa-trash-o"></i></a> 
@@ -669,7 +669,7 @@
 												<legend>Information of cuenta</legend>
 												<section id="usuario1" class="col col-3">
 													<label class="input"> <i class="icon-prepend fa fa-user"></i>
-														<input id="username1" onkeyup="use_username1()" required type="text" name="username" placeholder="Usuario">
+														<input id="username1" onkeyup="use_username1()" required type="text" name="username" placeholder="Username">
 													</label>
 												</section>
 												<section id="correo1" class="col col-3">
@@ -679,12 +679,12 @@
 												</section>
 												<section class="col col-3">
 													<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-														<input required type="password" name="password" placeholder="Contraseña">
+														<input required type="password" name="password" placeholder="Password">
 													</label>
 												</section>
 												<section class="col col-3">
 													<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-														<input required type="password" name="confirm_password" placeholder="Repite contraseña">
+														<input required type="password" name="confirm_password" placeholder="Repite Password">
 													</label>
 												</section>
 											</fieldset>
@@ -711,7 +711,7 @@
 															}?>
 															</select>
 														</label>
-														<a href="#" onclick="new_empresa()">Agregar empresa <i class="fa fa-plus"></i></a>
+														<a href="#" onclick="new_empresa()">Add empresa <i class="fa fa-plus"></i></a>
 												</section>
 												<section class="col col-3">
 														<label class="input">Comisión por producto
@@ -720,21 +720,21 @@
 													</section>
 											</fieldset>
 											<fieldset>
-											<legend>Datos personales del proveedor</legend>
+											<legend>Personal Info del proveedor</legend>
 												<div class="row">
 													<section class="col col-3">
 														<label class="input"> <i class="icon-prepend fa fa-user"></i>
-															<input required type="text" name="nombre" placeholder="Nombre">
+															<input required type="text" name="nombre" placeholder="Name">
 														</label>
 													</section>
 													<section class="col col-3">
 														<label class="input"> <i class="icon-prepend fa fa-user"></i>
-															<input required type="text" name="apellido" placeholder="Apellido">
+															<input required type="text" name="apellido" placeholder="Lastname">
 														</label>
 													</section>
 													<section class="col col-3">
 														<label class="input"> <i class="icon-append fa fa-calendar"></i>
-															<input required id="datepicker1" type="text" name="nacimiento" placeholder="Fecha of nacimiento">
+															<input required id="datepicker1" type="text" name="nacimiento" placeholder="Birthdate">
 														</label>
 													</section>
 												</div>
@@ -753,10 +753,10 @@
 												</div>
 												<section class="col col-3">
 													<button type="button" onclick="agregar1('1')" class="btn btn-primary">
-														&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+														&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 													</button>
 													<button type="button" onclick="agregar1('2')" class="btn btn-primary">
-														&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+														&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 													</button>
 												</section>
 												</div>
@@ -810,7 +810,7 @@
 												</div>
 												<section class="col col-3">
 													<button type="button" onclick="agregar_cuenta()" class="btn btn-primary">
-														&nbsp;Agregar cuenta &nbsp;
+														&nbsp;Add cuenta &nbsp;
 													</button>
 												</section>
 												</div>
@@ -904,7 +904,7 @@
 												<div id="dir" class="row">
 													<section class="col col-4">
 														<label class="input">
-															Dirección of domicilio
+															Street Address
 															<input required type="text" name="calle">
 														</label>
 													</section>
@@ -922,12 +922,12 @@
 													</section>
 													<section class="col col-2">
 														<label class="input">
-															Código postal
+															ZIPCODE
 															<input required onkeyup="codpos()" type="text" id="cp" name="cp">
 														</label>
 													</section>
 													<section class="col col-2">
-														País
+														Country
 														<label class="select">
 															<select id="pais" required name="pais">
 															<?php foreach ($pais as $key)
@@ -942,9 +942,9 @@
 												</div>
 											</fieldset>
 											<fieldset>
-												<legend>Estadistica</legend>
+												<legend>Statistics</legend>
 												<div class="row">
-													<section class="col col-3">Estado civil
+													<section class="col col-3">Civil Status
 														<label class="select">
 															<select name="civil">
 															<?php foreach ($civil as $key)
@@ -969,7 +969,7 @@
 															<?php }?>
 															</div>
 													</section>
-													<section class="col col-2">Estudio&nbsp;
+													<section class="col col-2">schooling&nbsp;
 														<div class="inline-group">
 															<?php 
 															foreach ($estudios as $value)
@@ -980,7 +980,7 @@
 															<?php }?>
 															</div>
 													</section>
-													<section class="col col-2">Ocupación&nbsp;
+													<section class="col col-2">Occupation&nbsp;
 														<div class="inline-group">
 															<?php 
 															foreach ($ocupacion as $value)
@@ -991,7 +991,7 @@
 															<?php }?>
 															</div>
 													</section>
-													<section class="col col-2">Tiempo dedicado&nbsp;
+													<section class="col col-2">Working time&nbsp;
 														<div class="inline-group">
 															<?php 
 															foreach ($tiempo_dedicado as $value)
@@ -1076,7 +1076,7 @@ $(document).ready(function() {
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -1108,7 +1108,7 @@ $(document).ready(function() {
 			"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -1124,7 +1124,7 @@ $(document).ready(function() {
 	pageSetUp();
 
 })
-function new_user()
+function new _user()
 {
 	var ids=new Array(
 		"#username",
@@ -1141,8 +1141,8 @@ function new_user()
 	var mensajes=new Array(
 		"Por favor ingresa un nombre of usuario",
 		"Por favor ingresa un correo electronico",
-		"Por favor ingresa una contraseña",
-		"Por favor confirma the contraseña",
+		"Por favor ingresa una Password",
+		"Por favor confirma the Password",
 		"Por favor ingresa tu nombre",
 		"Por favor ingresa tu apellido",
 		"Por favor ingresa tu fecha of nacimineto",
@@ -1188,7 +1188,7 @@ function new_user()
 	var validacion=valida_vacios(ids,mensajes);
 	var val_espacios=valida_espacios(ids_esp,mensajes_esp);
 	var val_email=valida_correo(id_ml,eml_mns);
-	var val_psswrds=valida_psswrds(psswrds,"Las contraseñas deben of ser iguales");
+	var val_psswrds=valida_psswrds(psswrds,"Las Passwords deben of ser iguales");
 	var val_tamano=valida_tamano(id_tamano,tamano_min,tamano_max,mensaje_tamano);
 	var val_fecha=valida_fecha(id_fecha,mensaje_fecha);
  	if(val_espacios&&validacion&&val_email&&val_psswrds&&val_tamano&&val_fecha)
@@ -1213,7 +1213,7 @@ function new_user()
 					$("#progress").attr('style','width: 100%');
 					bootbox.dialog({
 						message: "El usuario ha sido registrado",
-						title: "Atención",
+						title: "Attention",
 						buttons: {
 							success: {
 							label: "Ok!",
@@ -1378,7 +1378,7 @@ function formulario()
 				+'<?php }?>'
 				+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="new_grupo()">Agregar grupo <i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="new_grupo()">Add grupo <i class="fa fa-plus"></i></a>'
 			+'<a href="#" class="pull-right" onclick="kill_grupo()">Eliminar grupo <i class="fa fa-minus"></i></a>'
 		+'</section>'
         +'<div>'
@@ -1388,7 +1388,7 @@ function formulario()
             +'<section id="imagenes" class="col col-6">'
                 +'<label class="label">Imágen</label>'
                 +'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
-                    +'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
+                    +'<input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">'
                 +'</div>'
                 +'<small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
             +'</section>'
@@ -1423,7 +1423,7 @@ function formulario()
         +'</section>'
     +'</fieldset>'
     +'<fieldset id="moneda_field">'
-        +'<legend>Moneda & país</legend>'
+        +'<legend>Moneda & Country</legend>'
         +'<section class="col col-2">'
             +'<label class="input">Cantidad mínima of venta'
                 +'<input type="text" name="min_venta">'
@@ -1464,7 +1464,7 @@ function formulario()
 				+'<?php }?>'
 				+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 		+'</section>'
@@ -1479,7 +1479,7 @@ function formulario()
                 +'</select>'
             +'</label>'
         +'</section>'
-        +'<section class="col col-3">País del producto'
+        +'<section class="col col-3">Country del producto'
             +'<label class="select">'
                 +'<select id="pais" required name="pais">'
                     +'<?php foreach ($pais as $key){?>'
@@ -1578,13 +1578,13 @@ function formulario()
             +'<section id="imagenes" class="col col-6">'
                 +'<label class="label">Imágen</label>'
                 +'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
-                    +'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
+                    +'<input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">'
                 +'</div><small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
             +'</section>'
         +'</div>'
     +'</fieldset>'
     +'<fieldset id="moneda_field">'
-        +'<legend>Moneda & país</legend>'
+        +'<legend>Moneda & Country</legend>'
         +'<section class="col col-2">'
 			+'<label class="input">'
 				+'Costo real'
@@ -1615,7 +1615,7 @@ function formulario()
 				+'<?php }?>'
 				+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 		+'</section>'
@@ -1630,7 +1630,7 @@ function formulario()
                 +'</select>'
             +'</label>'
         +'</section>'
-        +'<section class="col col-3">País del producto'
+        +'<section class="col col-3">Country del producto'
             +'<label class="select">'
                 +'<select id="pais" required name="pais">'
                     +'<?php foreach ($pais as $key){?>'
@@ -1749,9 +1749,9 @@ function formulario()
 	       +'</div>'
 		    +'</div>'
 	        +'</fieldset>'
-	        +'<div id="agregar" class=" text-center row"><a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a></div>'
+	        +'<div id="agregar" class=" text-center row"><a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a></div>'
 		    +'<div id="moneda"><fieldset id="moneda_field">'
-        +'<legend>Moneda & país</legend>'
+        +'<legend>Moneda & Country</legend>'
         +'<section class="col col-2">'
 			+'<label class="input">'
 				+'Costo real'
@@ -1782,7 +1782,7 @@ function formulario()
 				+'<?php }?>'
 				+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 		+'</section>'
@@ -1797,7 +1797,7 @@ function formulario()
                 +'</select>'
             +'</label>'
         +'</section>'
-        +'<section class="col col-3">País del producto'
+        +'<section class="col col-3">Country del producto'
             +'<label class="select">'
                 +'<select id="pais" required name="pais">'
                     +'<?php foreach ($pais as $key){?>'
@@ -1821,7 +1821,7 @@ function formulario()
             +'<section id="imagenes" class="col col-6">'
                 +'<label class="label">Imágen</label>'
                 +'<div class="input input-file"><span class="button"><input id="img" name="img[]" onchange="this.parentNode.nextSibling.value=this.value" type="file" multiple>Buscar</span>'
-                    +'<input id="imagen_mr" placeholder="Agregar alguna imágen" readonly="" type="text">'
+                    +'<input id="imagen_mr" placeholder="Add alguna imágen" readonly="" type="text">'
                 +'</div><small>Para cargar múltiples archivos, presione the tecla ctrl & sin soltar selecione sus archivos.<br/><cite title="Source Title">Para ver los archivos que va a cargar, deje the puntero sobre the boton of "Buscar"</cite></small>'
             +'</section>'
         +'</div>'
@@ -1842,7 +1842,7 @@ function tipo_promo()
 		$("#tipo_promo").empty();
 		$("#labelextra").empty();
 		$("#labelextra").append('Descuento del paquete');
-		$('#agregar').append('<a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a>');
+		$('#agregar').append('<a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a>');
 		$('#precio_promo').attr('name','descuento')
 		$("#tipo_promo").append('<section class="col col-2">'
 	           +'<label class="input"><span id="labelextra">Descuento del paquete</span>'
@@ -1886,7 +1886,7 @@ function tipo_promo()
 	        +'</section>'
 	        +'</div>');
 		$("#moneda").append('<fieldset id="moneda_field"> '
-        +'<legend>Moneda & país</legend>'
+        +'<legend>Moneda & Country</legend>'
         +'<section class="col col-2">'
 			+'<label class="input">'
 				+'Costo real'
@@ -1917,7 +1917,7 @@ function tipo_promo()
 				+'<?php }?>'
 				+'</select>'
 			+'</label>'
-			+'<a href="#" onclick="add_impuesto()">Agregar impuesto<i class="fa fa-plus"></i></a>'
+			+'<a href="#" onclick="add_impuesto()">Add impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" clas="pull-right" onclick="new_impuesto()">Nuevo impuesto<i class="fa fa-plus"></i></a>'
 			+'<a href="#" onclick="kill_impuesto()">Eliminar impuesto<i class="fa fa-plus"></i></a>'
 		+'</section>'
@@ -1932,7 +1932,7 @@ function tipo_promo()
                 +'</select>'
             +'</label>'
         +'</section>'
-        +'<section class="col col-3">País del producto'
+        +'<section class="col col-3">Country del producto'
             +'<label class="select">'
                 +'<select id="pais" required name="pais">'
                     +'<?php foreach ($pais as $key){?>'
@@ -2015,7 +2015,7 @@ function tipo_promo()
 			});
 	}
 }
-function new_product()
+function new _product()
 {
 	$('#prods').append('<section class="col col-8">productos'
             +'<label class="select">'
@@ -2034,7 +2034,7 @@ function new_product()
             +'</label>'
         +'</section>');
 }
-function new_service()
+function new _service()
 {
 	$('#servs').append('<section class="col col-8">Services'
 	            +'<label class="select">'
@@ -2053,11 +2053,11 @@ function new_service()
 	            +'</label>'
 	        +'</section>');
 }
-function new_grupo()
+function new _grupo()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del grupo</label><input id='desc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 			label: "Agregar",
@@ -2073,7 +2073,7 @@ function new_grupo()
 					{
 						bootbox.dialog({
 								message: "El grupo fue añadido con exito",
-								title: 'Atención',
+								title: 'Attention',
 								buttons: {
 									success: {
 									label: "Ok",
@@ -2111,7 +2111,7 @@ function kill_grupo()
 					{
 						bootbox.dialog({
 								message: "El grupo fue eliminado con exito",
-								title: 'Atención',
+								title: 'Attention',
 								buttons: {
 									success: {
 									label: "Ok",
@@ -2129,11 +2129,11 @@ function kill_grupo()
 		}
 	})
 }
-function new_impuesto()
+function new _impuesto()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 			label: "Agregar",
@@ -2150,7 +2150,7 @@ function new_impuesto()
 					{
 						bootbox.dialog({
 								message: "El impuesto fue añadido con exito",
-								title: 'Atención',
+								title: 'Attention',
 								buttons: {
 									success: {
 									label: "Ok",
@@ -2188,7 +2188,7 @@ function kill_impuesto()
 					{
 						bootbox.dialog({
 								message: "El impuesto fue eliminado con exito",
-								title: 'Atención',
+								title: 'Attention',
 								buttons: {
 									success: {
 									label: "Ok",
@@ -2482,7 +2482,7 @@ function estatus(tipo,id)
 		})
 	}
 }
-function new_empresa()
+function new _empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
@@ -2518,7 +2518,7 @@ function new_empresa()
 						+'<legend>Dirección of the empresa</legend>'
 							+'<div id="dir" class="row">'
 								+'<section class="col col-6">'
-									+'País'
+									+'Country'
 									+'<label class="select">'
 										+'<select id="pais" required name="pais">'
 										+'<?php foreach ($pais as $key){?>'
@@ -2531,7 +2531,7 @@ function new_empresa()
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input">'
-										+'Código postal'
+										+'ZIPCODE'
 										+'<input required  type="text" id="cp" name="cp">'
 									+'</label>'
 								+'</section>'
@@ -2583,7 +2583,7 @@ function new_empresa()
 					.done(function( msg )
 					{
 						bootbox.dialog({
-						message: "Se agregado the empresa",
+						message: "Se Added the empresa",
 						title: 'Empresa',
 						buttons: {
 							success: {
@@ -2652,7 +2652,7 @@ function check_keyword_co()
 		$("#ajax_1").remove();
 	});
 }
-function new_proveedor()
+function new _proveedor()
 {
 	$.ajax({
 		type: "POST",
@@ -2670,7 +2670,7 @@ function new_proveedor()
 			.done(function( msg ) {
 				bootbox.dialog({
 					message: "Se ha afiliado al usuario",
-					title: "Atención",
+					title: "Attention",
 					buttons: {
 						success: {
 						label: "Ok!",
@@ -2995,7 +2995,7 @@ $("#mercancia").submit(function(event){
 
 });
 
-function new_pack()
+function new _pack()
 {
 	bootbox.dialog({
 		message: '<form id="form_paquete" method="post" action="/bo/admin/alta_paquete" class="smart-form">'
@@ -3076,11 +3076,11 @@ function new_pack()
 						       +'</div>'
 							    +'</div>'
 						        +'</fieldset>'
-						        +'<div id="agregar" class=" text-center row"><a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a></div>'
+						        +'<div id="agregar" class=" text-center row"><a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a></div>'
 					    +'</fieldset>'
 					+'</div>'
 				+'</form>',
-		title: "Agregar paquete",
+		title: "Add paquete",
 		buttons: {
 			submit: {
 			label: "Accept",

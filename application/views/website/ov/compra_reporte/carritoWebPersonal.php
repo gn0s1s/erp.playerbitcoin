@@ -723,13 +723,13 @@
 						}
 						if(!banco)
 						{
-							alert('Seleccione una empresa bancaria');
+							alert('choose una empresa bancaria');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo of tarjeta');
+								alert('choose una tipo of tarjeta');
 							}
 							else
 							{
@@ -747,13 +747,13 @@
 									{
 										if(!mes)
 										{
-											alert('Seleccione un mes');
+											alert('choose un mes');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('Seleccione un año');
+												alert('choose un año');
 											}
 											else
 											{
@@ -810,13 +810,13 @@
 						}
 						if(!banco)
 						{
-							alert('Seleccione una empresa bancaria');
+							alert('choose una empresa bancaria');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('Seleccione una tipo of tarjeta');
+								alert('choose una tipo of tarjeta');
 							}
 							else
 							{
@@ -834,13 +834,13 @@
 									{
 										if(!mes)
 										{
-											alert('Seleccione un mes');
+											alert('choose un mes');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('Seleccione un año');
+												alert('choose un año');
 											}
 											else
 											{

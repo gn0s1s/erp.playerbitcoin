@@ -138,7 +138,7 @@ function enviar()
 	         success: function(msg){
 	        	 bootbox.dialog({
 						message: msg,
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",

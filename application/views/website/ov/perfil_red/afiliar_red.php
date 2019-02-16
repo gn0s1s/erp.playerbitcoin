@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 				  $( ".invalid" ).remove();
 				  
-			  	var ids = new Array( 
+			  	var ids = new  Array(
 						"#nombre",
 					 	"#apellido",
 					 	"#datepicker",
@@ -26,23 +26,23 @@ $(document).ready(function() {
 					 	"#confirm_password"
 					 	
 					 );
-					var mensajes = new Array( 
-						"Por favor ingresa tu nombre",
-					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha of nacimiento",
-					 	"Por favor ingresa tu Identificación",
-					 	"Por favor ingresa un nombre of usuario",
-					 	"Por favor ingresa un correo",
-					 	"Por favor ingresa una contraseña",
-					 	"Por favor confirma tu contraseña"
-					 );
+                  var mensajes = new  Array(
+                      "Please enter your name",
+                      "Please enter your lastname",
+                      "Please enter your birthdate",
+                      "Please enter your idn",
+                      "Please enter an username",
+                      "Please enter an e-mail",
+                      "Please enter a Password",
+                      "Please confirm your Password"
+                  );
 
-					var idss=new Array(
-						"#username"
-					);
-					var mensajess=new Array(
-						"El nombre of usuario no puede contener espacios on blanco"
-					);
+                  var idss=new Array(
+                      "#username"
+                  );
+                  var mensajess=new Array(
+                      "Username cannot contain whitespaces"
+                  );
 					var validacion_=valida_espacios(idss,mensajess);
 					var validacion=valida_vacios(ids,mensajes);
 					if(validacion&&validacion_)
@@ -72,7 +72,7 @@ $(document).ready(function() {
 									$("#progress").attr('style','width: 100%');
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",
@@ -89,8 +89,8 @@ $(document).ready(function() {
 					else
 					{
 						$.smallBox({
-					      title: "<h1>Atención</h1>",
-					      content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
+					      title: "<h1>Attention</h1>",
+					      content: "<h3>Please ckeck that all data is correct</h3>",
 					      color: "#C46A69",
 					      icon : "fa fa-warning fadeInLeft animated",
 					      timeout: 4000
@@ -252,7 +252,7 @@ function botbox(nombre, id, lado)
 					+'<span class="badge badge-info">1</span>Datos of registro<span class="chevron"></span>'
 				+'</li>'
 				+'<li data-target="#step2_r">'
-					+'<span class="badge">2</span>Datos personales<span class="chevron"></span>'
+					+'<span class="badge">2</span>Personal Info<span class="chevron"></span>'
 				+'</li>'
 				
 			+'</ul>'
@@ -273,16 +273,16 @@ function botbox(nombre, id, lado)
 							+'<legend>Information of cuenta</legend>'
 							+'<section id="usuario" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
-								+'<input id="username" onkeyup="use_username()" required="" name="username" placeholder="Usuario" type="text">'
+								+'<input id="username" onkeyup="use_username()" required="" name="username" placeholder="Username" type="text">'
 								+'</label>'
 							+'</section>'
 							+'<section id="correo" class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-envelope-o"></i>'
-								+'<input id="email" onkeyup="use_mail()" required="" name="email" placeholder="Dirección of Correo Electrónico" type="email">'
+								+'<input id="email" onkeyup="use_mail()" required="" name="email" placeholder="Account E-mail" type="email">'
 							+'</label></section>'
 								+'<section class="col col-6">'
 								+'<label class="input"><i class="icon-prepend fa fa-lock"></i>'
-								+'<input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Contraseña">'
+								+'<input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Password">'
 								+'</label>'
 							+'</section>'
 							+'<section id="confirmar_password" class="col col-6">'
@@ -296,11 +296,11 @@ function botbox(nombre, id, lado)
 				+'<div class="step-pane" id="step2_r">'
 					+'<form method="POST" action="/perfil_red/afiliar_nuevo_r/'+id+'" id="afiliar_red" class="smart-form" novalidate="novalidate">'
 						+'<fieldset>'
-							+'<legend>Datos personales del afiliado</legend>'
+							+'<legend>Personal Info del afiliado</legend>'
 							+'<div class="row">'
 								+'<section class="col col-6">'
 									+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
-									+'<input id="nombre" required type="text" name="nombre" placeholder="Nombre(s)">'
+									+'<input id="nombre" required type="text" name="nombre" placeholder="Name">'
 									+'<input required type="hidden" id="id" name="afiliados" value="'+id+'">'
 									//+'<input id="mail_important" required type="hidden" name="mail_important" value="">'
 									+'<input id="lado" required type="hidden" name="lado" value="'+lado+'">'
@@ -309,12 +309,12 @@ function botbox(nombre, id, lado)
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input"><i class="icon-prepend fa fa-user"></i>'
-									+'<input id="apellido" required type="text" name="apellido" placeholder="Apellidos (paterno y/o materno)">'
+									+'<input id="apellido" required type="text" name="apellido" placeholder="Lastname">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input"><i class="icon-append fa fa-calendar"></i>'
-									+'<input required id="datepicker" type="date"  name="nacimiento" placeholder="Fecha of nacimiento" readonly="readonly">'
+									+'<input required id="datepicker" type="date"  name="nacimiento" placeholder="Birthdate" readonly="readonly">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-6" id="key_red">'
@@ -339,8 +339,8 @@ function botbox(nombre, id, lado)
 								+'</div>'
 								+'<div id="" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'
 								+'<section class="col col-12">'
-									+'<button type="button" onclick="agregar_red(1)" class="btn btn-primary">&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;</button>&nbsp;'
-									+'<button type="button" onclick="agregar_red(2)" class="btn btn-primary">&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;</button>'
+									+'<button type="button" onclick="agregar_red(1)" class="btn btn-primary">&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;</button>&nbsp;'
+									+'<button type="button" onclick="agregar_red(2)" class="btn btn-primary">&nbsp;Add <i class="fa fa-phone"></i>&nbsp;</button>'
 								+'</section>'
 								+'</div>'
 							+'</div>'
@@ -350,17 +350,17 @@ function botbox(nombre, id, lado)
 							+'<div class="row">'
 								+'<section class="col col-4">'
 									+'<label class="input">'
-										+'<input placeholder="Nombre" type="text" name="nombre_co">'
+										+'<input placeholder="Name" type="text" name="nombre_co">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-4">'
 									+'<label class="input"> '
-										+'<input placeholder="Apellido" type="text" name="apellido_co">'
+										+'<input placeholder="Lastname" type="text" name="apellido_co">'
 									+'</label>'
 								+'</section>'
 								+'<section class="col col-4" id="key_red_co">'
 									+'<label id="key_3" class="input"> <i class=" icon-prepend fa fa-users"></i>'
-										+'<!-- check_keyword_red_co() --><input onkeyup="" placeholder="Parentesco" type="text" name="keyword_co" id="keyword_red_co">'
+										+'<!-- check_keyword_red_co() --><input onkeyup="" placeholder="relationship" type="text" name="keyword_co" id="keyword_red_co">'
 									+'</label>'
 								+'</section>'
 							+'</div>'
@@ -370,14 +370,14 @@ function botbox(nombre, id, lado)
 								+'<section class="col col-12">'
 									+'<label class="toggle">'
 									+'<input type="checkbox" checked="checked" name="sponsor">'
-									+'<i data-swchoff-text="No" data-swchon-text="Si"></i>Soy su sponsor</label>'
-									+'<small>Si eres the sponsor of este afiliado, estará como frontal on tus comisiones</small>'
+									+'<i data-swchoff-text="No" data-swchon-text="Si"></i>I'm Sponsor</label>'
+									+'<small>if I'm Sponsor, i can get direct earnings from this member</small>'
 								+'</section>'
 						+'</fieldset>'
 						+'<fieldset>'
-							+'<legend>Dirección del afiliado</legend>'
+							+'<legend>Home Adress</legend>'
 							+'<div id="dir_red" class="row">'
-								+'<section class="col col-6">País'
+								+'<section class="col col-6">Country'
 									+'<label class="select">'
 										+'<select id="pais_red" required name="pais"><?foreach ($pais as $key){?>'
 											+'<option value="<?=$key->Code?>"><?=$key->Name?></option><?}?>'
@@ -386,12 +386,12 @@ function botbox(nombre, id, lado)
 								+'</section>'
 								+'<section id="municipio" class="col col-6">'
 									+'<label class="input">'
-									+'Ciudad - Estado'
+									+'City/State'
 										+'<input type="text" name="estado" >'
 									+'</label>'
 								+'</section>'
 								+'<section id="municipio_red" class="col col-6">'
-									+'<label class="input">Delegación o Municipio'
+									+'<label class="input">Town/District'
 									+'<input type="text" name="municipio" >'
 									+'</label>'
 								+'</section>'
@@ -403,14 +403,14 @@ function botbox(nombre, id, lado)
 								+'</section>'
 
 								+'<section class="col col-6">'
-									+'<label class="input">Dirección of domicilio'
+									+'<label class="input">Street Address'
 									+'<input required type="text" name="calle">'
-									+'(Calle,No. Exterior,No. Interior)'
+									+'()'
 									+'</label>'
 								+'</section>'
 								
 								+'<section class="col col-6">'
-									+'<label class="input">Código postal'
+									+'<label class="input">ZIPCODE'
 										+'<input required type="text" id="cp_red" name="cp">'
 									+'</label>'
 								+'</section>'
@@ -418,37 +418,37 @@ function botbox(nombre, id, lado)
 							+'</div>'
 						+'</fieldset>'
 						+'<fieldset>'
-							+'<legend>Estadistica</legend>'
+							+'<legend>Statistics</legend>'
 							+'<div class="row">'
-								+'<section class="col col-6">Estado civil'
+								+'<section class="col col-6">Civil Status'
 									+'<label class="select">'
 									+'<select name="civil"><?foreach ($civil as $key){?>'
 									+'<option value="<?=$key->id_edo_civil?>"><?=$key->descripcion?></option><?}?>'
 									+'</select>'
 									+'</label>'
 								+'</section>'
-								+'<section class="col col-6">Género&nbsp;'
+								+'<section class="col col-6">Gender&nbsp;'
 									+'<div class="inline-group"><?foreach ($sexo as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_sexo==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_sexo?>" name="sexo" placeholder="sexo"><i></i><?=$value->descripcion?>'
 									+'</label><?}?>'
 									+'</div>'
 								+'</section>'
-								+'<section class="col col-12">Estudio&nbsp;'
+								+'<section class="col col-12">schooling&nbsp;'
 									+'<div class="inline-group"><?foreach ($estudios as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_estudio==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_estudio?>" name="estudios"><i></i><?=$value->descripcion?>'
 									+'</label><?}?>'
 									+'</div>'
 								+'</section>'
-								+'<section class="col col-6">Ocupación&nbsp;'
+								+'<section class="col col-6">Occupation&nbsp;'
 									+'<div class="inline-group"><?foreach ($ocupacion as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_ocupacion==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_ocupacion?>" name="ocupacion"><i></i><?=$value->descripcion?>'
 									+'</label><?}?>'
 									+'</div>'
 								+'</section>'
-								+'<section class="col col-6">Tiempo dedicado&nbsp;'
+								+'<section class="col col-6">Working time&nbsp;'
 									+'<div class="inline-group"><?foreach ($tiempo_dedicado as $value){?>'
 									+'<label class="radio">'
 									+'<input <?=($value->id_tiempo_dedicado==1) ? "checked" : " " ?> type="radio" value="<?=$value->id_tiempo_dedicado?>" name="tiempo_dedicado"><i></i><?=$value->descripcion?>'
@@ -461,138 +461,13 @@ function botbox(nombre, id, lado)
 						+'<input type="text" class="hide" name="id" value="<?php echo $id; ?>" placeholder="">'
 					+'</form>'
 				+'</div>'
-				+'<div class="step-pane" id="step3_r">'
-					+'<div class="row">'
-						+'<br />'
-					+'</div>'
-					+'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'
-						+'<div class="row">'
-					        +'<div id="planuno_r" class="col-xs-12 col-sm-6 col-md-6">'
-					            +'<div class="panel panel-success pricing-big">'
-					                +'<div class="panel-heading">'
-					                    +'<h3 class="panel-title">'
-					                       +'<i class="fa fa-plane"></i> Plan despegue</h3>'
-					                +'</div>'
-					                +'<div class="panel-body no-padding text-align-center">'
-					                    +'<div class="the-price">'
-					                        +'<h1>'
-					                            +'<strong>$85.25 USD</strong></h1>'
-					                    +'</div>'
-										+'<div class="price-features">'
-											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>8%</strong> of ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>60</strong> Points of commissions</h1></li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Aloe Detox (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Vita Live (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>'
-									        +'</ul>'
-										+'</div>'
-					                +'</div>'
-					                +'<div class="panel-footer text-align-center">'
-					                    +'<a id="plan1_r" href="#" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>'
-					                +'</div>'
-					            +'</div>'
-					        +'</div>'
-					        +'<div id="plandos_r" class="col-xs-12 col-sm-6 col-md-6">'
-					            +'<div class="panel panel-teal pricing-big">'
-					            	
-					                +'<div class="panel-heading">'
-					                    +'<h3 class="panel-title">'
-					                        +'<i class="fa fa-bar-chart-o"></i> Plan avance</h3>'
-					                +'</div>'
-					                +'<div class="panel-body no-padding text-align-center">'
-					                    +'<div class="the-price">'
-					                        +'<h1>'
-					                            +'<strong>$164.00 USD</strong></h1>'
-					                    +'</div>'
-										+'<div class="price-features">'
-											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>10%</strong> of ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>135</strong> Points of commissions</h1></li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>4</strong> Aloe Detox (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>3</strong> Vita Live (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>1</strong> Linea Gala</li>'
-									        +'</ul>'
-										+'</div>'
-					                +'</div>'
-					                +'<div class="panel-footer text-align-center">'
-					                    +'<a id="plan2_r" href="#" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>'
-					                +'</div>'
-					            +'</div>'
-					        +'</div>'
-					        
-					        +'<div id="plantres_r" class="col-xs-12 col-sm-6 col-md-6">'
-					            +'<div class="panel panel-primary pricing-big">'
-					            	+'<img src="/template/img/ribbon.png" class="ribbon" alt="">'
-					                +'<div class="panel-heading">'
-					                    +'<h3 class="panel-title">'
-					                        +'<i class="fa fa-suitcase"></i> Plan empresarial</h3>'
-					                +'</div>'
-					                +'<div class="panel-body no-padding text-align-center">'
-					                    +'<div class="the-price">'
-					                        +'<h1>'
-					                            +'<strong>$454.25 USD</strong></h1>'
-					                    +'</div>'
-										+'<div class="price-features">'
-											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>12%</strong> of ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>420</strong> Points of commissions</h1></li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>10</strong> Aloe Detox (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>9</strong> Vita Live (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>4</strong> Linea Gala</li>'
-									        +'</ul>'
-										+'</div>'
-					               +'</div>'
-					                +'<div class="panel-footer text-align-center">'
-					                    +'<a id="plan3_r" href="#" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>'
-					                +'</div>'
-					            +'</div>'
-					        +'</div>'
-					        +'<div id="plancuatro_r" class="col-xs-12 col-sm-6 col-md-6">'
-					            +'<div class="panel panel-darken pricing-big">'
-					                +'<div class="panel-heading">'
-					                    +'<h3 class="panel-title">'
-					                        +'<i class="fa fa-signal"></i> <i class="fa fa-male"></i> Plan inversionista</h3>'
-					                +'</div>'
-					                +'<div class="panel-body no-padding text-align-center">'
-					                    +'<div class="the-price">'
-					                        +'<h1>'
-					                            +'<strong>$920.00 USD</strong></h1>'
-					                    +'</div>'
-										+'<div class="price-features">'
-											+'<ul class="list-unstyled text-left">'
-									          	+'<li><h1><i class="fa fa-check text-success"></i> <strong>15%</strong> of ganancia</h1></li>'
-									        	+'<li><h1><i class="fa fa-check text-success"></i> <strong>850</strong> Points of commissions</h1></li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>20</strong> Aloe Detox (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>20</strong> Vita Live (6 pack)</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <strong>8</strong> Linea Gala</li>'
-									        	+'<li><i class="fa fa-check text-success"></i> <small>Podrás modificar the cantidad of producto que tengan the mismo precio que no insida on the valor & puntaje del plan</small></li>'
-									        +'</ul>'
-										+'</div>'
-					                +'</div>'
-					                +'<div class="panel-footer text-align-center">'
-					                    +'<a id="plan4_r" href="#" class="btn btn-primary btn-block" role="button">Seleccionar</span></a>'
-					                +'</div>'
-					            +'</div>'
-					        +'</div>'		    	
-			    		+'</div>'
-			    		+'<br />'
-			    		+'<a id="remove_step_r" href="#" class="btn btn-primary btn-block" role="button">Purchase the plan después</span></a>'
-			    	+'</div>'
-				+'</div>'
-				+'<div class="step-pane" id="step4_r">'
-				+'<div class="well">'
-					+'<p>El pago se realizara despues on the enttrega of su primer pedido</p>'
-				+'</div>'
-				+'</div>'
-
 			+'</div>'
 		+'</div>'
 		+'</div>'
 		+'<script>'
 		+' $(function()'
 		+ '{'
-		 +	'a = new Date();'
+		 +	'a = new  Date();'
 			+'año = a.getFullYear()-19;'
 			+'$( "#datepicker" ).datepicker({'
 			+'changeMonth: true,'
@@ -609,7 +484,7 @@ function botbox(nombre, id, lado)
 
 		  $( ".invalid" ).remove();
 			
-			  		var ids = new Array( 
+			  		var ids = new  Array(
 					"#nombre",
 				 	"#apellido",
 				 	"#datepicker",
@@ -620,23 +495,23 @@ function botbox(nombre, id, lado)
 				 	"#confirm_password"
 				 	
 					 );
-					var mensajes = new Array( 
-						"Por favor ingresa tu nombre",
-					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha of nacimiento",
-					 	"Por favor ingresa tu Identificación",
-					 	"Por favor ingresa un nombre of usuario",
-					 	"Por favor ingresa un correo",
-					 	"Por favor ingresa una contraseña",
-					 	"Por favor confirma tu contraseña"
-					 );
+                    var mensajes = new  Array(
+                        "Please enter your name",
+                        "Please enter your lastname",
+                        "Please enter your birthdate",
+                        "Please enter your idn",
+                        "Please enter an username",
+                        "Please enter an e-mail",
+                        "Please enter a Password",
+                        "Please confirm your Password"
+                    );
 
-					var idss=new Array(
-						"#username"
-					);
-					var mensajess=new Array(
-						"El nombre of usuario no puede contener espacios on blanco"
-					);
+                    var idss=new Array(
+                        "#username"
+                    );
+                    var mensajess=new Array(
+                        "Username cannot contain whitespaces"
+                    );
 					var validacion_=valida_espacios(idss,mensajess);
 					var validacion=valida_vacios(ids,mensajes);
 					if(validacion&&validacion_)
@@ -658,7 +533,7 @@ function botbox(nombre, id, lado)
 			                       type:"POST"}).done(function( msg ) {
 			                       	bootbox.dialog({
 											message: msg,
-											title: "Atención",
+											title: "Attention",
 											buttons: {
 												success: {
 												label: "Ok!",
@@ -678,7 +553,7 @@ function botbox(nombre, id, lado)
 				else
 				{
 					$.smallBox({
-				      title: "<h1>Atención</h1>",
+				      title: "<h1>Attention</h1>",
 				      content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
 				      color: "#C46A69",
 				      icon : "fa fa-warning fadeInLeft animated",
@@ -831,7 +706,7 @@ function detalles(id)
 		<!-- START ROW -->
 		<div class="row">
 			
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -848,10 +723,7 @@ function detalles(id)
 						data-widget-sortable="false"
 						
 					-->
-					<header>
-						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>
-					</header>
+
 
 					<!-- widget div-->
 					<div style="height: 35rem; overflow: auto;">
@@ -875,7 +747,7 @@ function detalles(id)
 										<div class="tree1" style="width: 10000rem;">
 											<ul>
 												<li>
-													<a style="background: url('<?=$img_perfil?>'); background-size: cover; background-position: center;" href="#"><div class="nombre">Tú</div></a>
+													<a style="background: url('<?=$img_perfil?>'); background-size: cover; background-position: center;" href="#"><div class="nombre">You</div></a>
 													<ul>
 													<?
 													$aux =0;
@@ -887,7 +759,7 @@ function detalles(id)
                                                         {?>
 														<li id="<?=$key->id_afiliado?>">
 															<a class="quitar" style="background: url('<?=$img?>'); background-size: cover; background-position: center;" onclick="subred(<?=$key->id_afiliado?>, 1)" href="#"></a>
-															<div onclick="detalles(<?=$key->id_afiliado?>)" class="<?=($key->directo==$id) ? 'todo1' : 'todo'?>"><?=$key->afiliado?> <?=$key->afiliado_p?><br />Detalles</div>
+															<div onclick="detalles(<?=$key->id_afiliado?>)" class="<?=($key->directo==$id) ? 'todo1' : 'todo'?>"><?=$key->afiliado?> <?=$key->afiliado_p?><br />Details</div>
 														</li>
 														<?}
 													}?>

@@ -191,7 +191,7 @@
 																$("#progress") .attr( 'style', 'width: 100%');
 																bootbox .dialog({
 																			message : msg,
-																			title : "Atención",
+																			title : "Attention",
 																			buttons : {
 																				success : {
 																					label : "Ok!",
@@ -206,7 +206,7 @@
 															});
 										} else {
 											$ .smallBox({
-														title : "<h1>Atención</h1>",
+														title : "<h1>Attention</h1>",
 														content : "<h3>Por favor revisa que todos los datos estén correctos</h3>",
 														color : "#C46A69",
 														icon : "fa fa-warning fadeInLeft animated",
@@ -305,7 +305,7 @@ function faseCambio(fase) {
 
 	bootbox.dialog({
 		message : "¿Estas Seguro?",
-		title : "Atención",
+		title : "Attention",
 		buttons : {
 			success : {
 				label : "Si",

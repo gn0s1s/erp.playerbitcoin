@@ -15,7 +15,7 @@
 										<a href="/bo/comercial/red_tabla">Listar Afiliados</a>
 									</span>
 									<span>>
-										<a href="/bo/comercial/tipos_de_red_grafico_2?id_afiliado=<?php echo $id;?>">Selección of Network</a> > Arbol 2 <?php echo $nombre_red[0]->nombre;?>
+										<a href="/bo/comercial/tipos_de_red_grafico_2?id_afiliado=<?php echo $id;?>">Selección of Network</a> > Tree 2 <?php echo $nombre_red[0]->nombre;?>
 									</span>
                               </h1>
                          </div>
@@ -25,7 +25,7 @@
                     
                          <!-- row -->
                          <div class="row">
-                              <!-- NEW WIDGET START -->
+                              <!-- new  WIDGET START -->
                               <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     
                                    <!-- Widget ID (each widget will need unique ID)-->
@@ -70,7 +70,7 @@
                                                              <ul>
                                                                  <li>
                                                                      <a style="background: url('<?= $img_perfil ?>'); background-size: cover; background-position: center;" href="#">
-                                                                         <div class="nombre">Tú</div></a>
+                                                                         <div class="nombre">You</div></a>
                                                                      <ul>
                                                                          <?php
                                                                          $aux = 0;
@@ -85,7 +85,7 @@
                                                                                         onclick="subtree(<?= $key->id_afiliado ?>, <?php echo $id_red; ?>)" href="#"></a>
                                                                                      <div onclick="detalles(<?= $key->id_afiliado ?>)" 
                                                                                           class="<?= ($key->directo == 0) ? 'todo' : 'todo1' ?>">
-                                                                                                <?= $key->afiliado ?> <?= $key->afiliado_p ?><br />Detalles
+                                                                                                <?= $key->afiliado ?> <?= $key->afiliado_p ?><br />Details
                                                                                      </div>
                                                                                  </li>
                                                                              <?php
@@ -112,16 +112,7 @@
                                    <!-- end widget -->
                               </article>
                               <!-- WIDGET END -->
-                         </div>
-                         <!-- end row -->
-                         <!-- row -->
-                         <div class="row">         
-	        <!-- a blank row to get started -->
-					        <div class="col-sm-12">
-					            <br />
-					            <br />
-					        </div>
-				        </div> 
+
                          <!-- end row -->
                     </section>
                     <!-- end widget grid -->

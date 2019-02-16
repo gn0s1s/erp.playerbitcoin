@@ -22,7 +22,7 @@
                         </div>
 
                         <div class="col col-md-12 text-center margin-top-10 ">
-                            <h1>SELECCIONE UNA of LAS OPCIONES</h1>
+                            <h1>choose UNA of LAS OPCIONES</h1>
                         </div>
 
                         <div class="col col-md-12 margin-top-10">

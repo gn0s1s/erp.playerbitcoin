@@ -7,7 +7,7 @@
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
 							<a href="/ov/wallet"> > Profit Wallet</a>
-							 > Pedir Plata</span>
+							 > Withdrawals</span>
 							
 						</h1>
 					</div>
@@ -29,7 +29,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->
@@ -56,7 +56,7 @@
 													<thead>
 														<tr>
 															<th> <i class="fa fa-sitemap"></i> Network</th>
-															<th> <i class="fa fa-money"></i> Comision</th>
+															<th> <i class="fa fa-money"></i> Commission</th>
 														</tr>
 													</thead>
 													<tbody>
@@ -93,16 +93,16 @@
 														
 														if($comision_todo["ganancias"][$i][0]->valor<>0){
 															echo '<tr class="success" >
-																<td colspan="2"><i class="fa fa-money"></i>Comisiones</td>
+																<td colspan="2"><i class="fa fa-money"></i>Commissions</td>
 															</tr>';
 														
 															echo '<tr class="success">
-															<td>&nbsp;&nbsp;Comisiones Directas</td>
+															<td>&nbsp;&nbsp;Sponsored Commissions</td>
 																<td>$ '.number_format($comision_todo["directos"][$i][0]->valor,2).'</td>
 															</tr>';
 														
 															echo '<tr class="success">
-															<td>&nbsp;&nbsp;Comisiones Indirectas</td>
+															<td>&nbsp;&nbsp;Spillover Commissions</td>
 																<td>$ '.number_format($comision_todo["ganancias"][$i][0]->valor - $comision_todo["directos"][$i][0]->valor,2).'</td>
 															</tr>';
 														
@@ -157,13 +157,13 @@
 													
 													<?php if ($transaction) { ?>	
 														<tr class="warning">
-															<td colspan="2"><b>TRANSACCIONES EMPRESA</b></td>
+															<td colspan="2"><b>Wallet movements</b></td>
 														</tr>
 													<?php if ($transaction['add']) {
 															$total_transact+=$transaction['add'];
 														?>
 														<tr class="warning">
-															<td ><b>Total Agregado</b></td>
+															<td ><b>Total Added</b></td>
 															<td ><b style="color: green">$ <?php echo number_format($transaction['add'],2);?></b></td>
 														</tr>
 													<?php } 
@@ -171,7 +171,7 @@
 														$total_transact-=$transaction['sub'];
 														?>
 														<tr class="warning" >
-															<td ><b>Total Quitado</b></td>
+															<td ><b>Total removed</b></td>
 															<td ><b style="color: red">$ <?php echo number_format($transaction['sub'],2);?></b></td>
 														</tr>
 													<?php } ?>
@@ -203,7 +203,7 @@
 																	} ?>
 																
 																	<tr class="danger">
-																		<td><b>Cobros Pendientes</b></td>
+																		<td><b>Pending Withdrawal</b></td>
 																		<td></td>
 																		<td>$ <?php 
 																		if($cobroPendientes==null)
@@ -216,7 +216,7 @@
 																	<?php foreach ($cobro as $cobros){
 																	?>
 																	<tr class="danger">
-																		<td><b>Cobros Pagos</b></td>
+																		<td><b>Succeeded Withdrawal</b></td>
 																		<td></td>
 																		<td>$ 
 																		<?php 
@@ -233,7 +233,7 @@
 																	<?php 
 																	}?>
 																	<tr class="info">
-																		<td><h4><b>Saldo Neto</b></h4>
+																		<td><h4><b>Clear Status </b></h4>
 																		<td></td>
 																		<td><h4><b>
 																		$ 
@@ -253,7 +253,7 @@
 														<form action="send_mail" method="post" id="contact-form1"  class="smart-form col-xs-12 col-sm-8 col-md-6 col-lg-6">
 																<fieldset>
 																	<section class="col col-4">
-																		<label class="label "><b>Saldo Disponible</b></label>
+																		<label class="label "><b>Available Balance</b></label>
 																		<label class="input input state-success">
 																			<input type="text" name="saldo"  class="from-control" id="saldo" 
 																			value="<?php 																		
@@ -265,14 +265,14 @@
 																		</label>
 																	</section>
 																	<section class="col col-4">
-																		<label class="label"><b>Pedir Dinero</b></label>
+																		<label class="label"><b>Withdrawals</b></label>
 																		<label class="input">
 																			<i class="icon-prepend fa fa-money"></i>
 																			<input name="cobro" type="number" min="0.01" step="0.01" class="from-control" id="cobro"/>
 																		</label>
 																	</section>
 																	<section class="col col-4">
-																		<label class="label"><b>Saldo Final</b></label>
+																		<label class="label"><b>Final Balance</b></label>
 																		<label class="input state-disabled state-error">
 																			<input value="" type="number" disabled="disabled" name="neto" id="neto" class="from-control" readonly />
 																		</label>
@@ -281,19 +281,19 @@
 																<fieldset>
 																<header >
 																	<h2><span class="widget-icon"> <i class="fa fa-bank"></i> </span>
-																	Datos Bancarios</h2>
+																	Bank Account Info</h2>
 											
 																</header>
 																<br>
 																	<section class="col col-6">
-																		<label class="label"><b>Titular Cuenta</b></label>
+																		<label class="label"><b>Account Titular</b></label>
 																		<label class="input">
 																		<i class="icon-prepend fa fa-user"></i>
 																			<input required name="ctitular" type="text" value="<?=$cuenta[0]->titular?>" class="from-control" id="ctitular"/>
 																		</label>
 																	</section>
 																	<section class="col col-6">
-																		<label class="label"><b>País</b></label>
+																		<label class="label"><b>Country</b></label>
 																		<label class="select">
 																			<select id="cpais" required name="cpais">
 																			<?php foreach ($pais as $key){																				
@@ -311,7 +311,7 @@
 																		</label>
 																	</section>	
 																	<section class="col col-6">
-																		<label class="label "><b>Numero of the cuenta</b></label>
+																		<label class="label "><b>Account Number</b></label>
 																		<label class="input input">
 																		<i class="icon-prepend fa fa-credit-card"></i>
 																			<input type="number" name="ncuenta" value="<?=$cuenta[0]->cuenta?>" class="from-control" id="ncuenta" value="" required/>
@@ -325,7 +325,7 @@
 																		</label>
 																	</section>	
 																	<section class="col col-6">
-																		<label class="label"><b>Codigo Swift</b></label>
+																		<label class="label"><b>SwiftCode</b></label>
 																		<label class="input">
 																		<i class="icon-prepend fa fa-sort-numeric-desc"></i>
 																			<input name="cswift" type="text" class="from-control" value="<?=$cuenta[0]->swift?>" id="cswift"/>
@@ -339,14 +339,14 @@
 																		</label>
 																	</section>
 																	<section class="col col-6">
-																		<label class="label"><b>CLABE (Solo on Mexico)</b></label>
+																		<label class="label"><b>CLABE (ONLY Mexico)</b></label>
 																		<label class="input">
 																			<i class="icon-prepend fa fa-sort-numeric-desc"></i>
 																			<input name="cclabe" type="text" class="from-control" value="<?=$cuenta[0]->clabe?>" id="cclabe"/>
 																		</label>
 																	</section>
 																	<section class="col col-6">
-																		<label class="label"><b>Dirección Postal</b></label>
+																		<label class="label"><b>ZIPCODE</b></label>
 																		<label class="input input">
 																		<i class="icon-prepend fa fa-sort-numeric-desc"></i>
 																			<input value="" type="number" name="cpostal" value="<?=$cuenta[0]->dir_postal?>" id="cpostal" class="from-control" />
@@ -357,7 +357,7 @@
 																<footer>
 																	<button type="button" onclick="cobrar()" class="btn btn-success" id="enviar">
 																	<i class="glyphicon glyphicon-ok"></i>
-																		Cobrar
+																		Submit
 																	</button>
 																</footer>
 															</form>

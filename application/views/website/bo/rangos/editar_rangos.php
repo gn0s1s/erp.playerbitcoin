@@ -12,7 +12,7 @@
 							<fieldset>
 								<input type="text" class="hide" name="id" value="<?php echo $_POST['id']; ?>" id="id">
 								<label class="input"> Nombre
-								<input type="text" name="nombre" required placeholder="Nombre" id="nombre" style="width: 50%;" class="form-control" value="<?php echo $rangos[0]->nombre; ?>" required>
+								<input type="text" name="nombre" required placeholder="Name" id="nombre" style="width: 50%;" class="form-control" value="<?php echo $rangos[0]->nombre; ?>" required>
 								<label class="input"> Descripción
 								<textarea type="text" name="descripcion" required placeholder="Descripción" id="descripcion" style="width: 50%;" class="form-control" value="" required><?php echo $rangos[0]->descripcion; ?></textarea>
 								<label class="input"> Condiciones
@@ -39,7 +39,7 @@
 										<div class="col col-lg-3 col-xs-2">
 										</div>
 								<!--  <div class="col col-lg-2 col-xs-2">
-											<a style="cursor: pointer;" onclick="add_rango('.<?php echo $j ?>.')"> Agregar Condición <i class="fa fa-plus"></i></a>
+											<a style="cursor: pointer;" onclick="add_rango('.<?php echo $j ?>.')"> Add Condición <i class="fa fa-plus"></i></a>
 										</div> -->
 									</div>
 		
@@ -127,7 +127,7 @@
 });
 
 	function validar_rangos_repetidos(){
-		var  rangos = new Array();
+		var  rangos = new  Array();
 		var rango_repetido=false;
 $('select[name="id_tipo_condicion[]"]').each(function() {	
 	rangos.push($(this).val());
@@ -158,7 +158,7 @@ function enviar() {
 							FinalizarSpinner();
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

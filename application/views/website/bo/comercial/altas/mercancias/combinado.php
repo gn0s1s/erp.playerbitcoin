@@ -28,7 +28,7 @@ if ($this->session->flashdata ( 'error' )) {
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- nueva COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -51,10 +51,10 @@ if ($this->session->flashdata ( 'error' )) {
 									value="<?php echo $_GET['id']; ?>" name="tipo_mercancia">
 								<fieldset>
 									<legend>
-										País</span>
+										Country</span>
 									</legend>
 									<section class="col col-2">
-										País del combinado <label class="select"> <select id="pais"
+										Country del combinado <label class="select"> <select id="pais"
 											required name="pais" id="pais" onChange="select_pais()">
 												<option value="-" selected>-- Seleciona un pais --</option>
 														<?php foreach ($pais as $key){?>
@@ -154,7 +154,7 @@ if ($this->session->flashdata ( 'error' )) {
 												</div>
 											</fieldset>
 											<div id="agregar" class=" text-center row">
-												<a onclick="new_product()">Agregar producto <i
+												<a onclick="new_product()">Add producto <i
 													class="fa fa-plus"></i></a> <a onclick="new_service()">Agregar
 													servicio <i class="fa fa-plus"></i>
 												</a>
@@ -270,7 +270,7 @@ if ($this->session->flashdata ( 'error' )) {
 																onchange="this.parentNode.nextSibling.value = this.value"
 																type="file" multiple>Buscar
 															</span><input id="imagen_mr"
-																placeholder="Agregar alguna imágen" type="text" required>
+																placeholder="Add alguna imágen" type="text" required>
 														</div>
 														<small><cite title="Source Title">Para ver los archivos
 																que va a cargar, deje the puntero sobre the boton de
@@ -343,7 +343,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = nueva ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -375,7 +375,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = nueva ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -391,9 +391,9 @@ $(document).ready(function() {
 	pageSetUp();
 
 })
-function new_user()
+function nueva_user()
 {
-	var ids=new Array(
+	var ids=nuevaArray(
 		"#username",
 		"#email",
 		"#password",
@@ -405,11 +405,11 @@ function new_user()
 		"#cp",
 		"#calle"
 		);
-	var mensajes=new Array(
+	var mensajes=nuevaArray(
 		"Por favor ingresa un nombre of usuario",
 		"Por favor ingresa un correo electronico",
-		"Por favor ingresa una contraseña",
-		"Por favor confirma the contraseña",
+		"Por favor ingresa una Password",
+		"Por favor confirma the Password",
 		"Por favor ingresa tu nombre",
 		"Por favor ingresa tu apellido",
 		"Por favor ingresa tu fecha of nacimineto",
@@ -417,13 +417,13 @@ function new_user()
 		"Por favor ingresa tu codigo postal",
 		"Por favor ingresa tu dirección"
 		);
-	var id_ml=new Array(
+	var id_ml=nuevaArray(
 		"#email"
 		);
-	var eml_mns=new Array(
+	var eml_mns=nuevaArray(
 		"Por favor ingrese un correo valido"
 		);
-	var psswrds=new Array(
+	var psswrds=nuevaArray(
 		"#password",
 		"#confirm_password"
 		);
@@ -445,17 +445,17 @@ function new_user()
 	var mensaje_fecha=Array(
 		"El formato of al fecha es incorrecto (aaaa-mm-dd)"
 		);
-	var ids_esp=new Array(
+	var ids_esp=nuevaArray(
 		"#username"
 		);
-	var mensajes_esp=new Array(
+	var mensajes_esp=nuevaArray(
 		"El nombre of usuario no puede contener espacios on blanco"
 		);
 	
 	var validacion=valida_vacios(ids,mensajes);
 	var val_espacios=valida_espacios(ids_esp,mensajes_esp);
 	var val_email=valida_correo(id_ml,eml_mns);
-	var val_psswrds=valida_psswrds(psswrds,"Las contraseñas deben of ser iguales");
+	var val_psswrds=valida_psswrds(psswrds,"Las Passwords deben of ser iguales");
 	var val_tamano=valida_tamano(id_tamano,tamano_min,tamano_max,mensaje_tamano);
 	var val_fecha=valida_fecha(id_fecha,mensaje_fecha);
 	if(val_espacios&&validacion&&val_email&&val_psswrds&&val_tamano&&val_fecha)
@@ -480,7 +480,7 @@ function new_user()
 				$("#progress").attr('style','width: 100%');
 				bootbox.dialog({
 					message: "El usuario ha sido registrado",
-					title: "Atención",
+					title: "Attention",
 					buttons: {
 						success: {
 							label: "Ok!",
@@ -608,7 +608,7 @@ $(function()
 	});
 });
 
-function new_product()
+function nueva_product()
 {
 	$('#prods').append('<div id="'+ipj+'pj">'
 		+'<section class="col col-8" id="ProductosPais'+ipj+'" name="ProductosPais'+ipj+'">productos'
@@ -633,7 +633,7 @@ function new_product()
 	ipj = parseInt(ipj) + 1;
 	
 }
-function new_service()
+function nueva_service()
 {
 	$('#servs').append('<div id="'+isj+'sj">'
 		+'<section class="col col-8" id="ServicioPais'+isj+'" name="ServicioPais'+isj+'">Services'
@@ -687,7 +687,7 @@ function delete_service_adicional(id){
 	}
 }
 function validar_productos(){
-	var  Impuesto = new Array();
+	var  Impuesto = nueva Array();
 	var contador=0;
 $('select[name="producto[]"]').each(function() {	
 	Impuesto.push($(this).val());
@@ -696,7 +696,7 @@ $('select[name="producto[]"]').each(function() {
 return contador;
 }
 function validar_servicios(){
-	var  Impuesto = new Array();
+	var  Impuesto = nueva Array();
 	var contador=0;
 $('select[name="servicio[]"]').each(function() {	
 	Impuesto.push($(this).val());
@@ -704,11 +704,11 @@ $('select[name="servicio[]"]').each(function() {
 });	
 return contador;
 }
-function new_grupo()
+function nueva_grupo()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del grupo</label><input id='desc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 				label: "Agregar",
@@ -724,7 +724,7 @@ function new_grupo()
 					{
 						bootbox.dialog({
 							message: "El grupo fue añadido con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -743,11 +743,11 @@ function new_grupo()
 	})
 }
 
-function new_impuesto()
+function nueva_impuesto()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
-		title: 'Agregar grupo',
+		title: 'Add grupo',
 		buttons: {
 			success: {
 				label: "Agregar",
@@ -764,7 +764,7 @@ function new_impuesto()
 					{
 						bootbox.dialog({
 							message: "El impuesto fue añadido con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -802,7 +802,7 @@ function kill_impuesto()
 					{
 						bootbox.dialog({
 							message: "El impuesto fue eliminado con exito",
-							title: 'Atención',
+							title: 'Attention',
 							buttons: {
 								success: {
 									label: "Ok",
@@ -1096,7 +1096,7 @@ function estatus(tipo,id)
 		})
 	}
 }
-function new_empresa()
+function nueva_empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
@@ -1132,7 +1132,7 @@ function new_empresa()
 		+'<legend>Dirección of the empresa</legend>'
 		+'<div id="dir" class="row">'
 		+'<section class="col col-6">'
-		+'País'
+		+'Country'
 		+'<label class="select">'
 		+'<select id="pais" required name="pais">'
 		+'<?php foreach ($pais as $key){?>'
@@ -1145,7 +1145,7 @@ function new_empresa()
 		+'</section>'
 		+'<section class="col col-6">'
 		+'<label class="input">'
-		+'Código postal'
+		+'ZIPCODE'
 		+'<input required  type="text" id="cp" name="cp">'
 		+'</label>'
 		+'</section>'
@@ -1197,7 +1197,7 @@ function new_empresa()
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se agregado the empresa",
+							message: "Se Added the empresa",
 							title: 'Empresa',
 							buttons: {
 								success: {
@@ -1266,7 +1266,7 @@ function check_keyword_co()
 		$("#ajax_1").remove();
 	});
 }
-function new_proveedor()
+function nueva_proveedor()
 {
 	$.ajax({
 		type: "POST",
@@ -1284,7 +1284,7 @@ function new_proveedor()
 		.done(function( msg ) {
 			bootbox.dialog({
 				message: "Se ha afiliado al usuario",
-				title: "Atención",
+				title: "Attention",
 				buttons: {
 					success: {
 						label: "Ok!",
@@ -1448,7 +1448,7 @@ $("#mercancia").submit(function(event){
 	}
 	if(tipo_merc==2)
 	{
-		var ids=new Array(
+		var ids=nuevaArray(
 			"#nombre_s",
 			"#concepto",
 			"#startdate",
@@ -1460,7 +1460,7 @@ $("#mercancia").submit(function(event){
 			"#entrega",
 			"#puntos_com"
 			);
-		var mensajes=new Array(
+		var mensajes=nuevaArray(
 			"Por favor ingresa un nombre del producto",
 			"Por favor ingresa un concepto",
 			"Por favor ingrese the fecha of inicio",
@@ -1487,12 +1487,12 @@ $("#mercancia").submit(function(event){
 			"El formato of the fecha es incorrecto (aaaa-mm-dd)"
 			);
 		
-		var id_dec=new Array(
+		var id_dec=nuevaArray(
 			"#real",
 			"#costo",
 			"#costo_publico"
 			);
-		var msj_dec=new Array(
+		var msj_dec=nuevaArray(
 			"El costo real debe of ser un numero",
 			"El costo debe of ser un numero",
 			"El costo_publico debe of ser un numero"
@@ -1512,7 +1512,7 @@ $("#mercancia").submit(function(event){
 		var tipo_promo=("#tipo").val();
 		if(tipo_promo==1)
 		{
-			var ids=new Array(
+			var ids=nuevaArray(
 				"#nombre_pr",
 				"#prod_qty",
 				"#serv_qty",
@@ -1523,7 +1523,7 @@ $("#mercancia").submit(function(event){
 				"#entrega",
 				"#puntos_com"
 				);
-			var mensajes=new Array(
+			var mensajes=nuevaArray(
 				"Por favor ingresa un nombre del producto",
 				"Por favor especifica the cantidad of producto",
 				"Por favor especifica the cantidad of servicio",
@@ -1546,12 +1546,12 @@ $("#mercancia").submit(function(event){
 				"La cantidad of servcio debe ser un numero entero"
 				);
 			
-			var id_dec=new Array(
+			var id_dec=nuevaArray(
 				"#real",
 				"#costo",
 				"#costo_publico"
 				);
-			var msj_dec=new Array(
+			var msj_dec=nuevaArray(
 				"El costo real debe of ser un numero",
 				"El costo debe of ser un numero",
 				"El costo_publico debe of ser un numero"
@@ -1567,14 +1567,14 @@ $("#mercancia").submit(function(event){
 		}
 		if(tipo_promo==2)
 		{
-			var ids=new Array(
+			var ids=nuevaArray(
 				"#nombre_pr",
 				"#n_mercancia",
 				"#startdate",
 				"#finishdate",
 				"#precio_promo"
 				);
-			var mensajes=new Array(
+			var mensajes=nuevaArray(
 				"Por favor ingresa un nombre of the promocion",
 				"Por favor ingresa the cantidad of mercancia",
 				"Por favor ingrese the fecha of inicio",
@@ -1620,7 +1620,7 @@ $("#mercancia").submit(function(event){
 
 	});
 
-function new_pack()
+function nueva_pack()
 {
 	bootbox.dialog({
 		message: '<form id="form_paquete" method="post" action="/bo/admin/alta_paquete" class="smart-form">'
@@ -1701,11 +1701,11 @@ function new_pack()
 		+'</div>'
 		+'</div>'
 		+'</fieldset>'
-		+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Agregar producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Agregar servicio <i class="fa fa-plus"></i></a></div>'
+		+'<div id="agregar" class=" text-center row"><a onclick="new_product()">Add producto <i class="fa fa-plus"></i></a>  <a  onclick="new_service()">Add servicio <i class="fa fa-plus"></i></a></div>'
 		+'</fieldset>'
 		+'</div>'
 		+'</form>',
-		title: "Agregar paquete",
+		title: "Add paquete",
 		buttons: {
 			submit: {
 				label: "Accept",
@@ -1801,7 +1801,7 @@ function ImpuestosPais2(id){
 }
 
 function validar_rangos_repetidos(){
-		var  rangos = new Array();
+		var  rangos = nueva Array();
 		var rango_repetido=false;
 		var cont=0;
 $('select[name="producto[]"]').each(function() {	
@@ -2003,7 +2003,7 @@ function ServicioPorPaisAgregado(id){
 	});
 }
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = nueva Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	

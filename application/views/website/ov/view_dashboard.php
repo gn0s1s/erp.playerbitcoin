@@ -83,7 +83,7 @@
 											                                ?>
 											                               <b>Sponsor:</b>
 											                              <?=$name_sponsor[0]->nombre?> <?=$name_sponsor[0]->apellido?> con id <?=$id_sponsor[0]->id_usuario?><br/>
-											
+
 											                              <?php }else{?>
 											                              You're Network Head, Sponsored by The Business<br />
 											                              <?php }}?>
@@ -95,7 +95,7 @@
 																			</div>
 																			<div class="col-sm-12">
 																				<br>
-																				<?php if($titulo!=NULL) 
+																				<?php if($titulo!=NULL)
 																					echo '<ul id="sparks" class="">
 																						<li class="sparks-info">
 																						<h5>Ranking<span class="txt-color-yellow"><i class="fa fa-trophy fa-2x"></i>'.$titulo.'</span></h5>
@@ -105,11 +105,11 @@
 																					 ?>
 																			</div>
 																			<div class="col-sm-12">
-						
+
 																				<br>
-						
+
 																			</div>
-						
+
 																		</div>
 																	</ul>
 																	<br>
@@ -603,7 +603,7 @@
 											<div class="col-sm-2">
 												<a href="news">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-														<h5><i class="fa fa-bullhorn "></i> News</h5>
+														<h5><i class="fa fa-bullhorn "></i> new s</h5>
 													</div>
 												</a>
 											</div>

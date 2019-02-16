@@ -21,7 +21,7 @@
 					<!-- row -->
 					<div class="row">
 				
-						<!-- NEW WIDGET START -->
+						<!-- new  WIDGET START -->
 						<article class="col-sm-12 col-md-12 col-lg-6">
 				
 							<!-- Widget ID (each widget will need unique ID)-->

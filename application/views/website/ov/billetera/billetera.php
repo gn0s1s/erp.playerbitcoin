@@ -26,7 +26,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->
@@ -64,17 +64,17 @@
 														<?if($estatus=="DES"){?>
 													<form action="/ov/billetera/crea_pswd" method="post" id="review-form" class="smart-form">
 														<header>
-															Crear una nueva contraseña
+															Crear una new Password
 														</header>
 														<fieldset>
 															<section>
 																<label class="input"> <i class="icon-append fa fa-lock"></i>
-																	<input name="password" id="password" placeholder="Contraseña" type="password">
+																	<input name="password" id="password" placeholder="Password" type="password">
 																</label>
 															</section>
 															<section>
 																<label class="input"> <i class="icon-append fa fa-lock"></i>
-																	<input name="confirm_password" id="confirm_password" placeholder="Repite contraseña" type="password">
+																	<input name="confirm_password" id="confirm_password" placeholder="Repite Password" type="password">
 																</label>
 															</section>
 														</fieldset>
@@ -92,7 +92,7 @@
 															<fieldset>
 																<section>
 																	<label class="input"> <i class="icon-append fa fa-lock"></i>
-																		<input name="password" id="password" placeholder="Contraseña" type="password">
+																		<input name="password" id="password" placeholder="Password" type="password">
 																	</label>
 																</section>
 															</fieldset>
@@ -182,7 +182,7 @@ function crea_pswd()
 
 			bootbox.dialog({
 			message: msg,
-			title: "Contraseña",
+			title: "Password",
 			buttons: {
 				success: {
 				label: "Ok!",

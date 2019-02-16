@@ -8,7 +8,7 @@
 							<i class="fa-fw fa fa-home"></i> 
 								<a href="/bo/dashboard"> Menu</a> 
 							<span>>
-								<a href="/bo/comercial">Comercial</a> > Reportes
+								<a href="/bo/comercial">Comercial</a> >Reports
 							</span>
 						</h1>
 					</div>
@@ -16,7 +16,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"

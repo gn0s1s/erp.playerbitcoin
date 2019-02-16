@@ -4,7 +4,7 @@
 		<!-- START ROW -->
 		<div class="row">
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -428,7 +428,7 @@
 																			<option value="PER">Peru</option>
 																			<option value="PHL">Philippines</option>
 																			<option value="PLW">Palau</option>
-																			<option value="PNG">Papua New Guinea</option>
+																			<option value="PNG">Papua new  Guinea</option>
 																			<option value="POL">Poland</option>
 																			<option value="PRI">Puerto Rico</option>
 																			<option value="PRK">North Korea</option>
@@ -575,7 +575,7 @@
 																	</div>
 																</section>
 																<section class="col col-2">
-																	Ocupación&nbsp;
+																	Occupation&nbsp;
 																	<div class="inline-group">
 																		<label class="radio"> <input checked
 																			type="radio" value="1" name="ocupacion"> <i></i>Estudiante
@@ -591,7 +591,7 @@
 																	</div>
 																</section>
 																<section class="col col-2">
-																	Tiempo dedicado&nbsp;
+																	Working time&nbsp;
 																	<div class="inline-group">
 																		<label class="radio"> <input checked
 																			type="radio" value="1" name="tiempo_dedicado">

@@ -24,7 +24,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row"> 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -52,7 +52,7 @@
 				
 			</section>
 			<section class="col col-lg-10 col-md-12 col-sm-12 col-xs-12" id="" style="padding-right: 100px ! important;">
-				<legend><i class="fa fa-comments fa-1x"></i> &nbsp;Nueva Notificación</legend><br>
+				<legend><i class="fa fa-comments fa-1x"></i> &nbsp;newNotificación</legend><br>
 			</section>
 		</div>
 		
@@ -85,7 +85,7 @@
 				</label>
 				
 				<label class="input" style="padding-left: 50px;">	
-					<input required name="nombre" placeholder="Nombre" type="text" id="nombre">
+					<input required name="nombre" placeholder="Name" type="text" id="nombre">
 				</label>	
 			</section>
 		</div>
@@ -166,7 +166,7 @@
 
 $(function()
 		 {
-		 	a = new Date();
+		 	a = new  Date();
 			año = a.getFullYear()+20;
 			$( "#fecha_inicio" ).datepicker({
 			changeMonth: true,
@@ -180,7 +180,7 @@ $(function()
 
 $(function()
 		 {
-		 	a = new Date();
+		 	a = new  Date();
 			año = a.getFullYear()+20;
 			$( "#fecha_fin" ).datepicker({
 			changeMonth: true,

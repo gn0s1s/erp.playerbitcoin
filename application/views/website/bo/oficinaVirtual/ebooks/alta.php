@@ -26,7 +26,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1"
@@ -74,7 +74,7 @@
                                                             id="busquedatodos">
                                                             <label class="label">Nombre del e-book</label> <label
                                                                 class="input"> <input name="nombre" id="nombre"
-                                                                                  placeholder="Nombre" type="text" id="nombre_publico"
+                                                                                  placeholder="Name" type="text" id="nombre_publico"
                                                                                   required>
                                                             </label>
                                                         </section>
@@ -101,7 +101,7 @@
                                                                      onchange="this.parentNode.nextSibling.value = this.value"
                                                                      name="userfile1" type="file" >Buscar
                                                                 </span><input name="file_nme"
-                                                                  placeholder="Seleccione the archivo del e-book on formato pdf"
+                                                                  placeholder="choose the archivo del e-book on formato pdf"
                                                                   type="text" id="file_frm" required readonly="readonly">
                                                             </div>
                                                         </section>
@@ -116,7 +116,7 @@
                                                                      onchange="this.parentNode.nextSibling.value = this.value"
                                                                      name="userfile2" type="file">Buscar
                                                                 </span><input name="file_nme_2"
-                                                                      placeholder="Seleccione una imagen para the e-book"
+                                                                      placeholder="choose una imagen para the e-book"
                                                                       type="text" id="file_frm_2" required readonly="readonly">
                                                             </div>
                                                         </section>

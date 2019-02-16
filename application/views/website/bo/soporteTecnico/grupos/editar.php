@@ -3,7 +3,7 @@
 							<fieldset>
 								<input type="text" class="hide" value="<?php echo $_POST['id']; ?>" name="id">
 								<label class="hide">
-								<label class="label">Seleccione una categoria</label>
+								<label class="label">choose una categoria</label>
 									<select name="tipo" id="tipo" required="" style="width: 20rem">
 										<option value="INF" <?php if($grupo[0]->tipo=="INF")echo 'selected="selected"';?>>Information</option>
 										<option value="VID" <?php if($grupo[0]->tipo=="VID")echo 'selected="selected"';?>>Videos</option>
@@ -11,7 +11,7 @@
 								</label>
 								<br>
 								<label class="select">
-								<label class="label">Seleccione the Category Network</label>
+								<label class="label">choose the Category Network</label>
 									<select name="red" id="red" required="">
 										<?php 
 											foreach ($redes as $red){
@@ -25,7 +25,7 @@
 								</label>
 								<br>
 								<label class="input"> Nombre
-								<input type="text" id="descripcion" name="descripcion" placeholder="Nombre" style="width: 50%;" class="form-control" value="<?php echo $grupo[0]->descripcion; ?>" required>
+								<input type="text" id="descripcion" name="descripcion" placeholder="Name" style="width: 50%;" class="form-control" value="<?php echo $grupo[0]->descripcion; ?>" required>
 								<br>
 							</fieldset>
 							<footer>
@@ -54,7 +54,7 @@ function enviar() {
 							
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",

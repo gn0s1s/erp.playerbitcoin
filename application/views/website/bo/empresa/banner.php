@@ -42,7 +42,7 @@
 		<!-- START ROW -->
 		<div class="row">
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -119,7 +119,7 @@
 																onchange="this.parentNode.nextSibling.value = this.value"
 																type="file" value="<?$img[0]->nombre_banner?>" multiple>Buscar
 															</span><?$img[0]->nombre_banner?><input id="imagen_mr"
-																placeholder="Agregar alguna imágen" value="<?=$img[0]->nombre_banner?>" type="text">
+																placeholder="Add alguna imágen" value="<?=$img[0]->nombre_banner?>" type="text">
 														</div>
 														<small><cite
 															title="Source Title">Para ver the archivo que va a cargar, pulse con the puntero on the boton of "Buscar"</cite>
@@ -182,7 +182,7 @@ function enviar()
 		{
 			bootbox.dialog({
 			message: msg,
-			title: 'Atención !!!',
+			title: 'Attention !!!',
 			buttons: {
 				success: {
 				label: "Accept",

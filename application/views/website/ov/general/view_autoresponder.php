@@ -39,7 +39,7 @@
 		<!-- START ROW -->
 		<div class="row">
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -201,7 +201,7 @@ function enviar()
 		{
 			bootbox.dialog({
 			message: msg,
-			title: 'Atención !!!',
+			title: 'Attention !!!',
 			buttons: {
 				success: {
 				label: "Accept",

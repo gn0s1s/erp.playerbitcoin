@@ -471,7 +471,7 @@ function index()
 		
 		if(isset($banco[0]->id_banco)){
 		echo '<div class="jumbotron">
-				<h1>Felicitaciones!</h1>
+				<h1>Congratulations!</h1>
 				<p>La transacción ha finalizado con éxito.</p>
 				<p class="text-danger">
 					Para terminar tu compra debes enviar un correo electrónico con el comprobante de pago al departamento de 
@@ -1587,10 +1587,10 @@ function index()
 		if($_POST['password']==$_POST['confirm_password'])
 		{
 			$this->modelo_compras->crea_pswd($id);
-			echo "Tu contraseña ha sido creada con exito";
+			echo "Tu Password ha sido creada con exito";
 		}
 		else
-		echo "Error tu contraseña contiene errores, por favor verificalo";
+		echo "Error tu Password contiene errores, por favor verificalo";
 	}
 	
 	function preOrdenEstadisticas($id,$red){
@@ -2644,7 +2644,7 @@ function index()
 					<th >Apellido</th>
 					<th data-hide='phone,tablet'>Email</th>
 					<th data-hide='phone,tablet'>Sexo</th>
-					<th data-hide='phone,tablet'>Estado Civil</th>
+					<th data-hide='phone,tablet'>Civil Status</th>
 				</thead>
 				<tbody>";
 		for($i=0;$i<sizeof($afiliados);$i++)

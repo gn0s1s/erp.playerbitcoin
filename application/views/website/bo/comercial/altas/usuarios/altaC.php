@@ -38,7 +38,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -107,7 +107,7 @@
 											echo form_open($this->uri->uri_string()); ?>
 											<legend>Nuevo Agente CEDI</legend>
 											<fieldset>
-												<label class="label">Seleccione the CEDI al que pertenecerá</label>
+												<label class="label">choose the CEDI al que pertenecerá</label>
 												<label class="select">
 													<select name="id_cedi" id="id_cedi" required>
 														<?php foreach ($cedis as $cedi) {?>
@@ -118,7 +118,7 @@
 													</select>
 												</label>
 												<br>
-												<label class="label">País</label>
+												<label class="label">Country</label>
 												<label class="select">
 													<select name="id_pais" id="id_pais" required>
 														<?php foreach ($paises as $pais) {
@@ -141,7 +141,7 @@
 												</label>
 												<br/>
 												<?php } ?>
-												<label class="label">Dirección of Correo Electrónico</label>
+												<label class="label">Account E-mail</label>
 												<label class="input">
 													<?php echo form_input($email); ?>
 												</label>
@@ -150,13 +150,13 @@
 												</label>
 											</fieldset>
 											<fieldset>
-												<label class="label">Número of Identificación</label>
+												<label class="label">IDN</label>
 												<label class="input">
 													<input name="dni" value="" id="dni" maxlength="60" size="30" type="text" required /> 
 												</label>
 												<label class="txt-color-red"></label>
 												<br/>
-												<label class="label">Nombre(s)</label>
+												<label class="label">Name</label>
 												<label class="input">
 													<input name="nombre" value="" id="username" maxlength="60" size="30" type="text" required>
 												</label>
@@ -175,7 +175,7 @@
 												<label class="txt-color-red"></label>
 											</fieldset>
 											<fieldset>
-												<label class="label">Contraseña</label>
+												<label class="label">Password</label>
 												<label class="input">
 													<?php echo form_password($password); ?>
 												</label>
@@ -200,7 +200,7 @@
 												echo 
 												"
 													<div class='callout'>
-														Atención, No se ha hallado ningún CEDI disponible. 
+														Attention, No se ha hallado ningún CEDI disponible. 
 														<br/>
 														<hr/>
 														<br/>
@@ -239,7 +239,7 @@
 			</div>
 			<!-- END MAIN CONTENT -->
 <<script type="text/javascript">
-function new_user()
+function new _user()
 {
 	var tipo=$("#tipo").val();
 	if(tipo!="")
@@ -291,7 +291,7 @@ function new_user()
 					nextText : '<i class="fa fa-chevron-right"></i>'
 				});
 				
-				function new_user()
+				function new _user()
 				{
 					var tipo=$("#tipo").val();
 					if(tipo!="")

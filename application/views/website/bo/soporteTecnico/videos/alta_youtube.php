@@ -27,7 +27,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -64,7 +64,7 @@
 											<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12" id="busquedatodos">
 												<label class="label">Nombre del video</label>
 												<label class="input">	
-													<input name="nombre_publico" placeholder="Nombre" type="text" id="nombre_publico" required>
+													<input name="nombre_publico" placeholder="Name" type="text" id="nombre_publico" required>
 												</label>	
 											</section>
 										</div>
@@ -89,7 +89,7 @@
 												<section class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 												<label class="label">Imagen</label>
 													<div class="input input-file">
-														<span class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile" type="file" required>Buscar</span><input placeholder="Seleccione un archivo" readonly="" type="text">
+														<span class="button"><input id="file" onchange="this.parentNode.nextSibling.value = this.value" name="userfile" type="file" required>Buscar</span><input placeholder="choose un archivo" readonly="" type="text">
 													</div>
 												</section>
 										</div><br>

@@ -12,7 +12,7 @@
 							<fieldset>
 								<input type="text" class="hide" name="id" value="<?php echo $_POST['id']; ?>" id="id">
 								<label class="input"> Nombre
-								<input type="text" name="nombre" required placeholder="Nombre" id="nombre" style="width: 50%;" class="form-control" value="<?=$plan[0]->nombre; ?>" required>
+								<input type="text" name="nombre" required placeholder="Name" id="nombre" style="width: 50%;" class="form-control" value="<?=$plan[0]->nombre; ?>" required>
 								</label>
 								<label class="input"> Descripcion
 								<textarea name="descripcion" placeholder="Descripción" id="descripcion" style="width: 50%;" class="form-control" required ><?=$plan[0]->descripcion; ?></textarea>
@@ -26,7 +26,7 @@
 										<div class="col col-lg-3 col-xs-2">
 										</div>
 										<div class="col col-lg-2 col-xs-2">
-											<a style="cursor: pointer;" onclick="add_bono('<?php echo $j+1 ?>')"> Agregar Bono <i class="fa fa-plus"></i></a>
+											<a style="cursor: pointer;" onclick="add_bono('<?php echo $j+1 ?>')"> Add Bono <i class="fa fa-plus"></i></a>
 										</div>
 									</div>
 		
@@ -39,7 +39,7 @@
 										<div class="col col-lg-2">
 										</div>';
 											echo '<div class="col col-xs-12 col-sm-6 col-lg-3" id="id_bono_plan[]">'.
-											'<label class="select">Seleccione Bono</label>'.
+											'<label class="select">choose Bono</label>'.
 											'<label class="select">'.
 											'<select id="id_bono_plan[]" name="id_bono_plan[]" onmouseenter="set_bono($(this).val(),\'bono'.$i.'\');" onchange="set_bono($(this).val(),\'bono'.$i.'\');">';
 										foreach ($bonos as $categoria) {
@@ -92,7 +92,7 @@ $( "#planes" ).submit(function( event ) {
 });
 
 function validar_bonos_repetidos(){
-		var bonos = new Array();
+		var bonos = new  Array();
 		var bono_repetido=false;
 $('select[name="id_bono_plan[]"]').each(function() {	
 	bonos.push($(this).val());
@@ -161,7 +161,7 @@ function add_bono(id)
 	+'<div class="col col-lg-2">'
 	+'</div>'
 	+'<div class="col col-xs-12 col-sm-6 col-lg-3">'
-		+'<label class="select">Seleccione bono'
+		+'<label class="select">choose bono'
 		+'<select id="id_bono_plan[]" name="id_bono_plan[]" onmouseenter="set_bono($(this).val(),\'bono'+id+'\');" onChange="set_bono($(this).val(),\'bono'+id+'\');">'		
 		+'<?php	echo $select_bonos; ?>'
 	+'</select>'

@@ -18,7 +18,7 @@
 
             $(".invalid").remove();
 
-            var ids = new Array(
+            var ids = new  Array(
                     "#nombre",
                     "#apellido",
                     "#datepicker",
@@ -29,21 +29,21 @@
                     "#confirm_password"
 
                     );
-            var mensajes = new Array(
+            var mensajes = new  Array(
                     "Por favor ingresa tu nombre",
                     "Por favor ingresa tu apellido",
-                    "Por favor ingresa tu fecha of nacimiento",
+                    "Por favor ingresa tu Birthdate",
                     "Por favor ingresa tu DNI",
                     "Por favor ingresa un nombre of usuario",
                     "Por favor ingresa un correo",
-                    "Por favor ingresa una contraseña",
-                    "Por favor confirma tu contraseña"
+                    "Por favor ingresa una Password",
+                    "Por favor confirma tu Password"
                     );
 
-            var idss = new Array(
+            var idss = new  Array(
                     "#username"
                     );
-            var mensajess = new Array(
+            var mensajess = new  Array(
                     "El nombre of usuario no puede contener espacios on blanco"
                     );
             var validacion_ = valida_espacios(idss, mensajess);
@@ -100,7 +100,7 @@
                                                         $("#progress").attr('style', 'width: 100%');
                                                         bootbox.dialog({
                                                             message: msg,
-                                                            title: "Atención",
+                                                            title: "Attention",
                                                             buttons: {
                                                                 success: {
                                                                     label: "Ok!",
@@ -123,7 +123,7 @@
             } else
             {
                 $.smallBox({
-                    title: "<h1>Atención</h1>",
+                    title: "<h1>Attention</h1>",
                     content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
                     color: "#C46A69",
                     icon: "fa fa-warning fadeInLeft animated",
@@ -292,7 +292,7 @@
     }
     $(function ()
     {
-        a = new Date();
+        a = new  Date();
         año = a.getFullYear() - 18;
         $("#datepicker").datepicker({
             changeMonth: true,
@@ -371,7 +371,7 @@
         <!-- START ROW -->
         <div class="row">
 
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -390,7 +390,7 @@
                     -->
                     <header>
                         <span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-                        <h2>Datos personales</h2>
+                        <h2>Personal Info</h2>
                     </header>
 
                     <!-- widget div-->
@@ -415,7 +415,7 @@
                                                     <span class="badge badge-info">1</span>Datos del registro<span class="chevron"></span>
                                                 </li>
                                                 <li data-target="#step2">
-                                                    <span class="badge">2</span>Datos personales<span class="chevron"></span>
+                                                    <span class="badge">2</span>Personal Info<span class="chevron"></span>
                                                 </li>
                                                 <?php /* ocultar afiliado ?><li data-target="#step3">
                                                   <span class="badge">3</span>Selección del plan<span class="chevron"></span>
@@ -443,7 +443,7 @@
                                                             <legend>Information of cuenta</legend>
                                                             <section id="usuario" class="col col-6">
                                                                 <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                                    <input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Usuario">
+                                                                    <input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Username">
                                                                 </label>
                                                             </section>
                                                             <section id="correo" class="col col-6">
@@ -453,12 +453,12 @@
                                                             </section>
                                                             <section class="col col-6">
                                                                 <label class="input"> <i class="icon-prepend fa fa-lock"></i>
-                                                                    <input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Contraseña">
+                                                                    <input id="password" onkeyup="confirm_pass()" required type="password" name="password" placeholder="Password">
                                                                 </label>
                                                             </section>
                                                             <section id="confirmar_password" class="col col-6">
                                                                 <label class="input"> <i class="icon-prepend fa fa-lock"></i>
-                                                                    <input id="confirm_password" onkeyup="confirm_pass()" required type="password" name="confirm_password" placeholder="Repite contraseña">
+                                                                    <input id="confirm_password" onkeyup="confirm_pass()" required type="password" name="confirm_password" placeholder="Repite Password">
                                                                 </label>
                                                             </section>
                                                         </fieldset>
@@ -467,23 +467,23 @@
                                                 <div class="step-pane" id="step2">
                                                     <form method="POST" action="/perfil_red/afiliar_nuevo" id="checkout-form" class="smart-form" novalidate="novalidate">
                                                         <fieldset>
-                                                            <legend>Datos personales del afiliado</legend>
+                                                            <legend>Personal Info del afiliado</legend>
                                                             <input required type="hidden" id="afiliados" name="afiliados" value="<?= $debajo_de ?>">
                                                             <input id="lado" required type="hidden" name="lado" value="<?= $lado ?>">
                                                             <div class="row">
                                                                 <section class="col col-3">
                                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                                        <input id="nombre" required type="text" name="nombre" placeholder="Nombre">
+                                                                        <input id="nombre" required type="text" name="nombre" placeholder="Name">
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-3">
                                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                                        <input id="apellido" required type="text" name="apellido" placeholder="Apellido">
+                                                                        <input id="apellido" required type="text" name="apellido" placeholder="Lastname">
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-3">
                                                                     <label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-                                                                        <input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of nacimiento" readonly="readonly">
+                                                                        <input required id="datepicker" type="text" name="nacimiento" placeholder="Birthdate" readonly="readonly">
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-3" id="key">
@@ -492,7 +492,7 @@
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-2">
-                                                                    Tipo of persona
+                                                                    Law Type
                                                                     <label class="select">
                                                                         <select id="tipo_fiscal" required name="fiscal">
                                                                             <?foreach ($tipo_fiscal as $key)
@@ -521,10 +521,10 @@
                                                                 </div>
                                                                 <section class="col col-3">
                                                                     <button type="button" onclick="agregar('1')" class="btn btn-primary">
-                                                                        &nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+                                                                        &nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
                                                                     </button>
                                                                     <button type="button" onclick="agregar('2')" class="btn btn-primary">
-                                                                        &nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+                                                                        &nbsp;Add <i class="fa fa-phone"></i>&nbsp;
                                                                     </button>
                                                                 </section>
                                                             </div>
@@ -535,12 +535,12 @@
                                                             <div class="row">
                                                                 <section class="col col-4">
                                                                     <label class="input">
-                                                                        <input placeholder="Nombre" type="text" name="nombre_co">
+                                                                        <input placeholder="Name" type="text" name="nombre_co">
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-4">
                                                                     <label class="input"> 
-                                                                        <input placeholder="Apellido" type="text" name="apellido_co">
+                                                                        <input placeholder="Lastname" type="text" name="apellido_co">
                                                                     </label>
                                                                 </section>
                                                                 <section class="col col-4" id="key_co">
@@ -551,10 +551,10 @@
                                                             </div>
                                                         </fieldset>
                                                         <fieldset>
-                                                            <legend>Dirección del afiliado</legend>
+                                                            <legend>Home Adress</legend>
                                                             <div id="dir" class="row">
                                                                 <section class="col col-2">
-                                                                    <div class="">País
+                                                                    <div class="">Country
                                                                         <label class="select">
                                                                             <select style=""  id="pais" required name="pais">
                                                                                 <?foreach ($pais as $key)
@@ -583,21 +583,21 @@
 
                                                                 <section id="colonia" class="col col-2">
                                                                     <label class="input">
-                                                                        Colonia
+                                                                        Town/District 
                                                                         <input type="text" name="colonia" >
                                                                     </label>
                                                                 </section>
 
                                                                 <section class="col col-2">
                                                                     <label class="input">
-                                                                        Dirección of domicilio
+                                                                        Street Address
                                                                         <input required type="text" name="calle">
                                                                     </label>
                                                                 </section>
 
                                                                 <section class="col col-2">
                                                                     <label class="input">
-                                                                        Código postal
+                                                                        ZIPCODE
                                                                         <input required type="text" id="cp" name="cp">
                                                                     </label>
                                                                 </section>
@@ -605,9 +605,9 @@
                                                             </div>
                                                         </fieldset>
                                                         <fieldset>
-                                                            <legend>Estadistica</legend>
+                                                            <legend>Statistics</legend>
                                                             <div class="row">
-                                                                <section class="col col-3">Estado civil
+                                                                <section class="col col-3">Civil Status
                                                                     <label class="select">
                                                                         <select name="civil">
                                                                             <?foreach ($civil as $key)
@@ -632,7 +632,7 @@
                                                                         <?}?>
                                                                     </div>
                                                                 </section>
-                                                                <section class="col col-2">Estudio&nbsp;
+                                                                <section class="col col-2">schooling&nbsp;
                                                                     <div class="inline-group">
                                                                         <?
                                                                         foreach ($estudios as $value)
@@ -643,7 +643,7 @@
                                                                         <?}?>
                                                                     </div>
                                                                 </section>
-                                                                <section class="col col-2">Ocupación&nbsp;
+                                                                <section class="col col-2">Occupation&nbsp;
                                                                     <div class="inline-group">
                                                                         <?
                                                                         foreach ($ocupacion as $value)
@@ -654,7 +654,7 @@
                                                                         <?}?>
                                                                     </div>
                                                                 </section>
-                                                                <section class="col col-2">Tiempo dedicado&nbsp;
+                                                                <section class="col col-2">Working time&nbsp;
                                                                     <div class="inline-group">
                                                                         <?
                                                                         foreach ($tiempo_dedicado as $value)

@@ -966,7 +966,7 @@ class perfil_red extends CI_Controller
 	function confirm_password()
 	{
 		if($_POST['password']!=$_POST['confirm_password']){
-			echo "<p style='color: red;' >Las contraseñas no coinciden. </p>";
+			echo "<p style='color: red;' >Las Passwords no coinciden. </p>";
 		}else{
 			echo "";
 		}
@@ -1068,7 +1068,7 @@ class perfil_red extends CI_Controller
 		$use_username_red=$this->model_perfil_red->use_username_red($id_user[0]->id);
 		if(!$use_username_red){
 			$this->model_afiliado->AgregarAfiliadoRed($id, $red,$username);
-			echo "Felicitaciones el usuario ha sido afiliado a la red";
+			echo "Congratulations el usuario ha sido afiliado a la red";
 		}else{
 			echo "ERROR<br> El usuario ya existe en la red.";
 		}
@@ -1146,7 +1146,7 @@ class perfil_red extends CI_Controller
 		
 		$id=$this->tank_auth->get_user_id();
 		$this->model_perfil_red->actualizar($id,$pais[0]->codigoPais);
-		echo "Felicitaciones <br> Se han actualizado los datos";
+		echo "Congratulations <br> Form data Updated";
 	}
 	
 	function cp()
@@ -1159,7 +1159,7 @@ class perfil_red extends CI_Controller
 				$id_estado=$busqueda[0]->id_estado;
 				$estado=$this->model_perfil_red->estado($id_estado);
 
-				echo '<section id="colonia" class="col col-2">Colonia
+				echo '<section id="colonia" class="col col-2">Town/District 
 						<label class="select">
 						<select name="colonia">';
 				foreach ($busqueda as $key)
@@ -1192,7 +1192,7 @@ class perfil_red extends CI_Controller
 			{
 				echo'<section id="colonia" class="col col-2">
 					<label class="input">
-						Colonia
+						Town/District 
 						<input type="text" name="colonia" >
 					</label>
 				</section>
@@ -1222,7 +1222,7 @@ class perfil_red extends CI_Controller
 				$id_estado=$busqueda[0]->id_estado;
 				$estado=$this->model_perfil_red->estado($id_estado);
 
-				echo '<section id="colonia_red" class="col col-6">Colonia
+				echo '<section id="colonia_red" class="col col-6">Town/District 
 						<label class="select">
 						<select name="colonia">';
 				foreach ($busqueda as $key)
@@ -1255,7 +1255,7 @@ class perfil_red extends CI_Controller
 			{
 				echo'<section id="colonia_red" class="col col-6">
 					<label class="input">
-						Colonia
+						Town/District 
 						<input type="text" name="colonia" >
 					</label>
 				</section>

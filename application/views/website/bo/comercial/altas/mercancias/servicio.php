@@ -42,7 +42,7 @@ if ($this->session->flashdata ( 'error' )) {
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1"
@@ -126,7 +126,7 @@ if ($this->session->flashdata ( 'error' )) {
 													onchange="this.parentNode.nextSibling.value = this.value"
 													type="file" multiple required>Buscar
 												</span><input id="imagen_mr"
-													placeholder="Agregar alguna imágen" type="text" required>
+													placeholder="Add alguna imágen" type="text" required>
 											</div>
 											<small>Para cargar múltiples archivos, presione the tecla ctrl
 												y sin soltar selecione sus archivos.<br />
@@ -138,7 +138,7 @@ if ($this->session->flashdata ( 'error' )) {
 							
 							<div class="row">
 							<fieldset id="moneda_field">
-								<legend>Moneda & país</legend>
+								<legend>Moneda & Country</legend>
 								<section class="col col-2">
 									<label class="input"> Costo real <input type="number" min="1"
 										name="real" id="real" onchange="calcular_precio_total()"
@@ -193,7 +193,7 @@ if ($this->session->flashdata ( 'error' )) {
 								<fieldset>
 									<div class="row" id="impuesto_agregar">
 										<section class="col col-2">
-											País del servicio <label class="select"> <select id="pais"
+											Country del servicio <label class="select"> <select id="pais"
 												name="pais" onChange="select_pais()" required="required">
 													<option value="-" selected>-- Seleciona un pais --</option>
 															<?php foreach ($pais as $key){?>
@@ -330,7 +330,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -362,7 +362,7 @@ $(document).ready(function() {
 		"preDrawCallback" : function() {
 				// Initialize the responsive datatables helper once.
 				if (!responsiveHelper_dt_basic) {
-					responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+					responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 				}
 			},
 			"rowCallback" : function(nRow) {
@@ -459,9 +459,9 @@ function add_proveedor(){
 	});
 }
 
-function new_proveedor()
+function new _proveedor()
 {
-		var ids = new Array( 
+		var ids = new  Array( 
 			"#nombre",
 		 	"#apellido",
 		 	"#pais",
@@ -470,11 +470,11 @@ function new_proveedor()
 		 	"#email",
 		 	"#empresa"
 		 );
-		var mensajes = new Array( 
+		var mensajes = new  Array( 
 			"Por favor ingresa tu nombre",
 		 	"Por favor ingresa tu apellido",
 		 	"Por favor seleciona un pais",
-		 	"Por favor ingresa tu código postal",
+		 	"Por favor ingresa tu ZIPCODE",
 		 	"Por favor seleciona the tipo of proveedor",
 		 	"Por favor ingresa un correo",
 		 	"Por favor seleciona una empresa"
@@ -494,7 +494,7 @@ function new_proveedor()
 				$("#proveedor_select").append(msg1);
 					bootbox.dialog({
 						message: "El proveedor ha sido creado",
-						title: "Atención",
+						title: "Attention",
 						buttons: {
 							success: {
 								label: "Ok!",
@@ -509,7 +509,7 @@ function new_proveedor()
 			});
 		}else{
 			$.smallBox({
-			      title: "<h1>Atención</h1>",
+			      title: "<h1>Attention</h1>",
 			      content: "<h3>Por favor reviza que todos los datos estén correctos</h3>",
 			      color: "#C46A69",
 			      icon : "fa fa-warning fadeInLeft animated",
@@ -546,7 +546,7 @@ function ImpuestosPais2(id){
 	calcular_precio_total();
 }
 function validar_impuesto(){
-	var  Impuesto = new Array();
+	var  Impuesto = new  Array();
 $('select[name="id_impuesto[]"]').each(function() {	
 	Impuesto.push($(this).val());
 });	

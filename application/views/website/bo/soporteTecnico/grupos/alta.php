@@ -21,7 +21,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -44,7 +44,7 @@
 									<section>
 										<div>
 												<label class="select">
-													<label class="label">Seleccione una categoría</label>
+													<label class="label">choose una categoría</label>
 													<select name="tipo" id="tipo" required="">
 														<option value="INF">Information</option>
 														<option value="VID">Videos</option>
@@ -52,7 +52,7 @@
 											</label><br>
 											
 											<label class="select">
-													<label class="label">Seleccione the Category Network</label>
+													<label class="label">choose the Category Network</label>
 														<select name="red" id="red" required="">
 															<?php 
 																foreach ($redes as $red){
@@ -96,7 +96,7 @@
 			</div>
 			<!-- END MAIN CONTENT -->
 <<script type="text/javascript">
-function new_grupo()
+function new _grupo()
 {
 	var grupo=$("#grupo").val();
 	var tipo=$("#tipo").val();

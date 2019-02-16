@@ -667,11 +667,11 @@ class comercial extends CI_Controller
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Usuario:</div><strong>'.$detalle[0]->username.'</strong></div>';
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Correo:</div><strong>'.$detalle[0]->email.'</strong></div>';
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Estado:</div><strong>'.$detalle[0]->estatus_afiliado.'</strong></div>';
-		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Estado civil:</div><strong>'.$detalle[0]->estado_civil.'</strong></div>';
+		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Civil Status:</div><strong>'.$detalle[0]->estado_civil.'</strong></div>';
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Tipo:</div><strong>'.$detalle[0]->tipo_usuario.'</strong></div>';
-		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Estudios:</div><strong>'.$detalle[0]->estudio.'</strong></div>';
+		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">schooling:</div><strong>'.$detalle[0]->estudio.'</strong></div>';
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Ocupacion:</div><strong>'.$detalle[0]->ocupacion.'</strong></div>';
-		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Tiempo dedicado:</div><strong>'.$detalle[0]->tiempo_dedicado.'</strong></div>';
+		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Working time:</div><strong>'.$detalle[0]->tiempo_dedicado.'</strong></div>';
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Co-aplicante:</div><strong>'.$detalle[0]->nombre_co.' '.$detalle[0]->apellido_co.'</strong></div>';
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Nombre:</div><strong>'.$detalle[0]->nombre.'</strong></div>';
 		echo '<div class="row" style="border-bottom: 1px solid #CCC; padding: 3px"><div class="col-xs-6">Apellido:</div><strong>'.$detalle[0]->apellido.'</strong></div>';

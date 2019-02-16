@@ -42,7 +42,7 @@
 							</li>
 							<li class="">
 								<a href="/bo/reportes">
-								<i style="font-size: 2rem;" class="fa fa-book "></i> Reportes </a>
+								<i style="font-size: 2rem;" class="fa fa-book "></i>Reports </a>
 							</li>
 
 						</ul>

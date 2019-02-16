@@ -16,7 +16,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -74,7 +74,7 @@
 											?>
 											<?php echo form_open($this->uri->uri_string()); ?>
 											<label class="select">
-													<label class="label">Seleccione un tipo of usuario</label>
+													<label class="label">choose un tipo of usuario</label>
 													<select name="tipo" id="tipo" required="">
 													<?php foreach ($tiposUsuario as $tipo) {?>
 														<option value="<?php echo $tipo->id_tipo_usuario; ?>">
@@ -108,7 +108,7 @@
 													<td style="color: red;"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></td>
 												</tr>
 												<tr>
-													<td>Contraseña</td>
+													<td>Password</td>
 													<td><?php echo form_password($password); ?></td>
 													<td style="color: red;"><?php echo form_error($password['name']); ?></td>
 												</tr>
@@ -147,7 +147,7 @@
 			</div>
 			<!-- END MAIN CONTENT -->
 <<script type="text/javascript">
-function new_user()
+function new _user()
 {
 	var tipo=$("#tipo").val();
 	if(tipo!="")

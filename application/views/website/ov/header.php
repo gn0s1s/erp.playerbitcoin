@@ -63,7 +63,7 @@
 										
 								</ul>
 							</li>
-							<li class="dropdown">
+							<li class="hide dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i style="font-size: 2rem;" class="fa fa-th-large"></i> General <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
@@ -84,7 +84,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="dropdown">
+							<li class="hide dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i style="font-size: 2rem;" class="fa fa-envelope-square"></i> Comunications <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
@@ -109,7 +109,7 @@
 									</li>
 								</ul>
 							</li>
-							<li class="dropdown">
+							<li class="hide dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i style="font-size: 2rem;" class="fa fa-info-circle"></i> Information & Training <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">

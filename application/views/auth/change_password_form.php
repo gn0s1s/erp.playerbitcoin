@@ -22,31 +22,31 @@ $confirm_new_password = array(
 <form class="smart-form" action="/auth/change_password" method="post" accept-charset="utf-8">
 <?php echo form_open($this->uri->uri_string()); ?>
 <fieldset id="pswd">
-	<legend>Contraseña</legend>
+	<legend>Password</legend>
 		<div>
 			<section>
 				<?php if(form_error($confirm_new_password['name'])){
-					echo "<span style='color:red;'>El password of confirmacion no conside con the nuevo password.</span><br>";
+					echo "<span style='color:red;'>Both password fields do not match.</span><br>";
 				}; 
 				?><br>
 			<!--	<?php echo isset($errors[$confirm_new_password['name']])?$errors[$confirm_new_password['name']]:''; ?>-->
 			</section>
 			<section id="old_password" style="width: 20rem;">
 				<label class="input"><i class="icon-prepend fa fa-lock"></i>
-				 <input type="password" name="old_password" id="old_password" size="30" placeholder="Contraseña">
+				 <input type="password" name="old_password" id="old_password" size="30" placeholder="Password">
 				</label>
 			</section><br>
 			<section id="new_password">
 				<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-					<input style="width: 20rem;" placeholder="Nueva contraseña" name="new_password" id="newPassword" type="password">
+					<input style="width: 20rem;" placeholder="new Password" name="new_password" id="newPassword" type="password">
 				</label>
 			</section><br>
 			<section id="confirm_new_password">
 				<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-					<input style="width: 20rem;" placeholder="Repita nueva contraseña" name="confirm_new_password" id="confirmNewPassword" type="password">
+					<input style="width: 20rem;" placeholder="Re-enter new Password" name="confirm_new_password" id="confirmNewPassword" type="password">
 				</label>
 			</section>
 		</div>
-		<input name="change" value="Cambiar Contraseña" type="submit" class="btn-success">
+		<input name="change" value="Cambiar Password" type="submit" class="btn-success">
 </fieldset>
 </div>

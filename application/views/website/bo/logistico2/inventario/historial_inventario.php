@@ -40,7 +40,7 @@
 			
 
 
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 				<div class="well">
 					<div class="row">
@@ -285,7 +285,7 @@
 		
 				</article>
 				
-				<!-- NEW WIDGET START -->
+				<!-- new  WIDGET START -->
 						<!-- WIDGET END -->
 		
 
@@ -418,7 +418,7 @@
 								"preDrawCallback" : function() {
 									// Initialize the responsive datatables helper once.
 									if (!responsiveHelper_datatable_fixed_column) {
-										responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+										responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 									}
 								},
 								"rowCallback" : function(nRow) {
@@ -503,7 +503,7 @@
 										"preDrawCallback" : function() {
 											// Initialize the responsive datatables helper once.
 											if (!responsiveHelper_datatable_fixed_column) {
-												responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column2'), breakpointDefinition);
+												responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column2'), breakpointDefinition);
 											}
 										},
 										"rowCallback" : function(nRow) {
@@ -600,7 +600,7 @@
 										"preDrawCallback" : function() {
 											// Initialize the responsive datatables helper once.
 											if (!responsiveHelper_datatable_fixed_column) {
-												responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column3'), breakpointDefinition);
+												responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column3'), breakpointDefinition);
 											}
 										},
 										"rowCallback" : function(nRow) {
@@ -695,7 +695,7 @@
 										"preDrawCallback" : function() {
 											// Initialize the responsive datatables helper once.
 											if (!responsiveHelper_datatable_fixed_column) {
-												responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column3'), breakpointDefinition);
+												responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column3'), breakpointDefinition);
 											}
 										},
 										"rowCallback" : function(nRow) {
@@ -774,7 +774,7 @@
 								"preDrawCallback" : function() {
 									// Initialize the responsive datatables helper once.
 									if (!responsiveHelper_datatable_fixed_column) {
-										responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+										responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 									}
 								},
 								"rowCallback" : function(nRow) {
@@ -853,7 +853,7 @@
 								"preDrawCallback" : function() {
 									// Initialize the responsive datatables helper once.
 									if (!responsiveHelper_datatable_fixed_column) {
-										responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
+										responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column1'), breakpointDefinition);
 									}
 								},
 								"rowCallback" : function(nRow) {
@@ -932,7 +932,7 @@
 								"preDrawCallback" : function() {
 									// Initialize the responsive datatables helper once.
 									if (!responsiveHelper_dt_basic) {
-										responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+										responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 									}
 								},
 								"rowCallback" : function(nRow) {
@@ -1066,7 +1066,7 @@
 						, position: 'absolute' // Element positioning
 						}
 						
-						var spinner = new Spinner(opts).spin(document.getElementById('spinner2'));
+						var spinner = new  Spinner(opts).spin(document.getElementById('spinner2'));
 				}
 
 			function FinalizarSpinner(){
@@ -1117,7 +1117,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -1145,7 +1145,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -1180,7 +1180,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -1223,7 +1223,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {

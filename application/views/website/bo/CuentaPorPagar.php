@@ -28,7 +28,7 @@
 								<!-- row -->
 								<div class="row">
 							
-									<!-- NEW WIDGET START -->
+									<!-- new  WIDGET START -->
 									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 										<!-- Widget ID (each widget will need unique ID)-->
@@ -62,14 +62,14 @@
 													<div id="myTabContent1" class="tab-content padding-10">
 														<h1 class="text-center">Cuentas por Pagar</h1>
 															<div class="col-lg-6 col-sm-6 col-md-12 col-xs-12">
-																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Año
+																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Year
 																	<select id="año" onChange="buscar()" class="form-control">
 																	<? foreach ($años as $key) {?>
 																			<option value="<?=$key->año?>"><?=$key->año?></option>
 																	<?}?>
 																	</select>
 																</label>
-																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Mes
+																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Month
 																	<select id="mes" onChange="buscarmes()" class="form-control">
 																		<option value="01">Enero</option>
 																		<option value="02">Febrero</option>
@@ -178,7 +178,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {

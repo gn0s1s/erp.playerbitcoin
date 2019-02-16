@@ -446,7 +446,7 @@ function enviar()
 												
 														bootbox.dialog({
 															message: msg,
-															title: "Atención",
+															title: "Attention",
 															buttons: {
 																success: {
 																label: "Ok!",

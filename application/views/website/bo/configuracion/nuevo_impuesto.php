@@ -15,7 +15,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -44,7 +44,7 @@
 					</select>
 				</label>
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
-				<input id='desc' class="form-control" name="desc" size="20" placeholder="Nombre" type="text" required>
+				<input id='desc' class="form-control" name="desc" size="20" placeholder="Name" type="text" required>
 	        </label>
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
 				<input id='porc' class="form-control" name="porc" size="20" placeholder="Porcentaje" type="number" required>

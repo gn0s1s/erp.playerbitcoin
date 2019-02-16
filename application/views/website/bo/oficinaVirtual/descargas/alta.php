@@ -26,7 +26,7 @@
     <section id="widget-grid" class="">
         <!-- START ROW -->
         <div class="row">
-            <!-- NEW COL START -->
+            <!-- new  COL START -->
             <article class="col-sm-12 col-md-12 col-lg-12">
                 <!-- Widget ID (each widget will need unique ID)-->
                 <div class="jarviswidget" id="wid-id-1"
@@ -72,7 +72,7 @@
                                                             id="busquedatodos">
                                                             <label class="label">Nombre del archivo</label> <label
                                                                 class="input"> <input name="nombre" id="nombre"
-                                                                                  placeholder="Nombre" type="text" id="nombre_publico"
+                                                                                  placeholder="Name" type="text" id="nombre_publico"
                                                                                   required>
                                                             </label>
                                                         </section>
@@ -99,7 +99,7 @@
                                                                                              onchange="this.parentNode.nextSibling.value = this.value"
                                                                                              name="userfile1" type="file" >Buscar
                                                                 </span><input name="file_nme"
-                                                                              placeholder="Seleccione the archivo"
+                                                                              placeholder="choose the archivo"
                                                                               type="text" id="file_frm" required readonly="readonly">
                                                             </div>
                                                         </section>

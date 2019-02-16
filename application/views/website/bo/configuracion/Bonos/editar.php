@@ -12,7 +12,7 @@ var j=0;
 			<form id="bonos" action="/bo/bonos/nuevo_bono" method="POST" role="form" class="widget-body no-padding smart-form">
 			<input id="id" class="form-control" name="id" style="width:200px; height:30px;" required="" type="hidden" value="<?php echo $bono[0]->id;?>">
 			<label style="margin: 1rem;" class="input"><i class="icon-prepend fa fa-check-circle-o"></i>
-				<input id="nombre" class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Nombre" required="" type="text" value="<?php echo $bono[0]->nombre;?>">
+				<input id="nombre" class="form-control" name="nombre" style="width:200px; height:30px;" placeholder="Name" required="" type="text" value="<?php echo $bono[0]->nombre;?>">
 	        </label>
 			<label style="margin: 1rem;">
 				<textarea id="mymarkdown" name="descripcion" class="form-control" name="desc" size="20" cols="20" rows="10" placeholder="Descripción" type="text" required=""><?php echo $bono[0]->descripcion;?></textarea>
@@ -56,7 +56,7 @@ var j=0;
 										<div class="col col-lg-3 col-xs-2">
 										</div>
 										<div class="col col-lg-2 col-xs-2">
-											<a style="cursor: pointer;" onclick="add_rango()"> Agregar Condicion <i class="fa fa-plus"></i></a>
+											<a style="cursor: pointer;" onclick="add_rango()"> Add Condicion <i class="fa fa-plus"></i></a>
 										</div>
 										
 									</div>
@@ -66,7 +66,7 @@ var j=0;
 										<div class="col col-xs-12 col-sm-12 col-lg-10">
 											<label class="select">Nombre Condicion
 											<select id="id_rango0" style="max-width: 20rem;" name="id_rango[]" onChange="set_rango($(this).val(),'rango0');" >
-											<option value='0'>--- Seleccione Condicion ---</option>
+											<option value='0'>--- choose Condicion ---</option>
 													<?php	
 														foreach($rangosActivos as $categoria){
 															echo "<option value='".$categoria->id_rango."'>".$categoria->nombre_rango."</option>";
@@ -129,7 +129,7 @@ var j=0;
 										<div class="col col-lg-1 col-xs-2">
 										</div>
 										<div class="col col-lg-4 col-xs-2">
-											<a style="cursor: pointer;" onclick="add_nivel()"> Agregar Nivel <i class="fa fa-plus"></i></a>
+											<a style="cursor: pointer;" onclick="add_nivel()"> Add Nivel <i class="fa fa-plus"></i></a>
 											<a style="cursor: pointer;" onclick="reload_niveles()">&nbsp&nbsp&nbsp<i style="font-size: 2rem;color: #60A917 !important;" class="fa fa-refresh"></i></a>
 										</div>
 										
@@ -287,7 +287,7 @@ function validarRedes(){
 	if ( $("#divRedes")[0] ) {
 		return true;
 		}
-	alert("Seleccione Algun Rango");
+	alert("choose Algun Rango");
 	return false;
 }
 
@@ -302,7 +302,7 @@ function enviar() {
 
 							bootbox.dialog({
 						message: "Se ha Modificado the Bono."+msg,
-						title: 'Felicitaciones',
+						title: 'Congratulations',
 						buttons: {
 							success: {
 							label: "Accept",
@@ -328,7 +328,7 @@ function add_rango()
 	+'<div class="col col-xs-12 col-sm-12 col-lg-10">'
 		+'<label class="select">Nombre Rango'
 		+'<select id="id_rango'+i+'" style="max-width: 20rem;" name="id_rango[]" onChange="set_rango($(this).val(),\'rango'+i+'\');">'
-		+'<option value="0">--- Seleccione Ranking ---</option>'
+		+'<option value="0">--- choose Ranking ---</option>'
 		+'<?php	echo $rangos; ?>'
 	+'</select>'
 	+'</label>'
@@ -397,7 +397,7 @@ var code='<div class="row">'
 	+'<div class="col col-lg-1 col-xs-1">'
 	+'</div>'
 	+'<div class="col col-lg-4 col-xs-2">'
-	+'<a style="cursor: pointer;" onclick="add_nivel()"> Agregar Nivel <i class="fa fa-plus"></i></a>'
+	+'<a style="cursor: pointer;" onclick="add_nivel()"> Add Nivel <i class="fa fa-plus"></i></a>'
 	+'<a style="cursor: pointer;" onclick="reload_niveles()">&nbsp&nbsp&nbsp<i style="font-size: 2rem;color: #60A917 !important;" class="fa fa-refresh"></i></a>'
 	+'</div>'
 	+'</div>'

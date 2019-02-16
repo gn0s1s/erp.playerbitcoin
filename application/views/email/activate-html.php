@@ -285,7 +285,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 						<p class="callout">El link funcionara durante <?php echo $activation_period; ?> horas, of no ser activada su cuenta tu registro sera invalido & deberas ser afiliado por otro usuario nuevamente.</p>
 						<p><?php if (strlen($username) > 0) { ?>Nombre of usuario: <?php echo $username; ?><br /><?php } ?></p>
 						<p>Correo: <?php echo $email; ?></p><br />
-						<p><?php if (isset($password)) { ?>Contraseña: <?php echo $password; ?><br /><?php } ?>		</p>	
+						<p><?php if (isset($password)) { ?>Password: <?php echo $password; ?><br /><?php } ?>		</p>
 						
 						<br/> 
 						<br/>							

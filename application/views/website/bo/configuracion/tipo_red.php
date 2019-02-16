@@ -15,7 +15,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-colorbutton="false"
@@ -60,7 +60,7 @@
 													<a href="/bo/capacidadRed/index">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;  padding-bottom: 19%;">
 															<i class="fa fa-sort-numeric-asc fa-3x"></i>
-															<h1>Frontalidad / Profundidad</h1>
+															<h1>sponsored members / Profundidad</h1>
 														</div>
 													</a>
 												</div> -->

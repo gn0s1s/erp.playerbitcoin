@@ -8,20 +8,20 @@
 			<?php  if($type=='5'){?>
 						<a class="backHome" href="/bol"><i class="fa fa-home"></i> Menu</a>
 						<span>
-							> Reportes	
+							>Reports
 						</span>
 							 <?php }else if($type=='8'||$type=='9'){
 						 	$index= ($type=='8') ? '/CEDI' : '/Almacen';?>
 						<a class="backHome" href="<?=$index?>"><i class="fa fa-home"></i> Menu</a>
 						<span>
-							> Reportes		
+							>Reports
 						</span>
 							 <?php }else{?>
 						
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 						<span>
 							> <a href="/bol/dashboard">Logistico</a>
-							> Reportes
+							>Reports
 						</span>
 							
 							<?php }?>
@@ -33,7 +33,7 @@
 	
 		<!-- START ROW -->
 	<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 		<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<div class="well">
 				<div class="row">
@@ -226,7 +226,7 @@
 			</div>
 		
 		</article>		
-				<!-- NEW WIDGET START -->
+				<!-- new  WIDGET START -->
 			<!-- WIDGET END -->
 	</div>
 </div>
@@ -347,7 +347,7 @@
 									FinalizarSpinner();
 									bootbox.dialog({
                                                                             message: msg,
-                                                                            title: 'Atención',
+                                                                            title: 'Attention',
                                                                             buttons: {
                                                                                     success: {
                                                                                         label: "Accept",
@@ -419,7 +419,7 @@
 					"preDrawCallback" : function() {
 						// Initialize the responsive datatables helper once.
 						if (!responsiveHelper_dt_basic) {
-							responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+							responsiveHelper_dt_basic = new  ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
 						}
 					},
 					"rowCallback" : function(nRow) {
@@ -447,7 +447,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_fixed_column) {
-						responsiveHelper_datatable_fixed_column = new ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
+						responsiveHelper_datatable_fixed_column = new  ResponsiveDatatablesHelper($('#datatable_fixed_column'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -482,7 +482,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_col_reorder) {
-						responsiveHelper_datatable_col_reorder = new ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
+						responsiveHelper_datatable_col_reorder = new  ResponsiveDatatablesHelper($('#datatable_col_reorder'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {
@@ -525,7 +525,7 @@
 				"preDrawCallback" : function() {
 					// Initialize the responsive datatables helper once.
 					if (!responsiveHelper_datatable_tabletools) {
-						responsiveHelper_datatable_tabletools = new ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
+						responsiveHelper_datatable_tabletools = new  ResponsiveDatatablesHelper($('#datatable_tabletools'), breakpointDefinition);
 					}
 				},
 				"rowCallback" : function(nRow) {

@@ -13,7 +13,7 @@
 <section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false">
@@ -35,7 +35,7 @@
 	<div>
 <div class="tab-pane fade in active" id="s1" style="margin-bottom: 6rem">
 	<div class="row">
-		<h5 class="col-xs-12 col-sm-12 col-md-8 col-lg-8">De click on the bandera del país para editar</h5>
+		<h5 class="col-xs-12 col-sm-12 col-md-8 col-lg-8">De click on the bandera del Country para editar</h5>
 		<a onclick="dato_pais_multiple()" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 pull-right text-blue" href="#"><h5>Edicion multiple <i class="fa fa-check-square-o"></i></h5></a>
 	</div>
 	<div class="row">

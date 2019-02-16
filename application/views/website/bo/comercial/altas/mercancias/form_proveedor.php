@@ -1,17 +1,17 @@
 <form method="POST" id="proveedor" class="smart-form">
 	<input type="text" class="hide" value="1" name="ser"/>
 	<fieldset>
-		<legend>Datos personales del proveedor</legend>
+		<legend>Personal Info del proveedor</legend>
 		<div class="row">
 			<section class="col col-6">
 				<label class="input"> <i class="icon-prepend fa fa-user"></i> <input
-					required type="text" name="nombre" id="nombre" placeholder="Nombre">
+					required type="text" name="nombre" id="nombre" placeholder="Name">
 				</label>
 			</section>
 			<section class="col col-6">
 				<label class="input"> <i class="icon-prepend fa fa-user"></i> <input
 					required type="text" name="apellido" id="apellido"
-					placeholder="Apellido">
+					placeholder="Lastname">
 				</label>
 			</section>
 			<section id="correo1" class="col col-6">
@@ -41,11 +41,11 @@
 			<section class="col col-6">
 				<button type="button" onclick="agregar1('1')"
 					class="btn btn-primary">
-					&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+					&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 				</button>
 				<button type="button" onclick="agregar1('2')"
 					class="btn btn-primary">
-					&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+					&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 				</button>
 			</section>
 		</div>
@@ -66,7 +66,7 @@
 									echo '<option value="' . $key->id_empresa . '">' . $key->nombre . '</option>';
 								} ?>
 							</select>
-			</label> <a href="#" onclick="new_empresa()">Agregar empresa <i
+			</label> <a href="#" onclick="new_empresa()">Add empresa <i
 				class="fa fa-plus"></i></a>
 		</section>
 		<section class="col col-6">
@@ -79,7 +79,7 @@
 		<legend>Dirección del proveedor</legend>
 		<div id="dir" class="row">
 			<section class="col col-6">
-				<label class="input"> Dirección of domicilio <input required
+				<label class="input"> Street Address <input required
 					type="text" name="calle">
 				</label>
 			</section>
@@ -92,12 +92,12 @@
 				</label>
 			</section>
 			<section class="col col-6">
-				<label class="input"> Código postal <input required
+				<label class="input"> ZIPCODE <input required
 					onkeyup="codpos()" type="text" id="cp" name="cp">
 				</label>
 			</section>
 			<section class="col col-6">
-				País <label class="select"> <select id="pais" required name="pais"
+				Country <label class="select"> <select id="pais" required name="pais"
 					onChange="ImpuestosPais()">
 						<option value="-" selected>-- Seleciona un pais --</option>
 													<?php foreach ( $pais as $key ) { ?>
@@ -167,7 +167,7 @@
 			</div>
 			<section class="col col-6">
 				<button type="button" onclick="agregar_cuenta()"
-					class="btn btn-primary">&nbsp;Agregar cuenta &nbsp;</button>
+					class="btn btn-primary">&nbsp;Add cuenta &nbsp;</button>
 			</section>
 		</div>
 	</fieldset>
@@ -259,7 +259,7 @@
 
 </form>
 <script type="text/javascript">
-function new_empresa()
+function nueva_empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" class="smart-form">'
@@ -295,7 +295,7 @@ function new_empresa()
 						+'<legend>Dirección of the empresa</legend>'
 							+'<div id="dir" class="row">'
 								+'<section class="col col-6">'
-									+'País'
+									+'Country'
 									+'<label class="select">'
 										+'<select id="pais" required name="pais">'
 										+'<?php foreach ($pais as $key){?>'
@@ -308,7 +308,7 @@ function new_empresa()
 								+'</section>'
 								+'<section class="col col-6">'
 									+'<label class="input">'
-										+'Código postal'
+										+'ZIPCODE'
 										+'<input required  type="text" id="cp" name="cp">'
 									+'</label>'
 								+'</section>'
@@ -345,7 +345,7 @@ function new_empresa()
 							+'</div>'
 						+'</fieldset>'
 				+'</form>',
-		title: "Nueva Empresa",
+		title: "newEmpresa",
 		buttons: {
 			submit: {
 			label: "Accept",
@@ -363,7 +363,7 @@ function new_empresa()
 						$("#empresa").append("<option value="+empresa['id']+">"+empresa['nombre']+"</option>");
 						$("#empresa").val(empresa['id']);
 						bootbox.dialog({
-						message: "Se agregado the empresa",
+						message: "Se Added the empresa",
 						title: 'Empresa',
 						buttons: {
 							success: {

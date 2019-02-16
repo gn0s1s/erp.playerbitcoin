@@ -17,7 +17,7 @@
 		<!-- START ROW -->
 		<div class="row">
 			
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 			<article class="col-sm-12 col-md-12 col-lg-12">
 				<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget" id="wid-id-1" data-widget-editbutton="false" data-widget-custombutton="false" data-widget-colorbutton="false">
@@ -36,7 +36,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Datos personales</h2>
+						<h2>Personal Info</h2>
 					</header>
 
 					<!-- widget div-->
@@ -69,7 +69,7 @@
 													<span class="badge badge-info">1</span>Datos del registro<span class="chevron"></span>
 												</li>
 												<li data-target="#step2">
-													<span class="badge">2</span>Datos personales<span class="chevron"></span>
+													<span class="badge">2</span>Personal Info<span class="chevron"></span>
 												</li>
 												<?php /* ?>
 												<li data-target="#step3">
@@ -98,17 +98,17 @@
 															<legend>Information of cuenta</legend>
 															<section id="usuario" class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-user"></i>
-																	<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Usuario">
+																	<input id="username" onkeyup="use_username()" required type="text" name="username" placeholder="Username">
 																</label>
 															</section>
 															<section id="correo" class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-																	<input id="email" onkeyup="use_mail()" required type="email" name="email" placeholder="Dirección of Correo Electrónico">
+																	<input id="email" onkeyup="use_mail()" required type="email" name="email" placeholder="Account E-mail">
 																</label>
 															</section>
 															<section class="col col-6">
 																<label class="input"> <i class="icon-prepend fa fa-lock"></i>
-																	<input id="password"  onkeyup="confirm_pass()" required type="password" name="password" placeholder="Contraseña">
+																	<input id="password"  onkeyup="confirm_pass()" required type="password" name="password" placeholder="Password">
 																</label>
 															</section>
 															<section id="confirmar_password" class="col col-6">
@@ -123,7 +123,7 @@
 												<div class="step-pane" id="step2">
 													<form method="POST" action="/perfil_red/afiliar_nuevo" id="checkout-form" class="smart-form" novalidate="novalidate">
 														<fieldset>
-														<legend>Datos personales del afiliado</legend>
+														<legend>Personal Info del afiliado</legend>
 															<div class="row">
 															<section class="col col-3">
 																<label class="input">RED
@@ -137,26 +137,26 @@
 															
 																<section class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-user"></i>
-																		<input id="nombre" required type="text" name="nombre" placeholder="Nombre(s)">
+																		<input id="nombre" required type="text" name="nombre" placeholder="Name">
 																	</label>
 																</section>
 																<section class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-user"></i>
-																		<input id="apellido" required type="text" name="apellido" placeholder="Apellidos (paterno y/o materno)">
+																		<input id="apellido" required type="text" name="apellido" placeholder="Lastname">
 																	</label>
 																</section>
 																<section class="col col-3">
 																	<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
-																		<input required id="datepicker" type="text" name="nacimiento" placeholder="Fecha of nacimiento">
+																		<input required id="datepicker" type="text" name="nacimiento" placeholder="Birthdate">
 																	</label>
 																</section>
 																<section class="col col-3" id="key">
 																	<label id="key_" class="input"> <i class="icon-prepend fa fa-barcode"></i>
-																		<input id="keyword" onkeyup="check_keyword()" placeholder="Número of identificación (IFE,CURP,RFC)" type="text" name="keyword">
+																		<input id="keyword" onkeyup="check_keyword()" placeholder="IDN" type="text" name="keyword">
 																	</label>
 																</section>
 																<section class="col col-2">
-																	Tipo of persona
+																	Law Type
 																	<label class="select">
 																		<select id="tipo_fiscal" required name="fiscal">
 																		<?php foreach ($tipo_fiscal as $key)
@@ -185,10 +185,10 @@
 															</div>
 															<section class="col col-3">
 																<button type="button" onclick="agregar('1')" class="btn btn-primary">
-																	&nbsp;Agregar <i class="fa fa-mobile"></i>&nbsp;
+																	&nbsp;Add <i class="fa fa-mobile"></i>&nbsp;
 																</button>
 																<button type="button" onclick="agregar('2')" class="btn btn-primary">
-																	&nbsp;Agregar <i class="fa fa-phone"></i>&nbsp;
+																	&nbsp;Add <i class="fa fa-phone"></i>&nbsp;
 																</button>
 															</section>
 															</div>
@@ -199,7 +199,7 @@
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input">
-																		<input placeholder="Nombre(s)" type="text" name="nombre_co">
+																		<input placeholder="Name" type="text" name="nombre_co">
 																	</label>
 																</section>
 																<section class="col col-4">
@@ -209,16 +209,16 @@
 																</section>
 																<section class="col col-4" id="key_co">
 																	<label id="key_1" class="input"> <i class=" icon-prepend fa fa-users"></i>
-																	<!-- check_keyword_co() -->	<input onkeyup="" placeholder="Parentesco" type="text" name="keyword_co" id="keyword_co">
+																	<!-- check_keyword_co() -->	<input onkeyup="" placeholder="relationship" type="text" name="keyword_co" id="keyword_co">
 																	</label>
 																</section>
 															</div>
 														</fieldset>
 														<fieldset>
-														<legend>Dirección del afiliado</legend>
+														<legend>Home Adress</legend>
 															<div id="dir" class="row">
 																<section class="col col-2">
-																	País
+																	Country
 																	<label class="select">
 																		<select id="pais" required name="pais">
 																		<?php foreach ($pais as $key)
@@ -232,41 +232,41 @@
 																</section>
 																<section class="col col-2">
 																	<label class="input">
-																		Código postal
+																		ZIPCODE
 																		<input required type="text" id="cp" name="cp">
 																	</label>
 																</section>
 																<section class="col col-2">
 																	<label class="input">
-																		Dirección of domicilio
+																		Street Address
 																		<input required type="text" name="calle">
 																		(Calle, No. Exterior, No. Interior)
 																	</label>
 																</section>
 																<section id="colonia" class="col col-2">
 																	<label class="input">
-																		Colonia
+																		Town/District 
 																		<input type="text" name="colonia" >
 																	</label>
 																</section>
 																<section id="municipio" class="col col-2">
 																	<label class="input">
-																		Delegación o Municipio
+																		Town/District
 																		<input type="text" name="municipio" >
 																	</label>
 																</section>
 																<section id="municipio" class="col col-2">
 																	<label class="input">
-																		Ciudad - Estado
+																		City/State
 																		<input type="text" name="estado" >
 																	</label>
 																</section>
 															</div>
 														</fieldset>
 														<fieldset>
-															<legend>Estadistica</legend>
+															<legend>Statistics</legend>
 															<div class="row">
-																<section class="col col-3">Estado civil
+																<section class="col col-3">Civil Status
 																	<label class="select">
 																		<select name="civil">
 																		<?php foreach ($civil as $key)
@@ -277,7 +277,7 @@
 																		</select>
 																	</label>
 																</section>
-																<section class="col col-2">Género&nbsp;
+																<section class="col col-2">Gender&nbsp;
 																	<div class="inline-group">
 																		<?php foreach ($sexo as $value)
 																		{?>
@@ -287,7 +287,7 @@
 																		<?php }?>
 																		</div>
 																</section>
-																<section class="col col-2">Estudio&nbsp;
+																<section class="col col-2">schooling&nbsp;
 																	<div class="inline-group">
 																		<?php foreach ($estudios as $value)
 																		{?>
@@ -297,7 +297,7 @@
 																		<?php }?>
 																		</div>
 																</section>
-																<section class="col col-2">Ocupación&nbsp;
+																<section class="col col-2">Occupation&nbsp;
 																	<div class="inline-group">
 																		<?php foreach ($ocupacion as $value)
 																		{?>
@@ -307,7 +307,7 @@
 																		<?php }?>
 																		</div>
 																</section>
-																<section class="col col-2">Tiempo dedicado&nbsp;
+																<section class="col col-2">Working time&nbsp;
 																	<div class="inline-group">
 																		<?php foreach ($tiempo_dedicado as $value)
 																		{?>
@@ -484,7 +484,7 @@ $(document).ready(function() {
 
 				  $( ".invalid" ).remove();
 
-			  	var ids = new Array( 
+			  	var ids = new  Array(
 						"#nombre",
 					 	"#apellido",
 					 	"#datepicker",
@@ -496,16 +496,16 @@ $(document).ready(function() {
 					 	"#confirm_password"
 					 	
 					 );
-					var mensajes = new Array( 
+					var mensajes = new  Array(
 						"Por favor ingresa tu nombre",
 					 	"Por favor ingresa tu apellido",
-					 	"Por favor ingresa tu fecha of nacimiento",
-					 	//"Por favor ingresa tu código postal",
+					 	"Por favor ingresa tu Birthdate",
+					 	//"Por favor ingresa tu ZIPCODE",
 					 	"Por favor ingresa the Identificacion Fiscal",
 					 	"Por favor ingresa un nombre of usuario",
 					 	"Por favor ingresa un correo",
-					 	"Por favor ingresa una contraseña",
-					 	"Por favor confirma tu contraseña"
+					 	"Por favor ingresa una Password",
+					 	"Por favor confirma tu Password"
 					 );
 
 					var idss=new Array(
@@ -545,7 +545,7 @@ $(document).ready(function() {
 									$("#progress").attr('style','width: 100%');
 									bootbox.dialog({
 										message: msg,
-										title: "Atención",
+										title: "Attention",
 										buttons: {
 											success: {
 											label: "Ok!",
@@ -563,7 +563,7 @@ $(document).ready(function() {
 					else
 					{
 						$.smallBox({
-					      title: "<h1>Atención</h1>",
+					      title: "<h1>Attention</h1>",
 					      content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
 					      color: "#C46A69",
 					      icon : "fa fa-warning fadeInLeft animated",
@@ -785,7 +785,7 @@ function agregar_red(tipo)
 }
  $(function()
  {
- 	var a = new Date();
+ 	var a = new  Date();
  	año = a.getFullYear()-19;
 	$( "#datepicker" ).datepicker({
 	changeMonth: true,

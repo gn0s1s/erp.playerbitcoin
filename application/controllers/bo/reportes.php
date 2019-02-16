@@ -1059,11 +1059,11 @@ class reportes extends CI_Controller {
 					<th>Nombre</th>
 					<th>Correo</th>
 					<th>Sexo</th>
-					<th>Estado Civil</th>
+					<th>Civil Status</th>
 					<th>Tipo Usuario</th>
-					<th>Estudio</th>
+					<th>schooling</th>
 					<th>Ocupacion</th>
-					<th>Tiempo Dedicado</th>
+					<th>Working time</th>
 					<th>Tipo Fiscal</th>
 					<th>Fecha Nacimiento</th>
 					<th>Ultima Sesion</th>

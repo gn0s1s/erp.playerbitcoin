@@ -5,7 +5,7 @@
 	<section id="widget-grid" class="">
 		<!-- START ROW -->
 		<div class="row">
-			<!-- NEW COL START -->
+			<!-- new  COL START -->
 				<!-- Widget ID (each widget will need unique ID)  action="/ov/compras/guardar_info_comprador" -->
 									<!-- widget div-->
 					<div>
@@ -34,7 +34,7 @@
 										</label>
 									</section>
 									
-									<section class="col-sm-12 col-md-12 col-lg-12 ">País of residencia
+									<section class="col-sm-12 col-md-12 col-lg-12 ">Country of residencia
 											<label class="select">
 												<select id="pais_comprador" name="pais_comprador" >
 													<option value="-" selected>-- Seleciona un pais --</option>
@@ -118,7 +118,7 @@ function CrearComprador(){
 			alert(msg);
 			bootbox.dialog({
 				message: msg,
-				title: "Atención",
+				title: "Attention",
 				buttons: {
 					success: {
 					label: "Ok!",

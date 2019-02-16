@@ -74,8 +74,8 @@ class tipo_red extends CI_Controller{
 		//$capacidadRed = $this->model_tipo_red->getCapacidadRed($id_red);
 
 		echo ($this->model_tipo_red->actualizar($_POST['id'],$_POST['nombre'],$_POST['descripcion'],$_POST['frontal'],$_POST['profundidad'],$_POST['tipo_plan'],$_POST['valor_punto']))
-		 ? "Se han Actualizado los datos" : "No se pudo Actualizar los datos";
-		//$this->session->set_flashdata('exito', 'Se han Actualizado los datos');
+		 ? "Form data Updated" : "No se pudo Actualizar los datos";
+		//$this->session->set_flashdata('exito', 'Form data Updated');
 		//redirect("/bo/tipo_red/mostrar_redes");
 	}
 	

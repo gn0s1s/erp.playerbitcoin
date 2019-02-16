@@ -272,7 +272,7 @@ class bonos extends CI_Controller
 		$id_bono=$_POST['id_bono'];
 		
 		if($this->calculador_bono->calcularComisionesPorBono($id_bono,$fecha))
-			echo "Felicitaciones!<br>Se ha Calculado y Pagado el Bono.";
+			echo "Congratulations!<br>Se ha Calculado y Pagado el Bono.";
 		else 
 			echo "ERROR!<br>El bono ya estaba pagado en ese corte o no esta activo.";
 	}
@@ -421,7 +421,7 @@ class bonos extends CI_Controller
 	
 	private function set_todos_los_niveles_red($idRangoDiv){
 		echo '<h3 class="semi-bold">Frontalidad</h3>
-					<label class="select select-multiple">Seleccione numero de Frontales
+					<label class="select select-multiple">Seleccione numero de first line members
 						<select id="id_condicion_1'.$idRangoDiv.'" class="custom-scroll" style="max-width: 20rem;" name="id_condicion_1'.$idRangoDiv.'[]">
 						<option selected value="0">--- Todas ---</option>
 						</select>
@@ -458,7 +458,7 @@ class bonos extends CI_Controller
 			$opciones=$opciones."<option value=".$i.">".$i."</option>";
 		}
 		echo '<h3 class="semi-bold">Frontalidad</h3>
-					<label class="select select-multiple">Seleccione numero de Frontales
+					<label class="select select-multiple">Seleccione numero de first line members
 						<select id="id_condicion_1'.$idRangoDiv.'" class="custom-scroll" style="max-width: 20rem;" name="id_condicion_1'.$idRangoDiv.'[]">
 						<option selected value="0">--- Todas ---</option>
 						'.$opciones.'

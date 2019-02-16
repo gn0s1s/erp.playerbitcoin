@@ -9,7 +9,7 @@ Your username: <?php echo $username; ?>
 
 Your email address: <?php echo $email; ?>
 
-<?php /* Your new password: <?php echo $new_password; ?>
+<?php /* Your new  password: <?php echo $new_password; ?>
 
 */ ?>
 
