@@ -1,38 +1,23 @@
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <h1 class="page-title txt-color-blueDark"><span><a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <a
+                            href="/ov/accountStatus">&gt; Wallet Status</a> &gt; Status</span></h1>
+        </div>
+    </div><!-- row -->
+    <div class="row">
+    </div><!-- end row --> <!-- row -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="well">
 
-			<!-- MAIN CONTENT -->
-			<div id="content">
-				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-						<h1 class="page-title txt-color-blueDark">
-							<span>
-							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<a href="/ov/accountStatus"> > Wallet Status</a>
-							 > Status</span>
-							
-						</h1>
-					</div>
-				</div>
-				<!-- row -->
-				<div class="row">
-				</div>
-				<!-- end row -->
-
-				<!-- row -->
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="well">
-
-							<section id="widget-grid" class="">
-							
-								<!-- row -->
-								<div class="row">
-							
-									<!-- new  WIDGET START -->
-									<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-										<!-- Widget ID (each widget will need unique ID)-->
-										<div class="jarviswidget jarviswidget-color-purity" id="wid-id-1" data-widget-editbutton="false" data-widget-colorbutton="true">
-											<!-- widget options:
+                <section id="widget-grid" class=""><!-- row -->
+                    <div class="row"><!-- new  WIDGET START -->
+                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <!-- Widget ID (each widget will need unique ID)-->
+                            <div class="jarviswidget jarviswidget-color-purity" id="wid-id-1"
+                                 data-widget-editbutton="false" data-widget-colorbutton="true"><!-- widget options:
 											usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 							
 											data-widget-colorbutton="false"
@@ -44,281 +29,245 @@
 											data-widget-collapsed="true"
 											data-widget-sortable="false"
 							
-											-->
-																							<!-- widget content -->
-												<div class="widget-body">
-													<div id="myTabContent1" class="tab-content padding-10">
-													<h1 class="text-center"></h1>
-													
-													<div class="table-responsive">
-													<table class="table">
-													<thead>
-														<tr>
-															<th> <i class="fa fa-sitemap"></i> Network</th>
-															<th> <i class="fa fa-money"></i> Commission</th>
-														</tr>
-													</thead>
-													<tbody>
-												<?php 
-													$total = 0; 
-													$i = 0;
-													
-													$total_transact = 0;
-													
-//var_dump($comision_todo);
-													
-													for ($i = 0 ; $i<sizeof($comision_todo["redes"]);$i++){
-														
-														$totales = (intval($comision_todo["ganancias"][$i][0]->valor)<>0||sizeof($comision_todo["bonos"][$i])<>0) ? 0 : 'FAIL';													
-														
-														//echo count($comision_todo["bonos"][$i]);
-														
-														if($totales!=='FAIL'){
-															echo '<tr class="success" >
-																<td colspan="2"><b>'.$comision_todo["redes"][$i]->nombre.'</b></td>
+											--> <!-- widget content -->
+                                <div class="widget-body">
+                                    <div id="myTabContent1" class="tab-content padding-10">
+                                        <h1 class="text-center"></h1>
+
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th><i class="fa fa-sitemap"></i> Network</th>
+                                                    <th><i class="fa fa-money"></i> Commission</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody><?php
+                                                $total = 0;
+                                                $i = 0;
+
+                                                $total_transact = 0;
+
+                                                //var_dump($comision_todo);
+
+                                                for ($i = 0; $i < sizeof($comision_todo["redes"]); $i++) {
+
+                                                    $totales = (intval($comision_todo["ganancias"][$i][0]->valor) <> 0 || sizeof($comision_todo["bonos"][$i]) <> 0) ? 0 : 'FAIL';
+
+                                                    //echo count($comision_todo["bonos"][$i]);
+
+                                                    if ($totales !== 'FAIL') {
+                                                        echo '<tr class="success" >
+																<td colspan="2"><b>' . $comision_todo["redes"][$i]->nombre . '</b></td>
 															</tr>';
-														}
-														
-														
-														if($comision_todo["ganancias"][$i][0]->valor<>0){
-															echo '<tr class="success" >
+                                                    }
+
+
+                                                    if ($comision_todo["ganancias"][$i][0]->valor <> 0) {
+                                                        echo '<tr class="success" >
 																<td colspan="2"><i class="fa fa-money"></i>Commissions</td>
 															</tr>';
-														
-															echo '<tr class="success">
+
+                                                        echo '<tr class="success">
 															<td>&nbsp;&nbsp;Sponsored Commissions</td>
-																<td>$ '.number_format($comision_todo["directos"][$i][0]->valor,2).'</td>
+																<td>$ ' . number_format($comision_todo["directos"][$i][0]->valor, 2) . '</td>
 															</tr>';
-														
-															echo '<tr class="success">
+
+                                                        echo '<tr class="success">
 															<td>&nbsp;&nbsp;Spillover Commissions</td>
-																<td>$ '.number_format($comision_todo["ganancias"][$i][0]->valor - $comision_todo["directos"][$i][0]->valor,2).'</td>
+																<td>$ ' . number_format($comision_todo["ganancias"][$i][0]->valor - $comision_todo["directos"][$i][0]->valor, 2) . '</td>
 															</tr>';
-														
-															if($comision_todo["ganancias"][$i][0]->valor){
-																$totales += ($comision_todo["ganancias"][$i][0]->valor);
-															}
-														
-															
-														}
-														
-														if($comision_todo["bonos"][$i]){
-															echo '<tr class="success" >
+
+                                                        if ($comision_todo["ganancias"][$i][0]->valor) {
+                                                            $totales += ($comision_todo["ganancias"][$i][0]->valor);
+                                                        }
+
+
+                                                    }
+
+                                                    if ($comision_todo["bonos"][$i]) {
+                                                        echo '<tr class="success" >
 																<td colspan="2"><i class="fa fa-gift"></i>Calculated Commissions</td>
 															</tr>';
-															for ($k=0;$k<sizeof($comision_todo["bonos"][$i]);$k++){
-																if($comision_todo["bonos"][$i][$k]->valor<>0){
-																	$totales += ($comision_todo["bonos"][$i][$k]->valor);
-																	echo '<tr class="success">
-																<td>&nbsp;&nbsp;'.$comision_todo["bonos"][$i][$k]->nombre.'</td>
-																	<td>$ '.number_format($comision_todo["bonos"][$i][$k]->valor,2).'</td>
+                                                        for ($k = 0; $k < sizeof($comision_todo["bonos"][$i]); $k++) {
+                                                            if ($comision_todo["bonos"][$i][$k]->valor <> 0) {
+                                                                $totales += ($comision_todo["bonos"][$i][$k]->valor);
+                                                                echo '<tr class="success">
+																<td>&nbsp;&nbsp;' . $comision_todo["bonos"][$i][$k]->nombre . '</td>
+																	<td>$ ' . number_format($comision_todo["bonos"][$i][$k]->valor, 2) . '</td>
 																</tr>';
-																}
-															}
-														}
-														
-														if($totales<>0){
-															echo '<tr class="warning">
+                                                            }
+                                                        }
+                                                    }
+
+                                                    if ($totales <> 0) {
+                                                        echo '<tr class="warning">
 																<td>&nbsp; Total </td>
-																<td>$ '.number_format($totales,2).'</td>
+																<td>$ ' . number_format($totales, 2) . '</td>
 															</tr>';
-															$total += ($totales);
-														}
-														
-													}
+                                                        $total += ($totales);
+                                                    }
 
-													?>  
-													<tr class="success">
-														<td><h4><b>TOTAL</b></h4></td>
-														<td>
-															<div class="col-md-3">
-																<h4><b>$ <?php echo number_format($total,2);?></b></h4>
-															</div>
-															<?php if($total !== 0){?>
-															<div class="col-md-1">
-																<a title='Show Details' style='cursor: pointer;' class='txt-color-green'
-																		onclick='ventas(<?=$id?>,"<?=$fecha?>");'>
-																	<i class='fa fa-eye fa-3x'></i>
-																</a>
-															</div>	
-															<?php }?>	
-														</td>
-													</tr>
-													
-													<?php if ($transaction) { ?>	
-														<tr class="warning">
-															<td ><b>Wallet movements</b></td>
-															<td >
-																<a title='Show Details' style='cursor: pointer;' class='txt-color-green' onclick='ver(<?=$id?>);'>
-																				<i class='fa fa-eye fa-3x'></i>
-																</a>
-															</td>
-														</tr>
-													<?php if ($transaction['add']) {
-															$total_transact+=$transaction['add'];
-														?>
-														<tr class="warning">
-															<td ><b>Total Added</b></td>
-															<td ><b style="color: green">$ <?php echo number_format($transaction['add'],2);?></b></td>
-														</tr>
-													<?php } 
-													if ($transaction['sub']) {
-														$total_transact-=$transaction['sub'];
-														?>
-														<tr class="warning" >
-															<td ><b>Total removed</b></td>
-															<td ><b style="color: red">$ <?php echo number_format($transaction['sub'],2);?></b></td>
-														</tr>
-													<?php } ?>
-														<tr class="warning">
-															<td ><b>TOTAL:</b></td>
-															<td ><h4><b >$ <?php echo number_format($total_transact,2);?></b></h4></td>
-														</tr>
-													<?php	} ?>
-													
-													</tbody>
-													</table>
-														
-													</div>
+                                                }
 
-													
-															<table id="dt_basic" class="table table-striped table-bordered table-hover">
-																
-																	<?php 
-																	$retenciones_total=0;
-																	foreach ($retenciones as $retencion) {?>
-																	<tr class="danger">
-																		<td><b>Retencion por <?php echo $retencion['descripcion']; ?></b></b></td>
-																		<td></td>
-																		<td>$ <?php 
-																		$retenciones_total+=$retencion['valor'];
-																		echo number_format($retencion['valor'],2); ?></td>
-																	</tr>
-																	<?php $total;
-																	} ?>
-																
-																	<tr class="danger">
-																		<td><b>Pending Withdrawal</b></td>
-																		<td></td>
-																		<td>$ <?php 
-																		if($cobroPendientes==null)
-																			echo "0";
-																		else
-																			echo number_format($cobroPendientes,2);
-																		?></td> 
-																	</tr>
-																
-																	<?php foreach ($cobro as $cobros){
-																	?>
-																	<tr class="danger">
-																		<td><b>Succeeded Withdrawal</b></td>
-																		<td></td>
-																		<td>$ 
-																		<?php 
-																		if($cobros->monto==null){
-																		  echo '0';
-																		  $cobro=0;
-																		}
-																		else {
-																		  echo number_format($cobros->monto,2);
-																		  $cobro=$cobros->monto;
-																		}
-																		?></td>
-																	</tr>
-																	<?php 
-																	}?>
-																	<tr class="info">
-																		<td><h4><b>Clear Status </b></h4>
-																		<td></td>
-																		<td><h4><b>$ <?php echo number_format(($total-($cobro+$retenciones_total+$cobroPendientes)+($total_transact)),2); ?></b></h4></td>
-																	</tr>
-																</table>
-														
-													</div>
-												
-												</div>
-							
+                                                ?>
+                                                <tr class="success">
+                                                    <td><h4><b>TOTAL</b></h4></td>
+                                                    <td>
+                                                        <div class="col-md-3">
+                                                            <h4><b>$ <?php echo number_format($total, 2); ?></b></h4>
+                                                        </div><?php if ($total !== 0) { ?>
+                                                            <div class="col-md-1"><a title='Show Details'
+                                                                                     style='cursor: pointer;'
+                                                                                     class='txt-color-green'
+                                                                                     onclick='ventas(<?= $id ?>,"<?= $fecha ?>");'><i
+                                                                        class='fa fa-eye fa-3x'></i></a></div><?php } ?>
+                                                    </td>
+                                                </tr><?php if ($transaction) { ?>
+                                                    <tr class="warning">
+                                                    <td><b>Wallet movements</b></td>
+                                                    <td><a title='Show Details' style='cursor: pointer;'
+                                                           class='txt-color-green' onclick='ver(<?= $id ?>);'><i
+                                                                    class='fa fa-eye fa-3x'></i></a></td>
+                                                    </tr><?php if ($transaction['add']) {
+                                                        $total_transact += $transaction['add'];
+                                                        ?>
+                                                        <tr class="warning">
+                                                        <td><b>Total Added</b></td>
+                                                        <td>
+                                                            <b style="color: green">$ <?php echo number_format($transaction['add'], 2); ?></b>
+                                                        </td>
+                                                        </tr><?php }
+                                                    if ($transaction['sub']) {
+                                                        $total_transact -= $transaction['sub'];
+                                                        ?>
+                                                        <tr class="warning">
+                                                        <td><b>Total removed</b></td>
+                                                        <td>
+                                                            <b style="color: red">$ <?php echo number_format($transaction['sub'], 2); ?></b>
+                                                        </td>
+                                                        </tr><?php } ?>
+                                                    <tr class="warning">
+                                                    <td><b>TOTAL:</b></td>
+                                                    <td><h4><b>$ <?php echo number_format($total_transact, 2); ?></b>
+                                                        </h4></td>
+                                                    </tr><?php } ?></tbody>
+                                            </table>
 
-											<!-- end widget div -->
-										</div>
-										<!-- end widget -->
-							
-									</article>
-								</div>
-							</section>
-						<!-- end widget grid -->
-						</div>
-					</div>
-				<!-- row -->
-				</div>
-				<div class="row">
-			        <div class="col-sm-12">
-			            <br />
-			            <br />
-			        </div>
-		        </div>
-				<!-- end row -->
+                                        </div>
 
-			</div>
-			<!-- END MAIN CONTENT -->
 
-		<!-- PAGE RELATED PLUGIN(S) 
+                                        <table id="dt_basic"
+                                               class="table table-striped table-bordered table-hover"><?php
+                                            $retenciones_total = 0;
+                                            foreach ($retenciones as $retencion) { ?>
+                                                <tr class="danger">
+                                                <td><b>Hoarding by <?php echo $retencion['descripcion']; ?></b></b></td>
+                                                <td></td>
+                                                <td>$ <?php
+                                                    $retenciones_total += $retencion['valor'];
+                                                    echo number_format($retencion['valor'], 2); ?></td>
+                                                </tr><?php $total;
+                                            } ?>
+                                            <tr class="danger">
+                                                <td><b>Pending Withdrawal</b></td>
+                                                <td></td>
+                                                <td>$ <?php
+                                                    if ($cobroPendientes == null)
+                                                        echo "0";
+                                                    else
+                                                        echo number_format($cobroPendientes, 2);
+                                                    ?></td>
+                                            </tr><?php foreach ($cobro as $cobros) {
+                                                ?>
+                                                <tr class="danger">
+                                                <td><b>Succeeded Withdrawal</b></td>
+                                                <td></td>
+                                                <td>$ <?php
+                                                    if ($cobros->monto == null) {
+                                                        echo '0';
+                                                        $cobro = 0;
+                                                    } else {
+                                                        echo number_format($cobros->monto, 2);
+                                                        $cobro = $cobros->monto;
+                                                    }
+                                                    ?></td>
+                                                </tr><?php
+                                            } ?>
+                                            <tr class="info">
+                                                <td><h4><b>Clear Status</b></h4>
+                                                <td></td>
+                                                <td><h4>
+                                                        <b>$ <?php echo number_format(($total - ($cobro + $retenciones_total + $cobroPendientes) + ($total_transact)), 2); ?></b>
+                                                    </h4></td>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+
+                                </div><!-- end widget div --></div><!-- end widget --></article>
+                    </div>
+                </section><!-- end widget grid --></div>
+        </div><!-- row --></div>
+    <div class="row">
+        <div class="col-sm-12"><br/> <br/></div>
+    </div><!-- end row --></div><!-- END MAIN CONTENT --> <!-- PAGE RELATED PLUGIN(S)
 		<!-- Morris Chart Dependencies -->
-		<script type="text/javascript">
+<script type="text/javascript">
 
-			function ver(id,fecha){
-				$.ajax({
-					type: "POST",
-					url: "/ov/billetera2/historial_transaccion",
-					data: {id: id}
-				})
-				.done(function( msg )
-				{					
-					bootbox.dialog({
-						message: msg,
-						title: 'Historial of Transacciones',
-						buttons: {
-							danger: {
-								label: "Close",
-								className: "btn-danger",
-								callback: function() {
+    function ver(id, fecha) {
+        $.ajax({
+            type: "POST",
+            url: "/ov/billetera2/historial_transaccion",
+            data: {id: id}
+        })
+            .done(function (msg) {
+                bootbox.dialog({
+                    message: msg,
+                    title: 'Historial of Transacciones',
+                    buttons: {
+                        danger: {
+                            label: "Close",
+                            className: "btn-danger",
+                            callback: function () {
 
-									}
-						}
-					}})//fin done ajax
-				});//Fin callback bootbox
-			}
+                            }
+                        }
+                    }
+                })//fin done ajax
+            });//Fin callback bootbox
+    }
 
-			function ventas(id,fecha){
-				$.ajax({
-					type: "POST",
-					url: "/ov/billetera2/ventas_comision",
-					data: {id: id, fecha: fecha}
-				})
-				.done(function( msg )
-				{					
-					bootbox.dialog({
-						message: msg,
-						title: 'Commission Details',
-						buttons: {
-							danger: {
-								label: "Close",
-								className: "btn-danger",
-								callback: function() {
+    function ventas(id, fecha) {
+        $.ajax({
+            type: "POST",
+            url: "/ov/billetera2/ventas_comision",
+            data: {id: id, fecha: fecha}
+        })
+            .done(function (msg) {
+                bootbox.dialog({
+                    message: msg,
+                    title: 'Commission Details',
+                    buttons: {
+                        danger: {
+                            label: "Close",
+                            className: "btn-danger",
+                            callback: function () {
 
-									}
-						}
-					}})//fin done ajax
-				});//Fin callback bootbox
-			}
+                            }
+                        }
+                    }
+                })//fin done ajax
+            });//Fin callback bootbox
+    }
 
-		</script>
-		<script src="/template/js/plugin/morris/raphael.min.js"></script>
-		<script src="/template/js/plugin/morris/morris.min.js"></script>
+</script>
+<script src="/template/js/plugin/morris/raphael.min.js"></script>
+<script src="/template/js/plugin/morris/morris.min.js"></script>
 
-		<script src="/template/js/plugin/datatables/jquery.dataTables.min.js"></script>
-		<script src="/template/js/plugin/datatables/dataTables.colVis.min.js"></script>
-		<script src="/template/js/plugin/datatables/dataTables.tableTools.min.js"></script>
-		<script src="/template/js/plugin/datatables/dataTables.bootstrap.min.js"></script>
-		<script src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
+<script src="/template/js/plugin/datatables/jquery.dataTables.min.js"></script>
+<script src="/template/js/plugin/datatables/dataTables.colVis.min.js"></script>
+<script src="/template/js/plugin/datatables/dataTables.tableTools.min.js"></script>
+<script src="/template/js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
 	
