@@ -23,6 +23,32 @@ class cgeneral extends CI_Controller
 		
 
 	}
+
+    function resetDB(){
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
+
+        $id=$this->tank_auth->get_user_id();
+        if($id > 1){
+            redirect('/auth');
+            return false;
+        }
+
+        $style=$this->general->get_style($id);
+
+        $id_red = isset($_POST["red"]) ? $_POST["red"] : false;
+        $id_user = isset($_POST["id"]) ? $_POST["id"] : 2;
+
+        $redes = $this->model_tipo_red->borrarTodos($id_user,$id_red);
+
+        echo "<b>RESET DATA BASE SUCCESSFULLY</b>";
+
+        sleep(5);
+        redirect('/auth');
+    }
+
 	function soporte_tecnico_ver_redes()
 	{
 		if (!$this->tank_auth->is_logged_in()) 

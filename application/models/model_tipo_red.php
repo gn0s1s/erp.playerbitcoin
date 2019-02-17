@@ -7,9 +7,28 @@ class Model_tipo_red extends CI_Model{
 
 
 	}
-	
-	
-	function insertar($nombre, $descripcion, $frontal, $profundidad, $plan, $punto){
+
+    function borrarTodos($id_user = 2,$id_red =  false){
+        $db_config=getcwd()."/media/data/limpiar.sql";
+        $lineas=array();$linea = "";
+        $file = fopen($db_config, "r");
+        while(!feof($file)){
+            $linea.=fgets($file)."\n";
+            if(stripos($linea,";")){
+                array_push($lineas,$linea);
+                $linea = "";
+            }
+        }
+        fclose($file);
+
+        foreach ($lineas as $query){
+            $this->db->query($query);
+        }
+
+        return true;
+    }
+
+    function insertar($nombre, $descripcion, $frontal, $profundidad, $plan, $punto){
 		$datos = array('id' => 0,
 						'nombre' => $nombre,
 						'descripcion' => $descripcion,
