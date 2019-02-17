@@ -103,7 +103,7 @@ if ($this->session->flashdata('error')) {
     </form>
 </div>
 <script type="text/javascript">
-    function new _ciudad() {
+    function nueva_ciudad() {
         bootbox.dialog({
             message: '<form id="form_ciudad" method="post" class="smart-form">'
                     + '<fieldset>'

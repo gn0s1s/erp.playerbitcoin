@@ -6,7 +6,7 @@
 			<h1 class="page-title txt-color-blueDark">
 
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>&gt;
-					<a href="/bo/comercial">Comercial</a> > <a
+					<a href="/bo/comercial">Commercial</a> > <a
 					href="/bo/comercial/carrito_de_compras?co=c"> Carrito of Purchases </a>
 					> <a href="/bo/mercancia/index?co=c">Alta</a> > Combinado
 				</span>

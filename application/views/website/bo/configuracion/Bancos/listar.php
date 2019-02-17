@@ -6,7 +6,7 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
 					<span>
-						> <a href="/bo/configuracion/"> Configuración</a>
+						> <a href="/bo/configuracion/"> Settings</a>
 						> <a href="/bo/configuracion/formaspago"> Formas of Pago</a> 
 						> <a href="/bo/bancos/index"> Bancos </a>
 						> listar
@@ -59,8 +59,8 @@
 							<div class="row col-xs-12 col-md-12 col-sm-8 col-lg-5 pull-right">
 								<div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
 									<center>
-										<a title="Editar" href="#" class="txt-color-blue"><i
-											class="fa fa-pencil fa-3x"></i></a> <br>Editar
+										<a title="Edit" href="#" class="txt-color-blue"><i
+											class="fa fa-pencil fa-3x"></i></a> <br>Edit
 									</center>
 								</div>
 								<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
@@ -111,7 +111,7 @@
 										<td><?php echo $banco->dir_postal; ?></td>
 										<td class='text-center'>
 											
-											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_banco(<?php echo $banco->id_banco; ?>)' title='Editar'><i class='fa fa-pencil fa-3x'></i></a>
+											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_banco(<?php echo $banco->id_banco; ?>)' title='Edit'><i class='fa fa-pencil fa-3x'></i></a>
 											<?php if ($banco->estatus == 'ACT') {?>
 												<a title="Desactivar" style='cursor: pointer;' onclick="estado_banco('DES','<?php echo $banco->id_banco; ?>')" class="txt-color-green"><i class="fa fa-check-square-o fa-3x"></i></a>
 											<?php }else {?>

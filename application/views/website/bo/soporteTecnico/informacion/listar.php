@@ -8,7 +8,7 @@
 							<!-- PAGE HEADER -->
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/configuracion/">Configuración</a>
+								<a href="/bo/configuracion/">Settings</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/soporte_tecnico">Support</a> 
@@ -65,8 +65,8 @@
 								</div>
 								<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
 									<center>
-										<a title="Editar" href="#" class="txt-color-blue"><i
-											class="fa fa-pencil fa-3x"></i></a> <br>Editar
+										<a title="Edit" href="#" class="txt-color-blue"><i
+											class="fa fa-pencil fa-3x"></i></a> <br>Edit
 									</center>
 								</div>
 								<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
@@ -116,7 +116,7 @@
 										<td class='text-center'>
 											<a class='txt-color-blue' href='<?php echo $archivo->ruta ?>' title='Descargar' target="_blank"><i class='fa fa-download fa-3x'></i></a>
 											<a class='txt-color-red' style='cursor: pointer;' onclick='eliminar_archivo("<?php echo $archivo->id; ?> ","<?php echo $archivo->ruta; ?>")' title='Eliminar'><i class='fa fa-trash-o fa-3x'></i></a>
-											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_archivo(<?php echo $archivo->id; ?>)' title='Editar'><i class='fa fa-pencil fa-3x'></i></a>
+											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_archivo(<?php echo $archivo->id; ?>)' title='Edit'><i class='fa fa-pencil fa-3x'></i></a>
 											<?php if ($archivo->estado == 'ACT') {?>
 												<a title="Desactivar" style='cursor: pointer;' onclick="estado_archivo('DES','<?php echo $archivo->id; ?>')" class="txt-color-green"><i class="fa fa-check-square-o fa-3x"></i></a>
 											<?php }else {?>

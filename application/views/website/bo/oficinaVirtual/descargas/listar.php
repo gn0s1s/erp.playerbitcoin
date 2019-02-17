@@ -6,7 +6,7 @@
             <h1 class="page-title txt-color-blueDark">
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
                 <span>
-                    > <a href="/bo/oficinaVirtual/"> Oficina Virtual</a> 
+                    > <a href="/bo/oficinaVirtual/"> BackOffice</a>
                     > <a href="/bo/oficinaVirtual/descargas"> Descargas</a> 
                     > Listar
                 </span>
@@ -57,8 +57,8 @@
                                 </div>
                                 <div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
                                     <center>
-                                        <a title="Editar" href="#" class="txt-color-blue"><i
-                                                class="fa fa-pencil fa-3x"></i></a> <br>Editar
+                                        <a title="Edit" href="#" class="txt-color-blue"><i
+                                                class="fa fa-pencil fa-3x"></i></a> <br>Edit
                                     </center>
                                 </div>
                                 <div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
@@ -113,7 +113,7 @@
                                                    onclick='eliminar_archivo("<?php echo $archivo->id; ?> ", "<?php echo $archivo->ruta; ?>")'
                                                    style='cursor: pointer;'  title='Eliminar'><i class='fa fa-trash-o fa-3x'></i></a>
                                                 <a class='txt-color-blue' style='cursor: pointer;' 
-                                                   onclick='editar_archivo(<?php echo $archivo->id; ?>)' title='Editar'>
+                                                   onclick='editar_archivo(<?php echo $archivo->id; ?>)' title='Edit'>
                                                     <i class='fa fa-pencil fa-3x'></i></a>
                                                 <?php if ($archivo->estado == 'ACT') { ?>
                                                     <a title="Desactivar" style='cursor: pointer;' 

@@ -5,7 +5,7 @@
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>>
-					<a href="/bo/oficinaVirtual/"> Oficina Virtual</a> > <a
+					<a href="/bo/oficinaVirtual/"> BackOffice</a> > <a
 					href="/bo/oficinaVirtual/encuestas"> Encuestas</a> > Listar
 				</span>
 			</h1>
@@ -38,8 +38,8 @@
 								
 								<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
 									<center>
-										<a title="Editar" href="#" class="txt-color-blue"><i
-												class="fa fa-pencil fa-3x"></i></a> <br>Editar
+										<a title="Edit" href="#" class="txt-color-blue"><i
+												class="fa fa-pencil fa-3x"></i></a> <br>Edit
 									</center>
 								</div>
 								<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
@@ -99,7 +99,7 @@
 															</td>
 															<td>
 																<a class="txt-color-red" style="cursor: pointer;" onclick="delete_encuesta(<?php echo $encuesta->id_encuesta ?>)" title="Eliminar"><i class="fa fa-trash-o fa-3x"></i></a>
-																<a class="txt-color-blue" style="cursor: pointer;" onclick="editar(<?php echo $encuesta->id_encuesta; ?>)"  title="Editar"><i class="fa fa-pencil fa-3x"></i></a>
+																<a class="txt-color-blue" style="cursor: pointer;" onclick="editar(<?php echo $encuesta->id_encuesta; ?>)"  title="Edit"><i class="fa fa-pencil fa-3x"></i></a>
 																<?php if ($encuesta->estatus == 'DES') { ?>
 																	<a class="txt-color-green" style="cursor: pointer;" onclick="estatus_encuesta(1,'<?php echo $encuesta->id_encuesta ?>')"  title="Activar"><i class="fa fa-square-o fa-3x"></i></a>
 																<?php } else { ?>

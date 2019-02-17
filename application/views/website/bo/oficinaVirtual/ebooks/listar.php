@@ -5,7 +5,7 @@
 		<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>>
-					<a href="/bo/oficinaVirtual/"> Oficina Virtual</a> > <a
+					<a href="/bo/oficinaVirtual/"> BackOffice</a> > <a
 					href="/bo/oficinaVirtual/ebooks"> E-Books</a> > Listar
 				</span>
 			</h1>
@@ -54,8 +54,8 @@
 								</div>
 								<div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
 									<center>
-										<a title="Editar" href="#" class="txt-color-blue"><i
-											class="fa fa-pencil fa-3x"></i></a> <br>Editar
+										<a title="Edit" href="#" class="txt-color-blue"><i
+											class="fa fa-pencil fa-3x"></i></a> <br>Edit
 									</center>
 								</div>
 								<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
@@ -109,7 +109,7 @@
 										<td class='text-center'>
 											<a class='txt-color-blue' onclick='' href='<?php echo $ebook->ruta ?>' title='Descargar' target="_blank" ><i class='fa fa-download fa-3x'></i></a>
 											<a class='txt-color-red' style='cursor: pointer;' onclick='eliminar_ebook("<?php echo $ebook->id; ?> ","<?php echo $ebook->ruta; ?>")' title='Eliminar'><i class='fa fa-trash-o fa-3x'></i></a>
-											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_ebook(<?php echo $ebook->id; ?>)' title='Editar'><i class='fa fa-pencil fa-3x'></i></a>
+											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_ebook(<?php echo $ebook->id; ?>)' title='Edit'><i class='fa fa-pencil fa-3x'></i></a>
 											<?php if ($ebook->estado == 'ACT') {?>
 												<a title="Desactivar" style='cursor: pointer;' onclick="estado_ebook('DES','<?php echo $ebook->id; ?>')" class="txt-color-green"><i class="fa fa-check-square-o fa-3x"></i></a>
 											<?php }else {?>

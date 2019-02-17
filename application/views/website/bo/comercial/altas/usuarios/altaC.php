@@ -7,7 +7,7 @@
 						<a class="backHome" href="/bol"><i class="fa fa-home"></i> Menu</a>
 						<span>
 								> <a href="/bo/logistico2/alta"> Alta</a>
-								> <a href="/bo/logistico2/usuarios">  Usuarios Logístico</a>
+								> <a href="/bo/logistico2/usuarios">  Usuarios Logistics</a>
 								> <a href="/bo/usuarios/CEDI"> CEDI </a>
 								> Alta
 							</span>
@@ -16,7 +16,7 @@
 							<a class="backHome" href="<?=$index?>"><i class="fa fa-home"></i> Menu</a>
 							<span> 
 								> <a href="<?=$index?>/altas"> Altas</a>
-								> <a href="/bo/logistico2/usuarios"> Usuarios Logístico</a>
+								> <a href="/bo/logistico2/usuarios"> Usuarios Logistics</a>
 								> <a href="/bo/usuarios/CEDI"> CEDI </a>
 								> Alta
 							</span>
@@ -239,7 +239,7 @@
 			</div>
 			<!-- END MAIN CONTENT -->
 <<script type="text/javascript">
-function new _user()
+function nueva_user()
 {
 	var tipo=$("#tipo").val();
 	if(tipo!="")
@@ -291,7 +291,7 @@ function new _user()
 					nextText : '<i class="fa fa-chevron-right"></i>'
 				});
 				
-				function new _user()
+				function nueva_user()
 				{
 					var tipo=$("#tipo").val();
 					if(tipo!="")

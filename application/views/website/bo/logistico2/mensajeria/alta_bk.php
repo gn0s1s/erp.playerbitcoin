@@ -4,7 +4,7 @@
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
             <h1 class="page-title txt-color-blueDark">
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-                <span>> <a href="/bol/"> Logistico </a>
+                <span>> <a href="/bol/">Logistics </a>
                     > <a href="/bo/logistico2/alta"> Alta </a>
                     > <a href="/bo/proveedor_software/"> Proveedor of Mensajería </a>
                     >	Alta
@@ -316,8 +316,7 @@
                                     <div id="tarifas">
 
                                     </div>
-
-                                    </filedset>
+                                </fieldset>
 
                                     <div class="row">
                                         <section  id="div_subir" style="width: 25rem;">
@@ -426,7 +425,7 @@
                                                                                                 Departamentos()
                                                                                             }
 
-                                                                                            function new _ciudad() {
+                                                                                            function nueva_ciudad() {
                                                                                                 bootbox.dialog({
                                                                                                     message: '<form id="form_ciudad" method="post" class="smart-form">'
                                                                                                             + '<fieldset>'
@@ -507,7 +506,7 @@
 
                                                                                             }
 
-                                                                                            function new _departamento() {
+                                                                                            function nueva_departamento() {
                                                                                                 bootbox.dialog({
                                                                                                     message: '<form id="form_depto" method="post" class="smart-form">'
                                                                                                             + '<fieldset>'

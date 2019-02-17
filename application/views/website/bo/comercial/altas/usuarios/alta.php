@@ -147,7 +147,7 @@
 			</div>
 			<!-- END MAIN CONTENT -->
 <<script type="text/javascript">
-function new _user()
+function nueva_user()
 {
 	var tipo=$("#tipo").val();
 	if(tipo!="")

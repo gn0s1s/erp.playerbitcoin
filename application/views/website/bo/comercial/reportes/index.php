@@ -8,7 +8,7 @@
 							<i class="fa-fw fa fa-home"></i> 
 								<a href="/bo/dashboard"> Menu</a> 
 							<span>>
-								<a href="/bo/comercial">Comercial</a> >Reports
+								<a href="/bo/comercial">Commercial</a> >Reports
 							</span>
 						</h1>
 					</div>

@@ -22,23 +22,23 @@
 							</li>
 							<li class="">
 								<a href="/bo/configuracion/">
-								<i style="font-size: 2rem;" class="fa fa-wrench "></i> Configuración </a>
+								<i style="font-size: 2rem;" class="fa fa-wrench "></i> Settings </a>
 							</li>
 							<li class="">
 								<a href="/bo/comercial/">
-								<i style="font-size: 2rem;" class="fa fa-money "></i> Comercial </a>
+								<i style="font-size: 2rem;" class="fa fa-money "></i>Commercial </a>
 							</li>
 							<li class="">
 								<a href="/bo/logistico/">
-								<i style="font-size: 2rem;" class="fa fa-cubes "></i> Logistico </a>
+								<i style="font-size: 2rem;" class="fa fa-cubes "></i>Logistics </a>
 							</li>
 							<li class="">
 								<a href="/bo/administracion/">
-								<i style="font-size: 2rem;" class="fa fa-folder-open "></i> Administrativo </a>
+								<i style="font-size: 2rem;" class="fa fa-folder-open "></i> Directives </a>
 							</li>
 							<li class="">
 								<a href="/bo/oficinaVirtual/">
-								<i style="font-size: 2rem;" class="fa fa-desktop "></i> Oficina Virtual </a>
+								<i style="font-size: 2rem;" class="fa fa-desktop "></i> BackOffice </a>
 							</li>
 							<li class="">
 								<a href="/bo/reportes">

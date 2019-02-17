@@ -7,7 +7,7 @@
 							<!-- PAGE HEADER -->
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/configuracion/">Configuración</a> 
+								<a href="/bo/configuracion/">Settings</a>
 							</span>
 							<span>>
 								<a href="/bo/configuracion/soporte_tecnico">Support</a>
@@ -44,8 +44,8 @@
 									<div class="row col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 											<center>
-											<a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-											<br>Editar
+											<a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+											<br>Edit
 											</center>
 										</div>
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
@@ -100,7 +100,7 @@
 															}	
 														} ?></td>
 														<td>
-															<a title="Editar" class="txt-color-blue" style="cursor: pointer" onclick="editar('<?php echo $grupo->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
+															<a title="Edit" class="txt-color-blue" style="cursor: pointer" onclick="editar('<?php echo $grupo->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
 															<a title="Eliminar"  class="txt-color-red" style="cursor: pointer" onclick="eliminar('<?php echo $grupo->id; ?>');"><i class="fa fa-trash-o fa-3x"></i></a>
 															<?php if($grupo->estatus == 'ACT'){ ?>
 																<a title="Desactivar" style="cursor: pointer" onclick="estado('DES','<?php echo $grupo->id; ?>')" class="txt-color-green"><i class="fa fa-check-square-o fa-3x"></i></a>

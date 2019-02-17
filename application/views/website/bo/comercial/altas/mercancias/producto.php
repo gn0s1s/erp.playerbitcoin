@@ -23,7 +23,7 @@
 				 <?php }else{?>
 				 	<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
 				 	<span>
-				 	> <a href="/bo/comercial">Comercial</a> 
+				 	> <a href="/bo/comercial">Commercial</a>
 					> <a href="/bo/comercial/mercancia"> Mercancias</a>
 					> <a href="/bo/mercancia">Alta</a> 
 					> Producto
@@ -144,7 +144,7 @@ if ($this->session->flashdata ( 'error' )) {
 											</section>
 
 											<section id="canal" class="col col-6">
-												<label for=""><b>Comercialización</b></label>
+												<label for=""><b>Channels</b></label>
 												<hr /><br />
 												<ul style="list-style:none">
 												<?php 
@@ -488,7 +488,7 @@ $(document).ready(function() {
 	pageSetUp();
 
 })
-function new _user()
+function nueva_user()
 {
 	var ids=new Array(
 		"#username",
@@ -705,7 +705,7 @@ $(function()
 	});
 });
 
-function new _product()
+function nueva_product()
 {
 	$('#prods').append('<section class="col col-8">productos'
 		+'<label class="select">'
@@ -724,7 +724,7 @@ function new _product()
 		+'</label>'
 		+'</section>');
 }
-function new _service()
+function nueva_service()
 {
 	$('#servs').append('<section class="col col-8">Services'
 		+'<label class="select">'
@@ -743,7 +743,7 @@ function new _service()
 		+'</label>'
 		+'</section>');
 }
-function new _grupo()
+function nueva_grupo()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del grupo</label><input id='desc'  type='text'/>",
@@ -782,7 +782,7 @@ function new _grupo()
 	})
 }
 
-function new _impuesto()
+function nueva_impuesto()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
@@ -1135,7 +1135,7 @@ function estatus(tipo,id)
 		})
 	}
 }
-function new _empresa()
+function nueva_empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
@@ -1305,7 +1305,7 @@ function check_keyword_co()
 		$("#ajax_1").remove();
 	});
 }
-function new _proveedor()
+function nueva_proveedor()
 {
 	$.ajax({
 		type: "POST",
@@ -1660,7 +1660,7 @@ $("#mercancia").submit(function(event){
 
 	});
 
-function new _pack()
+function nueva_pack()
 {
 	bootbox.dialog({
 		message: '<form id="form_paquete" method="post" action="/bo/admin/alta_paquete" class="smart-form">'

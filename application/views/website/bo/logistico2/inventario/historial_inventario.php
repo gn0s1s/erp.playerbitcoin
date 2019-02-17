@@ -22,7 +22,7 @@
 						
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-								> <a href="/bol/dashboard/"> Logístico</a> 
+								> <a href="/bol/dashboard/"> Logistics</a>
 								> <a href="/bo/inventario"> Inventario</a>
 								> Historial 
 							</span>

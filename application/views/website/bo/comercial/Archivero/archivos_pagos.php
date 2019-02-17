@@ -8,7 +8,7 @@
 					<!-- PAGE HEADER -->
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
 					<span> >
-						<a href="/bo/comercial/index"> Comercial</a> > 
+						<a href="/bo/comercial/index">Commercial</a> >
 						<a href="/bo/CuentasPagar/Archivero"> Archivero</a> > Historial Pagos
 					</span>
 				</h1>

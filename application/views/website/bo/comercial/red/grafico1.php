@@ -7,7 +7,7 @@
                               <h1 class="page-title txt-color-blueDark">
                                     <a href="/bo/dashboard"> Menu</a> 
 									<span>>
-										<a href="/bo/comercial">Comercial</a>
+										<a href="/bo/comercial">Commercial</a>
 									</span>
 									<span>>
 										<a href="/bo/comercial/red">Network</a>

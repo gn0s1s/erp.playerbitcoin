@@ -11,7 +11,7 @@
 					<a href="/bo/comercial">Módulo comercial</a>
 				</span>-->
 				<span>>
-					Oficina virtual
+					BackOffice
 				</span>
 			</h1>
 		</div>
@@ -163,7 +163,7 @@
 																			<td class='text-center'>
 																				<a class='txt-color-blue' onclick='' href='".$presentacion->ruta."' title='Descargar'><i class='fa fa-download'></i></a>
 																				<a class='txt-color-red' style='cursor: pointer;' onclick='delete_file(".$presentacion->id.",\"".$presentacion->ruta."\")' title='Eliminar'><i class='fa fa-trash-o'></i></a>
-																				<a class='txt-color-green' style='cursor: pointer;' onclick='editar(1,".$presentacion->id.")'  title='Editar'><i class='fa fa-edit'></i></a>
+																				<a class='txt-color-green' style='cursor: pointer;' onclick='editar(1,".$presentacion->id.")'  title='Edit'><i class='fa fa-edit'></i></a>
 																			</td>
 																		</tr>";
 																	} ?>
@@ -423,7 +423,7 @@
 																			<td class='text-center'>
 																				<a class='txt-color-blue' onclick='' href='".$ebooks[$i]->ruta."' title='Descargar'><i class='fa fa-download'></i></a>
 																				<a class='txt-color-red' style='cursor: pointer;' onclick='delete_file(".$ebooks[$i]->id.",\"".$ebooks[$i]->ruta."\")' title='Eliminar'><i class='fa fa-trash-o'></i></a>
-																				<a class='txt-color-green' style='cursor: pointer;' onclick='editar(1,".$ebooks[$i]->id.")' title='Editar'><i class='fa fa-edit'></i></a>
+																				<a class='txt-color-green' style='cursor: pointer;' onclick='editar(1,".$ebooks[$i]->id.")' title='Edit'><i class='fa fa-edit'></i></a>
 																			</td>
 																		</tr>";
 																	} ?>
@@ -542,7 +542,7 @@
 																			<td class='text-center'>
 																				
 																				<a class='txt-color-red' style='cursor: pointer;' onclick='delete_info(".$infos[$i]->id.")' title='Eliminar'><i class='fa fa-trash-o'></i></a>
-																				<a class='txt-color-green'  style='cursor: pointer;' onclick='editar(2,".$infos[$i]->id.")'  title='Editar'><i class='fa fa-edit'></i></a>
+																				<a class='txt-color-green'  style='cursor: pointer;' onclick='editar(2,".$infos[$i]->id.")'  title='Edit'><i class='fa fa-edit'></i></a>
 																			</td>
 																		</tr>";
 																	} ?>
@@ -635,7 +635,7 @@
 																					.substr($noticias[$i]->contenido, 0, 100).
 																				"... <a href='ver_noticia?idnw=".$noticias[$i]->id."'>ver mas</a>
 																				&nbsp;&nbsp;&nbsp;<a class='txt-color-red' style='cursor: pointer;' onclick='delete_new(".$noticias[$i]->id.")' title='Eliminar'><i class='fa fa-trash-o'></i></a>
-																				&nbsp;&nbsp;&nbsp;<a class='txt-color-green'  style='cursor: pointer;' onclick='editar(3,".$noticias[$i]->id.")'  title='Editar'><i class='fa fa-edit'></i></a></p>
+																				&nbsp;&nbsp;&nbsp;<a class='txt-color-green'  style='cursor: pointer;' onclick='editar(3,".$noticias[$i]->id.")'  title='Edit'><i class='fa fa-edit'></i></a></p>
 																				<p><strong>"
 																					.$noticias[$i]->usuario.
 																				"
@@ -1093,7 +1093,7 @@
 																				<td>'.$cupones[$i]->fecha_adicion.'</td>
 																				<td class="text-center">
 																					<a class="txt-color-red" style="cursor: pointer;" onclick="delete_cupon('.$cupones[$i]->id_cupon.')" title="Eliminar"><i class="fa fa-trash-o"></i></a>
-																					<a class="txt-color-green" style="cursor: pointer;" onclick="editar(4,'.$cupones[$i]->id_cupon.')"  title="Editar"><i class="fa fa-edit"></i></a>
+																					<a class="txt-color-green" style="cursor: pointer;" onclick="editar(4,'.$cupones[$i]->id_cupon.')"  title="Edit"><i class="fa fa-edit"></i></a>
 																					<a class="txt-color-green" style="cursor: pointer;" onclick="asignar_form('.$cupones[$i]->id_cupon.')"  title="Asignar"><i class="fa fa-exchange"></i></a>&nbsp;';
 																				if($cupones[$i]->estado=='DES')
 																				{
@@ -1197,7 +1197,7 @@
 																						</td>
 																						<td class="text-center">
 																							<h5><a class="txt-color-red" style="cursor: pointer;" onclick="delete_encuesta('.$encuestas[$i]->id_encuesta.')" title="Eliminar"><i class="fa fa-trash-o"></i></a>
-																							<a class="txt-color-green" style="cursor: pointer;" onclick="editar(5,'.$encuestas[$i]->id_encuesta.')"  title="Editar"><i class="fa fa-edit"></i></a>&nbsp;';
+																							<a class="txt-color-green" style="cursor: pointer;" onclick="editar(5,'.$encuestas[$i]->id_encuesta.')"  title="Edit"><i class="fa fa-edit"></i></a>&nbsp;';
 																						if($encuestas[$i]->estatus=='DES')
 																						{
 																							echo '<a class="txt-color-green" style="cursor: pointer;" onclick="estatus_encuesta(1,'.$encuestas[$i]->id_encuesta.')"  title="Activar"><i class="fa fa-square-o"></i></a>';
@@ -1303,7 +1303,7 @@
 		<script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 <script src="/template/js/plugin/jquery-form/jquery-form.min.js"></script>
 		<script type="text/javascript">
-			function new _grupo()
+			function nueva_grupo()
 			{
 				var grupo=$("#grupo").val();
 				if(grupo!="")
@@ -2159,7 +2159,7 @@
 														+'<div class="row">'
 															+'<div class="col-md-12">'
 																+'<button class="btn btn-default" type="button" id="new_evento" onclick="update_evento('+id+')" >'
-																	+'Editar'
+																	+'Edit'
 																+'</button>'
 															+'</div>'
 														+'</div>'

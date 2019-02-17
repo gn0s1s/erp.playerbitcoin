@@ -17,7 +17,7 @@ $style = array(
         <div class="col-xs-12 col-sm-12">
             <?if(isset($nombre))
             {?>
-                <span class="pull-right txt-color-white">Hola: <?=$nombre?> tu última sesión fue: <?=$sesion?></span>
+                <span class="pull-right txt-color-white">hi, <?=$nombre?> last session: <?=$sesion?></span>
             <?}?>
             <span class="txt-color-white">
 			Copyright © <?=date('Y');?> <?=$nombre_empresa?> All Rights Reserved.

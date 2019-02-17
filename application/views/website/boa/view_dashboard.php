@@ -44,7 +44,7 @@ $ci->load->model("model_permissions");?>
 									<!--Inica the secciion of the Profile & red-->
 								  	<div class="well" style="box-shadow: 0px 0px 0px !important;border-color: transparent;">
 										<fieldset>
-											<legend><b>Sistema Integral of Operaciones Administrativo</b></legend>
+											<legend><b>Sistema Integral of Operaciones Directives</b></legend>
 											                  <div class="contenidoBotones">
 										<div class="row">
 											<div class="col-sm-12 link">

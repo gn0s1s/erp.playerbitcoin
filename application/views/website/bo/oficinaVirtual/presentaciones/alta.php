@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
 							<span>>
-								<a href="/bo/oficinaVirtual/"> Oficina Virtual</a> > <a href="/bo/oficinaVirtual/presentaciones"> Presentaciones</a> > Alta
+								<a href="/bo/oficinaVirtual/"> BackOffice</a> > <a href="/bo/oficinaVirtual/presentaciones"> Presentaciones</a> > Alta
 							</span>
 						</h1>
 					</div>

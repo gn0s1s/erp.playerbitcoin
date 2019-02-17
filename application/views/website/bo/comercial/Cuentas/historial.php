@@ -7,7 +7,7 @@
 
 				<!-- PAGE HEADER -->
 				<i class="fa-fw fa fa-home"></i> <a href="/bo/dashboard"> Menu</a> <span>>
-					<a href="/bo/comercial/"> Comercial</a> > <a
+					<a href="/bo/comercial/">Commercial</a> > <a
 					href="/bo/CuentasPagar/index"> Cobros</a> > Historial
 				</span>
 			</h1>

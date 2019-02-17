@@ -6,7 +6,7 @@
             <h1 class="page-title txt-color-blueDark">
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span>
-                    > <a href="/bo/oficinaVirtual/"> Oficina Virtual</a> 
+                    > <a href="/bo/oficinaVirtual/"> BackOffice</a>
                     > <a href="/bo/oficinaVirtual/eventos"> Eventos</a> 
                     > Listar
                 </span>
@@ -38,8 +38,8 @@
                                 <div class="row col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
                                     <div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
                                         <center>
-                                            <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-                                            <br>Editar
+                                            <a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+                                            <br>Edit
                                         </center>
                                     </div>
                                     <div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
@@ -83,7 +83,7 @@
 											<td>' . $eventos[$i]->inicio . '</td>
 											<td>' . $eventos[$i]->fin . '</td>
 											<td class="text-center">
-												<a class="txt-color-blue"  style="cursor: pointer;" onclick="editar_evento(' . $eventos[$i]->id . ')"  title="Editar"><i class="fa fa-pencil fa-3x"></i></a>									
+												<a class="txt-color-blue"  style="cursor: pointer;" onclick="editar_evento(' . $eventos[$i]->id . ')"  title="Edit"><i class="fa fa-pencil fa-3x"></i></a>									
 												<a class="txt-color-red" style="cursor: pointer;" onclick="eliminar(' . $eventos[$i]->id . ')" title="Eliminar""><i class="fa fa-trash-o fa-3x"></i></a>
 											';
                                             if ($eventos[$i]->estatus == 'ACT') {

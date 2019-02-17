@@ -51,7 +51,7 @@
 		</div>
 	</fieldset>
 	<fieldset>
-		<legend>Configuración del proveedor</legend>
+		<legend>Settings del proveedor</legend>
 		<section class="col col-6">
 			<label class="select">Selecciona the tipo of proveedor 
 			<select id="tipo_proveedor" required name="tipo_proveedor">

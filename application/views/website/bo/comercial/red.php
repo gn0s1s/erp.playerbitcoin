@@ -78,8 +78,8 @@
 								<div class="tab-pane fade in active" id="s1">
 									<div class="row">
 										<div class="col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
-											Detalles <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-eye"></i></a>
-											Detalles on red <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-sitemap"></i></a>
+											Detalles <a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-eye"></i></a>
+											Detalles on red <a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-sitemap"></i></a>
 											Permisos <a title="Permisos" href="#" class="txt-color-blue"><i class="fa fa-unlock"></i></a>
 											Eliminar <a title="Eliminar" href="#" class="txt-color-red"><i class="fa fa-trash-o"></i></a> 
 											Activar <a title="Activar" href="#" class="txt-color-blue"><i class="fa fa-check"></i></a> 
@@ -698,7 +698,7 @@ function nueva_perfil(id)
 				+'<i></i><?=$key->nombre?></label>'	
 				+'<?php }}?>'						
 			+'</section>'
-			+'<section class="col col-6">Permisos del grupo Oficina virtual'
+			+'<section class="col col-6">Permisos del grupo BackOffice'
 	       	+'<?php foreach ($permisos as $key){if($key->id_grupo==2){?>'
 			+'<label class="checkbox">'
 				+'<input value="<?=$key->id_permiso?>" name="permiso[]" type="checkbox">'

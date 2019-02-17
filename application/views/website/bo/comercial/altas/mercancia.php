@@ -7,9 +7,9 @@
 				
 				<!-- PAGE HEADER -->
 				<i class="fa-fw fa fa-pencil-square-o"></i> 
-				<a href="/bo/comercial">Comercial</a>
+				<a href="/bo/comercial">Commercial</a>
 				<!--<span>>
-					<a href="/bo/admin">Módulo administrativo</a>
+					<a href="/bo/admin">Módulo Directives</a>
 				</span>-->
 				<span>>
 					Mercancia

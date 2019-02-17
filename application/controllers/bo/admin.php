@@ -254,8 +254,8 @@ class admin extends CI_Controller
 	{
 		$empresa = $this->model_admin->entorno_empresa();
 		echo $empresa
-		? "Se ha actualizado los datos de configuración"
-		: "No se ha podido actualizar los datos de configuración";
+		? "Se ha actualizado los datos de Settings"
+		: "No se ha podido actualizar los datos de Settings";
 	}
 
 	function new_proveedor()

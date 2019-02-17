@@ -267,7 +267,7 @@ ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.s
 			<table>
 				<tr>
 					<td>
-						<h3>Hola <?=$username?>, te damos the bienvenida a tu oficina virtual of <?=$site_name?></h3>
+						<h3>Hola <?=$username?>, te damos the bienvenida a tu BackOffice of <?=$site_name?></h3>
 						
 						<!-- A Real Hero (and a real human being) -->
 						

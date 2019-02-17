@@ -840,7 +840,7 @@ class reportes extends CI_Controller {
 					"Total Neto" 
 			);
 			
-			$this->model_excel->setTemplateExcelReport ( "Ventas Oficina Virtual", $subtitulos, $contador_filas, $this->excel );
+			$this->model_excel->setTemplateExcelReport ( "Ventas BackOffice", $subtitulos, $contador_filas, $this->excel );
 			
 			$this->excel->getActiveSheet ()->setCellValueByColumnAndRow ( 0, ($contador_filas + 10), "TOTALES" );
 			$this->excel->getActiveSheet ()->setCellValueByColumnAndRow ( 1, ($contador_filas + 10), "" );

@@ -501,7 +501,7 @@
                                                                     }
 
 
-                                                                    function new _empresa()
+                                                                    function nueva_empresa()
                                                                     {
                                                                         bootbox.dialog({
                                                                             message: '<form id="form_empresa" method="post" class="smart-form">'

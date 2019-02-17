@@ -43,7 +43,7 @@
 						<form id="nueva" class="smart-form" method="POST" action="/bo/inventario/updateMovimiento" enctype="multipart/form-data">
 							<fieldset>
 <input type="text" id="id" name="id" value="<?php echo $datosDocumento[0]->id_doc; ?>" class="hide">
-								<label class="input">Editar documento
+								<label class="input">Edit documento
 									<input style="width: 25rem;" type="text" value="<?php echo $datosDocumento[0]->nombre; ?>" name="nombre" placeholder="Nombre Documento" class="form-control" required>
 								</label>
 							  <br>

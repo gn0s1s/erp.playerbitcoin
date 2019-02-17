@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/configuracion/">Configuración</a> > 
+								<a href="/bo/configuracion/">Settings</a> >
 								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
 								<a href="/bo/planes">Planes of Bonos</a>
 								> Listar Planes
@@ -38,8 +38,8 @@
 									<div class="row col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 											<center>
-											<a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-											<br>Editar
+											<a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+											<br>Edit
 											</center>
 										</div>
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
@@ -91,7 +91,7 @@
 															}
 														}?></td>
 														<td>
-															<a style="cursor: pointer" title="Editar" class="txt-color-blue" onclick="editar('<?php echo $plan->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
+															<a style="cursor: pointer" title="Edit" class="txt-color-blue" onclick="editar('<?php echo $plan->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
 															
 															<?php if($plan->estatus == 'ACT'){ ?>
 																<a style="cursor: pointer" title="Desactivar" onclick="estado('DES','<?php echo $plan->id; ?>')" class="txt-color-green"><i class="fa fa-check-square-o fa-3x"></i></a>
@@ -116,14 +116,7 @@
 				<!-- end widget -->
 			</article>
 			<!-- END COL -->
-		</div>
-		<div class="row">         
-	        <!-- a blank row to get started -->
-	        <div class="col-sm-12">
-	            <br />
-	            <br />
-	        </div>
-        </div>            
+
 		<!-- END ROW -->
 	</section>
 	<!-- end widget grid -->

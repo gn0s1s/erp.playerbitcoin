@@ -8,7 +8,7 @@
 							<i class="fa-fw fa fa-home"></i> 
 								<a href="/bo/dashboard"> Menu</a> 
 							<span>>
-								<a href="/bo/oficinaVirtual/"> Oficina Virtual</a> > Reconocimientos
+								<a href="/bo/oficinaVirtual/"> BackOffice</a> > Reconocimientos
 							</span>
 						</h1>
 					</div>

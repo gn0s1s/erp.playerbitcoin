@@ -10,7 +10,7 @@
 						 <?php }else{?>
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 								<span> 
-								> <a href="/bo/logistico/">Logistico</a> 
+								> <a href="/bo/logistico/">Logistics</a>
 								> Alta 
 								</span>
 							<?php }?>
@@ -119,7 +119,7 @@
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>; padding-left:2.8em;">
 														<i class="fa fa-user fa-3x"></i>
 														<h1>Usuarios</h1>
-														<h1>Logístico</h1>
+														<h1>Logistics</h1>
 													</div>
 												</a>
 											</div>

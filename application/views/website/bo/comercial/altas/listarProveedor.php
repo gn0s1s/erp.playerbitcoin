@@ -15,7 +15,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							
 							<span>
-							> <a class="" href="/bo/comercial/altas/"><i class=""></i> Comercial</a>
+							> <a class="" href="/bo/comercial/altas/"><i class=""></i>Commercial</a>
 							> <a class="" href="/bo/comercial/actionProveedor/"><i class=""></i> Proveedor</a>
 							> Listar
 							</span>
@@ -32,7 +32,7 @@
 			<?php }else{?>
 				      <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-							 	 > <a href="/bol/"> Logistico </a>
+							 	 > <a href="/bol/">Logistics </a>
 								 > <a class="" href="/bo/logistico2/alta/"><i class=""></i> Alta</a>
 								 > <a href="/bo/comercial/actionProveedor">Proveedor </a>
 								 > Listar
@@ -68,8 +68,8 @@
 									<div class="row col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 											<center>
-											<a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-											<br>Editar
+											<a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+											<br>Edit
 											</center>
 										</div>
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
@@ -108,7 +108,7 @@
 														<td><?php echo $row->email; ?></td>
 													
 														<td class='text-center'>
-															<a title="Editar" style='cursor: pointer;' class="txt-color-blue" onclick="editar('<?php echo $row->id_proveedor; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
+															<a title="Edit" style='cursor: pointer;' class="txt-color-blue" onclick="editar('<?php echo $row->id_proveedor; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
 													     	<a title="Eliminar" style='cursor: pointer;' class="txt-color-red" onclick="eliminarProveedor('<?php echo $row->id_proveedor; ?>');"><i class="fa fa-trash-o fa-3x"></i></a>
 														
 														

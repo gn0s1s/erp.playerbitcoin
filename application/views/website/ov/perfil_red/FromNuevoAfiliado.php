@@ -121,7 +121,7 @@
 							</div>
 						</fieldset>
 						<fieldset>
-							<legend>Configuración del afiliado</legend>
+							<legend>Settings del afiliado</legend>
 								<section class="col col-12">
 									<label class="toggle">
 									<input type="checkbox" checked="checked" name="sponsor">

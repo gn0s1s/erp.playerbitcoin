@@ -7,10 +7,10 @@
                 <i class="fa-fw fa fa-pencil-square-o"></i> 
                 <a href="/bo/dashboard">Dashboard</a>
                 <span>>
-                    <a href="/bo/comercial">Comercial</a>
+                    <a href="/bo/comercial">Commercial</a>
                 </span>
                 <span>>
-                    <a href="/bo/comercial/oficina_virtual">Oficina Virtual</a>
+                    <a href="/bo/comercial/oficina_virtual">BackOffice</a>
                 </span>
                 <span>>
                     Crear Encuesta

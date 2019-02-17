@@ -12,7 +12,7 @@
 							<i class="fa-fw fa fa-home"></i> 
 								<a href="/ov/dashboard"> Menu</a> 
 							<span>>
-								<a href="/ov/dashboard"> Oficina Virtual</a> > <a href="/ov/news"> Noticias</a> > Listar
+								<a href="/ov/dashboard"> BackOffice</a> > <a href="/ov/news"> Noticias</a> > Listar
 							</span>
 						</h1>
 					

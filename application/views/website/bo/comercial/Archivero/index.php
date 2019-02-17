@@ -6,7 +6,7 @@
 							
 							<!-- PAGE HEADER -->
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span> >
-								<a href="/bo/comercial/index"> Comercial</a> > Archivero
+								<a href="/bo/comercial/index">Commercial</a> > Archivero
 							</span>
 						</h1>
 					</div>

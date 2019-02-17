@@ -45,7 +45,7 @@
 													<option value="12">Facturas Emitidas</option>
 													<option value="13">Pagos</option>
 													<option value="14">Ventas por Empresa</option>
-													<option value="15">Ventas por Oficina Virtual</option>
+													<option value="15">Ventas por BackOffice</option>
 													<option value="16">Ventas por Telemarkwting</option>
 													<option value="17">Ventas por CEDI's</option>
 													<option value="18">Ventas webs personales</option>

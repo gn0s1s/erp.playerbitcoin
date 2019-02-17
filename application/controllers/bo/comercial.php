@@ -1041,7 +1041,7 @@ class comercial extends CI_Controller
 			echo'
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<fieldset id="edita_posicion">
-				<legend>Editar</legend>
+				<legend>Edit</legend>
 				<div>Id: '.$_POST['id'].'</div>
 				<div>Nombre: '.$misdatos[0]->nombre." ".$misdatos[0]->apellido.'</div>
 				<div>Correo: '.$misdatos[0]->email.'</div>
@@ -1981,7 +1981,7 @@ class comercial extends CI_Controller
 											<td>'.$eventos[$i]->fin.'</td>
 											<td class="text-center">									
 												<a class="txt-color-red" style="cursor: pointer;" onclick="delete_evento('.$eventos[$i]->id.')" title="Eliminar""><i class="fa fa-trash-o"></i></a>
-												<a class="txt-color-green"  style="cursor: pointer;" onclick="editar_evento('.$eventos[$i]->id.')"  title="Editar"><i class="fa fa-edit"></i></a>
+												<a class="txt-color-green"  style="cursor: pointer;" onclick="editar_evento('.$eventos[$i]->id.')"  title="Edit"><i class="fa fa-edit"></i></a>
 											</td>';
 											
 									}

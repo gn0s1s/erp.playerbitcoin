@@ -6,7 +6,7 @@
 
 
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>>
-					<a href="/bo/configuracion">Configuración</a>
+					<a href="/bo/configuracion">Settings</a>
 				</span> <span>> <a href="/bo/configuracion/formaspago">Formas de
 						Pago</a>
 				</span> <span>> Compropago </span>

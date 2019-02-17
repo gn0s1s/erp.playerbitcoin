@@ -187,7 +187,7 @@
 																							{
 																								echo "
 																								<td class='text-center'>
-																									<a title='Editar' href='#' onclick='editar_alm(".$almacen[$i]->id_almacen.",".$almacen[$i]->web.")' class='txt-color-blue'><i class='fa fa-pencil'></i></a>
+																									<a title='Edit' href='#' onclick='editar_alm(".$almacen[$i]->id_almacen.",".$almacen[$i]->web.")' class='txt-color-blue'><i class='fa fa-pencil'></i></a>
 																									<a title='Eliminar' href='#' onclick='eliminar_alm(".$almacen[$i]->id_almacen.")' class='txt-color-red'><i class='fa fa-trash-o'></i></a>
 																									<a class='txt-color-green' style='cursor: pointer;' onclick='estatus_alm(".$almacen[$i]->id_almacen.",1)' title='Desctivar'><i class='fa fa-check-square-o'></i></a>
 																								</td>";
@@ -196,7 +196,7 @@
 																							{
 																								echo "
 																								<td class='text-center'>
-																									<a title='Editar' href='#' onclick='editar_alm(".$almacen[$i]->id_almacen.",".$almacen[$i]->web.")' class='txt-color-blue'><i class='fa fa-pencil'></i></a>
+																									<a title='Edit' href='#' onclick='editar_alm(".$almacen[$i]->id_almacen.",".$almacen[$i]->web.")' class='txt-color-blue'><i class='fa fa-pencil'></i></a>
 																									<a title='Eliminar' href='#' onclick='eliminar_alm(".$almacen[$i]->id_almacen.")' class='txt-color-red'><i class='fa fa-trash-o'></i></a>
 																									<a class='txt-color-red' style='cursor: pointer;' onclick='estatus_alm(".$almacen[$i]->id_almacen.",0)' title='Activar'><i class='fa fa-square-o '></i></a>
 																								</td>";
@@ -263,7 +263,7 @@
 		{
 			bootbox.dialog({
 				message: msg,
-				title: "Editar",
+				title: "Edit",
 				className: "",
 				buttons: {
 					success: {

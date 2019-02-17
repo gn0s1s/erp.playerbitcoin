@@ -26,7 +26,7 @@
 						
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-								> <a href="/bol/dashboard/"> Logístico</a> 
+								> <a href="/bol/dashboard/"> Logistics</a>
 								> <a href="/bo/logistico2/alta"> Alta</a>
 								> <a href="/bo/logistico2/producto"> Producto Inventario</a>
 								> Listar
@@ -87,7 +87,7 @@
 										<br>
 											<div class="col-xs-4 col-md-6 col-sm-4 col-lg-1" style="float: right;">
 												<center>
-													<a title="Editar" style="cursor: pointer;" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+													<a title="Edit" style="cursor: pointer;" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
 													<br> Editar 
 												</center>
 											</div>
@@ -168,7 +168,7 @@
 													<td><?=$key->costo?></td>
 													<td><?=$key->costo_publico?></td>
 													<td class="text-center">
-														<a title="Editar"  style="cursor: pointer;" 
+														<a title="Edit"  style="cursor: pointer;"
                                                                                                                    onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue">
                                                                                                                     <i class="fa fa-pencil fa-3x"></i></a>
 														<a title="Eliminar" style="cursor: pointer;" 

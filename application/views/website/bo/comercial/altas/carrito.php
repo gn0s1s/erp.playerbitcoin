@@ -9,7 +9,7 @@
 							
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-								> <a href="/bo/comercial"> Comercial</a> 
+								> <a href="/bo/comercial">Commercial</a>
 								> <a href="/bo/comercial/mercancia">Mercancias</a>
 								> Listar
 							</span>		
@@ -67,7 +67,7 @@
 										<br>
 											<div class="col-xs-4 col-md-6 col-sm-4 col-lg-1" style="float: right;">
 												<center>
-													<a title="Editar" style="cursor: pointer;" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+													<a title="Edit" style="cursor: pointer;" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
 													<br> Editar 
 												</center>
 											</div>
@@ -149,7 +149,7 @@
 													<td><?=$key->costo?></td>
 													<td><?=$key->costo_publico?></td>
 													<td class="text-center">
-														<a title="Editar"  style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+														<a title="Edit"  style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
 														<a title="Eliminar" style="cursor: pointer;" onclick="eliminar(<?=$key->id?>)" class="txt-color-red"><i class="fa fa-trash-o fa-3x"></i></a>
 														<?php if($key->estatus=='DES'){?>
 															<a title="Activar" style="cursor: pointer;" onclick="estatus(1,<?=$key->id?>)" class="txt-color-green"><i class="fa fa-square-o fa-3x"></i></a>
@@ -195,7 +195,7 @@
 													<td><?=$key->real?></td>
 													<td><?=$key->costo?></td>
 													<td><?=$key->costo_publico?></td>
-													<td class="text-center"><a title="Editar" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+													<td class="text-center"><a title="Edit" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
 														<a title="Eliminar" style="cursor: pointer;" onclick="eliminar(<?=$key->id?>)" class="txt-color-red"><i class="fa fa-trash-o fa-3x"></i></a>
 														<?php if($key->estatus=='DES'){?>
 															<a title="Activar" style="cursor: pointer;" onclick="estatus(1,<?=$key->id?>)" class="txt-color-green"><i class="fa fa-square-o fa-3x"></i></a>
@@ -242,7 +242,7 @@
 													<td><?=$key->real?></td>
 													<td><?=$key->costo?></td>
 													<td><?=$key->costo_publico?></td>
-													<td class="text-center"><a title="Editar" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+													<td class="text-center"><a title="Edit" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
 														<a title="Eliminar" style="cursor: pointer;" onclick="eliminar(<?=$key->id?>)" class="txt-color-red"><i class="fa fa-trash-o fa-3x"></i></a>
 														<?php if($key->estatus=='DES'){?>
 															<a title="Activar" style="cursor: pointer;" onclick="estatus(1,<?=$key->id?>)" class="txt-color-green"><i class="fa fa-square-o fa-3x"></i></a>
@@ -289,7 +289,7 @@
 													<td><?=$key->real?></td>
 													<td><?=$key->costo?></td>
 													<td><?=$key->costo_publico?></td>
-													<td class="text-center"><a title="Editar" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+													<td class="text-center"><a title="Edit" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
 														<a title="Eliminar" style="cursor: pointer;" onclick="eliminar(<?=$key->id?>)" class="txt-color-red"><i class="fa fa-trash-o fa-3x"></i></a>
 														<?php if($key->estatus=='DES'){?>
 															<a title="Activar" style="cursor: pointer;" onclick="estatus(1,<?=$key->id?>)" class="txt-color-green"><i class="fa fa-square-o fa-3x"></i></a>
@@ -334,7 +334,7 @@
 													<td><?=$key->real?></td>
 													<td><?=$key->costo?></td>
 													<td><?=$key->costo_publico?></td>
-													<td class="text-center"><a title="Editar" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+													<td class="text-center"><a title="Edit" style="cursor: pointer;" onclick="editar(<?=$key->id?>, '<?=$key->Code?>')" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
 														<a title="Eliminar" style="cursor: pointer;" onclick="eliminar(<?=$key->id?>)" class="txt-color-red"><i class="fa fa-trash-o fa-3x"></i></a>
 														<?php if($key->estatus=='DES'){?>
 															<a title="Activar" style="cursor: pointer;" onclick="estatus(1,<?=$key->id?>)" class="txt-color-green"><i class="fa fa-square-o fa-3x"></i></a>

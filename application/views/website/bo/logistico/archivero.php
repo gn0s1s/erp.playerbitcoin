@@ -19,7 +19,7 @@
 						
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 						<span>
-							> <a href="/bol/dashboard">Logistico</a>
+							> <a href="/bol/dashboard">Logistics</a>
 							> Archivero	
 						</span>
 							

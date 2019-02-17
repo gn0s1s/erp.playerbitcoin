@@ -5,7 +5,7 @@
 			<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/comercial">Comercial</a> > Transacciones on billetera
+								<a href="/bo/comercial">Commercial</a> > Transacciones on billetera
 							</span>
 			</h1>
 		</div>

@@ -39,8 +39,8 @@
 									<div class="row col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 											<center>
-											<a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-											<br>Editar
+											<a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+											<br>Edit
 											</center>
 										</div>
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
@@ -74,7 +74,7 @@
 														<td><?php echo $user->email; ?></td>
 														<td><?php echo $user->tipo; ?></td>
 														<td>
-															<a title="Editar" class="txt-color-blue" onclick="editar('<?php echo $user->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
+															<a title="Edit" class="txt-color-blue" onclick="editar('<?php echo $user->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
 															<a title="Eliminar"  class="txt-color-red" onclick="eliminar('<?php echo $user->id; ?>');"><i class="fa fa-trash-o fa-3x"></i></a>
 														</td>
 													</tr>

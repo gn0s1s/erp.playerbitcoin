@@ -9,7 +9,7 @@
 				<i class="fa-fw fa fa-pencil-square-o"></i> 
 					<a href="/bo/dashboard">Dashboard</a>
 				<!--<span>>
-					<a href="/bo/admin">Módulo administrativo</a>
+					<a href="/bo/admin">Módulo Directives</a>
 				</span>-->
 				<span>>
 					Altas
@@ -126,7 +126,7 @@
 										</form>
 										<form method="POST" action="/bo/admin/new_user" id="checkout-form" class="smart-form" novalidate="novalidate">
 											<!--<fieldset>
-												<legend>Configuración del Usuario</legend>
+												<legend>Settings del Usuario</legend>
 												<section class="col col-6">
 													<label class="select">Selecciona the tipo of usuario
 															<select id="tipo_usuario" required name="tipo_usuario">
@@ -571,7 +571,7 @@
 									<div class="row">
 										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-9"><a href="javascript:void(0)"><h5 onclick="new_pack()">Add un nuevo paquete <i class="fa fa-plus"></i></h5></a></div>
 										<div class="col-xs-12 col-md-6 col-sm-4 col-lg-3">
-											Editar <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
+											Editar <a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
 											Eliminar <a title="Eliminar" href="#" class="txt-color-red"><i class="fa fa-trash-o"></i></a> 
 											Activar <a title="Activar" href="#" class="txt-color-green"><i class="fa fa-check-square-o"></i></a> 
 											Desactivar <a title="Desactivar" href="#" class="txt-color-green"><i class="fa fa-square-o"></i></a>
@@ -601,7 +601,7 @@
 													<td><?=$key->visible?></td>
 													<td><?=($key->estatus)?></td>
 													<td><?=$key->costo?></td>
-													<td class="text-center"><a title="Editar" href="#" onclick="editar(<?=$key->id?>)" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
+													<td class="text-center"><a title="Edit" href="#" onclick="editar(<?=$key->id?>)" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
 														<a title="Eliminar" href="#" onclick="eliminar(<?=$key->id?>)" class="txt-color-red"><i class="fa fa-trash-o"></i></a>
 														<?php if($key->estatus=='DES'){?>
 															<a title="Activar" href="#" onclick="estatus(1,<?=$key->id?>)" class="txt-color-green"><i class="fa fa-check-square-o"></i></a>
@@ -618,7 +618,7 @@
 									<div class="row">
 										<div class="col-xs-12 col-md-6 col-sm-8 col-lg-9"><h5>Products of System</h5></div>
 										<div class="col-xs-12 col-md-6 col-sm-4 col-lg-3">
-											Editar <a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
+											Editar <a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
 											Eliminar <a title="Eliminar" href="#" class="txt-color-red"><i class="fa fa-trash-o"></i></a> 
 											Activar <a title="Activar" href="#" class="txt-color-green"><i class="fa fa-check-square-o"></i></a> 
 											Desactivar <a title="Desactivar" href="#" class="txt-color-green"><i class="fa fa-square-o"></i></a>
@@ -649,7 +649,7 @@
 													<td><?=$key->estatus?></td>
 													<td><?=($key->id_proveedor) ? $key->id_proveedor: 'Ninguno';?></td>
 													<td><?=$key->costo?></td>
-													<td class="text-center"><a title="Editar" href="#" onclick="editar(<?=$key->id?>)" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
+													<td class="text-center"><a title="Edit" href="#" onclick="editar(<?=$key->id?>)" class="txt-color-blue"><i class="fa fa-pencil"></i></a>
 														<a title="Eliminar" href="#" onclick="eliminar(<?=$key->id?>)" class="txt-color-red"><i class="fa fa-trash-o"></i></a>
 														<?php if($key->estatus=='DES'){?>
 															<a title="Activar" href="#" onclick="estatus(1,<?=$key->id?>)" class="txt-color-green"><i class="fa fa-check-square-o"></i></a>
@@ -691,7 +691,7 @@
 										</form>
 										<form method="POST" action="/bo/admin/new_proveedor" id="proveedor" class="smart-form" novalidate="novalidate">
 											<fieldset>
-												<legend>Configuración del proveedor</legend>
+												<legend>Settings del proveedor</legend>
 												<section class="col col-3">
 													<label class="select">Selecciona the tipo of proveedor
 															<select id="tipo_proveedor" required name="tipo_proveedor">
@@ -1124,7 +1124,7 @@ $(document).ready(function() {
 	pageSetUp();
 
 })
-function new _user()
+function nueva_user()
 {
 	var ids=new Array(
 		"#username",
@@ -2015,7 +2015,7 @@ function tipo_promo()
 			});
 	}
 }
-function new _product()
+function nueva_product()
 {
 	$('#prods').append('<section class="col col-8">productos'
             +'<label class="select">'
@@ -2034,7 +2034,7 @@ function new _product()
             +'</label>'
         +'</section>');
 }
-function new _service()
+function nueva_service()
 {
 	$('#servs').append('<section class="col col-8">Services'
 	            +'<label class="select">'
@@ -2053,7 +2053,7 @@ function new _service()
 	            +'</label>'
 	        +'</section>');
 }
-function new _grupo()
+function nueva_grupo()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del grupo</label><input id='desc'  type='text'/>",
@@ -2129,7 +2129,7 @@ function kill_grupo()
 		}
 	})
 }
-function new _impuesto()
+function nueva_impuesto()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
@@ -2482,7 +2482,7 @@ function estatus(tipo,id)
 		})
 	}
 }
-function new _empresa()
+function nueva_empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
@@ -2652,7 +2652,7 @@ function check_keyword_co()
 		$("#ajax_1").remove();
 	});
 }
-function new _proveedor()
+function nueva_proveedor()
 {
 	$.ajax({
 		type: "POST",
@@ -2995,7 +2995,7 @@ $("#mercancia").submit(function(event){
 
 });
 
-function new _pack()
+function nueva_pack()
 {
 	bootbox.dialog({
 		message: '<form id="form_paquete" method="post" action="/bo/admin/alta_paquete" class="smart-form">'

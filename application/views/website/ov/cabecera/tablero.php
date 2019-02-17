@@ -51,7 +51,7 @@
 
 							<form method="POST" action="/perfil_red/actualizar" id="checkout-form" class="smart-form" novalidate="novalidate">
 								<fieldset>
-									<legend>Oficina virtual</legend>
+									<legend>BackOffice</legend>
 									<div class="row">
 										<section class="col col-3">
 											<label class="input">

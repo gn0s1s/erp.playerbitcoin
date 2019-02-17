@@ -17,7 +17,7 @@ $item = $mercancia[0];
                     <div class="widget-body">
 
                         <form class='smart-form' id='update_merc' name='update_merc' method='post' action='/bo/admin/update_mercancia' enctype='multipart/form-data' role="form" >  
-                            <h3><center><b>Editar mercancía :: <?= $nombre_merc ?> </b></center></h3>
+                            <h3><center><b>Edit mercancía :: <?= $nombre_merc ?> </b></center></h3>
 
                             <section class="col col-6" style="display: none;">
                                 <label class="select"> 
@@ -376,7 +376,7 @@ var ib=0;
 
 // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-function new _product(id)
+function nueva_product(id)
 {
 	
 
@@ -408,7 +408,7 @@ function new _product(id)
 
 }
 
-function new _service(id)
+function nueva_service(id)
 {
 
 	$('#servs').append('<div id="'+ia+'aj" >'

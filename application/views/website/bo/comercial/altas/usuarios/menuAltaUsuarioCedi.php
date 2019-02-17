@@ -9,7 +9,7 @@
 							
 							<span>
 								> <a href="/bo/logistico2/alta"> Alta</a>
-								> <a href="/bo/logistico2/usuarios"> Usuarios Logístico</a>
+								> <a href="/bo/logistico2/usuarios"> Usuarios Logistics</a>
 								> CEDI
 							</span>
 							<?php }else if($type=='8'||$type=='9'){
@@ -18,7 +18,7 @@
 							<a class="backHome" href="<?=$index?>"><i class="fa fa-home"></i> Menu</a>
 							<span> 
 								> <a href="<?=$index?>/altas"> Altas</a>
-								> <a href="/bo/logistico2/usuarios"> Usuarios Logístico</a>
+								> <a href="/bo/logistico2/usuarios"> Usuarios Logistics</a>
 								> CEDI
 							</span>
 							<?php }else{?>	

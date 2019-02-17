@@ -24,7 +24,7 @@
 <?php } else { ?>
                     <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                     <span>
-                        > <a href="/bol/"> Logístico </a>
+                        > <a href="/bol/"> Logistics </a>
                         > <a href="/bo/logistico2/alta"> Alta </a>
                         > <a href="/bo/proveedor_mensajeria/"> Proveedor of Mensajería </a>
                         > Alta
@@ -414,7 +414,7 @@
                                                                                         Departamentos()
                                                                                     }
 
-                                                                                    function new _ciudad() {
+                                                                                    function nueva_ciudad() {
                                                                                         bootbox.dialog({
                                                                                             message: '<form id="form_ciudad" method="post" class="smart-form">'
                                                                                                     + '<fieldset>'
@@ -495,7 +495,7 @@
 
                                                                                     }
 
-                                                                                    function new _departamento() {
+                                                                                    function nueva_departamento() {
                                                                                         bootbox.dialog({
                                                                                             message: '<form id="form_depto" method="post" class="smart-form">'
                                                                                                     + '<fieldset>'

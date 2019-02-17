@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
 							<span>>
-								<a href="/bo/oficinaVirtual/"> Oficina Virtual</a> > <a href="/bo/oficinaVirtual/presentaciones"> Presentaciones</a> > Listar
+								<a href="/bo/oficinaVirtual/"> BackOffice</a> > <a href="/bo/oficinaVirtual/presentaciones"> Presentaciones</a> > Listar
 							</span>
 						</h1>
 					</div>
@@ -58,8 +58,8 @@
 							</div>
 							<div class="col-xs-2 col-md-4 col-sm-4 col-lg-2">
 								<center>
-									<a title="Editar" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-									<br>Editar
+									<a title="Edit" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+									<br>Edit
 								</center>
 							</div>
 							<div class="col-xs-2 col-md-4 col-sm-4 col-lg-2">
@@ -122,7 +122,7 @@
 																			<td class="text-center">
 																				<a class="txt-color-blue" style="cursor: pointer;" onclick="" href="'.$presentacion->ruta.'" title="Descargar"><i class="fa fa-download fa-3x"></i></a>
 																				<a class="txt-color-red" style="cursor: pointer;" onclick="delete_file('.$presentacion->id.',\''.$presentacion->ruta.'\')" title="Eliminar"><i class="fa fa-trash-o fa-3x"></i></a>
-																				<a class="txt-color-blue" style="cursor: pointer;" onclick="editar('.$presentacion->id.')"  title="Editar"><i class="fa fa-pencil fa-3x"></i></a>
+																				<a class="txt-color-blue" style="cursor: pointer;" onclick="editar('.$presentacion->id.')"  title="Edit"><i class="fa fa-pencil fa-3x"></i></a>
           																		';
 																				 if ($presentacion->status=='ACT'){?>
 																				

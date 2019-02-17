@@ -42,13 +42,13 @@
 									<!--Inica the secciion of the Profile & red-->
 									<div class="well" style="box-shadow: 0px 0px 0px !important;border-color: transparent;">
 										<fieldset>
-											<legend><b>Sistema Integral of Operaciones</b></legend>
+											<legend><b>Integral Network System Administrator</b></legend>
 											<div class="row">
 												<div class="col-sm-4">
 													<a href="configuracion/">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-wrench fa-3x"></i>
-															<h5>Configuración</h5>
+															<h5>Settings</h5>
 														</div>
 													</a>
 												</div>
@@ -57,7 +57,7 @@
 													<a href="comercial/">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-money fa-3x"></i>
-															<h5>Comercial</h5>
+															<h5>Commercial</h5>
 														</div>
 													</a>
 												</div>
@@ -65,7 +65,7 @@
 													<a href="logistico/">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-cubes fa-3x"></i>
-															<h5>Logistico</h5>
+															<h5>Logistics</h5>
 														</div>
 													</a>
 												</div>
@@ -75,7 +75,7 @@
 													<a href="administracion/">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-folder-open fa-3x"></i>
-															<h5>Administrativo</h5>
+															<h5>Directives</h5>
 														</div>
 													</a>
 												</div>
@@ -83,7 +83,7 @@
 													<a href="oficinaVirtual/">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-desktop fa-3x"></i>
-															<h5>Oficina Virtual</h5>
+															<h5>BackOffice</h5>
 														</div>
 													</a>
 												</div>
@@ -100,7 +100,7 @@
 									</fieldset>
 									<!--Termina the secciion of Profile & red-->
 									<footer>
-										<h3><b><i class="fa fa-group fa-3x"></i> Total Afiliados :</b><i> <?php echo $afiliados[0]->total;?></i></h3>
+										<h3><b><i class="fa fa-group fa-3x"></i> Total Refferals :</b><i> <?php echo $afiliados[0]->total;?></i></h3>
 									</footer>
 						</div>
 						</div>

@@ -366,7 +366,7 @@ function botbox(nombre, id, lado)
 							+'</div>'
 						+'</fieldset>'
 						+'<fieldset>'
-							+'<legend>Configuración del afiliado</legend>'
+							+'<legend>Settings del afiliado</legend>'
 								+'<section class="col col-12">'
 									+'<label class="toggle">'
 									+'<input type="checkbox" checked="checked" name="sponsor">'
@@ -686,7 +686,7 @@ function detalles(id)
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<?php if($this->tank_auth->get_user_id()<2){?>
 				<span>
-					> <a href="/bo/comercial">Comercial</a> 
+					> <a href="/bo/comercial">Commercial</a>
 					> <a href="/bo/comercial/red">Network</a>
 					> <a href="/bo/usuarios/afiliar">Tipo of Afiliacion</a>
 					> Afiliacion Red

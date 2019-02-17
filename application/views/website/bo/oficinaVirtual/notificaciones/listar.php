@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> 
 							<span>>
-								<a href="/bo/oficinaVirtual/"> Oficina Virtual</a> 
+								<a href="/bo/oficinaVirtual/"> BackOffice</a>
 								> <a href="/bo/notificaciones"> Notificaciones</a> > Listar
 							</span>
 						</h1>
@@ -36,8 +36,8 @@
 									<div class="row col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 											<center>
-											<a title="Editar" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-											<br>Editar
+											<a title="Edit" href="#" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+											<br>Edit
 											</center>
 										</div>
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
@@ -83,7 +83,7 @@
 														<td><?php echo $notify->nombre; ?></td>
 														<td><?php echo $notify->descripcion; ?></td>
 														<td>
-															<a style="cursor: pointer" title="Editar" class="txt-color-blue" onclick="editar('<?php echo $notify->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
+															<a style="cursor: pointer" title="Edit" class="txt-color-blue" onclick="editar('<?php echo $notify->id; ?>');"><i class="fa fa-pencil fa-3x"></i></a>
 															<a style="cursor: pointer"title="Eliminar"  class="txt-color-red" onclick="eliminar('<?php echo $notify->id; ?>');"><i class="fa fa-trash-o fa-3x"></i></a>
 															<?php if($notify->estatus == 'ACT'){ ?>
 																<a style="cursor: pointer" title="Desactivar" onclick="estado('DES','<?php echo $notify->id; ?>')" class="txt-color-green"><i class="fa fa-check-square-o fa-3x"></i></a>

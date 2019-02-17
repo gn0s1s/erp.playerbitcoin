@@ -24,7 +24,7 @@
 				 <?php }else{?>
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>
-				> <a href="/bol/dashboard/"> Logistico </a>
+				> <a href="/bol/dashboard/">Logistics </a>
 				> <a href="/bo/inventario/index"> Inventario </a>
 				> <a href="/bo/inventario/documento"> Documento</a>
 				> Listar
@@ -79,8 +79,8 @@
 							<div class="row col-xs-12 col-md-12 col-sm-8 col-lg-5 pull-right">
 								<div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
 									<center>
-										<a title="Editar" href="#" class="txt-color-blue"><i
-											class="fa fa-pencil fa-3x"></i></a> <br>Editar
+										<a title="Edit" href="#" class="txt-color-blue"><i
+											class="fa fa-pencil fa-3x"></i></a> <br>Edit
 									</center>
 								</div>
 								<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
@@ -121,7 +121,7 @@
 							
 										<td class='text-center'>
 											<a class='txt-color-red' style='cursor: pointer;' onclick='eliminar_almacen("<?php echo $row->id_doc; ?> ")' title='Eliminar'><i class='fa fa-trash-o fa-3x'></i></a>
-											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_almacen(<?php echo $row->id_doc; ?>)' title='Editar'><i class='fa fa-pencil fa-3x'></i></a>
+											<a class='txt-color-blue' style='cursor: pointer;' onclick='editar_almacen(<?php echo $row->id_doc; ?>)' title='Edit'><i class='fa fa-pencil fa-3x'></i></a>
 											<?php if ($row->estatus == 'ACT') {?>
 												<a title="Desactivar" style='cursor: pointer;' onclick="estado_almacen('DES','<?php echo $row->id_doc; ?>')" class="txt-color-green"><i class="fa fa-check-square-o fa-3x"></i></a>
 											<?php }else {?>

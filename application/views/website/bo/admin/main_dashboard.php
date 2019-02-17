@@ -9,7 +9,7 @@
 							<i class="fa-fw fa fa-pencil-square-o"></i> 
 								<a href="/bo/dashboard">Dashboard</a> 
 							<span>>
-								Modulo administrativo
+								Modulo Directives
 							</span>
 						</h1>
 					</div>

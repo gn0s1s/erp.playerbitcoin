@@ -15,7 +15,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							
 							<span>
-							> <a class="" href="/bo/comercial/altas/"><i class=""></i> Comercial</a>
+							> <a class="" href="/bo/comercial/altas/"><i class=""></i>Commercial</a>
 							> <a class="" href="/bo/comercial/actionProveedor/"><i class=""></i> Proveedor</a>
 							> Alta
 							</span>
@@ -32,7 +32,7 @@
 			<?php }else{?>
 				      <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-							 	 > <a href="/bol/"> Logistico </a>
+							 	 > <a href="/bol/">Logistics </a>
 								 > <a class="" href="/bo/logistico2/alta/"><i class=""></i> Alta</a>
 								 > <a href="/bo/comercial/actionProveedor">Proveedor </a>
 								 > Alta
@@ -124,7 +124,7 @@
 								</div>
 							</fieldset>
 							<fieldset>
-								<legend>Configuración del proveedor</legend>
+								<legend>Settings del proveedor</legend>
 								<section class="col col-3">
 									<label class="select">Selecciona the tipo of proveedor <select
 										id="tipo_proveedor" required name="tipo_proveedor">
@@ -368,7 +368,7 @@
 <script src="/template/js/plugin/fuelux/wizard/wizard.min.js"></script>
 
 <script type="text/javascript">
-function new _proveedor()
+function nueva_proveedor()
 {
 		var ids = new  Array(
 			"#nombre",
@@ -427,7 +427,7 @@ function new _proveedor()
 			}
 }
 
-function new _empresa()
+function nueva_empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" class="smart-form">'

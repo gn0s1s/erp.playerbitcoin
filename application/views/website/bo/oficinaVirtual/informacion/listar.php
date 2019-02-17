@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/oficinaVirtual/"> Oficina Virtual</a> > <a href="/bo/oficinaVirtual/informacion"> Informacion</a> > Listar
+								<a href="/bo/oficinaVirtual/"> BackOffice</a> > <a href="/bo/oficinaVirtual/informacion"> Informacion</a> > Listar
 							</span>
 						</h1>
 					</div>
@@ -59,8 +59,8 @@
 											</div>
 											<div class="col-xs-2 col-md-4 col-sm-4 col-lg-2">
 											<center>	
-												<a title="Editar" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-												<br>Editar
+												<a title="Edit" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+												<br>Edit
 												</center>
 											</div>
 											<div class="col-xs-2 col-md-4 col-sm-4 col-lg-2">
@@ -125,7 +125,7 @@
 																			<td class='text-center'>
 																				
 																				<a class='txt-color-red' style='cursor: pointer;' onclick='delete_info(".$infos[$i]->id.")' title='Eliminar'><i class='fa fa-trash-o fa-3x'></i></a>
-																				<a class='txt-color-blue'  style='cursor: pointer;' onclick='editar(".$infos[$i]->id.")'  title='Editar'><i class='fa fa-pencil fa-3x'></i></a>";
+																				<a class='txt-color-blue'  style='cursor: pointer;' onclick='editar(".$infos[$i]->id.")'  title='Edit'><i class='fa fa-pencil fa-3x'></i></a>";
                 												if ($infos[$i]->status=='ACT'){
 	                												echo '&nbsp;&nbsp;&nbsp;<a class="txt-color-green"  style="cursor: pointer;" onclick="estado_informacion('."'DES'".','.$infos[$i]->id.')"  title="Desactivar"><i class="fa fa-check-square-o fa-3x"></i></a>';
                 												}

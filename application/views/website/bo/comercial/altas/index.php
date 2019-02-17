@@ -12,7 +12,7 @@
 								<?php }else{?>	
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/comercial">Comercial</a> > Altas
+								<a href="/bo/comercial">Commercial</a> > Altas
 							</span>	
 								<?php }?>
 							

@@ -22,7 +22,7 @@
 					</span>
 				 <?php }else{?>
 					<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-				<span>> <a href="/bol/dashboard/"> Logistico </a>
+				<span>> <a href="/bol/dashboard/">Logistics </a>
 				> <a href="/bo/logistico2/alta"> Alta </a>
 				> <a href="/bo/logistico2/movimiento">Movimiento al Inventario</a>
 				> Listar
@@ -79,8 +79,8 @@ if ($this->session->flashdata ( 'error' )) {
 						<div class="row col-xs-12 col-md-12 col-sm-8 col-lg-5 pull-right">
 							<div class="col-xs-2 col-md-2 col-sm-2 col-lg-2">
 								<center>
-									<a title="Editar" href="#" class="txt-color-blue"><i
-										class="fa fa-pencil fa-3x"></i></a> <br>Editar
+									<a title="Edit" href="#" class="txt-color-blue"><i
+										class="fa fa-pencil fa-3x"></i></a> <br>Edit
 								</center>
 							</div>
 							<div class="col-xs-6 col-md-2 col-sm-2 col-lg-2">
@@ -126,7 +126,7 @@ if ($this->session->flashdata ( 'error' )) {
 										onclick='eliminar("<?php echo $row->id_doc; ?> ")'
 										title='Eliminar'><i class='fa fa-trash-o fa-3x'></i></a> <a
 										class='txt-color-blue' style='cursor: pointer;'
-										onclick='editar(<?php echo $row->id_doc; ?>)' title='Editar'><i
+										onclick='editar(<?php echo $row->id_doc; ?>)' title='Edit'><i
 											class='fa fa-pencil fa-3x'></i></a>
 											<?php if ($row->estatus == 'ACT') {?>
 												<a title="Desactivar" style='cursor: pointer;'

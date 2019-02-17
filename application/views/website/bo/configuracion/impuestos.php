@@ -5,7 +5,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/configuracion/">Configuración</a> > Impuestos
+								<a href="/bo/configuracion/">Settings</a> > Impuestos
 							</span>
 						</h1>
 					</div>

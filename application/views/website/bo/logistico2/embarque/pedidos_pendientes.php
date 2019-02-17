@@ -20,7 +20,7 @@
 							<?php }else{?>
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-								> <a href="/bol/dashboard/">Logístico</a> 
+								> <a href="/bol/dashboard/">Logistics</a>
 								> <a href="/bo/logistico2/pedidos">Pedidos / Embarques</a>
 								> Pedidos a Embarcar
 							</span>

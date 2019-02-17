@@ -114,7 +114,7 @@
 
 										<div class="smart-timeline-content">
 											<p>
-												<a href="javascript:void(0);"><strong>Correción del menú of Network on the oficina virtual</strong></a>
+												<a href="javascript:void(0);"><strong>Correción del menú of Network on the BackOffice</strong></a>
 											</p>
 										</div>
 

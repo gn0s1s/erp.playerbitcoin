@@ -14,7 +14,7 @@
 							<?php } else if($type=='4'){?>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>							
 							<span>
-								> <a class="" href="/bo/comercial/"><i class=""></i> Comercial</a>
+								> <a class="" href="/bo/comercial/"><i class=""></i>Commercial</a>
 								> Proveedor								
 							</span>
 					
@@ -29,7 +29,7 @@
 						<?php }else{?>
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-								 > <a href="/bol/"> Logistico </a>
+								 > <a href="/bol/">Logistics </a>
 								 > <a class="" href="/bo/logistico2/alta/"><i class=""></i> Alta</a>
 								 > Proveedor 
 							</span>

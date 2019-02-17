@@ -64,7 +64,7 @@
 											<option value="16">Commissions</option>
 											<option value="17">Usuarios</option>
 											<option value="18">Ventas por Empresa</option>
-											<option value="19">Ventas por Oficina Virtual</option>
+											<option value="19">Ventas por BackOffice</option>
 											<option value="20">Ventas por Telemarkwting</option>
 											<option value="21">Ventas por CEDI's</option>
 											<option value="22">Ventas webs personales</option>

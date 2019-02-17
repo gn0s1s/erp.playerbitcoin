@@ -11,14 +11,14 @@
 				</span>
 				<?php //}else{?>	
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>&gt;
-					<a href="/bo/comercial">Comercial</a> > <a
+					<a href="/bo/comercial">Commercial</a> > <a
 					href="/bo/comercial/carrito_de_compras"> Carrito of Purchases </a> >
 					<a href="/bo/mercancia/index">Alta</a> > Paquete of Inscripción
 				</span>
 				<?php //}?>-->
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>&gt;
-								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/carrito_de_compras?co=c"> Carrito of Purchases </a>
+								<a href="/bo/comercial">Commercial</a> > <a href="/bo/comercial/carrito_de_compras?co=c"> Carrito of Purchases </a>
 								> <a href="/bo/mercancia/index?co=c" >Alta</a> > Paquete of Inscripción
 				</span>
 					
@@ -421,7 +421,7 @@ $(document).ready(function() {
 	pageSetUp();
 
 })
-function new _user()
+function nueva_user()
 {
 	var ids=new Array(
 		"#username",
@@ -638,7 +638,7 @@ $(function()
 	});
 });
 
-function new _product()
+function nueva_product()
 {
 	$('#prods').append('<div id="'+ipj+'pj">'
 		+'<section class="col col-8" id="ProductosPais'+ipj+'" name="ProductosPais'+ipj+'">productos'
@@ -662,7 +662,7 @@ function new _product()
 	ProductoPorPaisAgregado(ipj);
 	ipj = parseInt(ipj) + 1;
 }
-function new _service()
+function nueva_service()
 {
 	$('#servs').append('<div id="'+isj+'sj">'
 		+'<section class="col col-8" id="ServicioPais'+isj+'" name="ServicioPais'+isj+'">Services'
@@ -734,7 +734,7 @@ $('select[name="servicio[]"]').each(function() {
 });	
 return contador;
 }
-function new _grupo()
+function nueva_grupo()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del grupo</label><input id='desc'  type='text'/>",
@@ -773,7 +773,7 @@ function new _grupo()
 	})
 }
 
-function new _impuesto()
+function nueva_impuesto()
 {
 	bootbox.dialog({
 		message: "<label>Nombre del impuesto</label><input id='desc'  type='text'/><br>br><label>Porcentaje of impuesto</label><input id='porc'  type='text'/>",
@@ -1126,7 +1126,7 @@ function estatus(tipo,id)
 		})
 	}
 }
-function new _empresa()
+function nueva_empresa()
 {
 	bootbox.dialog({
 		message: '<form id="form_empresa" method="post" action="/bo/admin/new_empresa" class="smart-form">'
@@ -1296,7 +1296,7 @@ function check_keyword_co()
 		$("#ajax_1").remove();
 	});
 }
-function new _proveedor()
+function nueva_proveedor()
 {
 	$.ajax({
 		type: "POST",
@@ -1649,7 +1649,7 @@ $("#mercancia").submit(function(event){
 
 	});
 
-function new _pack()
+function nueva_pack()
 {
 	bootbox.dialog({
 		message: '<form id="form_paquete" method="post" action="/bo/admin/alta_paquete" class="smart-form">'

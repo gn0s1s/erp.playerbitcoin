@@ -7,7 +7,7 @@
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<?php if($this->tank_auth->get_user_id()<2){?>
 				<span>
-					> <a href="/bo/comercial">Comercial</a> 
+					> <a href="/bo/comercial">Commercial</a>
 					> <a href="/bo/comercial/red">Network</a>
 					> <a href="/bo/usuarios/afiliar">Tipo of Afiliacion</a>
 					> Afiliar Existente

@@ -6,7 +6,7 @@
 						<h1 class="page-title txt-color-blueDark">
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/configuracion/">Configuración</a> > 
+								<a href="/bo/configuracion/">Settings</a> >
 								<a href="/bo/configuracion/impuestos"> Impuestos</a>
 								> Listar Impuestos
 							</span>
@@ -38,8 +38,8 @@
 									<div class="row col-xs-12 col-md-6 col-sm-4 col-lg-3 pull-right">
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
 											<center>
-											<a title="Editar" style="cursor: pointer;" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-											<br>Editar
+											<a title="Edit" style="cursor: pointer;" class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+											<br>Edit
 											</center>
 										</div>
 										<div class="col-xs-3 col-md-3 col-sm-3 col-lg-3">
@@ -86,7 +86,7 @@
                                                                                 <?php echo $impuesto->Name; ?>
                                                                             </td>
                                                                             <td>
-                                                                                <a title="Editar" style="cursor: pointer;" class="txt-color-blue" 
+                                                                                <a title="Edit" style="cursor: pointer;" class="txt-color-blue"
                                                                                    onclick="editar('<?php echo $impuesto->id_impuesto; ?>');">
                                                                                     <i class="fa fa-pencil fa-3x"></i></a>
 

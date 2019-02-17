@@ -4,7 +4,7 @@
 			<h1 class="page-title txt-color-blueDark">
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
-								<a href="/bo/comercial">Comercial</a> > <a href="/bo/comercial/red">Network</a>
+								<a href="/bo/comercial">Commercial</a> > <a href="/bo/comercial/red">Network</a>
 								> Listado Consecutivo
 							</span>
 			</h1>
@@ -64,8 +64,8 @@
 				
 				<div class="col-xs-4 col-md-1 col-sm-2 col-lg-1">
 					<center>
-					<a title="Editar"  class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
-					<br>Editar
+					<a title="Edit"  class="txt-color-blue"><i class="fa fa-pencil fa-3x"></i></a>
+					<br>Edit
 					</center>
 				</div>
 				
@@ -209,7 +209,7 @@
                                                     <a title="Bloquear" style='cursor: pointer;' onclick="estado_afiliado(2,<?=$afiliado->id?>)" class="txt-color-gray"><i class="fa fa-unlock fa-3x"></i></a>
                                                     <?php }?>
 
-                                            <a title="Editar" style='cursor: pointer;' 
+                                            <a title="Edit" style='cursor: pointer;'
                                                onclick="modificar_afiliado(<?php echo $afiliado->id;?>)" class="txt-color-blue">
                                                 <i class="fa fa-pencil fa-3x"></i></a>
                                             <!-- <a title="Sustituir" style='cursor: pointer;' onclick="sustituir_afiliado(<?php echo $afiliado->id;?>)" class="txt-color-green"><i class="fa fa-exchange fa-3x"></i></a> -->
