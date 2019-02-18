@@ -2,10 +2,12 @@
 
 require_once(dirname(__DIR__) . '/vendor/autoload.php');
 
-function pre_message($string,$exit = false){
-    echo "<pre>$string</pre>\n";
-    if($exit)
-        exit();
+if(!function_exists("pre_message")){
+    function pre_message($string,$exit = false){
+        echo "<pre>$string</pre>\n";
+        if($exit)
+            exit();
+    }
 }
 
 $api_code = null;
