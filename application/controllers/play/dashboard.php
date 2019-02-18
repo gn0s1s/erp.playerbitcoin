@@ -195,10 +195,7 @@ private $test = true;
         #$web = $this->general->issetVar($empresa,"web",$web);
 
         $web .= '/dashboard/';
-        $home = $this->setFormatDashboard($web);
-
-        $this->setStylesDashboard();
-        $this->setJQueryDashboard($id);
+        $home = $this->setFormatDashboard($id,$web);
     }
 
     private function printTranslateElement()
@@ -231,7 +228,7 @@ private $test = true;
     }
 
 
-    private function setFormatDashboard($web)
+    private function setFormatDashboard($id,$web)
     {
         $web = $this->setWeb($web,"/ov/dashboard");
         $home = file_get_contents($web);
@@ -239,6 +236,8 @@ private $test = true;
         $home = str_replace('href="' . $web . 'http', 'href="http', $home);
         $home = str_replace('src="', 'src="' . $web . '', $home);
         $home = str_replace('src="' . $web . 'http', 'src="http', $home);
+        $home = $this->setStylesDashboard($home);
+        $home = $this->setJQueryDashboard($id,$home);
 
         echo $home;
 
@@ -268,15 +267,18 @@ private $test = true;
     }
 
 
-    private function setStylesDashboard()
+    private function setStylesDashboard($home)
     {
-        echo '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        $link  = '<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
  crossorigin="anonymous">';
+        $home = str_replace("</head>","$link \n </head>",$home);
+
+        return $home;
     }
 
 
-    private function setJQueryDashboard($id)
+    private function setJQueryDashboard($id,$home)
     {
         $usuario=$this->general->get_username($id);
 
@@ -287,16 +289,29 @@ private $test = true;
             "style=\"float: right;padding: 1em 2em !important\">".
             "LOGOUT</a></div>";
 
-        echo "<script>
+        $coinmarket = "https://coinmarketcap.com/charts/";
+        $widget =  file_get_contents($coinmarket);
+        $widget = str_replace("\n"," ",$widget);
+        $widget = str_replace("</script>","<\/script>",$widget);
+        $widget = "";#TODO: configurar iframe
+
+        $script = " <script>
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
                 $('#nuevaClase').attr('href','/ov/dashboard');
                 $('.btn.btn-registro6').attr('href','/shoppingcart');
+                $('.btn.btn-registro7').attr('href','/ov/wallet/requestPayment');
+                $('img[src=\"https://www.tradingview.com/x/hlruquwj/\"]').parent().append('$widget');
                 $('.btn.btn-registro6').removeAttr('data-target');
                 $('.btn.btn-registro6').removeAttr('data-toggle');
                 $('#txtUsuario').html('$bienvenido');
                 $('.fa.fa-bitcoin.iconBitcoin').parent().prepend('$imgbtc');
                 $('.fa.fa-bitcoin.iconBitcoin').remove();
                 </script>";
+
+        $home = str_replace("</body>","$script \n </body>",$home);
+
+        return $home;
+
     }
 
 }

@@ -3,6 +3,28 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+18-02-2019
+-
+### ticket btc bet
+```mysql
+create table ticket
+(
+  id int auto_increment primary key,
+  user_id int default '2'                     null
+  comment 'id:users',
+  date_creation timestamp default CURRENT_TIMESTAMP not null
+  comment 'fecha de creacion',
+  date_final int comment 'fecha de sorteo',
+  amount float default '5'                   null
+  comment 'valor de boleto',
+  estatus varchar(3) default 'ACT'            null
+  comment 'DES cuando pasa la fecha de sorteo',
+  reference int default '1'                     null
+  comment 'venta:id_venta associate item'
+) comment 'boleto de apuesta btc';
+
+```
+
 16-02-2019
 -
 ### online payment confirmations
@@ -11,7 +33,6 @@ ALTER TABLE pago_online_proceso
 ADD confirmations int DEFAULT 1 NULL 
 COMMENT 'repeats ex: blockchain = 3';
 ```
-
 24-10-2018
 -
 ### update hashkey

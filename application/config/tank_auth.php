@@ -8,7 +8,7 @@
 |--------------------------------------------------------------------------
 */
 $config['website_name'] = 'PLAYERBITCOIN';
-$config['webmaster_email'] = 'admin@playerbitcoin.com';
+$config['webmaster_email'] = 'contact@playerbitcoin.com';
 
 /*
 |--------------------------------------------------------------------------

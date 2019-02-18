@@ -7,6 +7,8 @@
             <img src="<?=$qr;?>"  alt="qr" width="80%" style="cursor:pointer;"
                  onclick="location.href='bitcoin:<?=$direccion?>?label=Playerbitcoin&amount=<?=$total?>'" />
         </fieldset>
+        <h1 class="padding-10 alert-info">TOTAL: <?=$pagar?> BTC</h1>
+        <hr/>
         <p>address: </p>
         <textarea id="dir" name="code" readonly><?=$direccion?></textarea>
         <hr/>

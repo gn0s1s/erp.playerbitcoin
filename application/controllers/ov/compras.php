@@ -540,6 +540,7 @@ function index()
 
         $contenidoCarrito=$this->get_content_carrito ();
         $totalCarrito=$this->get_valor_total_contenido_carrito($contenidoCarrito,true);
+        $totalapagar=$this->get_valor_total_contenido_carrito($contenidoCarrito);
 
         $wallet = $this->modelo_pagosonline->get_wallet_blockchain();
         $blockchain = $this->modelo_pagosonline->get_datos_blockchain();
@@ -587,6 +588,7 @@ function index()
         if($myAPI){
             $currency = "USD";$to="BTC";
             $amount = $myAPI->convertTo($totalCarrito,$currency,$to);
+            $pagar = $myAPI->convertTo($totalapagar,$currency,$to);
         }
 
         $filename = $this->setBlockchainQR($id,$address,$id_proceso,$amount);
@@ -594,6 +596,7 @@ function index()
 
         $this->template->set("id",$id);
         $this->template->set("direccion",$address);
+        $this->template->set("pagar",$pagar);
         $this->template->set("total",$amount);
         $this->template->build('website/ov/compra_reporte/blockchain/Recibo');
 
