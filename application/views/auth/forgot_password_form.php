@@ -16,7 +16,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 <html lang="en-us" id="extr-page">
 	<head>
 		<meta charset="utf-8">
-		<title>Recuperar Password</title>
+		<title>Recover my password</title>
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -72,7 +72,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 		<header id="header" class="fade in">
 			<br />
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h1>Sistema Integral of Operaciones</h1>
+				<h1>Comprehensive operations system</h1>
 			</div>
 		</header>
 
@@ -87,7 +87,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 						<div class="well no-padding">
 							<form id="login-form" method="POST" action="/auth/forgot_password" class="smart-form client-form">
 								<header>
-									Recuperar my Password
+									Recover my password
 								</header>
 
 								<fieldset>
@@ -111,10 +111,10 @@ if ($this->config->item('use_username', 'tank_auth')) {
 									
 								?>
 									<section>
-										<label class="label">Correo</label>
+										<label class="label">Email</label>
 										<label class="input"> <i class="icon-append fa fa-user"></i>
 											<input required type="email" name="login" id="login">
-											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Ingrese su cuenta of correo</b></label>
+											<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Enter your email account</b></label>
 									</section>
 								</fieldset>
 								<footer>
@@ -122,7 +122,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 										<span id="logo"> <img class="imagen_psswrd" src="/wl.png" alt="Worldlive"> </span>
 									</div>-->
 									<button id="enviar" type="submit" class="btn btn-primary">
-										Enviar
+										Submit
 									</button>
 									<button type="button" onclick="location.href='/auth/login'" class="btn btn-danger">
 										Cancel
@@ -211,8 +211,8 @@ if ($this->config->item('use_username', 'tank_auth')) {
 					// Messages for form validation
 					messages : {
 						email : {
-							required : 'Por favor ingresa una cuenta of correo',
-							email : 'Porfavor ingresa una cuenta of correo valida'
+							required : 'Please enter an email account',
+							email : 'Please enter a valid email account'
 						}
 					},
 
