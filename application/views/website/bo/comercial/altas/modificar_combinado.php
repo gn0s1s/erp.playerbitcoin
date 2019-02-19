@@ -468,21 +468,21 @@ function dell_impuesto_agregado(id)
 }
 function delete_product(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-		alert("Debe haber al menos un producto o servicio asociado al combinado.");
+		alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"b").remove();
 	}
 }
 function delete_product_adicional(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-		alert("Debe haber al menos un producto o servicio asociado al combinado.");
+		alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"bj").remove();
 	}
 }
 function delete_service(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-	alert("Debe haber al menos un producto o servicio asociado al combinado.");
+	alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"a").remove();
 	}
@@ -490,7 +490,7 @@ function delete_service(id){
 
 function delete_service_adicional(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-	alert("Debe haber al menos un producto o servicio asociado al combinado.");
+	alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"aj").remove();
 	}

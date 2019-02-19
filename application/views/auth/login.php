@@ -84,16 +84,16 @@
                                         if (isset($data['errors'])) {
                                             $pswd = "";
                                             if (isset($data['errors']['login'])) {
-                                                $login = 'Error en la cuenta. ';
+                                                $login = 'Error in the account. ';
                                             }
                                             if (isset($data['errors']['password'])) {
-                                                $pswd = 'Error en la Password. ';
+                                                $pswd = 'Password error. ';
                                             }
                                             if (isset($data['errors']['blocked'])) {
-                                                $pswd = 'Tu cuenta esta bloqueada , intenta ingresar en 30 Minutos.<br>';
+                                                $pswd = 'Your account is blocked, try to enter in 30 Minutes.<br>';
                                             }
                                             if (isset($data['errors']['attempts'])) {
-                                                $pswd .= 'Solo te queda ' . $data['errors']['attempts'] . ' intentos antes que se bloque la cuenta.<br>';
+                                                $pswd .= 'You only have ' . $data['errors']['attempts'] . ' attempts left before the account is blocked.<br>';
                                             }
                                         }
                                         ?>
@@ -276,11 +276,11 @@
                     // Messages for form validation
                     messages: {
                         email: {
-                            required: 'Por favor ingresa una cuenta de correo',
-                            email: 'Porfavor ingresa una cuenta de correo valida'
+                            required: 'Please enter an email account',
+                            email: 'Please enter a valid email account'
                         },
                         password: {
-                            required: 'Por favor ingresa tu correo'
+                            required: 'Please enter your email'
                         }
                     },
 

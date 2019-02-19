@@ -372,16 +372,16 @@ function estado_proveedor(estatus, id)
 
 	function ValidarVacio(nombre, direccion, ciudad, telefono){
 		if(nombre == ''){
-			alert('Campo Nombre del almacen es requerido');
+			alert('Field name of the warehouse is required');
 			return false;
 		}else if(direccion == ''){
-			alert('El cambo direccion del almacen es requerido');
+			alert('The field address of the warehouse is required');
 			return false;
 		}else if(ciudad == ''){
-			alert('El cambo ciudad del almacen es requerido');
+			alert('The warehouse city field is required');
 			return false;
 		}else if(telefono.length <= 7){
-			alert('El cambo telefono del almacen es requerido');
+			alert('The field telephone of the warehouse is required');
 			return false;
 		}else{
 			return true;

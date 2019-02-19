@@ -73,12 +73,12 @@ function enviar() {
 	var id_venta=<?=$venta?>;
 	
 	if(fecha==""){
-		alert("Especifique una fecha of entrega");
+		alert("Specify a delivery date");
 	}else if(n_guia==""){
-		alert("Especifique un número of guia");
+		alert("Specify a guide number");
 	}else{
 		bootbox.dialog({
-				message: "¿Desea surtir toda the venta ahora?",
+				message: "Do you want to stock the entire sale now?",
 				title: "Surtir",
 				className: "",
 				buttons: {

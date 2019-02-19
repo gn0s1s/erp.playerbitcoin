@@ -106,7 +106,7 @@
 		for($n = 0; $n < $_POST ['cantidad']; $n ++) {
 			echo 'if($("#preg-' . $n . '").val()=="")
 					{
-						alert("La pregunta numero ' . ($n + 1) . ' no se ha definido");
+						alert("Question number ' . ($n + 1) . ' has not been defined");
 						return;
 					}';
 		}

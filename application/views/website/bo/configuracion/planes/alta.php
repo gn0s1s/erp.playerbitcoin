@@ -196,7 +196,7 @@ function enviar() {
 		});//fin Done ajax			
 		
 	}else{
-		alert("Ha repetido algun Bono del Plan");
+		alert("You have repeated some plan bonus");
 	}
 }
 

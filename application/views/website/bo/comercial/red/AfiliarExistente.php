@@ -376,13 +376,13 @@ function use_username()
 		if( msg == ''){
 			$("#usuario2").html('<div id="msg_usuario" class="alert alert-success fade in">'
 						+'<i class="fa-fw fa fa-check"></i>'
-						+'<strong>Corecto </strong> Username Correcto'
+						+'<strong>Right </strong> Username Right'
 					+'</div>')
 			$('#boton').removeAttr("disabled");
 		}else{
 			$("#usuario2").html('<div id="msg_usuario" class="alert alert-danger fade in">'
 						+'<i class="fa-fw fa fa-check"></i>'
-						+'<strong>Error </strong> Username no esta registrado on the sistema o Ya esta registrado on the Network.'
+						+'<strong>Error </strong> Username is not registered in the system or is already registered in the network.'
 					+'</div>')
 			$('#boton').attr('disabled','disabled');
 			}
@@ -405,13 +405,13 @@ function use_mail()
 			$("#correo2").html('<div id="msg_correo" class="alert alert-success fade in">'
 					
 						+'<i class="fa-fw fa fa-check"></i>'
-						+'<strong>Corecto </strong> Emial Correcto'
+						+'<strong>Right </strong> Email Right'
 					+'</div>')
 		}else{
 			$("#correo2").html('<div id="msg_correo" class="alert alert-danger fade in">'
 					
 						+'<i class="fa-fw fa fa-check"></i>'
-						+'<strong>Error </strong> Email no esta registrado on the sistema'
+						+'<strong>Error </strong> Email is not registered in the system'
 					+'</div>')
 			}
 		

@@ -63,8 +63,8 @@
                                 //alert(msg);
                                 $.smallBox({
                                     title: "<h1>Ups!</h1>",
-                                    content: "<h3>Lamentamos Informarle que este espacio ha sido ocupado por otro afiliado</h3>" +
-                                            "<p>Comuniquese con su Sponsor para más información</p> ",
+                                    content: "<h3>We regret to inform you that this space has been occupied by another affiliate</h3>" +
+                                            "<p>Contact your sponsor for more information</p> ",
                                     color: "#00b4cd",
                                     icon: "fa fa-warning fadeInLeft animated",
                                     timeout: 4000

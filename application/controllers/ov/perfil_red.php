@@ -174,7 +174,7 @@ class perfil_red extends CI_Controller
 	
 	private function printEspacioParaAfiliar($sponsor,$id_afiliado, $lado) {
 		echo "<li>
-				<a onclick=\"botbox('".$sponsor[0]->nombre."',".$id_afiliado.",".$lado.")\" href='javascript:void(0)'>Affiliate Aqui</a>
+				<a onclick=\"botbox('".$sponsor[0]->nombre."',".$id_afiliado.",".$lado.")\" href='javascript:void(0)'>Join here</a>
 			  </li>	";
 	}
 
@@ -244,7 +244,7 @@ class perfil_red extends CI_Controller
 					for($i=$aux; $i < $frontales; $i++){
 						echo "
 						<li>
-							<a href='javascript:void(0)'>No tiene afiliado</a>
+							<a href='javascript:void(0)'>Does not have an affiliate</a>
 			            </li>";
 					}
 					 
@@ -270,7 +270,7 @@ class perfil_red extends CI_Controller
 				for($i=$aux; $i < $frontales; $i++){
 					echo "
 						<li>
-							<a href='javascript:void(0)'>No tiene afiliado</a>
+							<a href='javascript:void(0)'>Does not have an affiliate</a>
 			            </li>";
 				}
 			}
@@ -284,7 +284,7 @@ class perfil_red extends CI_Controller
 			for($i=0; $i < $frontales; $i++){
 				echo "
 						<li>
-							<a href='javascript:void(0)'>No tiene afiliado</a>
+							<a href='javascript:void(0)'>Does not have an affiliate</a>
 			            </li>";
 			}
 			echo "</ul>";
@@ -341,7 +341,7 @@ class perfil_red extends CI_Controller
 					for($i=$aux; $i < count($afiliados); $i++){
 						echo "
 						<li>
-							<a href='javascript:void(0)'>No tiene afiliado</a>
+							<a href='javascript:void(0)'>Does not have an affiliate</a>
 			            </li>";
 					}
 	
@@ -363,7 +363,7 @@ class perfil_red extends CI_Controller
 				for($i=$aux; $i < count($afiliados); $i++){
 					echo "
 						<li>
-							<a href='javascript:void(0)'>No tiene afiliado</a>
+							<a href='javascript:void(0)'>Does not have an affiliate</a>
 			            </li>";
 				}
 			}
@@ -377,7 +377,7 @@ class perfil_red extends CI_Controller
 			for($i=0; $i < count($afiliados); $i++){
 				echo "
 						<li>
-							<a href='javascript:void(0)'>No tiene afiliado</a>
+							<a href='javascript:void(0)'>Does not have an affiliate</a>
 			            </li>";
 			}
 			echo "</ul>";
@@ -955,9 +955,9 @@ class perfil_red extends CI_Controller
 		
 		$use_mail=$this->model_perfil_red->use_mail();
 		if($use_mail){
-			echo "<p style='color: red;'>El email no está disponible.</p>";
+			echo "<p style='color: red;'>The email is not available.</p>";
 		}else if(!$email){
-			echo "<p style='color: red;'>No es un email valido.</p>";
+			echo "<p style='color: red;'>It is not a valid email.</p>";
 		}else {
 			echo "";
 		}
@@ -966,7 +966,7 @@ class perfil_red extends CI_Controller
 	function confirm_password()
 	{
 		if($_POST['password']!=$_POST['confirm_password']){
-			echo "<p style='color: red;' >Las Passwords no coinciden. </p>";
+			echo "<p style='color: red;' >Passwords do not match. </p>";
 		}else{
 			echo "";
 		}
@@ -978,7 +978,7 @@ class perfil_red extends CI_Controller
 		$use_mail=$this->model_perfil_red->use_mail_modificar_perfil($id);
 		if($use_mail)
 		{
-			echo "La cuenta de correo ya no está disponible.";
+			echo "The email account is no longer available.";
 		}
 	}
 	
@@ -987,7 +987,7 @@ class perfil_red extends CI_Controller
 		$use_mail_modificar = $this->model_perfil_red->use_mail_modificar();
 		if($use_mail_modificar)
 		{
-			echo "La cuenta de correo ya no está disponible.";
+			echo "The email account is no longer available.";
 		}
 	}
 	
@@ -996,7 +996,7 @@ class perfil_red extends CI_Controller
 		$use_keyword=$this->model_perfil_red->use_keyword();
 		if($use_keyword)
 		{
-			echo "La identificación no está disponible";
+			echo "Identification is not available.";
 		}
 	}
 	function use_username()
@@ -1006,7 +1006,7 @@ class perfil_red extends CI_Controller
 			echo "<script>
 					$('.btn-next').attr('disabled','disabled');
 				  </script>
-				<p style='color: red;'>El Usuario no está disponible</p>";
+				<p style='color: red;'>The User is not available</p>";
 		}else{
 			echo "";
 		}
@@ -1036,7 +1036,7 @@ class perfil_red extends CI_Controller
 	{
 		$use_username_modificar = $this->model_perfil_red->use_username_modificar();
 		if($use_username_modificar)
-			echo "El usuario no está disponible";
+			echo "The User is not available.";
 	}
 	
 	function afiliar_nuevo()
@@ -1051,11 +1051,11 @@ class perfil_red extends CI_Controller
 		if(intval($resultado))
 		{
 			#$id_afiliado=$this->model_perfil_red->get_id(); //$id_afiliado[0]->id
-			echo "!FINE¡ El usuario <b>".$_POST['nombre']."&nbsp; ".$_POST['apellido']."</b> ha quedado afiliado con el id <b>".$resultado."</b>";
+			echo "!FINE¡ The user <b>".$_POST['nombre']."&nbsp; ".$_POST['apellido']."</b> has been affiliated with the id <b>".$resultado."</b>";
 		}
 		else
 		{
-			echo "!UPS¡ lo sentimos parece que algo fallo";
+			echo "!UPS¡ Sorry, it looks like something failed";
 		}
 	}
 	function AgregarUsuarioRed(){
@@ -1068,9 +1068,9 @@ class perfil_red extends CI_Controller
 		$use_username_red=$this->model_perfil_red->use_username_red($id_user[0]->id);
 		if(!$use_username_red){
 			$this->model_afiliado->AgregarAfiliadoRed($id, $red,$username);
-			echo "Congratulations el usuario ha sido afiliado a la red";
+			echo "Congratulations, the user has been affiliated to the network.";
 		}else{
-			echo "ERROR<br> El usuario ya existe en la red.";
+			echo "ERROR<br> The user already exists in the network.";
 		}
 		
 	}
@@ -1129,7 +1129,7 @@ class perfil_red extends CI_Controller
 			$this->model_perfil_red->actualiza_directo($id_,$id);
 		}
 		$id_afiliado=$this->model_perfil_red->get_id();
-		echo "El usuario <b>".$_POST['nombre']."&nbsp; ".$_POST['apellido']."</b> ha quedado afiliado con el id <b>".$id_afiliado[0]->id."</b>";
+		echo "The user <b>".$_POST['nombre']."&nbsp; ".$_POST['apellido']."</b> has been affiliated with the id <b>".$id_afiliado[0]->id."</b>";
 	}
 	
 	function actualizar()
@@ -1140,7 +1140,7 @@ class perfil_red extends CI_Controller
 		$pais = $this->model_perfil_red->get_pais_Afiliado($id);
 
 		if($use_mail){
-			echo "El Email ya existe , ingrese otro no existente";
+			echo "Email already exists, enter another nonexistent.";
 			exit();
 		}
 		
@@ -1333,7 +1333,7 @@ class perfil_red extends CI_Controller
 		{
 			echo "<ul  role='group'>
 				<li  class='parent_li' style='display: list-item;' role='treeitem'>
-					No tiene afiliados
+				Does not have an affiliates
 	            </li>";
 			echo "</ul>";
 		}
@@ -1453,7 +1453,7 @@ class perfil_red extends CI_Controller
 		'<div class="row userInfo">
 			<div class="col-lg-12">
 
-               <p>Seleccione el metodo para pagar su orden.</p>
+               <p>Select the method to pay for your order.</p>
                 <hr>
               </div>
               <div class="col-xs-12 col-sm-12">
@@ -1461,11 +1461,11 @@ class perfil_red extends CI_Controller
                   <div class="panel-group paymentMethod" id="accordion">
                   	<div class="panel panel-default">
                       <div class="panel-heading panel-heading-custom">
-                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> <span class="numberCircuil">Opcion 1</span> <strong> Efectivo</strong> </a> </h4>
+                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> <span class="numberCircuil">Opcion 1</span> <strong> Cash</strong> </a> </h4>
                       </div>
                       <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                          <p>Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+                          <p>All transactions are secure and encrypted. To learn more, please see our privacy policy.</p>
                           <br>
                           <div class="panel open">
 
@@ -1476,11 +1476,11 @@ class perfil_red extends CI_Controller
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading panel-heading-custom">
-                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> <span class="numberCircuil">Opcion 2</span> <strong> Deposito</strong> </a> </h4>
+                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> <span class="numberCircuil">Opcion 2</span> <strong> Deposit</strong> </a> </h4>
                       </div>
                       <div id="collapseTwo" class="panel-collapse collapse">
                          <div class="panel-body">
-                           <p>Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+                           <p>All transactions are secure and encrypted. To learn more, please see our privacy policy.</p>
                            <br>
                            <div class="panel open">
 
@@ -1491,11 +1491,11 @@ class perfil_red extends CI_Controller
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading panel-heading-custom">
-                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> <span class="numberCircuil">Opcion 3</span> <strong> Tarjeta</strong> </a> </h4>
+                        <h4 class="panel-title"> <a class="masterCard" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> <span class="numberCircuil">Opcion 3</span> <strong> Card</strong> </a> </h4>
                       </div>
                       <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                          <p>Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+                          <p>All transactions are secure and encrypted. To learn more, please see our privacy policy.</p>
                           <br>
                           <div class="panel open">
                             <div class="creditCard">
@@ -1506,17 +1506,17 @@ class perfil_red extends CI_Controller
                                 <div class="form-group">
                   					<div class="col-lg-4 col-md-4 col-sm-4 no-margin-left no-padding">
 		                                <select required aria-required="true" id="paquete" name="paquete">
-		                                  <option value="">Seleccione una opcion</option>
-		                                  <option value="1">Anual</option>
-		                                  <option value="2">Semestral</option>
-		                                  <option value="3">Mensual</option>
-		                                  <option value="4">Por 2 años</option>
+		                                  <option value="">Choose an option</option>
+		                                  <option value="1">Annual</option>
+		                                  <option value="2">Biannual</option>
+		                                  <option value="3">Monthly</option>
+		                                  <option value="4">For 2 years</option>
 		                                </select>
 	                              </div>
                                   <br>
 	                              <div class="col-lg-4 col-md-4 col-sm-4 no-margin-left no-padding">
 	                                <select required aria-required="true" id="banco_taj" name="expire">
-	                                  <option value="">Banco</option>
+	                                  <option value="">Bank</option>
 	                                  <option value="1">01 - VISA</option>
 	                                  <option value="2">02 - Master Card</option>
 	                                  <option value="3">03 - American Express</option>
@@ -1526,50 +1526,50 @@ class perfil_red extends CI_Controller
 
 	                              <div class="col-lg-4 col-md-4 col-sm-4 ">
 	                                <select required aria-required="true" id="tipo_taj" name="expire">
-	                                  <option value="">Tipo</option>
-	                                  <option value="1">01 - Credito</option>
-	                                  <option value="2">02 - Debito</option>
+	                                  <option value="">Type</option>
+	                                  <option value="1">01 - Credit</option>
+	                                  <option value="2">02 - Debit</option>
 
 	                                </select>
 	                              </div>
 	                            </div>
                               </div>
                               <div class="paymentInput">
-                                <label for="CardNumber">Número de Tarjeta de Crédito*</label>
+                                <label for="CardNumber">Credit card number *</label>
                                 <br>
                                 <input id="numero_taj" type="text" name="Number">
                               </div>
                               <!--paymentInput-->
                               <div class="paymentInput">
-                                <label for="CardNumber2">Titular de la Tarjeda de Credito *</label>
+                                <label for="CardNumber2">Holder of the credit card *</label>
                                 <br>
                                 <input type="text" name="CardNumber2" id="titular_taj">
                               </div>
                               <!--paymentInput-->
                               <div class="paymentInput">
                                 <div class="form-group">
-                                  <label>Fecha de Vencimiento *</label>
+                                  <label>Expiration date *</label>
                                   <br>
                                   <div class="col-lg-4 col-md-4 col-sm-4 no-margin-left no-padding">
                                     <select required aria-required="true" name="expire" id="mes_taj">
                                       <option value="">Month</option>
-                                      <option value="1">01 - Enero</option>
-                                      <option value="2">02 - Febrero</option>
-                                      <option value="3">03 - Marzo</option>
-                                      <option value="4">04 - Abril</option>
-                                      <option value="5">05 - Mayo</option>
-                                      <option value="6">06 - Junio</option>
-                                      <option value="7">07 - Julio</option>
-                                      <option value="8">08 - Agosto</option>
-                                      <option value="9">09 - Septiembre</option>
-                                      <option value="10">10 - Octubre</option>
-                                      <option value="11">11 - Noviembre</option>
-                                      <option value="12">12 - Diciembre</option>
+                                      <option value="1">01 - January</option>
+                                      <option value="2">02 - February</option>
+                                      <option value="3">03 - March</option>
+                                      <option value="4">04 - April</option>
+                                      <option value="5">05 - May</option>
+                                      <option value="6">06 - June</option>
+                                      <option value="7">07 - July</option>
+                                      <option value="8">08 - August</option>
+                                      <option value="9">09 - September</option>
+                                      <option value="10">10 - October</option>
+                                      <option value="11">11 - November</option>
+                                      <option value="12">12 - December</option>
                                     </select>
                                   </div>
                                   <div class="col-lg-4 col-md-4 col-sm-4">
                                     <select required aria-required="true" name="year" id="ano_taj">
-                                      <option value="">Año</option>
+                                      <option value="">Year</option>
                                       <option value="2013">2013</option>
                                       <option value="2014">2014</option>
                                       <option value="2015">2015</option>
@@ -1589,7 +1589,7 @@ class perfil_red extends CI_Controller
 
                               <div style="clear:both"></div>
                               <div class="paymentInput clearfix">
-                                <label for="VerificationCode">Codigo de Verificación *</label>
+                                <label for="VerificationCode">Verification code *</label>
                                 <br>
                                 <input type="text" name="VerificationCode" id="code_taj" style="width:90px;">
                                 <br>
@@ -1598,7 +1598,7 @@ class perfil_red extends CI_Controller
 
                               <div>
                                 <input type="checkbox" name="saveInfo" id="saveInfoid" id="salvar_taj">
-                                <label for="saveInfoid">&nbsp;Guardar la información de my tarjeta de Crédito</label>
+                                <label for="saveInfoid">&nbsp;Save my credit card information</label>
                               </div>
                             </div>
                             <!--creditCard-->
@@ -1611,23 +1611,23 @@ class perfil_red extends CI_Controller
 
                     <div class="panel panel-default">
                       <div class="panel-heading panel-heading-custom">
-                        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"> <span class="numberCircuil">Opcion 4</span><strong> PayPal</strong> </a> </h4>
+                        <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"> <span class="numberCircuil">Option 4</span><strong> PayPal</strong> </a> </h4>
                       </div>
                       <div id="collapseFour" class="panel-collapse collapse">
                         <div class="panel-body">
-                          <p> Todas las transacciones son seguras y encriptadas. Para saber mas, por favor ve nuestra politica de privacidad.</p>
+                          <p>All transactions are secure and encrypted. To learn more, please see our privacy policy.</p>
                           <br>
                           <label class="radio-inline" for="radios-3">
                             <input name="radios" id="radios-3" value="4" type="radio">
-                            <img src="images/site/payment/paypal-small.png" height="18" alt="paypal"> Comprar con Paypal </label>
+                            <img src="images/site/payment/paypal-small.png" height="18" alt="paypal"> Buy with PayPal </label>
                           <div class="form-group">
-                            <label for="CommentsOrder2">Agrega comentarios acerca de tu orden</label>
+                            <label for="CommentsOrder2">Add comments about your order</label>
                             <textarea id="CommentsOrder2" class="form-control" name="CommentsOrder2" cols="26" rows="3"></textarea>
                           </div>
                           <div class="form-group clearfix">
                             <label class="checkbox-inline" for="checkboxes-0">
                               <input name="checkboxes" id="checkboxes-0" value="1" type="checkbox">
-                              He leído y acepto los <a href="terms-conditions.html">Terminos y Condiciones</a> </label>
+                              He leído y acepto los <a href="terms-conditions.html">Terms and Conditions</a> </label>
                           </div>
 
                         </div>

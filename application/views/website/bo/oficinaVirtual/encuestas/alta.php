@@ -128,12 +128,12 @@ src="/template/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></scri
                                                             var desc = $("#desc_enc").val();
                                                             if (nom == "")
                                                             {
-                                                                alert("El campo nombre es requerido")
+                                                                alert("The name field is required")
                                                             } else
                                                             {
                                                                 if (qty < 1 || qty > 30)
                                                                 {
-                                                                    alert("La cantidad of preguntas debe of estar entre 1 & 30")
+                                                                    alert("The number of questions must be between 1 and 30")
                                                                 } else
                                                                 {
                                                                     $.ajax({

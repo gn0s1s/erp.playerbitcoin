@@ -9,7 +9,7 @@ require_once $link;
 $function = isset($_POST['fnct']) ? $_POST['fnct'] : false;
 
 if (! $function || ! function_exists($function)) {
-    echo "Proceso no definido";
+    echo "Process not defined";
     exit();
 }
 
@@ -52,7 +52,7 @@ function use_username($db)
         echo "<script>
 					$('.btn-next').attr('disabled','disabled');
 				  </script>
-				<p style='color: red;'>El Usuario no está disponible</p>";return true;
+				<p style='color: red;'>The User is not available</p>";return true;
     }else{
         echo "";return false;
     }
@@ -69,9 +69,9 @@ function use_mail($db)
     $use_mail=newQuery($db,$query); 
     
     if($use_mail){
-        echo "<p style='color: red;'>El email no está disponible.</p>";return true;
+        echo "<p style='color: red;'>The email is not available.</p>";return true;
     }else if(!$email){
-        echo "<p style='color: red;'>No es un email valido.</p>";return true;
+        echo "<p style='color: red;'>It is not a valid email.</p>";return true;
     }else {
         echo "";return false;
     }
@@ -80,7 +80,7 @@ function use_mail($db)
 function confirm_password()
 {
     if($_POST['password']!=$_POST['confirm_password']){
-        echo "<p style='color: red;' >Las contraseñas no coinciden. </p>";return true;
+        echo "<p style='color: red;' >Passwords do not match. </p>";return true;
     }else{
         echo "";return false;
     }
@@ -94,6 +94,6 @@ function use_keyword($db)
     
     if($use_keyword)
     {
-        echo "La identificación no está disponible";
+        echo "Identification is not available.";
     }
 }

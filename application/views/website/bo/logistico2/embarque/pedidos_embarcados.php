@@ -340,7 +340,7 @@
 		<script type="text/javascript" id="script_fila">
 			function nueva_fila()
 			{
-				alert("hola");
+				alert("hello");
 			}
 		</script>
 
@@ -407,7 +407,7 @@
                 var fin = $("#finishdate").val();
 
                 if (inicio == '' || fin == '') {
-                    alert('Introduzca las fechas');
+                    alert('Enter the dates');
                 }
 
                 $("#nuevos_afiliados").show();
@@ -483,7 +483,7 @@
 			var inicio=$("#startdate").val();
 			var fin=$("#finishdate").val();
 			if (inicio == '' || fin == ''){
-				alert('Introduzca las fechas para buscar');
+				alert('Enter dates to search');
 				return 0;
 			}
 			window.location="/ov/compras/reporte_pagos_banco_excel?inicio="+inicio+"&&fin="+fin
@@ -493,7 +493,7 @@
 			var inicio=$("#startdate").val();
 			var fin=$("#finishdate").val();
 			if (inicio == '' || fin == ''){
-				alert('Introduzca las fechas para buscar');
+				alert('Enter dates to search');
 				return 0;
 			}
 			window.location="/ov/compras/Reporte_Excel_WP?inicio="+inicio+"&&fin="+fin

@@ -364,7 +364,7 @@ function estado_almacen(estatus, id)
 
 	function ValidarVacio(nombre){
 		if(nombre == ''){
-			alert('Campo Nombre del documento es requerido');
+			alert('Field name of the document is required');
 			return false;
 		}else{
 			return true;

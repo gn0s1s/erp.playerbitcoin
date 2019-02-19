@@ -130,7 +130,7 @@
 												</div>
 												<div class="step-pane" id="step2">
 													<div id="checkout-form" class="smart-form" >
-													<legend class="hide">Condiciones del Servicio</legend>
+													<legend class="hide">Conditions of service</legend>
 														<fieldset class="hide">
 															
 															<section class="col col-1">

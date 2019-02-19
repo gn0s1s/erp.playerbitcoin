@@ -475,31 +475,31 @@ function agregar_evento()
 
 	if(nombre=='')
 	{
-		alert('Campo nombre es requerido');
+		alert('Name field is required');
 	}
 	else
 	{
 		if(descripcion=='')
 		{
-			alert('Campo descripcion es requerido');
+			alert('Field description is required');
 		}
 		else
 		{
 			if(dia_ini==''||hora_ini=='none'||minuto_ini=='none')
 			{
-				alert('Inicio del evento no especificado');
+				alert('Start of the unspecified event');
 			}
 			else
 			{
 				if(dia_fin==''||hora_fin=='none'||minuto_fin=='none')
 				{
-					alert('Fin del evento no especificado');
+					alert('End of the event not specified');
 				}
 				else
 				{
 					if((dia_fin==dia_ini&&hora_ini>hora_fin)||(dia_fin==dia_ini&&hora_ini==hora_fin&&minuto_ini>minuto_fin))
 					{
-						alert('La hora of inicio no puede ser mayor que the hora of finalizacion');
+						alert('The start time can not be longer than the end time');
 					}
 					else
 					{
@@ -510,10 +510,10 @@ function agregar_evento()
 					         url: "nuevo_evento",
 					         success: function(msg){
 						          if (msg=="error_desc"){
-										alert("La casilla of descripción, no puede tener mas of 140 carácteres");
+										alert("The description box can not have more than 140 characters");
 							          }
 						          else if (msg=="error_obs"){
-										alert("La casilla of observación, no puede tener mas of 50 carácteres");
+										alert("The observation box can not have more than 50 characters");
 							          }
 						          else{
 					              	location.href="/bo/eventos/listar";
@@ -530,7 +530,7 @@ function agregar_evento()
 }
 function validarSiNumero(numero){
     if (!/^([0-9])*$/.test(numero)){
-      alert("El valor " + numero + " no es un número");
+      alert("The value " + numero + " is not a number");
       $("#costo_ev").val('')
     }
   }

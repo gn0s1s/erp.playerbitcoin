@@ -365,13 +365,13 @@ function estado_almacen(estatus, id)
 
 	function ValidarVacio(nombre, direccion, telefono){
 		if(nombre == ''){
-			alert('Campo Nombre del cedi es requerido');
+			alert('Field name of the cedi is required');
 			return false;
 		}else if(direccion == ''){
-			alert('El cambo direccion del cedi es requerido');
+			alert('The address field of the cedi is required');
 			return false;
 		}else if(telefono == ''){
-			alert('El cambo telefono del cedi es requerido');
+			alert('The telephone field of the cedi is required');
 			return false;
 		}else{
 			return true;

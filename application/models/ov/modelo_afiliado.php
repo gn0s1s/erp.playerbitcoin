@@ -862,19 +862,19 @@ class modelo_afiliado extends CI_Model{
 					return true;
 				}else{
 					echo "<div id='msg_usuario' class='alert alert-danger fade in'>
-							 UPS¡ lo sentimos, los datos ingresados pertenecen a un afiliado que ya pertenece a esta red
+							 UPS¡ sorry, the data entered belong to an affiliate that already belongs to this network
 						</div>";
 					return false;
 				}
 			}else{
 				echo "<div id='msg_usuario' class='alert alert-danger fade in'>
-						!UPS¡ lo sentimos, los datos ingresados no pertenecen al afiliado, comprueba que el email y username esten correctos
+						!UPS¡ sorry, the data entered does not belong to the affiliate, check that the email and username are correct
 					</div>";
 				return false;
 			}
 		}else{
 			echo "<div id='msg_usuario' class='alert alert-danger fade in'>
-					!UPS¡ lo sentimos, no podemos afiliar al usuario a esta red
+					!UPS¡ Sorry, we can not affiliate the user to this network
 				</div>";
 			return false;
 		}

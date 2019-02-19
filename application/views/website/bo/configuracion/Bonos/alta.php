@@ -339,7 +339,7 @@ function validarRedes(){
 	if ( $("#divRedes")[0] ) {
 		return true;
 		}
-	alert("choose Algun Rango");
+	alert("Choose some range");
 	return false;
 }
 

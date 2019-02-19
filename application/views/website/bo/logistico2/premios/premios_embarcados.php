@@ -416,13 +416,13 @@
 		var fin=$("#finishdate").val();
 		if(inicio=='')
 		{
-			alert('Introduzca fecha of inicio');
+			alert('Enter the start date');
 		}
 		else
 		{
 			if(fin=='')
 			{
-				alert('Introduzca fecha of fin');
+				alert('Enter the end date');
 			}
 			else
 			{

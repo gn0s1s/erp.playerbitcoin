@@ -659,21 +659,21 @@ function nueva_service()
 }
 function delete_product(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-		alert("Debe haber al menos un producto o servicio asociado al combinado.");
+		alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"p").remove();
 	}
 }
 function delete_product_adicional(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-		alert("Debe haber al menos un producto o servicio asociado al combinado.");
+		alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"pj").remove();
 	}
 }
 function delete_service(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-	alert("Debe haber al menos un producto o servicio asociado al combinado.");
+	alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"s").remove();
 	}
@@ -681,7 +681,7 @@ function delete_service(id){
 
 function delete_service_adicional(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-	alert("Debe haber al menos un producto o servicio asociado al combinado.");
+	alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"sj").remove();
 	}
@@ -914,7 +914,7 @@ $.ajax({
 
 				  });
 	bootbox.dialog({
-		message: "Se han realizado los cambios con exito",
+		message: "The changes have been made successfully",
 		title: "Prueba",
 		buttons: {
 			success: {
@@ -981,7 +981,7 @@ function eliminar(id)
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se ha eliminado the mercancia",
+							message: "Merchandise has been removed",
 							title: 'Alerta',
 							buttons: {
 								success: {

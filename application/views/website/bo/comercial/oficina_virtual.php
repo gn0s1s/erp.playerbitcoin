@@ -1313,7 +1313,7 @@
 						type: "post",
 						url: "add_grupo",
 						success: function(){
-								             alert('Se ha creado the grupo '+grupo);
+								             alert('The '+grupo + ' group has been created');
 								             location.reload();
 								        }
 					});
@@ -1370,13 +1370,13 @@
 				var desc=$("#desc_enc").val();
 				if(nom=="")
 				{
-					alert("El campo nombre es requerido")
+					alert("The name field is required")
 				}
 				else
 				{
 					if(qty<1||qty>30)
 					{
-						alert("La cantidad of preguntas debe of estar entre 1 & 30")
+						alert("The number of questions must be between 1 and 30")
 					}
 					else
 					{
@@ -1402,7 +1402,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha activado the encuesta');
+								             alert('The survey has been activateds');
 								             location.reload();
 								        }
 									});
@@ -1434,7 +1434,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha desactivado the encuesta');
+								             alert('The survey has been deactivated');
 								             location.reload();
 								        }
 									});
@@ -1469,7 +1469,7 @@
 								        type: "get",
 								        url: "estado_cupon",
 								        success: function(){
-								             alert('Se ha activado the cupon');
+								             alert('The coupon has been activated');
 								             location.reload();
 								        }
 									});
@@ -1501,7 +1501,7 @@
 								        type: "get",
 								        url: "estado_cupon",
 								        success: function(){
-								             alert('Se ha desactivado the cupon');
+								             alert('The coupon has been deactivated');
 								             location.reload();
 								        }
 									});
@@ -1536,7 +1536,7 @@
 								        type: "get",
 								        url: "estado_archivo",
 								        success: function(){
-								             alert('Se ha activado the archivo');
+								             alert('The file has been activated');
 								             location.reload();
 								        }
 									});
@@ -1568,7 +1568,7 @@
 								        type: "get",
 								        url: "estado_archivo",
 								        success: function(){
-								             alert('Se ha desactivado the archivo');
+								             alert('The file has been deactivated');
 								             location.reload();
 								        }
 									});
@@ -1610,7 +1610,7 @@
 					url: "borrar_evento",
 					type:"get",
 					success:function(msg){
-						alert("Se ha eiminado the evento con exito");
+						alert("The event has been removed successfully");
 						location.reload();
 					}
 				});
@@ -1648,7 +1648,7 @@
 					url: "insert_cupon_usr",
 					type:"get",
 					success:function(msg){
-						alert("Se le ha asignado este cupon al usuario")					}
+						alert("This coupon has been assigned to the user")					}
 				});
 			}
 			function asignar_form(id)
@@ -1849,7 +1849,7 @@
 			         type: "get",
 			         url: "editar_archivo",
 			         success: function(){
-			              alert("Editado exitosamente");
+			              alert("Successfully edited");
 			              location.reload();
 			         }
 				});	
@@ -2252,31 +2252,31 @@
 				var minuto_fin=$("#minuto_fin").val();
 				if(nombre=='')
 				{
-					alert('Campo nombre es requerido');
+					alert('Name field is required');
 				}
 				else
 				{
 					if(descripcion=='')
 					{
-						alert('Campo descripcion es requerido');
+						alert('Field description is required');
 					}
 					else
 					{
 						if(dia_ini==''||hora_ini=='none'||minuto_ini=='none')
 						{
-							alert('Inicio del evento no especificado');
+							alert('Start of the unspecified event');
 						}
 						else
 						{
 							if(dia_fin==''||hora_fin=='none'||minuto_fin=='none')
 							{
-								alert('Fin del evento no especificado');
+								alert('End of the event not specified');
 							}
 							else
 							{
 								if((dia_fin==dia_ini&&hora_ini>hora_fin)||(dia_fin==dia_ini&&hora_ini==hora_fin&&minuto_ini>minuto_fin))
 								{
-									alert('La hora of inicio no puede ser mayor que the hora of finalizacion');
+									alert('The start time can not be longer than the end time');
 								}
 								else
 								{
@@ -2286,7 +2286,7 @@
 								         type: "get",
 								         url: "update_evento",
 								         success: function(){
-								              alert("Se edito the evento con exito");
+								              alert("The event was successfully edited");
 								              location.reload();
 								         }
 									});
@@ -3055,14 +3055,14 @@
 			
 			function delete_file(id,file)
 			{
-				if (confirm('¿Esta seguro of borrar este archivo?')) {
+				if (confirm('Are you sure you delete this file?')) {
 					var datos={'id':id,'file':file};
 					$.ajax({
 						data:{info:JSON.stringify(datos)},
 				        type: "get",
 				        url: "borrar_archivo",
 				        success: function(){
-				             alert("Se ha eliminado the archivo");
+				             alert("The file has been deleted");
 				        }
 					});
 				    // Save it!
@@ -3074,14 +3074,14 @@
 			}
 			function delete_new(id)
 			{
-				if (confirm('¿Esta seguro of borrar esta noticia?')) {
+				if (confirm('You are sure to delete this news?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_noticia",
 				        success: function(){
-				             alert("Se ha eliminado the noticia");
+				             alert("The news has been removed");
 				        }
 					});
 				    // Save it!
@@ -3091,14 +3091,14 @@
 			}
 			function delete_info(id)
 			{
-				if (confirm('¿Esta seguro of borrar esta informacion?')) {
+				if (confirm('Are you sure you delete this information?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_info",
 				        success: function(){
-				             alert("Se ha eliminado the informacion");
+				             alert("The information has been removed");
 				        }
 					});
 				    // Save it!
@@ -3111,14 +3111,14 @@
 			}
 			function delete_cupon(id)
 			{
-				if (confirm('¿Esta seguro of borrar este cupon?')) {
+				if (confirm('Are you sure you want to delete this coupon?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_cupon",
 				        success: function(){
-				             alert("Se ha eliminado the cupon");
+				             alert("The coupon has been removed");
 				             location.reload();
 				        }
 					});
@@ -3129,14 +3129,14 @@
 			}
 			function delete_encuesta(id)
 			{
-				if (confirm('¿Esta seguro of borrar esta encuesta?')) {
+				if (confirm('Are you sure you want to delete this survey?')) {
 			
 					$.ajax({
 						data:'id='+id,
 				        type: "get",
 				        url: "borrar_encuesta",
 				        success: function(){
-				             alert("Se ha eliminado the encuesta");
+				             alert("The survey has been removed");
 				             location.reload();
 				        }
 					});
@@ -3219,7 +3219,7 @@
 			         type: "get",
 			         url: "nuevo_cupon",
 			         success: function(){
-			              alert("El cupon ha sido cargado al sistema");
+			              alert("The coupon has been uploaded to the system");
 			         }
 				});	
 			}
@@ -3269,14 +3269,14 @@
 			         type: "get",
 			         url: "insert_coment",
 			         success: function(){
-			              alert("Tu comentario fue añadido con exito");
+			              alert("Your comment was added successfully");
 			         }
 				});
 			}
 			
 			$("#boton_subir").click(function(){
-				alert("HOla");
-				$("#div_subir").html("<i class='fa fa-gear fa-2x fa-spin'> Este proceso puede tomar unos segundos... </i>");
+				alert("Hello");
+				$("#div_subir").html("<i class='fa fa-gear fa-2x fa-spin'> This process may take a few seconds... </i>");
 			});
 		</script>
 		<script type="text/javascript">
@@ -3365,31 +3365,31 @@
 				var observ=$("#observacion_ev").val();
 				if(nombre=='')
 				{
-					alert('Campo nombre es requerido');
+					alert('Name field is required');
 				}
 				else
 				{
 					if(descripcion=='')
 					{
-						alert('Campo descripcion es requerido');
+						alert('Field description is required');
 					}
 					else
 					{
 						if(dia_ini==''||hora_ini=='none'||minuto_ini=='none')
 						{
-							alert('Inicio del evento no especificado');
+							alert('Start of the unspecified event');
 						}
 						else
 						{
 							if(dia_fin==''||hora_fin=='none'||minuto_fin=='none')
 							{
-								alert('Fin del evento no especificado');
+								alert('End of the event not specified');
 							}
 							else
 							{
 								if((dia_fin==dia_ini&&hora_ini>hora_fin)||(dia_fin==dia_ini&&hora_ini==hora_fin&&minuto_ini>minuto_fin))
 								{
-									alert('La hora of inicio no puede ser mayor que the hora of finalizacion');
+									alert('The start time can not be greater than the end time');
 								}
 								else
 								{
@@ -3399,7 +3399,7 @@
 								         type: "get",
 								         url: "nuevo_evento",
 								         success: function(){
-								              alert("Se añadido the evento");
+								              alert("The event was added");
 								              location.reload();
 								         }
 									});
