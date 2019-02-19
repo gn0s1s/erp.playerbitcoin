@@ -87,20 +87,20 @@ $( "#add-event-form" ).submit(function( event ) {
 
 function validarSiNumero(numero){
     if (!/^([0-9])*$/.test(numero)){
-      alert("El valor " + numero + " no es un número");
+      alert("The value " + numero + " in not a number");
       
     }
   }
 function ValidarVacio(banco, pais, cuenta){
 	if(banco == ''){
-		alert('Campo Nombre of bank es requerido');
+		alert('Field bank name is required');
 		return false;
 	}else if(pais == '0'){
-		alert('Seleciona un pais');
+		alert('Select a country');
 		return false;
 	}else if(cuenta == ''){
 		
-		alert('Campo Numero of Cuenta es requerido & debe ser un numero');
+		alert('Field Account number is required and must be a number');
 		return false;
 	}else{
 		return true;

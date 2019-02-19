@@ -491,16 +491,16 @@ function Actualizar_Tabla(){
 	if(document.formulario.email_buscado.disabled==true){email_buscado = '';}
 	
 	if(nombre_buscado.length <= 3 && document.formulario.nombre_buscado.disabled==false){
-		alert("el nombre debe contener al menos 4 letras");
+		alert("The name must contain at least 4 letters");
 	}
 	else if(apellido_buscado.length <= 3 && document.formulario.apellido_buscado.disabled==false){
-		alert("el apellido debe contener al menos 4 letras");
+		alert("The surname must contain at least 4 letters");
 	}
 	else if(username_buscado.length <= 3 && document.formulario.username_buscado.disabled==false){
-		alert("el username debe contener al menos 4 letras");
+		alert("The username must contain at least 4 letters");
 	}
 	else if(email_buscado.length <= 9 && document.formulario.email_buscado.disabled==false){
-		alert("el email debe contener al menos 10 letras");
+		alert("The email must contain at least 10 letters");
 	}
 
 }

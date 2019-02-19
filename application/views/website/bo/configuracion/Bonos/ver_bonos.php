@@ -180,7 +180,7 @@
 					
 						if(inicio==''||fin=='')
 						{
-							alert('Introduzca las fechas');
+							alert('Enter the dates');
 						}
 						else
 						{
@@ -234,7 +234,7 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar the Historial del Bono ?'},
+					data: {message: 'Are you sure you want to delete the bonus history?'},
 				})
 				.done(function( msg )
 				{

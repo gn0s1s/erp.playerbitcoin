@@ -223,7 +223,7 @@ function faseCambio(fase){
 					})
 					.done(function(msg)
 					{
-						alert('Has Cambiado of fase'+msg);
+						alert('You have changed fase '+msg);
 						location.reload();
 					})
 				}

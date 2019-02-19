@@ -127,14 +127,14 @@
 <script type="text/javascript">
 function ValidarVacio(banco, pais, cuenta){
 	if(banco == ''){
-		alert('Campo Nombre of bank es requerido');
+		alert('Field Bank name is required');
 		return false;
 	}else if(pais == '0'){
-		alert('Seleciona un pais');
+		alert('Select a country');
 		return false;
 	}else if(cuenta == ''){
 		
-		alert('Campo Numero of Cuenta es requerido');
+		alert('Field account number is required');
 		return false;
 	}else{
 		return true;
@@ -188,7 +188,7 @@ function agregar_banco()
 }
 function validarSiNumero(numero){
     if (!/^([0-9])*$/.test(numero)){
-      alert("El valor " + numero + " no es un número");
+      alert("The value " + numero + " is not a number");
       
     }
   }

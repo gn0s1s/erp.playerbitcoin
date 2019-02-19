@@ -307,7 +307,7 @@ class noticias extends CI_Controller
 			//Preguntamos si se pudo subir el archivo "foto" es el nombre del input del dropzone
 			if (!$this->upload->do_upload('userfile'))
 			{
-				echo "<script> alert('El archivo que estas ingresando no es valido.');
+				echo "<script> alert('The file you are entering is not valid.');
 						location.href = '/bo/noticias/listar';</script>";
 				//redirect('/bo/presentaciones/listar');
 			}

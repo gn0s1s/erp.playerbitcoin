@@ -194,7 +194,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha activado the encuesta');
+								             alert('The survey has been activated');
 								             location.reload();
 								        }
 									});
@@ -226,7 +226,7 @@
 								        type: "get",
 								        url: "estado_encuesta",
 								        success: function(){
-								             alert('Se ha desactivado the encuesta');
+								             alert('The survey has been deactivated');
 								             location.reload();
 								        }
 									});

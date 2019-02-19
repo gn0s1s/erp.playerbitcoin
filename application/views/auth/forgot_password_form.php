@@ -104,7 +104,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 									×
 								</button>
 								<i class="fa-fw fa fa-times"></i>
-								<strong>Error!</strong> the email no existe.
+								<strong>Error!</strong> the email does not exist.
 							</div>';
 					}
 				}

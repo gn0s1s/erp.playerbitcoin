@@ -212,13 +212,13 @@
 						var fecha=$("#datepicker").val();
 						if(fecha=="")
 						{
-							alert("Especifique una fecha of entrega");
+							alert("Specify a delivery date");
 						}
 						else
 						{
 
 								bootbox.dialog({
-									message: "¿Desea enviar the premio ahora?",
+									message: "Do you want to send the prize now?",
 									title: "Surtir",
 									className: "",
 									buttons: {

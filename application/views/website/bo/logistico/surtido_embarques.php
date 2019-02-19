@@ -404,7 +404,7 @@
 						var fecha=$("#datepicker").val();
 						if(fecha=="")
 						{
-							alert("Especifique una fecha of entrega");
+							alert("Specify a delivery date");
 						}
 						else
 						{

@@ -376,7 +376,7 @@
 		<script type="text/javascript" id="script_fila">
 			function nueva_fila()
 			{
-				alert("hola");
+				alert("hello");
 			}
 		</script>
 		
@@ -461,13 +461,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha of inicio');
+							alert('Enter the start date');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha of fin');
+								alert('Enter the end date');
 							}
 							else
 							{
@@ -558,13 +558,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha of inicio');
+							alert('Enter the start date');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha of fin');
+								alert('Enter the end date');
 							}
 							else
 							{
@@ -653,13 +653,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha of inicio');
+							alert('Enter the start date');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha of fin');
+								alert('Enter the end date');
 							}
 							else
 							{
@@ -819,7 +819,7 @@
 						var inicio=$("#startdate").val();
 						var fin=$("#finishdate").val();
 						if (inicio == '' || fin == ''){
-							alert('Introduzca las fechas para buscar');
+							alert('Enter dates to search');
 							return 0;
 						}
 						$("#nuevos-afiliados").show();
@@ -898,7 +898,7 @@
 						var inicio=$("#startdate").val();
 						var fin=$("#finishdate").val();
 						if (inicio == '' || fin == ''){
-							alert('Introduzca las fechas para buscar');
+							alert('Enter dates to search');
 							return 0;
 						}
 						$("#nuevos-afiliados").show();
@@ -975,7 +975,7 @@
 			var inicio=$("#startdate").val();
 			var fin=$("#finishdate").val();
 			if (inicio == '' || fin == ''){
-				alert('Introduzca las fechas para buscar');
+				alert('Enter dates to search');
 				return 0;
 			}
 			window.location="/ov/compras/reporte_pagos_banco_excel?inicio="+inicio+"&&fin="+fin
@@ -985,7 +985,7 @@
 			var inicio=$("#startdate").val();
 			var fin=$("#finishdate").val();
 			if (inicio == '' || fin == ''){
-				alert('Introduzca las fechas para buscar');
+				alert('Enter dates to search');
 				return 0;
 			}
 			window.location="/ov/compras/Reporte_Excel_WP?inicio="+inicio+"&&fin="+fin
@@ -1021,13 +1021,13 @@
 						var fin=$("#finishdate").val();
 						if(inicio=='')
 						{
-							alert('Introduzca fecha of inicio');
+							alert('Enter the start date');
 						}
 						else
 						{
 							if(fin=='')
 							{
-								alert('Introduzca fecha of fin');
+								alert('Enter the end date');
 							}
 							else
 							{

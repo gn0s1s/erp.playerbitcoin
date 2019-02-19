@@ -365,13 +365,13 @@ function editar_almacen(id){
 
 	function ValidarVacio(nombre, direccion, telefono){
 		if(nombre == ''){
-			alert('Campo Nombre del almacen es requerido');
+			alert('Field name of the warehouse is required');
 			return false;
 		}else if(direccion == ''){
-			alert('El campo direccion del almacen es requerido');
+			alert('The field address of the warehouse is required');
 			return false;
 		}else if(telefono == ''){
-			alert('El campo telefono del almacen es requerido');
+			alert('The field telephone of the warehouse is required');
 			return false;
 		}else{
 			return true;

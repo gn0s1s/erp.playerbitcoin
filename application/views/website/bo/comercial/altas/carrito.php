@@ -53,7 +53,7 @@
 									×
 								</button>
 								<i class="fa-fw fa fa-check"></i>
-								<strong>completado </strong> '.$this->session->flashdata('msj').'
+								<strong>Completed </strong> '.$this->session->flashdata('msj').'
 			</div>'; 
 			}
 	}

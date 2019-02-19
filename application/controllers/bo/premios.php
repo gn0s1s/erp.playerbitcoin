@@ -154,9 +154,9 @@ class premios extends CI_Controller
 		echo "<h1 class='text-success'>Premios Entregados</h1>";
 		if(isset($_POST)){
 			if($_POST['inicio'] == ''){
-				echo "<h1 class='alert alert-danger'>Seleciona un rango de fecha para consultar</h1>";
+				echo "<h1 class='alert alert-danger'>Select a date range to consult</h1>";
 			}elseif ($_POST['fin'] == ''){
-				echo "<h1 class='alert alert-danger'>Seleciona un rango de fecha para consultar</h1>";
+				echo "<h1 class='alert alert-danger'>Select a date range to consult</h1>";
 			}else{
 				
 				//var_dump($_POST);

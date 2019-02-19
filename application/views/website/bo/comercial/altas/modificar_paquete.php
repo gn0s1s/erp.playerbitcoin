@@ -434,7 +434,7 @@ function nueva_product(i)
 
 function delete_product(id){
 		if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-	alert("Debe haber al menos un producto o servicio asociado al paquete.");
+	alert("There must be at least one product or service associated with the package.");
 }else{
 $("#"+id+"a").remove();
 }
@@ -442,7 +442,7 @@ $("#"+id+"a").remove();
 
 function delete_product_adicional(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-		alert("Debe haber al menos un producto o servicio asociado al combinado.");
+		alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"aj").remove();
 	}
@@ -480,7 +480,7 @@ function nueva_service(i)
 }
 function delete_service(id){
 		if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-	alert("Debe haber al menos un producto o servicio asociado al paquete.");
+	alert("There must be at least one product or service associated with the package.");
 }else{
 $("#"+id+"b").remove();
 }
@@ -488,7 +488,7 @@ $("#"+id+"b").remove();
 
 function delete_service_adicional(id){
 	if((validar_productos()==1 && validar_servicios()==0)||(validar_productos()==0 && validar_servicios()==1)){
-	alert("Debe haber al menos un producto o servicio asociado al combinado.");
+	alert("There must be at least one product or service associated with the combined.");
 }else{
 	$("#"+id+"bj").remove();
 	}

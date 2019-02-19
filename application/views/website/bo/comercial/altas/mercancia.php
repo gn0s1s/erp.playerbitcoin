@@ -1559,7 +1559,7 @@ $.ajax({
 
 				  });
 	bootbox.dialog({
-		message: "Se han realizado los cambios con exito",
+		message: "The changes have been made successfully",
 		title: "Prueba",
 		buttons: {
 			success: {
@@ -1626,7 +1626,7 @@ function eliminar(id)
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se ha eliminado the mercancia",
+							message: "Merchandise has been removed",
 							title: 'Alerta',
 							buttons: {
 								success: {

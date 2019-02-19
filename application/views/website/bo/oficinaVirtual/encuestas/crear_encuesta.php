@@ -153,7 +153,7 @@
 for ($n = 0; $n < $_GET['qty']; $n++) {
     echo 'if($("#preg-' . $n . '").val()=="")
         {
-                alert("La pregunta numero ' . ($n + 1) . ' no se ha definido");
+                alert("Question number ' . ($n + 1) . ' has not been defined");
                 return;
         }';
 }
@@ -177,7 +177,7 @@ echo 'qty:' . $_GET['qty'] . ',nombre:"' . $_GET['nombre'] . '",desc:"' . $_GET[
                                                         type: "post",
                                                         url: "insertar_encuesta",
                                                         success: function () {
-                                                            alert("La encuesta fue agregada con exito");
+                                                            alert("The survey was added successfully");
                                                             window.location.href = "/bo/comercial/oficina_virtual";
                                                         }
                                                     });

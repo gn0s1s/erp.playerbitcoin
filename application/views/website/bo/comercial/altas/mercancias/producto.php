@@ -1020,7 +1020,7 @@ function eliminar(id)
 					.done(function( msg )
 					{
 						bootbox.dialog({
-							message: "Se ha eliminado the mercancia",
+							message: "Merchandise has been removed",
 							title: 'Alerta',
 							buttons: {
 								success: {
