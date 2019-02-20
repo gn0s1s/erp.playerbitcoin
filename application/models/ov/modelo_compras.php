@@ -9,7 +9,15 @@ class modelo_compras extends CI_Model
 		$this->load->model('/ov/general');
 		$this->load->model('/bo/bonos/afiliado');
 	}
-	
+
+    function get_tickets_id($id)
+    {
+        $query = "SELECT * FROM ticket WHERE user_id = $id";
+        $q=$this->db->query($query);
+        $result = $q->result();
+        return $result;
+    }
+
 	function get_red($id)
 	{
 		$q=$this->db->query("SELECT id_red FROM red WHERE estatus like 'ACT' and id_usuario=".$id);

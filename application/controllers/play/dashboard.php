@@ -298,6 +298,8 @@ private $test = true;
         $script = " <script>
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
                 $('#nuevaClase').attr('href','/ov/dashboard');
+                $('.btn.btn-registro3').attr('href','/ov/tickets/manual');
+                $('.btn.btn-registro4').attr('href','/ov/tickets/automatic');
                 $('.btn.btn-registro6').attr('href','/shoppingcart');
                 $('.btn.btn-registro7').attr('href','/ov/wallet/requestPayment');
                 $('img[src=\"https://www.tradingview.com/x/hlruquwj/\"]').parent().append('$widget');

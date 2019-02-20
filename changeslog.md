@@ -3,6 +3,14 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+20-02-2019
+-
+### ticket btc category
+```mysql
+INSERT INTO `cat_grupo_producto` 
+(`descripcion`, `id_red`, `estatus`)
+ VALUES ('Tickets', '1', 'ACT');
+```
 18-02-2019
 -
 ### ticket btc bet
@@ -22,9 +30,7 @@ create table ticket
   reference int default '1'                     null
   comment 'venta:id_venta associate item'
 ) comment 'boleto de apuesta btc';
-
 ```
-
 16-02-2019
 -
 ### online payment confirmations

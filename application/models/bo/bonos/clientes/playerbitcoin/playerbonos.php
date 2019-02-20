@@ -97,23 +97,27 @@ class playerbonos extends CI_Model
      * @param int $ntwk : red
      * @param mixed $value : valor de boleto
      */
-    function setTicketRange($id, $ntwk = 1, $value = false){
+    function setTicketRange($value = false, $id, $ntwk = 1){
 
-        $bitcoin_value = 1000;#TODO: calcular coinmarket
+        $bitcoin_value = $this->getBitcoinValue();
 
-        if(!$value){
-            $limit = 2000;
-            $min_rand = $bitcoin_value-$limit;
-            $max_rand = $bitcoin_value+$limit;
+        if(!$value)
+            $value = $this->getValueTicketAuto();
 
-            $isRepeated = true;
-            $iteration = 10;
-            $counter = 0;
-            while ($isRepeated || $counter < $iteration){
-                $value = rand($min_rand,$max_rand);
-                $isRepeated = $this->isRepeatedValueBitcoin($value);
-            }
-        }
+        $min_value = (int) $value/5;
+        $min_value *= 5;
+        $max_value = $min_value+5;
+
+        return array($min_value,$max_value);
+
+    }
+
+    function isTicketRange($value = false, $id, $ntwk = 1){
+
+        $bitcoin_value = $this->getBitcoinValue();
+
+        if(!$value)
+            $value = $this->getValueTicketAuto();
 
         $min_value = (int) $bitcoin_value/5;
         $min_value *= 5;
@@ -3196,6 +3200,39 @@ class playerbonos extends CI_Model
         $q = $q->result();
 
         return $q;
+    }
+
+    /**
+     * @param $value
+     * @return array
+     */
+    private function getValueTicketAuto()
+    {
+        $bitcoin_value = $this->getBitcoinValue();
+
+        $value = $bitcoin_value;
+        $limit = 2000;
+        $min_rand = $bitcoin_value - $limit;
+        $max_rand = $bitcoin_value + $limit;
+
+        $isRepeated = true;
+        $iteration = 10;
+        $counter = 0;
+        while ($isRepeated || $counter < $iteration) {
+            $value = rand($min_rand, $max_rand);
+            $isRepeated = $this->isRepeatedValueBitcoin($value);
+        }
+
+        return $value;
+    }
+
+    /**
+     * @return int
+     */
+    function getBitcoinValue()
+    {
+        $bitcoin_value = 1000;
+        return $bitcoin_value;#TODO: calcular coinmarket
     }
 
 

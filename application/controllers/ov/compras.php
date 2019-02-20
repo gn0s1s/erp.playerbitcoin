@@ -664,7 +664,7 @@ function index()
             $currency = "USD";$to="BTC";
             $recibido = $myAPI->convertFrom($received,$currency);
 
-            $incompleto = ($recibido < $requerido);
+            $incompleto = false;#TODO: ($recibido < $requerido);
 
             log_message('DEV',"data :: $recibido -> $requerido");
 

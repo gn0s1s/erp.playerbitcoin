@@ -385,7 +385,7 @@
 							if($permiso){
 							?>
 							<div class="col-sm-6">
-								<a href="javascript:void(0);"> <!-- compras/reportes -->
+								<a href="/ov/tickets"> <!-- compras/reportes -->
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 										<h5><i class="fa fa-ticket "></i> Tickets/Cupons</h5> <!-- Reportes -->
 									</div>

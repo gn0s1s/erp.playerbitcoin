@@ -85,4 +85,5 @@ $route['ov/chat'] = 'ov/cgeneral/chat';
 $route['ov/coupons'] = 'ov/escuela_negocios/bonos';
 $route['ov/acknowledgments'] = 'ov/escuela_negocios/reconocimientos';
 $route['ov/suggestion'] = 'ov/cabecera/sugerencia';
-
+/**  TICKETS */
+$route['listTickets'] = 'ov/tickets/listar';

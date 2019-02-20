@@ -39,7 +39,7 @@
 													<a href="/bo/comercial/actionProveedor">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-edit fa-3x"></i>
-															<h1>Proveedores <br>&nbsp</h1>
+															<h1>Providers <br>&nbsp</h1>
 														</div>
 													</a>
 												</div>
@@ -47,7 +47,7 @@
 													<a href="/bo/comercial/categorias">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-th fa-3x"></i>
-															<h1>Categorias<br>&nbsp</h1>
+															<h1>Categories<br>&nbsp</h1>
 														</div>
 													</a>
 												</div>
@@ -55,7 +55,7 @@
 													<a href="/bo/comercial/mercancia">
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<i class="fa fa-cube fa-3x"></i>
-															<h1>Mercancias</h1>
+															<h1>Items</h1>
 															<h1>.</h1>
 														</div>
 													</a>
@@ -72,7 +72,7 @@
 													<a href="/bo/comercial/transacciones_billetera"> <!-- /bo/reportes -->
 														<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 															<i class="fa fa-hand-o-right fa-3x"></i>&nbsp&nbsp&nbsp<i class="fa fa-money fa-3x"></i>
-															<h1>Transacciones <br> on Profit Wallet</h1><!-- Reportes -->
+															<h1>Transactions <br> Report</h1><!-- Reportes -->
 														</div>
 													</a>
 												</div>	
