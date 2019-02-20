@@ -36,8 +36,13 @@ class CoinMarketCap
 
     public function peticion()
     {
+        $params = [
+            "start" => 1,
+            "limit" => 1,
+            "convert" => "USD"
+        ];
         // Completar la url y los parámetros
-        $this->optionCurl[CURLOPT_URL] .= "listings/latest?start=1&limit=1&convert=USD";
+        $this->optionCurl[CURLOPT_URL] .= "listings/latest?".http_build_query($params);
         
         echo $this->optionCurl[CURLOPT_URL]."<br>";
 
@@ -56,8 +61,15 @@ class CoinMarketCap
 
     public function historical()
     {
+        $params = [
+            "id" => 1,
+            "time_start" => "2018-12-01",
+            "time_end" => "2018-12-31",
+            "time_period" => "hourly",
+            "convert" => "USD"
+        ];
         // Completar la url y los parámetros
-        $this->optionCurl[CURLOPT_URL] .= "ohlcv/historical?id=1&time_start=2018-12-01&time_end=2018-12-31&convert=USD";
+        $this->optionCurl[CURLOPT_URL] .= "ohlcv/historical?".http_build_query($params);
 
         echo $this->optionCurl[CURLOPT_URL]."<br>";
 
