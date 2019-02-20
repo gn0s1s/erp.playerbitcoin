@@ -6,8 +6,6 @@ class CoinMarketCap
     private $curl;
     private $url;
     private $apiKey;
-    private $url_pro     = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/';
-    private $url_sandbox = 'https://sandbox-api.coinmarketcap.com/v1/cryptocurrency/';
     private $apiKey_pro     = "ead923ef-7a18-4b31-8582-1aac0d4017fc";
     private $apiKey_sandbox = "9d540fa4-8a95-4ff2-81d8-c54c07143429";
     private $optionCurl = array();
