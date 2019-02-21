@@ -340,7 +340,7 @@ class cgeneral extends CI_Controller
 		}
 		else $this->model_user_webs_personales->actualizar($_POST['username'], $trimmed);
 	
-		$success = "El cambio se ha efectuado satisfactoriamente.";
+		$success = "The change has been made successfully.";
 		$this->session->set_flashdata('success', $success);
 	
 		redirect('/ov/personalWeb');
@@ -373,22 +373,22 @@ class cgeneral extends CI_Controller
 		
 		$acceso = $this->model_user_webs_personales->traer_acceso_web_personal_afiliado($username);
 		
-		$mensaje = "Para tener acceso a my tienda virtual debes acceder por medio de los siguientes datos:<br><br>
-				 Username: ".$acceso[0]->username."<br>
-				  Clave: ".$acceso[0]->clave;
+		$mensaje = "To access my virtual store you must access through the following information:<br><br>
+				Username: ".$acceso[0]->username."<br>
+				Password: ".$acceso[0]->clave;
 		
 		$this->email->message($mensaje);
 		
-		$this->email->subject("Invitación a my tienda virtual en pekcell gold");
+		$this->email->subject("Invitation to my virtual store in pekcell gold");
 	
 		if($this->email->send()){
-			$success = "Se ha enviado el email Exitosamente .";
+			$success = "The email has been sent successfully.";
 
 			$this->session->set_flashdata('success', $success);
 			
 			redirect('/ov/personalWeb');
 		}else{
-			$error = "Por favor verificar la informacion e intentar nuevamente .";
+			$error = "Please verify the information and try again.";
 		$this->session->set_flashdata('error', $error);
 	
 		redirect('/ov/personalWeb');
@@ -611,13 +611,13 @@ class cgeneral extends CI_Controller
 		}
 
 		if($i>0){
-			$mensaje = "Hubo un error al enviar uno de los correos.";
+			$mensaje = "There was an error sending one of the emails.";
 			$this->session->set_flashdata('mensaje', $mensaje);
 			redirect('/ov/cgeneral/autoresponder');
 
 		}
 
-			$mensaje = "Los correos se han enviado correctamente";
+			$mensaje = "The emails have been sent correctly.";
 			$this->session->set_flashdata('mensaje', $mensaje);
 			redirect('/ov/cgeneral/autoresponder');
 

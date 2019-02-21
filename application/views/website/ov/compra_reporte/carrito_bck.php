@@ -456,7 +456,7 @@
 				{
 					if(qty>5||qty<1)
 					{
-						alert('La cantidad of mercancia of un tipo añadida al carrito debe of estar entre 1 & 5');
+						alert('The amount of merchandise of a type added to the shopping cart must be between 1 & 5');
 					}
 					else
 					{
@@ -466,7 +466,7 @@
 							type: 'get',
 							url: 'add_merc',
 							success: function(msg){
-								alert("Se ha añadido al carrito");
+								alert("It has been added to the shopping cart");
 								$("#ver_carrito").html(msg);
 							}
 						});
@@ -481,7 +481,7 @@
 					success: function(msg){
 						bootbox.dialog({
 								message: msg,
-								title: "Ver carro",
+								title: "see shopping cart",
 								className: "",
 							})
 					}

@@ -6,7 +6,7 @@
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/ov"><i class="fa fa-home"></i> Menu</a> 
 				<span>>
-					Perfil
+					Profile
 				</span>
 			</h1>
 		</div>
@@ -55,19 +55,19 @@
 									<div class="row">
 										<section class="col col-3">
 											<label class="input">
-												Color of fondo
+												Background color
 												<input type="color" name="bg_color" value="<?=$style[0]->bg_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color of botones primarios
+												Primary button color
 												<input type="color" name="color_1" value="<?=$style[0]->btn_1_color?>">
 											</label>
 										</section>
 										<section class="col col-3">
 											<label class="input">
-												Color of botones secundarios
+												Secondary buttons color
 												<input type="color" name="color_2" value="<?=$style[0]->btn_2_color?>">
 											</label>
 										</section>
@@ -75,7 +75,7 @@
 								</fieldset>
 								<footer>
 									<button type="button" onclick="actualiza()" class="btn btn-primary">
-										Actualizar
+										Update
 									</button>
 								</footer>
 							</form>

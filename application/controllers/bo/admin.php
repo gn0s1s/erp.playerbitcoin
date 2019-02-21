@@ -821,7 +821,7 @@ class admin extends CI_Controller
 			$data = array('upload_data' => $this->upload->data());
 			$this->model_admin->img_merc($sku,$data["upload_data"]["file_name"]);
 		}
-			$msj = "Se ha modificado la mercancia.";
+			$msj = "The merchandise has been modified.";
 			$this->session->set_flashdata('msj', $msj);
 		redirect("/bo/comercial/listarMercancia");
 	}

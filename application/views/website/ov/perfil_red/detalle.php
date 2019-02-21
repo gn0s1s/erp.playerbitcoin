@@ -3,7 +3,7 @@
 				<?= '<img alt="'.$usuario[0]->nombre.'" src="'.$img_perfil.'" style="height:10em">'; ?>
 			</div>
 		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<div class="demo-icon-font">Pais
+				<div class="demo-icon-font">Country
 					<?= '<img class="flag flag-'.strtolower($pais).'" >';?>
                	</div>
 		
@@ -31,13 +31,13 @@
 		?>
 		
 		<div class="row">Username: <b><?=$username;?></b></div>
-		<div class="row">Nombre: <b><?=$usuario[0]->nombre;?></b></div>
-		<div class="row">Apellido: <b><?=$usuario[0]->apellido;?></b></div>
-		<div class="row">Nacimiento: <b><?=$usuario[0]->nacimiento;?></b></div>
-		<div class="row">Edad: <b><?=$edad[0]->edad;?></b></div>
+		<div class="row">Name: <b><?=$usuario[0]->nombre;?></b></div>
+		<div class="row">Surname: <b><?=$usuario[0]->apellido;?></b></div>
+		<div class="row">Birthdate: <b><?=$usuario[0]->nacimiento;?></b></div>
+		<div class="row">Age: <b><?=$edad[0]->edad;?></b></div>
 		<div class="row">Email: <b><?=$usuario[0]->email;?></b></div>
-		<div class="row">Dirección: <b><?=$direccion;?></b></div>
-		<div class="row">Teléfono(s) fijo(s): 
+		<div class="row">Address: <b><?=$direccion;?></b></div>
+		<div class="row">Fixed telephone(s): 
 		<?php foreach ($telefonos as $key)
 		{
 			if($key->tipo=='Fijo')
@@ -46,7 +46,7 @@
 			}
 		} ?>
 		</div>
-		<div class="row">Teléfono(s) Móvil: 
+		<div class="row">Mobile phone(s): 
 		<?php foreach ($telefonos as $key)
 		{
 			if($key->tipo=='Móvil')

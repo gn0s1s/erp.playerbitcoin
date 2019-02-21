@@ -7,11 +7,11 @@
 										<th data-hide="phone">bank </th>
 										<th data-hide="phone">Cuenta</th>
 										<th data-hide="phone">Titular</th>
-										<th data-hide="phone">Clabe</th>
+										<th data-hide="phone">KEY</th>
 										<th data-hide="phone">Pais</th>
 										<th data-hide="phone">Swift</th>
 										<th data-hide="phone">ABA/IBAN/OTRO</th>
-										<th data-hide="phone">dirección postal</th>
+										<th data-hide="phone">Postal address</th>
 										<th data-hide="phone,tablet">Metodo</th>
 										<th data-hide="phone,tablet">Valor</th>
 										<th data-hide="phone,tablet">Status</th>

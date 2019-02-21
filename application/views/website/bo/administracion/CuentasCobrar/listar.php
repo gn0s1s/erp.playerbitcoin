@@ -64,9 +64,9 @@
 										<th data-hide="phone">bank</th>
 										<th data-hide="phone,tablet">N° Cuenta</th>
 										<th data-hide="phone,tablet">Titular</th>
-										<th data-hide="phone,tablet">CLABE</th>
+										<th data-hide="phone,tablet">KEY</th>
 										<th data-hide="phone,tablet">SWIFT</th>										
-										<th data-hide="phone,tablet">Dirección postal</th>
+										<th data-hide="phone,tablet">Postal address</th>
 										<th data-hide="phone,tablet" style="width: 70px !important">Valor</th>
 										<th data-hide="phone,tablet">Fecha</th>
 										<th data-hide="phone,tablet">Status</th>

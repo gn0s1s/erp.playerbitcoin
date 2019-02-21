@@ -73,18 +73,18 @@
 																<label class="col-lg-6 col-sm-6 col-md-12 col-xs-12">Month
 																	<select id="mes" onChange="buscarmes()" class="form-control">
 																		<option value="">-- Choose Month --</option>
-																		<option value="01">Enero</option>
-																		<option value="02">Febrero</option>
-																		<option value="03">Marzo</option>
-																		<option value="04">Abril</option>
-																		<option value="05">Mayo</option>
-																		<option value="06">Junio</option>
-																		<option value="07">Julio</option>
-																		<option value="08">Agosto</option>
-																		<option value="09">Septiembre</option>
-																		<option value="10">Octubre</option>
-																		<option value="11">Noviembre</option>
-																		<option value="12">Diciembre</option>
+																		<option value="01">January</option>
+																		<option value="02">February</option>
+																		<option value="03">March</option>
+																		<option value="04">April</option>
+																		<option value="05">May</option>
+																		<option value="06">June</option>
+																		<option value="07">July</option>
+																		<option value="08">August</option>
+																		<option value="09">September</option>
+																		<option value="10">October</option>
+																		<option value="11">November</option>
+																		<option value="12">December</option>
 																	</select>
 																</label>
 															</div>
@@ -97,7 +97,7 @@
 																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Account Titular</th>
 																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Account number</th>
 																		<th><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Bank</th>
-																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> CLABE</th>
+																		<th data-hide="phone,tablet"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> KEY</th>
 																		<th>Status</th>
 																	</tr>
 																</thead>

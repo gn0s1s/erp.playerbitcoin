@@ -269,7 +269,7 @@
 																		if($cuenta->swift)
 																			echo'<span>SWIFT:	<b>'.$cuenta->swift.'</b>,</span><br>';																		
 																		if($cuenta->dir_postal)
-																			echo'<span>Dirección postal  :<b>'.$cuenta->dir_postal.'</b>,</span><br>';
+																			echo'<span>Postal address  :<b>'.$cuenta->dir_postal.'</b>,</span><br>';
 																		   echo'<span>Valor:	<b> $ '.$cuenta->valor.'</b>,</span>
 																		</div>
 																	</li>';

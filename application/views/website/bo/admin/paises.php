@@ -131,7 +131,7 @@ function dato_pais_multiple(){
 	{
 		bootbox.dialog({
 		message: msg,
-		title: "Editar",
+		title: "Edit",
 		buttons: {
 			success: {
 			label: "Accept",
@@ -155,8 +155,8 @@ function dato_pais_multiple(){
 
 				});
 					bootbox.dialog({
-						message: "Se han realizado los cambios con exito",
-						title: "Prueba",
+						message: "The changes have been made successfully",
+						title: "Test",
 						buttons: {
 							success: {
 							label: "Accept",

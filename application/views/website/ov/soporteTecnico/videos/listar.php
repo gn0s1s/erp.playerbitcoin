@@ -329,7 +329,7 @@
 			         type: "get",
 			         url: "/bo/configuracion/insert_coment",
 			         success: function(){
-			              alert("Tu comentario fue añadido con exito");
+			              alert("Your comment was added successfully");
 			              location.href = "/ov/cgeneral/listar_videos?id_red=<?php echo $id_red;?>";
 			         }
 				});

@@ -100,9 +100,9 @@
 											<tr>
 												<th class="text-center"><b>Enviado por</b></th>
 												<th class="text-center hidden-xs hidden-sm"><b>Título</b></th>
-												<th class="text-center hidden-xs hidden-sm"><b>Fecha</b></th>
+												<th class="text-center hidden-xs hidden-sm"><b>Date</b></th>
 												<th class="text-center hidden-xs hidden-sm"><b>Status</b></th>
-												<th class="text-center"><b>Acción</b></th>
+												<th class="text-center"><b>Action</b></th>
 											</tr>
 										</thead>
 										<tbody>

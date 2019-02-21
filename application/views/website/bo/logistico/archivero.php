@@ -155,11 +155,11 @@
 																<th class="text-center">
 																	<input onclick="checado()" id="todos" type="checkbox">
 																</th>
-																<th class="text-center hidden-xs hidden-sm"><b>Número</th>
-																<th class="text-center"><b>Nombre</b></th>
-																<th class="text-center hidden-xs hidden-sm"><b>Fecha</b></th>
-																<th class="text-center hidden-xs hidden-sm"><b>Tamaño</b></th>
-																<th class="text-center hidden-xs hidden-sm"><b>Acción</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Number</th>
+																<th class="text-center"><b>Name</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Date</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Size</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Action</b></th>
 															</tr>
 														</thead>
 														<tbody>

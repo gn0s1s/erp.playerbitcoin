@@ -24,7 +24,7 @@ function botbox(nombre, id, lado)
 		message: '<div class="row fuelux">'
 		+'<div id="spinner-div"></div><form id="register" class="smart-form">'
 			+'<fieldset>'
-			+'<legend>¿ Esta seguro of the Afiliacion ?</legend>'
+			+'<legend>Are you sure of the affiliation?</legend>'
 				+'<section id="usuario" class="col col-6">'
 					+'<label class="input">'
 						+'<input type="hidden" id="username" onkeyup="use_username()" value="<?php echo $_GET['username']?>" required type="text" name="username" placeholder="Username">'

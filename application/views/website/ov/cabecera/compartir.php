@@ -9,7 +9,7 @@
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER -->
 						<a class="backHome" href="/ov"><i class="fa fa-home"></i> Menu</a> 
-						<span>> Compartir
+						<span>> Share
 						</span>
 						</h1>
 					</div>
@@ -47,7 +47,7 @@
 											-->
 											<header>
 												<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-												<h2>Archivos</h2>
+												<h2>Records</h2>
 							
 											</header>
 							
@@ -70,12 +70,12 @@
 																<th class="text-center">
 																	<input onclick="checado()" id="todos" type="checkbox">
 																</th>
-																<th class="text-center hidden-xs hidden-sm"><b>Número</th>
-																<th class="text-center"><b>Compartido por</b></th>
-																<th class="text-center"><b>Nombre</b></th>
-																<th class="text-center hidden-xs hidden-sm"><b>Fecha</b></th>
-																<th class="text-center hidden-xs hidden-sm"><b>Tamaño</b></th>
-																<th class="text-center hidden-xs hidden-sm"><b>Acción</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Number</th>
+																<th class="text-center"><b>Shared by</b></th>
+																<th class="text-center"><b>Name</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Date</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Size</b></th>
+																<th class="text-center hidden-xs hidden-sm"><b>Action</b></th>
 															</tr>
 														</thead>
 														<tbody>
@@ -102,14 +102,14 @@
 																			<span class="btn-label">
 																			<i class="glyphicon glyphicon-trash"></i>
 																			</span>
-																			Borrar
+																			Delete
 																		</a>
 																		<?}?>
 																		<a target="_blank" class="btn btn-labeled btn-info" href="<?=$archivo->url?>">
 																			<span class="btn-label">
 																			<i class="glyphicon glyphicon-download"></i>
 																			</span>
-																			Descargar
+																			Download
 																		</a>
 																	</td>
 																</tr>
@@ -118,7 +118,7 @@
 															</form>
 														</tbody>
 													</table>
-													<?}else{echo "<h1>No tienes archivos aún</h1>";}?>
+													<?}else{echo "<h1>You do not have files yet</h1>";}?>
 												</div>
 												<!-- end widget content -->
 							
@@ -177,7 +177,7 @@
 										                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 										                    </div>
 										                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-										                        <h1>Arrastra tus archivos o da clic para buscarlos on tu computadora</h1>
+										                        <h1>Drag your files or click to search for them on your computer</h1>
 										                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 										                        </div><i class="fa fa-file fa-5x"></i>
 										                    </div>

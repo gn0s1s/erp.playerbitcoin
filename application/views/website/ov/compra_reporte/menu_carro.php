@@ -4,7 +4,7 @@
 			<h1 class="page-title txt-color-blueDark">
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>> 
-					Carrito of Purchases
+					Shopping cart
 				</span>
 			</h1>
 		</div>
@@ -30,13 +30,13 @@
 ?>	
 <div class="well">
  <fieldset>
-	<legend>Carrito of Purchases</legend>
+	<legend>Shopping cart</legend>
 							<div class="row">
 							<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 								<a href="carrito?tipo=1">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 										<i class="fa fa-user fa-3x"></i>
-										<h5>Compra Personal</h5>
+										<h5>Personal purchase</h5>
 									</div>
 								</a>
 							</div>
@@ -44,7 +44,7 @@
 								<a onclick="comprador()" style="cursor: pointer;">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 										<i class="fa fa-group fa-3x"></i>
-										<h5>Compra por otra persona</h5>
+										<h5>Buy by another person</h5>
 									</div>     
 								</a>
 							</div>
@@ -52,7 +52,7 @@
 								<a href="carrito?tipo=3">
 									<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 										<i class="fa fa-clock-o fa-3x"></i>
-										<h5>Compra Autom&aacute;tica</h5>
+										<h5>Automatic purchase</h5>
 									</div>
 								</a>
 							</div>
@@ -70,7 +70,7 @@
 			success: function(msg){
 				bootbox.dialog({
 						message: msg,
-						title: "Selecciona un afiliado",
+						title: "Select an affiliate",
 						className: "",
 				});
 			}
@@ -80,12 +80,12 @@
 	{
 		if($("#afiliado_id").val()==0)
 		{
-			alert("Selecciona un afiliado");
+			alert("Select an affiliate");
 		}
 		else
 		{
 			var afiliado=$("#afiliado_id").val();
-			if (confirm('¿Seguro que desea realizar una Purchase para este afiliado?')) {
+			if (confirm('Are you sure you want to make a purchase for this affiliate?')) {
 			    window.location.assign("carrito?tipo=2&usr="+afiliado)
 			} else {
 			    // Do nothing!

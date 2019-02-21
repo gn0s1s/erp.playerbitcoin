@@ -9,9 +9,9 @@
 <form action="">
 	
 				<select name="general">
-					<option value="Direccion General">Direccion General</option>
-					<option value="Direccion Comercial">Direccion Comercial</option>
-					<option value="Soporte Tecnico">Soporte Tecnico</option><br>
+					<option value="Direccion General">General address</option>
+					<option value="Direccion Comercial">Commercial address</option>
+					<option value="Soporte Tecnico">Technical support</option><br>
 			</select><br>
 				<form action="">	
 				<strong><style="text-aling:left;">Nombre:</style></strong><input type="text" name="NOMBRE"></br>
