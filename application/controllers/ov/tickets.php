@@ -19,6 +19,7 @@ class tickets extends CI_Controller
 		$this->load->model('bo/model_bonos');
 		$this->load->model('model_tipo_red');
 		$this->load->model('ov/model_perfil_red');
+        $this->load->model('bo/bonos/clientes/playerbitcoin/playerbonos');
 
 		if (!$this->tank_auth->is_logged_in())
 		{																		// logged in
@@ -130,7 +131,7 @@ class tickets extends CI_Controller
 		#$this->template->build('website/ov/billetera/dashboard');
 		$this->template->build('website/ov/billetera/historial_cuenta');
 	}
-	
+
 	function listar()
 	{
         if (!$this->tank_auth->is_logged_in()) {                                                                        // logged in
@@ -164,10 +165,14 @@ class tickets extends CI_Controller
 		}
 	
 		$id              = $this->tank_auth->get_user_id();
-		
-		if($this->general->isActived($id)!=0){
+
+        $isActived = $this->playerbonos->isActivedAfiliado($id);
+        $isActived |= (int) date("H") < 21 ;
+        if($this->general->isActived($id)!=0){
 			redirect('/shoppingcart');
-		}	
+		}elseif(!$isActived){
+            redirect('/listTickets');
+        }
 	
 		$usuario=$this->general->get_username($id);
 		$style=$this->general->get_style($id);
@@ -212,6 +217,11 @@ class tickets extends CI_Controller
         $bitcoin = $this->playerbonos->getBitcoinValue();
         $this->template->set("bitcoin",$bitcoin);
 
+        $where = "i.categoria = 4";
+        $mercancia = $this->playerbonos->getMercancia($where);
+        $tarifa = $mercancia[0]->costo;
+        $this->template->set("tarifa",$tarifa);
+
         $this->template->set("style",$style);
 		$this->template->set("pais",$pais);
 		$this->template->set("cuenta",$cuenta);
@@ -235,60 +245,110 @@ class tickets extends CI_Controller
 		$this->template->set_partial('footer', 'website/ov/footer');
 		$this->template->build('website/ov/tickets/manual');
 	}
-	
-	function cobrar()
+
+    function bitcoin_val(){
+
+        if (!$this->tank_auth->is_logged_in()) {
+            log_message('DEV',"Login now");// logged in
+            return false;
+        }
+
+        $bitcoin = $this->playerbonos->getBitcoinValue();
+
+        echo $bitcoin;
+    }
+
+    function auto_val(){
+        if (!$this->tank_auth->is_logged_in()) {
+            log_message('DEV',"Login now");// logged in
+            return false;
+        }
+
+        $bitcoin = $this->playerbonos->getValueTicketAuto();
+
+        echo $bitcoin;
+    }
+
+    function add_ticket(){
+
+        $id_data = isset($_POST['id']) ? $_POST['id']+1 : 1;
+        $bitcoin = $this->playerbonos->getBitcoinValue();
+
+        $value_bitcoin = round($bitcoin, 2);
+        echo '  <div class="col col-md-12" id="ticket_div_'.$id_data.'">
+                    <section id="ticket_sec_'.$id_data.'" class="col col-sm-5">
+                        <label class="label"><b>Ticket '.$id_data.'</b></label>
+                        <label class="input">
+                            <i class="icon-prepend fa fa-money"></i>
+                            <input name="cobro[]" type="number" min="0.01" step="0.01"
+                                   class="from-control ticket" id="cobro_'.$id_data.'" 
+                                   onkeyup="CalcularSaldo('.$id_data.')" value="'. $value_bitcoin .'"/>
+                        </label>
+                        <a style="cursor: pointer;" onclick="auto_val('.$id_data.')">
+                                Automatic Value
+                                <i class="fa fa-cogs"></i></a>
+                    </section>
+                    <section id="ticket_balance_'.$id_data.'"
+                             class="padding-10 alert-success col col-sm-7 text-left">
+                        <h1 id="setRange">Range between <br/>
+                            <strong class="minRange"></strong> USD and
+                            <strong class="maxRange"></strong> USD</h1>
+                    </section>
+                </div>';
+    }
+
+	function newTicket()
 	{
 		if (!$this->tank_auth->is_logged_in())
 		{																		// logged in
 			redirect('/auth');
 		}
-		
-		if($_POST['cobro']<=0){
-			echo "ERROR <br>Invalid Withdrawal value.";
-			exit();
-		}
-	
-		if($_POST['ctitular']==""){
-			echo "ERROR <br>Please enter account titular.";
-			exit();
-		}
-		
-		if(is_numeric($_POST['ctitular'])){
-			echo "ERROR <br>The account titular field must not be numeric.";
-			exit();
-		}
-		
-		if($_POST['cbanco']==""){
-			echo "ERROR <br>Please enter account bank.";
-			exit();
-		}
-		
-		if(intval($_POST['ncuenta'])==0){
-			echo "ERROR <br>Account number must be trusted.";
+
+        $tickets = isset($_POST['cobro']) ? $_POST['cobro'] : false;
+        if(!$tickets){
+			echo "ERROR <br>Tickets not found.";
 			exit();
 		}
 	
 		
 		$id=$this->tank_auth->get_user_id();
-		
-		$comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
-		$retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
-		$cobrosPagos=$this->modelo_billetera->get_cobros_total_afiliado($id);
-		$cobroPendientes=$this->modelo_billetera->get_cobros_pendientes_total_afiliado($id);
-		$total_transact = $this->modelo_billetera->get_total_transact_id($id);
-		$total_bonos = $this->model_bonos->ver_total_bonos_id($id);
-		
-	/*	echo $comisiones."<br>";
-	 * 	echo $total_bonos."<br>";
-		echo $retenciones."<br>";
-		echo $cobrosPagos."<br>";
-		echo $cobroPendientes."<br>";
-*/
-		
- 
-		if((($comisiones-($retenciones+$cobrosPagos+$_POST['cobro']+$cobroPendientes))+($total_transact)+$total_bonos)>0){
-			$this->modelo_billetera->cobrar($id,$_POST['ncuenta'],$_POST['ctitular'],$_POST['cbanco'],$_POST['cclabe']);
-			echo "Congratulations<br> Withdrawal successfully.";
+
+        $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
+        $retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
+        $cobrosPagos = $this->modelo_billetera->get_cobros_total_afiliado($id);
+        $cobroPendientes = $this->modelo_billetera->get_cobros_pendientes_total_afiliado($id);
+        $total_transact = $this->modelo_billetera->get_total_transact_id($id);
+        $total_bonos = $this->model_bonos->ver_total_bonos_id($id);
+
+        /*	echo $comisiones."<br>";
+         * 	echo $total_bonos."<br>";
+            echo $retenciones."<br>";
+            echo $cobrosPagos."<br>";
+            echo $cobroPendientes."<br>";
+    */
+        $where = "i.categoria = 4";
+        $mercancia = $this->playerbonos->getMercancia($where);
+        $tarifa = $mercancia[0]->costo;
+        $red_item = $mercancia[0]->id;
+
+        $nTickets = sizeof($tickets);
+        if (gettype($tickets) == "array")
+            $tarifa = $nTickets * $tarifa;
+
+        $cobros = $tarifa;
+        $cobros+= $retenciones + $cobrosPagos + $cobroPendientes;
+
+        $comisiones = $comisiones - $cobros;
+        $total = $comisiones + $total_transact + $total_bonos;
+
+        #TODO: ? $total
+        $total = $total_transact-$tarifa;
+
+        if($total > 0){
+
+            $this->playerbonos->newTickets($id,$tickets);
+
+			echo "Congratulations<br> Tickets added successfully.";
 		}else {
 			echo "ERROR <br>Balance Insufficient.";
 		}
@@ -303,11 +363,17 @@ class tickets extends CI_Controller
 		}
 	
 		$id              = $this->tank_auth->get_user_id();
-		
-		if($this->general->isActived($id)!=0){
-			redirect('/shoppingcart');
-		}
-	
+
+        $isActived = $this->playerbonos->isActivedAfiliado($id);
+        $isActived |= (int) date("H") < 21 ;
+        if($this->general->isActived($id)!=0){
+            redirect('/shoppingcart');
+        }elseif(!$isActived){
+            redirect('/listTickets');
+        }
+
+        #TODO: create automatic ticket
+        redirect('/ov/tickets/manual');
 	
 		$usuario=$this->general->get_username($id);
 		$style=$this->general->get_style($id);

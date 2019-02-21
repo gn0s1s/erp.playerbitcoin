@@ -248,7 +248,10 @@ class CI_DB_driver {
 	 * @return	mixed
 	 */
 	function query($sql, $binds = FALSE, $return_object = TRUE)
-	{#log_message('DEV',"<db> \n $sql");
+	{
+	    if(stripos($sql,"-- imprimir"))
+	        log_message('DEV',"<db> \n $sql");
+
 		if ($sql == '')
 		{
 			if ($this->db_debug)

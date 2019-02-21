@@ -224,7 +224,7 @@
             .done(function (msg) {
                 bootbox.dialog({
                     message: msg,
-                    title: 'Historial of Transacciones',
+                    title: 'Transactions Report',
                     buttons: {
                         danger: {
                             label: "Close",

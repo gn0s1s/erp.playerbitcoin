@@ -160,7 +160,10 @@
 
                                                 <?php if ($transaction) { ?>
                                                     <tr class="warning">
-                                                        <td colspan="2"><b>Wallet movements</b></td>
+                                                        <td ><b>Wallet movements</b></td>
+                                                        <td><a title='Show Details' style='cursor: pointer;'
+                                                               class='txt-color-green' onclick='ver(<?= $id ?>);'><i
+                                                                        class='fa fa-eye fa-3x'></i></a></td>
                                                     </tr>
                                                     <?php if ($transaction['add']) {
                                                         $total_transact += $transaction['add'];
@@ -258,50 +261,76 @@
 
                                     </div>
 
-<?php  $deposit = $saldo_neto;
-if( $saldo_neto < 0)
-    $deposit = 0;
+                                    <?php $deposit = $saldo_neto;
+                                    if ($saldo_neto < 0)
+                                        $deposit = 0;
 
-$deposit = $saldo_deposit;
-?>
+                                    $deposit = $saldo_deposit;
+                                    $round = round($bitcoin, 2);
+                                    ?>
                                     <form action="send_mail" method="post" id="contact-form1"
-                                          class="smart-form col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                                          class="smart-form col-xs-12 col-md-6">
                                         <fieldset class="">
-                                            <section class="padding-10 alert-success col-md-6 text-left">
-                                                <h1 id="setRange">Range between <br/>
-                                                    <strong id="minRange">1000</strong> USD and
-                                                    <strong id="maxRange">1004,99</strong> USD</h1>
+
+                                            <section class="padding-10 alert-info col-md-3 text-right">
+                                                <h1>1 BTC <br/> <strong id="bitcoin_val"><?= $round ?> USD</strong></h1>
                                             </section>
-                                            <section class="col-md-1"></section>
-                                            <section class="padding-10 alert-info col-md-4 text-right">
-                                                <h1>1 BTC <br/> <strong><?=$bitcoin?> USD</strong></h1>
-                                            </section>
-                                        </fieldset>
-                                        <fieldset>
                                             <section class="col col-4">
                                                 <label class="label "><b>Available Balance</b></label>
                                                 <label class="input input state-success">
                                                     <input type="text" name="saldo" class="from-control" id="saldo"
-                                                           value="<?= $deposit ; ?>" readonly/>
+                                                           value="<?= $deposit; ?>" readonly/>
                                                 </label>
                                             </section>
-                                            <section class="col col-4">
-                                                <label class="label"><b>Withdrawals</b></label>
-                                                <label class="input">
-                                                    <i class="icon-prepend fa fa-money"></i>
-                                                    <input name="cobro" type="number" min="0.01" step="0.01"
-                                                           class="from-control" id="cobro" value="<?=$bitcoin?>" />
-                                                </label>
-                                            </section>
+
                                             <section class="col col-4">
                                                 <label class="label"><b>Final Balance</b></label>
                                                 <label class="input state-disabled state-error">
                                                     <input type="number" disabled="disabled" name="neto"
-                                                           id="neto" class="from-control" value="<?=round($deposit-5,2);?>" readonly/>
+                                                           id="neto" class="from-control"
+                                                           value="<?= round($deposit - 5, 2); ?>" readonly/>
                                                 </label>
                                             </section>
                                         </fieldset>
 
+                                        <fieldset>
+                                            <div class="col col-md-12 row buttonsticket">
+
+                                                <div class="col col-md-3 pull-right">
+                                                    <a style="cursor: pointer;"
+                                                       onclick="add_ticket()">
+                                                        Add Ticket
+                                                        <i class="fa fa-plus"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="col padding-10  col-md-12 row ">
+                                                <legend class="col padding-10  col-md-12">Tickets</legend>
+                                            </div>
+                                            <br>
+                                        </fieldset>
+                                        <fieldset id="tickets_div" style="overflow-y: scroll;max-height: 150px">
+
+                                            <div class="col col-md-12" id="ticket_div_1">
+                                                <section id="ticket_sec_1" class="col col-sm-5">
+                                                    <label class="label"><b>Ticket 1</b></label>
+                                                    <label class="input">
+                                                        <i class="icon-prepend fa fa-money"></i>
+                                                        <input name="cobro[]" type="number" min="0.01" step="0.01"
+                                                               class="from-control ticket" id="cobro_1"
+                                                               onkeyup="CalcularSaldo(1)" value="<?= $round ?>"/>
+                                                    </label>
+                                                    <a style="cursor: pointer;" onclick="auto_val(1)">
+                                                        Automatic Value
+                                                        <i class="fa fa-cogs"></i></a>
+                                                </section>
+                                                <section id="ticket_balance_1"
+                                                         class="padding-10 alert-success col col-sm-7 text-left">
+                                                    <h1 id="setRange">Range between <br/>
+                                                        <strong class="minRange"></strong> USD and
+                                                        <strong class="maxRange"></strong> USD</h1>
+                                                </section>
+                                            </div>
+                                        </fieldset>
 
                                         <footer>
                                             <button type="button" onclick="cobrar()" class="btn btn-success"
@@ -360,23 +389,146 @@ $deposit = $saldo_deposit;
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
         pageSetUp();
 
-        $("#cobro").keyup(CalcularSaldo);
-        $('#enviar').attr("disabled", true);
+        CalcularSaldo();
+
+        var id_fee = $('.ticket').length;
+        if (id_fee > 1) {
+            button_ticket_del();
+        }
     });
+
+    function ver(id, fecha) {
+        $.ajax({
+            type: "POST",
+            url: "/ov/billetera2/historial_transaccion",
+            data: {id: id}
+        })
+            .done(function (msg) {
+                bootbox.dialog({
+                    message: msg,
+                    title: 'Transactions Report',
+                    buttons: {
+                        danger: {
+                            label: "Close",
+                            className: "btn-danger",
+                            callback: function () {
+
+                            }
+                        }
+                    }
+                })//fin done ajax
+            });//Fin callback bootbox
+    }
 
     //setup_flots();
     /* end flot charts */
 
-    function CalcularSaldo(evt) {
+    function button_ticket_del() {
+        $('.buttonsticket').append('<div class="rm_div_ticket pull-right col col-md-3">\n' +
+            ' <a style="cursor: pointer;color:red !important" \n' +
+            '  onclick="del_ticket()">\n' +
+            '  Delete Ticket \n' +
+            '  <i class="fa fa-minus-circle"></i></a>\n' +
+            ' </div>');
+    }
 
-        var saldo = $("#cobro").val();
-        var min_value = parseInt(saldo/5);
+    function del_ticket() {
+
+        var id_ticket = $('.ticket').length;
+        console.log('#ticket_div_' + id_ticket);
+        $('#ticket_div_' + id_ticket).remove();
+        if (id_ticket <= 2) {
+            $('.rm_div_ticket').remove();
+        }
+        reload_bitcoin();
+    }
+
+    function add_ticket() {
+
+        var id_ticket = $('.ticket').length;
+
+        $.ajax({
+            type: "POST",
+            url: "/ov/tickets/add_ticket",
+            data: {id: id_ticket}
+        })
+            .done(function (msg) {
+
+                $('#tickets_div').append(msg);
+                reload_bitcoin();
+                CalcularSaldo();
+                if (id_ticket == 1) {
+                    button_ticket_del();
+                }
+
+            });//Fin callback bootbox
+    }
+
+    function reload_bitcoin() {
+        $.ajax({
+            type: "POST",
+            url: "/ov/tickets/bitcoin_val",
+            data: {}
+        })
+            .done(function (msg) {
+
+                var bitcoin = Number(parseFloat(msg).toFixed(2)) + " USD";
+                $('#bitcoin_val').html(bitcoin);
+                reload_neto();
+            });//Fin callback bootbox
+    }
+
+    function auto_val(id) {
+        $.ajax({
+            type: "POST",
+            url: "/ov/tickets/auto_val",
+            data: {}
+        })
+            .done(function (msg) {
+
+                var bitcoin = Number(parseFloat(msg).toFixed(2));
+                $("#cobro_" + id).val(bitcoin);
+                reload_bitcoin();
+                CalcularSaldo();
+
+            });//Fin callback bootbox
+    }
+
+    function CalcularSaldo(id = false) {
+
+        reload_neto();
+        if (!id) {
+            var tickets = $('.ticket').length;
+            for (var i = 0; i < tickets; i++) {
+                var index = i + 1;
+                CalcularSaldo(index);
+            }
+            return true;
+        }
+
+        var saldo = $("#cobro_" + id).val();
+        var min_value = parseInt(saldo / 5);
         min_value *= 5;
-        var max_value = min_value+5;
+        var max_value = min_value + 5;
+        max_value -= 0.01;
 
-        $('#minRange').html(min_value+"");
-        $('#maxRange').html(max_value+"");
+        $('#ticket_balance_' + id + ' .minRange').html(min_value + "");
+        $('#ticket_balance_' + id + ' .maxRange').html(max_value + "");
 
+    }
+
+    function reload_neto(){
+        var tickets = $('.ticket').length;
+        var tarifa = <?=$tarifa;?>;
+        var saldo = $('#saldo').val();
+        var neto = saldo - (tarifa*tickets);
+        $('#neto').val(neto);
+
+        if(neto<=0){
+            $('#enviar').attr("disabled", true);
+        }else{
+            $('#enviar').removeAttr("disabled");
+        }
     }
 
     function ventas(id) {
@@ -402,76 +554,72 @@ $deposit = $saldo_deposit;
             });//Fin callback bootbox
     }
 
-    function cobrar() {
+    function enviar() {
+        $.ajax({
+            type: "POST",
+            url: "/auth/show_dialog",
+            data: {message: 'Sure you want to get this(ese) ticket(s) ?'},
+        })
+            .done(function (msg) {
 
-        if (validarCampos()) {
-            $.ajax({
-                type: "POST",
-                url: "/auth/show_dialog",
-                data: {message: '¿ Esta seguro que desea Pedir the pago con los datos que se acabaron of ingresar ?'},
-            })
-                .done(function (msg) {
-
-                    bootbox.dialog({
-                        message: msg,
-                        title: 'Transacion',
-                        buttons: {
-                            success: {
-                                label: "Accept",
-                                className: "btn-success",
-                                callback: function () {
-                                    iniciarSpinner();
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "/ov/billetera2/cobrar",
-                                        data: $('#contact-form1').serialize()
-                                    })
-                                        .done(function (msg) {
-                                            FinalizarSpinner();
-                                            bootbox.dialog({
-                                                message: msg,
-                                                title: '',
-                                                buttons: {
-                                                    success: {
-                                                        label: "Accept",
-                                                        className: "btn-success",
-                                                        callback: function () {
-                                                            location.href = 'historial';
-                                                        }
+                bootbox.dialog({
+                    message: msg,
+                    title: 'New Tickets',
+                    buttons: {
+                        success: {
+                            label: "Accept",
+                            className: "btn-success",
+                            callback: function () {
+                                iniciarSpinner();
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/ov/tickets/newTicket",
+                                    data: $('#contact-form1').serialize()
+                                })
+                                    .done(function (msg) {
+                                        FinalizarSpinner();
+                                        bootbox.dialog({
+                                            message: msg,
+                                            title: '',
+                                            buttons: {
+                                                success: {
+                                                    label: "Accept",
+                                                    className: "btn-success",
+                                                    callback: function () {
+                                                        location.href = '/listTickets';
                                                     }
                                                 }
-                                            })//fin done ajax
-                                        });//Fin callback bootbox
+                                            }
+                                        })//fin done ajax
+                                    });//Fin callback bootbox
 
-                                }
-                            },
-                            danger: {
-                                label: "Cancel!",
-                                className: "btn-danger",
-                                callback: function () {
+                            }
+                        },
+                        danger: {
+                            label: "Cancel!",
+                            className: "btn-danger",
+                            callback: function () {
 
-                                }
                             }
                         }
-                    })
-                });
-        } else {
-            alert("Los datos of the cuenta o the cobro estan incompletos o erroneos");
+                    }
+                })
+            });
+    }
+
+    function cobrar() {
+
+        if (!validarCampos()) {
+            alert("Please, verify ticket data");
+            return false;
         }
+
+        enviar();
     }
 
     function validarCampos() {
 
-        if ($('#cobro').val() <= 0)
-            return false;
-
-        if ($('#ctitular').val() == "")
-            return false;
-
-        if ($('#ncuenta').val() == "")
-            return false;
-
-        if ($('#cbanco').val() == "")
+        if ($('#neto').val() <= 0)
             return false;
 
         return true;

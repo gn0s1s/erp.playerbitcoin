@@ -8,11 +8,15 @@ class playerbonos extends CI_Model
     private $fechaInicio = '';
     private $fechaFin = '';
     private $remanente = array(0,0);
+    private $bitcoinCap;
 
     function __construct()
     {
         parent::__construct();
         $this->load->model('/bo/bonos/afiliado');
+        $this->load->model('/model_coinmarketcap');
+        $api = $this->getCoinmarket();
+        $this->bitcoinCap = new $this->model_coinmarketcap($api->test);
     }
 
     function getTemp()
@@ -239,7 +243,7 @@ class playerbonos extends CI_Model
         if($this->fechaFin)
             $fechaFin = $this->fechaFin;
 
-        $fechaInicio = $this->getLastTime($fechaFin);
+        $fechaInicio = $this->getAnyTime($fechaFin,"180 days");
         if($this->fechaInicio)
             $fechaInicio= $this->fechaInicio;
 
@@ -2100,11 +2104,58 @@ class playerbonos extends CI_Model
         $this->db->query($query);
     }
 
-    private function insertVentaItem($id, $id_venta,$item)
+    function newTickets($id,$tickets){
+
+        $where = "i.categoria = 4";
+        $mercancia = $this->getMercancia($where);
+        $tarifa = $mercancia[0]->costo;
+        $red_item = $mercancia[0]->id;
+
+        if (gettype($tickets) != "array")
+            $tickets = array($tickets);
+
+        $nTickets = sizeof($tickets);
+        $tarifa = $nTickets * $tarifa;
+
+        $id_venta = $this->insertVenta($id,"BILLETERA");
+        $this->insertVentaItem($id, $id_venta,$red_item,$nTickets);
+        $list_tickets = implode(",",$tickets);
+        $descripcion = "NEW TICKET(S) : $list_tickets";
+        $this->add_sub_billetera("SUB",$id,$tarifa, $descripcion);
+
+        $nextTime = $this->getNextTime('now', 'day');
+        $nextTime .= " 23:59:59";
+
+        log_message('DEV',"getNextTime ->> $nextTime");
+
+        $datos = array("user_id"=>$id,"date_final"=> $nextTime,"reference"=>$id_venta);
+        foreach ($tickets as $ticket){
+            $datos["amount"] = $ticket;
+            $this->db->insert("ticket",$datos);
+        }
+
+        return true;
+    }
+
+    function add_sub_billetera($tipo,$id,$monto,$descripcion){
+
+        $dato_cobro=array(
+            "id_user"		=>	$id,
+            "tipo"			=> 	$tipo,
+            "descripcion"	=> 	$descripcion,
+            "monto"			=> 	$monto
+        );
+
+        $this->db->insert("transaccion_billetera",$dato_cobro);
+        $id = $this->db->insert_id();
+        return $id;
+    }
+
+    function insertVentaItem($id, $id_venta,$item,$cantidad =1)
     {
         $query = "INSERT INTO cross_venta_mercancia 
                     SELECT 
-                        $id_venta,id,1,costo,0,costo,'',null
+                        $id_venta,id,$cantidad,costo,0,costo*$cantidad,'',null
                     FROM
                         mercancia
                     WHERE
@@ -2113,6 +2164,14 @@ class playerbonos extends CI_Model
         $this->db->query($query);
 
         return $this->getMontoVentaItem($id_venta, $item);
+    }
+
+    function getMercancia($where = ""){
+
+        $query = "SELECT * FROM mercancia m,items i WHERE i.id = m.id AND $where";
+
+        $q = $this->db->query($query);
+        return $q->result();
     }
 
     private function getMontoVentaItem($id_venta, $item)
@@ -2183,13 +2242,13 @@ class playerbonos extends CI_Model
         return $q;
     }
 
-    private function insertVenta($id)
+    function insertVenta($id,$metodo = "BANCO")
     {
         $fecha = date('Y-m-d H:i:s');
         $dato = array(
             "id_user" => $id,
             "id_estatus" => "ACT",
-            "id_metodo_pago" => "BANCO",
+            "id_metodo_pago" => $metodo,
             "fecha" => $fecha
         );
 
@@ -3084,7 +3143,7 @@ class playerbonos extends CI_Model
         return $date;
     }
 
-    private function getNextTime($date, $time = 'month')
+    private function getNextTime($date = 'now', $time = 'month')
     {
         $fecha_sub = new DateTime($date);
         date_add($fecha_sub, date_interval_create_from_date_string("1 $time"));
@@ -3206,7 +3265,7 @@ class playerbonos extends CI_Model
      * @param $value
      * @return array
      */
-    private function getValueTicketAuto()
+     function getValueTicketAuto()
     {
         $bitcoin_value = $this->getBitcoinValue();
 
@@ -3218,21 +3277,40 @@ class playerbonos extends CI_Model
         $isRepeated = true;
         $iteration = 10;
         $counter = 0;
-        while ($isRepeated || $counter < $iteration) {
+        $iterate = true;
+        while ($iterate) {
             $value = rand($min_rand, $max_rand);
             $isRepeated = $this->isRepeatedValueBitcoin($value);
+            $iterate = $isRepeated;
+            if(!$iterate)
+                $iterate = $counter < $iteration;
+            $counter++;
         }
-
+        log_message('DEV',"auto val btc:: $value");
         return $value;
     }
 
-    /**
-     * @return int
-     */
+    private function getCoinmarket()
+    {
+        $q = $this->db->query("SELECT * FROM coinmarketcap");
+        $q = $q->result();
+
+        if (!$q)
+            return false;
+
+        return $q[0];
+    }
+
     function getBitcoinValue()
     {
+        $bitcoin = $this->bitcoinCap->getLatest();
+        $bitcoin = $this->bitcoinCap->getData();
         $bitcoin_value = 1000;
-        return $bitcoin_value;#TODO: calcular coinmarket
+        if(isset($bitcoin["data"]))
+            $bitcoin_value = $bitcoin["data"][0]["quote"]["USD"]["price"];
+        log_message('DEV',"bitcoin----> ".json_encode($bitcoin_value));
+
+        return $bitcoin_value;
     }
 
 

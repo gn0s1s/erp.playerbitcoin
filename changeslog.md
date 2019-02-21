@@ -5,6 +5,24 @@ _ERP BASE MLM - Versión: 3.9 -
 
 20-02-2019
 -
+### coinmarketcap
+ ```mysql
+ create table coinmarketcap
+ (
+   id int auto_increment primary key,
+   accountid varchar(65) default 'you@domain.com' null
+    comment 'account email',
+   apikey    varchar(100) default '0' null
+    comment 'api key',
+   testkey   varchar(100) default '0' null
+    comment 'api key test',
+   coin      varchar(35) default 'BTC' null
+    comment ', separated',
+   test      int default '0' null
+    comment '1 is actived',
+   estatus   varchar(3) default 'ACT' null
+ )  comment 'bitcoin stats integration';
+ ```
 ### ticket btc category
 ```mysql
 INSERT INTO `cat_grupo_producto` 

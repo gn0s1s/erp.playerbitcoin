@@ -247,7 +247,8 @@ class general extends mGeneral
 
 	function get_email($id)
 	{
-		$q=$this->db->query('select email from users where id = '.$id);
+		$q=$this->db->query('select email -- imprimir
+ from users where id = '.$id);
 		return $q->result();
 	}
 	

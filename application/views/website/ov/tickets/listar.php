@@ -245,22 +245,22 @@ function setFormatDateJs($timestamp)
                 $icono = getTipoTicket();
 
              foreach ($tickets as $ticket) :
-                $init = strtotime($ticket->date_creta);
+                $init = strtotime($ticket->date_creation);
                 $final = strtotime($ticket->date_final);
 
                 $init = setFormatDateJs($init);
                 $final = setFormatDateJs($final);
 
                 $descripcion = "PRICE ESTIMATED : $ticket->amount $";
-                $descripcion .= "<br><h1>
-                                    <a class='btn btn-success'
-                                        onclick='ver_ticket($ticket->id);'>See Details</a>
-                                    </h1>";
+                $descripcion .= "<br><h1>".
+                   " <a class='btn btn-success' onclick='ver_ticket($ticket->id);'>".
+                    "See Details</a>".
+                    "</h1>";
                 ?>
                 {
-                    title: '<?=$ticket->nombre;?>',
-                    start: new Date(<?=$init;?>),
-                    end: new Date(<?=$final;?>),
+                    title: 'Ticket #<?=$ticket->id;?>',
+                    start: new Date('<?=$ticket->date_creation;?>'),
+                    end: new Date('<?=$ticket->date_final;?>'),
                     description: "<?=$descripcion;?>",
                     className: ['event', '<?=$color;?>'],
                     icon: '<?=$icono;?>'
