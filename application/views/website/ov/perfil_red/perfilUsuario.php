@@ -225,7 +225,7 @@ function actualiza()
 		data: $('#checkout-form').serialize()
 	})
 	.done(function( msg ) {
-	alert( "Datos actualizados: "+msg);
+	alert( "Updated data: "+msg);
 	location.href='';
 	});
 }

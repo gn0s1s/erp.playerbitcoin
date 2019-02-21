@@ -124,7 +124,7 @@
             {
                 $.smallBox({
                     title: "<h1>Attention</h1>",
-                    content: "<h3>Por favor revisa que todos los datos estén correctos</h3>",
+                    content: "<h3>Please check that all data is correct</h3>",
                     color: "#C46A69",
                     icon: "fa fa-warning fadeInLeft animated",
                     timeout: 4000

@@ -423,11 +423,11 @@ function actualizar()
 	 	"#keyword"
 	 );
 	var mensajes = new  Array(
-		"Por favor ingresa tu nombre",
-	 	"Por favor ingresa tu apellido",
-	 	"Por favor ingresa tu Birthdate",
+		"Please enter your name",
+	 	"Please enter your surname",
+	 	"Please enter your birthdate",
 	 	//"Por favor ingresa tu ZIPCODE"
-	 	"Por favor ingresa tu Identificacion Fiscal"
+	 	"Please enter your tax ID"
 	 );
 
 	var validacion=valida_vacios(ids,mensajes);
@@ -465,7 +465,7 @@ function changepswd()
 		})
 		.done(function( msg ) {
 			bootbox.dialog({
-						message: "¿ Estas seguro que deseas cambiar the Password ?",
+						message: "Are you sure you want to change the password?",
 						title: "Attention",
 						buttons: {
 							success: {

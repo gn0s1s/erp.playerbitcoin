@@ -507,7 +507,7 @@ class logistico extends CI_Controller
 		}
 		$this->modelo_logistico->del_file();
 		if(unlink(getcwd().$_POST['url']))
-			echo "Su archivo fue borrado con exito";
+			echo "Your file was deleted successfully";
 	}
 	function sube_archivo()
 	{

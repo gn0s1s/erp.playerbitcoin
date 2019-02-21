@@ -619,7 +619,7 @@
 					success: function(msg){
 			 			bootbox.dialog({
 								message: msg,
-								title: "Ver carro",
+								title: "See shopping cart",
 								className: "",
 								buttons: {
 									success: {
@@ -723,43 +723,43 @@
 						}
 						if(!banco)
 						{
-							alert('choose una empresa bancaria');
+							alert('Choose a banking company');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('choose una tipo of tarjeta');
+								alert('Choose a type of card');
 							}
 							else
 							{
 								if(!numero)
 								{
-									alert('El campo numero es obligatorio');
+									alert('The field number is required');
 								}
 								else
 								{
 									if(!titular)
 									{
-										alert('El nombre del titular es obligatorio');
+										alert('The name of the holder is mandatory');
 									}
 									else
 									{
 										if(!mes)
 										{
-											alert('choose un mes');
+											alert('Choose a month');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('choose un año');
+												alert('Choose a year');
 											}
 											else
 											{
 												if(!codigo)
 												{
-													alert('El codigo of seguridad es obligatorio');
+													alert('The security code is mandatory');
 												}
 												else
 												{
@@ -769,7 +769,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La Purchase fue un exito!");
+															alert("The purchase was a success!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});
@@ -810,43 +810,43 @@
 						}
 						if(!banco)
 						{
-							alert('choose una empresa bancaria');
+							alert('Choose a banking company');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('choose una tipo of tarjeta');
+								alert('Choose a type of card');
 							}
 							else
 							{
 								if(!numero)
 								{
-									alert('El campo numero es obligatorio');
+									alert('The field number is required');
 								}
 								else
 								{
 									if(!titular)
 									{
-										alert('El nombre del titular es obligatorio');
+										alert('The name of the holder is mandatory');
 									}
 									else
 									{
 										if(!mes)
 										{
-											alert('choose un mes');
+											alert('Choose a month');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('choose un año');
+												alert('Choose a year');
 											}
 											else
 											{
 												if(!codigo)
 												{
-													alert('El codigo of seguridad es obligatorio');
+													alert('The security code is mandatory');
 												}
 												else
 												{
@@ -856,7 +856,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La Purchase fue un exito!");
+															alert("The purchase was a success!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});

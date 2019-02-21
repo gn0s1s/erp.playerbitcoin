@@ -73,7 +73,7 @@
 															<input class="form-control"  id="clabe" name="clabe" type="number" onChange="validarSiNumero(this.value);">
 														</div><br>
 														<div class="form-group">
-															Dirección postal
+															Postal address
 															<input class="form-control"  id="dir_postal" name="dir_postal" type="text">
 														</div><br>
 													</fieldset>

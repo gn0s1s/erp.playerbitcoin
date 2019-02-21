@@ -430,18 +430,18 @@
 											                    <label for="InputAddress">Mes of Vencimineto<sup>*</sup> </label>
 											                    <select class="form-control" required aria-required="true" name="mes_taj_c" id="mes_taj_c">
 							                                      <option value="">Month</option>
-							                                      <option value="1">01 - Enero</option>
-							                                      <option value="2">02 - Febrero</option>
-							                                      <option value="3">03 - Marzo</option>
-							                                      <option value="4">04 - Abril</option>
-							                                      <option value="5">05 - Mayo</option>
-							                                      <option value="6">06 - Junio</option>
-							                                      <option value="7">07 - Julio</option>
-							                                      <option value="8">08 - Agosto</option>
-							                                      <option value="9">09 - Septiembre</option>
-							                                      <option value="10">10 - Octubre</option>
-							                                      <option value="11">11 - Noviembre</option>
-							                                      <option value="12">12 - Diciembre</option>
+							                                      <option value="1">01 - January</option>
+							                                      <option value="2">02 - February</option>
+							                                      <option value="3">03 - March</option>
+							                                      <option value="4">04 - April</option>
+							                                      <option value="5">05 - May</option>
+							                                      <option value="6">06 - June</option>
+							                                      <option value="7">07 - July</option>
+							                                      <option value="8">08 - August</option>
+							                                      <option value="9">09 - September</option>
+							                                      <option value="10">10 - October</option>
+							                                      <option value="11">11 - November</option>
+							                                      <option value="12">12 - December</option>
 							                                    </select>
 											                </div>
 											                <div class="col-xs-12 col-sm-6">
@@ -553,18 +553,18 @@
 														                    <label for="InputAddress">Mes of Vencimineto<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="mes_taj_c" id="mes_taj_c">
 										                                      <option value="">Month</option>
-										                                      <option value="1">01 - Enero</option>
-										                                      <option value="2">02 - Febrero</option>
-										                                      <option value="3">03 - Marzo</option>
-										                                      <option value="4">04 - Abril</option>
-										                                      <option value="5">05 - Mayo</option>
-										                                      <option value="6">06 - Junio</option>
-										                                      <option value="7">07 - Julio</option>
-										                                      <option value="8">08 - Agosto</option>
-										                                      <option value="9">09 - Septiembre</option>
-										                                      <option value="10">10 - Octubre</option>
-										                                      <option value="11">11 - Noviembre</option>
-										                                      <option value="12">12 - Diciembre</option>
+										                                      <option value="1">01 - January</option>
+										                                      <option value="2">02 - February</option>
+										                                      <option value="3">03 - March</option>
+										                                      <option value="4">04 - April</option>
+										                                      <option value="5">05 - May</option>
+										                                      <option value="6">06 - June</option>
+										                                      <option value="7">07 - July</option>
+										                                      <option value="8">08 - August</option>
+										                                      <option value="9">09 - September</option>
+										                                      <option value="10">10 - October</option>
+										                                      <option value="11">11 - November</option>
+										                                      <option value="12">12 - December</option>
 										                                    </select>
 														                </div>
 														                <div class="col-xs-12 col-sm-6">
@@ -640,18 +640,18 @@
 														                    <label for="InputAddress">Mes of Vencimineto<sup>*</sup> </label>
 														                    <select class="form-control" required aria-required="true" name="mes_taj" id="mes_taj">
 										                                      <option value="">Month</option>
-										                                      <option value="1">01 - Enero</option>
-										                                      <option value="2">02 - Febrero</option>
-										                                      <option value="3">03 - Marzo</option>
-										                                      <option value="4">04 - Abril</option>
-										                                      <option value="5">05 - Mayo</option>
-										                                      <option value="6">06 - Junio</option>
-										                                      <option value="7">07 - Julio</option>
-										                                      <option value="8">08 - Agosto</option>
-										                                      <option value="9">09 - Septiembre</option>
-										                                      <option value="10">10 - Octubre</option>
-										                                      <option value="11">11 - Noviembre</option>
-										                                      <option value="12">12 - Diciembre</option>
+										                                      <option value="1">01 - January</option>
+										                                      <option value="2">02 - February</option>
+										                                      <option value="3">03 - March</option>
+										                                      <option value="4">04 - April</option>
+										                                      <option value="5">05 - May</option>
+										                                      <option value="6">06 - June</option>
+										                                      <option value="7">07 - July</option>
+										                                      <option value="8">08 - August</option>
+										                                      <option value="9">09 - September</option>
+										                                      <option value="10">10 - October</option>
+										                                      <option value="11">11 - November</option>
+										                                      <option value="12">12 - December</option>
 										                                    </select>
 														                </div>
 														                <div class="col-xs-12 col-sm-6">
@@ -1127,7 +1127,7 @@
 					success: function(msg){
 			 			bootbox.dialog({
 								message: msg,
-								title: "Ver carro",
+								title: "See shopping cart",
 								className: "",
 								buttons: {
 									success: {
@@ -1232,43 +1232,43 @@
 						}
 						if(!banco)
 						{
-							alert('choose una empresa bancaria');
+							alert('Choose a banking company');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('choose una tipo of tarjeta');
+								alert('Choose a type of card');
 							}
 							else
 							{
 								if(!numero)
 								{
-									alert('El campo numero es obligatorio');
+									alert('The field number is required');
 								}
 								else
 								{
 									if(!titular)
 									{
-										alert('El nombre del titular es obligatorio');
+										alert('The name of the holder is mandatory');
 									}
 									else
 									{
 										if(!mes)
 										{
-											alert('choose un mes');
+											alert('Choose a month');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('choose un año');
+												alert('Choose a year');
 											}
 											else
 											{
 												if(!codigo)
 												{
-													alert('El codigo of seguridad es obligatorio');
+													alert('The security code is mandatory');
 												}
 												else
 												{
@@ -1278,7 +1278,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La Purchase fue un exito!");
+															alert("The purchase was a success!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});
@@ -1319,43 +1319,43 @@
 						}
 						if(!banco)
 						{
-							alert('choose una empresa bancaria');
+							alert('Choose a banking company');
 						}
 						else
 						{
 							if(!tipo)
 							{
-								alert('choose una tipo of tarjeta');
+								alert('Choose a type of card');
 							}
 							else
 							{
 								if(!numero)
 								{
-									alert('El campo numero es obligatorio');
+									alert('The field number is required');
 								}
 								else
 								{
 									if(!titular)
 									{
-										alert('El nombre del titular es obligatorio');
+										alert('The name of the holder is mandatory');
 									}
 									else
 									{
 										if(!mes)
 										{
-											alert('choose un mes');
+											alert('Choose a month');
 										}
 										else
 										{
 											if(!ano)
 											{
-												alert('choose un año');
+												alert('Choose a year');
 											}
 											else
 											{
 												if(!codigo)
 												{
-													alert('El codigo of seguridad es obligatorio');
+													alert('The security code is mandatory');
 												}
 												else
 												{
@@ -1365,7 +1365,7 @@
 														type: 'get',
 														url: 'completar_compra',
 														success: function(){
-															alert("La Purchase fue un exito!");
+															alert("The purchase was a success!");
 															window.location.href='/ov/compras/carrito_menu'
 														}
 													});
@@ -1400,7 +1400,7 @@
 						});
 						
 						
-						alert('La mercancia se ha borrado del carrito');
+						alert('The merchandise has been deleted from the cart');
 					}
 				});
 				

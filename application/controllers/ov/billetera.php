@@ -86,10 +86,10 @@ class billetera extends CI_Controller
 		if($_POST['password']==$_POST['confirm_password'])
 		{
 			$this->modelo_billetera->crea_pswd($id);
-			echo "Tu Password ha sido creada con exito";
+			echo "Your password has been created successfully";
 		}
 		else
-		echo "Error tu Password contiene errores, por favor verificalo";
+		echo "Error. Your password contains errors, please verify it.";
 	}
 	function login_billetera()
 	{

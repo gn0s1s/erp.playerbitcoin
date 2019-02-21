@@ -348,7 +348,7 @@ class cgeneral extends CI_Controller
 		}
 		else $this->model_user_webs_personales->actualizar($_POST['username'], $trimmed);
 	
-		$success = "El cambio se ha efectuado satisfactoriamente.";
+		$success = "The change has been made successfully.";
 		$this->session->set_flashdata('success', $success);
 	
 		redirect('/ov/personalWeb');
@@ -371,18 +371,18 @@ class cgeneral extends CI_Controller
 		
 		$acceso = $this->model_user_webs_personales->traer_acceso_web_personal_afiliado($id);
 		
-		$mensaje = "Para tener acceso a my tienda virtual debes acceder por medio de los siguientes datos,
+		$mensaje = "To access my virtual store you must access through the following information:
 				 Username: ".$acceso[0]->username."
 				  Clave: ".$acceso[0]->clave;
 		
 		$this->email->message($mensaje);
 		
-		$this->email->subject("Invitación a my tienda virtual en pekcell gold");
+		$this->email->subject("Invitation to my virtual store in pekcell gold");
 	
 		if($this->email->send()){
-			echo "Se ha enviado el email Exitosamente .";
+			echo "The email has been sent successfully.";
 		}else{
-			echo "Error enviando el email .<br>Porfavor verificar la informacion e intentar nuevamente .";
+			echo "Error sending the email<br>Please verify the information and try again.";
 		}
 	}
 	

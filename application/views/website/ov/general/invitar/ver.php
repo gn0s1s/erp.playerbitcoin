@@ -7,7 +7,7 @@
 			
 
 			<fieldset>
-				<legend>Por favor, Digite Correo Electronico del invitado.</legend>
+				<legend>Please, enter the guest's email.</legend>
 				<div class="form-group">
 
 				<input type="text" class="hide" name="debajo_de" id="debajo_de" value = '<?= $debajo_de; ?>' >
@@ -26,14 +26,14 @@
 							
 							<div class="row">
 								<section class="col col-6">
-								<legend>Titulo del banner</legend>
+								<legend>Banner title</legend>
 									 <label class="input">
 										 
 										 <input required readonly="readonly" type="text" id="titulo" name="titulo" value="<?=$img[0]->titulo?>" required>
 									 </label>
 								 </section>
 								 <section class="col col-6">
-								 <legend>Descripción del banner</legend>
+								 <legend>Description of the banner</legend>
 														<label class="textarea"> 	
 																							
 															<textarea id="descripcion" readonly="readonly" name="descripcion" rows="3" class="custom-scroll" required><?=$img[0]->descripcion?></textarea> 
@@ -44,17 +44,17 @@
 						
 					 </fieldset>
 					 <fieldset>
-						 <legend>Imagen del banner</legend>
+						 <legend>Image of the banner</legend>
 							 <div id="dir" class="row">
 																					<section id="imagenes2" class="col col-12">
 											        	<label class="label">
-											        		Imágen actual
+															Current image
 											        	</label>
 															<?
 												            if($img[0]->nombre_banner!=""){
 												           	echo '<div class="no-padding col-xs-12 col-sm-12 col-md-6 col-lg-6"><img style="max-height: 150px;" src="/media/Empresa/'.$img[0]->nombre_banner.'" width="390px" height="150px"></div>';
 												           }else{
-												           	echo "No hay imagen";
+												           	echo "there is no image";
 												           }   
 												            ?>
 									
@@ -99,13 +99,13 @@ function enviar(){
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea enviar the Invitación?'},
+		data: {message: 'Are you sure you want to send the invitation?'},
 	})
 	.done(function( msg )
 	{
 		bootbox.dialog({
 		message: msg,
-		title: 'Enviar Invitacion',
+		title: 'Send invitation',
 		buttons: {
 			success: {
 				label: "Accept",
@@ -122,7 +122,7 @@ function enviar(){
 							FinalizarSpinner();
 							bootbox.dialog({
 							message: msg,
-							title: 'Enviando..',
+							title: 'Sending..',
 							buttons: {
 								success: {
 								label: "Accept",

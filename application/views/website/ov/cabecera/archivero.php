@@ -10,7 +10,7 @@
 						<h1 class="page-title txt-color-blueDark"><!-- PAGE HEADER -->
 						<a class="backHome" href="/ov"><i class="fa fa-home"></i> Menu</a> 
 						<span>
-						 > Archivero
+						 > Archivist
 						 </span>
 						 </h1>
 					</div>
@@ -48,7 +48,7 @@
 											-->
 											<header>
 												<span class="widget-icon"> <i class="fa fa-table"></i> </span>
-												<h2>Archivos</h2>
+												<h2>Records</h2>
 							
 											</header>
 							
@@ -71,11 +71,11 @@
 																<th data-hide="phone" >
 																	<input onclick="checado()" id="todos" type="checkbox">
 																</th>
-																<th data-hide="phone,tablet" >Número</th>
-																<th data-class="expand"><b>Nombre</b></th>
-																<th data-hide="phone,tablet"><b>Fecha</b></th>
-																<th data-hide="phone,tablet"><b>Tamaño</b></th>
-																<th data-hide="phone,tablet"><b>Acción</b></th>
+																<th data-hide="phone,tablet" >Number</th>
+																<th data-class="expand"><b>Name</b></th>
+																<th data-hide="phone,tablet"><b>Date</b></th>
+																<th data-hide="phone,tablet"><b>Size</b></th>
+																<th data-hide="phone,tablet"><b>Action</b></th>
 															</tr>
 														</thead>
 														<tbody>
@@ -119,7 +119,7 @@
 															</form>
 														</tbody>
 													</table>
-													<?}else{echo "<h1>No tienes archivos aún</h1>";}?>
+													<?}else{echo "<h1>You do not have files yet</h1>";}?>
 												</div>
 												<!-- end widget content -->
 							
@@ -178,7 +178,7 @@
 										                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 										                    </div>
 										                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-										                        <h1>Arrastra tus archivos o da clic para buscarlos on tu computadora</h1>
+										                        <h1>Drag your files or click to search for them on your computer</h1>
 										                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 										                        </div><i class="fa fa-file fa-5x"></i>
 										                    </div>

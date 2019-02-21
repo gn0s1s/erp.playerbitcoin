@@ -278,7 +278,7 @@ class dashboard extends CI_Controller
 		$q= $q->result();
 		
 		if($q){
-			echo "Se estan calculando los Bonos, Puedes Ingresar despues de unos minutos ...";
+			echo "You are calculating the Bonds, you can enter after a few minutes...";
 			sleep(3); 
 			echo "<script>window.location.href='/auth/logout';</script>";		
 			exit();

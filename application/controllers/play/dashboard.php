@@ -194,7 +194,7 @@ private $test = true;
         $web = "https://playerbitcoin.com/";
         #$web = $this->general->issetVar($empresa,"web",$web);
 
-        $web .= '/dashboard/';
+        $web .= 'dashboard/';
         $home = $this->setFormatDashboard($id,$web);
     }
 

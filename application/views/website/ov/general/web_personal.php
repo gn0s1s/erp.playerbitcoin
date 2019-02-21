@@ -8,7 +8,7 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 			<h1 class="page-title txt-color-blueDark">
 					<a class="backHome" href="/ov"><i class="fa fa-home"></i> Menu</a> 
 				<span>
-					<a > </a> >	Web Personal
+					<a > </a> >	Personal website
 				</span>
 			</h1>
 		</div>
@@ -66,14 +66,14 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 								<br>
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4" style="margin-top: 2rem;">
 									
-										<label > Clave of my Web Personal
+										<label > Key to my Personal website
 										</label>
 									</section>
 									
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4" style="margin-top: 0.5rem;">
 									
 										<label class="input"> <i class="icon-append fa fa-briefcase"></i>
-											<input name="clave" placeholder="Escribe tu clave" type="text" value='<?php $vacio=0; if(!isset($datos_web_personal[0]->clave)){echo "";$vacio=$vacio+1;}else{echo $datos_web_personal[0]->clave;}?>'>
+											<input name="clave" placeholder="Enter your password" type="text" value='<?php $vacio=0; if(!isset($datos_web_personal[0]->clave)){echo "";$vacio=$vacio+1;}else{echo $datos_web_personal[0]->clave;}?>'>
 										</label>
 										
 										<label class="input">
@@ -86,7 +86,7 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 									
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4">
 										<button type="submit" class="btn btn-success col col-xs-12 col-md-12 col-sm-8 col-lg-12">
-											Actualizar
+											Update
 										</button>
 									</section>
 									
@@ -131,20 +131,20 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 								<br>
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4" style="margin-top: 2rem;">
 									
-										<label > Invitar a un cliente 
+										<label > Invite a customer 
 										</label>
 									</section>
 									
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4" style="margin-top: 0.5rem;">
 									
 										<label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-											<input name="email_receptor" placeholder="e-mail of tu cliente" type="email">
+											<input name="email_receptor" placeholder="Your customer's email" type="email">
 										</label>
 									</section>
 									
 									<section class="col col-xs-12 col-md-12 col-sm-8 col-lg-4">
 										<button type="submit" class="btn btn-success col col-xs-12 col-md-12 col-sm-8 col-lg-12">
-											Invitar
+											Invite
 										</button>
 									</section>
 									
@@ -194,13 +194,13 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 								<div class="col-xs-3 col-md-2 col-sm-2 col-lg-2">
 									<center>
 										<a title="Descargar" href="#" class="txt-color-blue">
-										<i class='fa fa-truck  fa-3x'></i></a> <br>Pagado	
+										<i class='fa fa-truck  fa-3x'></i></a> <br>Paid out	
 									</center>		
 								</div>
 								<div class="col-xs-3 col-md-2 col-sm-2 col-lg-2">
 									<center>
 										<a title="Descargar" href="#" class="txt-color-blue">
-										<i class='fa fa-check-circle  fa-3x'></i></a> <br>Embarcado
+										<i class='fa fa-check-circle  fa-3x'></i></a> <br>Embarked
 									</center>
 								</div>
 							</div>
@@ -208,19 +208,19 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 							<table  id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
 								<thead>
 									<tr>
-										<th data-hide="phone">ID_venta</th>
-										<th data-hide="phone">Fecha</th>	
-										<th data-class="expand">Nombre</th>
-										<th data-hide="phone">Apellido</th>	
+										<th data-hide="phone">ID_sale</th>
+										<th data-hide="phone">Date</th>	
+										<th data-class="expand">Name</th>
+										<th data-hide="phone">Surname</th>	
 										<th data-hide="phone">Email</th>
-										<th data-hide="phone,tablet">Telefono</th>
-										<th data-hide="phone,tablet">Tipo</th>
-										<th data-hide="phone,tablet">Nombre Mercancia</th>
-										<th data-hide="phone,tablet">Cantidad</th>
-										<th data-hide="phone,tablet">Valor Unitario</th>
-										<th data-hide="phone,tablet">Costo</th>
+										<th data-hide="phone,tablet">Telephone</th>
+										<th data-hide="phone,tablet">Type</th>
+										<th data-hide="phone,tablet">Merchandise name</th>
+										<th data-hide="phone,tablet">Quantity</th>
+										<th data-hide="phone,tablet">Unit value</th>
+										<th data-hide="phone,tablet">Cost</th>
 									    <th data-hide="phone,tablet">Status</th>
-									    <th data-hide="phone,tablet">Enviado</th>
+									    <th data-hide="phone,tablet">Sent</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -264,11 +264,11 @@ include_once("application/models/ov/model_web_personal_reporte.php");
 										<td class='text-center'>
 	<?php if($datos_compra[$i]->estado=="Pago"){ ?>
  <a class='txt-color-blue' style='cursor: pointer;' onclick='Enviar(<?php echo $datos_compra[$i]->id_venta ?>)' 
-title='Envio Mercancia'><i class='fa fa-truck fa-3x'></i></a>
+title='Shipping merchandise'><i class='fa fa-truck fa-3x'></i></a>
 				   </td>
 		        </tr>
 <?php } else if($datos_compra[$i]->estado=="Embarcado"){?>
-<a class='txt-color-blue' style='cursor: pointer;'  title='Mercancia Enviada'><i class='fa fa-check-circle fa-3x'></i></a>
+<a class='txt-color-blue' style='cursor: pointer;'  title='Merchandise sent'><i class='fa fa-check-circle fa-3x'></i></a>
 				  </td>
 		        </tr>
 				<?php }?>					
@@ -391,8 +391,8 @@ $(document).ready(function() {
 		function Enviar(id)
 		{
 			bootbox.dialog({
-				message: "¿Desea enviar este registro ahora?",
-				title: "Enviar Venta ".concat(id),
+				message: "Do you want to send this record now?",
+				title: "Send sale ".concat(id),
 				className: "",
 				buttons: {
 					success: {
@@ -406,8 +406,8 @@ $(document).ready(function() {
 						})
 						.done(function(msg){
 							bootbox.dialog({
-								message: "Se han enviado estos producto exitosamente.",
-								title: "Exito",
+								message: "These products have been sent successfully.",
+								title: "Success",
 								className: "",
 								buttons: {
 									success: {

@@ -580,7 +580,7 @@
 					success: function(msg){
 			 			bootbox.dialog({
 								message: msg,
-								title: "Ver carro",
+								title: "See shopping cart",
 								className: "",
 								buttons: {
 									success: {
@@ -620,7 +620,7 @@
 				{
 					bootbox.dialog({
 						message: msg,
-						title: 'Eliminar Mercancia',
+						title: 'Remove merchandise',
 						buttons: {
 							success: {
 							label: "Accept",

@@ -31,7 +31,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Sugerencia</h2>				
+						<h2>Suggestion</h2>				
 						
 					</header>
 
@@ -48,35 +48,35 @@
 						<div class="widget-body">
 							
 									<form method="post" id="contact-form" class="smart-form" enctype='multipart/form-data'>
-										<header>Sugerencia</header>
+										<header>Suggestion</header>
 										
 										<fieldset>
 											<div class="row">
 												<section class="col col-4">
-													<label class="label" >Asunto</label>
+													<label class="label" >Subject</label>
 													<label class="input">
 														<i class="icon-append fa fa-tag"></i>
 														<input type="text" name="subject" required>
 													</label>
 												</section>
 												<section class="col col-4">
-													<label class="label">Departamento</label>
+													<label class="label">Department</label>
 													<label class="select">
 														<select name="departamento">
-															<option value="feedback@networksoft.mx">Sugerencia</option>
+															<option value="feedback@networksoft.mx">Suggestion</option>
 														</select>
 														
 													</label>
 												</section>
 											</div>
 											<section class="col col-8">
-												<label class="label" >Mensaje</label>
+												<label class="label" >Message</label>
 												<textarea name="mensaje" cols="160" id="mymarkdown" class="custom-scroll" style="width: 100%;max-height:200px;"></textarea>
 											</section>
 										</fieldset>	
 										<footer>
 											<button type="submit" class="btn btn-primary">
-												Enviar
+												Send
 											</button>
 										</footer>
 									</form>
@@ -173,7 +173,7 @@ $("#contact-form").submit(function(event){
 
 		bootbox.dialog({
 		message: msg,
-		title: "Sugerencia",
+		title: "Suggestion",
 		buttons: {
 			success: {
 			label: "Ok!",

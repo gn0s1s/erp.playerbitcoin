@@ -114,7 +114,7 @@ class cabecera extends CI_Controller
 		}
 		$this->model_cabecera->del_file();
 		if(unlink(getcwd().$_POST['url']))
-			echo "Su archivo fue borrado con exito";
+			echo "Your file was deleted successfully";
 	}
 
 	function del_file_compartir()
@@ -125,7 +125,7 @@ class cabecera extends CI_Controller
 		}
 		$this->model_cabecera->del_file_compartir();
 		if(unlink(getcwd().$_POST['url']))
-			echo "Su archivo fue borrado con exito";
+			echo "Your file was deleted successfully";
 	}
 	
 	function email()
@@ -213,9 +213,9 @@ class cabecera extends CI_Controller
         }
 
 		if($this->email->send()){
-			echo "Se ha enviado el email Exitosamente .";
+			echo "The email has been sent successfully.";
 		}else{
-			echo "Error enviando el email .<br>Porfavor verificar la informacion e intentar nuevamente .";
+			echo "Error sending the email<br>Please verify the information and try again.";
 		}
 	}
 	
@@ -239,9 +239,9 @@ class cabecera extends CI_Controller
 
 	
 		if($this->email->send()){
-			echo "Se ha enviado el email Exitosamente .";
+			echo "The email has been sent successfully.";
 		}else{
-			echo "Error enviando el email .<br>Porfavor verificar la informacion e intentar nuevamente .";
+			echo "Error sending the email<br>Please verify the information and try again.";
 		}
 	}
 	

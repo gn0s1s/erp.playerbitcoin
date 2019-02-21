@@ -31,7 +31,7 @@
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-edit"></i> </span>
-						<h2>Contacto</h2>				
+						<h2>Contact</h2>				
 						
 					</header>
 
@@ -48,19 +48,19 @@
 						<div class="widget-body">
 							
 									<form method="post" id="contact-form" class="smart-form" enctype='multipart/form-data'>
-										<header>Contacto</header>
+										<header>Contact</header>
 										
 										<fieldset>
 											<div class="row">
 												<section class="col col-4">
-													<label class="label" >Asunto</label>
+													<label class="label" >Subject</label>
 													<label class="input">
 														<i class="icon-append fa fa-tag"></i>
 														<input type="text" name="subject" required>
 													</label>
 												</section>
 												<section class="col col-4">
-													<label class="label">Departamento</label>
+													<label class="label">Department</label>
 													<label class="select">
 														<select name="departamento">
 														<?php foreach ($datos_departamentos as $dato_departamento){
@@ -74,17 +74,17 @@
 												</section>
 											</div>
 											<section class="col col-8">
-											<label class="label">Archivos Adjuntos <i class="fa fa-paperclip fa-2x"></i></label>
+											<label class="label">Attached files <i class="fa fa-paperclip fa-2x"></i></label>
 											<input type="file" multiple name="userfile[]"/><br> 
 											</section>
 											<section class="col col-8">
-												<label class="label" >Mensaje</label>
+												<label class="label" >Message</label>
 												<textarea name="mensaje" cols="160" id="mymarkdown" class="custom-scroll" style="width: 100%;max-height:200px;"></textarea>
 											</section>
 										</fieldset>	
 										<footer>
 											<button type="submit" class="btn btn-primary">
-												Enviar
+												Send
 											</button>
 										</footer>
 									</form>
@@ -181,7 +181,7 @@ $("#contact-form").submit(function(event){
 
 		bootbox.dialog({
 		message: msg,
-		title: "Contacto",
+		title: "Contact",
 		buttons: {
 			success: {
 			label: "Ok!",
