@@ -126,7 +126,7 @@ class model_coinmarketcap extends CI_Model
         $this->url = str_replace("//pro", "//$mode", $this->url);
     }
 
-    private function getCoinmarket()
+    function getCoinmarket()
     {
         $q = $this->db->query("SELECT * FROM coinmarketcap");
         $q = $q->result();
