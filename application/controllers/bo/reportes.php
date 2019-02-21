@@ -1425,7 +1425,7 @@ class reportes extends CI_Controller {
 	 * <th>Banco</th>
 	 * <th>N° Cuenta</th>
 	 * <th>Titular</th>
-	 * <th>CLABE</th>
+	 * <th>KEY</th>
 	 * <th>Monto</th>
 	 * <th>Estado</th>
 	 * </thead>
@@ -1505,7 +1505,7 @@ class reportes extends CI_Controller {
 					<th>Banco</th>
 					<th>N° Cuenta</th>
 					<th>Titular</th>
-					<th>CLABE</th>
+					<th>KEY</th>
 					<th>Monto</th>
 					<th>Estado</th>
 				</thead>
@@ -1643,7 +1643,7 @@ class reportes extends CI_Controller {
 					<th>Banco</th>
 					<th>N° Cuenta</th>
 					<th>Titular</th>
-					<th>CLABE</th>
+					<th>KEY</th>
 					<th>Monto</th>
 					<th>Estado</th>
 				</thead>
@@ -1782,7 +1782,7 @@ class reportes extends CI_Controller {
 					<th>Banco</th>
 					<th>N° Cuenta</th>
 					<th>Titular</th>
-					<th>CLABE</th>
+					<th>KEY</th>
 					<th>Monto</th>
 					<th>Estado</th>
 				</thead>
