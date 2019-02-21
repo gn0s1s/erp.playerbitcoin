@@ -41,7 +41,7 @@
 				</div>
 				<br>
 				<div class="form-group">
-					<b>CLABE</b> <input class="form-control" id="clabe" name="clabe"
+					<b>KEY</b> <input class="form-control" id="clabe" name="clabe"
 						type="number" onChange="validarSiNumero(this.value);"
 						value="<?php echo $banco[0]->clave?>">
 				</div>

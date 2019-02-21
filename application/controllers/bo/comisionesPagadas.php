@@ -90,7 +90,7 @@ class comisionesPagadas extends CI_Controller
 					<th data-hide='phone,tablet'>Banco</th>
 					<th data-hide='phone,tablet'>Cuenta</th>
 					<th data-hide='phone,tablet'>Titular</th>
-					<th data-hide='phone,tablet'>Clabe</th>
+					<th data-hide='phone,tablet'>KEY</th>
 					<th data-hide='phone,tablet'>Valor</th>
 					<th data-hide='phone,tablet'>Estado</th>
 					<th data-hide='phone,tablet'>Accion</th>

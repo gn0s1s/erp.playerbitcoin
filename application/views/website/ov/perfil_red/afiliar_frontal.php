@@ -623,7 +623,7 @@ function codpos_red()
 														</fieldset>
 														
 														<fieldset>
-															<legend>Datos del Beneficiario</legend>
+															<legend>Beneficiary data</legend>
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input">
