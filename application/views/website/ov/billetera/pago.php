@@ -193,7 +193,7 @@
 																	$retenciones_total=0;
 																	foreach ($retenciones as $retencion) {?>
 																	<tr class="danger">
-																		<td><b>Retencion por <?php echo $retencion['descripcion']; ?></b></b></td>
+																		<td><b>Withholding <?php echo $retencion['descripcion']; ?></b></b></td>
 																		<td></td>
 																		<td>$ <?php 
 																		$retenciones_total+=$retencion['valor'];
@@ -459,7 +459,7 @@ function cobrar() {
 	$.ajax({
 		type: "POST",
 		url: "/auth/show_dialog",
-		data: {message: '¿ Esta seguro que desea Pedir the pago con los datos que se acabaron of ingresar ?'},
+		data: {message: 'Are you sure you want to request payment with the data that was just entered?'},
 	})
 	.done(function( msg )
 	{
@@ -509,7 +509,7 @@ function cobrar() {
 	})
 	});
 	}else {
-		alert("Los datos of the cuenta o the cobro estan incompletos o erroneos");
+		alert("The account or collection data is incomplete or erroneous");
 	}
 }
 function validarCampos(){

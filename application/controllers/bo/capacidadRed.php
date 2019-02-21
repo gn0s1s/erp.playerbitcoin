@@ -90,7 +90,7 @@ class capacidadRed extends CI_Controller{
 		}else{
 			$this->model_tipo_red->actualizarCapacidadRed($_POST['red'],$_POST['frontal'],$_POST['profundidad']);
 			$correcto = "La configuracion de la red ha sido actualizada.";
-			$this->session->set_flashdata('exito', $correcto);
+			$this->session->set_flashdata('success', $correcto);
 		}
 		redirect("/bo/capacidadRed/index");
 	}

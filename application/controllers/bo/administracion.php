@@ -61,13 +61,13 @@ class administracion extends CI_Controller
 		
 		for ($i=0; $i<10;$i++){
 			if ($nombre[$i]=='' && $email[$i]!=''){
-				$error = "Debe escribir un nombre para el departamento de e-mail ".$email[$i].".";
+				$error = "You must enter a name for the email department ".$email[$i].".";
 				$this->session->set_flashdata('error', $error);
 				$hay_error=true;
 				//redirect("/bo/administracion/emails_departamentos");
 			}	
 			else if ($nombre[$i]!='' && $email[$i]==''){
-				$error = "Debe escribir un e-mail para el departamento de nombre ".$nombre[$i].".";
+				$error = "You must write an email for the name department ".$nombre[$i].".";
 				$this->session->set_flashdata('error', $error);
 				$hay_error=true;
 				//redirect("/bo/administracion/emails_departamentos");
@@ -78,7 +78,7 @@ class administracion extends CI_Controller
 		if ($hay_error){
 		}
 		else{
-			$success = "El cambio se ha efectuado satisfactoriamente.";
+			$success = "The change has been made successfully.";
 			$this->session->set_flashdata('success', $success);
 		}
 			redirect("/bo/configuracion/emails_departamentos");

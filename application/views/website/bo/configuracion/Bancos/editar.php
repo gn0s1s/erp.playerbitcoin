@@ -53,7 +53,7 @@
 				</div>				
 				<br>
 				<div class="form-group">
-					<b>Dirección postal</b> <input class="form-control" id="dir_postal" name="dir_postal"
+					<b>Postal address</b> <input class="form-control" id="dir_postal" name="dir_postal"
 						type="number"
 						value="<?php echo $banco[0]->dir_postal?>">
 				</div>

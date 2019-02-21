@@ -215,13 +215,13 @@
 				$.ajax({
 					type: "POST",
 					url: "/auth/show_dialog",
-					data: {message: '¿ Esta seguro que desea Eliminar the venta con sus respectivas comisiones ?'},
+					data: {message: 'Are you sure you want to eliminate the sale with their respective commissions?'},
 				})
 				.done(function( msg )
 				{
 					bootbox.dialog({
 					message: msg,
-					title: 'Eliminar Cobro',
+					title: 'Remove payment',
 					buttons: {
 						success: {
 						label: "Accept",

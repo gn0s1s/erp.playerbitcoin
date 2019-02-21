@@ -50,7 +50,7 @@
                                                         <label class="input"><i
                                                                     class="icon-append fa fa-lock"></i><input
                                                                     name="confirm_password" id="confirm_password"
-                                                                    placeholder="Repite Password" type="password">
+                                                                    placeholder="Re-enter password" type="password">
                                                         </label>
                                                     </section>
                                                 </fieldset>

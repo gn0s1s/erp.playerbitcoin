@@ -456,7 +456,7 @@ function index()
 		
 		if(!$this->cart->contents()){
 			echo "<script>window.location='/ov/dashboard';</script>";
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 	
@@ -483,15 +483,15 @@ function index()
 		if(isset($banco[0]->id_banco)){
 		echo '<div class="jumbotron">
 				<h1>Congratulations!</h1>
-				<p>La transacción ha finalizado con éxito.</p>
+				<p>The transaction has ended successfully.</p>
 				<p class="text-danger">
-					Para terminar tu compra debes enviar un correo electrónico con el comprobante de pago al departamento de 
-					Pagos(<b>'.$emailPagos[0]->email.'</b>)
+				To complete your purchase you must send an email with proof of payment to the payment department
+					(<b>'.$emailPagos[0]->email.'</b>)
 				</p>
 				<p>
 				</p><div class="alert alert-success alert-block">
-		 		<p><b>Nombre de Banco</b> : '.$banco[0]->descripcion.'</p>
-				<p><b>Numero de Cuenta</b>: '.$banco[0]->cuenta.'</p>
+		 		<p><b>Bank name</b> : '.$banco[0]->descripcion.'</p>
+				<p><b>Account number</b>: '.$banco[0]->cuenta.'</p>
 			';
 		
 			if($banco[0]->swift){
@@ -501,17 +501,17 @@ function index()
 			}
 			if($banco[0]->otro){
 				echo '
-				<p><b>Titular</b> :'.$banco[0]->otro.'</p>
+				<p><b>Headline</b> :'.$banco[0]->otro.'</p>
 				';
 			}
 			if($banco[0]->dir_postal){
 				echo '
-				<p><b>Dirección postal</b>  :'.$banco[0]->dir_postal.'</p>
+				<p><b>Postal address</b>  :'.$banco[0]->dir_postal.'</p>
 				';
 			}
 			if($banco[0]->clave){
 				echo '
-				<p><b>CLABE</b> :'.$banco[0]->clave.'</p>
+				<p><b>KEY</b> :'.$banco[0]->clave.'</p>
 				';
 			}
 			echo '<p>
@@ -534,7 +534,7 @@ function index()
 
         if(!$this->cart->contents()){
             echo "<script>window.location='/shoppingcart';</script>";
-            echo "La compra no puedo ser registrada";
+            echo "The purchase can not be registered";
             return 0;
         }
 
@@ -567,7 +567,7 @@ function index()
         $xpub = $wallet[0]->hashkey;
 
         if(strlen($xpub)<100){
-            echo "<!> Blockchain esta en modo TEST . Por favor, comuniquese con el administrador e sitio. !!!";
+            echo "<!> Blockchain is in TEST mode. Please, contact the site administrator. !!!";
             return false;
         }
 
@@ -575,7 +575,7 @@ function index()
 
         $address = isset($response->address) ? $response->address : false;
         if(!$response||!$address){
-            echo "<abbr title='".json_encode($response)."'>?</abbr> Blockchain no generó la direción para su pago. Intente más tarde!!!";
+            echo "<abbr title='".json_encode($response)."'>?</abbr> Blockchain does not generate the address for payment. Try again later!!!";
             log_message('DEV',"response : ".json_encode($response));
             return false;
         }
@@ -1167,7 +1167,7 @@ function index()
 	
 		if(!$this->cart->contents()){
 			echo "<script>window.location='/ov/dashboard';</script>";
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 	
@@ -1197,7 +1197,7 @@ function index()
 		
 		if(!$this->cart->contents()){
 			echo "<script>window.location='/ov/dashboard';</script>";
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 	
@@ -1280,7 +1280,7 @@ function index()
 		$this->cart->destroy();
 		
 		echo "
-		<legend>Por Favor, Espere a que cargue el Recibo</legend>
+		<legend>Please, wait for me to load the receipt</legend>
 		<div class='compropagoDivFrame' id='compropagodContainer' style='width: 100%;'>
 				    <iframe style='width: 100%;'
 				        id='compropagodFrame'
@@ -1380,7 +1380,7 @@ function index()
 	
 		if(!$this->cart->contents()){
 			echo "<script>window.location='/ov/dashboard';</script>";
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 	
@@ -1421,7 +1421,7 @@ function index()
 			$link="https://gateway.tucompra.com.co/tc/app/inputs/compra.jsp";
 	
 			echo'
-			<h2 class="semi-bold">¿ Esta seguro de realizar el pago ?</h2>
+			<h2 class="semi-bold">Are you sure you make the payment?</h2>
 			<form method="post" action="'.$link.'">'
 	//		  .'<input name="merchantId"    type="hidden"  value="'.$tucompra[0]->id_comercio.'">'
 			  .'<input name="usuario"     type="hidden"  value="'.$tucompra[0]->cuenta.'" >'
@@ -1452,7 +1452,7 @@ function index()
 	
 		if(!$this->cart->contents()){
 			echo "<script>window.location='/ov/dashboard';</script>";
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 	
@@ -1487,7 +1487,7 @@ function index()
 			$link="https://gateway.payulatam.com/ppp-web-gateway/";
 		
 		echo' 
-			<h2 class="semi-bold">¿ Esta seguro de realizar el pago ?</h2>
+			<h2 class="semi-bold">Are you sure you make the payment?</h2>
 			<form method="post" action="'.$link.'">
 			  <input name="merchantId"    type="hidden"  value="'.$payulatam[0]->id_comercio.'">
 			  <input name="accountId"     type="hidden"  value="'.$payulatam[0]->id_cuenta.'" >
@@ -1519,7 +1519,7 @@ function index()
 	
 		if(!$this->cart->contents()){
 			echo "<script>window.location='/ov/dashboard';</script>";
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 	
@@ -1548,7 +1548,7 @@ function index()
 		if($paypal[0]->test!=1)
 			$link="https://www.paypal.com/cgi-bin/webscr";
 
-		echo '<h2 class="semi-bold">¿ Esta seguro de realizar el pago ?</h2>
+		echo '<h2 class="semi-bold">Are you sure you make the payment?</h2>
 			  <form action="'.$link.'" method="post">
 				<input type="hidden" name="cmd" value="_xclick">
 				<input type="hidden" name="custom" value="'.$id.'">
@@ -1684,7 +1684,7 @@ function index()
 		}
 		if(!$this->cart->contents()){
 			echo "<script>window.location='/ov/dashboard';</script>";
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 		$id = $this->tank_auth->get_user_id();
@@ -1726,10 +1726,10 @@ function index()
 		if($_POST['password']==$_POST['confirm_password'])
 		{
 			$this->modelo_compras->crea_pswd($id);
-			echo "Tu Password ha sido creada con exito";
+			echo "Your password has been created successfully";
 		}
 		else
-		echo "Error tu Password contiene errores, por favor verificalo";
+		echo "Error. Your password contains errors, please verify it.";
 	}
 	
 	function preOrdenEstadisticas($id,$red){
@@ -2159,13 +2159,13 @@ function index()
 		}
 		if(isset($_GET['transactionState'])){
 			if($_GET['transactionState'] == '4'){
-				$exito = "La transacion se a realizado con exito.";
-				$this->session->set_flashdata('exito', $exito);
+				$exito = "The transaction has been successfully completed.";
+				$this->session->set_flashdata('Success', $exito);
 			}elseif($_GET['transactionState'] == '5'){
-				$error = "La transacion ha sido rezhazada(Declinada).";
+				$error = "The transaction has been rejected (Declined).";
 				$this->session->set_flashdata('error', $error);
 			}else{
-				$error = "La transacion expiro.";
+				$error = "The transaction expired.";
 				$this->session->set_flashdata('error', $error);
 			}
 			$extra1 = explode("-", $_GET['extra1']);
@@ -2269,12 +2269,12 @@ function index()
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 						<th>ID</th>
-		                <th data-class='expand'>Imagen</th>
-		                <th data-hide='phone'>Usuario</th>
-			            <th data-hide='phone,tablet'>Nombre</th>
-			            <th data-hide='phone,tablet'>Apellido</th>
-				        <th data-hide='phone,tablet'>e-mail</th>
-				        <th data-hide='phone'>Red</th>
+		                <th data-class='expand'>Image</th>
+		                <th data-hide='phone'>User</th>
+			            <th data-hide='phone,tablet'>Name</th>
+			            <th data-hide='phone,tablet'>Surname</th>
+				        <th data-hide='phone,tablet'>Email</th>
+				        <th data-hide='phone'>Network</th>
 				</thead>
 				<tbody>";
 		foreach ($afiliados as $afiliado)
@@ -2325,8 +2325,8 @@ function index()
 			"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th>ID</th>
-					<th>Nombre</th>
-					<th data-hide='phone'>Correo</th>
+					<th>Name</th>
+					<th data-hide='phone'>Email</th>
 				</thead>
 				<tbody>";
 			foreach ($this->afiliados as $afiliado)
@@ -2426,10 +2426,10 @@ function index()
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th>ID</th>
-					<th>Nombre</th>
-					<th data-hide='phone'>Correo</th>
-					<th data-hide='phone,tablet'>Compras</th>
-					<th data-hide='phone,tablet'>Impuestos</th>
+					<th>Name</th>
+					<th data-hide='phone'>Email</th>
+					<th data-hide='phone,tablet'>Purchases</th>
+					<th data-hide='phone,tablet'>Taxes</th>
 					<th data-hide='phone,tablet'>Total</th>
 				</thead>
 				<tbody>";
@@ -2568,14 +2568,14 @@ function index()
 		echo
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
-					<th data-class='expand'>ID Venta</th>
-					<th data-hide='phone,tablet'>Fecha</th>
-					<th data-hide='phone,tablet'>Nombre</th>
-					<th data-hide='phone,tablet'>Apellido</th>
+					<th data-class='expand'>ID Sale</th>
+					<th data-hide='phone,tablet'>Date</th>
+					<th data-hide='phone,tablet'>Name</th>
+					<th data-hide='phone,tablet'>Surname</th>
 					<th data-hide='phone,tablet'>Subtotal</th>
-					<th data-hide='phone,tablet'>Impuestos</th>
-					<th data-hide='phone,tablet'>Total Venta</th>
-					<th data-hide='phone,tablet'>Factura</th>
+					<th data-hide='phone,tablet'>Taxes</th>
+					<th data-hide='phone,tablet'>Total Sale</th>
+					<th data-hide='phone,tablet'>Invoice</th>
 				</thead>
 				<tbody>";
 		
@@ -2590,10 +2590,10 @@ function index()
 			<td> $	".number_format(($venta->costo-$venta->impuestos), 2, '.', '')."</td>
 			<td> $	".number_format($venta->impuestos, 2, '.', '')."</td>
 			<td> $	".number_format($venta->costo, 2, '.', '')."</td>
-			<td>				<a title='Factura' style='cursor: pointer;' class='txt-color-blue' onclick='factura(".$venta->id_venta.");'>
+			<td>				<a title='Invoice' style='cursor: pointer;' class='txt-color-blue' onclick='factura(".$venta->id_venta.");'>
 				<i class='fa fa-eye fa-3x'></i>
 				</a>
-					<a title='Imprimir' style='cursor: pointer;' class='txt-color-green' onclick='imprimir(".$venta->id_venta.");'>
+					<a title='Print' style='cursor: pointer;' class='txt-color-green' onclick='imprimir(".$venta->id_venta.");'>
 				<i class='fa fa-file-pdf-o fa-3x'></i>
 				</a>
 				</td>
@@ -2642,15 +2642,15 @@ function index()
 		echo
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
-					<th data-class='expand'>ID Venta</th>
-					<th data-hide='phone,tablet'>Fecha</th>
-					<th data-hide='phone,tablet'>Usuario</th>
-					<th data-hide='phone,tablet'>Nombre Completo</th>
+					<th data-class='expand'>ID Sale</th>
+					<th data-hide='phone,tablet'>Date</th>
+					<th data-hide='phone,tablet'>User</th>
+					<th data-hide='phone,tablet'>Full name</th>
 					<th data-hide='phone,tablet'>Subtotal</th>
-					<th data-hide='phone,tablet'>Impuestos</th>
-					<th data-hide='phone,tablet'>Total Venta</th>
-					<th data-hide='phone,tablet'>Puntos</th>
-                                        <th >Acciones</th>
+					<th data-hide='phone,tablet'>Taxes</th>
+					<th data-hide='phone,tablet'>Total Sale</th>
+					<th data-hide='phone,tablet'>Points</th>
+                                        <th >Actions</th>
 				</thead>
 				<tbody>";
 		
@@ -2666,10 +2666,10 @@ function index()
                                     <td> $ ".number_format($venta->costo+$venta->impuestos, 2)."</td>
                                     <td>".$venta->puntos."</td>
                                     <td>	
-                                        <a title='Factura' style='cursor: pointer;' class='txt-color-blue' onclick='factura_cedi(".$venta->id_venta.");'>
+                                        <a title='Invoice' style='cursor: pointer;' class='txt-color-blue' onclick='factura_cedi(".$venta->id_venta.");'>
                                             <i class='fa fa-eye fa-3x'></i>
                                         </a>
-                                        <a title='Imprimir' style='cursor: pointer;' class='txt-color-green' onclick='imprimir_cedi(".$venta->id_venta.");'>
+                                        <a title='Print' style='cursor: pointer;' class='txt-color-green' onclick='imprimir_cedi(".$venta->id_venta.");'>
                                             <i class='fa fa-file-pdf-o fa-3x'></i>
                                         </a>
                                     </td>
@@ -2688,7 +2688,7 @@ function index()
                         </tr>";
 				
 			echo "<tr>
-			<td class='sorting_1'><b>TOTALES</b></td> <td></td> <td></td> <td></td>
+			<td class='sorting_1'><b>TOTALS</b></td> <td></td> <td></td> <td></td>
 			<td><b> $ ".number_format($total_costo, 2)."</b></td>
 			<td><b> $ ".number_format($total_impuesto, 2)."</b></td>
 			<td><b> $ ".number_format($total_venta, 2)."</b></td>
@@ -2776,14 +2776,14 @@ function index()
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th data-class='expand'>ID</th>
-					<th data-hide='phone,tablet'>Red</th>
-					<th >Fecha de Registro</th>
-					<th >Usuario</th>
-					<th >Nombre</th>
-					<th >Apellido</th>
+					<th data-hide='phone,tablet'>Network</th>
+					<th >Registration date</th>
+					<th >User</th>
+					<th >Name</th>
+					<th >Surname</th>
 					<th data-hide='phone,tablet'>Email</th>
-					<th data-hide='phone,tablet'>Sexo</th>
-					<th data-hide='phone,tablet'>Civil Status</th>
+					<th data-hide='phone,tablet'>Gender</th>
+					<th data-hide='phone,tablet'>Civil status</th>
 				</thead>
 				<tbody>";
 		for($i=0;$i<sizeof($afiliados);$i++)
@@ -2823,11 +2823,11 @@ function index()
 			"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th>ID</th>
-					<th>Usuario</th>
-					<th>Nombre</th>
-					<th>Apellido</th>
+					<th>User</th>
+					<th>Name</th>
+					<th>Surname</th>
 					<th>Email</th>
-					<th>Actividad</th>
+					<th>Activity</th>
 				</thead>
 				<tbody>";
 			foreach($afiliados as $afiliado)
@@ -2867,11 +2867,11 @@ function index()
 			"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th>ID</th>
-					<th>Usuario</th>
-					<th>Nombre</th>
-					<th>Apellido</th>
+					<th>User</th>
+					<th>Name</th>
+					<th>Surname</th>
 					<th>Email</th>
-					<th>Actividad</th>
+					<th>Activity</th>
 				</thead>
 				<tbody>";
 			foreach($afiliados as $afiliado)
@@ -2947,8 +2947,8 @@ function index()
 			"<table id='datatable_fixed_column2' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th data-class='expand'>ID</th>
-					<th data-hide='phone'>Fecha</th>
-					<th>Costo</th>
+					<th data-hide='phone'>Date</th>
+					<th>Cost</th>
 					<th>Estatus</th>
 				</thead>
 				<tbody>";
@@ -3091,10 +3091,10 @@ function index()
 			"<table id='datatable_fixed_column3' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th data-class='expand'>ID</th>
-					<th data-hide='phone,tablet'>Fecha</th>
-					<th data-hide='phone'>Costo</th>
+					<th data-hide='phone,tablet'>Date</th>
+					<th data-hide='phone'>Cost</th>
 					<th>Estatus</th>
-					<th>Usuario</th>
+					<th>User</th>
 				</thead>
 				<tbody>";
 				
@@ -3156,15 +3156,15 @@ function index()
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>
 					<th >ID</th>
-					<th data-class='expand'>Fecha</th>
-					<th >Banco</th>
-					<th data-hide='phone'>N° Cuenta</th>
-					<th data-hide='phone'>CLABE</th>
+					<th data-class='expand'>Date</th>
+					<th>Bank</th>
+					<th data-hide='phone'>N° Account</th>
+					<th data-hide='phone'>KEY</th>
 					<th data-hide='phone'>SWIFT</th>
-					<th data-hide='phone'>ABA/IBAN/OTRO</th>
-					<th data-hide='phone'>Dirección postal</th>
-					<th data-hide='phone,tablet'>Monto</th>
-					<th data-hide='phone,tablet'>Estado</th>
+					<th data-hide='phone'>ABA/IBAN/OTHER</th>
+					<th data-hide='phone'>Postal address</th>
+					<th data-hide='phone,tablet'>Amount</th>
+					<th data-hide='phone,tablet'>State</th>
 				</thead>
 				<tbody>";
 		for($i=0;$i < sizeof($cobros);$i++)
@@ -3180,9 +3180,9 @@ function index()
 			<td>".$cobros[$i]->dir_postal."</td>
 			<td>$ ".number_format($cobros[$i]->valor,2)."</td>";
 		if($cobros[$i]->estado=='ACT')
-			echo "<td>Pagado</td>";
+			echo "<td>Paid</td>";
 		else
-			echo "<td>Pendiente</td>";
+			echo "<td>Pending</td>";
 		echo "</tr>";
 			
 		}
@@ -3261,11 +3261,11 @@ function index()
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='100%'>
 				<thead id='tablacabeza'>"
 					."<th>ID historial</th>"
-					."<th>Usuario</th>"
-					."<th data-hide='phone'>Nombre Completo</th>"
-					."<th data-hide='phone,tablet'>Fecha</th>"
-					."<th data-hide='phone,tablet'>Bono</th>"
-					."<th data-hide='phone,tablet'>Valor</th>"
+					."<th>User</th>"
+					."<th data-hide='phone'>Full Name</th>"
+					."<th data-hide='phone,tablet'>Date</th>"
+					."<th data-hide='phone,tablet'>Voucher</th>"
+					."<th data-hide='phone,tablet'>Value</th>"
 				."</thead>
 				<tbody>";
 		
@@ -3331,7 +3331,7 @@ function index()
 
 
             if(!$detalles){
-                echo "NO SE ENCUENTRA EL ITEM, INTENTE DE NUEVO.";
+                echo "ITEM IS NOT FOUND, TRY AGAIN.";
                 return false;
             }
 
@@ -3487,9 +3487,9 @@ function index()
 				              <tbody>
 				              
 				                <tr class="CartProduct cartTableHeader">
-				                  <td style="width:15%" > Producto </td>
-				                  <td style="width:40%" >Detalles</td>
-				                  <td style="width:20%" >Cantidad</td>
+				                  <td style="width:15%" > Product </td>
+				                  <td style="width:40%" >Details</td>
+				                  <td style="width:20%" >Quantity</td>
 				                  <td style="width:15%" >Total</td>
 								  <td style="width:10%" class="delete">&nbsp;</td>
 				                </tr>';
@@ -3534,7 +3534,7 @@ function index()
 			}						
 		else
 		{
-			echo 'NO HAY PRODUCTOS EN EL CARRITO';	
+			echo 'THERE ARE NO PRODUCTS IN THE SHOPPING CART';	
 		}
 
 	}
@@ -3957,7 +3957,7 @@ function index()
         );
 		$this->cart->update($data);
 		if(!$this->cart->contents())
-			echo 'NO HAY PRODUCTOS EN EL CARRITO';
+			echo 'THERE ARE NO PRODUCTS IN THE SHOPPING CART';
 
 	}
 	function actualizar_nav()
@@ -4191,49 +4191,49 @@ function index()
 	function actualizar_comprador(){
 		      
 		if ($_POST['dni_comprador']==""){
-			$error = "Debes escribir tu dni.";
+			$error = "You must write your dni.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		
 		else if ($_POST['nombre_comprador']==""){
-			$error = "Debes escribir tu nombre.";
+			$error = "You must write your name.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		
 		else if ($_POST['apellido_comprador']==""){
-			$error = "Debes escribir tu apellido.";
+			$error = "You must write your surname.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		else if ($_POST['pais_comprador']=="-"){
-			$error = "Debes seleccionar tu país.";
+			$error = "You must select your country.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		else if ($_POST['estado_comprador']==""){
-			$error = "Debes escribir el estado donde te encuentras.";
+			$error = "You must write the state where you are.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		else if ($_POST['municipio_comprador']==""){
-			$error = "Debes escribir el municipio donde te encuentras.";
+			$error = "You must write the municipality where you are.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		else if ($_POST['colonia_comprador']==""){
-			$error = "Debes escribir la colonia donde te encuentras.";
+			$error = "You must write the colony where you are.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		else if ($_POST['direccion_comprador']==""){
-			$error = "Debes escribir la dirección donde te encuentras.";
+			$error = "You must write the address where you are.";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		}
 		else if ($_POST['telefono_comprador']==""){
-			$error = "Debes escribir tu telefono.";
+			$error = "You must write your phone number.s";
 			$this->session->set_flashdata('error', $error);
 			redirect('/ov/compras/carrito_publico?usernameAfiliado='.$_POST['usernameAfiliado']);
 		} else 
@@ -4248,7 +4248,7 @@ function index()
 		
 		$this->load->model('model_users');
 		if(!isset($_POST['id_mercancia'])){
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 		
@@ -4401,7 +4401,7 @@ function index()
 	function SelecioneBancoWebPersonal(){
 		
 		if(!isset($_POST['id_mercancia'])){
-			echo "La compra no puedo ser registrada";
+			echo "The purchase can not be registered";
 			return 0;
 		}
 		if (!$this->tank_auth->is_logged_in())

@@ -433,7 +433,7 @@
 					});
 				}else{
 					FinalizarSpinner();
-					alert('Introduzca las fechas para buscar');
+					alert('Enter dates to search');
 				}
 			
 			});
@@ -442,7 +442,7 @@
 			var inicio=$("#startdate").val();
 			var fin=$("#finishdate").val();
 			if (inicio == '' || fin == ''){
-				alert('Introduzca las fechas para buscar');
+				alert('Enter dates to search');
 				return 0;
 			}
 			window.location="/ov/compras/reporte_pagos_banco_excel?inicio="+inicio+"&&fin="+fin
@@ -452,7 +452,7 @@
 			var inicio=$("#startdate").val();
 			var fin=$("#finishdate").val();
 			if (inicio == '' || fin == ''){
-				alert('Introduzca las fechas para buscar');
+				alert('Enter dates to search');
 				return 0;
 			}
 			window.location="/ov/compras/Reporte_Excel_WP?inicio="+inicio+"&&fin="+fin
@@ -488,7 +488,7 @@
 				var fin=$("#finishdate").val();
 				if(inicio==''||fin=='')
 				{
-					alert('Introduzca las fechas para buscar');
+					alert('Enter dates to search');
 				}else{
 					$("#nuevos_afiliados").show();
 					var datos={'inicio':inicio,'fin':fin};

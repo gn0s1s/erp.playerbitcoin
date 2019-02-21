@@ -356,7 +356,7 @@
 			         type: "get",
 			         url: "insert_coment",
 			         success: function(){
-			              alert("Tu comentario fue añadido con exito");
+			              alert("Your comment was added successfully");
 			              location.href="/ov/videos";
 			         }
 				});

@@ -93,7 +93,7 @@
 										<th data-hide="phone, tablet">Titular</th>
 										<th data-hide="phone, tablet">CLABE</th>
 										<th data-hide="phone, tablet">SWIFT</th>										
-										<th data-hide="phone, tablet">Dirección postal </th>
+										<th data-hide="phone, tablet">Postal address </th>
 										<th>Acciones</th>
 
 									</tr>
