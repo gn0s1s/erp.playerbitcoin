@@ -82,7 +82,7 @@
 </div>
 <!-- END MAIN CONTENT -->
 <<script type="text/javascript">
-    function nueva_grupo()
+    function new_grupo()
     {
         var grupo = $("#grupo").val();
         var tipo = $("#tipo").val();

@@ -4,9 +4,10 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark">
-							<a class="backHome" href="/ov"><i class="fa fa-home"></i> Menu</a> 
-							<span>> 
-								Informaci&oacute;n
+							<a class="backHome" href="/ov">
+                                <i class="fa fa-home"></i> Menu</a>
+							<span>
+                                >  Information
 							</span>
 						</h1>
 					</div>
@@ -59,24 +60,24 @@
 											<thead>
 												<tr>
 													<th data-hide="phone">ID</th>
-													<th data-class="expand">Nombre</th>
-													<th data-hide="phone,tablet">Fecha</th>
-													<th data-hide="phone,tablet">Descripci&oacute;n</th>
+													<th data-class="expand">Name</th>
+													<th data-hide="phone,tablet">Date</th>
+													<th data-hide="phone,tablet">Description</th>
 													
 												</tr>
 											</thead>
 											<tbody>
 												<?php for($i=0;$i<sizeof($infos);$i++)
 												{
-													$texto=json_encode(html_entity_decode($infos[$i]->descripcion));
-														$texto=trim($texto);
+                                                    $texto = json_encode(html_entity_decode($infos[$i]->descripcion));
+                                                    $texto = trim($texto);
 													echo 
 													"<tr>
 														<td style='text-align:center; vertical-align: middle;'>".($i+1)."</td>
 														<td style='text-align:center; vertical-align: middle;'>".$infos[$i]->nombre."</td>
 														<td style='text-align:center; vertical-align: middle;'>".$infos[$i]->fecha."</td>
 														<td style='vertical-align: middle;'>".substr($infos[$i]->descripcion, 0, 100)."...
-															<a href='ver_informacion?id=".$infos[$i]->id."' >ver mas</a></p>
+															<a href='ver_informacion?id=".$infos[$i]->id."' >See Details</a></p>
 														</td>
 														
 													</tr>";

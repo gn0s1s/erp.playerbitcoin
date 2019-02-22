@@ -31,6 +31,7 @@ class compras extends CI_Controller
 		$this->load->model('bo/modelo_pagosonline');
         $this->load->model('bo/modelo_logistico');
         $this->load->model('cemail');
+        $this->load->model('/bo/bonos/clientes/playerbitcoin/playerbonos');
 		$this->load->model('ov/model_web_personal_reporte');
 	}
 	
@@ -4533,7 +4534,12 @@ function index()
 				return false;
 				
 			$id_afiliado_padre=$afiliado_padre[0]->debajo_de;
-				
+
+			$isAvailable = $this->playerbonos->isActivedPSR($id_afiliado);
+
+			if(!$isAvailable)
+			    continue;
+
 			$valorComision = isset($valor_comision_por_nivel[$i]) ? $valor_comision_por_nivel[$i]->valor : 0;
 			$valor_comision=(($valorComision*$costoVenta)/100);
 				

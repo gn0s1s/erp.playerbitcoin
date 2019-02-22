@@ -409,6 +409,8 @@
 			  <!--Termina the seccion of Purchases & reportes-->
 
              <div class="row">
+                 <?php $a = 0; ?>
+                 <?php if($a==1000){ ?>
                  <div class="col-sm-12 col-md-12 col-lg-12">
                      <!--Inica the seccion general-->
                     <!--  <div class="well">
@@ -475,8 +477,7 @@
           <!-- panel lateral info usuario-->
 
           <!-- Descomentar esto para la segunda fase-->
-          <?php $a = 0; ?>
-          <?php if($a==1000){ ?>
+
 				<div>
 					<div class="row">
 						<div class="col-sm-12 col-md-12 col-lg-12">
@@ -488,17 +489,17 @@
 										<div class="row">
 											<fieldset>
 												<legend><b>Comunications</b></legend>
-												<div class="col-sm-2">
+												<div class="hide col-sm-2">
 												</div>
 												
-												<div class="col-sm-2">
+												<div class="col-sm-6">
 													<a href="cgeneral/autoresponder">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<h5><i class="fa fa-globe "></i> Autoresponder</h5>
 														</div>
 													</a>
 												</div>	
-												<div class="col-sm-2">
+												<div class="col-sm-6">
 													<a href="cgeneral/invitacion_afiliar">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<h5><i class="fa fa-envelope fa-2x"></i>&nbsp;&nbsp;<i class="fa fa-sitemap "></i> Affiliate Banner</h5>
@@ -509,7 +510,7 @@
 												<?php $permiso=$ci->model_permissions->check($id,'e_mail');
 												if($permiso){
 												?>
-												<div class="col-sm-2">
+												<div class="col-sm-6">
 													<a href="email">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<h5><i class="fa fa-envelope "></i> E-mail</h5>
@@ -518,7 +519,7 @@
 												</div>
 												
 												<?php }?>
-                                                <div class="col-sm-2">
+                                                <div class="col-sm-6">
                                                     <a href="javascript:void(0);"><!-- cgeneral/ganadores -->
                                                         <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
                                                             <h5><i class="fa fa-trophy "></i> Winners</h5>
@@ -533,30 +534,28 @@
 									</div>
 									<!--Termina the seccion of comunicacion-->
 								</div>
-							
+                            <?php } ?>
 							<div class="row">
-								<div class="col-sm-12 col-md-12 col-lg-12">
+								<div class="col-sm-12">
 									<!--Inicia the seccion of escuela & negocios-->
 									<div class="well">
 										<div class="row">
 											<fieldset>
 												<legend><b>Informatión & Training</b></legend>
-												<div class="col-sm-2">
-												</div>
 												<?php $permiso=$ci->model_permissions->check($id,'informacion');
 												if($permiso){
 												?>
-												<div class="col-sm-2">
+												<div class="col-sm-6">
 													<a href="information">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-															<h5><i class="fa fa-info "></i> Informatión</h5>
+															<h5><i class="fa fa-info "></i> Information</h5>
 														</div>
 													</a>
 												</div>
 												<?php }$permiso=$ci->model_permissions->check($id,'presentaciones');
 												if($permiso){
 												?>
-												<div class="col-sm-2">
+												<div class="hide col-sm-6">
 													<a href="presentations">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<h5><i class="fa fa-desktop "></i> Slideshow</h5>
@@ -566,7 +565,7 @@
 												<?php }$permiso=$ci->model_permissions->check($id,'e_books');
 												if($permiso){
 												?>
-												<div class="col-sm-2">
+												<div class="col-sm-6">
 													<a href="ebooks">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<h5><i class="fa fa-book "></i> E-books</h5>
@@ -576,7 +575,7 @@
 												<?php }$permiso=$ci->model_permissions->check($id,'descargas');
 												if($permiso){
 												?>
-												<div class="col-sm-2">
+												<div class="hide col-sm-6">
 													<a href="downloads">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 															<h5><i class="fa fa-download "></i> Downloadable</h5>
@@ -588,12 +587,10 @@
 											</fieldset>
 										</div>
 										<div class="row">
-											<div class="col-sm-2">
-											</div>
 											<?php $permiso=$ci->model_permissions->check($id,'eventos');
 											if($permiso){
 											?>
-											<div class="col-sm-2">
+											<div class="hide col-sm-6">
 												<a href="events">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 														<h5><i class="fa fa-calendar "></i> Events</h5>
@@ -603,17 +600,17 @@
 											<?php }$permiso=$ci->model_permissions->check($id,'noticias');
 											if($permiso){
 											?>
-											<div class="col-sm-2">
+											<div class="hide col-sm-6">
 												<a href="news">
 													<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
-														<h5><i class="fa fa-bullhorn "></i> new s</h5>
+														<h5><i class="fa fa-bullhorn "></i> News</h5>
 													</div>
 												</a>
 											</div>
 											<?php }$permiso=$ci->model_permissions->check($id,'videos');
 												if($permiso){
 												?>
-												<div class="col-sm-2">
+												<div class="hide col-sm-6">
 													<a href="videos">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>;">
 															<h5><i class="fa fa-file-video-o "></i> Videos</h5>
@@ -621,11 +618,11 @@
 													</a>
 												</div>
 											
-                      <?php } ?>
+
                     	<?php $permiso=$ci->model_permissions->check($id,'estadisticas');
 												if($permiso){
 												?>
-												<div class="col-sm-2">
+												<div class="hide col-sm-6">
 													<a href="statistics">
 														<div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>">
 															<h5><i class="fa fa-bar-chart-o "></i> Statistics</h5>

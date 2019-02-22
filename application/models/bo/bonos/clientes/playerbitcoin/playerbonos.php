@@ -220,6 +220,43 @@ class playerbonos extends CI_Model
         return false;
     }
 
+    function isActivedPSR($id_usuario,$red = 1,$fecha = '',$bono = false){
+
+        if($id_usuario==2)
+            return true;
+
+        $binario = 2;
+        $isBinario = $bono == $binario;
+        $puntos = $this->getEmpresa ("puntos_personales");
+
+        $Afiliado = true;#$this->isAfiliadoenRed($id_usuario,$binario);
+
+        if(!$Afiliado){
+            log_message('DEV',"ID : $id_usuario not in BINARIO");
+            return $isBinario ? false : 0;
+        }
+
+        $bono = $this->getBono($binario);
+        $periodo =$this->issetVar($bono,"frecuencia","DIA");# "MES";
+
+        $fechaFin = $this->getPeriodoFecha($periodo, "FIN", $fecha );
+        if($this->fechaFin)
+            $fechaFin = $this->fechaFin;
+
+        $fechaInicio = $this->getAnyTime($fechaFin,"180 days");
+        if($this->fechaInicio)
+            $fechaInicio= $this->fechaInicio;
+
+        $where = "i.categoria = 2";
+        $venta = $this->getVentaMercancia($id_usuario,$fechaInicio,$fechaFin,2,false,$where);
+
+        $Pasa = ( $venta ) ? true : false;
+
+        log_message('DEV',"ID : $id_usuario PSR :: [[ $Pasa ]]");
+
+        return $Pasa;
+    }
+
     function isActivedAfiliado($id_usuario,$red = 1,$fecha = '',$bono = false){
 
         if($id_usuario==2)
@@ -237,13 +274,13 @@ class playerbonos extends CI_Model
         }
 
         $bono = $this->getBono($binario);
-        $periodo =$this->issetVar($bono,"frecuencia","DIA");# "MES";
+        $periodo = "UNI";#$this->issetVar($bono,"frecuencia","DIA");# "MES";
 
         $fechaFin = $this->getPeriodoFecha($periodo, "FIN", $fecha );
         if($this->fechaFin)
             $fechaFin = $this->fechaFin;
 
-        $fechaInicio = $this->getAnyTime($fechaFin,"180 days");
+        $fechaInicio = $this->getInicioFecha($id_usuario);
         if($this->fechaInicio)
             $fechaInicio= $this->fechaInicio;
 
