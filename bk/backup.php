@@ -1,12 +1,12 @@
 #!/usr/bin/php
 <?php
-date_default_timezone_set('America/Bogota');#city
+date_default_timezone_set('UTC');#city
 echo "Leyendo datos..."; 
 	
 	#function setDir($base="/var/www"){	
 	function setDir_($base="/home/playerbitcoin/"){
 		$project="erp.playerbitcoin"; #"erp.clientes"
-		$project.="/rtm";#"erp.multinivel" 
+		#$project.="/rtm";#"erp.multinivel"
 		return $base.$project;
 	}
 	
