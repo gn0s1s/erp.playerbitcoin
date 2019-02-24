@@ -237,7 +237,7 @@ class playerbonos extends CI_Model
         }
 
         $bono = $this->getBono($binario);
-        $periodo =$this->issetVar($bono,"frecuencia","DIA");# "MES";
+        $periodo = "UNI";#$this->issetVar($bono,"frecuencia","DIA");# "MES";
 
         $fechaFin = $this->getPeriodoFecha($periodo, "FIN", $fecha );
         if($this->fechaFin)
@@ -247,7 +247,7 @@ class playerbonos extends CI_Model
         if($this->fechaInicio)
             $fechaInicio= $this->fechaInicio;
 
-        $where = "i.categoria = 2";
+        $where = "AND i.categoria = 2";
         $venta = $this->getVentaMercancia($id_usuario,$fechaInicio,$fechaFin,2,false,$where);
 
         $Pasa = ( $venta ) ? true : false;
