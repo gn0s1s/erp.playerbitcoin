@@ -461,15 +461,55 @@ class model_perfil_red extends CI_Model
 	
 	function get_tabla()
 	{
-		$q=$this->db->query("select U.id, U.username, U.email,U.recovery,(select group_concat(distinct directo) from afiliar where id_afiliado = U.id) sponsor, UP.nombre, UP.apellido, CTU.descripcion ,CEA.descripcion estatus , 
-				
-			(select distinct group_concat(tr.nombre) from tipo_red tr where tr.id in (select af.id_red from afiliar af where af.id_afiliado = U.id)) redes
 
-from users U, user_profiles UP, cat_tipo_usuario CTU, cat_estatus_afiliado CEA 
+	    $redes = "select af.id_red from afiliar af where af.id_afiliado = U.id";
 
-where U.id = UP.user_id  and CTU.id_tipo_usuario = UP.id_tipo_usuario and CEA.id_estatus = UP.id_estatus and UP.id_tipo_usuario = 2 order by (U.id) limit 1000");
+	    $redes = "select distinct group_concat(tr.nombre)
+                    from tipo_red tr
+                    where tr.id in ($redes)";
+
+	    $sponsor = "select group_concat(distinct directo)
+                      from afiliar where id_afiliado = U.id";
+
+        $psr = "AND i.categoria = 2";
+        $vip = "AND i.categoria = 1";
+        $compras = "SELECT 
+                          sum(cvm.costo_unidad * cvm.cantidad) as compras
+                        FROM cross_venta_mercancia cvm,
+                         venta v,items i
+                    where v.id_user = U.id
+                      and cvm.id_venta = v.id_venta
+                      and i.id = cvm.id_mercancia                      
+                      and v.id_estatus = 'ACT'";
+
+        $query = "select U.id,
+                       U.username,
+                       U.email,
+                       U.recovery,
+                       U.created,
+                       ($sponsor) sponsor,
+                       UP.nombre,
+                       UP.apellido,
+                       CTU.descripcion,
+                       CEA.descripcion estatus,
+                       ($compras $psr) psr,
+                       ($compras $vip) vip,
+                       ($redes) redes
+                from users U,
+                     user_profiles UP,
+                     cat_tipo_usuario CTU,
+                     cat_estatus_afiliado CEA
+                where U.id = UP.user_id
+                  and CTU.id_tipo_usuario = UP.id_tipo_usuario
+                  and CEA.id_estatus = UP.id_estatus
+                  and UP.id_tipo_usuario = 2
+                order by (U.id)
+                limit 1000";
+
+        $q=$this->db->query($query);
 		return  $q->result();
-		}
+
+	}
 		
 	function get_tabla_por_id_buscado($id_buscado, $id_red)
 	{

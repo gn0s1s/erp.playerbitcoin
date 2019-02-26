@@ -144,10 +144,10 @@
 										$(".invalid").remove();
 
 										var ids = new Array(
-												"#nombre",
-												"#apellido", 
-												"#datepicker",
-												"#keyword",
+												//"#nombre",
+												//"#apellido",
+												//"#datepicker",
+												//"#keyword",
 												"#username",
 												"#email", 
 												"#password",
@@ -155,14 +155,14 @@
 
 										);
 										var mensajes = new Array(
-												"Por favor ingresa tu nombre",
-												"Por favor ingresa tu apellido",
-												"Por favor ingresa tu fecha de nacimiento",
-												"Por favor ingresa tu DNI",
-												"Por favor ingresa un nombre de usuario",
-												"Por favor ingresa un correo",
-												"Por favor ingresa una contraseña",
-												"Por favor confirma tu contraseña");
+												//"Por favor ingresa tu nombre",
+												//"Por favor ingresa tu apellido",
+												//"Por favor ingresa tu fecha de nacimiento",
+												//"Por favor ingresa tu DNI",
+												"Please enter username",
+												"Please enter email",
+												"Please enter password",
+												"Please re-enter password");
 
 										var idss = new Array("#username");
 										var mensajess = new Array(

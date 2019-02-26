@@ -53,10 +53,10 @@
 													class="badge badge-info">1</span>
 													Registration data
 													<span class="chevron"></span></li>
-												<li data-target="#step2" >
+												<!--<li class="hide" data-target="#step2" >
 												<span class="badge badge-info">2</span>
 													Personal information
-													<span class="chevron"></span></li>
+													<span class="chevron"></span></li>-->
 											</ul>
 											<div id="acciones" class="actions">
 												<button type="button"
@@ -127,8 +127,8 @@
 															</section>
 														</fieldset>
 													</div>
-												</div>
-												<div class="step-pane" id="step2">
+												<!--</div>
+												<div class="step-pane" id="step2">-->
 													<div id="checkout-form" class="smart-form" >
 													<legend class="hide">Conditions of service</legend>
 														<fieldset class="hide">
@@ -159,14 +159,14 @@
 																		placeholder="Surname">
 																	</label>
 																</section>
-																<section class="col col-4">
+																<section class="hide col col-4">
 																	<label class="input"> <i
 																		class="icon-prepend fa fa-calendar"></i> <input
 																		required id="datepicker" type="text" name="nacimiento"
 																		placeholder="Birthdate" readonly="readonly">
 																	</label>
 																</section>
-															</div><div class="row">
+															</div><div class="hide row">
 																<section class="col col-4" id="key">
 																	<label id="key_" class="input"> <i
 																		class="icon-prepend fa fa-barcode"></i> <input
@@ -235,7 +235,7 @@
 															<section class="col col-6" style="text-align: justify">
 																[[profundidad]]</section>
 														</fieldset>
-														<fieldset>
+														<fieldset class="hide">
 															<legend>Beneficiary data</legend>
 															<div class="row">
 																<section class="col col-4">
@@ -257,7 +257,7 @@
 																</section>
 															</div>
 														</fieldset>
-														<fieldset>
+														<fieldset class="hide">
 															<legend>Affiliate address</legend>
 															<div id="dir" class="row">
 																<section class="col col-4">

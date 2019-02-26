@@ -1,18 +1,18 @@
 <?php
 $secure = isset($val) ? $val : false;
-$link_retorno = "http://mesadejuego.playerbitcoin.com";
+$link_retorno = "http://games.playerbitcoin.com";
 if (! $secure) {
     echo '<div class="col-md-6">
- <h4>ROBOT DETECTADO</h4>
+ <h4>ROBOT DETECTED</h4>
  </div><script>window.location.href="/";</script>';
     exit();
 }
 
-$datos = isset($_POST) && sizeof($_POST) > 7 ? $_POST : false;
+$datos = isset($_POST) && sizeof($_POST) > 6 ? $_POST : false;
 
 if (! $datos) {
     echo '<div class="col-md-6">
-  <h4>Intente de nuevo</h4>
+  <h4>ERROR, Please confirm data & try again.</h4>
   </div><script>window.location.href="/";</script>';
     exit();
 }
@@ -28,9 +28,9 @@ $isRepeated = newQuery($db,$query);
 
 if ($isRepeated) {
     echo '<div class="col-md-6">
-  <h4>El Email ingresado ya esta registrado.</h4>
-     <p>Si desea Iniciar Sesion con esta cuenta 
-           <a href="'.$link_retorno.'">Haz Click Aqui</a>.</p>
+  <h4> Email already exists in another acoount.</h4>
+     <p>If you want to log in on this email 
+           <a href="'.$link_retorno.'">Push Here</a>.</p>
   </div><script>setTimeout (\'window.location.href="'.$link_retorno.'"\', 5000);</script>';
     terminar(1);
 }
@@ -41,8 +41,8 @@ $afilia = $registro->crearUsuario();
 
 if(!$afilia){
         echo '<div class="col-md-6">
-  <h4>ABORTADO, El proceso no pudo completarse.</h4>
-  <p>Por favor, intente de nuevo y/o verifique la informacion proporcionada.</p>
+  <h4>ABORTED, Registration not finished.</h4>
+  <p>Please, Verify data & try again.</p>
   </div>';
         terminar(1);
 }

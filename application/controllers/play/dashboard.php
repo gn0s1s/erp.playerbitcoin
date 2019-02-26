@@ -303,60 +303,16 @@ class dashboard extends CI_Controller
         $getChart = $bitcoinCap->report();
         $chart = $bitcoinCap->getData();
 
-        $chartobj = "6,4,3,5,2,4,6,4,3,3,4,5,4,3,2,4,5,";
-        if($chart){
-            $chart = $chart["data"]["quotes"];
-            $chartobj = array();
-            $max_val = false;
-            $min_val = false;
-            foreach($chart as $key => $data){
-                $value = $data["quote"]["USD"]["close"];
-                if($key == 0){
-                    $min_val = $value;
-                    $max_val = $value;
-                }else if ($value > $min_val)
-                    $max_val = $value;
-                else if ($value < $max_val)
-                    $min_val = $value;
+        $chart_load = $this->getChartLine($chart);
 
-                array_push($chartobj, $value);
-                log_message('DEV',"chartData >> ".json_encode($data));
-            }
-
-            $middle = array_sum($chartobj)/sizeof($chartobj);
-            $min_val -= $middle;
-            $max_val -= $middle;
-            $min_val = round($min_val,2);
-            $max_val = round($max_val,2);
-
-            $chartobj = implode(",",$chartobj);
-        }
+        $chart_load = $this->getChartDygraph();
 
         $chart = ' <div class="col-xs-12">
-                            <div class="well padding-10">
-                                <h4 class="txt-color-teal">Balance
-                                <a href="javascript:void(0);"   class="pull-right txt-color-white">
-                                <i  class="fa fa-refresh"></i></a></h4>
-                                <br>
-                                <div class="sparkline"
-                                     data-sparkline-type="line"
-                                     data-fill-color="#e6f6f5"
-                                     data-sparkline-line-color="#0aa699"
-                                     data-sparkline-spotradius="5"
-                                     data-sparkline-width="100%"
-                                     data-sparkline-height="180px">'.$chartobj.'
-                                </div>
-                                <h4 class="air air-top-right padding-10 font-xl txt-color-teal">
-                                + '.$max_val .'<i class="fa fa-caret-up fa-lg"></i>
-                                    </small>
-                                </h4>
-                                <h5 class="air air-bottom-left padding-10 font-md text-danger">
-                                '.$min_val .'
-                                <i class="fa fa-caret-down fa-lg"></i>
-                                    </small>
-                                </h5>
+                            <div id="chart_load" class="well padding-10">'.
+                                $chart_load
+                               .'
                             </div>
-
+                
                         </div>';
 
 
@@ -364,62 +320,124 @@ class dashboard extends CI_Controller
         return str_replace($replace,$chart.' '.$replace.' class="hide"',$home);
     }
 
+
+    function getChartDygraph()
+    {
+        $chart_load = $this->getDataChart();
+        $chart= '<div id="bitcoin_chart" style="width:100%; height:300px;"></div>';
+
+        $chart_load= $chart.'<script> var data_bitcoin = "'.$chart_load.'";</script>';
+
+        return $chart_load;
+    }
+
+
+    private function read_file($file)
+    {
+        $lines = "";
+
+        $file_read = getcwd() . $file;
+
+        if(!file_exists($file_read))
+            return $lines;
+
+        $file = fopen($file_read, "r");
+        while (!feof($file)) {
+            $lines .= fgets($file) . "\\n";
+        }
+        fclose($file);
+        return $lines;
+    }
+
+
+
+    function getDataChart()
+    {
+        $chartdef = "20070101,46;51;56" . '\n' . "20070102,43;48;52" . '\n';
+        $chartlabel = "Date,Price (USD)" . '\n';
+
+        $historic = "/bk/bitcoin.txt";
+        $chartobj = $this->read_file($historic);
+        $chartobj = str_replace("\n", '\n', $chartobj);
+
+        $array_lines = explode('\n', $chartobj);
+        if (sizeof($array_lines) <= 1)
+            $chartobj = $chartdef;
+
+        $chart_load = $chartlabel . $chartobj;
+
+        $isLoad = isset($_GET['load']);
+        if($isLoad){
+            echo $chart_load;
+            log_message('DEV',"update chart =>> [[ $isLoad ]] \n $chart_load");
+        }
+
+        return $chart_load;
+    }
+
+
     private function setScripts(){
+
+        $file_read = "/bk/bitcoin.txt";
+
         return "<script src='/template/js/plugin/sparkline/jquery.sparkline.min.js'></script>
-<script data-pace-options='{ \"restartOnRequestAfter\": true }' src=\"/template/js/plugin/pace/pace.min.js\"></script>
+<script data-pace-options='{ \"restartOnRequestAfter\": true }' src='/template/js/plugin/pace/pace.min.js'></script>
 <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-<script src=\"http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js\"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js'></script>
 <script>
     if (!window.jQuery) {
         document.write('<script src=\"/template/js/libs/jquery-2.0.2.min.js\"><\/script>');
     }
 </script>
-<script src=\"http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js\"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'></script>
 <script>
     if (!window.jQuery.ui) {
         document.write('<script src=\"/template/js/libs/jquery-ui-1.10.3.min.js\"><\/script>');
     }
 </script>
 <!-- IMPORTANT: APP CONFIG -->
-<script src=\"/template/js/app.config.js\"></script>
+<script src='/template/js/app.config.js'></script>
 <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-<script src=\"/template/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js\"></script>
+<script src='/template/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js'></script>
 <!-- BOOTSTRAP JS -->
-<script src=\"/template/js/bootstrap/bootstrap.min.js\"></script>
+<script src='/template/js/bootstrap/bootstrap.min.js'></script>
 <!-- CUSTOM NOTIFICATION -->
-<script src=\"/template/js/notification/SmartNotification.min.js\"></script>
+<script src='/template/js/notification/SmartNotification.min.js'></script>
 <!-- JARVIS WIDGETS -->
-<script src=\"/template/js/smartwidgets/jarvis.widget.min.js\"></script>
+<script src='/template/js/smartwidgets/jarvis.widget.min.js'></script>
 <!-- EASY PIE CHARTS -->
-<script src=\"/template/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js\"></script>
+<script src='/template/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js'></script>
 <!-- SPARKLINES -->
-<script src=\"/template/js/plugin/sparkline/jquery.sparkline.min.js\"></script>
+<script src='/template/js/plugin/sparkline/jquery.sparkline.min.js'></script>
 <!-- JQUERY VALIDATE -->
-<script src=\"/template/js/plugin/jquery-validate/jquery.validate.min.js\"></script>
+<script src='/template/js/plugin/jquery-validate/jquery.validate.min.js'></script>
 <!-- JQUERY MASKED INPUT -->
-<script src=\"/template/js/plugin/masked-input/jquery.maskedinput.min.js\"></script>
+<script src='/template/js/plugin/masked-input/jquery.maskedinput.min.js'></script>
 <!-- JQUERY SELECT2 INPUT -->
-<script src=\"/template/js/plugin/select2/select2.min.js\"></script>
+<script src='/template/js/plugin/select2/select2.min.js'></script>
 <!-- JQUERY UI + Bootstrap Slider -->
-<script src=\"/template/js/plugin/bootstrap-slider/bootstrap-slider.min.js\"></script>
+<script src='/template/js/plugin/bootstrap-slider/bootstrap-slider.min.js'></script>
 <!-- browser msie issue fix -->
-<script src=\"/template/js/plugin/msie-fix/jquery.mb.browser.min.js\"></script>
+<script src='/template/js/plugin/msie-fix/jquery.mb.browser.min.js'></script>
 <!-- FastClick: For mobile devices -->
-<script src=\"/template/js/plugin/fastclick/fastclick.min.js\"></script>
-<script src=\"/template/js/demo.min.js\"></script>
+<script src='/template/js/plugin/fastclick/fastclick.min.js'></script>
+<script src='/template/js/demo.min.js'></script>
 <!-- MAIN APP JS FILE -->
-<script src=\"/template/js/app.min.js\"></script>
+<script src='/template/js/app.min.js'></script>
 <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
 <!-- Voice command : plugin -->
-<script src=\"/template/js/speech/voicecommand.min.js\"></script>
-<script type=\"text/javascript\">
+<script src='/template/js/speech/voicecommand.min.js'></script>
+<script type='text/javascript'>
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
         pageSetUp();
     })
 </script>
+<script src='/template/js/plugin/dygraphs/demo-data.min.js'></script>
+		<!-- DYGRAPH -->
+		<script src='/template/js/plugin/dygraphs/dygraph-combined.min.js'></script>
 <!-- Your GOOGLE ANALYTICS CODE Below -->
-<script type=\"text/javascript\">
+<script type='text/javascript'>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
     _gaq.push(['_trackPageview']);
@@ -428,10 +446,46 @@ class dashboard extends CI_Controller
         var ga = document.createElement('script');
         ga.type = 'text/javascript';
         ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var isSSL = 'https:' == document.location.protocol ? 'https://ssl' : 'http://www';
+        ga.src = isSSL + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(ga, s);
     })();
+    
+    
+var g1 = new Dygraph(document.getElementById(\"bitcoin_chart\"), data_bitcoin, {
+					customBars : true,
+					title : \"CoinmarketCap BTC to USD Balance\",
+					ylabel : \"USD for 1 BTC\",
+					legend : \"always\",
+					labelsDivStyles : {
+						\"textAlign\" : \"right\"
+					},
+					showRangeSelector : true
+				});
+
+setInterval(function() {
+        getDataChart();
+        
+      }, 60000);
+
+function getDataChart(){
+    
+    $.ajax({
+		type : 'POST',
+		url : '/play/dashboard/getDataChart?load=1',
+		data : {},
+	}).done(function(msg) {		 
+	    var data = msg;        
+        if(data){    
+            console.log('chart load :: '+data);       
+            // g1.updateOptions( { 'file': data+'' } );
+            console.log('chart updated');
+        }          
+	}); 
+    
+    return data_bitcoin;
+}
 
 </script>
 ";
@@ -478,5 +532,69 @@ class dashboard extends CI_Controller
         return $home;
 
     }
+
+    private function getChartLine($chart)
+    {
+        $chartobj = "6,4,3,5,2,4,6,4,3,3,4,5,4,3,2,4,5,";
+        $Xval = "6,4,7,8,4,3,2,2,5,6,7,4,1,5,7,9,9,8,7,6";
+        $Yval = "4,1,5,7,9,9,8,7,6,6,4,7,8,4,3,2,2,5,6,7";
+
+        if ($chart) {
+            $chart = $chart["data"]["quotes"];
+            $chartobj = array();
+            $max_val = false;
+            $min_val = false;
+            foreach ($chart as $key => $data) {
+                $value = $data["quote"]["USD"]["close"];
+                if ($key == 0) {
+                    $min_val = $value;
+                    $max_val = $value;
+                } else if ($value > $min_val)
+                    $max_val = $value;
+                else if ($value < $max_val)
+                    $min_val = $value;
+
+                array_push($chartobj, $value);
+                log_message('DEV', "chartLine >> " . json_encode($data));
+            }
+
+            $middle = array_sum($chartobj) / sizeof($chartobj);
+            $min_val -= $middle;
+            $max_val -= $middle;
+            $min_val = round($min_val, 2);
+            $max_val = round($max_val, 2);
+
+            $chartobj = implode(",", $chartobj);
+        }
+
+        $chart_load = '<div id="bitcoin_line" class="hide">
+                                    <h4 class="txt-color-teal">Balance
+                                    <a href="javascript:void(0);"   class="pull-right txt-color-white">
+                                    <i  class="fa fa-refresh"></i></a></h4>
+                                    <br>
+                                    <div class="sparkline"
+                                         data-sparkline-type="line"
+                                         data-fill-color="#e6f6f5"
+                                         data-sparkline-line-color="#0aa699"
+                                         data-sparkline-spotradius="5"
+                                         data-sparkline-width="100%"
+                                         data-sparkline-height="180px"
+                                         data-sparkline-line-val="[' . $Xval . ']"
+                                         data-sparkline-bar-val="[' . $Yval . ']"
+                                         >' . $chartobj . '
+                                    </div>
+                                    <h4 class="air air-top-right padding-10 font-xl txt-color-teal">
+                                    + ' . $max_val . '<i class="fa fa-caret-up fa-lg"></i>
+                                        </small>
+                                    </h4>
+                                    <h5 class="air air-bottom-left padding-10 font-md text-danger">
+                                    ' . $min_val . '
+                                    <i class="fa fa-caret-down fa-lg"></i>
+                                        </small>
+                                    </h5> 
+                                </div>';
+        return $chart_load;
+    }
+
 
 }

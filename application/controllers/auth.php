@@ -57,9 +57,37 @@ class Auth extends CI_Controller
 		}
 	}
 
-	function reset_view(){
-	
-		$this->db->query('drop view items');
+    public function getSchema()
+    {
+        $q = $this->db->query("select database() db");
+        $q = $q->result();
+        $db = $q[0]->db;
+        return $db;
+    }
+
+    public function getInfoSchema($table,$type = "TABLES",$where = "")
+    {
+        $query = "SELECT * FROM information_schema.$type
+					WHERE table_name like '$table' $where";
+
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
+    }
+
+    function reset_view(){
+
+        #$this->db->query('drop view if exists items');
+
+        $db = $this->getSchema();
+
+        $type = "VIEWS";
+        $table = "items";
+        $where = "and table_schema like '$db'";
+        $view = $this->getInfoSchema($table,$type,$where);
+
+        if($view)
+            return true;
 		
 		$this->db->query("CREATE VIEW items AS
     SELECT 

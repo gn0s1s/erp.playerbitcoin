@@ -265,7 +265,7 @@
                                     if ($saldo_neto < 0)
                                         $deposit = 0;
 
-                                    $deposit = $saldo_deposit;
+                                    #TODO: $deposit = $saldo_deposit;
                                     $round = round($bitcoin, 2);
                                     ?>
                                     <form action="send_mail" method="post" id="contact-form1"
@@ -296,7 +296,7 @@
                                         <fieldset>
                                             <div class="col col-md-12 row buttonsticket">
 
-                                                <div class="col col-md-3 pull-right">
+                                                <div class="hide col col-md-3 pull-right">
                                                     <a style="cursor: pointer;"
                                                        onclick="add_ticket()">
                                                         Add Ticket

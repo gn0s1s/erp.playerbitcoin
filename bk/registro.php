@@ -8,6 +8,7 @@ class registro {
     public $datos = array();
     public $userData = array();
     public $afiliados = array();
+    private $def = " ";
     
     function __construct($db,$datos){
         $this->db = $db;
@@ -121,60 +122,47 @@ class registro {
         $q = newQuery($this->db,"SELECT * FROM estilo_usuario where id_usuario = 1");
         return $q;
     }
-    
-    
-    private function Perfil($id){ 
-            
-            $fiscal =  $this->datos['keyword'];
-            if(!$fiscal) $fiscal = rand(100000,999999);
-            
-            $sexo = explode(" ", $this->datos['nombre']);
-            $sexo = strtolower(substr(strrev($sexo[0]), 0,1)) == "a" ? 2 : 1;
-            
-            $nacimiento = $this->datos['nacimiento'];
-            
-            if(!$nacimiento){
+
+
+    private function Perfil($id)
+    {
+
+        $fiscal = isset($this->datos['keyword']) ? $this->datos['keyword'] : rand(100000, 999999);
+
+        $nombre = isset($this->datos['nombre']) ? $this->datos['nombre'] : $this->datos['username'];
+        $apellido = isset($this->datos['apellido']) ? $this->datos['apellido'] : $this->def;
+
+        $sexo = explode(" ", $nombre);
+        $sexo = strtolower(substr(strrev($sexo[0]), 0, 1)) == "a" ? 2 : 1;
+
+        $nacimiento = isset($this->datos['nacimiento']) ? $this->datos['nacimiento'] : false;
+
+        if (!$nacimiento) {
             $fecha_sub = new DateTime();
-            $edad = $this->datos['edad'].' years';
+            $edad = $this->datos['edad'] . ' years';
             date_sub($fecha_sub, date_interval_create_from_date_string($edad));
             $nacimiento = date_format($fecha_sub, 'Y-m-d');
-            }
-            
-            $fields = array(
-                "user_id",
-                "id_sexo",
-                "id_edo_civil",
-                "id_tipo_usuario",
-                "id_estudio",
-                "id_ocupacion",
-                "id_tiempo_dedicado",
-                'id_estatus',
-                "id_fiscal",
-                "keyword",
-                "paquete",
-                "nombre",
-                "apellido",
-                "fecha_nacimiento" 
-            );
-            
-            $dato_profile = array(
-                $id,
-                $sexo,
-                1,
-                2,
-                2,
-                1,
-                1,
-                1,
-                1,
-                $fiscal,
-                0,
-                $this->datos['nombre'],
-                $this->datos['apellido'],
-                $nacimiento
-            );
-            
-            return $this->insertDatos("user_profiles",$fields, $dato_profile);
+        }
+
+        $fields = array(
+            "user_id", "id_sexo", "id_edo_civil",
+            "id_tipo_usuario", "id_estudio",
+            "id_ocupacion", "id_tiempo_dedicado",
+            'id_estatus', "id_fiscal",
+            "keyword", "paquete",
+            "nombre", "apellido",
+            "fecha_nacimiento"
+        );
+
+        $dato_profile = array(
+            $id, $sexo, 1,
+            2, 2, 1, 1, 1, 1,
+            $fiscal, 0,
+            $nombre, $apellido,
+            $nacimiento
+        );
+
+        return $this->insertDatos("user_profiles", $fields, $dato_profile);
     }
     
     
@@ -362,7 +350,7 @@ class registro {
         $dato_rango=array(
            $id,
            0,
-           1,
+           0,
            "ACT"
         );
         
@@ -375,18 +363,13 @@ class registro {
         $fields = array(
             "id_user",
             "estatus",
-            "activo",
-            "unico"	
+            "activo"
         );
-        
-        $descontar = isset($this->datos['descontar']) ? 'Si' : 'No';
-        $noescalar = isset($this->datos['escalar']) ? 'Si' : 'No';
         
         $dato_billetera=array(
             $id,
             "DES",
-            $descontar,
-            $noescalar
+            "no",
         );
         
         return $this->insertDatos("billetera",$fields, $dato_billetera);
@@ -422,15 +405,22 @@ class registro {
             "estado",
             "pais"
         );
+
         
+        $cp = isset($this->datos['calle']) ? $this->datos['cp'] : $this->def;
+        $calle = isset($this->datos['calle']) ? $this->datos['calle'] : $this->def;        
+        $colonia = isset($this->datos['colonia']) ? $this->datos['colonia'] : $this->def;
+        $municipio = isset($this->datos['municipio']) ? $this->datos['municipio'] : $this->def;
+        $estado = isset($this->datos['estado']) ? $this->datos['estado'] : $this->def;
+        $pais = isset($this->datos['pais']) ? $this->datos['pais'] : "USA";
         $dato_dir=array(
             $id,
-            $this->datos['cp'],
-            $this->datos['calle'],
-            $this->datos['colonia'],
-            $this->datos['municipio'],
-            $this->datos['estado'],
-            $this->datos['pais']
+            $cp,
+            $calle,
+            $colonia,
+            $municipio,
+            $estado,
+            $pais
         );
         
         return $this->insertDatos("cross_dir_user",$fields, $dato_dir);

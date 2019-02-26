@@ -230,7 +230,8 @@
 
 	function &get_instance()
 	{
-		return CI_Controller::get_instance();
+        $CI_Controller = CI_Controller::get_instance();
+        return $CI_Controller;
 	}
 
 

@@ -717,13 +717,20 @@ class model_afiliado extends CI_Model{
 	}
 	
 	function ComprasUsuario($id){
-		$q = $this->db->query("SELECT
-									sum(cvm.costo_unidad*cvm.cantidad) as compras,
-									sum(cvm.costo_total-(cvm.impuesto_unidad*cvm.cantidad)) as comprast 
-								FROM cross_venta_mercancia cvm , venta v
-								where v.id_user=".$id."
-								and cvm.id_venta=v.id_venta
-								and v.id_estatus='ACT'");
+
+	    $psr = "AND i.categoria = 2";
+
+        $query = "SELECT 
+                          sum(cvm.costo_unidad * cvm.cantidad) as compras,
+                           sum(cvm.costo_total - (cvm.impuesto_unidad * cvm.cantidad)) as comprast
+                    FROM cross_venta_mercancia cvm,
+                         venta v,items i
+                    where v.id_user = $id
+                      and cvm.id_venta = v.id_venta
+                      and i.id = cvm.id_mercancia
+                      $psr
+                      and v.id_estatus = 'ACT'";
+        $q = $this->db->query($query);
 		$costos = $q->result();
 		return $costos;
 	}
