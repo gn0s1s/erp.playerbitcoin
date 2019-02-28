@@ -2160,6 +2160,7 @@ class playerbonos extends CI_Model
         $descripcion = "NEW TICKET(S) : $list_tickets";
         $this->add_sub_billetera("SUB",$id,$tarifa, $descripcion);
 
+        date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');
         $nextTime .= " 23:59:59";
 
@@ -3180,7 +3181,7 @@ class playerbonos extends CI_Model
         return $date;
     }
 
-    private function getNextTime($date = 'now', $time = 'month')
+    function getNextTime($date = 'now', $time = 'month')
     {
         $fecha_sub = new DateTime($date);
         date_add($fecha_sub, date_interval_create_from_date_string("1 $time"));
@@ -3340,11 +3341,16 @@ class playerbonos extends CI_Model
 
     function getBitcoinValue()
     {
-        $bitcoin = $this->bitcoinCap->getLatest();
+        $this->bitcoinCap->getLatest();
         $bitcoin = $this->bitcoinCap->getData();
-        $bitcoin_value = 1000;
-        if(isset($bitcoin["data"]))
-            $bitcoin_value = $bitcoin["data"][0]["quote"]["USD"]["price"];
+
+        if(!isset($bitcoin["data"])){
+            $bitcoinCap = new $this->model_coinmarketcap(1);
+            $bitcoinCap->getLatest();
+            $bitcoin= $bitcoinCap->getData();
+        }
+
+        $bitcoin_value = $bitcoin["data"][0]["quote"]["USD"]["price"];
         log_message('DEV',"bitcoin----> ".json_encode($bitcoin_value));
 
         return $bitcoin_value;

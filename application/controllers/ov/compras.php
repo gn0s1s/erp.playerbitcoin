@@ -3783,6 +3783,10 @@ function index()
             $concepto = isset($mercancia[$i]->concepto) ? $mercancia[$i]->concepto : false;
             $isVariable = $categoria == 3;
 
+            $nombre_boton = "Pay";
+            if($categoria == 3)
+            	$nombre_boton = "Deposit";
+
             
             if( !$isVariable)
                 $costo = "<span>$ ". $mercancia[$i]->costo."</span>";
@@ -3822,7 +3826,7 @@ function index()
 						<a style="font-size: 1.7rem;" class="btn btn-'.$btn.'" onclick="'.$boton.'"> 
 						<span class="add2cart">
 						<i class="glyphicon glyphicon-shopping-cart"> 
-						</i> Deposit </span> </a> </div>
+						</i> '.$nombre_boton.' </span> </a> </div>
 				 	</div>
 				</div>
 				';

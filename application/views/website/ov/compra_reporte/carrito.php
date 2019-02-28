@@ -232,7 +232,9 @@
 								<h3><?= $red->nombre;?></h3>
 								<div class="dropdown">
 										<?php foreach ($grupos as $grupo) {
-												if ($red->nombre == $grupo->red ){
+                                            $isCategoria = $red->nombre == $grupo->red;
+                                            $isCategoria &= $grupo->id_grupo != 4;
+												if ($isCategoria ){
 													echo '<a id="dLabel" style="background:'.$style[0]->btn_1_color.' !important" role="button" data-toggle="dropdown" class="btn btn-primary btn-block" data-target="#" 
 														onclick="show_todos_categoria('.$grupo->id_grupo.');" class="btn btn-block">'.$grupo->descripcion.'</a>';
 												} 

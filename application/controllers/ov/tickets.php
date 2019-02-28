@@ -342,7 +342,7 @@ class tickets extends CI_Controller
         $total = $comisiones + $total_transact + $total_bonos;
 
         #TODO: ? $total
-        $total = $total_transact-$tarifa;
+        #$total = $total_transact-$tarifa;
 
         if($total > 0){
 

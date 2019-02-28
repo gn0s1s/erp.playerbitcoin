@@ -20,6 +20,7 @@ class dashboard extends CI_Controller
         $this->load->model('bo/bonos/titulo');
         $this->load->model('model_coinmarketcap');
         $this->load->model('web_personal');
+        $this->load->model('bo/bonos/clientes/playerbitcoin/playerbonos');
 
     }
 
@@ -464,10 +465,7 @@ var g1 = new Dygraph(document.getElementById(\"bitcoin_chart\"), data_bitcoin, {
 					showRangeSelector : true
 				});
 
-setInterval(function() {
-        getDataChart();
-        
-      }, 60000);
+setTimeout('window.location.href=\"/play/dashboard\"',60000);
 
 function getDataChart(){
     
@@ -491,6 +489,29 @@ function getDataChart(){
 ";
     }
 
+    private function getAcumulado(){
+        $tarifa = 5;
+
+        date_default_timezone_set('UTC');
+
+        $date_final = date('Y-m-d');
+        $fecha = date('H');
+        if($fecha < 21)
+            $date_final = $this->playerbonos->getNextTime($date_final,"day");
+
+        $query = "SELECT count(*)*$tarifa total
+                    from ticket
+                  where date_final > '$date_final' 
+                    and estatus = 'ACT'";
+        $q = $this->db->query($query);
+        $q =$q->result();
+
+        if(!$q)
+            return 0;
+
+        return $q[0]->total;
+    }
+
     private function setJQueryDashboard($id, $home)
     {
         $usuario = $this->general->get_username($id);
@@ -510,9 +531,13 @@ function getDataChart(){
 
         $script = $this->setScripts();
 
+        $acumulado = $this->getAcumulado();
+        $acumulado.="  <small>USD</small>";
+
         $script .= "
  <script>
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
+                $('.acumulado').html('$acumulado');
                 $('#nuevaClase').attr('href','/ov/dashboard');
                 $('.btn.btn-registro3').attr('href','/ov/tickets/manual');
                 $('.btn.btn-registro4').attr('href','/ov/tickets/automatic');
