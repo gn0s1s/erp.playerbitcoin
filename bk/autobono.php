@@ -10,8 +10,9 @@ class autobono
 	public $afiliados = array();
 	
 	public $db = array();
-	
-	function __construct($db){
+    private $bitcoinVal = 0;
+
+    function __construct($db){
 		$this->db = $db;
 	}
 
@@ -46,14 +47,14 @@ class autobono
 	/** principal **/
 	
 	public function calcular(){
-		
-		isPeriodo();
+
+		#TODO: isPeriodo();
 		
 		$usuario= new calculo($this->db);
-		$afiliados = $usuario->getUsuariosRed();
+		$afiliados = array(0 => array("id"=>2));#TODO: $usuario->getUsuariosRed();
 		
 		$reparticion= array();
-		
+        echo (json_encode($afiliados));
 		foreach ($afiliados as $afiliado){
 			
 			$afiliado = $afiliado["id"];
@@ -97,17 +98,23 @@ class autobono
 	}
 	
 	private function calcularBonos($id_usuario){
+
+		$bonos = array(array("id" => 1));#TODO: $this->getIDBonos();
 		
-		$bonos = $this->getIDBonos();
-		
-		$parametro = array("id_usuario" => $id_usuario, "fecha" => $this->getLastDay());
+		$parametro = array(
+		    "id_usuario" => $id_usuario,
+            "fecha" => $this->getLastDay()
+        );
 		
 		$repartido = array();
 		
 		foreach ($bonos as $bono){
 			$id_bono = $bono["id"];
-			$isActived = $this->isActived($id_usuario,$id_bono);
-			
+			$isActived = true;#TODO: $this->isActived($id_usuario,$id_bono);
+
+			if($id_bono == 1)
+			    $this->setBitcoinValue();
+
 			if($isActived){
 				$monto = $this->getValorBonoBy($id_bono, $parametro);
 				$repartir = $this->repartirBono($id_bono,$id_usuario,$monto);
@@ -245,7 +252,7 @@ class autobono
 		
 		$isActived = $this->isActivedAfiliado($id_usuario,$red,$fecha,$id_bono);
 		
-		$isScheduled = ($id_bono > 2)
+		$isScheduled = ($id_bono > 1)
 		? $this->isScheduled($id_usuario,$id_bono,$this->fechaFin) : true;
 		
 		echo "ID : $id_usuario -[$id_bono] PAGADO >> ".intval($isPaid)." | ACTIVO !! ".intval($isActived)." | AGENDADO :: ".intval($isScheduled)."\n";
@@ -656,7 +663,7 @@ class autobono
 			
 			case 1 :
 				
-				return $this->getValorBono($parametro);
+				return $this->getValorBonoBitcoin($parametro);
 				
 				break;
 				
@@ -668,26 +675,64 @@ class autobono
 		
 	}
 	
-	private function getValorBono($parametro){
+	private function getValorBonoBitcoin($parametro){
 		
 		$valores = $this->getBonoValorNiveles(1);
 		
 		$bono = $this->getBono(1);
-		$periodo = isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
+		$periodo = "DIA";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
 		
 		$fechaInicio=$this->getPeriodoFecha($periodo, "INI", $parametro["fecha"]);
 		$fechaFin=$this->getPeriodoFecha($periodo, "FIN", $parametro["fecha"]);
 		
 		$id_usuario = $parametro["id_usuario"];
 		
-		echo "between: $fechaInicio - $fechaFin";
+		echo "between: $fechaInicio - $fechaFin \n";
 		
-		$afiliados = $this->getAfiliados_A($id_usuario,1,$fechaInicio,$fechaFin);
-		
-		$monto = $this->getMonto_A ($id_usuario,$afiliados,$valores,$fechaInicio,$fechaFin);
-		
-		return $monto;
+		$isRange = $this->evalTicketsRange($id_usuario);
+
+		if($isRange)
+		    echo "GANADOR :: $id_usuario \n";
+
+		return $isRange;
 	}
+    function evalTicketsRange( $id, $ntwk = 1){
+
+        $query = "SELECT * FROM ticket WHERE user_id = $id 
+                    AND estatus = 'ACT'";
+
+        $q = array(array("amount"=>1002.6));#TODO: newQuery($this->db, $query);
+
+        if(!$q)
+            return false;
+
+        foreach ($q as $ticket){
+            $amount = $ticket["amount"];
+            $isTicket = $this->isTicketRange($amount);
+
+            if($isTicket)
+                return true;
+        }
+
+    }
+    function isTicketRange($value){
+
+        $bitcoin_value = $this->setBitcoinValue();
+
+        if(!$value)
+            return false;
+
+        $min_value = (int) $bitcoin_value/5;
+        $min_value *= 5;
+        $max_value = $min_value+5;
+
+        $valueMatches = $value < $max_value;
+        $valueMatches &= $min_value <= $value;
+
+        return $valueMatches;
+
+    }
+
 	
 	private function getAfiliados_A($id,$nivel,$fechaInicio,$fechaFin) {
 		
@@ -1121,12 +1166,12 @@ class autobono
 	/** complemento **/
 	
 	private function getLastDay() {
-	    
+
 	    $query = "SELECT
 					    DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY),
 					            '%Y-%m-%d') fecha";
 	    $q = newQuery($this->db,$query);
-	    $fecha = $q[1]["fecha"]." 23:59:59";
+	    $fecha = '2019-02-28'; #TODO: $q[1]["fecha"]." 23:59:59";
 	    return $fecha;
 	    
 	}
@@ -1259,6 +1304,29 @@ class autobono
 		$year->setDate($year->format('Y'), 12, 31);
 		return date_format($year, 'Y-m-d');
 	}
-	
-	
+
+    private function setBitcoinValue()
+    {
+        if($this->bitcoinVal > 0){
+            echo ("BITCOIN ALREADY CHARGED \n");
+            return $this->bitcoinVal;
+        }
+
+        $API = false;
+        $db = $this->db;
+        include(setDir()."/bk/bitcoin.php");
+
+        if(!$API){
+            $this->bitcoinVal = 0;
+            echo ("ERROR EN API COINMARKET \n");
+            return 0;
+        }
+
+        $this->bitcoinVal = $API->newHistorical();
+        echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
+        return $this->bitcoinVal;
+
+    }
+
+
 }

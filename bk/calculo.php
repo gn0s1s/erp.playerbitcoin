@@ -1124,7 +1124,7 @@ class calculo
 		return $this;
 	}
 	
-	public function getUsuariosRed($id_red  = 1) {
+	public function getUsuariosRed($id_red = 1) {
 		$q=newQuery($this->db,"SELECT
 				u.id,
 				u.username,
@@ -1134,14 +1134,11 @@ class calculo
 				a.lado
 				FROM
 				users u,
-				afiliar a,
-				red r
+				afiliar a
 				WHERE
 				u.id = a.id_afiliado
 				AND a.id_afiliado >= 2
 				AND a.id_red = $id_red
-				AND a.id_afiliado = r.id_usuario
-				AND r.estatus = 'ACT'
 				ORDER BY
 				u.id");
 		$datosAfiliado=$q;

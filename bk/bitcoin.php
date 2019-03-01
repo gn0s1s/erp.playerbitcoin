@@ -13,34 +13,45 @@ $val = md5(date('Y-m-d')."^".date('H:i:s').$code);
 $ruta = str_replace("/public_html", "/erp.playerbitcoin", getcwd());
 if(stripos($ruta,"/erp.playerbitcoin")===false)
     $ruta.="/erp.playerbitcoin";
+
 $link = $ruta.'/bk/dataset.php';
 
-require $link;
+$isLoaded = function_exists("setDir");
+if(!$isLoaded)
+    require $link;
 
-$API = new model_coinmarketcap($db,0);
+if(!isset($test))
+    $test = 0;
+
+if($API)
+    exit();
+
+$API = new model_coinmarketcap($db, $test);
 
 $function = isset($argv[1]) ? $argv[1] : false;
 
-if (! $function || ! method_exists($API,$function)) {
+if($isLoaded)
+    echo "CONMARKETCAP INVOICE\n";
+else if (! $function || ! method_exists($API,$function)) {
     echo "Process not defined  \n";
     exit();
+}else{
+    $params =  sizeof($argv) > 1 ? $argv : "";
+    if($params != ""){
+        unset($params[0]);
+        unset($params[1]);
+
+        if(sizeof($params)>0)
+            $params = "'".implode("','",$params)."'";
+        else
+            $params = "";
+    }
+
+    $function_exec = "\$API->$function($params);";
+    echo $function_exec." \n";
+
+    eval($function_exec);
 }
-
-$params =  sizeof($argv) > 1 ? $argv : "";
-if($params != ""){
-    unset($params[0]);
-    unset($params[1]);
-
-    if(sizeof($params)>0)
-        $params = "'".implode("','",$params)."'";
-    else
-        $params = "";
-}
-
-$function_exec = "\$API->$function($params);";
-echo $function_exec." \n";
-
-eval($function_exec);
 
 class model_coinmarketcap 
 {
@@ -95,6 +106,8 @@ class model_coinmarketcap
         $update.=";$bitcoin_value";
         $update.=";$bitcoin_value";
         $this->write_file($update,"bitcoin.txt");
+
+        return $bitcoin_value;
     }
 
     public function report($start = "2018-12-01", $end = "2018-12-31")

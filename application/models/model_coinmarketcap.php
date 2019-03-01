@@ -19,7 +19,7 @@ class model_coinmarketcap extends CI_Model
         parent::__construct();
         $get = $this->getCoinmarket();
         if($test===false)
-            $test = $get->test;
+            $test = isset($get->test) ? $get->test : 1;
 
         parent::__construct();
         $this->timeapi = date('Y-m-d H:i:s');
@@ -143,7 +143,8 @@ class model_coinmarketcap extends CI_Model
     public function getApiKeyPro()
     {
         $get = $this->getCoinmarket();
-        $this->setApiKeyPro($get->apikey);
+        $apikey = $testkey = isset($get->apikey) ? $get->apikey : 0;
+        $this->setApiKeyPro($apikey);
         return $this->apiKey_pro;
     }
 
@@ -161,7 +162,8 @@ class model_coinmarketcap extends CI_Model
     public function getApiKeySandbox()
     {
         $get = $this->getCoinmarket();
-        $this->setApiKeySandbox($get->testkey);
+        $testkey = isset($get->testkey) ? $get->testkey : 0;
+        $this->setApiKeySandbox($testkey);
         return $this->apiKey_sandbox;
     }
 

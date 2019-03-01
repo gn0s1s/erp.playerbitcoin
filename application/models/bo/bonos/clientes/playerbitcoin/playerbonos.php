@@ -16,7 +16,8 @@ class playerbonos extends CI_Model
         $this->load->model('/bo/bonos/afiliado');
         $this->load->model('/model_coinmarketcap');
         $api = $this->getCoinmarket();
-        $this->bitcoinCap = new $this->model_coinmarketcap($api->test);
+        $test = isset($api->test) ? $api->test : 1;
+        $this->bitcoinCap = new $this->model_coinmarketcap($test);
     }
 
     function getTemp()

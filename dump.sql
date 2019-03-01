@@ -1,11 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `erpplayerbitcoin` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_spanish_ci */;
-USE `erpplayerbitcoin`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
---
--- Host: localhost    Database: erpplayerbitcoin
--- ------------------------------------------------------
--- Server version	5.7.14
-
 
 
 --

@@ -3,8 +3,8 @@
 date_default_timezone_set('UTC');#city
 echo "Leyendo datos..."; 
 	
-	#function setDir($base="/var/www"){	
-	function setDir_($base="/home/playerbitcoin/"){
+	function setDir($base="F:/wamp64/www/"){
+	#function setDir_($base="/home/playerbitcoin/"){
 		$project="erp.playerbitcoin"; #"erp.clientes"
 		#$project.="/rtm";#"erp.multinivel"
 		return $base.$project;
@@ -21,7 +21,7 @@ echo "Leyendo datos...";
 	
 $code = "->networksoft";#code
 $val = md5(date('Y-m-d')."^".date('H:i:s').$code);    
-	 require_once(setDir_()."/bk/dataset.php");
+	 require_once(setDir()."/bk/dataset.php");
 echo "
 >OK
 Cargando base de datos...";
@@ -42,42 +42,27 @@ Cargando base de datos...";
 	fclose($fp2);
 		
 	include(setDir()."/bk/db_access.php");
-echo "
->OK
-Creando dump...";
+echo "\n>OK\nCreando dump...";
 	$command = setCommand($db,"bk_daily.sh");
-	exec($command);
-echo "
->OK
-!Dump creado con exito!
-";
+	#exec("sh ".$command);
+echo "\n>OK\n!Dump creado con exito!\n";
 
 echo "\n\n>PROCESOS 1> AUTOBONO DIARIO\n";
-#include(setDir()."/bk/autobono.php");
+include(setDir()."/bk/autobono.php");
 echo "\n\nCargando Datos\n";
-#$autobono = new autobono($db);
+$autobono = new autobono($db);
 echo "\n>OK\nProcesando Datos\n";
-#$afiliados = $autobono->calcular();
+$afiliados = $autobono->calcular();
 echo "\n>OK\n\n!PROCESO COMPLETADO!\n";	
 
-echo "
+exit();
 
-PROCESOS 2> Compresion dinamica:
-";
+echo "\n\nPROCESOS 2> Compresion dinamica:\n";
 #include(setDir()."/bk/autored.php");
 
-echo "
->OK
-Procesando Datos
-";
+echo "\n>OK\nProcesando Datos\n";
 #$autored = new autored($db);
-echo "
->OK
-Realizando Acciones
-";
+echo "\n>OK\nRealizando Acciones\n";
 #$autored->procesar();	
-echo "
->OK
-!Proceso realizado con exito
-";
+echo "\n>OK\n!Proceso realizado con exito\n";
 	

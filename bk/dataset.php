@@ -8,7 +8,7 @@ if (! $secure) {
     exit();
 }
 
-function setDir(){
+function setDir_(){
    $dir = str_replace("public_html", "erp.playerbitcoin", getcwd());
    $dir = str_replace("/bk", "", $dir);
    if(stripos($dir,"/erp.playerbitcoin")===false)
@@ -71,7 +71,8 @@ function newQuery($db,$data = "")
 {
     $command = setCommand($db, "query.sh", $data);
     log_message(">>> ".$data);
-    $query = shell_exec($command);
+    $cmd = "sh " . $command;
+    $query = shell_exec($cmd);
 
     $datos = explode("\n", $query);
     
