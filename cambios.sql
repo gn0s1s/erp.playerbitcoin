@@ -13,12 +13,12 @@ VALUES (1, 3, 1, 'RED', 0),
 truncate bono;
 truncate cat_bono_condicion;
 truncate cat_bono_valor_nivel;
-
+/*
 ALTER TABLE cat_bono_condicion
   MODIFY id int(11) NOT NULL auto_increment;
 ALTER TABLE cat_bono_valor_nivel
   MODIFY id int(11) NOT NULL auto_increment;
-
+*/
 INSERT INTO `bono`
     (`nombre`, `descripcion`, `inicio`, `fin`,
      `mes_desde_afiliacion`, `mes_desde_activacion`,
@@ -37,4 +37,4 @@ VALUES ('1', '0', '21', 'RED', 'ASC'),
 INSERT INTO `cat_bono_condicion`
     (`id_bono`, `id_rango`, `id_tipo_rango`, `condicion_rango`,
      `id_red`, `condicion1`, `condicion2`, `calificado`)
-VALUES ('1', '1', '3', '1', '1', '2', 0, 'REC');
+VALUES ('1', '1', '3', '1', '1', '2', 9, 'REC');

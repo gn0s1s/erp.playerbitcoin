@@ -1125,6 +1125,9 @@ class calculo
 	}
 	
 	public function getUsuariosRed($id_red = 1) {
+
+        #TODO: array(0 => array("id"=>2));
+
 		$q=newQuery($this->db,"SELECT
 				u.id,
 				u.username,
@@ -1142,6 +1145,8 @@ class calculo
 				ORDER BY
 				u.id");
 		$datosAfiliado=$q;
+
+        echo (json_encode($datosAfiliado));
 		
 		return $datosAfiliado;
 	}

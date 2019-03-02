@@ -98,8 +98,10 @@ class model_coinmarketcap
         $json = $this->getLatest();
         $data = $this->getData();
         $bitcoin_value = 1000;
-        if(isset($data["data"]))
-            $bitcoin_value = $data["data"][0]["quote"]["USD"]["price"];
+        if(!isset($data["data"]))
+            return false;
+
+        $bitcoin_value = $data["data"][0]["quote"]["USD"]["price"];
         echo ("bitcoin----> ".json_encode($bitcoin_value)."\n");
 
         $update = date('Y-m-d H:i:s').",".$bitcoin_value;

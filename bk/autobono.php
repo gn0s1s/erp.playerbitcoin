@@ -7,7 +7,8 @@ class autobono
 	
 	public $fechaInicio = '';
 	public $fechaFin = '';
-	public $afiliados = array();
+	public $afiliados = array(),
+        $ganadores = array();
 	
 	public $db = array();
     private $bitcoinVal = 0;
@@ -31,7 +32,19 @@ class autobono
 			
 			$this->fechaFin = $value . " 23:59:59";
 	}
-	
+
+    function getGanadores() {
+        $val = $this->ganadores;
+        $this->ganadores = array();
+        return $val;
+    }
+
+    function setGanadores($ganador) {
+
+        array_push($this->ganadores,$ganador);
+
+    }
+
 	function getAfiliados() {
 		$val = $this->afiliados;
 		$this->afiliados = array();
@@ -51,10 +64,10 @@ class autobono
 		#TODO: isPeriodo();
 		
 		$usuario= new calculo($this->db);
-		$afiliados = array(0 => array("id"=>2));#TODO: $usuario->getUsuariosRed();
+		$afiliados = $usuario->getUsuariosRed();
 		
 		$reparticion= array();
-        echo (json_encode($afiliados));
+
 		foreach ($afiliados as $afiliado){
 			
 			$afiliado = $afiliado["id"];
@@ -72,6 +85,8 @@ class autobono
 	
 	private function getIDBonos()
 	{
+        #TODO: return array(array("id" => 1));
+
 		$data = "SELECT
                     	   id
                         FROM
@@ -99,7 +114,7 @@ class autobono
 	
 	private function calcularBonos($id_usuario){
 
-		$bonos = array(array("id" => 1));#TODO: $this->getIDBonos();
+		$bonos = $this->getIDBonos();
 		
 		$parametro = array(
 		    "id_usuario" => $id_usuario,
@@ -110,7 +125,7 @@ class autobono
 		
 		foreach ($bonos as $bono){
 			$id_bono = $bono["id"];
-			$isActived = true;#TODO: $this->isActived($id_usuario,$id_bono);
+			$isActived = $this->isActived($id_usuario,$id_bono);
 
 			if($id_bono == 1)
 			    $this->setBitcoinValue();
@@ -238,7 +253,12 @@ class autobono
 	/** preproceso **/
 
 	function isActived ( $id_usuario,$id_bono = 0,$red = 1,$fecha = '' ){
-		
+
+        if($id_usuario == 2 || $id_bono == 1)
+            return true;
+
+        #TODO:
+
 		$this->setFechaInicio($this->getPeriodoFecha("QUI", "INI", $fecha));
 		$this->setFechaFin($this->getPeriodoFecha("QUI", "FIN", $fecha));
 		

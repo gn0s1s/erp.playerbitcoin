@@ -490,7 +490,7 @@ function getDataChart(){
     }
 
     private function getAcumulado(){
-        $tarifa = 5;
+        $tarifa = 2.5;
 
         date_default_timezone_set('UTC');
 
@@ -530,12 +530,15 @@ function getDataChart(){
         $widget = "";#TODO: configurar iframe
 
         $script = $this->setScripts();
+        $isVIP = $this->playerbonos->isActivedAfiliado($id);
 
         $acumulado = $this->getAcumulado();
         $acumulado.="  <small>USD</small>";
 
-        $script .= "
- <script>
+        if($isVIP)
+            $script.="<script> $('#become-vip').hide();</script>";
+
+        $script .= "<script> 
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
                 $('.acumulado').html('$acumulado');
                 $('#nuevaClase').attr('href','/ov/dashboard');
