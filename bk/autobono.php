@@ -79,10 +79,47 @@ class autobono
 			$this->activos_procedure($afiliado);
 		}
 		
+		$this->repartirGanadores();
+
 		return $reparticion;
 		
 	}
 	
+	private function repartirGanadores()
+	{
+		$ganadores = $this->getGanadores();
+
+		$valor = $this->getAcumulado();
+		$valor/=sizeof($ganadores);
+
+		if($valor <= 0)
+			return false;
+		
+		foreach ($ganadores as $key => $ganador) 
+			$this->repartirBono(1,$ganador,$valor);
+
+
+		return true;	
+
+	}
+	
+	private function getAcumulado(){
+        $tarifa = 2.5;
+
+        $date_final = $this->getLastDay();
+
+        $query = "SELECT count(*)*$tarifa total
+                    from ticket
+                  where date_final > '$date_final' 
+                    and estatus = 'ACT'";
+        $q = $this->newQuery($this->db,$query);
+
+        if(!$q)
+            return 0;
+
+        return $q[1]["total"];
+    }
+
 	private function getIDBonos()
 	{
         #TODO: return array(array("id" => 1));
@@ -144,6 +181,10 @@ class autobono
 	}
 	
 	private function repartirBono($id_bono, $id_usuario, $valor) {
+
+		if($id_bono == 1 && $valor <= 0)
+			return false;
+
 		$fechaInicio = $this->getPeriodoFecha ( "QUI", "INI", '' );
 		$fechaFin = $this->getPeriodoFecha ( "QUI", "FIN", '' );
 		
@@ -711,10 +752,12 @@ class autobono
 		
 		$isRange = $this->evalTicketsRange($id_usuario);
 
-		if($isRange)
+		if($isRange){
+			$this->setGanadores($id_usuario);
 		    echo "GANADOR :: $id_usuario \n";
+		}
 
-		return $isRange;
+		return 0;
 	}
     function evalTicketsRange( $id, $ntwk = 1){
 
@@ -1191,7 +1234,7 @@ class autobono
 					    DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY),
 					            '%Y-%m-%d') fecha";
 	    $q = newQuery($this->db,$query);
-	    $fecha = '2019-02-28'; #TODO: $q[1]["fecha"]." 23:59:59";
+	    $fecha = $q[1]["fecha"]." 23:59:59"; #TODO: '2019-02-28';
 	    return $fecha;
 	    
 	}

@@ -4,8 +4,8 @@ date_default_timezone_set('UTC');#city
 echo "Leyendo datos..."; 
 	
 	#function setDir($base="C:/wamp64/www/"){
-    #function setDir($base="/var/www/"){
-	function setDir($base="/home/playerbitcoin/"){
+    function setDir($base="/var/www/"){
+	#function setDir($base="/home/playerbitcoin/"){
 		$project="erp.playerbitcoin"; #"erp.clientes"
 		#$project.="/rtm";#"erp.multinivel"
 		return $base.$project;
@@ -45,7 +45,7 @@ Cargando base de datos...";
 	include(setDir()."/bk/db_access.php");
 echo "\n>OK\nCreando dump...";
 	$command = setCommand($db,"bk_daily.sh");
-	exec($command);
+	#exec($command);
 echo "\n>OK\n!Dump creado con exito!\n";
 
 echo "\n\n>PROCESOS 1> AUTOBONO DIARIO\n";
