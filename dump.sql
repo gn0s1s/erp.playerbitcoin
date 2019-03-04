@@ -1,4 +1,5 @@
-
+CREATE DATABASE  IF NOT EXISTS `erpplayerbitcoin` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `erpplayerbitcoin`;
 
 --
 -- Table structure for table `afiliar`
@@ -4217,7 +4218,7 @@ DROP TABLE IF EXISTS `notificacion`;
 CREATE TABLE `notificacion` (
   `id` int(11) NOT NULL,
   `fecha_inicio` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `fecha_fin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `fecha_fin` timestamp NOT NULL  DEFAULT CURRENT_TIMESTAMP,
   `nombre` varchar(45) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'AVISO GENERAL',
   `descripcion` varchar(255) COLLATE latin1_spanish_ci NOT NULL DEFAULT 'Hola, Bienvenido',
   `link` varchar(255) COLLATE latin1_spanish_ci DEFAULT '/',
@@ -5181,7 +5182,7 @@ CREATE TABLE `user_profiles` (
 
 LOCK TABLES `user_profiles` WRITE;
 /*!40000 ALTER TABLE `user_profiles` DISABLE KEYS */;
-INSERT INTO `user_profiles` VALUES (1,1,0,0,1,0,0,0,1,1,'1',1,'Admin','','0000-00-00','2018-02-16 05:40:17','ACT',3),(2,2,1,1,2,5,3,1,1,1,'1069740663',1,'Administrador','Oficina Virtual','1980-01-01','2016-10-19 17:10:49','ACT',1);
+INSERT INTO `user_profiles` VALUES (1,1,0,0,1,0,0,0,1,1,'1',1,'Admin','','2000-01-01','2018-02-16 05:40:17','ACT',3),(2,2,1,1,2,5,3,1,1,1,'1069740663',1,'Administrador','Oficina Virtual','1980-01-01','2016-10-19 17:10:49','ACT',1);
 /*!40000 ALTER TABLE `user_profiles` ENABLE KEYS */;
 UNLOCK TABLES;
 

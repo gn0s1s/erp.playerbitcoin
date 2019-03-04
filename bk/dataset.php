@@ -8,12 +8,14 @@ if (! $secure) {
     exit();
 }
 
-function setDir_(){
-   $dir = str_replace("public_html", "erp.playerbitcoin", getcwd());
-   $dir = str_replace("/bk", "", $dir);
-   if(stripos($dir,"/erp.playerbitcoin")===false)
-       $dir.="/erp.playerbitcoin";
-   return $dir;
+if(!function_exists("setDir")){
+    function setDir(){
+        $dir = str_replace("public_html", "erp.playerbitcoin", getcwd());
+        $dir = str_replace("/bk", "", $dir);
+        if(stripos($dir,"/erp.playerbitcoin")===false)
+            $dir.="/erp.playerbitcoin";
+        return $dir;
+    }
 }
 
 function newPDO($db) {
@@ -38,6 +40,26 @@ function newPDO($db) {
 	return $pdo;
 }
 
+function newResult($db,$query) {
+    try {
+        // Preparar la sentencia
+        $db = newPDO ($db);
+        $cmd = $db->prepare($query);
+
+        // Relacionar y ejecutar la sentencia
+        $cmd->execute();
+        $result = $cmd->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+
+    } catch (PDOException $e) {
+        // Aquí puedes clasificar el error dependiendo de la excepción
+        // para presentarlo en la respuesta Json
+        return array();
+
+    }
+}
+
 function newStatement($db,$query) {
 	try {
 		// Preparar la sentencia
@@ -55,23 +77,24 @@ function newStatement($db,$query) {
 		
 	}
 }
+if(!function_exists("setCommand")) {
+    function setCommand($db, $file, $data = "")
+    {
+        $hostname = $db['default']['hostname'];
+        $username = $db['default']['username'];
+        $password = $db['default']['password'];
+        $database = $db['default']['database'];
 
-function setCommand ($db,$file,$data = ""){
-    $hostname = $db['default']['hostname'];
-    $username = $db['default']['username'];
-    $password = $db['default']['password'];
-    $database = $db['default']['database'];
-    
-    $exec = setDir()."/bk/".$file." ".$hostname." ".$username." ".$password." ".$database." \"$data\"";
-    
-    return $exec;
+        $exec = "sh " . setDir() . "/bk/" . $file . " " . $hostname . " " . $username . " " . $password . " " . $database . " \"$data\"";
+
+        return $exec;
+    }
 }
-
 function newQuery($db,$data = "")
 {
     $command = setCommand($db, "query.sh", $data);
     log_message(">>> ".$data);
-    $cmd = "sh " . $command;
+    $cmd = $command;
     $query = shell_exec($cmd);
 
     $datos = explode("\n", $query);
