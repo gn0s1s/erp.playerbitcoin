@@ -243,11 +243,11 @@ class autored{
 	
 	function procesar(){
 		
-		isPeriodo();
+		$fecha = date('Y-m-d');isPeriodo();
 		
 		$afiliados = $this->setAfiliados($fecha);
 		$puntos = $this->setPuntosActivo();
-		$this->comprimir($afiliados);
+		$this->comprimir($afiliados,$puntos);
 		
 	}
 	
@@ -286,7 +286,7 @@ class autored{
 		
 	}
 	
-	function comprimir($afiliados){
+	function comprimir($afiliados,$puntos){
 		
 		foreach ($afiliados as $afiliado){
 			
@@ -300,7 +300,7 @@ class autored{
 					if($data)" : Dropped
 ";
 				}else if($estado == "banned"){
-					$data = setBlockUser($afiliado["id"]);
+					$data = $this->setBlockUser($afiliado["id"]);
 					if($data)echo " : Banned
 ";
 				}else{

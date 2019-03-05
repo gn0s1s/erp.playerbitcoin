@@ -65,20 +65,20 @@ class autobono
 		
 		$usuario= new calculo($this->db);
 		$afiliados = $usuario->getUsuariosRed();
-		
+
 		$reparticion= array();
 
 		foreach ($afiliados as $afiliado){
 			
 			$afiliado = $afiliado["id"];
-			
+
 			$calcular = $this->calcularBonos($afiliado);
 			
 			$reparticion[$afiliado] = $calcular;
 			
-			$this->activos_procedure($afiliado);
+			#TODO: $this->activos_procedure($afiliado);
 		}
-		
+
 		$this->repartirGanadores();
 
 		return $reparticion;
@@ -89,29 +89,67 @@ class autobono
 	{
 		$ganadores = $this->getGanadores();
 
+		if(!$ganadores){
+            $this->acumularSiguiente();
+		    return false;
+        }
+
 		$valor = $this->getAcumulado();
 		$valor/=sizeof($ganadores);
 
 		if($valor <= 0)
 			return false;
-		
-		foreach ($ganadores as $key => $ganador) 
-			$this->repartirBono(1,$ganador,$valor);
 
+		foreach ($ganadores as $key => $ganador) {
+            $this->repartirBono(1,$ganador,$valor);
+            $this->notificarJackpot($ganador, $valor );
+        }
+
+        $this->desactivarTickets();
 
 		return true;	
 
 	}
+
+    function notificar($id, $msj="bienvenido...", $sub="importante", $f1=false, $url = "#"){
+
+	    if(!$f1)
+	        $f1 = date('Y-m-d H:i:s');
+
+	    $data = array(
+	        "fecha_fin" =>$f1,
+            "nombre" => $sub,
+            "descripcion" => $msj,
+            "link" => $url,
+            "user_id" => $id
+        );
+
+        $this->insertDatos("notificacion",$data);
+
+        return true;
+    }
 	
 	private function getAcumulado(){
         $tarifa = 2.5;
 
-        $date_final = $this->getLastDay();
+        $date_final = $this->getLastDayUTC();
+        $format = 'Y-m-d H:i:s';
+        $date_init = $this->getLastTime($date_final,"day", $format);
 
-        $query = "SELECT count(*)*$tarifa total
-                    from ticket
-                  where date_final > '$date_final' 
-                    and estatus = 'ACT'";
+        $query = "SELECT 
+                        sum((m.costo*t.bonus/100))
+                        total
+                    from ticket t,mercancia m,
+                     cross_venta_mercancia c,
+                      venta v,items i
+                  where
+                    m.id = c.id_mercancia
+                    and c.id_venta = v.id_venta
+                    and v.id_venta = t.reference
+                    and i.categoria = 4
+                    and t.date_creation > '$date_init'
+                    and t.date_final <= '$date_final' 
+                    and t.estatus = 'ACT'";
         $q = $this->newQuery($this->db,$query);
 
         if(!$q)
@@ -152,14 +190,14 @@ class autobono
 	private function calcularBonos($id_usuario){
 
 		$bonos = $this->getIDBonos();
-		
+
 		$parametro = array(
 		    "id_usuario" => $id_usuario,
             "fecha" => $this->getLastDay()
         );
 		
 		$repartido = array();
-		
+
 		foreach ($bonos as $bono){
 			$id_bono = $bono["id"];
 			$isActived = $this->isActived($id_usuario,$id_bono);
@@ -325,27 +363,140 @@ class autobono
 		return true;
 		
 	}
-	
-	function isActivedAfiliado($id_usuario,$red = 1,$fecha = false,$bono = false){
-		
-		if (! $fecha)
-			$fecha = date ( 'Y-m-d' );
-		
-		$isRecent = date ( 'Y-m', strtotime ( $fecha ) ) == date ( 'Y-m' );
-		if (! $isRecent)
-			return $this->isActivedAfiliado_bk ( $id_usuario, $red, $fecha, $bono );
-		
-		$q = newQuery($this->db, "select * from red where id_usuario = $id_usuario and estatus = 'ACT'" );
-				
-		if (! $q)
-			return false;
-		
-		return true;
-					
-	}
-	
-	function activos_procedure($id_usuario = 2)
-	{	    
+
+    function isActivedPSR($id_usuario,$red = 1,$fecha = '',$bono = false){
+
+        if($id_usuario==2)
+            return true;
+
+        $binario = 2;
+        $isBinario = $bono == $binario;
+        $puntos = $this->getEmpresa ("puntos_personales");
+
+        $Afiliado = true;#$this->isAfiliadoenRed($id_usuario,$binario);
+
+        if(!$Afiliado){
+            log_message('DEV',"ID : $id_usuario not in BINARIO");
+            return $isBinario ? false : 0;
+        }
+
+        $bono = $this->getBono($binario);
+        $periodo = "UNI";#$this->issetVar($bono,"frecuencia","DIA");# "MES";
+
+        $fechaFin = $this->getPeriodoFecha($periodo, "FIN", $fecha );
+        if($this->fechaFin)
+            $fechaFin = $this->fechaFin;
+
+        $fechaInicio = $this->getAnyTime($fechaFin,"180 days");
+        if($this->fechaInicio)
+            $fechaInicio= $this->fechaInicio;
+
+        $where = "AND i.categoria = 2";
+        $venta = $this->getVentaMercancia($id_usuario,$fechaInicio,$fechaFin,2,false,$where);
+
+        $Pasa = ( $venta ) ? true : false;
+
+        log_message('DEV',"ID : $id_usuario PSR :: [[ $Pasa ]]");
+
+        return $Pasa;
+    }
+
+    function isActivedAfiliado($id_usuario,$red = 1,$fecha = '',$bono = false){
+
+        if($id_usuario==2)
+            return true;
+
+        $binario = 2;
+        $isBinario = $bono == $binario;
+        $puntos = $this->getEmpresa ("puntos_personales");
+
+        $Afiliado = $this->isAfiliadoenRed($id_usuario,$binario);
+
+        if(!$Afiliado){
+            log_message('DEV',"ID : $id_usuario not in BINARIO");
+            return $isBinario ? false : 0;
+        }
+
+        $bono = $this->getBono($binario);
+        $periodo = "UNI";#$this->issetVar($bono,"frecuencia","DIA");# "MES";
+
+        $fechaFin = $this->getPeriodoFecha($periodo, "FIN", $fecha );
+        if($this->fechaFin)
+            $fechaFin = $this->fechaFin;
+
+        $fechaInicio = $this->getInicioFecha($id_usuario);
+        if($this->fechaInicio)
+            $fechaInicio= $this->fechaInicio;
+
+        $venta = $this->getVentaMercancia($id_usuario,$fechaInicio,$fechaFin,5);
+
+        $Pasa = ( $venta ) ? true : false;
+
+        log_message('DEV',"ID : $id_usuario BINARIO :: [[ $Pasa ]]");
+
+        return $Pasa;
+    }
+
+    function isAfiliadoenRed($id, $red = false,$order=false,$where=false)
+    {
+        $query = "SELECT -- imprimir 
+* FROM afiliar WHERE id_afiliado = $id";
+
+        if ($red)
+            $query.=" AND id_red in ($red)";
+        if ($where)
+            $query.=$where;
+        if ($order)
+            $query .= " ORDER BY $order";
+
+        $q = newQuery($this->db,$query);
+
+        return $q;
+    }
+
+    private function getVentaMercancia($id,$f0,$f1,$tp=false,$mc=false,$WH="",$OD=false,$GP=false)
+    {
+        if ($tp)
+            $WH .= " AND m.id_tipo_mercancia in ($tp)";
+
+        if ($mc)
+            $WH .= " AND cvm.id_mercancia in ($mc)";
+
+        if ($GP)
+            $GP = "GROUP BY cvm.id_mercancia";
+        else
+            $GP = "";
+
+        if ($OD)
+            $OD = "ORDER BY v.fecha DESC,v.id_venta DESC";
+        else
+            $OD = "";
+
+        $query = "SELECT *
+						FROM
+							cross_venta_mercancia cvm,
+							mercancia m,
+                            items i,
+							venta v
+						WHERE
+                            i.id = m.id
+							AND m.id = cvm.id_mercancia
+							AND cvm.id_venta = v.id_venta
+							$WH
+							AND v.id_user in ($id)
+							AND v.id_estatus = 'ACT'
+							AND v.fecha BETWEEN '$f0' AND '$f1 23:59:59'
+						$GP $OD";
+
+        $q = newQuery($this->db,$query);
+
+
+        return $q;
+    }
+
+    function activos_procedure($id_usuario = 2)
+	{
+	    return false;#TODO:
 	    
 	    $fechainicio = $this->getPeriodoFecha("QUI", "INI", '');
 	    $fechafin = $this->getPeriodoFecha("QUI", "FIN", '');
@@ -748,7 +899,7 @@ class autobono
 		
 		$id_usuario = $parametro["id_usuario"];
 		
-		echo "between: $fechaInicio - $fechaFin \n";
+		echo "between ($id_usuario) : $fechaInicio - $fechaFin \n";
 		
 		$isRange = $this->evalTicketsRange($id_usuario);
 
@@ -761,10 +912,14 @@ class autobono
 	}
     function evalTicketsRange( $id, $ntwk = 1){
 
-        $query = "SELECT * FROM ticket WHERE user_id = $id 
-                    AND estatus = 'ACT'";
+	    $date_final = $this->getLastDayUTC();
 
-        $q = array(array("amount"=>1002.6));#TODO: newQuery($this->db, $query);
+        $query = "SELECT * FROM ticket WHERE user_id = $id 
+                    AND estatus = 'ACT' 
+                    and date_final < '$date_final' ";
+
+        $q = newQuery($this->db, $query);
+        #TODO: $q = array(array("amount"=>1002.6));
 
         if(!$q)
             return false;
@@ -773,8 +928,11 @@ class autobono
             $amount = $ticket["amount"];
             $isTicket = $this->isTicketRange($amount);
 
-            if($isTicket)
+            if($isTicket){
+                echo ">>> RANGE MATCHES ($id) :: $amount \n";
                 return true;
+            }
+
         }
 
     }
@@ -791,6 +949,8 @@ class autobono
 
         $valueMatches = $value < $max_value;
         $valueMatches &= $min_value <= $value;
+
+        echo ">>>  EVAL RANGE ($value) :: $min_value - $max_value \n";
 
         return $valueMatches;
 
@@ -1236,7 +1396,7 @@ class autobono
 	    $q = newQuery($this->db,$query);
 	    $fecha = $q[1]["fecha"]." 23:59:59"; #TODO: '2019-02-28';
 	    return $fecha;
-	    
+
 	}
 	
 	private function getPeriodoFecha ($frecuencia,$tipo,$fecha = ''){
@@ -1270,12 +1430,14 @@ class autobono
 			
 	}
 	
-	private function getInicioFecha() {
-		
-		$query = "SELECT
+	private function getInicioFecha($id = false)
+    {
+        $query = "SELECT
                         date_format(MIN(created),'%Y-%m-%d') fecha
                     FROM
                         users";
+
+        if($id)$query.=" WHERE id = $id";
 		
 		$q = newQuery($this->db, $query);
 		
@@ -1368,6 +1530,39 @@ class autobono
 		return date_format($year, 'Y-m-d');
 	}
 
+    private function getAnyTime($date,$time = '1 month'){
+
+        $fecha_sub = new DateTime($date);
+        $q= newQuery($this->db,"select date_add('".$date."', interval ".$time.") fecha");
+        $fecha_sub = $q ? $q[1]["fecha"] : date('Y-m-d');
+        $date = date('Y-m-d',strtotime($fecha_sub));
+
+        return $date;
+
+    }
+
+    private function getNextTime($date,$time = 'month',$format = 'Y-m-d'){
+
+        $fecha_sub = new DateTime($date);
+        $q= newQuery($this->db,"select date_add('".$date."', interval 1 ".$time.") fecha");
+        $fecha_sub = $q ? $q[1]["fecha"] : date('Y-m-d');
+        $date = date($format,strtotime($fecha_sub));
+
+        return $date;
+
+    }
+
+    private function getLastTime($date,$time = 'month',$format = 'Y-m-d'){
+
+        $fecha_sub = new DateTime($date);
+        $q= newQuery($this->db,"select date_sub('".$date."', interval 1 ".$time.") fecha");
+        $fecha_sub = $q ? $q[1]["fecha"] : date('Y-m-d');
+        $date = date($format,strtotime($fecha_sub));
+
+        return $date;
+
+    }
+
     private function setBitcoinValue()
     {
         if($this->bitcoinVal > 0){
@@ -1391,5 +1586,130 @@ class autobono
 
     }
 
+    private function acumularSiguiente()
+    {
+        $date_final = $this->getLastDayUTC();
+        $format = 'Y-m-d H:i:s';
+        $date_init = $this->getLastTime($date_final,"day", $format);
+        $date_next = $this->getNextTime($date_final,"day", $format);
+
+        $query = "SELECT 
+                        t.id
+                    from ticket t
+                  where
+                    t.date_creation > '$date_init' 
+                    and t.date_final <= '$date_final' 
+                    and t.estatus = 'ACT'";
+        $tickets = newQuery($this->db,$query);
+
+        if(!$tickets)
+            return false;
+
+        $data = array(
+            "bonus" => 25,
+            "date_final" => $date_next,
+        );
+
+        foreach ($tickets as $ticket) {
+            $ticket_id = $ticket["id"];
+            $date_creation = $ticket["date_creation"];
+            $nextCreation = $this->getNextTime($date_creation, "day", $format);
+            #TODO: $data["date_creation"] = $nextCreation;
+            $where = "id = $ticket_id";
+            $this->updateDatos("ticket",$data,$where);
+            echo "acumulando Ticket: $ticket_id \n";
+        }
+
+        return true;
+
+    }
+
+
+    private function insertDatos($table,$datos){
+        $attribs = array();$values=array();
+
+        foreach ($datos as $key => $value){
+            array_push($attribs, $key);
+            $value = "'$value'";
+            array_push($values, $value);
+        }
+
+        $query = "INSERT INTO $table (".implode(",", $attribs).")
+                        VALUES (".implode(",", $values).")";
+
+        newQuery($this->db,$query);
+
+        return true;
+    }
+
+    private function updateDatos($table,$datos,$where = false){
+
+        $values=array();
+
+        foreach ($datos as $key => $value){
+            $value = "$key = '$value'";
+            array_push($values, $value);
+        }
+
+        if($where)
+            $where = " WHERE ".$where;
+
+        $query = "UPDATE $table SET ".implode(",", $values).$where;
+
+        newQuery($this->db,$query);
+
+        return true;
+    }
+
+    private function desactivarTickets()
+    {
+        $date_final = $this->getLastDayUTC();
+        $format = 'Y-m-d H:i:s';
+        $date_init = $this->getLastTime($date_final,"day", $format);
+
+        $query = "SELECT 
+                        t.id
+                    from ticket t
+                  where
+                   -- t.date_creation > '$date_init' and
+                    t.date_final < '$date_final' 
+                    and t.estatus = 'ACT'";
+        $tickets = $this->newQuery($this->db,$query);
+
+        if(!$tickets)
+            return false;
+
+        $data = array("estatus" => 'DES');
+        foreach ($tickets as $ticket) {
+            $ticket_id = $ticket["id"];
+            $where = "id = $ticket_id";
+            $this->updateDatos("ticket",$data,$where);
+            $query = "DELETE FROM ticket WHERE id = $ticket_id";
+            #$this->newQuery($this->db, $query);
+
+            echo "desactivando Ticket: $ticket_id \n";
+        }
+
+        return true;
+
+    }
+
+    private function getLastDayUTC($hour = " 21:00:00")
+    {
+        #TODO: Config UTC range tickets data
+        date_default_timezone_set('UTC');
+        return date('Y-m-d'). $hour;
+    }
+
+    private function notificarJackpot( $ganador,$valor = 0, $fecha = false)
+    {
+        if(!$fecha)
+            $fecha = $this->getLastDayUTC();
+
+        $msj = "Congrats, You won this jackpot: $ $valor.";
+        $link = "/ov/accountStatus/accountHistory";
+        $subject = "JACKPOT $fecha";
+        $this->notificar($ganador, $msj, $subject, false, $link);
+    }
 
 }

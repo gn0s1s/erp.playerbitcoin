@@ -2163,11 +2163,16 @@ class playerbonos extends CI_Model
 
         date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');
-        $nextTime .= " 23:59:59";
+        $nextTime .= " 20:59:59";
 
         log_message('DEV',"getNextTime ->> $nextTime");
 
-        $datos = array("user_id"=>$id,"date_final"=> $nextTime,"reference"=>$id_venta);
+        $datos = array(
+            "user_id"=>$id,
+            "date_creation"=> date('Y-m-d H:i:s'),
+            "date_final"=> $nextTime,
+            "reference"=>$id_venta
+        );
         foreach ($tickets as $ticket){
             $datos["amount"] = $ticket;
             $this->db->insert("ticket",$datos);
@@ -3169,7 +3174,7 @@ class playerbonos extends CI_Model
         return date_format($year, 'Y-m-d');
     }
 
-    private function getAnyTime($date, $time = '1 month',$add= false)
+     function getAnyTime($date, $time = '1 month',$add= false)
     {
         $fecha_sub = new DateTime($date);
         if($add)
@@ -3182,20 +3187,20 @@ class playerbonos extends CI_Model
         return $date;
     }
 
-    function getNextTime($date = 'now', $time = 'month')
+    function getNextTime($date = 'now', $time = 'month', $format = 'Y-m-d')
     {
         $fecha_sub = new DateTime($date);
         date_add($fecha_sub, date_interval_create_from_date_string("1 $time"));
-        $date = date_format($fecha_sub, 'Y-m-d');
+        $date = date_format($fecha_sub, $format);
 
         return $date;
     }
 
-    private function getLastTime($date, $time = 'month')
+     function getLastTime($date= 'now', $time = 'month', $format = 'Y-m-d')
     {
         $fecha_sub = new DateTime($date);
         date_sub($fecha_sub, date_interval_create_from_date_string("1 $time"));
-        $date = date_format($fecha_sub, 'Y-m-d');
+        $date = date_format($fecha_sub, $format);
 
         return $date;
     }

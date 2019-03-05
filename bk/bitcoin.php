@@ -17,6 +17,7 @@ if(stripos($ruta,"/erp.playerbitcoin")===false)
 $link = $ruta.'/bk/dataset.php';
 
 $isLoaded = function_exists("setDir");
+echo "setDir 2? [[ $isLoaded ]] \n";
 if(!$isLoaded)
     require $link;
 

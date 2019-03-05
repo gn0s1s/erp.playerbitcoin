@@ -1,11 +1,12 @@
 #!/usr/bin/php
 <?php
 date_default_timezone_set('UTC');#city
-echo "Leyendo datos..."; 
+echo "Leyendo datos...\n";
 	
 	#function setDir($base="C:/wamp64/www/"){
-    function setDir($base="/var/www/"){
-	#function setDir($base="/home/playerbitcoin/"){
+    #function setDir($base="F:/wamp64/www/"){
+    #function setDir($base="/var/www/"){
+	function setDir($base="/home/playerbitcoin/"){
 		$project="erp.playerbitcoin"; #"erp.clientes"
 		#$project.="/rtm";#"erp.multinivel"
 		return $base.$project;
@@ -56,7 +57,7 @@ echo "\n>OK\nProcesando Datos\n";
 $afiliados = $autobono->calcular();
 echo "\n>OK\n\n!PROCESO COMPLETADO!\n";	
 
-exit();
+terminar(1);
 
 echo "\n\nPROCESOS 2> Compresion dinamica:\n";
 #include(setDir()."/bk/autored.php");

@@ -496,20 +496,41 @@ function getDataChart(){
 
         $date_final = date('Y-m-d');
         $fecha = date('H');
-        if($fecha < 21)
+        if($fecha > 21)
             $date_final = $this->playerbonos->getNextTime($date_final,"day");
 
-        $query = "SELECT count(*)*$tarifa total
-                    from ticket
-                  where date_final > '$date_final' 
-                    and estatus = 'ACT'";
+        $tarifa = 2.5;
+
+        $date_final .= " 21:00:00";
+        $format = 'Y-m-d H:i:s';
+        $date_init = $this->playerbonos->getLastTime($date_final,"day", $format);
+
+        $query = "SELECT 
+                        sum((m.costo*t.bonus/100))
+                        total
+                    from ticket t,mercancia m,
+                     cross_venta_mercancia c,
+                      venta v,items i
+                  where
+                    m.id = c.id_mercancia
+                    and c.id_venta = v.id_venta
+                    and v.id_venta = t.reference
+                    and i.categoria = 4
+                    and t.date_final <= '$date_final' 
+                    and t.estatus = 'ACT'";
+
+        log_message('DEV',$query);
+
         $q = $this->db->query($query);
         $q =$q->result();
 
-        if(!$q)
+        if(!$q){
+            log_message('DEV',"non tickets :: ".json_encode($q));
             return 0;
+        }
 
-        return $q[0]->total;
+        $total = $q[0]->total;
+        return floatval($total);
     }
 
     private function setJQueryDashboard($id, $home)

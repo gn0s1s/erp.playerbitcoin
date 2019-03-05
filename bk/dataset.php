@@ -8,7 +8,9 @@ if (! $secure) {
     exit();
 }
 
-if(!function_exists("setDir")){
+$function_exists = function_exists("setDir");
+echo "setDir ? [[ $function_exists ]] \n";
+if(!$function_exists){
     function setDir(){
         $dir = str_replace("public_html", "erp.playerbitcoin", getcwd());
         $dir = str_replace("/bk", "", $dir);
@@ -94,6 +96,7 @@ function newQuery($db,$data = "")
 {
     $command = setCommand($db, "query.sh", $data);
     log_message(">>> ".$data);
+    #TODO: echo "SQL>> \n $data \n\n";
     $cmd = $command;
     $query = shell_exec($cmd);
 
