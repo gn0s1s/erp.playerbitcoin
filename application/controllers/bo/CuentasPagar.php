@@ -130,15 +130,14 @@ class CuentasPagar extends CI_Controller
 	{
 		//load our new PHPExcel library
 		
-		$fecha_inicio = $_GET['inicio'];
-		$fecha_fin = $_GET['fin'];
+		$f0 = $_GET['inicio'];
+		$f1 = $_GET['fin'];
 		
-		$cobros = $this->modelo_cobros->ConsultarCobrosFecha($fecha_inicio, $fecha_fin);
+		$cobros = $this->modelo_cobros->ConsultarCobrosFecha($f0, $f1);
 		
 		if(!$cobros){
 			redirect('/bo/CuentasPagar/PorPagar');
 		}
-			
 		
 		$this->load->library('excel');
 		$this->excel=PHPExcel_IOFactory::load(FCPATH."/application/third_party/templates/reporte_generico.xls");
@@ -146,39 +145,49 @@ class CuentasPagar extends CI_Controller
 		$contador_filas = 0;
 		$total = 0;
 		$ultima_fila = 0;
+		$setColRowExcel = "setCellValueByColumnAndRow";
+		$setSheet = "getActiveSheet";
 		for($i = 0;$i < sizeof($cobros);$i++)
 		{
 			$contador_filas = $contador_filas+1;
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(0, ($i+8), $cobros[$i]->id_cobro);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(1, ($i+8), $cobros[$i]->fecha);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(2, ($i+8), $cobros[$i]->usuario);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(3, ($i+8), $cobros[$i]->banco);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(4, ($i+8), $cobros[$i]->cuenta);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(5, ($i+8), $cobros[$i]->titular);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(6, ($i+8), $cobros[$i]->clabe);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(7, ($i+8), $cobros[$i]->pais);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(8, ($i+8), $cobros[$i]->swift);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(9, ($i+8), $cobros[$i]->otro);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(10, ($i+8), $cobros[$i]->postal);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(11, ($i+8), $cobros[$i]->metodo_pago);
-			$this->excel->getActiveSheet()->setCellValueByColumnAndRow(12, ($i+8), $cobros[$i]->monto);
-			$total = $total + $cobros[$i]->monto;
-			$ultima_fila = $i+8;
-			$usuario = $this->modelo_cobros->CambiarEstadoCobro($cobros[$i]->id_cobro);
+            $iter = $i + 8;
+            $cobro = $cobros[$i];
+            $this->excel->$setSheet()->$setColRowExcel(0, $iter, $cobro->id_cobro);
+			$this->excel->$setSheet()->$setColRowExcel(1, ($iter), $cobro->fecha);
+			$this->excel->$setSheet()->$setColRowExcel(2, ($iter), $cobro->usuario);
+			$this->excel->$setSheet()->$setColRowExcel(3, ($iter), $cobro->banco);
+			$this->excel->$setSheet()->$setColRowExcel(4, ($iter), $cobro->cuenta);
+			$this->excel->$setSheet()->$setColRowExcel(5, ($iter), $cobro->titular);
+			$this->excel->$setSheet()->$setColRowExcel(6, ($iter), $cobro->address);
+			$this->excel->$setSheet()->$setColRowExcel(7, ($iter), $cobro->pais);
+			$this->excel->$setSheet()->$setColRowExcel(8, ($iter), $cobro->swift);
+			$this->excel->$setSheet()->$setColRowExcel(9, ($iter), $cobro->otro);
+			$this->excel->$setSheet()->$setColRowExcel(10, ($iter), $cobro->postal);
+			$this->excel->$setSheet()->$setColRowExcel(11, ($iter), $cobro->metodo_pago);
+			$this->excel->$setSheet()->$setColRowExcel(12, ($iter), $cobro->monto);
+			$total = $total + $cobro->monto;
+			$ultima_fila = $iter;
+			$usuario = $this->modelo_cobros->CambiarEstadoCobro($cobro->id_cobro);
 			$this->enviar_email($usuario[0]->email, $usuario);
 		}
 		
-		$subtitulos	=array("ID Solicitud","Fecha","Usuario","Banco","Cuenta","Titular","CLABE","Pais","Swift","ABA_IBAN_OTRO","Direccion_Postal","Metodo","Valor","Estado");
+		$subtitulos	= array(
+		    "ID","Voucher Date","User",
+            "Bank","Account","Owner",
+            "Wallet_Address","Country","Swift",
+            "ABA_IBAN_OTRO","Zipcode",
+            "Payment Method","Amount","Status"
+        );
 		
 		$this->model_excel->setTemplateExcelReport ("Cuentas Por Pagar",$subtitulos,$contador_filas,$this->excel);
 		
 		
-		$this->excel->getActiveSheet()->setCellValueByColumnAndRow(11, ($ultima_fila+1), "Total");
-		$this->excel->getActiveSheet()->setCellValueByColumnAndRow(12, ($ultima_fila+1), $total);
+		$this->excel->$setSheet()->$setColRowExcel(11, ($ultima_fila+1), "Total");
+		$this->excel->$setSheet()->$setColRowExcel(12, ($ultima_fila+1), $total);
 		
 		$date = new \Datetime('now');
 
-		$filename='CuentasPorPagar_de_'.$fecha_inicio.'_al_'.$fecha_fin.'_'.$date->format('Y-m-d H:i:s').'.xls'; //save our workbook as this file name
+		$filename='Payment_vouchers_'.$f0.'_to_'.$f1.'_'.$date->format('Y-m-d H:i:s').'.xls'; //save our workbook as this file name
 	/*	header('Content-Type: application/vnd.ms-excel'); //mime type
 		header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
 		header('Cache-Control: max-age=0'); //no cache

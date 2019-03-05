@@ -8,6 +8,29 @@ class mGeneral extends CI_Model
         $this->load->model('ov/model_perfil_red');
     }
 
+    function imagenPerfil($id){
+        $image  = $this->model_perfil_red->get_images($id);
+
+        $img_perfil="/template/img/avatars/male.png";
+        foreach ($image as $img)
+        {
+            $cadena=explode(".", $img->img);
+            if($cadena[0]=="user")
+            {
+                $img_perfil=$img->url;
+            }
+        }
+        return $img_perfil;
+    }
+
+    function changeTimezone($date = "now",$timezone = 'UTC', $format = 'Y-m-d H:i:s'){
+        $tz = new DateTimeZone($timezone);
+
+        $date = new DateTime($date);
+        $date->setTimezone($tz);
+        return $date->format($format);
+    }
+
     function isAValidUser($id,$modulo){
 
         $q=$this->db->query('SELECT cu.id_tipo_usuario as tipoId

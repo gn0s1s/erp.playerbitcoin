@@ -102,14 +102,15 @@ class playerbonos extends CI_Model
      * @param int $ntwk : red
      * @param mixed $value : valor de boleto
      */
-    function setTicketRange($value = false, $id, $ntwk = 1){
+    function setTicketRange($value = false,  $ntwk = 1){
 
-        $bitcoin_value = $this->getBitcoinValue();
+        # $bitcoin_value = $this->getBitcoinValue();
 
         if(!$value)
             $value = $this->getValueTicketAuto();
 
-        $min_value = (int) $value/5;
+        $min_value = (integer) ($value/5);
+        log_message('DEV',"->->| $min_value");
         $min_value *= 5;
         $max_value = $min_value+5;
 
@@ -2121,6 +2122,7 @@ class playerbonos extends CI_Model
 
     private function descontarBilleteraCiclo($id, $id_venta, $monto)
     {
+        date_default_timezone_set('UTC');
         $fecha = date('Y-m-d H:i:s');
         $dato = array(
             "id_user" => $id,
@@ -2183,11 +2185,14 @@ class playerbonos extends CI_Model
 
     function add_sub_billetera($tipo,$id,$monto,$descripcion){
 
-        $dato_cobro=array(
-            "id_user"		=>	$id,
-            "tipo"			=> 	$tipo,
-            "descripcion"	=> 	$descripcion,
-            "monto"			=> 	$monto
+        date_default_timezone_set('UTC');
+        $date = date('Y-m-d H:i:s');
+        $dato_cobro = array(
+            "id_user" => $id,
+            "tipo" => $tipo,
+            "descripcion" => $descripcion,
+            "monto" => $monto,
+            "fecha" => $date
         );
 
         $this->db->insert("transaccion_billetera",$dato_cobro);

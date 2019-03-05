@@ -391,11 +391,6 @@
 					<!-- end widget div -->
 				</div>
 				<!-- end widget -->
-			</article>
-			<!-- END COL -->
-		</div>
-    <br/>
-	  <br/>
 		<!-- END ROW -->
 	</section>
 	<!-- end widget grid -->

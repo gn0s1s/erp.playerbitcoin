@@ -195,22 +195,31 @@ class modelo_billetera extends CI_Model
 	}
 	function cobrar($id,$cuenta,$titular,$banco,$clabe)
 	{
-			$dato_cobro=array(
-					"id_user"		=>	$id,
-					"id_metodo"		=> 	"1",
-					"id_estatus"		=> 	"3",
-					"monto"			=> 	$_POST['cobro'],
-					"cuenta"=> $cuenta,
-					"titular"=> $titular,
-					"banco"=> $banco,
-					"clabe"=> $clabe,
-					"pais"=> $_POST['cpais'],
-					"swift"=> $_POST['cswift'],
-					"otro"=> $_POST['cotro'],
-					"postal"=> $_POST['cpostal'],
-			);
-			
-			$this->db->insert("cobro",$dato_cobro);
+        $cpais = $_POST['cpais'];
+        $cswift = $_POST['cswift'];
+        $cotro = $_POST['cotro'];
+        $cpostal = $_POST['cpostal'];
+        $cobro = $_POST['cobro'];
+
+        $dato_cobro = array(
+            "id_user" => $id,
+            "id_metodo" => "1",
+            "id_estatus" => "3",
+            "monto" => $cobro,
+            "cuenta" => $cuenta,
+            "titular" => $titular,
+            "banco" => $banco,
+            "clabe" => $clabe,
+            "pais" => $cpais,
+            "swift" => $cswift,
+            "otro" => $cotro,
+            "postal" => $cpostal,
+        );
+
+        if(isset($_POST['wallet']))
+            $dato_cobro["address"] = $_POST['wallet'];
+
+        $this->db->insert("cobro", $dato_cobro);
 		
 	}
 	
@@ -384,13 +393,16 @@ class modelo_billetera extends CI_Model
 	}
 	
 	function add_sub_billetera($tipo,$id,$monto,$descripcion){
-		
-		$dato_cobro=array(
-				"id_user"		=>	$id,
-				"tipo"			=> 	$tipo,
-				"descripcion"	=> 	$descripcion,
-				"monto"			=> 	$monto
-		);
+
+        date_default_timezone_set('UTC');
+        $date = date('Y-m-d H:i:s');
+        $dato_cobro = array(
+            "id_user" => $id,
+            "tipo" => $tipo,
+            "descripcion" => $descripcion,
+            "monto" => $monto,
+            "fecha" => $date
+        );
 			
 		$this->db->insert("transaccion_billetera",$dato_cobro);
 		$id = $this->db->insert_id();

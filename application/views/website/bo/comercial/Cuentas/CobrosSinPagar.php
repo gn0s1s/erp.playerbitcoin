@@ -2,18 +2,17 @@
 								<thead>
 									<tr>
 										<th data-hide="phone">ID</th>
-										<th data-class="expand">Fecha Solicitud</th>	
-										<th data-hide="phone">Usuario</th>
+										<th data-class="expand">Voucher Date</th>
+										<th data-hide="phone">User</th>
 										<th data-hide="phone">bank </th>
-										<th data-hide="phone">Cuenta</th>
-										<th data-hide="phone">Titular</th>
-										<th data-hide="phone">KEY</th>
-										<th data-hide="phone">Pais</th>
+										<th data-hide="phone">Account</th>
+										<th data-hide="phone">Owner</th>
+										<th data-hide="phone">Country</th>
 										<th data-hide="phone">Swift</th>
-										<th data-hide="phone">ABA/IBAN/OTRO</th>
+										<th data-hide="phone">Wallet Address</th>
 										<th data-hide="phone">Postal address</th>
-										<th data-hide="phone,tablet">Metodo</th>
-										<th data-hide="phone,tablet">Valor</th>
+										<th data-hide="phone,tablet">Payment Method</th>
+										<th data-hide="phone,tablet">Amount</th>
 										<th data-hide="phone,tablet">Status</th>
 									</tr>
 								</thead>
@@ -26,10 +25,9 @@
 											<td><?php echo $cobro->banco; ?></td>
 											<td><?php echo $cobro->cuenta; ?></td>
 											<td><?php echo $cobro->titular; ?></td>
-											<td><?php echo $cobro->clabe; ?></td>
 											<td><?php echo $cobro->pais; ?></td>
 											<td><?php echo $cobro->swift; ?></td>
-											<td><?php echo $cobro->otro; ?></td>
+											<td><?php echo $cobro->address; ?></td>
 											<td><?php echo $cobro->postal; ?></td>
 											<td><?php echo $cobro->metodo_pago; ?></td>
 											<td>$ <?php echo number_format($cobro->monto,2); ?></td>

@@ -3,6 +3,44 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+05-03-2019
+-
+### extra in comision_bono
+   ```mysql
+  ALTER TABLE comision_bono 
+  ADD extra varchar(35) 
+  NULL COMMENT 'tickets ?';
+   ```
+### address in cross_user_banco
+  ```mysql
+ ALTER TABLE cross_user_banco
+  ADD address varchar(120) NULL 
+  COMMENT 'BTC wallet address';
+  ```
+### address in cobro
+  ```mysql
+ ALTER TABLE cobro
+  ADD address varchar(120) NULL 
+  COMMENT 'BTC wallet address';
+  ```
+### bitcoin diario
+ ```mysql
+CREATE TABLE bitcoin_stats
+(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    date_status timestamp DEFAULT 
+      current_timestamp COMMENT 'UTC',
+    amount float DEFAULT 0 
+      COMMENT 'valor de bitcoin en ?',
+    currency varchar(4) DEFAULT 'USD' 
+      COMMENT 'USD... ?',
+    estatus varchar(3) DEFAULT 'ACT',
+    extra varchar(100) DEFAULT '' 
+      COMMENT 'data json ... ?'
+);
+ALTER TABLE bitcoin_stats 
+COMMENT = 'reporte de bitcoin';
+ ```
 20-02-2019
 -
 ### coinmarketcap

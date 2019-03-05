@@ -103,9 +103,10 @@ class model_coinmarketcap
             return false;
 
         $bitcoin_value = $data["data"][0]["quote"]["USD"]["price"];
-        echo ("bitcoin----> ".json_encode($bitcoin_value)."\n");
+        $date = date('Y-m-d H:i:s');
+        echo ("bitcoin -> $date :: ".json_encode($bitcoin_value)."\n");
 
-        $update = date('Y-m-d H:i:s').",".$bitcoin_value;
+        $update = $date .",".$bitcoin_value;
         $update.=";$bitcoin_value";
         $update.=";$bitcoin_value";
         $this->write_file($update,"bitcoin.txt");

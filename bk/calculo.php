@@ -1146,7 +1146,7 @@ class calculo
 				u.id");
 		$datosAfiliado=$q;
 
-        echo (json_encode($datosAfiliado));
+        log_message(json_encode($datosAfiliado));
 		
 		return $datosAfiliado;
 	}

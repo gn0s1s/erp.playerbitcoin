@@ -4,31 +4,31 @@ class cgeneral extends CI_Controller
 {
 	function __construct()
 	{
-		parent::__construct();
+        parent::__construct();
 
-		$this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
-		$this->load->library('security');
-		$this->load->library('tank_auth');
-		$this->lang->load('tank_auth');
-		$this->load->model('ov/modelo_general');
-		$this->load->model('general');
-		$this->load->model('ov/general');
-		$this->load->model('ov/model_perfil_red');
-		$this->load->model('ov/model_afiliado');
-		$this->load->model('model_tipo_red');
-		$this->load->model('model_planes');
-		$this->load->model('model_datos_generales_soporte_tecnico');
-		$this->load->model('model_cat_grupo_soporte_tecnico');
-		$this->load->model('model_archivo_soporte_tecnico');
-		$this->load->model('model_user_webs_personales');
-			$this->load->model('bo/model_admin');
-			$this->load->model('bo/modelo_dashboard');
-		$this->load->model('bo/model_soporte_tecnico');
-		$this->load->model('ov/model_cabecera');
-		
-		$this->load->model('ov/model_web_personal_reporte');
-		$this->load->model('cemail');
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+        $this->load->library('security');
+        $this->load->library('tank_auth');
+        $this->lang->load('tank_auth');
+        $this->load->model('ov/modelo_general');
+        $this->load->model('general');
+        $this->load->model('ov/general');
+        $this->load->model('ov/model_perfil_red');
+        $this->load->model('ov/model_afiliado');
+        $this->load->model('model_tipo_red');
+        $this->load->model('model_planes');
+        $this->load->model('model_datos_generales_soporte_tecnico');
+        $this->load->model('model_cat_grupo_soporte_tecnico');
+        $this->load->model('model_archivo_soporte_tecnico');
+        $this->load->model('model_user_webs_personales');
+        $this->load->model('bo/model_admin');
+        $this->load->model('bo/modelo_dashboard');
+        $this->load->model('bo/model_soporte_tecnico');
+        $this->load->model('ov/model_cabecera');
+        $this->load->model('/bo/bonos/clientes/playerbitcoin/playerbonos');
+        $this->load->model('ov/model_web_personal_reporte');
+        $this->load->model('cemail');
 
 	}
 	function soporte_tecnico_ver_redes()
@@ -515,6 +515,171 @@ class cgeneral extends CI_Controller
         $this->template->set_partial('footer', 'website/ov/footer');
 		$this->template->build('website/ov/general/social');
 	}
+
+    function winners()
+    {
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
+
+        $id=$this->tank_auth->get_user_id();
+        $style=$this->general->get_style($id);
+
+        $this->template->set("style",$style);
+
+        $this->template->set_theme('desktop');
+        $this->template->set_layout('website/main');
+        $this->template->set_partial('header', 'website/ov/header');
+        $this->template->set_partial('footer', 'website/ov/footer');
+        $this->template->build('website/ov/general/winners');
+    }
+
+    function getTicket($id){
+
+        $query = "SELECT
+                        *
+                    FROM 
+                        ticket
+                    WHERE
+                        id = $id";
+        $q = $this->db->query($query);
+
+        $result = $q->result();
+
+        if($result)
+            $result = $result[0];
+
+        return $result;
+    }
+
+    function getGanadores(){
+
+        $query = "SELECT
+                            c.*,h.*,
+                           concat(p.nombre,' ',p.apellido) nombres
+                    FROM comision_bono c,
+                         comision_bono_historial h,
+                         user_profiles p,
+                         users u
+                    WHERE
+                        c.id_bono_historial = h.id
+                        AND p.user_id = u.id
+                        AND u.id = c.id_usuario
+                        AND c.id_bono = 1
+                      AND c.valor > 0";
+        $q = $this->db->query($query);
+
+        return $q->result();
+    }
+
+    function getWinners(){
+
+	    $data_load = isset($_POST['id']) ? $_POST['id'] : 'm_winners';
+
+	    $winners = $this->getGanadores();
+
+	    if(!$winners){
+	        echo "<div class='well'><h1>Winners not found.</h1></div>";
+           return false;
+        }
+
+	    foreach ($winners as $winner) :
+
+            $user_id = $winner->id_usuario;
+
+	        $img = $this->general->imagenPerfil($user_id);
+
+	        $ticket = $this->getTicket($winner->extra);
+
+            $description = "";
+            $ticket_data = "#".$winner->extra;
+	        if($ticket){
+	            $value = $ticket->amount;
+	            $ticket_data.=" : $value USD";
+	            $range = $this->playerbonos->setTicketRange($value);
+	            $range = implode(" - ",$range);
+	            $description .= "  <li>
+                                    <p class=\"text-muted\">
+                                        <i class=\"fa fa-check
+                                        \"></i>
+                                        Range:
+                                        <span class=\"txt-color-darken\">$range USD</span>
+                                    </p>
+                                </li>";
+            }
+
+	    echo '
+	    <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="well well-light well-sm no-margin no-padding">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="myCarousel"
+                             class="carousel fade profile-carousel">
+                            <div class="air air-top-left padding-10">
+                                <h4 class="txt-color-white font-md">
+                                    Earning: '.$winner->valor.' USD</h4>
+                            </div>
+                            <div class="carousel-inner">
+                                <!-- Slide 1 -->
+                                <div class="item active">
+                                    <img src="/logo.png" alt="demo user">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                   <div class="col-sm-12">
+
+                    <div class="row">
+
+                        <div class="col-sm-3 profile-pic">
+                            <img src="'.$img.'" alt="'.$winner->nombres.'">
+                            <div class="padding-10">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h1>
+                                <span class="semi-bold">'.$winner->nombres.'</span>
+                                <br>
+                                <small>ID :'.$user_id.' </small>
+                            </h1>
+
+                            <ul class="list-unstyled">
+                                <li>
+                                    <p class="text-muted">
+                                        <i class="fa fa-ticket"></i>
+                                        Ticket:
+                                        <span class="txt-color-darken">'.$ticket_data.'</span>
+                                    </p>
+                                </li>
+                                '.$description.'
+                                <li>
+                                    <p class="text-muted">
+                                        <i class="fa fa-calendar"></i>
+                                        Jackpot Date: 
+                                        <span class="txt-color-darken">
+                                        <a href="javascript:void(0);" 
+                                        rel="tooltip" title="" 
+                                        data-placement="top" 
+                                        data-original-title="Create an Appointment">'.$winner->fecha.'</a></span>
+                                    </p>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+    
+                </div>
+            </div>
+        </div>';
+
+	    endforeach;
+
+    }
+
 	function mensajes()
 	{
 		if (!$this->tank_auth->is_logged_in()) 

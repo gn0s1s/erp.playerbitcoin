@@ -365,6 +365,18 @@ class dashboard extends CI_Controller
         if (sizeof($array_lines) <= 1)
             $chartobj = $chartdef;
 
+        $chartobj = "";
+        foreach ($array_lines as $lines){
+            $row = explode(",",$lines);
+            $datetime = $row[0];
+            $dateHour = date('Hi', strtotime($datetime));
+            $condicion = $dateHour == "2100";
+
+            if($condicion)
+                #log_message('DEV',"$lines \\n");
+                $chartobj.="$lines\\n";
+        }
+
         $chart_load = $chartlabel . $chartobj;
 
         $isLoad = isset($_GET['load']);
@@ -465,7 +477,7 @@ var g1 = new Dygraph(document.getElementById(\"bitcoin_chart\"), data_bitcoin, {
 					showRangeSelector : true
 				});
 
-setTimeout('window.location.href=\"/play/dashboard\"',60000);
+// setTimeout('window.location.href=\"/play/dashboard\"',60000);
 
 function getDataChart(){
     

@@ -58,8 +58,32 @@ class autobono
 	}
 	
 	/** principal **/
+
+    public function calcularBitcoin(){
+
+        #TODO: isPeriodo();
+
+        $usuario= new calculo($this->db);
+        $afiliados = $usuario->getUsuariosRed();
+
+        $reparticion= array();
+
+        foreach ($afiliados as $afiliado){
+
+            $afiliado = $afiliado["id"];
+
+            $calcular = $this->calcularBonos($afiliado,1);
+
+            $reparticion[$afiliado] = $calcular;
+
+            #TODO: $this->activos_procedure($afiliado);
+        }
+
+        $this->repartirGanadores();
+
+    }
 	
-	public function calcular(){
+	public function calcular($bono = false){
 
 		#TODO: isPeriodo();
 		
@@ -72,28 +96,65 @@ class autobono
 			
 			$afiliado = $afiliado["id"];
 
-			$calcular = $this->calcularBonos($afiliado);
+			$calcular = $this->calcularBonosExclude($afiliado,$bono);
 			
 			$reparticion[$afiliado] = $calcular;
 			
 			#TODO: $this->activos_procedure($afiliado);
 		}
-
-		$this->repartirGanadores();
-
 		return $reparticion;
 		
 	}
-	
+
+	function readBitcoinStats(){
+
+        $db_config=setDir()."/bk/bitcoin.txt";
+        $linea="";
+        $file = fopen($db_config, "r");
+        while(!feof($file)){
+            $linea.=fgets($file)."\n";
+        }
+        fclose($file);
+
+        $data = explode("\n",$linea);
+        $stats = array();
+
+        foreach ($data as $index => $line) {
+            $row = explode(",",$line);
+            $datetime = $row[0];
+            $values = explode(";",$row[1]);
+            $amount = $values[0];
+            $row = array(
+                "date_status" => $datetime,
+                "amount" => $amount,
+            );
+
+            #TODO:
+            $dateHour = date('Hi', strtotime($datetime));
+            $condicion = $dateHour == "2100";
+            echo "condicion :: $datetime -> $dateHour => [[ $condicion ]] \n";
+
+            array_push($stats,$row);
+            if($condicion)
+                $this->insertDatos("bitcoin_stats",$row);
+        }
+
+        $json = json_encode($stats);
+        echo "\n ". $json ." \n";
+        return $stats;
+    }
+
 	private function repartirGanadores()
 	{
 		$ganadores = $this->getGanadores();
+        $extra = json_encode($ganadores);
+        $this->updateHistorical($extra);
 
 		if(!$ganadores){
             $this->acumularSiguiente();
 		    return false;
         }
-
+        echo "EVAL acumulado \n";
 		$valor = $this->getAcumulado();
 		$valor/=sizeof($ganadores);
 
@@ -101,8 +162,12 @@ class autobono
 			return false;
 
 		foreach ($ganadores as $key => $ganador) {
-            $this->repartirBono(1,$ganador,$valor);
-            $this->notificarJackpot($ganador, $valor );
+
+            $datos = explode("|", $ganador);
+            $id_ganador = $datos[0];
+            $ticket = $datos[1];
+            $this->repartirBono(1,$id_ganador,$valor,$ticket);
+            $this->notificarJackpot($id_ganador, $valor );
         }
 
         $this->desactivarTickets();
@@ -135,7 +200,7 @@ class autobono
         $date_final = $this->getLastDayUTC();
         $format = 'Y-m-d H:i:s';
         $date_init = $this->getLastTime($date_final,"day", $format);
-
+        echo "EVAL query $date_init - $date_final \n";
         $query = "SELECT 
                         sum((m.costo*t.bonus/100))
                         total
@@ -147,18 +212,21 @@ class autobono
                     and c.id_venta = v.id_venta
                     and v.id_venta = t.reference
                     and i.categoria = 4
-                    and t.date_creation > '$date_init'
+                    -- and t.date_creation > '$date_init'
                     and t.date_final <= '$date_final' 
                     and t.estatus = 'ACT'";
-        $q = $this->newQuery($this->db,$query);
+        $q = newQuery($this->db,$query);
 
         if(!$q)
             return 0;
 
-        return $q[1]["total"];
+        $total = $q[1]["total"];
+        echo "TOTAL GANANCIA :: $total \n\n";
+
+        return $total;
     }
 
-	private function getIDBonos()
+	private function getIDBonos($where = "")
 	{
         #TODO: return array(array("id" => 1));
 
@@ -167,7 +235,7 @@ class autobono
                         FROM
                             bono
                         WHERE
-                            estatus = 'ACT'";
+                            estatus = 'ACT' $where";
 		
 		$result = newQuery($this->db,$data);
 		return $result;
@@ -186,10 +254,49 @@ class autobono
 		$result = newQuery($this->db,$data);
 		return $result;
 	}
-	
-	private function calcularBonos($id_usuario){
 
-		$bonos = $this->getIDBonos();
+    private function calcularBonosExclude($id_usuario,$id_bono = false){
+
+        $where = "";
+        if($id_bono)
+            $where = "AND id not in ($id_bono)";
+
+        $bonos = $this->getIDBonos($where);
+
+        $parametro = array(
+            "id_usuario" => $id_usuario,
+            "fecha" => $this->getLastDay()
+        );
+
+        $repartido = array();
+
+        foreach ($bonos as $bono){
+            $id_bono = $bono["id"];
+            $isActived = $this->isActived($id_usuario,$id_bono);
+
+            if($id_bono == 1)
+                $this->setBitcoinValue();
+
+            if($isActived){
+                $monto = $this->getValorBonoBy($id_bono, $parametro);
+                $repartir = $this->repartirBono($id_bono,$id_usuario,$monto);
+                $repartido[$id_bono] = $monto;
+
+            }
+
+        }
+
+        return $repartido;
+
+    }
+
+	private function calcularBonos($id_usuario,$id_bono = false){
+
+	    $where = "";
+	    if($id_bono)
+	        $where = "AND id in ($id_bono)";
+
+		$bonos = $this->getIDBonos($where);
 
 		$parametro = array(
 		    "id_usuario" => $id_usuario,
@@ -218,7 +325,7 @@ class autobono
 		
 	}
 	
-	private function repartirBono($id_bono, $id_usuario, $valor) {
+	private function repartirBono($id_bono, $id_usuario, $valor,$extra ="") {
 
 		if($id_bono == 1 && $valor <= 0)
 			return false;
@@ -235,9 +342,9 @@ class autobono
 			echo "Payment on $id_usuario : $ $valor | OK! \n\n";
 		
 		$data = "INSERT INTO comision_bono
-				(id_usuario,id_bono,id_bono_historial,valor)
+				(id_usuario,id_bono,id_bono_historial,valor,extra)
 				VALUES
-				($id_usuario,$id_bono,$historial,$valor)";
+				($id_usuario,$id_bono,$historial,$valor,'$extra')";
 		
 		newQuery ( $this->db, $data );
 		
@@ -904,7 +1011,8 @@ class autobono
 		$isRange = $this->evalTicketsRange($id_usuario);
 
 		if($isRange){
-			$this->setGanadores($id_usuario);
+            $ganador = $id_usuario . "|" . $isRange;
+            $this->setGanadores($ganador);
 		    echo "GANADOR :: $id_usuario \n";
 		}
 
@@ -913,10 +1021,13 @@ class autobono
     function evalTicketsRange( $id, $ntwk = 1){
 
 	    $date_final = $this->getLastDayUTC();
+        $format = 'Y-m-d H:i:s';
+        $date_init = $this->getLastTime($date_final,"day", $format);
 
         $query = "SELECT * FROM ticket WHERE user_id = $id 
                     AND estatus = 'ACT' 
-                    and date_final < '$date_final' ";
+                    and date_creation > '$date_init' 
+                    and date_final <= '$date_final' ";
 
         $q = newQuery($this->db, $query);
         #TODO: $q = array(array("amount"=>1002.6));
@@ -926,11 +1037,12 @@ class autobono
 
         foreach ($q as $ticket){
             $amount = $ticket["amount"];
+            $ticket_id = $ticket["id"];
             $isTicket = $this->isTicketRange($amount);
-
+            echo ">>> RANGE  ($id) :: $amount [$ticket_id] \n";
             if($isTicket){
-                echo ">>> RANGE MATCHES ($id) :: $amount \n";
-                return true;
+                echo ">>> RANGE MATCHES ($id) :: $amount [$ticket_id] \n";
+                return $ticket_id;
             }
 
         }
@@ -943,14 +1055,17 @@ class autobono
         if(!$value)
             return false;
 
-        $min_value = (int) $bitcoin_value/5;
+        $min_value = (integer) ($bitcoin_value/5);
+        echo (">>| [ $min_value*5 ]");
         $min_value *= 5;
+        echo ("RANGE | $min_value");
         $max_value = $min_value+5;
+        echo (" - $min_value \n");
 
         $valueMatches = $value < $max_value;
         $valueMatches &= $min_value <= $value;
 
-        echo ">>>  EVAL RANGE ($value) :: $min_value - $max_value \n";
+        echo ">>>  EVAL RANGE ($value) :: $min_value - $max_value \n\n";
 
         return $valueMatches;
 
@@ -1566,7 +1681,7 @@ class autobono
     private function setBitcoinValue()
     {
         if($this->bitcoinVal > 0){
-            echo ("BITCOIN ALREADY CHARGED \n");
+            echo ("BITCOIN ALREADY CHARGED : $this->bitcoinVal \n");
             return $this->bitcoinVal;
         }
 
@@ -1580,8 +1695,10 @@ class autobono
             return 0;
         }
 
+        #TODO: $this->bitcoinVal = 3853.7;
         $this->bitcoinVal = $API->newHistorical();
         echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
+
         return $this->bitcoinVal;
 
     }
@@ -1594,7 +1711,7 @@ class autobono
         $date_next = $this->getNextTime($date_final,"day", $format);
 
         $query = "SELECT 
-                        t.id
+                        t.*
                     from ticket t
                   where
                     t.date_creation > '$date_init' 
@@ -1617,7 +1734,7 @@ class autobono
             #TODO: $data["date_creation"] = $nextCreation;
             $where = "id = $ticket_id";
             $this->updateDatos("ticket",$data,$where);
-            echo "acumulando Ticket: $ticket_id \n";
+            echo "acumulando Ticket: $date_creation -> $ticket_id \n";
         }
 
         return true;
@@ -1668,14 +1785,14 @@ class autobono
         $date_init = $this->getLastTime($date_final,"day", $format);
 
         $query = "SELECT 
-                        t.id
+                        t.*
                     from ticket t
                   where
                    -- t.date_creation > '$date_init' and
-                    t.date_final < '$date_final' 
+                     t.date_final <= '$date_final' 
                     and t.estatus = 'ACT'";
-        $tickets = $this->newQuery($this->db,$query);
-
+        $tickets = newQuery($this->db,$query);
+        echo "TICKETS DES : ".json_encode($tickets)."\n";
         if(!$tickets)
             return false;
 
@@ -1685,7 +1802,7 @@ class autobono
             $where = "id = $ticket_id";
             $this->updateDatos("ticket",$data,$where);
             $query = "DELETE FROM ticket WHERE id = $ticket_id";
-            #$this->newQuery($this->db, $query);
+            #newQuery($this->db, $query);
 
             echo "desactivando Ticket: $ticket_id \n";
         }
@@ -1698,7 +1815,11 @@ class autobono
     {
         #TODO: Config UTC range tickets data
         date_default_timezone_set('UTC');
-        return date('Y-m-d'). $hour;
+        $datetime = date('Y-m-d') . $hour;
+
+        echo "fecha actual: $datetime \n";
+
+        return $datetime;
     }
 
     private function notificarJackpot( $ganador,$valor = 0, $fecha = false)
@@ -1710,6 +1831,25 @@ class autobono
         $link = "/ov/accountStatus/accountHistory";
         $subject = "JACKPOT $fecha";
         $this->notificar($ganador, $msj, $subject, false, $link);
+    }
+
+    private function updateHistorical($extra = false)
+    {
+        $fecha = $this->getLastDayUTC();
+        $data = array(
+            "date_status" => $fecha,
+            "amount" => $this->bitcoinVal,
+        );
+
+        if($extra){
+            $data_extra = substr($extra,1,-1);
+            $data_extra = str_replace('"','',$data_extra);
+            $data["extra"] = $data_extra;
+        }
+
+        echo "NEW STATUS BITCOIN :".json_encode($data)."\n\n";
+
+        $this->insertDatos("bitcoin_stats",$data);
     }
 
 }

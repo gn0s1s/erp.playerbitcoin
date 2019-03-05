@@ -54,7 +54,7 @@ include(setDir()."/bk/autobono.php");
 echo "\n\nCargando Datos\n";
 $autobono = new autobono($db);
 echo "\n>OK\nProcesando Datos\n";
-$afiliados = $autobono->calcular(1);
+$afiliados = $autobono->calcularBitcoin();
 echo "\n>OK\n\n!PROCESO COMPLETADO!\n";	
 
 terminar(1);

@@ -251,33 +251,36 @@ class billetera2 extends CI_Controller
 		{																		// logged in
 			redirect('/auth');
 		}
-		
-		if($_POST['cobro']<=0){
+
+        $valor_pagar = $_POST['cobro'];
+        if($valor_pagar <=0){
 			echo "ERROR <br>Invalid Withdrawal value.";
 			exit();
 		}
-	
-		if($_POST['ctitular']==""){
+
+        $ctitular = $_POST['ctitular'];
+        if($ctitular ==""){
 			echo "ERROR <br>Please enter account titular.";
 			exit();
 		}
 		
-		if(is_numeric($_POST['ctitular'])){
+		if(is_numeric($ctitular)){
 			echo "ERROR <br>The account titular field must not be numeric.";
 			exit();
 		}
-		
-		if($_POST['cbanco']==""){
+
+        $cbanco = $_POST['cbanco'];
+        if($cbanco ==""){
 			echo "ERROR <br>Please enter account bank.";
 			exit();
 		}
-		
-		if(intval($_POST['ncuenta'])==0){
+
+        $noCuenta = false;#TODO: intval($_POST['ncuenta']) == 0;
+        if($noCuenta){
 			echo "ERROR <br>Account number must be trusted.";
 			exit();
 		}
-	
-		
+
 		$id=$this->tank_auth->get_user_id();
 		
 		$comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
@@ -291,12 +294,16 @@ class billetera2 extends CI_Controller
 	 * 	echo $total_bonos."<br>";
 		echo $retenciones."<br>";
 		echo $cobrosPagos."<br>";
-		echo $cobroPendientes."<br>";
-*/
-		
- 
-		if((($comisiones-($retenciones+$cobrosPagos+$_POST['cobro']+$cobroPendientes))+($total_transact)+$total_bonos)>0){
-			$this->modelo_billetera->cobrar($id,$_POST['ncuenta'],$_POST['ctitular'],$_POST['cbanco'],$_POST['cclabe']);
+		echo $cobroPendientes."<br>"; */
+
+        $cobrar = $valor_pagar;
+        $cobrar+= $retenciones + $cobrosPagos +  $cobroPendientes;
+        $comisiones_neto = $comisiones - $cobrar;
+        $total = $comisiones_neto + $total_transact + $total_bonos;
+        if($total >0){
+            $ncuenta = $_POST['ncuenta'];
+            $cclabe = $_POST['cclabe'];
+            $this->modelo_billetera->cobrar($id, $ncuenta, $ctitular, $cbanco, $cclabe);
 			echo "Congratulations<br> Withdrawal successfully.";
 		}else {
 			echo "ERROR <br>Balance Insufficient.";
@@ -469,9 +476,11 @@ class billetera2 extends CI_Controller
 			foreach($transactions as $transaction)
 			{
 				$color = ($transaction->tipo=="plus") ? "green" : "red";
-				echo "<tr>
+                $fecha = $transaction->fecha;
+                #$fecha = $this->general->changeTimezone($fecha);
+                echo "<tr>
 			<td class='sorting_1'>".$transaction->id."</td>
-			<td>".$transaction->fecha."</td>
+			<td>". $fecha ."</td>
 			<td style='color: ".$color.";'><i class='fa fa-".$transaction->tipo."-circle fa-3x'></i></td>
 			<td>".$transaction->descripcion."</td>
 			<td> $	".number_format($transaction->monto, 2)."</td>			
