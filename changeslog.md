@@ -87,8 +87,8 @@ create table ticket
   date_final int comment 'fecha de sorteo',
   amount float default '5'                   null
   comment 'valor de boleto',
-  estatus varchar(3) default 'ACT'            null
-  comment 'DES cuando pasa la fecha de sorteo',
+  estatus varchar(3) DEFAULT 'ACT' COMMENT 'DES por jugar 
+  BLK cuando pasa la fecha de sorteo',
   reference int default '1'                     null
   comment 'venta:id_venta associate item'
 ) comment 'boleto de apuesta btc';

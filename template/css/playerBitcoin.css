@@ -1,21 +1,94 @@
-body{background: #f6f6f6 !important}
-.mainHeaderPlayer{height: 60px;background-color: #1048B1;padding: 3px}
-.navbar-default{background: transparent;border:none;}
-.nav>li.active{background: #ED8C17 !important}
-.nav>li.active a{background: transparent !important;}
-.nav>li>a:focus, .nav>li>a {
-    color:#fff !important;
-    margin:0 15px 0 0;
+body, html {
+    background: url(http://playerbitcoin.com/img/bgCabezaN.jpg)
+    repeat scroll 0% 0% / 100% !important
 }
-.nav>li>a:focus, .nav>li>a:hover {
+
+.mainHeaderPlayer {
+    height: 60px;
+    background-color: #1048B1;
+    padding: 3px
+}
+
+.navbar-default {
+    background: transparent;
+    border: none;
+}
+
+.nav > li.active {
+    background: #ED8C17 !important
+}
+
+.nav > li.active a {
+    background: transparent !important;
+}
+
+.nav > li > a:focus, .nav > li > a {
+    color: #fff !important;
+    margin: 0 15px 0 0;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
     text-decoration: none;
     background-color: #0E3F9A !important;
 }
-.banderitas{padding:10% 0 0 0;}
-.btnLogout{width: 6rem !important; height: 4rem !important;color: #fff !important; background: #ED8C17 !important;border:none !important;}
-.link_dashboard{background: #0B3480 !important;padding: 1px !important}
-.link_dashboard{text-decoration: none !important}
-.link_dashboard:hover{background: #ED8C17 !important;text-decoration: none !important}
-.page-footer{background: #000 !important}
-#play-boton{background:#ED8C17 !important;border-radius: 0 !important}
-#play-boton:hover{background:#1048B1 !important;}
+
+.txt-color-blueDark {
+    background: transparent !important;
+    color: #fff !important;
+}
+
+.txt-color-blueDark span a {
+    color: #ED8C17 !important;
+    margin: 0 2% 0 2%;
+}
+
+.txt-color-blueDark span {
+    color: #fff !important;
+    margin: 0 0 0 0;
+    width: 40%;
+}
+
+.banderitas {
+    padding: 10% 0 0 0;
+}
+
+.btnLogout {
+    width: 6rem !important;
+    height: 4rem !important;
+    color: #fff !important;
+    background: #ED8C17 !important;
+    border: none !important;
+}
+
+.link_dashboard {
+    background: #0B3480 !important;
+    padding: 1px !important
+}
+
+.link_dashboard {
+    text-decoration: none !important
+}
+
+.link_dashboard:hover {
+    background: #ED8C17 !important;
+    text-decoration: none !important
+}
+
+.page-footer {
+    background: #1048B1 !important;
+    border: none !important;
+    margin: 2% 0 0 0;
+}
+
+.page-footer a {
+    color: #fff !important;
+}
+
+#play-boton {
+    background: #ED8C17 !important;
+    border-radius: 0 !important
+}
+
+#play-boton:hover {
+    background: #1048B1 !important;
+}

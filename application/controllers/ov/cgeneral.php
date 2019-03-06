@@ -535,49 +535,13 @@ class cgeneral extends CI_Controller
         $this->template->build('website/ov/general/winners');
     }
 
-    function getTicket($id){
 
-        $query = "SELECT
-                        *
-                    FROM 
-                        ticket
-                    WHERE
-                        id = $id";
-        $q = $this->db->query($query);
-
-        $result = $q->result();
-
-        if($result)
-            $result = $result[0];
-
-        return $result;
-    }
-
-    function getGanadores(){
-
-        $query = "SELECT
-                            c.*,h.*,
-                           concat(p.nombre,' ',p.apellido) nombres
-                    FROM comision_bono c,
-                         comision_bono_historial h,
-                         user_profiles p,
-                         users u
-                    WHERE
-                        c.id_bono_historial = h.id
-                        AND p.user_id = u.id
-                        AND u.id = c.id_usuario
-                        AND c.id_bono = 1
-                      AND c.valor > 0";
-        $q = $this->db->query($query);
-
-        return $q->result();
-    }
 
     function getWinners(){
 
 	    $data_load = isset($_POST['id']) ? $_POST['id'] : 'm_winners';
 
-	    $winners = $this->getGanadores();
+	    $winners = $this->general->getGanadores();
 
 	    if(!$winners){
 	        echo "<div class='well'><h1>Winners not found.</h1></div>";
@@ -590,7 +554,7 @@ class cgeneral extends CI_Controller
 
 	        $img = $this->general->imagenPerfil($user_id);
 
-	        $ticket = $this->getTicket($winner->extra);
+	        $ticket = $this->general->getTicket($winner->extra);
 
             $description = "";
             $ticket_data = "#".$winner->extra;

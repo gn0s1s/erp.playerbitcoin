@@ -8,6 +8,48 @@ class mGeneral extends CI_Model
         $this->load->model('ov/model_perfil_red');
     }
 
+    /* tickets */
+
+    function getTicket($id){
+
+        $query = "SELECT
+                        *
+                    FROM 
+                        ticket
+                    WHERE
+                        id = $id";
+        $q = $this->db->query($query);
+
+        $result = $q->result();
+
+        if($result)
+            $result = $result[0];
+
+        return $result;
+    }
+
+    function getGanadores(){
+
+        $query = "SELECT
+                            c.*,h.*,
+                           concat(p.nombre,' ',p.apellido) nombres
+                    FROM comision_bono c,
+                         comision_bono_historial h,
+                         user_profiles p,
+                         users u
+                    WHERE
+                        c.id_bono_historial = h.id
+                        AND p.user_id = u.id
+                        AND u.id = c.id_usuario
+                        AND c.id_bono = 1
+                      AND c.valor > 0";
+        $q = $this->db->query($query);
+
+        return $q->result();
+    }
+
+    /* end tickets*/
+
     function imagenPerfil($id){
         $image  = $this->model_perfil_red->get_images($id);
 

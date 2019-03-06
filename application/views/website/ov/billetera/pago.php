@@ -85,23 +85,23 @@
                                                     //echo $totales."|";
 
                                                     if ($totales !== 'FAIL') {
-                                                        echo '<tr class="success" >
+                                                        echo '<tr class="info" >
 																<td colspan="2"><b>' . $comision_todo["redes"][$i]->nombre . '</b></td>
 															</tr>';
                                                     }
 
 
                                                     if ($comision_todo["ganancias"][$i][0]->valor <> 0) {
-                                                        echo '<tr class="success" >
+                                                        echo '<tr class="info" >
 																<td colspan="2"><i class="fa fa-money"></i>Commissions</td>
 															</tr>';
 
-                                                        echo '<tr class="success">
+                                                        echo '<tr class="info">
 															<td>&nbsp;&nbsp;Sponsored Commissions</td>
 																<td>$ ' . number_format($comision_todo["directos"][$i][0]->valor, 2) . '</td>
 															</tr>';
 
-                                                        echo '<tr class="success">
+                                                        echo '<tr class="info">
 															<td>&nbsp;&nbsp;Spillover Commissions</td>
 																<td>$ ' . number_format($comision_todo["ganancias"][$i][0]->valor - $comision_todo["directos"][$i][0]->valor, 2) . '</td>
 															</tr>';
@@ -114,13 +114,13 @@
                                                     }
 
                                                     if ($comision_todo["bonos"][$i]) {
-                                                        echo '<tr class="success" >
+                                                        echo '<tr class="info" >
 																<td colspan="2"><i class="fa fa-gift"></i>Calculated Commissions</td>
 															</tr>';
                                                         for ($k = 0; $k < sizeof($comision_todo["bonos"][$i]); $k++) {
                                                             if ($comision_todo["bonos"][$i][$k]->valor <> 0) {
                                                                 $totales += ($comision_todo["bonos"][$i][$k]->valor);
-                                                                echo '<tr class="success">
+                                                                echo '<tr class="info">
 																<td>&nbsp;&nbsp;' . $comision_todo["bonos"][$i][$k]->nombre . '</td>
 																	<td>$ ' . number_format($comision_todo["bonos"][$i][$k]->valor, 2) . '</td>
 																</tr>';
@@ -129,7 +129,7 @@
                                                     }
 
                                                     if ($totales <> 0) {
-                                                        echo '<tr class="warning">
+                                                        echo '<tr class="default">
 																<td>&nbsp; Total </td>
 																<td>$ ' . number_format($totales, 2) . '</td>
 															</tr>';
@@ -139,7 +139,7 @@
                                                 }
 
                                                 ?>
-                                                <tr class="success">
+                                                <tr class="info">
                                                     <td><h4><b>TOTAL</b></h4></td>
                                                     <td>
                                                         <div class="col-md-4">
@@ -158,13 +158,13 @@
                                                 </tr>
 
                                                 <?php if ($transaction) { ?>
-                                                    <tr class="warning">
+                                                    <tr class="default">
                                                         <td colspan="2"><b>Wallet movements</b></td>
                                                     </tr>
                                                     <?php if ($transaction['add']) {
                                                         $total_transact += $transaction['add'];
                                                         ?>
-                                                        <tr class="warning">
+                                                        <tr class="default">
                                                             <td><b>Total Added</b></td>
                                                             <td>
                                                                 <b style="color: green">$ <?php echo number_format($transaction['add'], 2); ?></b>
@@ -174,14 +174,14 @@
                                                     if ($transaction['sub']) {
                                                         $total_transact -= $transaction['sub'];
                                                         ?>
-                                                        <tr class="warning">
+                                                        <tr class="default">
                                                             <td><b>Total removed</b></td>
                                                             <td>
                                                                 <b style="color: red">$ <?php echo number_format($transaction['sub'], 2); ?></b>
                                                             </td>
                                                         </tr>
                                                     <?php } ?>
-                                                    <tr class="warning">
+                                                    <tr class="default">
                                                         <td><b>TOTAL:</b></td>
                                                         <td><h4>
                                                                 <b>$ <?php echo number_format($total_transact, 2); ?></b>
@@ -200,7 +200,7 @@
                                             <?php
                                             $retenciones_total = 0;
                                             foreach ($retenciones as $retencion) { ?>
-                                                <tr class="danger">
+                                                <tr class="clear">
                                                     <td><b>Withholding <?php echo $retencion['descripcion']; ?></b></b>
                                                     </td>
                                                     <td></td>
@@ -211,7 +211,7 @@
                                                 <?php $total;
                                             } ?>
 
-                                            <tr class="danger">
+                                            <tr class="clear">
                                                 <td><b>Pending Withdrawal</b></td>
                                                 <td></td>
                                                 <td>$ <?php
@@ -224,7 +224,7 @@
 
                                             <?php foreach ($cobro as $cobros) {
                                                 ?>
-                                                <tr class="danger">
+                                                <tr class="clear">
                                                     <td><b>Succeeded Withdrawal</b></td>
                                                     <td></td>
                                                     <td>$

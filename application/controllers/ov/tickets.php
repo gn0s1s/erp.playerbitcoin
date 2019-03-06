@@ -297,9 +297,118 @@ class tickets extends CI_Controller
                 </div>';
     }
 
-	function newTicket()
+	function edit_ticket()
 	{
-		if (!$this->tank_auth->is_logged_in())
+        $id = isset($_POST['id']) ? $_POST['id'] : false;
+
+        $error = "ticket not found, Try again!!";
+        if(!$id){
+            echo $error;
+            return false;
+        }
+
+        $ticket = $this->general->getTicket($id);
+
+        if(!$ticket){
+            echo $error;
+            return false;
+        }
+
+        $editor = $this->setEditorTicket($ticket);
+
+        echo "<div class='smart-form col-md-6' style='float: none !important;'>
+                <form id='ticket_set' role='form'>$editor</form>
+                </div>";
+    }
+
+    function update_ticket(){
+
+	    $datos = $_POST;
+
+	    if(isset($datos['date_final'])){
+            $timestamp = strtotime($datos['date_final']);
+            $date = date('Y-m-d', $timestamp);
+            $datos['date_final'] =  "$date 21:00:00";
+        }
+
+        $json = json_encode($datos);
+	    log_message('DEV',"update ticket :: $json");
+
+	    $this->db->where("id",$datos['id']);
+	    unset($datos['id']);
+	    $this->db->update("ticket",$datos);
+
+        echo "Ticket updated";
+
+    }
+
+    function estatus_ticket(){
+
+        $id = isset($_POST['id']) ? $_POST['id'] : false;
+
+        $error = "ticket not found, Try again!!";
+        if(!$id){
+            echo $error;
+            return false;
+        }
+
+        $ticket = $this->general->getTicket($id);
+
+        if(!$ticket){
+            echo $error;
+            return false;
+        }
+
+        $estatus = $ticket->estatus == 'DES' ? "ACT" : "DES";
+
+        $datos =  array("estatus" => $estatus);
+
+        $this->db->where("id",$id);
+        $this->db->update("ticket",$datos);
+
+        echo ($estatus == 'ACT') ? "Ticket Enabled" : "Ticket Disabled";
+
+    }
+
+    function get_ticket()
+    {
+	    $id = isset($_POST['id']) ? $_POST['id'] : false;
+
+	    if(!$id){
+	        echo "ticket not found, Try again!!";
+	        return false;
+        }
+
+        $ticket = $this->general->getTicket($id);
+
+        if(!$ticket){
+            echo "ticket not found, Try again!!";
+            return false;
+        }
+
+        $list = "";
+
+        $i = 1;
+        foreach ($ticket as $key => $data){
+            $label = str_replace("_"," ",$key);
+            $list .= "<li class='dd-item' data-id='$i' >
+                    <div class='dd-handle'><b>$label</b>: $data</div>
+                    </li>";
+            $i++;
+        }
+
+        echo "<div class='dd' style='float: none !important;' id='nestable'>
+                <ul id='dd-list'>$list</ul>
+                </div>";
+
+        echo "<script>
+                $('#nestable').nestable({ group : 1 });
+                </script>";
+
+    }
+
+    function newTicket()
+    {	if (!$this->tank_auth->is_logged_in())
 		{																		// logged in
 			redirect('/auth');
 		}
@@ -709,5 +818,44 @@ class tickets extends CI_Controller
 		return $bonos_table;
 	
 	}
-	
+
+
+    private function setEditorTicket($ticket)
+    {
+        $list = "";
+
+        $i = 1;
+        $available = "|amount|date_final|id";
+        $date_input = "class='datepicker' type='text'";
+        $amount_input = "type='number' class='ticket' step='0.01' 
+                            min='1000' onkeyup='balance()' onchange='balance()'";
+        $format = array(
+            "date_final" => $date_input,
+            "amount" => $amount_input,
+            "id" => 'class=hide'
+        );
+        foreach ($ticket as $key => $data) {
+
+            if (stripos($available, "|$key") === false)
+                continue;
+
+            $options = "type='text'";
+            if (isset($format[$key]))
+                $options = $format[$key];
+
+            if (stripos($key, "date_") !== false)
+                $data = date('Y-m-d', strtotime($data));
+
+            $label = str_replace("_", " ", $key);
+            $list .= "<section class='$key" . "_section'  >
+                        $label
+                    <label class='input'>
+                    <input name='$key' $options value='$data' required />
+                    </label>
+                    </section>";
+            $i++;
+        }
+        return $list;
+    }
+
 }

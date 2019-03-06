@@ -1,11 +1,11 @@
 <?php
 
-function getColorTicket($color_ticket = 0)
+function getColorTicket($color_ticket = 'ACT')
 {
     $color = "bg-color-";
     $colors = array(
-        "green", "darken", "blue",
-        "orange", "red", "greenLight",
+        'DES'=>"silver", 'ACT'=>"green", "darken",
+        "orange", 'BLK'=>"red", "greenLight",
         "blueLight"
     );
 
@@ -90,28 +90,43 @@ function setFormatDateJs($timestamp)
                 -->
                 <header>
                     <span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
-                    <h2> Mis eventos </h2>
+                    <h2>Tickets</h2>
                     <div class="widget-toolbar">
                         <!-- add: non-hidden - to disable auto hide -->
                         <div class="btn-group">
                             <button class="btn dropdown-toggle btn-xs btn-default"
                                     data-toggle="dropdown">
-                                Mostrando <i class="fa fa-caret-down"></i>
+                                Show <i class="fa fa-caret-down"></i>
                             </button>
                             <ul class="dropdown-menu js-status-update pull-right">
                                 <li>
-                                    <a href="javascript:void(0);" id="mt">Mes</a>
+                                    <a href="javascript:void(0);" id="mt">Month</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);" id="ag">Agenda</a>
+                                    <a href="javascript:void(0);" id="ag">Week</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);" id="td">Hoy</a>
+                                    <a href="javascript:void(0);" id="td">Now</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </header>
+                <div class="col-xs-12">
+                    <div class="col-xs-6"></div>
+                    <div class="col-xs-2">
+                        <a title="Eliminar" href="#" class="btn btn-success"></a>
+                        <br>See Details
+                    </div>
+                    <div class="col-xs-2">
+                        <a title="Eliminar" href="#" class="btn btn-info"></a>
+                        <br>Settings
+                    </div>
+                    <div class="col-xs-2">
+                        <a title="Eliminar" href="#" class="btn btn-warning"></a>
+                        <br>Enable / Disable
+                    </div>
+                </div>
 
                 <!-- widget div-->
                 <div>
@@ -158,15 +173,21 @@ function setFormatDateJs($timestamp)
     </div>
 </div>
 
-
+<style>
+img.fa{
+    height: 1em;
+    padding: 1rem 0;
+}
+</style>
 <!-- PAGE RELATED PLUGIN(S) -->
+<script src="/template/js/plugin/jquery-nestable/jquery.nestable.min.js"></script>
 <script src="/template/js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>
 <script>
     function ver_ticket(id) {
         $.ajax({
             data: {id: id},
             type: "POST",
-            url: "get_ticket"
+            url: "/ov/tickets/get_ticket"
         })
             .done(function (msg) {
 
@@ -183,19 +204,142 @@ function setFormatDateJs($timestamp)
                         }
                     }
                 });
-                google.maps.event.addDomListener(window, 'load', initialize);
+
             });
     }
+    function editar_ticket(id) {
+        $.ajax({
+            data: {id: id},
+            type: "POST",
+            url: "/ov/tickets/edit_ticket"
+        })
+            .done(function (msg) {
+
+                bootbox.dialog({
+                    message: msg,
+                    title: "Ticket # " + id,
+                    buttons: {
+                        success: {
+                            label: "Update",
+                            className: "btn-success",
+                            callback: function () {
+                                enviar();
+                            }
+                        }
+                    }
+                });
+
+                date_stamp();
+
+            });
+    }
+    function estatus_ticket(id) {
+        $.ajax({
+            data: {id: id},
+            type: "POST",
+            url: "/ov/tickets/estatus_ticket"
+        })
+            .done(function (msg) {
+
+                bootbox.dialog({
+                    message: msg,
+                    title: "Ticket # " + id,
+                    buttons: {
+                        success: {
+                            label: "Update",
+                            className: "btn-success",
+                            callback: function () {
+                                location.href="/listTickets";
+                            }
+                        }
+                    }
+                });
+
+            });
+    }
+    function date_stamp(){
+        $(function()
+        {
+            a = new Date();
+            //a = a.getFullYear()-18;
+            $( ".datepicker" ).datepicker({
+                changeMonth: true,
+                maxDate: a+"-12-31",
+                dateFormat:"yy-mm-dd",
+                yearRange: "-99:+0",
+            });
+        });
+    }
+
+    function balance(id = ""){
+
+        var saldo = $(".ticket").val();
+        var min_value = parseInt(saldo / 5);
+        min_value *= 5;
+        var max_value = min_value + 5;
+        max_value -= 0.01;
+
+        var lengtht = $('#ticket_balance').length;
+        console.log(lengtht);
+
+        if(lengtht<=0){
+            <?php $balance_div = '<section id="ticket_balance"'.
+                            'class="padding-10 alert-success col col-md-12 text-left">'.
+                            '<h1 id="setRange">Range between <br/>'.
+                            '<strong class="minRange"></strong> USD <br/>and<br>'.
+                            '<strong class="maxRange"></strong> USD</h1>'.
+                            '</section>';
+            ?>
+            var html_balance = '<?=$balance_div?>';
+            $('.ticket').parent().append(html_balance);
+        }
+
+        $('#ticket_balance .minRange').html(min_value + "");
+        $('#ticket_balance .maxRange').html(max_value + "");
+
+        $('#ticket_'+id).html();
+    }
+
+    $( "#ticket_set" ).submit(function( event ) {
+        event.preventDefault();
+        enviar();
+    });
+
+    function enviar() {
+
+        $.ajax({
+            type: "POST",
+            url: "/ov/tickets/update_ticket",
+            data: $('#ticket_set').serialize()
+        })
+            .done(function( msg ) {
+
+                bootbox.dialog({
+                    message: msg,
+                    title: "Attention",
+                    buttons: {
+                        success: {
+                            label: "Ok!",
+                            className: "btn-success",
+                            callback: function() {
+                                location.href="/listTickets";
+                            }
+                        }
+                    }
+                });
+            });//fin Done ajax
+    }
+
 </script>
 
 <script type="text/javascript">
 
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
 
+
     $(document).ready(function () {
 
         pageSetUp();
-
 
         "use strict";
 
@@ -241,28 +385,51 @@ function setFormatDateJs($timestamp)
 
             events: [
                 <?php
-                $color = getColorTicket();
+
                 $icono = getTipoTicket();
 
+                $i = 1;
              foreach ($tickets as $ticket) :
-                $init = strtotime($ticket->date_creation);
-                $final = strtotime($ticket->date_final);
+                $date_creation = $ticket->date_creation;
+                $date_final = $ticket->date_final;
+                $init = strtotime($date_creation);
+                $final = strtotime($date_final);
 
-                $init = setFormatDateJs($init);
-                $final = setFormatDateJs($final);
+                $init_date = setFormatDateJs($init);
+                $final_date = setFormatDateJs($final);
 
-                $descripcion = "PRICE ESTIMATED : $ticket->amount $";
-                $descripcion .= "<br><h1>".
-                   " <a class='btn btn-success' onclick='ver_ticket($ticket->id);'>".
-                    "See Details</a>".
-                    "</h1>";
+                $color = getColorTicket($ticket->estatus);
+
+                $descripcion = "<h5>PRICE ESTIMATED : $ticket->amount $</h5>";
+
+                $descripcion .= "<br><h1 class='buttons_ticket' id='buttons_$i' >".
+                    "<a class='btn btn-success' onclick='ver_ticket($ticket->id);'>".
+                    "<img class='fa fa-eye'>".
+                    "See Details</a>";
+
+                if($ticket->estatus != 'BLK')
+                    $descripcion .= "<a class='btn btn-info' onclick='editar_ticket($ticket->id);'>".
+                    "<img class='fa fa-edit'>".
+                    "Settings</a>".
+                    "<a class='btn btn-warning' onclick='estatus_ticket($ticket->id);'>".
+                    "<img class='fa fa-check'>".
+                    "Enable/Disable</a>";
+
+                    $descripcion .= "</h1>";
+
+                $date_creation = date('Y-m-d H:i',$init);
+                $date_final = date('Y-m-d H:i',$final);
+
+                $i++;
+
                 ?>
                 {
                     title: 'Ticket #<?=$ticket->id;?>',
-                    start: new Date('<?=$ticket->date_creation;?>'),
-                    end: new Date('<?=$ticket->date_final;?>'),
+                    start: new Date('<?=$date_creation;?>'),
+                    end: new Date('<?=$date_final;?>'),
                     description: "<?=$descripcion;?>",
                     className: ['event', '<?=$color;?>'],
+                    allDay: false,
                     icon: '<?=$icono;?>'
                 },
                 <?php endforeach; ?>
@@ -315,8 +482,48 @@ function setFormatDateJs($timestamp)
             $('#calendar').fullCalendar('changeView', 'agendaDay');
         });
 
-        $('#calendar').fullCalendar('changeView', 'agendaDay');
+        $('#calendar').fullCalendar('changeView', 'agendaWeek');
 
-    })
+
+        setSizeBtn();
+    });
+
+    function setSizeBtn(){
+
+        var i = 1;
+       $('.fc-event').each(function () {
+           var divEvent = $(this);
+           var id='event_panel_'+i;
+           divEvent.attr('id',id);
+           var widthDiv = divEvent.width();
+
+           console.log(id+' '+widthDiv);
+
+           if(widthDiv<= 165){
+               /*$('#'+id+' .btn').css(
+                   {
+                       'width': '2.5em',
+                       'display': 'block',
+                       'color': 'transparent'
+                   }
+               );*/
+               var subtitle = $('#'+id+' h5').html();
+               $('#'+id+' h5').remove();
+               $('#'+id+' h1').parent().append(subtitle);
+               $('#'+id+' .fc-event-title').css(
+                   {
+                       'writing-mode': 'tb-rl'
+                   }
+               );
+               $('#'+id+' .btn').css(
+                   {
+                       'padding': '6px 4px'
+                   }
+               );
+           }
+           i++;
+       })
+    }
+
 
 </script>

@@ -91,6 +91,11 @@ class web_personal extends CI_Model{
         
         #if($id == 2)
         #    return true;
+
+        $getcwd = getcwd();
+        $stripos = stripos($getcwd, "/var/www/");
+        if($stripos!==false)
+            return false;
         
         $miWeb = $this->configDirPersonal($id);
         $miPagina = $miWeb . $this->sys_dir . "index.php";

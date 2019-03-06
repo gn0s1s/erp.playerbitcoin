@@ -27,7 +27,7 @@
 	position: relative;
 border: 1px solid rgba(0, 0, 0, 0.2);
 border-radius: 3px;
-box-shadow: 0px 5px 10px #555;
+/*box-shadow: 0px 5px 10px #555;*/
 background-clip: padding-box;
 outline: 0px none;
 }
@@ -257,4 +257,25 @@ border-color: #2086BF;
 	  left: 0;
 	background: rgba(255,255,255,0.8);
 	z-index: 1;
+}
+.bg-color-silver{
+	background: #ccc;
+}
+.bg-color-silver span{
+	color: #333;
+}
+.btn-warning{
+	background: #ED8C17;
+}
+.btn-success,.label-success, .smart-form .btn-success, .bg-color-green{
+	background: #0DC143 !important;
+}
+.txt-color-green{
+	color: #0DC143 !important;
+}
+.backHome{
+	background: transparent !important;
+}
+.btn-info{
+    background: #1048B1;
 }

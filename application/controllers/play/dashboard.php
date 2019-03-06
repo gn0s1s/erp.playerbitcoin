@@ -290,6 +290,15 @@ class dashboard extends CI_Controller
     <!-- FAVICONS -->
     <link rel="shortcut icon" href="/template/img/favicon/favicon.png" type="image/x-icon">
     <link rel="icon" href="/template/img/favicon/favicon.png" type="image/x-icon">
+    <style>
+        .btn.btn-registro7{
+        padding-left:0.8em !important;
+        }
+        body{
+            background: url("http://playerbitcoin.com/img/bgCabezaN.jpg") repeat;
+            background-size:auto 100%;
+        }
+    </style>
 
  ';
         $home = str_replace("</head>", "$link \n </head>", $home);
@@ -444,6 +453,7 @@ class dashboard extends CI_Controller
     // DO NOT REMOVE : GLOBAL FUNCTIONS!
     $(document).ready(function () {
         pageSetUp();
+        bache_ui();
     })
 </script>
 <script src='/template/js/plugin/dygraphs/demo-data.min.js'></script>
@@ -464,7 +474,27 @@ class dashboard extends CI_Controller
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(ga, s);
     })();
-    
+
+		
+		function bache_ui(){
+			
+			var pathname = window.location.pathname;
+			var ruta = pathname.split(\"/\");
+
+            var rutaElement = ruta[2];
+            if(rutaElement==\"compras\")
+				return false;	
+
+			var footer = $( \".marginPanelAbajo\" ).height();			
+			var header = $( \"contTop\" ).height();
+			
+			var htm = $( document ).height();
+			
+			var size = (htm-(header+footer));
+
+			$('body').append('<div class=\"main-footer\" style=\"height: '+size+'px\"> </div>');
+			
+		}	
     
 var g1 = new Dygraph(document.getElementById(\"bitcoin_chart\"), data_bitcoin, {
 					customBars : true,
@@ -568,6 +598,9 @@ function getDataChart(){
         $acumulado = $this->getAcumulado();
         $acumulado.="  <small>USD</small>";
 
+        $boton_view = "<a class=\"btn btn-registro3\" ".
+            "style=\"background: #0DC143;\" href=\"/listTickets\">VIEWER</a>";
+
         if($isVIP)
             $script.="<script> $('#become-vip').hide();</script>";
 
@@ -577,8 +610,7 @@ function getDataChart(){
                 $('#nuevaClase').attr('href','/ov/dashboard');
                 $('.btn.btn-registro3').attr('href','/ov/tickets/manual');
                 $('.btn.btn-registro4').attr('href','/ov/tickets/automatic');
-                $('.btn.btn-registro6').attr('href','/shoppingcart');
-                $('body').css('background','#0046B5 url(../img/bgCabezaN.jpg) no-repeat');
+                $('.contTicket').append('$boton_view');                
                 $('.btn.btn-registro7').attr('href','/ov/wallet/requestPayment');
                 $('img[src=\"https://www.tradingview.com/x/hlruquwj/\"]').parent().append('$widget');
                 $('.btn.btn-registro6').removeAttr('data-target');
@@ -586,6 +618,12 @@ function getDataChart(){
                 $('#txtUsuario').html('$bienvenido');
                 $('.fa.fa-bitcoin.iconBitcoin').parent().prepend('$imgbtc');
                 $('.fa.fa-bitcoin.iconBitcoin').remove();
+                $('#txtUsuario').parent().mouseenter(function() {
+                  $('.dropdown-menu').show();
+                });
+                $('#subtitle').mouseenter(function() {
+                  $('.dropdown-menu').hide();
+                });
                 </script>";
 
         $home = str_replace("</body>", "$script \n </body>", $home);

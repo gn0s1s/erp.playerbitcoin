@@ -1695,8 +1695,8 @@ class autobono
             return 0;
         }
 
-        #TODO: $this->bitcoinVal = 3853.7;
-        $this->bitcoinVal = $API->newHistorical();
+        $this->bitcoinVal = 3853.7;
+        #TODO: $this->bitcoinVal = $API->newHistorical();
         echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
 
         return $this->bitcoinVal;
@@ -1796,7 +1796,7 @@ class autobono
         if(!$tickets)
             return false;
 
-        $data = array("estatus" => 'DES');
+        $data = array("estatus" => 'BLK');
         foreach ($tickets as $ticket) {
             $ticket_id = $ticket["id"];
             $where = "id = $ticket_id";
