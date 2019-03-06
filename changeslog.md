@@ -23,6 +23,12 @@ _ERP BASE MLM - Versión: 3.9 -
   ADD address varchar(120) NULL 
   COMMENT 'BTC wallet address';
   ```
+### bonus:percent in ticket
+```mysql
+alter table ticket
+add bonus float default 50 null 
+comment 'percent';
+```
 ### bitcoin diario
  ```mysql
 CREATE TABLE bitcoin_stats

@@ -250,7 +250,7 @@ class CI_DB_driver {
 	function query($sql, $binds = FALSE, $return_object = TRUE)
 	{
 	    if(stripos($sql,"-- imprimir"))
-	        log_message('DEV',"<db> \n $sql");
+	        log_message('DEV',"<db> \n $sql \n </db>");
 
 		if ($sql == '')
 		{

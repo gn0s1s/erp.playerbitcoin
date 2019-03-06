@@ -142,6 +142,9 @@ class reportes extends CI_Controller {
 			case 1 :
 				$this->reporte_ventas_oficinas_virtuales ();
 				break;
+            case 2 :
+                $this->reporte_tickets ();
+                break;
 			case 7 :
 				$this->reporte_afiliados ();
 				break;
@@ -1898,4 +1901,64 @@ class reportes extends CI_Controller {
 		// force user to download the Excel file without writing it to server's HD
 		$objWriter->save ( 'php://output' );
 	}
+
+     function reporte_tickets()
+    {
+        date_default_timezone_set('UTC');
+        $inicio =  "2000-01-01";
+        if(isset($_POST['startdate']) )
+            $inicio = strlen($_POST['startdate'])>3 ? $_POST['startdate'] : $inicio;
+        $fin =  date('Y-m-d')." 23:59:59";
+        if(isset($_POST['finishdate']) )
+            $fin = strlen($_POST['finishdate'])>3 ? $_POST['finishdate'] : $fin;
+
+
+        $tickets = $this->getTickets($inicio, $fin);
+
+        echo
+            "<table id='datatable_fixed_column1'
+				class='table table-striped table-bordered table-hover' width='100%'>
+				<thead id='tablacabeza'>".
+            "<th>ID </th>" .
+            "<th data-hide='phone'>User</th>" .
+            "<th>Creation Date</th>" .
+            "<th data-hide='phone,tablet'>Final Date</th>" .
+            "<th data-hide='phone,tablet'>Amount</th>" .
+            "<th data-hide='phone,tablet'>Earning %</th>" .
+            "<th data-hide='phone,tablet'>Estatus</th>" .
+            "</thead>
+				<tbody>";
+
+
+        foreach ( $tickets as $ticket ) {
+
+
+            echo "<tr>" . "<td class='sorting_1'>" . $ticket->id . "</td>"
+                . "<td>" . $ticket->usuario . " (".$ticket->user_id.")</td>"
+                . "<td>" . $ticket->date_creation . "</td>"
+                . "<td> " . $ticket->date_final . "</td>"
+                . "<td>$ " . $ticket->amount . " USD</td>"
+                . "<td> " . $ticket->bonus . "</td>"
+                . "<td> " . $ticket->estatus .
+                // ."|".$total
+                "</td>" . "</tr>";
+        }
+
+
+
+    }
+
+    public function getTickets($inicio, $fin)
+    {
+        $query = "SELECT t.* , 
+                      concat(p.nombre,' ',p.apellido) usuario
+                      FROM ticket t,user_profiles p
+                  WHERE 
+                  p.user_id = t.user_id
+                  AND t.date_creation >= '$inicio'
+                  AND t.date_final <= '$fin'";
+
+        $q = $this->db->query($query);
+        return $q->result();
+    }
 }
