@@ -114,18 +114,31 @@ function setFormatDateJs($timestamp)
                 </header>
                 <div class="col-xs-12">
                     <div class="col-xs-6"></div>
-                    <div class="col-xs-2">
-                        <a title="Eliminar" href="#" class="btn btn-success"></a>
+                    <div class="col-xs-1">
+                        <a title="See Details" href="#" class="btn btn-success"></a>
                         <br>See Details
                     </div>
-                    <div class="col-xs-2">
-                        <a title="Eliminar" href="#" class="btn btn-info"></a>
+                    <div class="col-xs-1">
+                        <a title="Settings" href="#" class="btn btn-info"></a>
                         <br>Settings
                     </div>
-                    <div class="col-xs-2">
-                        <a title="Eliminar" href="#" class="btn btn-warning"></a>
+                    <div class="col-xs-1">
+                        <a title="Enable / Disable" href="#" class="btn btn-warning"></a>
                         <br>Enable / Disable
                     </div>
+                    <div class="col-xs-1">
+                        <a title="Actived" href="#" class="btn bg-color-green"></a>
+                        <br>Actived
+                    </div>
+                    <div class="col-xs-1">
+                        <a title="Inactived" href="#" class="btn bg-color-silver"></a>
+                        <br>Inactived
+                    </div>
+                    <div class="col-xs-1">
+                        <a title="Blocked" href="#" class="btn bg-color-red"></a>
+                        <br>Blocked
+                    </div>
+
                 </div>
 
                 <!-- widget div-->
