@@ -218,6 +218,7 @@ img.fa{
                     }
                 });
 
+                balance();
             });
     }
     function editar_ticket(id) {
@@ -227,7 +228,6 @@ img.fa{
             url: "/ov/tickets/edit_ticket"
         })
             .done(function (msg) {
-
                 bootbox.dialog({
                     message: msg,
                     title: "Ticket # " + id,
@@ -238,11 +238,19 @@ img.fa{
                             callback: function () {
                                 enviar();
                             }
+                        },
+                        danger: {
+                            label: "Cancel",
+                            className: "btn-danger",
+                            callback: function () {
+
+                            }
                         }
                     }
                 });
 
-                date_stamp();
+                balance();
+                date_stamp(id);
 
             });
     }
@@ -270,14 +278,35 @@ img.fa{
 
             });
     }
-    function date_stamp(){
+    function date_stamp(id = false){
+
+        <?php
+        date_default_timezone_set('UTC');
+        $date_init = date('Y-m');
+        $day_init = date('d');
+        $date_stamp = date('Y-m-d');
+
+        if($day_init > 21){
+            $fecha_sub = new DateTime($date_stamp);
+            date_add($fecha_sub, date_interval_create_from_date_string("1 day"));
+            $date_stamp = date_format($fecha_sub, $format);
+        }
+
+        ?>
+
         $(function()
         {
             a = new Date();
-            //a = a.getFullYear()-18;
+            a = a.getFullYear()-18;
+            a+="-12-31"
+            if(id)
+                a = $('#date_'+id).val();
+
+            b = '<?=$date_stamp?>';
             $( ".datepicker" ).datepicker({
                 changeMonth: true,
-                maxDate: a+"-12-31",
+                maxDate: a,
+                minDate: b,
                 dateFormat:"yy-mm-dd",
                 yearRange: "-99:+0",
             });
@@ -293,10 +322,10 @@ img.fa{
         max_value -= 0.01;
 
         var lengtht = $('#ticket_balance').length;
-        console.log(lengtht);
+        console.log(lengtht+' -> '+saldo);
 
         if(lengtht<=0){
-            <?php $balance_div = '<section id="ticket_balance"'.
+            <?php $balance_div = '<section id="ticket_balance" style="z-index: 100;" '.
                             'class="padding-10 alert-success col col-md-12 text-left">'.
                             '<h1 id="setRange">Range between <br/>'.
                             '<strong class="minRange"></strong> USD <br/>and<br>'.
@@ -320,27 +349,63 @@ img.fa{
 
     function enviar() {
 
+        var message = '<h3>Sure you want to activeate this ticket?.</h3>'+
+            ' <br/><p>Remember jacpkot date must be 24 hours later<p>';
+
+        var data_form = $('#ticket_set').serialize();
+
         $.ajax({
             type: "POST",
-            url: "/ov/tickets/update_ticket",
-            data: $('#ticket_set').serialize()
+            url: "/auth/show_dialog",
+            data: {
+                message: message
+            },
         })
-            .done(function( msg ) {
-
+            .done(function( msg )
+            {
                 bootbox.dialog({
                     message: msg,
-                    title: "Attention",
+                    title: '',
                     buttons: {
                         success: {
-                            label: "Ok!",
+                            label: "Accept",
                             className: "btn-success",
                             callback: function() {
-                                location.href="/listTickets";
+
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/ov/tickets/update_ticket",
+                                    data: data_form
+                                })
+                                    .done(function( msg ) {
+
+                                        bootbox.dialog({
+                                            message: msg,
+                                            title: "Attention",
+                                            buttons: {
+                                                success: {
+                                                    label: "Ok!",
+                                                    className: "btn-success",
+                                                    callback: function() {
+                                                        location.href="/listTickets";
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    });//fin Done ajax
+                            }
+                        },
+                        danger: {
+                            label: "Cancel!",
+                            className: "btn-danger",
+                            callback: function() {
+
                             }
                         }
                     }
-                });
-            });//fin Done ajax
+                })
+            });
+
     }
 
 </script>
@@ -402,6 +467,7 @@ img.fa{
                 $icono = getTipoTicket();
 
                 $i = 1;
+
              foreach ($tickets as $ticket) :
                 $date_creation = $ticket->date_creation;
                 $date_final = $ticket->date_final;
@@ -420,11 +486,14 @@ img.fa{
                     "<img class='fa fa-eye'>".
                     "See Details</a>";
 
-                if($ticket->estatus != 'BLK')
+                $isBlocked = $ticket->estatus == 'BLK';
+                $isInactived = $ticket->estatus == 'DES';
+
+                if($isInactived && $isVIP)
                     $descripcion .= "<a class='btn btn-info' onclick='editar_ticket($ticket->id);'>".
                     "<img class='fa fa-edit'>".
                     "Settings</a>".
-                    "<a class='btn btn-warning' onclick='estatus_ticket($ticket->id);'>".
+                    "<a class='hide btn btn-warning' onclick='estatus_ticket($ticket->id);'>".
                     "<img class='fa fa-check'>".
                     "Enable/Disable</a>";
 
@@ -470,11 +539,13 @@ img.fa{
 
         $('#calendar-buttons #btn-prev').click(function () {
             $('.fc-button-prev').click();
+            setSizeBtn();
             return false;
         });
 
         $('#calendar-buttons #btn-next').click(function () {
             $('.fc-button-next').click();
+            setSizeBtn();
             return false;
         });
 
@@ -515,7 +586,7 @@ img.fa{
 
            console.log(id+' '+widthDiv);
 
-           if(widthDiv<= 165){
+           if (widthDiv <= 165) {
                /*$('#'+id+' .btn').css(
                    {
                        'width': '2.5em',
@@ -523,20 +594,26 @@ img.fa{
                        'color': 'transparent'
                    }
                );*/
-               var subtitle = $('#'+id+' h5').html();
-               $('#'+id+' h5').remove();
-               $('#'+id+' h1').parent().append(subtitle);
-               $('#'+id+' .fc-event-title').css(
+               var h5title = '#' + id + ' h5';
+               var subtitle = $(h5title).html();
+               $(h5title).remove();
+               if (widthDiv > 50)
+                   $('#' + id + ' h1').parent().append(subtitle);
+
+               $('#' + id + ' .fc-event-title').css(
                    {
                        'writing-mode': 'tb-rl'
                    }
                );
-               $('#'+id+' .btn').css(
+               $('#' + id + ' .btn').css(
                    {
-                       'padding': '6px 4px'
+                       'padding': '6px 4px',
+                       'vertical-align': 'bottom'
                    }
                );
            }
+
+
            i++;
        })
     }

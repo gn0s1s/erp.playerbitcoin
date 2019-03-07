@@ -150,6 +150,16 @@ class tickets extends CI_Controller
         $tickets=$this->modelo_compras->get_tickets_id($id);
 		$this->template->set("tickets",$tickets);
 
+        $isVIP = $this->playerbonos->isActivedAfiliado($id);
+
+        if($isVIP){
+            $hour = (int) date("His");
+            $isVIP = $hour <= 235959 ;
+            log_message('DEV',"hour list : $hour");
+        }
+
+        $this->template->set("isVIP",$isVIP);
+
 		$this->template->set_theme('desktop');
 		$this->template->set_layout('website/main');
 		$this->template->set_partial('header', 'website/ov/header');
@@ -167,7 +177,12 @@ class tickets extends CI_Controller
 		$id              = $this->tank_auth->get_user_id();
 
         $isActived = $this->playerbonos->isActivedAfiliado($id);
-        $isActived |= (int) date("H") < 21 ;
+        $hour = (int) date("His");
+        $limit = $isActived ? 235959 : 205959;
+        $isActived = $hour <= $limit;
+
+        log_message('DEV',"hour :::: $hour");
+
         if($this->general->isActived($id)!=0){
 			redirect('/shoppingcart');
 		}elseif(!$isActived){
@@ -331,6 +346,8 @@ class tickets extends CI_Controller
             $datos['date_final'] =  "$date 21:00:00";
         }
 
+        $datos["estatus"] = 'ACT';
+
         $json = json_encode($datos);
 	    log_message('DEV',"update ticket :: $json");
 
@@ -391,6 +408,11 @@ class tickets extends CI_Controller
         $i = 1;
         foreach ($ticket as $key => $data){
             $label = str_replace("_"," ",$key);
+
+            if($key == "amount")
+                $data = "$ $data USD </div><div>
+                    <input class='hide ticket' value='$data' />";
+
             $list .= "<li class='dd-item' data-id='$i' >
                     <div class='dd-handle'><b>$label</b>: $data</div>
                     </li>";
@@ -825,14 +847,18 @@ class tickets extends CI_Controller
         $list = "";
 
         $i = 1;
-        $available = "|amount|date_final|id";
-        $date_input = "class='datepicker' type='text'";
+        $available = "|amount|id";
+
+        if($ticket->estatus == 'DES')
+            $available .="|date_final";
+
+        $date_input = "class='datepicker' type='text' id='date_$ticket->id'";
         $amount_input = "type='number' class='ticket' step='0.01' 
                             min='1000' onkeyup='balance()' onchange='balance()'";
         $format = array(
             "date_final" => $date_input,
             "amount" => $amount_input,
-            "id" => 'class=hide'
+            "id" => "class='hide'"
         );
         foreach ($ticket as $key => $data) {
 

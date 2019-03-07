@@ -2141,6 +2141,7 @@ function index()
 	
 		$id=$this->tank_auth->get_user_id();
 		$usuario=$this->general->get_username($id);
+
 		$style=$this->general->get_style($id);
 		$this->template->set("style",$style);
 		$this->template->set("usuario",$usuario);
