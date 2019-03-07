@@ -59,7 +59,7 @@
 												<a href="/bo/inventario/altaMovimiento">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 														<i class="fa fa-edit fa-3x"></i>
-														<h1>Alta</h1>
+														<h1>Add</h1>
 													</div>
 												</a>
 												</div>
@@ -67,7 +67,7 @@
 												<a href="/bo/inventario/listarMovimiento">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 														<i class="fa fa-list-alt fa-3x"></i>
-														<h1>Listar</h1>
+														<h1>List</h1>
 													</div>
 												</a>
 												</div>

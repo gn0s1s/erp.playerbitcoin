@@ -107,10 +107,10 @@ data-widget-deletebutton="false">
 																<a href="#bono<?= $bono->id?>tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">General</span> </a>
 															</li>
 															<li data-target="#step2">
-																<a href="#bono<?= $bono->id?>tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Condiciones</span> </a>
+																<a href="#bono<?= $bono->id?>tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Parameters</span> </a>
 															</li>
 															<!--<li data-target="#step3">
-																  <a href="#bono<?= $bono->id?>tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Condiciones</span> </a>
+																  <a href="#bono<?= $bono->id?>tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Parameters</span> </a>
 															</li>-->
 															<li data-target="#step4">
 																<a href="#bono<?= $bono->id?>tab4" data-toggle="tab"> <span class="step">3</span> <span class="title">Valor</span> </a>
@@ -412,7 +412,7 @@ data-widget-deletebutton="false">
 														</div><!-- step 2 -->
 														<div class="tab-pane" id="plan<?= $plan->id?>tab3">
 															<br>
-															<h3> bonos </h3>
+															<h3> Calculated Commissions </h3>
 														</div><!-- step 3 -->
 														<div class="tab-pane" id="plan<?= $plan->id?>tab4">
 															<br><br>

@@ -43,7 +43,7 @@
                                                     <div class="minh well well-sm txt-color-white text-center link_dashboard"
                                                          style="background:<?= $style[0]->btn_2_color ?>;"><i
                                                                 class="fa fa-money fa-3x"></i>
-                                                        <h1>Commissions Settings<br></h1>
+                                                        <h1>Commissions <br/>Settings<br></h1>
                                                     </div>
                                                 </a></div>
                                             <div class="col-xs-10 col-sm-4 col-md-3 col-lg-2 link"><a

@@ -11,11 +11,11 @@
 					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 						<h1 class="page-title txt-color-blueDark">
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<span>>
-								<a href="/bo/configuracion/">Settings</a> >
-								<a href="/bo/configuracion/compensacion/">Plan of compensacion</a> >
-								<a href="/bo/rangos/">Ranking</a>
-								> Nuevo rango
+							<span >
+                                > <a href="/bo/configuracion/">Settings</a>
+                                > <a href="/bo/configuracion/compensacion/">Commissions Settings</a>
+                                > <a href="/bo/rangos/">Parameters</a>
+								> Add Parameter
 							</span>
 						</h1>
 					</div>
@@ -52,7 +52,7 @@
 	        </label>
 		<div class="form-group" style="width: 100rem;">
 	        <div class="row" id="cross_tipo_rango">
-									<header>Condiciones</header><br><br>
+									<header>Parameters</header><br><br>
 									<label style="margin: 1rem;width: 50rem;" class="select">Condicion Red
 										<select id="condicion_red_afilacion" name="condicion_red_afilacion" style="margin: 1rem;width: 10rem;">
 											<option value='EQU'>Equilibrada</option>

@@ -19,7 +19,7 @@
 								<a href="/bo/configuracion/videos?id_red=<?php echo $id_red;?>">Videos</a>
 							</span>
 							<span>>
-								<a href="/bo/configuracion/alta_videos?id_red=<?php echo $id_red;?>">Alta</a> > Youtube
+								<a href="/bo/configuracion/alta_videos?id_red=<?php echo $id_red;?>">Add</a> > Youtube
 							</span>
 						</h1>
 					</div>

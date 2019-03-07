@@ -6,7 +6,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Settings</a> >
-								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
+								<a href="/bo/configuracion/compensacion">Commissions Settings</a> >
 								<a href="/bo/bonos">Calculated Commissions</a>
 								> Listar Bonos
 							</span>
@@ -72,7 +72,7 @@
 													<th data-hide="phone,tablet">Descripción</th>
 													<th data-hide="phone,tablet">Fecha</th>
 													<th data-hide="phone,tablet">Fecuencia</th>
-													<th data-hide="phone,tablet">Condiciones</th>
+													<th data-hide="phone,tablet">Parameters</th>
 													<th data-hide="phone,tablet">Valor por Nivel</th>
 													<th data-hide="phone,tablet">Acciones</th>
 												</tr>

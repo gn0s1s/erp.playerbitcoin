@@ -63,7 +63,7 @@
 													<label class="label">Department</label>
 													<label class="select">
 														<select name="departamento">
-															<option value="feedback@networksoft.mx">Suggestion</option>
+															<option value="support@playerbitcoin.com">support@playerbitcoin.com</option>
 														</select>
 														
 													</label>

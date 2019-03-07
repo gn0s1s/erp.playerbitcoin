@@ -34,7 +34,6 @@ class ventas extends CI_Controller
 		$this->load->model('model_excel');
 		$this->load->model('cemail');
 		$this->load->model('model_servicio');
-		$this->load->library('html2pdf');
 	}
 
 	function index(){

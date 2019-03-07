@@ -6,7 +6,7 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
 							> <a href="/bo/administracion/"> Administración</a> 
-								> Bonos
+								> Calculated Commissions
 							</span>
 						</h1>
 					</div>

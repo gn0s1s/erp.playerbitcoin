@@ -17,7 +17,7 @@
 								<label class="input"> Descripcion
 								<textarea name="descripcion" placeholder="Descripción" id="descripcion" style="width: 50%;" class="form-control" required ><?=$plan[0]->descripcion; ?></textarea>
 								</label>
-								<label class="input"> Bonos
+								<label class="input"> Calculated Commissions
 								<br>
 								</label>
 

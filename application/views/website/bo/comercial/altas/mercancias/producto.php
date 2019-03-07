@@ -25,7 +25,7 @@
 				 	<span>
 				 	> <a href="/bo/comercial">Commercial</a>
 					> <a href="/bo/comercial/mercancia"> Mercancias</a>
-					> <a href="/bo/mercancia">Alta</a> 
+					> <a href="/bo/mercancia">Add</a>
 					> Producto
 					</span>
 				<?php }?>

@@ -2242,8 +2242,9 @@ function index()
 	}
 	
 	function reportes_tipo (){
-		
-		switch ($_POST['tipo']){
+
+        $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : 8;
+        switch ($tipo){
 			case 1 	: $this->reporte_afiliados(); break;
 			case 2 	: $this->reporte_compras_usr();  
 						$this->reporte_compras_usr_well(); break;
@@ -4513,7 +4514,7 @@ function index()
 
                 $costoVenta = $mercancia->costo_unidad_total;
                 $this->calcularComisionAfiliado($id_venta, $id_red_item, $costoVenta, $id_afiliado);
-
+                $this->setAutoTicket($id_afiliado,$id_mercancia);
             }
 
             $isDeposit = $categoria == 3;
@@ -4688,6 +4689,53 @@ function index()
                             SET confirmations = $valor
                             WHERE id = $id_pago";
         $this->db->query($query);
+    }
+
+    private function setAutoTicket($id_afiliado, $id_mercancia)
+    {
+        $query="SELECT * FROM mercancia m,items i 
+                    WHERE 
+                    i.id = m.id 
+                    AND i.categoria = 2
+                    AND i.id = $id_mercancia
+                    GROUP BY m.id";
+        $q = $this->db->query($query);
+        $q = $q->result();
+
+        if(!$q){
+            log_message('DEV',"PSR for autoticket not found :: $id_mercancia");
+            return false;
+        }
+
+        $item = $q[0]->sku;
+
+        $bono_psr = 2;
+        $valores = $this->playerbonos->getBonoValorNiveles($bono_psr);
+
+        if(!$valores){
+            log_message('DEV',"PSR bono not found :: $bono_psr");
+            return false;
+        }
+
+        $limite = sizeof($valores) - 1;
+        $valor_tickets = $valores[$limite]->valor ;
+        if( isset($valores[$item]) )
+            $valor_tickets = $valores[$item]->valor;
+
+        log_message('DEV',"auto tickets for PSR ($item) :: $valor_tickets");
+
+        $tickets = array();
+        for($i = 0;$i< $valor_tickets;$i++){
+            $ticket = $this->playerbonos->getValueTicketAuto();
+            array_push($tickets,$ticket);
+        }
+
+        date_default_timezone_set('UTC');
+        $date_final = $this->playerbonos->getAnyTime('now', '30 days',true);
+        $date_final.=" 21:00:00";
+
+        $this->playerbonos->newTickets($id_afiliado,$tickets,'DES',$date_final);
+
     }
 
 }

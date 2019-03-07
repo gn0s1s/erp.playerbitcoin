@@ -14,7 +14,7 @@
 							<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Settings</a> >
-								<a href="/bo/configuracion/compensacion/">Plan of compensacion</a> >
+								<a href="/bo/configuracion/compensacion/">Commissions Settings</a> >
 								<a href="/bo/planes/">Planes of Bonos</a>
 								> Nuevo Plan
 							</span>

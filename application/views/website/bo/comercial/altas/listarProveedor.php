@@ -7,7 +7,7 @@
 						<?php  if($type=='5'){?>
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
-							> <a href="/bo/logistico2/alta">Alta</a>
+							> <a href="/bo/logistico2/alta">Add</a>
 							> <a href="/bo/comercial/actionProveedor">Proveedor </a>
 							> Listar
 							</span>

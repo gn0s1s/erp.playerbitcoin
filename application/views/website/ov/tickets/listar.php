@@ -485,14 +485,17 @@ img.fa{
 
         $('#mt').click(function () {
             $('#calendar').fullCalendar('changeView', 'month');
+            setSizeBtn();
         });
 
         $('#ag').click(function () {
             $('#calendar').fullCalendar('changeView', 'agendaWeek');
+            setSizeBtn();
         });
 
         $('#td').click(function () {
             $('#calendar').fullCalendar('changeView', 'agendaDay');
+            setSizeBtn();
         });
 
         $('#calendar').fullCalendar('changeView', 'agendaWeek');

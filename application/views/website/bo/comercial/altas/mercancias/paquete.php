@@ -7,19 +7,19 @@
 				<!--<?php //  if($type=='5'){?>
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>&gt;
 					<a href="/bo/comercial/carrito_de_compras"> Mercancia</a> > <a
-					href="/bo/mercancia/index">Alta</a> > Combinado
+					href="/bo/mercancia/index">Add</a> > Combinado
 				</span>
 				<?php //}else{?>	
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>&gt;
 					<a href="/bo/comercial">Commercial</a> > <a
 					href="/bo/comercial/carrito_de_compras"> Carrito of Purchases </a> >
-					<a href="/bo/mercancia/index">Alta</a> > Paquete of Inscripción
+					<a href="/bo/mercancia/index">Add</a> > Paquete of Inscripción
 				</span>
 				<?php //}?>-->
 								<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 				<span>&gt;
 								<a href="/bo/comercial">Commercial</a> > <a href="/bo/comercial/carrito_de_compras?co=c"> Carrito of Purchases </a>
-								> <a href="/bo/mercancia/index?co=c" >Alta</a> > Paquete of Inscripción
+								> <a href="/bo/mercancia/index?co=c" >Add</a> > Paquete of Inscripción
 				</span>
 					
 			</h1>

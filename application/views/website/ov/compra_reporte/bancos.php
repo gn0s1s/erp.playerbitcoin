@@ -44,8 +44,8 @@
             data: {
                 banco: banco,
             },
-            type: "post",
-            url: "RegistrarVentaConsignacion",
+            type: "POST",
+            url: "/ov/compras/RegistrarVentaConsignacion",
             success: function (msg) {
                 FinalizarSpinner();
                 bootbox.dialog({

@@ -558,7 +558,7 @@ function getDataChart(){
                     and c.id_venta = v.id_venta
                     and v.id_venta = t.reference
                     and i.categoria = 4
-                    and t.date_final <= '$date_final' 
+                    and date_format(t.date_final,'%Y-%m-%d') =  date_format('$date_final','%Y-%m-%d') 
                     and t.estatus = 'ACT'";
 
         log_message('DEV',$query);
@@ -612,6 +612,7 @@ function getDataChart(){
                 $('.btn.btn-registro4').attr('href','/ov/tickets/automatic');
                 $('.contTicket').append('$boton_view');                
                 $('.btn.btn-registro7').attr('href','/ov/wallet/requestPayment');
+                $('.contBotones2 .btn.btn-registro6').attr('href','/shoppingcart');
                 $('img[src=\"https://www.tradingview.com/x/hlruquwj/\"]').parent().append('$widget');
                 $('.btn.btn-registro6').removeAttr('data-target');
                 $('.btn.btn-registro6').removeAttr('data-toggle');

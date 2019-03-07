@@ -8,7 +8,7 @@
 				<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a> <span>&gt;
 					<a href="/bo/comercial">Commercial</a> > <a
 					href="/bo/comercial/carrito_de_compras?co=c"> Carrito of Purchases </a>
-					> <a href="/bo/mercancia/index?co=c">Alta</a> > Combinado
+					> <a href="/bo/mercancia/index?co=c">Add</a> > Combinado
 				</span>
 			</h1>
 		</div>

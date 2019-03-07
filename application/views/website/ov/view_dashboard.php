@@ -763,6 +763,15 @@ $ci->load->model("model_permissions"); ?>
                                                 </div>
                                             </a>
                                         </div>
+                                        <div class="col-sm-6">
+                                            <a href="/ov/suggestion">
+                                                <div class="well well-sm txt-color-white text-center link_dashboard"
+                                                     style="background:<?= $style[0]->btn_1_color ?>">
+                                                    <h5>
+                                                        <i class="fa fa-support "></i> Support</h5>
+                                                </div>
+                                            </a>
+                                        </div>
                                     <?php }
                                     $permiso = $ci->model_permissions->check($id, 'descargas');
                                     if ($permiso) {

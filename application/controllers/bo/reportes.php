@@ -1908,7 +1908,7 @@ class reportes extends CI_Controller {
         $inicio =  "2000-01-01";
         if(isset($_POST['startdate']) )
             $inicio = strlen($_POST['startdate'])>3 ? $_POST['startdate'] : $inicio;
-        $fin =  date('Y-m-d')." 23:59:59";
+        $fin =  date('Y-m-t')." 23:59:59";
         if(isset($_POST['finishdate']) )
             $fin = strlen($_POST['finishdate'])>3 ? $_POST['finishdate'] : $fin;
 

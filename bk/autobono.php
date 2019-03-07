@@ -213,7 +213,7 @@ class autobono
                     and v.id_venta = t.reference
                     and i.categoria = 4
                     -- and t.date_creation > '$date_init'
-                    and t.date_final <= '$date_final' 
+                    and date_format(t.date_final,'%Y-%m-%d') =  date_format('$date_final','%Y-%m-%d') 
                     and t.estatus = 'ACT'";
         $q = newQuery($this->db,$query);
 
@@ -1027,7 +1027,7 @@ class autobono
         $query = "SELECT * FROM ticket WHERE user_id = $id 
                     AND estatus = 'ACT' 
                     and date_creation > '$date_init' 
-                    and date_final <= '$date_final' ";
+                    and date_format(date_final,'%Y-%m-%d') = date_format('$date_final','%Y-%m-%d') ";
 
         $q = newQuery($this->db, $query);
         #TODO: $q = array(array("amount"=>1002.6));
@@ -1714,8 +1714,8 @@ class autobono
                         t.*
                     from ticket t
                   where
-                    t.date_creation > '$date_init' 
-                    and t.date_final <= '$date_final' 
+                    t.date_creation >= '$date_init' 
+                    and date_format(t.date_final,'%Y-%m-%d') <=  date_format('$date_final','%Y-%m-%d') 
                     and t.estatus = 'ACT'";
         $tickets = newQuery($this->db,$query);
 
@@ -1789,7 +1789,7 @@ class autobono
                     from ticket t
                   where
                    -- t.date_creation > '$date_init' and
-                     t.date_final <= '$date_final' 
+                     date_format(t.date_final,'%Y-%m-%d') <=  date_format('$date_final','%Y-%m-%d') 
                     and t.estatus = 'ACT'";
         $tickets = newQuery($this->db,$query);
         echo "TICKETS DES : ".json_encode($tickets)."\n";

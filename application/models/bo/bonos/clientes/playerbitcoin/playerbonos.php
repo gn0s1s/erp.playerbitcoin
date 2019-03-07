@@ -2144,7 +2144,7 @@ class playerbonos extends CI_Model
         $this->db->query($query);
     }
 
-    function newTickets($id,$tickets){
+    function newTickets($id,$tickets,$actived = 'ACT',$date_final = false){
 
         $where = "i.categoria = 4";
         $mercancia = $this->getMercancia($where);
@@ -2160,12 +2160,19 @@ class playerbonos extends CI_Model
         $id_venta = $this->insertVenta($id,"BILLETERA");
         $this->insertVentaItem($id, $id_venta,$red_item,$nTickets);
         $list_tickets = implode(",",$tickets);
-        $descripcion = "NEW TICKET(S) : $list_tickets";
+        $descripcion = "NEW TICKET(S) : <a href='javascript:void(0)' onclick='alert(\"$list_tickets\")'>See details</a>";
         $this->add_sub_billetera("SUB",$id,$tarifa, $descripcion);
 
         date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');
         $nextTime .= " 20:59:59";
+
+        if($date_final){
+            $timestamp = strtotime($date_final);
+            $format = 'Y-m-d';
+            $nextTime = date($format, $timestamp);
+            $nextTime.= " 21:00:00";
+        }
 
         log_message('DEV',"getNextTime ->> $nextTime");
 
@@ -2173,10 +2180,12 @@ class playerbonos extends CI_Model
             "user_id"=>$id,
             "date_creation"=> date('Y-m-d H:i:s'),
             "date_final"=> $nextTime,
-            "reference"=>$id_venta
+            "reference"=> $id_venta,
+            "estatus" => $actived
         );
         foreach ($tickets as $ticket){
             $datos["amount"] = $ticket;
+            log_message('DEV',"creating ticket ->> ".json_encode($datos));
             $this->db->insert("ticket",$datos);
         }
 
@@ -3179,7 +3188,7 @@ class playerbonos extends CI_Model
         return date_format($year, 'Y-m-d');
     }
 
-     function getAnyTime($date, $time = '1 month',$add= false)
+     function getAnyTime($date = 'now', $time = '1 month',$add= false,$format = 'Y-m-d')
     {
         $fecha_sub = new DateTime($date);
         if($add)
@@ -3187,7 +3196,7 @@ class playerbonos extends CI_Model
         else
             date_sub($fecha_sub, date_interval_create_from_date_string("$time"));
 
-        $date = date_format($fecha_sub, 'Y-m-d');
+        $date = date_format($fecha_sub, $format);
 
         return $date;
     }
@@ -3310,10 +3319,7 @@ class playerbonos extends CI_Model
         return $q;
     }
 
-    /**
-     * @param $value
-     * @return array
-     */
+
      function getValueTicketAuto()
     {
         $bitcoin_value = $this->getBitcoinValue();
@@ -3352,6 +3358,16 @@ class playerbonos extends CI_Model
 
     function getBitcoinValue()
     {
+        $getcwd = getcwd();
+
+        $islocalEnv = stripos($getcwd, "/var/www")!==false;
+        $islocalEnv |= stripos($getcwd, ":")!==false;
+        if($islocalEnv){
+            $localBitcoin = 3854.6;
+            log_message('DEV',"bitcoin value for LOCAL enviroment :: $localBitcoin");
+            return $localBitcoin;
+        }
+
         $this->bitcoinCap->getLatest();
         $bitcoin = $this->bitcoinCap->getData();
 

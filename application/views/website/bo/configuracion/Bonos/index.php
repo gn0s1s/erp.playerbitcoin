@@ -6,8 +6,8 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>
 								> <a href="/bo/configuracion/"> Settings</a>
-								> <a href="/bo/configuracion/compensacion"> Plan of compensación</a>
-								> Bonos
+								> <a href="/bo/configuracion/compensacion"> Commissions Settings</a>
+								> Calculated Commissions
 							</span>
 						</h1>
 					</div>
@@ -41,7 +41,7 @@
 												<a href="/bo/bonos/alta">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_2_color?>;">
 														<i class="fa fa-edit fa-3x"></i>
-														<h1>Alta</h1>
+														<h1>Add</h1>
 													</div>
 												</a>
 												</div>
@@ -49,7 +49,7 @@
 												<a href="/bo/bonos/listar">
 													<div class="minh well well-sm txt-color-white text-center link_dashboard" style="background:<?=$style[0]->btn_1_color?>">
 														<i class="fa fa-list-alt fa-3x"></i>
-														<h1>Listar</h1>
+														<h1>List</h1>
 													</div>
 												</a>
 												</div>

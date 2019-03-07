@@ -279,3 +279,6 @@ border-color: #2086BF;
 .btn-info{
     background: #1048B1;
 }
+.page-title span{
+	display: inline;
+}

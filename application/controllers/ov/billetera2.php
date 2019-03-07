@@ -478,11 +478,14 @@ class billetera2 extends CI_Controller
 				$color = ($transaction->tipo=="plus") ? "green" : "red";
                 $fecha = $transaction->fecha;
                 #$fecha = $this->general->changeTimezone($fecha);
+                $descripcion = $transaction->descripcion;
+                if(strlen($descripcion)>50)
+                    $descripcion = substr($descripcion,0,50)." ...";
                 echo "<tr>
 			<td class='sorting_1'>".$transaction->id."</td>
 			<td>". $fecha ."</td>
 			<td style='color: ".$color.";'><i class='fa fa-".$transaction->tipo."-circle fa-3x'></i></td>
-			<td>".$transaction->descripcion."</td>
+			<td>". $descripcion ."</td>
 			<td> $	".number_format($transaction->monto, 2)."</td>			
 			</tr>";
 					

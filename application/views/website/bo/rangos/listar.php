@@ -6,9 +6,9 @@
 						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
 							<span>>
 								<a href="/bo/configuracion/">Settings</a> >
-								<a href="/bo/configuracion/compensacion">Plan of compensacion</a> >
-								<a href="/bo/rangos">Ranking</a>
-								> Listar Rangos
+								<a href="/bo/configuracion/compensacion">Commissions Settings</a> >
+								<a href="/bo/rangos">Parameters</a>
+								> List Parameters
 							</span>
 						</h1>
 		</div>
@@ -70,7 +70,7 @@
 													<th>ID</th>
 													<th data-class="expand">Nombre</th>
 													<th data-hide="phone,tablet">Descripcion</th>
-													<th data-hide="phone,tablet">Condiciones</th>
+													<th data-hide="phone,tablet">Parameters</th>
 													<th></th>
 												</tr>
 											</thead>
@@ -117,14 +117,7 @@
 				<!-- end widget -->
 			</article>
 			<!-- END COL -->
-		</div>
-		<div class="row">         
-	        <!-- a blank row to get started -->
-	        <div class="col-sm-12">
-	            <br />
-	            <br />
-	        </div>
-        </div>            
+
 		<!-- END ROW -->
 	</section>
 	<!-- end widget grid -->
