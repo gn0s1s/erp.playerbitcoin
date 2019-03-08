@@ -3,6 +3,29 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+08-03-2019
+-
+### comision_pasivo
+   ```mysql
+  CREATE TABLE comision_pasivo
+  (
+      id int PRIMARY KEY AUTO_INCREMENT,
+      user_id int DEFAULT 2,
+      initdate timestamp 
+        DEFAULT current_timestamp,
+      enddate timestamp 
+        DEFAULT current_timestamp,
+      update_time timestamp 
+        DEFAULT current_timestamp 
+        COMMENT 'última actualización',
+      amount float DEFAULT 0,
+      estatus varchar(3) DEFAULT 'ACT',
+      extra varchar(150) DEFAULT '' 
+        COMMENT 'json data'
+  );
+  ALTER TABLE comision_pasivo 
+    COMMENT = 'bono pasivo';
+   ```
 05-03-2019
 -
 ### extra in comision_bono

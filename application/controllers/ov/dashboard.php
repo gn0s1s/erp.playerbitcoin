@@ -19,7 +19,7 @@ class dashboard extends CI_Controller
 		$this->load->model('model_tipo_red');
 		$this->load->model('bo/model_admin');
 		$this->load->model('bo/bonos/titulo');
-		
+        $this->load->model('bo/bonos/clientes/playerbitcoin/playerbonos');
 		$this->load->model('web_personal');		
 		
 	}
@@ -157,12 +157,15 @@ class dashboard extends CI_Controller
                 
 		$link_personal = $this->web_personal->val_web_personal($id);
                 $this->template->set("link_personal",$link_personal);
-                
-		$actividad=$this->modelo_compras->is_afiliado_activo($id,date('Y-m-d'));
 
-		$puntos_semana=0;#$this->modelo_dashboard->get_puntos_personales_semana($id);
-		$puntos_mes=0;#$this->modelo_dashboard->get_puntos_personales_mes($id);
-		$puntos_total=0;#$this->modelo_dashboard->get_puntos_personales_total($id);
+        $date = date('Y-m-d');
+        $actividad=$this->modelo_compras->is_afiliado_activo($id, $date);
+		$actividad=$this->playerbonos->isActivedAfiliado($id);
+        $psr=$this->playerbonos->isActivedPSR($id,true);
+
+		$puntos_semana=0;#TODO: $this->modelo_dashboard->get_puntos_personales_semana($id);
+		$puntos_mes=0;#TODO: $this->modelo_dashboard->get_puntos_personales_mes($id);
+		$puntos_total=0;#TODO: $this->modelo_dashboard->get_puntos_personales_total($id);
 
         $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
         $saldo =  $billetera["add"];
@@ -175,7 +178,7 @@ class dashboard extends CI_Controller
 		
 		$ultimos_auspiciados=$this->modelo_dashboard->get_ultimos_auspiciados($id);
 		
-		$titulo=$this->titulo->getNombreTituloAlcanzadoAfiliado($id,date('Y-m-d'));
+		$titulo=$this->titulo->getNombreTituloAlcanzadoAfiliado($id, $date);
 		
 		$this->template->set("id",$id);
 		$this->template->set("usuario",$usuario);
@@ -192,6 +195,7 @@ class dashboard extends CI_Controller
 		$this->template->set("cuentasPorPagar",$cuentasPorPagar);
 		$this->template->set("notifies",$notifies);
 		$this->template->set("actividad",$actividad);
+        $this->template->set("psr",$psr);
 		
 		$this->template->set("puntos_semana",$puntos_semana);
 		$this->template->set("puntos_mes",$puntos_mes);
@@ -212,9 +216,8 @@ class dashboard extends CI_Controller
         $this->template->set_partial('footer', 'website/ov/footer');
 		$this->template->build('website/ov/view_dashboard');
 	}
-	/**
-	 * 
-	 */private function getAfiliadosRed($id) {
+
+	private function getAfiliadosRed($id) {
 		$redesUsuario=$this->model_tipo_red->cantidadRedesUsuario($id);
 			
 		foreach ($redesUsuario as $redUsuario){

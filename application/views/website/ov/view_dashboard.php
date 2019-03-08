@@ -108,8 +108,29 @@ $ci->load->model("model_permissions"); ?>
                                                 <div class="row">
                                                     <br>
                                                     <div class="col-xs-2 col-sm-1">
-                                                        <strong class="<?php if ($actividad) echo "label label-success"; else echo "label label-default"; ?>"
-                                                                style="font-size: 2rem;"> <?php if ($actividad) echo "<i class='fa fa-smile-o'></i> Actived"; else echo "<i class='fa fa-frown-o'></i> Not Actived"; ?></strong>
+                                                        <?php
+
+                                                        $estatus_afiliado = "<i class='fa fa-child'></i>Free";
+                                                        if($actividad)
+                                                            $estatus_afiliado= "<i class='fa fa-check'></i> VIP";
+
+                                                        $label_actividad = "label label-info";
+                                                        if ($actividad)
+                                                            $label_actividad = "label label-success";
+
+                                                        if($psr){
+                                                            $valor_psr =  "";
+                                                            if(isset($psr[0]))
+                                                                $valor_psr = "$ ".$psr[0]->costo_unidad." USD";
+                                                            $estatus_afiliado= "<i class='fa fa-star' ></i> PSR $valor_psr";
+                                                            $label_actividad = "label label-warning";
+                                                        }
+
+                                                        ?>
+                                                        <strong class="<?=$label_actividad;?>"
+                                                                style="font-size: 2rem;">
+                                                            <?=$estatus_afiliado;?>
+                                                        </strong>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <br>

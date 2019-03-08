@@ -298,7 +298,7 @@ img.fa{
         {
             a = new Date();
             a = a.getFullYear()-18;
-            a+="-12-31"
+            a+="-12-31";
             if(id)
                 a = $('#date_'+id).val();
 

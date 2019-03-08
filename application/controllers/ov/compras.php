@@ -223,6 +223,9 @@ function index()
 		$costosImpuestos=$this->modelo_compras->getCostosImpuestos($pais[0]->pais,$items['id']);
 		
 		$cantidad=$items['qty'];
+
+		#log_message('DEV',"detalle get content : ".json_encode($detalles));
+
          $categoria = isset($detalles[0]->id_red) ? $detalles[0]->id_red : $detalles[0]->id_grupo;
 
             $info_compras[$contador]=array(
@@ -3426,6 +3429,8 @@ function index()
 		{																		// logged in
 		redirect('/auth');
 		}
+
+        $id=$this->tank_auth->get_user_id();
 		
 		$data= $_GET["info"];
 		$data = json_decode($data,true);
@@ -3443,8 +3448,8 @@ function index()
 			$detalles=$this->modelo_compras->detalles_paquete($id_mercancia);
 		else if($id_tipo_mercancia==5)
 			$detalles=$this->modelo_compras->detalles_membresia($id_mercancia);
-	
-		
+
+
 		if(!isset($data['qty']))
 			$cantidad=1;
 		else 
@@ -3457,6 +3462,16 @@ function index()
             $costo=$data['costo_unidad'];
             $options['puntos'] = $costo;
         }
+
+        $categoria = 1;
+        if (isset($detalles[0]->id_red))
+            $categoria = $detalles[0]->id_red;
+        if (isset($detalles[0]->id_grupo))
+            $categoria = $detalles[0]->id_grupo;
+
+        $isPSR = $categoria == 2;
+        if($isPSR)
+            $this->setVipAdd($id);
 
         $add_cart = array(
             'id'      => $id_mercancia,
@@ -4737,6 +4752,40 @@ function index()
 
         $this->playerbonos->newTickets($id_afiliado,$tickets,'DES',$date_final);
 
+    }
+
+    private function setVipAdd($id)
+    {
+        $options = array('prom_id' => 0, 'time' => time());
+
+
+        $isActived = $this->playerbonos->isActivedAfiliado($id);
+
+        if ($isActived)
+            return true;
+
+        $content = $this->cart->contents();
+        $id_vip = 1;
+        $costo_vip = 50;
+        $tipo_vip = 5;
+
+        foreach ($content as $item) :
+        log_message('DEV',"content carrito VIP ? ".json_encode($item->name));
+        if($item["name"] == $tipo_vip)
+            return false;
+        endforeach;
+
+        $add_cart = array(
+            'id' => $id_vip,
+            'qty' => 1,
+            'price' => $costo_vip,
+            'name' => $tipo_vip,
+            'options' => $options
+        );
+
+        $this->cart->insert($add_cart);
+
+        return true;
     }
 
 }

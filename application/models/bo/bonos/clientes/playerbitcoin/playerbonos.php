@@ -222,7 +222,7 @@ class playerbonos extends CI_Model
         return false;
     }
 
-    function isActivedPSR($id_usuario,$red = 1,$fecha = '',$bono = false){
+    function isActivedPSR($id_usuario,$data = false,$fecha = '',$bono = false){
 
         if($id_usuario==2)
             return true;
@@ -234,7 +234,7 @@ class playerbonos extends CI_Model
         $Afiliado = true;#$this->isAfiliadoenRed($id_usuario,$binario);
 
         if(!$Afiliado){
-            log_message('DEV',"ID : $id_usuario not in BINARIO");
+            log_message('DEV',"ID (PSR) : $id_usuario not in BINARIO");
             return $isBinario ? false : 0;
         }
 
@@ -256,7 +256,7 @@ class playerbonos extends CI_Model
 
         log_message('DEV',"ID : $id_usuario PSR :: [[ $Pasa ]]");
 
-        return $Pasa;
+        return  $venta;
     }
 
     function isActivedAfiliado($id_usuario,$red = 1,$fecha = '',$bono = false){

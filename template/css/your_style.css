@@ -264,7 +264,7 @@ border-color: #2086BF;
 .bg-color-silver span{
 	color: #333;
 }
-.btn-warning{
+.btn-warning,.label-warning{
 	background: #ED8C17;
 }
 .btn-success,.label-success, .smart-form .btn-success, .bg-color-green{
@@ -276,7 +276,7 @@ border-color: #2086BF;
 .backHome{
 	background: transparent !important;
 }
-.btn-info{
+.btn-info,.label-info{
     background: #1048B1;
 }
 .page-title span{

@@ -59,6 +59,7 @@
                                                     <th><i class="fa fa-money"></i> Commission</th>
                                                 </tr>
                                                 </thead>
+
                                                 <tbody>
 
                                                 <?php if (isset($psr)) :
@@ -159,7 +160,10 @@
 
                                                 <?php if ($transaction) { ?>
                                                     <tr class="default">
-                                                        <td colspan="2"><b>Wallet movements</b></td>
+                                                        <td><b>Wallet movements</b></td>
+                                                        <td><a title='Show Details' style='cursor: pointer;'
+                                                               class='txt-color-green' onclick='ver(<?= $id ?>);'><i
+                                                                        class='fa fa-eye fa-3x'></i></a></td>
                                                     </tr>
                                                     <?php if ($transaction['add']) {
                                                         $total_transact += $transaction['add'];
@@ -472,6 +476,29 @@
         } else {
             $('#enviar').attr("disabled", true);
         }
+    }
+
+    function ver(id) {
+        $.ajax({
+            type: "POST",
+            url: "/ov/billetera2/historial_transaccion",
+            data: {id: id}
+        })
+            .done(function (msg) {
+                bootbox.dialog({
+                    message: msg,
+                    title: 'Transactions Report',
+                    buttons: {
+                        danger: {
+                            label: "Close",
+                            className: "btn-danger",
+                            callback: function () {
+
+                            }
+                        }
+                    }
+                })//fin done ajax
+            });//Fin callback bootbox
     }
 
     function ventas(id) {
