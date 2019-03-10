@@ -230,21 +230,42 @@
 																<ul>
 																    <?php 
 																    
-																	foreach ($notifies as $notify){
-																		$fecha_inicio = substr($notify->fecha_inicio, 0 , 10);
-																		$fecha_fin = substr($notify->fecha_fin, 0 , 10);
-																		if (date("Y-m-d") >= $fecha_inicio && date("Y-m-d") <= $fecha_fin){
-																		echo '<li class="message">
-																		<img src="/media/imagenes/notificacion.png" style="width: 5rem;" class="online" alt="">
+																	foreach ($notifies as $notify):
+
+                                                                        $timeInicio = strtotime($notify->fecha_inicio);
+                                                                        $timeFin = strtotime($notify->fecha_fin);
+                                                                        $format = 'Y-m-d';
+                                                                        $fecha_inicio = date($format, $timeInicio);
+                                                                        $fecha_fin = date($format, $timeFin);
+                                                                        $fecha_actual = date($format);
+                                                                        $isFechaInicio = $fecha_actual >= $fecha_inicio;
+                                                                        $isFechaFin = $fecha_actual <= $fecha_fin;
+                                                                        $isFecha = $isFechaInicio && $isFechaFin;
+                                                                        $isUser = true;
+
+                                                                        if($notify->user_id != 0)
+                                                                            $isUser = $notify->user_id == $id;
+
+                                                                        if ($isFecha && $isUser):
+                                                                            $link = $notify->link;
+                                                                            if($link == "/")
+                                                                                $link = "javascript:void(0);"
+                                                                            ?>
+																		<li class="message">
+																		<img src="/media/imagenes/notificacion.png"
+                                                                             style="width: 5rem;" class="online" alt="">
 																		<div class="message-text">
 																			<time>
-																				'.$fecha_inicio.'
+																				<?=$fecha_inicio;?>
 																			</time> 
-																				<a href="javascript:void(0);" class="username">'.$notify->nombre.'</a> 
-																				'.$notify->descripcion.'
+																				<a href="<?=$link;?>" class="username">
+                                                                                    <?=$notify->nombre;?></a>
+																				<?=$notify->descripcion;?>
 																		</div>
-																	</li>';
-																		}}
+																	</li>
+                                                                    <?php
+																		endif;
+																	endforeach;
 																	?>		
 																	
 

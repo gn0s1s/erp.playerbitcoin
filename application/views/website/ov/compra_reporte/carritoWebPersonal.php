@@ -872,28 +872,28 @@
 						break;
 				}
 			}
-			function quitar_producto(id)
+			function quitar_producto(id,confirm = false)
 			{
-				$.ajax({
-					data:'id='+id,
-					type:"get",
-					url:"quitar_producto",
-					success: function(msg){
-						$("#contenido_carro").html(msg);
-						$.ajax({
-					
-							type:"get",
-							url:"actualizar_nav",
-							success: function(msg){
-								
-								$("#cart_cont").html(msg);
-							}
-						});
-						
-						
-						alert('La mercancia se ha borrado del carrito');
-					}
-				});
+                $.ajax({
+                    data: {id: id, confirm: confirm},
+                    type: "get",
+                    url: "quitar_producto",
+                    success: function (msg) {
+                        $("#contenido_carro").html(msg);
+                        $.ajax({
+
+                            type: "get",
+                            url: "actualizar_nav",
+                            success: function (msg) {
+
+                                $("#cart_cont").html(msg);
+                            }
+                        });
+
+
+                        alert('La mercancia se ha borrado del carrito');
+                    }
+                });
 				
 			}
 			function muestra_afiliados()

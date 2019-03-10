@@ -156,21 +156,24 @@ class autobono
         }
         echo "EVAL acumulado \n";
 		$valor = $this->getAcumulado();
+		$total_valor =$valor;
 		$valor/=sizeof($ganadores);
 
 		if($valor <= 0)
 			return false;
 
+		$winners = array();
 		foreach ($ganadores as $key => $ganador) {
-
             $datos = explode("|", $ganador);
             $id_ganador = $datos[0];
+            array_push($winners,$id_ganador);
             $ticket = $datos[1];
             $this->repartirBono(1,$id_ganador,$valor,$ticket);
             $this->notificarJackpot($id_ganador, $valor );
         }
 
         $this->desactivarTickets();
+        $this->notificarJackpots($winners,$total_valor);
 
 		return true;	
 
@@ -374,7 +377,17 @@ class autobono
 			
 			return true;
 	}
-	
+
+	private function get_user_data($id,$where = "",$row = false){
+        $query = "SELECT * FROM users u, user_profiles p, afiliar a
+          WHERE a.id_afiliado = u.id AND p.user_id = u.id AND u.id in ($id)
+          $where";
+
+        $result = newQuery($this->db, $query);
+
+        return $row ? $result[1] : $result;
+    }
+
 	private function get_cuenta_banco($id_usuario)
 	{
 		$data = "SELECT
@@ -1009,7 +1022,7 @@ class autobono
 		echo "between ($id_usuario) : $fechaInicio - $fechaFin \n";
 		
 		$isRange = $this->evalTicketsRange($id_usuario);
-
+        #TODO: $this->setAfiliados($id_usuario);
 		if($isRange){
             $ganador = $id_usuario . "|" . $isRange;
             $this->setGanadores($ganador);
@@ -1032,8 +1045,12 @@ class autobono
         $q = newQuery($this->db, $query);
         #TODO: $q = array(array("amount"=>1002.6));
 
-        if(!$q)
+        if(!$q):
+            log_message('DEV',"$id : tickets not found");
             return false;
+        endif;
+
+        $this->setAfiliados($id);#TODO: ocultar si todos pueden ver
 
         foreach ($q as $ticket){
             $amount = $ticket["amount"];
@@ -1828,9 +1845,35 @@ class autobono
             $fecha = $this->getLastDayUTC();
 
         $msj = "Congrats, You won this jackpot: $ $valor.";
-        $link = "/ov/accountStatus/accountHistory";
+        $link = "/ov/wallet/requestPayment";
         $subject = "JACKPOT $fecha";
-        $this->notificar($ganador, $msj, $subject, false, $link);
+
+        $format = "Y-m-d H:i:s";
+        $fecha = $this->getNextTime($fecha,"day", $format);
+        $this->notificar($ganador, $msj, $subject, $fecha, $link);
+
+        return true;
+    }
+
+    private function notificarJackpots( $ganadores,$valor = 0, $fecha = false)
+    {
+        if(!$fecha)
+            $fecha = $this->getLastDayUTC();
+
+        $msj = $this->setMessageJackpot($ganadores, $valor);
+
+        $link = "/ov/cgeneral/winners";
+        $subject = "JACKPOT $fecha";
+
+        $format = "Y-m-d H:i:s";
+        $fecha = $this->getNextTime($fecha,"day", $format);
+
+        $afiliados = $this->getAfiliados();
+        foreach ($afiliados as $afiliado):
+            $this->notificar($afiliado, $msj, $subject, $fecha, $link);
+        endforeach;
+
+        return true;
     }
 
     private function updateHistorical($extra = false)
@@ -1850,6 +1893,20 @@ class autobono
         echo "NEW STATUS BITCOIN :".json_encode($data)."\n\n";
 
         $this->insertDatos("bitcoin_stats",$data);
+    }
+
+    private function setMessageJackpot($ganadores, $valor)
+    {
+        $msj = "A new jackpot for $ $valor USD already was played.
+                    <br/>these are Winners:<br/><hr/><ul>";
+        $where = "GROUP BY u.id";
+        foreach ($ganadores as $ganador):
+            $userdata = $this->get_user_data($ganador, $where, true);
+            $nombres = $userdata["nombre"] . " " . $userdata["apellido"];
+            $msj .= "<li>$nombres ($ganador)</li>";
+        endforeach;
+        $msj .= "</ul>";
+        return $msj;
     }
 
 }

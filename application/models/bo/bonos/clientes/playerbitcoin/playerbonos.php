@@ -2226,7 +2226,7 @@ class playerbonos extends CI_Model
 
     function getMercancia($where = ""){
 
-        $query = "SELECT * FROM mercancia m,items i WHERE i.id = m.id AND $where";
+        $query = "SELECT * FROM mercancia m,items i WHERE i.id = m.id $where";
 
         $q = $this->db->query($query);
         return $q->result();

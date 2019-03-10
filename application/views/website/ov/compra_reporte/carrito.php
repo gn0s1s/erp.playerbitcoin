@@ -610,47 +610,61 @@
 			}
 			
 
-			function quitar_producto(id)
+			function quitar_producto(id,confirm = false)
 			{
-				
-				$.ajax({
-					type: "POST",
-					url: "/auth/show_dialog",
-					data: {message: 'Sure you want to remove this item ?'},
-				})
-				.done(function( msg )
-				{
-					bootbox.dialog({
-						message: msg,
-						title: 'Remove merchandise',
-						buttons: {
-							success: {
-							label: "Accept",
-							className: "btn-success",
-							callback: function() {
-								
-									$.ajax({
-										type: "POST",
-										url: "/ov/compras/quitar_producto",
-										data: {id:id}
-									})
-									.done(function( msg )
-									{
-										window.location.href='/shoppingcart'
-									});//Fin callback bootbox
-								}
-					
-							},
-								danger: {
-								label: "Cancel!",
-								className: "btn-danger",
-								callback: function() {
 
-									}
-							}
-						}
-					})
-				});
+                if (!confirm) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/ov/compras/quitar_producto",
+                        data: {id: id},
+                    })
+                        .done(function (msg) {
+                            bootbox.dialog({
+                                message: msg,
+                                title: 'Remove item',
+                                buttons: {
+                                    success: {
+                                        label: "Accept",
+                                        className: "btn-success",
+                                        callback: function () {
+                                            quitar_producto(id, true);
+                                        }
+                                    },
+                                    danger: {
+                                        label: "Cancel",
+                                        className: "btn-danger",
+                                        callback: function () {
+
+                                        }
+                                    }
+                                }
+                            });
+                        });
+                    return false;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: "/ov/compras/quitar_producto",
+                    data: {id:id,confirm:confirm}
+                })
+                    .done(function( msg )
+                    {
+                        bootbox.dialog({
+                            message: msg,
+                            title: 'Attention',
+                            buttons: {
+                                success: {
+                                    label: "Accept",
+                                    className: "btn-success",
+                                    callback: function() {
+                                        window.location.href='/shoppingcart'
+                                    }
+                                }
+                            }
+                        });
+                    });//Fin callback bootbox
 				
 			}
 

@@ -3970,18 +3970,74 @@ function index()
 		}
 		
 	}
+
 	function quitar_producto()
 	{
 		$id=$_POST['id'];
+        $message = "Sure you want to remove this item ?";
+
+		$content = $this->cart->contents();
+
+        if(!$content){
+            echo 'THERE ARE NOT PRODUCTS IN THE SHOPPING CART';
+            return false;
+        }
+
+        $id_item = 0; $isPSR = false; $isVIP = false;
+
+        foreach ($content as $item) :
+            $item_id = $item['id'];
+            $rowid = $item["rowid"];
+
+            if($rowid == $id):
+                log_message('DEV',"carrito quit PSR : $item_id");
+                $id_item = $item_id;
+            endif;
+
+            $where = "AND i.id = $item_id";
+            $mercancia = $this->playerbonos->getMercancia($where);
+
+            if($mercancia && !$isVIP):
+                $categoria = $mercancia[0]->categoria;
+                $isVIP = $categoria == 1 ? $rowid : false;
+                log_message('DEV',"carrito quit VIP : $item_id");
+            endif;
+        endforeach;
+
+		$where = "AND i.id = $id_item";
+		$mercancia = $this->playerbonos->getMercancia($where);
+		if($mercancia):
+            $categoria = $mercancia[0]->categoria;
+            $isPSR = $categoria == 2;
+        endif;
+
+        $isPSR &= strlen($isVIP)>0;
+        $confirm = isset($_POST['confirm']) ? $_POST['confirm'] : false;
+
+		if(!$confirm):
+            if($isPSR)
+		        $message .=  "<br/><hr/>".
+                    "Remember that you must become VIP for getting PSR.";
+            log_message('DEV',"confirm quit PSR : $isPSR | VIP : $isVIP ");
+		    echo $message;
+		    return false;
+        elseif ($isPSR ):
+            $data = array(
+                'rowid' => $isVIP,
+                'qty'   => 0
+            );
+            $this->cart->update($data);
+        endif;
+
 		$data = array(
            'rowid' => $id,
            'qty'   => 0
         );
 		$this->cart->update($data);
-		if(!$this->cart->contents())
-			echo 'THERE ARE NO PRODUCTS IN THE SHOPPING CART';
 
+		echo "ITEM REMOVED SUCCESSFULLY";
 	}
+
 	function actualizar_nav()
 	{
 		
@@ -4770,7 +4826,7 @@ function index()
         $tipo_vip = 5;
 
         foreach ($content as $item) :
-        log_message('DEV',"content carrito VIP ? ".json_encode($item->name));
+        log_message('DEV',"carrito VIP ? ".json_encode($item["name"]));
         if($item["name"] == $tipo_vip)
             return false;
         endforeach;
