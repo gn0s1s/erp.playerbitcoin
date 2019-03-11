@@ -333,8 +333,9 @@ class reportes extends CI_Controller {
 	
 		$inicio = $_POST ['startdate'];
 		$fin = $_POST ['finishdate'];
-	
-	
+
+        $totales = $this->modelo_reportes->getTodoComisiones( $inicio, $fin );
+
 		echo
 		"<table id='datatable_fixed_column1'
 				class='table table-striped table-bordered table-hover' width='100%'>
@@ -350,8 +351,6 @@ class reportes extends CI_Controller {
 					"<th>Total Neto</th>" .
 					"</thead>
 				<tbody>";
-	
-		$totales = $this->modelo_reportes->getTodoComisiones( $inicio, $fin );
 	
 		echo "<tr>" 
 					. "<td>$ " . $totales['ventas'] . "</td>"

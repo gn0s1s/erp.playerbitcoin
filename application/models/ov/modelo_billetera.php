@@ -5,8 +5,13 @@ class modelo_billetera extends CI_Model
 	function get_psr($id)
 	{
         $query = "SELECT * FROM
-                    venta v, cross_venta_mercancia c,items i,mercancia m 
+                    venta v,
+                     cross_venta_mercancia c,
+                     items i,
+                     mercancia m 
+                    -- ,comision_pasivo s
                     WHERE i.id = m.id 
+                        -- AND s.reference = c.id_venta
                         AND m.id = c.id_mercancia 
                         AND c.id_venta = v.id_venta
                         AND i.categoria = 2

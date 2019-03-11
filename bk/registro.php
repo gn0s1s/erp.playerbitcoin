@@ -297,12 +297,78 @@ class registro {
         # TELEFONOS $dato_tels dato_tels($id)
 
         #TODO: ocultar luego de la fecha de activacion del plan
-        $red_vip=2;
-        $this->dato_afiliar ( $id, $red_vip, $id_debajo, $lado, $directo ); # AFILIAR VIP
+        $this->setVIPDefault($id, $id_debajo, $lado, $directo);
         
         return $id ? $id /*var_dump()."|".var_dump($_POST["movil"])*/ : null;#; #;
     }
-    
+
+    private function setVIPDefault($id, $id_debajo, $lado, $directo)
+    {
+        $red_vip = 2; # AFILIAR VIP
+        $this->insert_dato_afiliar($id, $red_vip, $id_debajo, $lado, $directo);
+
+        $id_venta = $this->insertVenta($id);
+        $item = 1;
+        $this->insertVentaItem($id, $id_venta, $item);
+    }
+
+    function insertVenta($id,$metodo = "BANCO")
+    {
+        $fecha = date('Y-m-d H:i:s');
+        $fields = array(
+            "id_user",
+            "id_estatus",
+            "id_metodo_pago",
+            "fecha",
+        );
+
+        $dato = array(
+            $id,
+            "ACT",
+            $metodo,
+            $fecha
+        );
+
+        $result = $this->insertDatos('venta',$fields, $dato);
+        return $result ? $result["id_venta"] : 1;
+    }
+
+    function insertVentaItem($id, $id_venta,$item,$cantidad =1)
+    {
+        $query = "INSERT INTO cross_venta_mercancia 
+                    SELECT 
+                        $id_venta,id,$cantidad,costo,0,costo*$cantidad,'',null
+                    FROM
+                        mercancia
+                    WHERE
+                    	id = $item";
+
+        newQuery($this->db,$query);
+
+        return $this->getMontoVentaItem($id_venta, $item);
+    }
+
+    private function getMontoVentaItem($id_venta, $item)
+    {
+        $query = "SELECT costo_total FROM cross_venta_mercancia
+            		WHERE
+                        id_mercancia = $item
+                        AND id_venta = $id_venta";
+
+        $result = newQuery($this->db,$query);
+
+        if(!$result)
+            return false;
+
+        $monto =  0;
+
+        if(isset($result[1]["costo_total"]))
+            $monto = $result[1]["costo_total"];
+
+        return $monto;
+    }
+
+
     private function dato_img($id) {
         
         $fields = array(
@@ -394,8 +460,8 @@ class registro {
         
         
         newQuery($this->db, $query);
-        
-        return true;
+
+        return $this->getLastRowTable($tablename);
     }        
     
     private function dato_dir($id) {
@@ -1131,5 +1197,17 @@ class registro {
 				</div>";
             return false;
         }
+    }
+
+    private function getLastRowTable($tablename)
+    {
+        $q = newQuery($this->db, "SELECT * FROM $tablename");
+
+        if (!$q)
+            return 0;
+
+        $last = sizeof($q);
+
+        return $q[$last];
     }
 }

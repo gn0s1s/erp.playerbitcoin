@@ -24,6 +24,7 @@
                                 <label class="select">
                                     <select id="tipo-reporte">
                                         <option value="" selected="" disabled="">Selecciona Reporte</option>
+                                        <option value="18" onclick="tipo_reporte()">Total Comisiones & Bonos</option>
                                         <option value="7">Afiliados</option>
                                         <option value="8" onclick="tipo_reporte()">Afiliados nuevos on the mes</option>
                                         <option value="15" onclick="tipo_reporte()">Afiliados Activos</option>
@@ -36,7 +37,6 @@
                                         <option value="13">Commissions Por Pagar</option>
                                         <option value="10">Commissions Pagadas</option>
                                         <option value="17">Calculated Commissions Pagados</option>
-                                        <option value="18">Total Comisiones & Bonos</option>
                                         <option value="11">Commissions Pagadas & Por Pagar</option>
                                         <!--  	
                                             <option value="6" >Facturacion / Pedidos cobrados</option>

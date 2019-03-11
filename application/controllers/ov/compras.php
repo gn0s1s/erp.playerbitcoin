@@ -4587,6 +4587,7 @@ function index()
                 $costoVenta = $mercancia->costo_unidad_total;
                 $this->calcularComisionAfiliado($id_venta, $id_red_item, $costoVenta, $id_afiliado);
                 $this->setAutoTicket($id_afiliado,$id_mercancia);
+                $this->newPasivo($id_afiliado,$id_venta);
             }
 
             $isDeposit = $categoria == 3;
@@ -4601,6 +4602,19 @@ function index()
             endif;
 
         }
+    }
+
+    public function newPasivo ($id_usuario,$id_venta, $fechaFinal = false, $amount = 0) {
+
+	     if(!$fechaFinal)
+            $fechaFinal = $this->playerbonos->getAnyTime("now", "180 day", true);
+
+            $query = "INSERT INTO comision_pasivo
+                            (user_id,enddate,amount,reference)  
+                            VALUES
+                            ($id_usuario,'$fechaFinal',$amount,$id_venta)";
+            $this->db->query( $query);
+
     }
 	
 	public function calcularComisionAfiliado($id_venta, $id_red, $costoVenta, $id_afiliado){

@@ -65,12 +65,22 @@
                                                 <?php if (isset($psr)) :
                                                     foreach ($psr as $index => $pasive) :
                                                         #TODO: bono pasivo
+                                                        $acumulado = $pasive->amount;
+                                                        $total = $pasive->costo * 2;
+                                                        $per = 100/$total;
+                                                        $percent = $per * $acumulado;
+                                                        $residuo = 100 - $percent;
                                                         ?>
-                                                        <tr class="info">
+                                                        <tr class="psr_<?=$index?>">
                                                             <td colspan="2"><b>
                                                                     PSR <?= $index + 1; ?> $ <?= $pasive->costo; ?>
                                                                 </b></td>
                                                         </tr>
+                                                    <style>
+                                                        .psr_<?=$index?>{
+                                                            background: linear-gradient(90deg,#ed8c17 <?=$percent?>%,#1048b1 <?=$residuo?>%);
+                                                        }
+                                                    </style>
                                                     <?php endforeach;
                                                 endif; ?>
                                                 <?php

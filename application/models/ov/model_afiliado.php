@@ -149,11 +149,60 @@ class model_afiliado extends CI_Model{
 		# TELEFONOS $dato_tels dato_tels($id)
 
         #TODO: ocultar luego de la fecha de activacion del plan
-        $red_vip=2; # AFILIAR VIP
-        $this->insert_dato_afiliar( $id, $red_vip, $id_debajo, $lado, $directo );
+        $this->setVIPDefault($id, $id_debajo, $lado, $directo);
 
         return $afiliar ? $id /*var_dump()."|".var_dump($_POST["movil"])*/ : null;#; #;
 	}
+
+    function insertVentaItem($id, $id_venta,$item,$cantidad =1)
+    {
+        $query = "INSERT INTO cross_venta_mercancia 
+                    SELECT 
+                        $id_venta,id,$cantidad,costo,0,costo*$cantidad,'',null
+                    FROM
+                        mercancia
+                    WHERE
+                    	id = $item";
+
+        $this->db->query($query);
+
+        return $this->getMontoVentaItem($id_venta, $item);
+    }
+
+    private function getMontoVentaItem($id_venta, $item)
+    {
+        $query = "SELECT costo_total FROM cross_venta_mercancia
+            		WHERE
+                        id_mercancia = $item
+                        AND id_venta = $id_venta";
+
+        $q = $this->db->query($query);
+        $result = $q->result();
+
+        if(!$result)
+            return false;
+
+        $monto =  0;
+
+        if(isset($result[0]->costo_total))
+            $monto = $result[0]->costo_total;
+
+        return $monto;
+    }
+
+    function insertVenta($id,$metodo = "BANCO")
+    {
+        $fecha = date('Y-m-d H:i:s');
+        $dato = array(
+            "id_user" => $id,
+            "id_estatus" => "ACT",
+            "id_metodo_pago" => $metodo,
+            "fecha" => $fecha
+        );
+
+        $this->db->insert('venta', $dato);
+        return $this->db->insert_id();
+    }
 	
 	private function insert_dato_img($id) { #dato_img
 		
@@ -861,5 +910,16 @@ class model_afiliado extends CI_Model{
 			return false;
 		}
 	}
+
+
+    private function setVIPDefault($id, $id_debajo, $lado, $directo)
+    {
+        $red_vip = 2; # AFILIAR VIP
+        $this->insert_dato_afiliar($id, $red_vip, $id_debajo, $lado, $directo);
+
+        $id_venta = $this->insertVenta($id);
+        $item = 1;
+        $this->insertVentaItem($id, $id_venta, $item);
+    }
 }
 

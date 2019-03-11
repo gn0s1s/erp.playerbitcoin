@@ -95,7 +95,7 @@ if(!function_exists("setCommand")) {
 function newQuery($db,$data = "")
 {
     $command = setCommand($db, "query.sh", $data);
-    log_message(">>> ".$data);
+    log_message("<db> $data </db>");
     #TODO: echo "SQL>> \n $data \n\n";
     $cmd = $command;
     $query = shell_exec($cmd);
