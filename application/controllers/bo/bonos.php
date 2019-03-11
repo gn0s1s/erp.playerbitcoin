@@ -278,21 +278,23 @@ class bonos extends CI_Controller
 	}
 	
 	function set_Rango(){
-		
-		$rango=$this->model_bonos->get_rangos_id($_POST['idRango']);
-		
-		foreach ($rango as $tipoRango){
-			if($tipoRango->tipo_rango==1)
-				$this->set_Rango_Redes($_POST['idRango'],$tipoRango->tipo_rango,'cargar_niveles_red');
-			else if($tipoRango->tipo_rango==2)
-				$this->set_Rango_Redes($_POST['idRango'],$tipoRango->tipo_rango,'cargar_mercancia_red');
-			else if($tipoRango->tipo_rango==3)
-				$this->set_Rango_Redes($_POST['idRango'],$tipoRango->tipo_rango,'cargar_mercancia_red');
-			else if($tipoRango->tipo_rango==4)
-				$this->set_Rango_Redes($_POST['idRango'],$tipoRango->tipo_rango,'cargar_mercancia_red');
-			else if($tipoRango->tipo_rango==5)
-				$this->set_Rango_Redes($_POST['idRango'],$tipoRango->tipo_rango,'cargar_mercancia_red');
-		}
+
+        $idRango = $_POST['idRango'];
+        $rango=$this->model_bonos->get_rangos_id($idRango);
+
+        $nivelesMetodo = 'cargar_niveles_red';
+        $itemsMetodo = 'cargar_mercancia_red';
+
+        foreach ($rango as $tipoRango) {
+            if ($tipoRango->tipo_rango == 1) :
+                $this->set_Rango_Redes($idRango, $tipoRango->tipo_rango, $nivelesMetodo);
+                continue;
+            endif;
+
+            if ($tipoRango->tipo_rango <= 5)
+                $this->set_Rango_Redes($idRango, $tipoRango->tipo_rango, $itemsMetodo);
+
+        }
 
 	}
 	
@@ -301,59 +303,83 @@ class bonos extends CI_Controller
 		
 		$redes = $this->model_tipo_red->listarActivos();
 		$todasLasredes="";
-		foreach($redes as $red){
-			$todasLasredes=$todasLasredes."<option value='".$red->id."'>".$red->nombre."</option>";
-		}
-	
-		$rango=$this->model_bonos->get_rangos_id_tipo($_POST['idRango'],$idTipoRango);
+		foreach($redes as $red):
+			$todasLasredes.="<option value='".$red->id."'>".$red->nombre."</option>";
+		endforeach;
+
+        $idRangoPOST = $_POST['idRango'];
+        $id_bono = $_POST['id_bono'];
+
+        $rango=$this->model_bonos->get_rangos_id_tipo($idRangoPOST,$idTipoRango,$id_bono);
 		$idDiv=$idTipoRango;
 		foreach ($rango as $tipoRango){
-			echo '<div class="widget-body col col-12">
-					<div id="divRedes" class="widget-body col col-2">
-					<label class="select"><b>Calificado<br>(Dar y/o Recibir)</b>
-						<select id="calificado'.$idRango.'" name="calificado'.$idRango.'">
-							<option value="DOS">Ambos</option>
-							<option value="DAR">Dar</option>
-							<option value="REC">Recibir</option>
+            $tipo_rango = $tipoRango->tipo_rango;
+            $calificado = $tipoRango->calificado;
+            $calificar = array(
+                'DOS' => 'Both Sides',
+                'DAR' => 'Upline',
+                'REC' => 'Spillover'
+            );
+            $calificacion = "";
+            foreach ($calificar as $key => $dato):
+                $selected = "";
+                if($key == $calificado)
+                    $selected = "selected";
+
+                $option = '<option '.$selected.' value="'.$key.'">'.$dato.'</option>';
+                $calificacion .= $option;
+            endforeach;
+            echo '<div class="widget-body col-sm-12">
+				<div id="divRedes" class="widget-body col-sm-4 ">
+					<label class="select"><b>Type of Commission</b>
+						<select id="calificado'.$idRango.'" 
+						        name="calificado'.$idRango.'">
+							'.$calificacion.'
 						</select>
 					</label>
-					</div>
-					<div id="divRedes" class="widget-body col col-3">
-					<h3 class="semi-bold">Rango <span>( '.$tipoRango->nombre_rango.' )</span></h3>
-					<hr class="simple">
-						<ul id="myTab'.$_POST['idRango'].$tipoRango->tipo_rango.'" class="nav nav-tabs bordered">
-							<li class="active">
-								<a href="#s'.$_POST['idRango'].$tipoRango->tipo_rango.'" data-toggle="tab">'.$tipoRango->nombre_tipo_rango.'<span class="badge bg-color-blue txt-color-white">'.$tipoRango->valor.'</span></a>
-							</li>
-							<li class="">
-								<a href="#s'.$_POST['idRango'].$tipoRango->tipo_rango.'2" data-toggle="tab"><i class="fa fa-fw fa-lg fa-gear"></i>Descripcion</a>
-							</li>
-						</ul>
-							<div id="myTabContent'.$_POST['idRango'].$tipoRango->tipo_rango.'" class="tab-content padding-10">
-								<div class="tab-pane fade active in" id="s'.$_POST['idRango'].$tipoRango->tipo_rango.'">
-									<p>Se cumple cuando el afiliado genera '.$tipoRango->valor.' '.$tipoRango->nombre_tipo_rango.' en su red.</p>
-								</div>
-								<div class="tab-pane fade" id="s'.$_POST['idRango'].$tipoRango->tipo_rango.'2">
-									<p>'.$tipoRango->descripcion.'</p>
-									<input type="hidden" name="idTipoRango[]" value="'.$_POST['idRango'].$tipoRango->tipo_rango.'"><br>
-								</div>
-								</div>
 				</div>
-											
-				<div class="widget-body col col-3">
-					<h3 class="semi-bold">Redes</h3>
-					<label class="select select-multiple">Seleccione las Redes validas para generar el bono
-						<select id="id_red'.$idRango.$idTipoRango.'" multiple="" class="custom-scroll" style="max-width: 20rem;" name="id_red'.$idRango.$idTipoRango.'[]" onChange="'.$nombreMetodo.'($(this).val(),'.$tipoRango->id_rango.$idDiv.','.$idRango.$idTipoRango.');">
-						<option selected value="0">--- Todas ---</option>
+				<hr class="margin-top-10 col-md-10"/>
+				<div id="divRedes" class="widget-body col-sm-10">
+					<h3 class="semi-bold">Parameter <span>( '.$tipoRango->nombre_rango.' )</span></h3>
+					<hr class="simple">
+                    <ul id="myTab'. $idRangoPOST . $tipo_rango .'" class="nav nav-tabs bordered">
+                        <li class="active">
+                            <a href="#s'. $idRangoPOST . $tipo_rango .'" data-toggle="tab">'.$tipoRango->nombre_tipo_rango.
+                            '<span class="badge bg-color-blue txt-color-white">'.$tipoRango->valor.'</span></a>
+                        </li>
+                        <li class="btn-info">
+                            <a href="#s'. $idRangoPOST . $tipo_rango .'2" data-toggle="tab"><i class="fa fa-fw fa-lg fa-gear"></i>Description</a>
+                        </li>
+                    </ul>
+                    <div id="myTabContent'. $idRangoPOST . $tipo_rango .'" class="tab-content padding-10">
+                        <div class="tab-pane fade active in" id="s'. $idRangoPOST . $tipo_rango .'">
+                            <p>It\'s applies when gets '.
+                                $tipoRango->valor.' '.$tipoRango->nombre_tipo_rango.
+                                ' on Network(s).</p>
+                        </div>
+                        <div class="tab-pane fade" id="s'. $idRangoPOST . $tipo_rango .'2">
+                            <p>'.$tipoRango->descripcion.'</p>
+                            <input type="hidden" name="idTipoRango[]" value="'. $idRangoPOST . $tipo_rango .'"><br>
+                        </div>
+                    </div>
+				</div>											
+				<hr class="margin-top-10 col-md-10"/>
+				<div class="widget-body col-sm-6">
+					<h3 class="semi-bold">Networks</h3>
+					<label class="select select-multiple">
+					    choose network(s)
+						<select id="id_red'.$idRango.$idTipoRango.'" multiple=""
+						 class="custom-scroll" style="max-width: 20rem;" name="id_red'.$idRango.$idTipoRango.'[]" 
+						 onChange="'.$nombreMetodo.'($(this).val(),'.$tipoRango->id_rango.$idDiv.','.$idRango.$idTipoRango.');">
+						<option selected value="0">--- All Networks ---</option>
 							'.$todasLasredes.'
 						</select>
 					</label>
 					<div class="note">
-						<strong>Nota:</strong> Mantenga pulsado el botón ctrl para seleccionar varias opciones.
+						<strong>Note:</strong>Keep Pressed CTRL for choose options.
 					</div>
-				</div>
-									
-				<div id="'.$tipoRango->id_rango.$idDiv.'" class="widget-body col col-4">
+				</div>									
+				<div id="'.$tipoRango->id_rango.$idDiv.'" class="widget-body col-sm-6">
 				</div>
 			</div>';
 		$idDiv++;
@@ -362,91 +388,127 @@ class bonos extends CI_Controller
 
 	function set_Frontalidad_Profundidad_Red(){
 
-		if(sizeof($_POST['idRed'])==1){
-			foreach ($_POST['idRed'] as $red){
-				if($red==0){
-					$this->set_todos_los_niveles_red($_POST['idRangoDiv']);
-				
-				}else {
-					$capacidadRed = $this->model_tipo_red->getCapacidadRed($red);
-					$this->set_niveles_red($capacidadRed[0]->frontal,$capacidadRed[0]->profundidad,$red,$_POST['idRangoDiv']);
-				}
-			}
-		}else {
-				$this->set_todos_los_niveles_red($_POST['idRangoDiv']);
-		}
+        $idRed = $_POST['idRed'];
+        $idRangoDiv = $_POST['idRangoDiv'];
+        $oneLevel = sizeof($idRed) == 1;
+
+        if (!$oneLevel):
+            $this->set_todos_los_niveles_red($idRangoDiv);
+            return true;
+        endif;
+
+        foreach ($idRed as $red) :
+            if ($red == 0) :
+                $this->set_todos_los_niveles_red($idRangoDiv);
+                continue;
+            endif;
+
+            $capacidadRed = $this->model_tipo_red->getCapacidadRed($red);
+            $frontal = $capacidadRed[0]->frontal;
+            $profundidad = $capacidadRed[0]->profundidad;
+            $this->set_niveles_red($frontal, $profundidad, $red, $idRangoDiv);
+        endforeach;
 	}
 	
 	function set_tipos_mercancia(){
 		$idRangoDiv=$_POST['idRangoDiv'];
-		
-		foreach ($_POST['idRed'] as $red){
-			if($red==0){
+        $idRed = $_POST['idRed'];
+
+        foreach ($idRed as $red):
+			if($red==0):
 				$this->set_todos_los_niveles_mercancia($idRangoDiv);
 				return true;
-			}		
-		}
+			endif;
+		endforeach;
 
 		$mercancia=$this->model_bonos->get_mercancia_tipos();
 		$idDiv=mt_rand(0,100).$idRangoDiv;
 		$opciones="";
 		$i=1;
-		foreach($mercancia as $merca){
-			$opciones=$opciones."<option value='".$i."'>".$merca->descripcion."</option>";
+		foreach($mercancia as $item):
+			$option = "<option value='$i'>".$item->descripcion."</option>";
+            $opciones.= $option;
 			$i++;
-		}
-		
-		echo '<h3 class="semi-bold">Tipos de Mercancia</h3>
-					<label class="select select-multiple">Seleccione los Tipos de Mercancia
-						<select id="id_condicion_1'.$idRangoDiv.'" multiple="" class="custom-scroll" style="max-width: 20rem;" name="id_condicion_1'.$idRangoDiv.'[]" onChange=\'set_mercancia($(this).val(),'.$idDiv.','.json_encode($_POST["idRed"]).','.$idRangoDiv.');\'>
-						<option selected value="0">--- Todas ---</option>
-						'.$opciones.'
-						</select>
-					</label>';
+		endforeach;
+
+        $id_red = $_POST["idRed"];
+        $json = json_encode($id_red);
+        echo '<h3 class="semi-bold">Item Types</h3>
+                <label class="select select-multiple">
+                Choose Item Types
+                    <select id="id_condicion_1'.$idRangoDiv.'" 
+                    multiple="" class="custom-scroll" style="max-width: 20rem;"
+                     name="id_condicion_1'.$idRangoDiv.'[]" 
+                     onChange=\'set_mercancia($(this).val(),'.$idDiv.','. $json .','.$idRangoDiv.');\'>
+                    <option selected value="0">--- Todas ---</option>
+                    '.$opciones.'
+                    </select>
+                </label>';
 		echo'<div id="'.$idDiv.'"></div>';
 	}
 	
 	function set_mercancia(){
-		echo '<h3 class="semi-bold">Mercancias</h3>
-						<label class="select select-multiple">Seleccione la mercancia
-							<select id="id_condicion_2'.$_POST['idRangoDiv'].'" multiple="" class="custom-scroll" style="max-width: 20rem;" name="id_condicion_2'.$_POST['idRangoDiv'].'[]">
-								<option selected value="0">--- Todas ---</option>';
-		foreach ($_POST['idRedes'] as $red){
-			$this->set_mercancia_por_redes ( $red,$_POST['idTipoMercancia']);
-		}
-	
-		echo'</select>
+
+        $idRedes = $_POST['idRedes'];
+        $tipoMercancia = $_POST['idTipoMercancia'];
+        $idRangoDiv = $_POST['idRangoDiv'];
+        $items = "";
+        foreach ($idRedes as $red):
+            $items .= $this->set_mercancia_por_redes ($red, $tipoMercancia);
+        endforeach;
+
+        echo '<h3 class="semi-bold">Items</h3>
+                <label class="select select-multiple">
+                Choose Items
+                <select id="id_condicion_2'. $idRangoDiv .'"
+                 multiple="" class="custom-scroll" style="max-width: 20rem;" 
+                 name="id_condicion_2'. $idRangoDiv .'[]">
+                    <option selected value="0">--- Todas ---</option>'.
+                    $items
+                .'</select>
 		</label>';
 	}
 	
 	private function set_todos_los_niveles_red($idRangoDiv){
-		echo '<h3 class="semi-bold">Frontalidad</h3>
-					<label class="select select-multiple">Seleccione numero de first line members
-						<select id="id_condicion_1'.$idRangoDiv.'" class="custom-scroll" style="max-width: 20rem;" name="id_condicion_1'.$idRangoDiv.'[]">
-						<option selected value="0">--- Todas ---</option>
+		echo '<h3 class="semi-bold">first line</h3>
+					<label class="select select-multiple">
+					Choose first line positions
+						<select id="id_condicion_1'.$idRangoDiv.'"
+						 class="custom-scroll" style="max-width: 20rem;" 
+						 name="id_condicion_1'.$idRangoDiv.'[]">
+						<option selected value="0">--- All positions ---</option>
 						</select>
 					</label>';
 			
-		echo '<h3 class="semi-bold">Profundidad</h3>
-					<label class="select select-multiple">Seleccione numero de Profundidad
-						<select id="id_condicion_2'.$idRangoDiv.'" multiple="" class="custom-scroll" style="max-width: 20rem;" name="id_condicion_2'.$idRangoDiv.'[]">
-						<option selected value="0">--- Todas ---</option>
+		echo '<h3 class="semi-bold">Spillover</h3>
+					<label class="select select-multiple">
+					Choose levels
+						<select id="id_condicion_2'.$idRangoDiv.'" 
+						multiple="" class="custom-scroll" style="max-width: 20rem;" 
+						name="id_condicion_2'.$idRangoDiv.'[]">
+						<option selected value="0">--- All Levels ---</option>
 						</select>
 					</label>';
 	}
 	
 	private function set_todos_los_niveles_mercancia($idRangoDiv){
-		echo '<h3 class="semi-bold">Tipos de Mercancia</h3>
-					<label class="select select-multiple">Seleccione los Tipos de Mercancia
-						<select id="id_condicion_1'.$idRangoDiv.'"  class="custom-scroll" style="max-width: 20rem;" name="id_condicion_1'.$idRangoDiv.'[]">
-						<option selected value="0">--- Todas ---</option>
+		echo '<h3 class="semi-bold">Item Types</h3>
+					<label class="select select-multiple">
+					Choose item types
+						<select id="id_condicion_1'.$idRangoDiv.'" 
+						 class="custom-scroll" style="max-width: 20rem;" 
+						 name="id_condicion_1'.$idRangoDiv.'[]">
+						<option selected value="0">--- All types ---</option>
 						</select>
 					</label>';
 			
-		echo '<h3 class="semi-bold">Mercancias</h3>
-					<label class="select select-multiple">Seleccione la mercancia
-						<select id="id_condicion_2'.$idRangoDiv.'" multiple="" class="custom-scroll" style="max-width: 20rem;" name="id_condicion_2'.$idRangoDiv.'[]">
-						<option selected value="0">--- Todas ---</option>
+		echo '<h3 class="semi-bold">Items</h3>
+					<label class="select select-multiple">
+					choose items
+						<select id="id_condicion_2'.$idRangoDiv.'"
+						 multiple="" class="custom-scroll" 
+						 style="max-width: 20rem;" name="id_condicion_2'.$idRangoDiv.'[]">
+						<option selected value="0">--- All items ---</option>
 						</select>
 					</label>';
 	}
@@ -478,26 +540,35 @@ class bonos extends CI_Controller
 					</label>';
 	}
 	
-	private function set_mercancia_por_redes($red,$idTipoMercancias) {
+	private function set_mercancia_por_redes($red, $tipos) {
 
-		foreach ($idTipoMercancias as $idTipoMercancia){
-			echo $idTipoMercancia." - ".$red;
-			if($idTipoMercancia==1){
-				$mercancias=$this->model_bonos->get_productos_red($red);
-			}else if($idTipoMercancia==2){
-				$mercancias=$this->model_bonos->get_servicios_red($red);
-			}else if($idTipoMercancia==3){
-				$mercancias=$this->model_bonos->get_combinados_red($red);
-			}else if($idTipoMercancia==4){
-				$mercancias=$this->model_bonos->get_paquetes_red($red);
-			}else if($idTipoMercancia==5){
-				$mercancias=$this->model_bonos->get_membresia_red($red);
-			}
+	    $functions = array(
+	        false,"productos","servicios",
+            "combinados","paquetes","membresia"
+        );
 
-			foreach ($mercancias as $mercancia){
-				echo "<option value='".$mercancia->id."'>".$mercancia->nombre."( ".$mercancia->Name." )</option>";
-			}
-		}
+	    $options = "";
+		foreach ($tipos as $tipo):
+			$options.= $tipo." - ".$red;
+
+		    $function = "servicios";
+		    if(isset($functions[$tipo]))
+		        $function = $functions[$tipo];
+
+		    $function = "get_".$function."_red";
+
+			$mercancias=$this->model_bonos->$function($red);
+
+			foreach ($mercancias as $mercancia):
+				$id_item = $mercancia->id;
+                $pais_item = $mercancia->Name;
+                $nombre_item = $mercancia->nombre;
+                $option = "<option value='$id_item'>$nombre_item ($pais_item)</option>";
+                $options .= $option;
+			endforeach;
+		endforeach;
+
+		return $options;
 	}
 	
 	private function insertRangosRedesCondiciones($rango,$bono,$idBono){

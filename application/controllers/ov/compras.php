@@ -4593,6 +4593,13 @@ function index()
             if($isDeposit)
                 $this->setDepositoCompra($id_afiliado, $mercancia);
 
+            $isItemVIP = $categoria == 1; $red_vip = 2;
+            $isVIP = $this->playerbonos->isAfiliadoenRed($id_afiliado, $red_vip);
+            if ($isItemVIP && !$isVIP):
+                $this->playerbonos->setVIPUser($id_afiliado);
+                log_message('DEV', "NEW VIP USER ($id_afiliado)");
+            endif;
+
         }
     }
 	

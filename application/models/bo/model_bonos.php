@@ -123,14 +123,34 @@ function get_tipo_rangos_bono($id){
 	$q=$this->db->query("SELECT * FROM cat_bono_condicion where id_bono=".$id." group by id_rango,id_tipo_rango");
 	return $q->result();
 }
-function get_rangos_id_tipo($id,$tipoRango){
 
-	$q=$this->db->query("SELECT cr.id_rango as id_rango,cr.nombre as nombre_rango,cr.descripcion as descripcion,
-								ct.id as tipo_rango,ct.nombre as nombre_tipo_rango,crt.valor as valor,cr.estatus
-								FROM cat_rango cr,cat_tipo_rango ct,cross_rango_tipos crt
-								where (cr.id_rango=crt.id_rango)
-								and (ct.id=crt.id_tipo_rango)and cr.estatus='ACT'
-								and(cr.id_rango=".$id.") and(ct.id=".$tipoRango.")");
+function get_rangos_id_tipo($id,$tipoRango,$id_bono = ""){
+
+    if($id_bono):
+        $id_bono = "SELECT distinct calificado 
+                      FROM cat_bono_condicion 
+                      WHERE id_bono = $id_bono AND id_rango = $id 
+                      AND id_tipo_rango = $tipoRango
+                      LIMIT 1";
+        $id_bono = ",($id_bono) calificado";
+    endif;
+
+    $query = "SELECT cr.id_rango AS id_rango,
+                       cr.nombre AS nombre_rango,
+                       cr.descripcion AS descripcion,
+                       ct.id AS tipo_rango,
+                       ct.nombre AS nombre_tipo_rango,
+                       crt.valor AS valor,
+                       cr.estatus $id_bono
+                FROM cat_rango cr,
+                     cat_tipo_rango ct,
+                     cross_rango_tipos crt
+                WHERE cr.id_rango = crt.id_rango
+                  AND ct.id = crt.id_tipo_rango
+                  AND cr.estatus = 'ACT'
+                  AND cr.id_rango = $id
+                  AND ct.id = $tipoRango";
+    $q=$this->db->query($query);
 	return $q->result();
 }
 

@@ -20,6 +20,8 @@ _ERP BASE MLM - Versión: 3.9 -
         COMMENT 'última actualización',
       amount float DEFAULT 0,
       estatus varchar(3) DEFAULT 'ACT',
+      reference int default 0 null
+        comment 'id_venta, 0 is null',
       extra varchar(150) DEFAULT '' 
         COMMENT 'json data'
   );

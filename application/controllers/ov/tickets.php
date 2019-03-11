@@ -232,7 +232,7 @@ class tickets extends CI_Controller
         $bitcoin = $this->playerbonos->getBitcoinValue();
         $this->template->set("bitcoin",$bitcoin);
 
-        $where = "i.categoria = 4";
+        $where = "AND i.categoria = 4";
         $mercancia = $this->playerbonos->getMercancia($where);
         $tarifa = $mercancia[0]->costo;
         $this->template->set("tarifa",$tarifa);
@@ -457,7 +457,7 @@ class tickets extends CI_Controller
             echo $cobrosPagos."<br>";
             echo $cobroPendientes."<br>";
     */
-        $where = "i.categoria = 4";
+        $where = "AND i.categoria = 4";
         $mercancia = $this->playerbonos->getMercancia($where);
         $tarifa = $mercancia[0]->costo;
         $red_item = $mercancia[0]->id;

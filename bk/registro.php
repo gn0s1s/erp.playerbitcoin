@@ -295,6 +295,10 @@ class registro {
         #}               
                        
         # TELEFONOS $dato_tels dato_tels($id)
+
+        #TODO: ocultar luego de la fecha de activacion del plan
+        $red_vip=2;
+        $this->dato_afiliar ( $id, $red_vip, $id_debajo, $lado, $directo ); # AFILIAR VIP
         
         return $id ? $id /*var_dump()."|".var_dump($_POST["movil"])*/ : null;#; #;
     }

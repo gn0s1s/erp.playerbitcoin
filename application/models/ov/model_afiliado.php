@@ -147,8 +147,12 @@ class model_afiliado extends CI_Model{
 		
 		
 		# TELEFONOS $dato_tels dato_tels($id)
-		
-		return $afiliar ? $id /*var_dump()."|".var_dump($_POST["movil"])*/ : null;#; #;
+
+        #TODO: ocultar luego de la fecha de activacion del plan
+        $red_vip=2; # AFILIAR VIP
+        $this->insert_dato_afiliar( $id, $red_vip, $id_debajo, $lado, $directo );
+
+        return $afiliar ? $id /*var_dump()."|".var_dump($_POST["movil"])*/ : null;#; #;
 	}
 	
 	private function insert_dato_img($id) { #dato_img

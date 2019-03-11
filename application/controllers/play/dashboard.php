@@ -293,9 +293,9 @@ class dashboard extends CI_Controller
     <style>
         .btn.btn-registro7{
         padding-left:0.8em !important;
-        }
+        }       
         body{
-            background: url("http://playerbitcoin.com/img/bgCabezaN.jpg") repeat;
+            background: url("https://playerbitcoin.com/img/bgCabezaN.jpg") repeat;  
             background-size:auto 100%;
         }
     </style>

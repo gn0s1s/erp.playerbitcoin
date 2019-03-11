@@ -2146,7 +2146,7 @@ class playerbonos extends CI_Model
 
     function newTickets($id,$tickets,$actived = 'ACT',$date_final = false){
 
-        $where = "i.categoria = 4";
+        $where = "AND i.categoria = 4";
         $mercancia = $this->getMercancia($where);
         $tarifa = $mercancia[0]->costo;
         $red_item = $mercancia[0]->id;
@@ -2684,10 +2684,46 @@ class playerbonos extends CI_Model
         return $posicion;
     }
 
+    function setVIPUser($id,$debajo_de = false,$lado = false,$directo = false){
+        $red_vip = 2;
+        $isVIP = $this->isAfiliadoenRed($id, $red_vip);
+
+        if(!$directo) $directo = "directo";
+
+        if(!$debajo_de) $debajo_de = "debajo_de";
+
+        if(!$lado) $lado = "lado";
+
+        $query = "UPDATE afiliar 
+                  SET debajo_de = $debajo_de,
+                   directo = $directo, lado = $lado
+                   WHERE id_afiliado = $id AND id_red = $red_vip";
+
+        if(!$isVIP):
+            $debajo_de = $id;
+            while (!$isVIP) :
+                $afiliacion = $this->isAfiliadoenRed($debajo_de);
+                $debajo_de = $afiliacion ? $afiliacion[0]->debajo_de : 2;
+                $isVIP = $this->isAfiliadoenRed($debajo_de, $red_vip);
+                if($debajo_de == 2) $isVIP = true;
+            endwhile;
+            $lado = $this->getLadosDebajo($debajo_de, $red_vip);
+            $query = "INSERT INTO afiliar
+                    SELECT null,$red_vip,$id,$debajo_de,$directo,$lado -- imprimir
+                    FROM afiliar WHERE id_afiliado = $id AND id_red = 1 
+                    LIMIT 1";
+        endif;
+
+        $this->db->query($query);
+
+        return true;
+
+    }
+
     function isAfiliadoenRed($id, $red = false,$order=false,$where=false)
     {
-        $query = "SELECT -- imprimir 
-* FROM afiliar WHERE id_afiliado = $id";
+        $query = "SELECT * -- imprimir 
+                    FROM afiliar WHERE id_afiliado = $id";
 
         if ($red)
             $query.=" AND id_red in ($red)";
@@ -3381,6 +3417,16 @@ class playerbonos extends CI_Model
         log_message('DEV',"bitcoin----> ".json_encode($bitcoin_value));
 
         return $bitcoin_value;
+    }
+
+    private function getLadosDebajo($debajo_de, $red_vip)
+    {
+        $query = "SELECT count(*) lados FROM afiliar
+                        WHERE debajo_de = $debajo_de AND id_red = $red_vip";
+        $q = $this->db->query($query);
+        $result = $q->result();
+        $lado = $result ? $result[0]->lados : 0;
+        return $lado;
     }
 
 

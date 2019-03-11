@@ -998,7 +998,11 @@ class autobono
 				return $this->getValorBonoBitcoin($parametro);
 				
 				break;
-				
+            case 2 :
+
+                return $this->getValorBonoPasivo($parametro);
+
+                break;
 			default:
 				return 0;
 				break;
@@ -1008,10 +1012,11 @@ class autobono
 	}
 	
 	private function getValorBonoBitcoin($parametro){
+
+        $id_bono = 1;
+        $valores = $this->getBonoValorNiveles($id_bono);
 		
-		$valores = $this->getBonoValorNiveles(1);
-		
-		$bono = $this->getBono(1);
+		$bono = $this->getBono($id_bono);
 		$periodo = "DIA";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
 		
 		$fechaInicio=$this->getPeriodoFecha($periodo, "INI", $parametro["fecha"]);
@@ -1088,6 +1093,65 @@ class autobono
 
     }
 
+    private function getValorBonoPasivo($parametro){
+
+        $id_bono = 2;
+        $valores = $this->getBonoValorNiveles($id_bono);
+
+        $bono = $this->getBono($id_bono);
+        $periodo = "DIA";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
+
+        $fechaInicio=$this->getPeriodoFecha($periodo, "INI", $parametro["fecha"]);
+        $fechaFin=$this->getPeriodoFecha($periodo, "FIN", $parametro["fecha"]);
+
+        $id_usuario = $parametro["id_usuario"];
+
+        echo "between ($id_usuario) : $fechaInicio - $fechaFin \n";
+
+        $per = $valores[1]->valor;
+        $percent = $per/100;
+
+        $itemsPSR = $this->getPSRuser($id_usuario);
+        $where = "order by reference ASC";
+        $pasivos = $this->getPasivos($id_usuario,$where);
+        $fechaFinal = $this->getAnyTime($fechaFin,"180 days",true);
+        foreach ($itemsPSR as $index => $psr) {
+            $reference = $psr->reference;
+            $valor = $psr->costo;
+            $id_venta = $psr->id_venta;
+            $tope = $valor*2;
+            $where = "AND reference = $reference AND estatus = 'ACT'";
+            $pasivo = $this->getPasivos($id_usuario,$where);
+
+            $amount = $valor*$percent;
+            if(!$pasivo):
+                $this->setPasivoUser($id_usuario, $fechaInicio, $fechaFinal, $amount, $id_venta);
+                break;
+            endif;
+
+            $acumulado = $pasivo[0]->amount;
+            $id_pasivo = $pasivo[0]->id;
+            $sumado = $acumulado + $amount;
+
+            $query = "UPDATE comision_pasivo
+                            set amount = amount+$amount  
+                            WHERE id = $id_pasivo";
+            newQuery($this->db, $query);
+
+            if($sumado >= $tope):
+                $query = "UPDATE comision_pasivo set
+                            estatus = 'DES' 
+                            WHERE id = $id_pasivo";
+                newQuery($this->db, $query);
+                break;
+            else :
+                break;
+            endif;
+
+        }
+
+        return 0;
+    }
 	
 	private function getAfiliados_A($id,$nivel,$fechaInicio,$fechaFin) {
 		
@@ -1662,10 +1726,11 @@ class autobono
 		return date_format($year, 'Y-m-d');
 	}
 
-    private function getAnyTime($date,$time = '1 month'){
+    private function getAnyTime($date,$time = '1 month',$add = false){
 
         $fecha_sub = new DateTime($date);
-        $q= newQuery($this->db,"select date_add('".$date."', interval ".$time.") fecha");
+        $type = ($add) ? "date_add" : "date_sub";
+        $q= newQuery($this->db,"select $type('".$date."', interval ".$time.") fecha");
         $fecha_sub = $q ? $q[1]["fecha"] : date('Y-m-d');
         $date = date('Y-m-d',strtotime($fecha_sub));
 
@@ -1907,6 +1972,38 @@ class autobono
         endforeach;
         $msj .= "</ul>";
         return $msj;
+    }
+
+    private function getPSRuser($id_usuario)
+    {
+        $query = "SELECT * 
+              FROM venta v, cross_venta_mercancia c, items i
+              WHERE i.id = c.id_mercancia AND c.id_venta = v.id_venta
+              AND i.categoria = 2 AND v.id_estatus = 'ACT'
+              AND v.id_user = $id_usuario";
+
+        return newQuery($this->db, $query);
+    }
+
+    private function getPasivos($id_usuario, $where = "",$select = "*")
+    {
+        $query = "SELECT $select 
+              FROM comision_pasivo
+              WHERE user_id = $id_usuario
+              $where";
+
+        $result = newQuery($this->db, $query);
+        return $result;
+    }
+
+
+    private function setPasivoUser($id_usuario, $fechaInicio, $fechaFinal, $amount, $id_venta)
+    {
+        $query = "INSERT INTO comision_pasivo
+                            (user_id,initdate,enddate,amount,reference)  
+                            VALUES
+                            ($id_usuario,'$fechaInicio','$fechaFinal',$amount,$id_venta)";
+        newQuery($this->db, $query);
     }
 
 }

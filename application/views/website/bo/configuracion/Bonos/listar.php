@@ -68,13 +68,13 @@
 											<thead>			                
 												<tr>
 													<th>ID</th>
-													<th data-class="expand">Nombre</th>
-													<th data-hide="phone,tablet">Descripción</th>
-													<th data-hide="phone,tablet">Fecha</th>
-													<th data-hide="phone,tablet">Fecuencia</th>
+													<th data-class="expand">Name</th>
+													<th data-hide="phone,tablet">Description</th>
+													<th data-hide="phone,tablet">Date Range</th>
+													<th data-hide="phone,tablet">Period</th>
 													<th data-hide="phone,tablet">Parameters</th>
-													<th data-hide="phone,tablet">Valor por Nivel</th>
-													<th data-hide="phone,tablet">Acciones</th>
+													<th data-hide="phone,tablet" width="10%">Level Values</th>
+													<th data-hide="phone,tablet" width="10%">Options</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -83,47 +83,62 @@
 														<td><?php echo $bono->id; ?></td>
 														<td><?php echo $bono->nombre; ?></td>
 														<td><?php echo $bono->descripcion; ?></td>
-														<td><b>Desde :</b> <?php echo $bono->inicio; ?> <br> <b>Hasta :</b> <?php echo $bono->fin; ?></td>
-														<td><?php 
-															if($bono->frecuencia=="UNI")
-																echo "Unico";
-															else if($bono->frecuencia=="ANO")
-																echo "Anual";
-															else if($bono->frecuencia=="MES")
-																echo "Mensual";
-															else if($bono->frecuencia=="QUI")
-																echo "Quincenal";
-															else if($bono->frecuencia=="SEM")
-																echo "Semanal";
-															else if($bono->frecuencia=="DIA")
-																echo "Diario";
+														<td><b>Since :</b> <?php echo $bono->inicio; ?> <br>
+                                                            <b>until :</b> <?php echo $bono->fin; ?></td>
+														<td><?php
+                                                            $frecuencias = array(
+                                                                "UNI" => "Once",
+                                                                "ANO" => "Yearly",
+                                                                "MES" => "Monthly",
+                                                                "QUI" => "Each Half Month",
+                                                                "SEM" => "Weekly",
+                                                                "DIA" => "Daily"
+                                                            );
+
+															$frecuencia = $bono->frecuencia;
+															if(isset($frecuencias[$frecuencia]))
+															    $frecuencia = $frecuencias[$frecuencia];
+
+															echo $frecuencia;
 														?></td>
 														<td>
 														<?php 
-														foreach ($condicionesBono as $condicion){
-																
-																if($condicion['id_bono']==$bono->id){
-																	echo "-Completar the Ranking <b>".$condicion['nombreRango']."</b> cuando genera <b>".$condicion['condicionRango']."</b> <b>".$condicion['tipoRango']."</b> ";
-																	echo "on the Network <b>".$condicion['nombreRed']."</b> en";
-																	foreach($condicion['condicion1'] as $con){
-																		echo ",<b> ".$con."</b>";
-																	}
-																	foreach($condicion['condicion2'] as $con){
-																		echo ",<b> ".$con."</b>";
-																	}
-																    echo "<br>";
-															}
-														}
+														foreach ($condicionesBono as $condicion):
+                                                            $listCondiciones = "";
+
+                                                            $condicion1 = $condicion['condicion1'];
+                                                            foreach($condicion1 as $con):
+                                                                $listCondiciones .= "<h3 class='padding-5 no-margin'> ".$con."</h3>";
+                                                            endforeach;
+
+                                                            $condicion2 = $condicion['condicion2'];
+                                                            foreach($condicion2 as $con):
+                                                                $listCondiciones .= "<li> ".$con."</li>";
+                                                            endforeach;
+
+                                                            $isBono = $condicion['id_bono'] == $bono->id;
+                                                            if($isBono):
+                                                                echo "-Complete the Parameter <b>".$condicion['nombreRango'].
+                                                                    "</b> when gets <b>".$condicion['condicionRango'].
+                                                                    "</b> <b>".$condicion['tipoRango']."</b> ".
+                                                                    "on the Network <b>".$condicion['nombreRed']."</b> in 
+                                                                    <ul> $listCondiciones </ul>
+                                                                    <br>";
+															endif;
+														endforeach;
 														?>
 														</td>
 														<td>
-														<?php foreach ($valorNiveles as $valorNivel){
-															$hacia = ($valorNivel->verticalidad == "ASC") ? "up" : "down";
-															if($valorNivel->id_bono==$bono->id){
+														<?php foreach ($valorNiveles as $valorNivel):
+															$verticalidad = $valorNivel->verticalidad;
+                                                            $hacia = stripos($verticalidad,"ASC")!==false ? "up" : "down";
+															if($valorNivel->id_bono==$bono->id):
 																$hacia = ($valorNivel->nivel==0) ? "" : $hacia;
-																echo "Nivel ".$valorNivel->nivel." <i class='fa fa-long-arrow-".$hacia."'></i> : <br> <b>$ ".$valorNivel->valor."</b><br>";
-															}
-														}
+																echo "Level ".$valorNivel->nivel.
+                                                                    " <i class='fa fa-long-arrow-".$hacia."'></i>".
+                                                                    " : <b class='pull-right'>$ ".$valorNivel->valor."</b><br>";
+															endif;
+														endforeach;
 														?>
 														</td>
 														<td>
@@ -267,6 +282,7 @@ function editar(id){
 		
 	})
 	.done(function( msg ) {
+        //console.log(msg);
 		bootbox.dialog({
 			message: msg,
 			title: 'Modificar Bono',
