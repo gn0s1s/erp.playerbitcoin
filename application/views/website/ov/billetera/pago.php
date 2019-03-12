@@ -62,90 +62,123 @@
 
                                                 <tbody>
 
-                                                <?php if (isset($psr)) :
-                                                    foreach ($psr as $index => $pasive) :
-                                                        #TODO: bono pasivo
-                                                        $acumulado = $pasive->amount;
-                                                        $total = $pasive->costo * 2;
-                                                        $per = 100/$total;
-                                                        $percent = $per * $acumulado;
-                                                        $residuo = 100 - $percent;
-                                                        ?>
-                                                        <tr class="psr_<?=$index?>">
-                                                            <td colspan="2"><b>
-                                                                    PSR <?= $index + 1; ?> $ <?= $pasive->costo; ?>
-                                                                </b></td>
-                                                        </tr>
-                                                    <style>
-                                                        .psr_<?=$index?>{
-                                                            background: linear-gradient(90deg,#ed8c17 <?=$percent?>%,#1048b1 <?=$residuo?>%);
-                                                        }
-                                                    </style>
-                                                    <?php endforeach;
-                                                endif; ?>
+
                                                 <?php
                                                 $total = 0;
                                                 $i = 0;
                                                 $total_transact = 0;
-                                                //var_dump($comision_todo);
+                                                $comision_indirectos = 0;
+                                                $directos = 0;
+                                                    //var_dump($comision_todo);
 
-                                                for ($i = 0; $i < sizeof($comision_todo["redes"]); $i++) {
+                                                $html = "";
 
-                                                    $totales = (intval($comision_todo["ganancias"][$i][0]->valor) <> 0 || sizeof($comision_todo["bonos"][$i]) <> 0) ? 0 : 'FAIL';
+                                                 if (isset($psr)) :
+                                                    foreach ($psr as $index => $pasive) :
+                                                        #TODO: bono pasivo
+                                                        $acumulado = isset($pasive->amount) ? $pasive->amount : 0;
+                                                        $total = $pasive->costo * 2;
+                                                        $per = 100/$total;
+                                                        $percent = $per * $acumulado;
+                                                        $residuo = 100 - $percent;
+                                                        if($percent > 100)
+                                                            $percent = 100;
+
+                                                        $color_bg = $percent >= 100 ? '#0DC143' : '#ed8c17';
+                                                        ?>
+                                                        <tr class="psr_<?=$index?>">
+                                                            <td ><b>
+                                                                    PSR <?= $index + 1; ?> $ <?= $pasive->costo; ?>
+                                                                </b></td><td>
+                                                                <b class="pull-right"><?=$percent?> %</b>
+                                                            </td>
+                                                        </tr>
+                                                        <style>
+                                                            .psr_<?=$index?>{
+                                                                background: linear-gradient(90deg,<?=$color_bg?> <?=$percent?>%,#1048b1 0%);
+                                                                color: #fff;
+                                                            }
+                                                        </style>
+                                                    <?php endforeach;
+                                                endif;
+
+                                                foreach ($comision_todo["redes"] as $i => $comision_red) {
+
+                                                    $imprimir = "";
+
+                                                    $comisiones = $comision_todo["ganancias"][$i];
+                                                    $valorGanancias = $comisiones[0]->valor;
+                                                    $intGanancias = intval($valorGanancias);
+                                                    $bonos = $comision_todo["bonos"][$i];
+                                                    $intBono = sizeof($bonos);
+                                                    $isGanancias = $intGanancias <> 0;
+                                                    $isValorGanancias = $valorGanancias <> 0;
+                                                    $isBono = $intBono <> 0;
+
+                                                    $comision_directos = $comision_todo["directos"][$i];
+
+                                                    $totales = ($isGanancias || $isBono) ? 0 : 'FAIL';
 
                                                     //echo $totales."|";
 
-                                                    if ($totales !== 'FAIL') {
-                                                        echo '<tr class="info" >
-																<td colspan="2"><b>' . $comision_todo["redes"][$i]->nombre . '</b></td>
+                                                    if ($totales !== 'FAIL') :
+
+                                                        $imprimir .= '<tr class="info" >
+																<td colspan="2"><b>' . $comision_red->nombre . '</b></td>
 															</tr>';
-                                                    }
+                                                    endif;
 
-
-                                                    if ($comision_todo["ganancias"][$i][0]->valor <> 0) {
-                                                        echo '<tr class="info" >
+                                                    if ($isValorGanancias) :
+                                                        $imprimir .= '<tr class="info" >
 																<td colspan="2"><i class="fa fa-money"></i>Commissions</td>
 															</tr>';
 
-                                                        echo '<tr class="info">
+                                                        $directos = $comision_directos[0]->valor;
+                                                        $imprimir .= '<tr class="info">
 															<td>&nbsp;&nbsp;Sponsored Commissions</td>
-																<td>$ ' . number_format($comision_todo["directos"][$i][0]->valor, 2) . '</td>
+																<td>$ ' . number_format($directos, 2) . '</td>
 															</tr>';
 
-                                                        echo '<tr class="info">
+                                                        $comision_indirectos = $valorGanancias - $directos;
+                                                        $imprimir .= '<tr class="info">
 															<td>&nbsp;&nbsp;Spillover Commissions</td>
-																<td>$ ' . number_format($comision_todo["ganancias"][$i][0]->valor - $comision_todo["directos"][$i][0]->valor, 2) . '</td>
+																<td>$ ' . number_format($comision_indirectos, 2) . '</td>
 															</tr>';
 
-                                                        if ($comision_todo["ganancias"][$i][0]->valor) {
-                                                            $totales += ($comision_todo["ganancias"][$i][0]->valor);
-                                                        }
+                                                        if ($valorGanancias) :
+                                                            $totales += $valorGanancias;
+                                                        endif;
 
+                                                    endif;
 
-                                                    }
-
-                                                    if ($comision_todo["bonos"][$i]) {
-                                                        echo '<tr class="info" >
-																<td colspan="2"><i class="fa fa-gift"></i>Calculated Commissions</td>
+                                                    if ($bonos) :
+                                                        $imprimir .= '<tr class="info" >
+																<td colspan="2">
+																<i class="fa fa-gift"></i>
+																Calculated Commissions
+																</td>
 															</tr>';
-                                                        for ($k = 0; $k < sizeof($comision_todo["bonos"][$i]); $k++) {
-                                                            if ($comision_todo["bonos"][$i][$k]->valor <> 0) {
-                                                                $totales += ($comision_todo["bonos"][$i][$k]->valor);
-                                                                echo '<tr class="info">
-																<td>&nbsp;&nbsp;' . $comision_todo["bonos"][$i][$k]->nombre . '</td>
-																	<td>$ ' . number_format($comision_todo["bonos"][$i][$k]->valor, 2) . '</td>
+                                                        foreach ($bonos as $k => $bono) :
+                                                            $intBonoVal = $bono->valor <> 0;
+                                                            if (!$intBonoVal)
+                                                                continue;
+
+                                                            $totales += ($bono->valor);
+                                                            $imprimir .= '<tr class="info">
+																<td>&nbsp;&nbsp;' . $bono->nombre . '</td>
+																	<td>$ ' . number_format($bono->valor, 2) . '</td>
 																</tr>';
-                                                            }
-                                                        }
-                                                    }
 
-                                                    if ($totales <> 0) {
-                                                        echo '<tr class="default">
+                                                        endforeach;
+                                                    endif;
+
+                                                    if ($totales <> 0) :
+                                                        $imprimir .= '<tr class="default">
 																<td>&nbsp; Total </td>
 																<td>$ ' . number_format($totales, 2) . '</td>
 															</tr>';
-                                                        $total += ($totales);
-                                                    }
+                                                        $total += $totales;
+                                                    endif;
 
                                                 }
 
