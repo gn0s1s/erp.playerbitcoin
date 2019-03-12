@@ -145,6 +145,9 @@ class reportes extends CI_Controller {
             case 2 :
                 $this->reporte_tickets ();
                 break;
+             case 3 :
+                $this->reporte_todo_boletos();
+                break;
 			case 7 :
 				$this->reporte_afiliados ();
 				break;
@@ -329,8 +332,48 @@ class reportes extends CI_Controller {
 			</table><tr class='odd' role='row'>";
 	}
 	
-	function reporte_todo_comisiones() {
-	
+	function reporte_todo_boletos() {
+
+        $boletos = $this->modelo_reportes->getTodoTickets();
+
+        echo
+            "<table id='datatable_fixed_column1'
+				class='table table-striped table-bordered table-hover' width='100%'>
+				<thead id='tablacabeza'>".
+
+            "<th data-hide='phone,tablet'>fecha</th>" .
+            "<th data-hide='phone'># tickets</th>" .
+            "<th data-hide='phone,tablet'>Total</th>" .
+            "<th data-hide='phone,tablet'>Company</th>" .
+            "<th data-hide='phone,tablet'>Referrals</th>" .
+            "<th data-hide='phone,tablet'>Rankings</th>" .
+            "<th data-hide='phone,tablet'>Ranking 6 month</th>" .
+            "<th data-hide='phone,tablet'>Neto</th>" .
+            "<th data-hide='phone,tablet'>Acumulated</th>" .
+            "</thead>
+				<tbody>";
+        foreach ($boletos as $totales) :
+
+            $company = ($totales->company + $totales->company2);
+            $date_final = date('Y-m-d', strtotime($totales->date_final));
+            echo "<tr>"
+                . "<td> " . $date_final . "</td>"
+                . "<td> " . $totales->tickets . "</td>"
+                . "<td>$ " . $totales->total . "</td>"
+                . "<td>$ " . round($totales->company, 2) . "</td>"
+                . "<td>$ " . round($totales->referrals, 2) . "</td>"
+                . "<td>$ " . round($totales->rankings, 2) . "</td>"
+                . "<td>$ " . round($totales->company2, 2) . "</td>"
+                . "<td>$ " . $totales->neto . "</td>"
+                . "<td>$ " . $totales->acumulado . "</td>"
+                . "</tr>";
+        endforeach;
+
+        echo "</tbody>
+			</table><tr class='odd' role='row'>";
+    }
+
+    function reporte_todo_comisiones() {
 		$inicio = $_POST ['startdate'];
 		$fin = $_POST ['finishdate'];
 

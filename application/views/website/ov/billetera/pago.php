@@ -61,135 +61,267 @@
                                                 </thead>
 
                                                 <tbody>
-
-
                                                 <?php
-                                                $total = 0;
-                                                $i = 0;
-                                                $total_transact = 0;
-                                                $comision_indirectos = 0;
-                                                $directos = 0;
-                                                    //var_dump($comision_todo);
 
-                                                $html = "";
+                                                function setPSRs($psr,$comisiones)
+                                                {
+                                                    $sum_psr =  0;
+                                                    foreach ($comisiones as $comision):
+                                                        if($comision["comisiones"])
+                                                            $sum_psr += $comision["comisiones"]["indirectos"];
+                                                    endforeach;
 
-                                                 if (isset($psr)) :
-                                                    foreach ($psr as $index => $pasive) :
-                                                        #TODO: bono pasivo
-                                                        $acumulado = isset($pasive->amount) ? $pasive->amount : 0;
-                                                        $total = $pasive->costo * 2;
-                                                        $per = 100/$total;
-                                                        $percent = $per * $acumulado;
-                                                        $residuo = 100 - $percent;
-                                                        if($percent > 100)
-                                                            $percent = 100;
+                                                    $data_psr = array();
+                                                    if (isset($psr)) :
+                                                        foreach ($psr as $index => $pasive) :
+                                                            list($data,$sum_psr) = setPSR($pasive,$sum_psr);
+                                                            $data_psr[$index] = $data;
+                                                        endforeach;
+                                                    endif;
+                                                    return $data_psr;
+                                                }
 
-                                                        $color_bg = $percent >= 100 ? '#0DC143' : '#ed8c17';
+                                                function setPSR($pasive,$sum = 0)
+                                                {
+                                                    #TODO: bono pasivo
+                                                    $cent = 100;
+                                                    $acumulado = isset($pasive->amount) ? $pasive->amount : 0;
+                                                    $total = $pasive->costo * 2;
+
+                                                    $acumulado += $sum;
+                                                    $sum = $acumulado - $total;
+                                                    if($acumulado>$total):
+                                                        $acumulado = $total;
+                                                    endif;
+
+
+                                                    if($sum<0)
+                                                        $sum =0;
+
+                                                    echo "<script>console.log('$pasive->id -> $sum')</script>";
+
+                                                    $per = $cent / $total;
+                                                    $percent = $per * $acumulado;
+                                                    $residuo = $cent - $percent;
+                                                    if ($percent > $cent)
+                                                        $percent = $cent;
+
+                                                    $color_bg = $percent >= $cent ? '#0DC143' : '#ed8c17';
+
+                                                    $data_psr = array(
+                                                        "costo" => $pasive->costo,
+                                                        "per" => $percent,
+                                                        "residuo" => $residuo,
+                                                        "color" => $color_bg,
+                                                    );
+
+                                                    return array($data_psr,$sum);
+                                                }
+
+                                                function setComisiones($comision_todo){
+
+                                                    $data_comisiones = array();
+                                                    $redes = $comision_todo["redes"];
+                                                    foreach ($redes as $i => $comision_red) :
+
+                                                        $comisiones = $comision_todo["ganancias"][$i];
+                                                        $valorGanancias = $comisiones[0]->valor;
+                                                        $intGanancias = intval($valorGanancias);
+                                                        $bonos = $comision_todo["bonos"][$i];
+                                                        $intBono = sizeof($bonos);
+                                                        $isGanancias = $intGanancias <> 0;
+                                                        $isValorGanancias = $valorGanancias <> 0;
+                                                        $isBono = $intBono <> 0;
+
+                                                        $comision_directos = $comision_todo["directos"][$i];
+
+                                                        $totales = ($isGanancias || $isBono) ? 0 : 'FAIL';
+
+                                                        //echo $totales."|";
+
+                                                        $isRed = ($totales !== 'FAIL') ? $comision_red->nombre : false;
+
+                                                        $comisiones = false;
+                                                        if($isValorGanancias):
+                                                            $directos = $comision_directos[0]->valor;
+                                                            $indirectos = $valorGanancias - $directos;
+                                                            $tickets = 0;#TODO: comisiones por boletos
+                                                            $comisiones = array(
+                                                                "directos" => $tickets,#TODO: $directos,
+                                                                "indirectos" => $valorGanancias,#TODO: $indirectos,
+                                                                "total" => $valorGanancias
+                                                            );
+                                                        endif;
+
+                                                        $valor_bonos = false;
+                                                        if($bonos):
+                                                            $valor_bonos = array();
+                                                            foreach ($bonos as $k => $bono) :
+                                                                $intBonoVal = $bono->valor <> 0;
+                                                                $nombre_bono = $bono->nombre;
+                                                                if ($intBonoVal)
+                                                                    $valor_bonos[$nombre_bono] = $bono->valor;
+                                                            endforeach;
+                                                            $valor_bonos["total"] = array_sum($valor_bonos);
+                                                        endif;
+
+                                                        $data_comision = array(
+                                                            "red" => $isRed,
+                                                            "comisiones" => $comisiones,
+                                                            "bonos" =>$valor_bonos
+                                                        );
+
+                                                        $data_comisiones[$i] = $data_comision;
+
+                                                    endforeach;
+
+                                                    return $data_comisiones;
+
+                                                }
+
+                                                function printPSR($data_psr){
+                                                    foreach ($data_psr as $index => $value):
+
+                                                        $percent = $value["per"];
+                                                        $costo = $value["costo"];
+                                                        $color_bg = $value["color"];
+
                                                         ?>
-                                                        <tr class="psr_<?=$index?>">
-                                                            <td ><b>
-                                                                    PSR <?= $index + 1; ?> $ <?= $pasive->costo; ?>
-                                                                </b></td><td>
-                                                                <b class="pull-right"><?=$percent?> %</b>
+                                                        <tr class="psr_<?= $index ?>">
+                                                            <td><b>
+                                                                    PSR <?= $index + 1; ?> $ <?= $costo; ?>
+                                                                </b></td>
+                                                            <td>
+                                                                <b class="pull-right"><?= $percent*2 ?> %</b>
                                                             </td>
                                                         </tr>
                                                         <style>
-                                                            .psr_<?=$index?>{
-                                                                background: linear-gradient(90deg,<?=$color_bg?> <?=$percent?>%,#1048b1 0%);
+                                                            .psr_<?=$index?> {
+                                                                background: linear-gradient(90deg,<?=$color_bg?> <?=$percent?>%, #1048b1 0%);
                                                                 color: #fff;
                                                             }
                                                         </style>
+
                                                     <?php endforeach;
-                                                endif;
+                                                }
 
-                                                foreach ($comision_todo["redes"] as $i => $comision_red) {
+                                                function printComisional($comisional)
+                                                {
+                                                    $decimal = 2;
+                                                    $directos = $comisional["directos"];
+                                                    $indirectos = $comisional["indirectos"];
 
-                                                    $imprimir = "";
+                                                    $printDirectos = number_format($directos, $decimal);
+                                                    $printIndirectos = number_format($indirectos, $decimal);
 
-                                                    $comisiones = $comision_todo["ganancias"][$i];
-                                                    $valorGanancias = $comisiones[0]->valor;
-                                                    $intGanancias = intval($valorGanancias);
-                                                    $bonos = $comision_todo["bonos"][$i];
-                                                    $intBono = sizeof($bonos);
-                                                    $isGanancias = $intGanancias <> 0;
-                                                    $isValorGanancias = $valorGanancias <> 0;
-                                                    $isBono = $intBono <> 0;
+                                                    ?>
+                                                    <tr class="info" >
+                                                        <td colspan="2">
+                                                            <i class="fa fa-money"></i>Commissions
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="info">
+                                                        <td>&nbsp;&nbsp;Commissions by Tickets</td>
+                                                        <td>$ <?=$printDirectos;?></td>
+                                                    </tr>
+                                                    <tr class="info">
+                                                        <td>&nbsp;&nbsp;Commissions by PSR</td>
+                                                        <td>$ <?=$printIndirectos;?></td>
+                                                    </tr>
 
-                                                    $comision_directos = $comision_todo["directos"][$i];
+                                                    <?php
+                                                }
 
-                                                    $totales = ($isGanancias || $isBono) ? 0 : 'FAIL';
-
-                                                    //echo $totales."|";
-
-                                                    if ($totales !== 'FAIL') :
-
-                                                        $imprimir .= '<tr class="info" >
-																<td colspan="2"><b>' . $comision_red->nombre . '</b></td>
-															</tr>';
-                                                    endif;
-
-                                                    if ($isValorGanancias) :
-                                                        $imprimir .= '<tr class="info" >
-																<td colspan="2"><i class="fa fa-money"></i>Commissions</td>
-															</tr>';
-
-                                                        $directos = $comision_directos[0]->valor;
-                                                        $imprimir .= '<tr class="info">
-															<td>&nbsp;&nbsp;Sponsored Commissions</td>
-																<td>$ ' . number_format($directos, 2) . '</td>
-															</tr>';
-
-                                                        $comision_indirectos = $valorGanancias - $directos;
-                                                        $imprimir .= '<tr class="info">
-															<td>&nbsp;&nbsp;Spillover Commissions</td>
-																<td>$ ' . number_format($comision_indirectos, 2) . '</td>
-															</tr>';
-
-                                                        if ($valorGanancias) :
-                                                            $totales += $valorGanancias;
-                                                        endif;
-
-                                                    endif;
-
-                                                    if ($bonos) :
-                                                        $imprimir .= '<tr class="info" >
+                                                function printBonos($bonos)
+                                                {
+                                                    echo '<tr class="info" >
 																<td colspan="2">
 																<i class="fa fa-gift"></i>
 																Calculated Commissions
 																</td>
 															</tr>';
-                                                        foreach ($bonos as $k => $bono) :
-                                                            $intBonoVal = $bono->valor <> 0;
-                                                            if (!$intBonoVal)
-                                                                continue;
-
-                                                            $totales += ($bono->valor);
-                                                            $imprimir .= '<tr class="info">
-																<td>&nbsp;&nbsp;' . $bono->nombre . '</td>
-																	<td>$ ' . number_format($bono->valor, 2) . '</td>
-																</tr>';
-
-                                                        endforeach;
-                                                    endif;
-
-                                                    if ($totales <> 0) :
-                                                        $imprimir .= '<tr class="default">
-																<td>&nbsp; Total </td>
-																<td>$ ' . number_format($totales, 2) . '</td>
-															</tr>';
-                                                        $total += $totales;
-                                                    endif;
-
+                                                    foreach ($bonos as $nombre => $valor) :
+                                                        $printBono = number_format($valor, 2);
+                                                        ?>
+                                                        <tr class="info">
+                                                            <td>&nbsp;&nbsp;<?=$nombre;?></td>
+                                                            <td>$ <?=$printBono;?></td>
+                                                        </tr>
+                                                    <?php
+                                                    endforeach;
                                                 }
+
+                                                function printTodoComisiones($data_comisiones)
+                                                {
+                                                    $totales = 0;
+                                                    foreach ($data_comisiones as $i => $comision) :
+                                                        $total = 0;
+
+                                                        $red = $comision["red"];
+                                                        $comisional = $comision["comisiones"];
+                                                        $bonos = $comision["bonos"];
+
+                                                        if ($red) : ?>
+                                                            <tr class="info">
+                                                                <td colspan="2"><b><?= $red; ?></b></td>
+                                                            </tr>
+                                                        <?php
+                                                        endif;
+
+                                                        if ($comisional) :
+                                                            $valorGanancias = $comisional["total"];
+
+                                                            printComisional($comisional);
+
+                                                            if ($valorGanancias) :
+                                                                $total += $valorGanancias;
+                                                            endif;
+
+                                                        endif;
+
+                                                        if ($bonos) :
+                                                            printBonos($bonos);
+                                                            if ($bonos["total"] > 0)
+                                                                $total += $bonos["total"];
+                                                        endif;
+
+                                                        if ($total <> 0) :
+                                                            $printTotales = number_format($total, 2);
+                                                            ?>
+                                                            <tr class="default">
+                                                                <td><h5 class="no-margin">&nbsp;subtotal</h5></td>
+                                                                <td>$ <?= $printTotales; ?></td>
+                                                            </tr>
+                                                            <?php
+                                                            $totales += $total;
+                                                        endif;
+
+                                                    endforeach;
+                                                    return $totales;
+                                                }
+
+                                                ?>
+
+                                                <?php
+
+                                                $data_comisiones = setComisiones($comision_todo);
+
+                                                #var_dump($data_comisiones);
+
+                                                $data_psr = setPSRs($psr,$data_comisiones);
+
+                                                printPSR($data_psr);
+
+                                                $totales = printTodoComisiones($data_comisiones);
 
                                                 ?>
                                                 <tr class="info">
                                                     <td><h4><b>TOTAL</b></h4></td>
                                                     <td>
                                                         <div class="col-md-4">
-                                                            <h4><b>$ <?php echo number_format($total, 2); ?></b></h4>
+                                                            <h4><b>$ <?php echo number_format($totales, 2); ?></b></h4>
                                                         </div>
-                                                        <?php if ($total !== 0) { ?>
+                                                        <?php if ($totales !== 0) { ?>
                                                             <div class="col-md-1">
                                                                 <a title='Show Details' style='cursor: pointer;'
                                                                    class='txt-color-green'
@@ -201,7 +333,10 @@
                                                     </td>
                                                 </tr>
 
-                                                <?php if ($transaction) { ?>
+                                                <?php
+                                                $total_transact = 0;
+
+                                                if ($transaction) { ?>
                                                     <tr class="default">
                                                         <td><b>Wallet movements</b></td>
                                                         <td><a title='Show Details' style='cursor: pointer;'
@@ -255,7 +390,7 @@
                                                         $retenciones_total += $retencion['valor'];
                                                         echo number_format($retencion['valor'], 2); ?></td>
                                                 </tr>
-                                                <?php $total;
+                                                <?php $totales;
                                             } ?>
 
                                             <tr class="clear">
@@ -293,7 +428,7 @@
                                                 <td><h4><b>
                                                             $
                                                             <?php
-                                                            $saldo_neto = ($total - ($cobro + $retenciones_total + $cobroPendientes) + ($total_transact));
+                                                            $saldo_neto = ($totales - ($cobro + $retenciones_total + $cobroPendientes) + ($total_transact));
                                                             if ($saldo_neto < 0)
                                                                 echo 0;
                                                             else
@@ -336,7 +471,7 @@
                                                 </label>
                                             </section>
                                         </fieldset>
-                                        <fieldset >
+                                        <fieldset>
                                             <header>
                                                 <h2><span class="widget-icon">
                                                         <i class="fa fa-btc"></i> </span>

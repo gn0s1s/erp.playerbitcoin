@@ -158,8 +158,49 @@ FROM users a, user_profiles b WHERE a.created>=NOW() - INTERVAL 1 MONTH and a.id
 		return $billeteras;
 	}
 	
-	function getTodoComisiones($inicio, $fin){
-		
+	function getTodoTickets(){
+
+	    $referidos = 20;
+	    $neto = "(m.costo/2)"; #TODO: "t.bonus"; 25;
+	    $company = 30;
+	    $rankings = 40;
+	    $company2 = 10;
+
+	    $query = "SELECT 
+                      count(*) tickets,
+                      t.date_final ,
+                      sum(m.costo) total,
+                      sum((case when (t.bonus = 50) then (m.costo*t.bonus/100) else 0 end)) neto,
+                      sum((case when (t.bonus = 25) then (m.costo*t.bonus/100) else 0 end)) acumulado,
+                       sum((m.costo*$referidos/100)) referrals,
+                       sum((m.costo*$company/100)) company,
+                       sum($neto-(m.costo*t.bonus/100)) residuo,
+                       sum(($neto-(m.costo*t.bonus/100))*($rankings*2/100)) rankings,
+                       sum((case when (t.bonus = 25) then ($neto*$company2/100) else 0 end)) company2
+                    from 
+                        ticket t,mercancia m,
+                        cross_venta_mercancia c,
+                        venta v,items i
+                        -- ,comision_bono cb,comision_bono_historial h
+                    where
+                        m.id = c.id_mercancia
+                        and c.id_venta = v.id_venta
+                        and v.id_venta = t.reference
+                        and i.categoria = 4
+                      --  and cb.id_bono = 1
+                      --  and cb.id_bono_historial = h.id
+                      --  and h.fecha = date_format(t.date_final,'%Y-%m-%d')
+                        group by t.date_final
+                        order by t.date_final asc";
+
+	    $q = $this->db->query($query);
+	    $q = $q->result();
+
+	    return $q ;
+
+    }
+
+    function getTodoComisiones($inicio, $fin){
 		$this->setInicio($inicio);
 		$this->setFin($fin);
 		

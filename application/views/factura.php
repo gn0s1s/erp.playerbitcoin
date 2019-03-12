@@ -125,7 +125,7 @@ code {
 												<tbody>
 												 <?php
 												$contador=0;
-												$total=0;
+												$totales=0;
 												foreach ($mercanciaFactura as $mercancia){										
 															echo '<tr> 
 																	<td class="text-center"><strong>'.$mercancia->cantidad.'</strong></td>
@@ -141,7 +141,7 @@ code {
 																	</td>
 																	<td><strong>$ '.(($mercancia->costo_unidad*$mercancia->cantidad)+($mercancia->impuesto_unidad*$mercancia->cantidad)).'</strong></td>
 																</tr>'; 
-														$total+=(($mercancia->costo_unidad*$mercancia->cantidad)+($mercancia->impuesto_unidad*$mercancia->cantidad));
+														$totales+=(($mercancia->costo_unidad*$mercancia->cantidad)+($mercancia->impuesto_unidad*$mercancia->cantidad));
 														$contador++;
 												}
 								                   ?>
@@ -153,7 +153,7 @@ code {
 												<div class="row">
 													<div class="col-sm-12">
 														<div class="invoice-sum-total pull-right">
-															<h3><strong>Total a Pagar: <span class="text-success">$ <?php echo $total;?></span></strong></h3>
+															<h3><strong>Total a Pagar: <span class="text-success">$ <?php echo $totales;?></span></strong></h3>
 														</div>
 													</div>
 				

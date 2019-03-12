@@ -2144,6 +2144,67 @@ class playerbonos extends CI_Model
         $this->db->query($query);
     }
 
+    function ValorComision($id_red){
+        $q = $this->db->query("SELECT * FROM valor_comisiones where id_red =".$id_red." group by profundidad order by profundidad");
+        return $q->result();
+    }
+
+    function CapacidadRed($id_red)
+    {
+        $q = $this->db->query('select id,frontal,profundidad from tipo_red where id = '.$id_red);
+
+        return $q->result();
+    }
+
+    function ConsultarIdPadre($id , $id_red_padre){
+        $q = $this->db->query("select debajo_de,lado from afiliar where id_afiliado=".$id." and id_red = ".$id_red_padre." group by debajo_de");
+        $id_padre = $q->result();
+        return $id_padre;
+    }
+
+    function set_comision_afiliado($id_venta,$id_red_mercancia,$id_afiliado,$valor_comision){
+        $dato=array(
+            "id_venta"       => $id_venta ,
+            "id_afiliado"    => $id_afiliado,
+            "id_red"         => $id_red_mercancia ,
+            "puntos"         => 0,
+            "valor"          => $valor_comision,
+
+        );
+
+        $this->db->insert("comision",$dato);
+    }
+
+    public function calcularComisionAfiliado($id_venta, $id_red, $costoVenta, $id_afiliado){
+
+        $valores = $this->ValorComision($id_red);
+        $capacidad_red = $this->CapacidadRed($id_red);
+        $profundidadRed=$capacidad_red[0]->profundidad;
+        $red_free = 1;
+        for($i=0;$i<$profundidadRed;$i++){
+
+
+            $afiliado_padre = $this->ConsultarIdPadre($id_afiliado, $red_free);
+
+            if(!$afiliado_padre||$afiliado_padre[0]->debajo_de==1)
+                return false;
+
+            $id_padre=$afiliado_padre[0]->debajo_de;
+
+            $valorComision =  0;
+
+            if(isset($valores[$i]))
+                $valorComision = $valores[$i]->valor;
+
+            $valor_comision=(($valorComision*$costoVenta)/100);
+
+            $this->set_comision_afiliado($id_venta,$id_red,$id_padre,$valor_comision);
+
+            $id_afiliado=$id_padre;
+        }
+
+    }
+
     function newTickets($id,$tickets,$actived = 'ACT',$date_final = false){
 
         $where = "AND i.categoria = 4";
@@ -2160,12 +2221,18 @@ class playerbonos extends CI_Model
         $id_venta = $this->insertVenta($id,"BILLETERA");
         $this->insertVentaItem($id, $id_venta,$red_item,$nTickets);
         $list_tickets = implode(",",$tickets);
-        $descripcion = "NEW TICKET(S) : <a href='javascript:void(0)' onclick='alert(\"$list_tickets\")'>See details</a>";
+        $descripcion = "NEW TICKET(S) : <a onclick='alert(\"$list_tickets\")'>See details</a>";
         $this->add_sub_billetera("SUB",$id,$tarifa, $descripcion);
+
+        $id_red = 1;
+        $factor = 20;
+        $costo_venta = $tarifa;
+        $costo_venta*= $factor/100; #TODO: analizar
+        $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
 
         date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');
-        $nextTime .= " 20:59:59";
+        $nextTime .= " 21:00:00";
 
         if($date_final){
             $timestamp = strtotime($date_final);
@@ -3080,7 +3147,7 @@ class playerbonos extends CI_Model
         return ($tipo == "INI") ? $week_start : $week_end;
     }
 
-    private function getPeriodoFecha ($frecuencia,$tipo,$fecha = '')
+     function getPeriodoFecha ($frecuencia,$tipo,$fecha = '')
     {
         if (! $fecha)
             $fecha = date('Y-m-d');

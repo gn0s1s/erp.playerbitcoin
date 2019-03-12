@@ -11,7 +11,7 @@
 </div>
 <div class="col-md-6">
 <pre class="text-center" style="font-size: 30px"><strong>Total</strong>
-<br/>$ <?=number_format($total,2);?>
+<br/>$ <?=number_format($totales,2);?>
 </pre>
 </div>
 <br/>
@@ -36,12 +36,12 @@ Puntos : <strong><?=$puntos;?></strong>
 		<section class="col-md-12"></section>-->
 		<section class="col-md-3"></section>
 		<section class="col-md-6"><label for="ccpago">Dinero Recibido</label> 
-			<input type="hidden" name="pago" id="pago" value="<?=$total;?>">
+			<input type="hidden" name="pago" id="pago" value="<?=$totales;?>">
 			<input type="hidden" name="desc" id="desc" value="<?=$descuento;?>">
 			<input type="hidden" name="iva" id="iva" value="<?=$iva;?>">
 			<div class="input-prepend input-append">
 				<span class="add-on" style="height: 30px">$</span> 
-				<input type="number" name="saldo" min="<?=$total;?>"
+				<input type="number" name="saldo" min="<?=$totales;?>"
 					id="saldo" autocomplete="on" step="0.0001" required /> 
 				<span class="add-on" style="height: 30px">.00</span>
 			</div>

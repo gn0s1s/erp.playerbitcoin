@@ -4585,7 +4585,7 @@ function index()
             if ($isAvailable && $isPSR) {
 
                 $costoVenta = $mercancia->costo_unidad_total;
-                $this->calcularComisionAfiliado($id_venta, $id_red_item, $costoVenta, $id_afiliado);
+                $this->calcularComisionAfiliado($id_venta, 2, $costoVenta, $id_afiliado);
                 $this->setAutoTicket($id_afiliado,$id_mercancia);
                 $this->newPasivo($id_afiliado,$id_venta);
             }
@@ -4622,17 +4622,22 @@ function index()
 		$valores = $this->modelo_compras->ValorComision($id_red);
 		$capacidad_red = $this->model_tipo_red->CapacidadRed($id_red);
 		$profundidadRed=$capacidad_red[0]->profundidad;
-	
+        $red_free = 1;
 		for($i=0;$i<$profundidadRed;$i++){
-				
-			$afiliado_padre = $this->model_perfil_red->ConsultarIdPadre($id_afiliado,$id_red);
+
+
+            $afiliado_padre = $this->model_perfil_red->ConsultarIdPadre($id_afiliado, $red_free);
 				
 			if(!$afiliado_padre||$afiliado_padre[0]->debajo_de==1)
 				return false;
 				
 			$id_padre=$afiliado_padre[0]->debajo_de;
 
-			$isAvailable = $this->playerbonos->isActivedPSR($id_padre);
+			$isAvailable = true;
+            if($id_red != $red_free):
+                $isAvailable = $this->playerbonos->isActivedPSR($id_padre);
+                $isAvailable &= $this->isActivedPasivo($id_padre);
+            endif;
 
 			if(!$isAvailable)
 			    continue;
@@ -4863,6 +4868,117 @@ function index()
         $this->cart->insert($add_cart);
 
         return true;
+    }
+
+    private function getPSRuser($id_usuario)
+    {
+        $query = "SELECT * 
+              FROM venta v, cross_venta_mercancia c, items i,mercancia m
+              WHERE i.id = c.id_mercancia 
+              AND m.id  = c.id_mercancia
+              AND c.id_venta = v.id_venta
+              AND i.categoria = 2 AND v.id_estatus = 'ACT'
+              AND v.id_user = $id_usuario";
+
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
+    }
+
+    private function isActivedPasivo($id)
+    {
+        $id_bono = 2;
+        $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
+        $valores = $this->playerbonos->getBonoValorNiveles($id_bono);
+        $percent = $valores[0]->valor;
+
+        $fechaInicio=$this->playerbonos->getPeriodoFecha("DIA", "INI", '');
+        $fechaFin=$this->playerbonos->getPeriodoFecha("DIA", "FIN", '');
+
+        $itemsPSR = $this->getPSRuser($id);
+        $where = "order by reference ASC";
+        $pasivos = $this->getPasivos($id, $where);
+        $fechaFinal = $this->playerbonos->getAnyTime($fechaFin, "180 day", true);
+
+        foreach ($itemsPSR as $index => $psr) {
+
+            $json = json_encode($psr);
+            log_message ('DEV',"VENTA PSR :: $json ");
+
+            $reference = $psr["id_venta"];
+            $valor = $psr["costo"];
+            $tope = $valor * 2;
+
+            $where = "AND reference = $reference AND estatus = 'ACT'";
+            $pasivo = $this->getPasivos($id, $where);
+
+            $amount = $valor * $percent;
+            $acumulado=$comisiones;
+
+            if (!$pasivo):
+                $this->setPasivoUser($id, $fechaInicio, $fechaFinal, $amount, $reference);
+                $where = "AND reference = $reference AND estatus = 'ACT'";
+                $pasivo = $this->getPasivos($id, $where);
+                $acumulado += $pasivo[0]->amount;
+                log_message ('DEV',"NEW PSR PASIVE $reference :: $valor \n");
+            endif;
+
+            $comisiones = $acumulado - $tope;
+            if($acumulado>$tope):
+                $acumulado = $tope;
+            endif;
+
+            if($comisiones<0)
+                $comisiones =0;
+
+            $id_pasivo = $pasivo[0]->id;
+            $sumado = $acumulado ;
+
+            if ($sumado >= $tope):
+                $this->desactivarPasivo($id_pasivo);
+                log_message ('DEV',"DESACTIVAR PSR :: $id_pasivo \n");
+                return false;
+                break;
+            elseif ($comisiones <= 0) :
+                log_message ('DEV',"REFERENCE $reference PSR ($id) :: $id_pasivo \n");
+                break;
+            endif;
+
+        }
+
+        return true;
+
+    }
+
+    private function desactivarPasivo($id_pasivo)
+    {
+        $query = "UPDATE comision_pasivo set
+                            estatus = 'DES' 
+                            WHERE id = $id_pasivo";
+        $this->db->query($query);
+    }
+
+    private function setPasivoUser($id_usuario, $fechaInicio, $fechaFinal, $amount, $id_venta)
+    {
+        $query = "INSERT INTO comision_pasivo
+                            (user_id,initdate,enddate,amount,reference)  
+                            VALUES
+                            ($id_usuario,'$fechaInicio','$fechaFinal',$amount,$id_venta)";
+
+        $this->db->query($query);
+        return $this->db->insert_id();
+    }
+
+    private function getPasivos($id_usuario, $where = "",$select = "*")
+    {
+        $query = "SELECT $select 
+              FROM comision_pasivo
+              WHERE user_id = $id_usuario
+              $where";
+
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
     }
 
 }

@@ -5,7 +5,7 @@
     <h3>Push image for payment confirmation redirecting .</h3>
         <fieldset class="well" style="text-align: center">
             <img src="<?=$qr;?>"  alt="qr" width="80%" style="cursor:pointer;"
-                 onclick="location.href='bitcoin:<?=$direccion?>?label=Playerbitcoin&amount=<?=$total?>'" />
+                 onclick="location.href='bitcoin:<?=$direccion?>?label=Playerbitcoin&amount=<?=$totales?>'" />
         </fieldset>
         <h1 class="padding-10 alert-info">TOTAL: <?=$pagar?> BTC</h1>
         <hr/>

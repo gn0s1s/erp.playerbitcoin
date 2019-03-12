@@ -335,8 +335,13 @@ class autobono
 		if($id_bono == 1 && $valor <= 0)
 			return false;
 
-		$fechaInicio = $this->getPeriodoFecha ( "QUI", "INI", '' );
-		$fechaFin = $this->getPeriodoFecha ( "QUI", "FIN", '' );
+        $bono = $this->getBono($id_bono);
+        $periodo = "DIA";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
+
+        $fecha = $this->getLastDayUTC();
+
+        $fechaInicio = $this->getPeriodoFecha ( $periodo, "INI", '');
+		$fechaFin = $this->getPeriodoFecha ( $periodo, "FIN", $fecha );
 		
 		$historial = $this->getHistorialBono ( $id_bono, $fechaInicio, $fechaFin );
 		
@@ -1172,9 +1177,24 @@ class autobono
                             VALUES
                             ($id_usuario,'$fechaInicio','$fechaFinal',$amount,$id_venta)";
         newQuery($this->db, $query);
+
+        $result = $this->getLastRowTable("comision_pasivo");
+        return $result ? $result["id"] : 1;
     }
 
-    private function acumularPasivo($amount, $id_pasivo)
+    private function getLastRowTable($tablename)
+    {
+        $q = newQuery($this->db, "SELECT * FROM $tablename");
+
+        if (!$q)
+            return 0;
+
+        $last = sizeof($q);
+
+        return $q[$last];
+    }
+
+    private function acumularPasivo($amount, $id_pasivo = 1)
     {
         $query = "UPDATE comision_pasivo
                             set amount = amount+$amount  
@@ -1201,6 +1221,9 @@ class autobono
         $where = "order by reference ASC";
         $pasivos = $this->getPasivos($id_usuario, $where);
         $fechaFinal = $this->getAnyTime($fechaFin, "180 day", true);
+
+        $comisiones = $this->get_total_comisiones_afiliado($id_usuario);
+
         foreach ($itemsPSR as $index => $psr) {
 
             $json = json_encode($psr);
@@ -1209,33 +1232,56 @@ class autobono
             $reference = $psr["id_venta"];
             $valor = $psr["costo"];
             $tope = $valor * 2;
+
             $where = "AND reference = $reference AND estatus = 'ACT'";
             $pasivo = $this->getPasivos($id_usuario, $where);
 
             $amount = $valor * $percent;
             if (!$pasivo):
                 $this->setPasivoUser($id_usuario, $fechaInicio, $fechaFinal, $amount, $reference);
+                $where = "AND reference = $reference AND estatus = 'ACT'";
+                $pasivo = $this->getPasivos($id_usuario, $where);
                 echo ("NEW PSR PASIVE $reference :: $valor \n");
-                break;
             endif;
 
             $acumulado = $pasivo[1]["amount"];
+            $acumulado+=$comisiones;
+            $comisiones = $acumulado - $tope;
+            if($acumulado>$tope):
+                $acumulado = $tope;
+            endif;
+
+            if($comisiones<0)
+                $comisiones =0;
+
             $id_pasivo = $pasivo[1]["id"];
             $sumado = $acumulado + $amount;
 
-            $this->acumularPasivo($amount, $id_pasivo);
-            echo ("SUM $amount in PSR :: $sumado \n");
+            if($sumado > $tope)
+                $amount = $tope - $acumulado;
 
-            if ($sumado >= $tope):
+            if($amount>0):
+                $this->acumularPasivo($amount, $id_pasivo);
+                echo ("SUM $amount in PSR :: $sumado \n");
+            endif;
+
+            if ($sumado > $tope):
                 $this->desactivarPasivo($id_pasivo);
                 echo ("DESACTIVAR PSR :: $id_pasivo \n");
                 break;
-            else :
+            elseif ($comisiones <= 0) :
                 echo ("REFERENCE $reference PSR ($id_usuario) :: $id_pasivo \n");
                 break;
             endif;
 
         }
+    }
+
+    function get_total_comisiones_afiliado($id){
+
+        $q=newQuery($this->db, "SELECT sum(valor)as valor FROM comision where id_afiliado=$id");
+        $comisiones=$q ? $q[1]["valor"] : 0;
+        return $comisiones;
     }
 	
 	private function getAfiliados_A($id,$nivel,$fechaInicio,$fechaFin) {
@@ -1862,8 +1908,8 @@ class autobono
             return 0;
         }
 
-        $this->bitcoinVal = 3853.7;
-        #TODO: $this->bitcoinVal = $API->newHistorical();
+        $this->bitcoinVal = 3890;
+        #TODO:$this->bitcoinVal = $API->newHistorical();
         echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
 
         return $this->bitcoinVal;

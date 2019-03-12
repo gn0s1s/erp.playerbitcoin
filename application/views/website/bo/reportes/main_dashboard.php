@@ -25,12 +25,12 @@
                                     <select id="tipo-reporte">
                                         <option value="" selected="" disabled="">Selecciona Reporte</option>
                                         <option value="18" onclick="tipo_reporte()">Total Comisiones & Bonos</option>
+                                        <option value="3" onclick="tipo_reporte()">Derivación boletos</option>
                                         <option value="7">Afiliados</option>
                                         <option value="8" onclick="tipo_reporte()">Afiliados nuevos on the mes</option>
                                         <option value="15" onclick="tipo_reporte()">Afiliados Activos</option>
                                         <option value="16" onclick="tipo_reporte()">Afiliados InActivos</option>
                                         <option value="1">Ventas por Oficinas Virtuales</option>
-                                        <option value="19">Ventas por CEDIS</option>
                                         <option value="9" onclick="tipo_reporte()">Ventas Por Cobrar Bancos</option>
                                         <option value="2" onclick="tipo_reporte()">Tickets</option>
                                         <option value="14">Ventas Pagos Enlinea</option>
