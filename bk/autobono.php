@@ -511,7 +511,7 @@ class autobono
         $Afiliado = true;#$this->isAfiliadoenRed($id_usuario,$binario);
 
         if(!$Afiliado){
-            log_message('DEV',"ID : $id_usuario not in BINARIO");
+            echo ("\nID : $id_usuario not in BINARIO");
             return $isBinario ? false : 0;
         }
 
@@ -531,7 +531,7 @@ class autobono
 
         $Pasa = ( $venta ) ? true : false;
 
-        log_message('DEV',"ID : $id_usuario PSR :: [[ $Pasa ]]");
+        echo ("\nID : $id_usuario PSR :: [[ $Pasa ]]");
 
         return $Pasa;
     }
@@ -1069,7 +1069,7 @@ class autobono
         #TODO: $q = array(array("amount"=>1002.6));
 
         if(!$q):
-            log_message('DEV',"$id : tickets not found");
+            echo ("\n$id : tickets not found");
             return false;
         endif;
 
@@ -1126,9 +1126,291 @@ class autobono
 
         echo "between ($id_usuario)[$id_bono] : $fechaInicio - $fechaFin \n";
 
-        $this->calcularBonoPasivo($id_usuario, $valores, $fechaInicio, $fechaFin);
+        $monto = $this->calcularBonoPasivo($id_usuario, $valores, $fechaInicio, $fechaFin);
 
-        return 0;
+        $where = "AND estatus = 'ACT' order by reference ASC";
+        $pasivos = $this->getPasivos($id_usuario, $where);
+
+        if(!$pasivos) :
+            #TODO: proceso bloquear y 5 dias para desactivar vip
+            return $monto;
+        endif;
+
+        $pasivo = $pasivos[1];
+        $this->setRecompraTickets( $id_usuario, $pasivo);
+
+        return $monto;
+    }
+
+    private function setAutoTicket($id_afiliado, $id_mercancia)
+    {
+        $query="SELECT * FROM mercancia m,items i 
+                    WHERE 
+                    i.id = m.id 
+                    AND i.categoria = 2
+                    AND i.id = $id_mercancia
+                    GROUP BY m.id";
+        $q = newQuery($this->db,$query);
+
+        if(!$q){
+            echo ("\nPSR for autoticket not found :: $id_mercancia");
+            return false;
+        }
+
+        $item = $q[1]["sku"];
+        $id_item = $item+1;
+        
+        $bono_psr = 2;
+        $valores = $this->getBonoValorNiveles($bono_psr);
+
+        if(!$valores){
+            echo ("\nPSR bono not found :: $bono_psr");
+            return false;
+        }
+
+        $limite = sizeof($valores);
+        $valor_tickets = $valores[$limite]["valor"] ;
+        if( isset($valores[$id_item]) )
+            $valor_tickets = $valores[$id_item]["valor"];
+
+        echo ("\nauto tickets for PSR ($item) :: $valor_tickets");
+
+        $tickets = array();
+        for($i = 0;$i< $valor_tickets;$i++){
+            $ticket = $this->getValueTicketAuto();
+            array_push($tickets,$ticket);
+        }
+
+        date_default_timezone_set('UTC');
+        $date_final = $this->getAnyTime('now', '30 days',true);
+        $date_final.=" 21:00:00";
+
+        $this->newTickets($id_afiliado,$tickets,'DES',$date_final);
+
+    }
+
+    function insertVenta($id,$metodo = "BANCO")
+    {
+        $fecha = date('Y-m-d H:i:s');
+
+        $dato = array(
+            "id_user" => $id,
+            "id_estatus" =>"ACT",
+            "id_metodo_pago" =>$metodo,
+            "fecha" =>$fecha
+        );
+
+        $result = $this->insertDatos('venta', $dato);
+        return $result ? $result["id_venta"] : 1;
+    }
+
+    function insertVentaItem($id, $id_venta,$item,$cantidad =1)
+    {
+        $query = "INSERT INTO cross_venta_mercancia 
+                    SELECT 
+                        $id_venta,id,$cantidad,costo,0,costo*$cantidad,'',null
+                    FROM
+                        mercancia
+                    WHERE
+                    	id = $item";
+
+        newQuery($this->db,$query);
+
+        return $this->getMontoVentaItem($id_venta, $item);
+    }
+
+    private function getMontoVentaItem($id_venta, $item)
+    {
+        $query = "SELECT costo_total FROM cross_venta_mercancia
+            		WHERE
+                        id_mercancia = $item
+                        AND id_venta = $id_venta";
+
+        $result = newQuery($this->db,$query);
+
+        if(!$result)
+            return false;
+
+        $monto =  0;
+
+        if(isset($result[1]["costo_total"]))
+            $monto = $result[1]["costo_total"];
+
+        return $monto;
+    }
+
+    function getMercancia($where = ""){
+
+        $query = "SELECT * FROM mercancia m,items i WHERE i.id = m.id $where";
+
+        $q = newQuery($this->db,$query);
+        return $q;
+    }
+
+    function add_sub_billetera($tipo,$id,$monto,$descripcion){
+
+        date_default_timezone_set('UTC');
+        $date = date('Y-m-d H:i:s');
+        $dato_cobro = array(
+            "id_user" => $id,
+            "tipo" => $tipo,
+            "descripcion" => $descripcion,
+            "monto" => $monto,
+            "fecha" => $date
+        );
+
+        $result = $this->insertDatos("transaccion_billetera",$dato_cobro);
+        $id = $result ? $result["id"] : 1;
+        return $id;
+    }
+
+    function ValorComision($id_red){
+        $q = newQuery($this->db,"SELECT * FROM valor_comisiones where id_red =".$id_red." group by profundidad order by profundidad");
+        return $q;
+    }
+
+    function CapacidadRed($id_red)
+    {
+        $q = newQuery($this->db,'select id,frontal,profundidad from tipo_red where id = '.$id_red);
+
+        return $q;
+    }
+
+    function ConsultarIdPadre($id , $id_red_padre){
+        $q = newQuery($this->db,"select debajo_de,lado from afiliar where id_afiliado=".$id." and id_red = ".$id_red_padre." group by debajo_de");
+        $id_padre = $q;
+        return $id_padre;
+    }
+
+    function set_comision_afiliado($id_venta,$id_red_mercancia,$id_afiliado,$valor_comision){
+        $dato=array(
+            "id_venta"       => $id_venta ,
+            "id_afiliado"    => $id_afiliado,
+            "id_red"         => $id_red_mercancia ,
+            "puntos"         => 0,
+            "valor"          => $valor_comision,
+
+        );
+
+        $this->insertDatos("comision",$dato);
+    }
+
+    public function calcularComisionAfiliado($id_venta, $id_red, $costoVenta, $id_afiliado){
+
+        $valores = $this->ValorComision($id_red);
+        $capacidad_red = $this->CapacidadRed($id_red);
+        $profundidadRed=$capacidad_red[1]["profundidad"];
+        $red_free = 1;
+        for($i=0;$i<$profundidadRed;$i++){
+
+            $afiliado_padre = $this->ConsultarIdPadre($id_afiliado, $red_free);
+
+            if(!$afiliado_padre||$afiliado_padre[1]["debajo_de"]==1)
+                return false;
+
+            $id_padre=$afiliado_padre[1]["debajo_de"];
+
+            $valorComision =  0;
+
+            $index = $i+1;
+
+            if(isset($valores[$index]))
+                $valorComision = $valores[$index]["valor"];
+
+            $valor_comision=(($valorComision*$costoVenta)/100);
+
+            $this->set_comision_afiliado($id_venta,$id_red,$id_padre,$valor_comision);
+
+            $id_afiliado=$id_padre;
+        }
+
+    }
+    
+    function newTickets($id,$tickets,$actived = 'ACT',$date_final = false){
+
+        $where = "AND i.categoria = 4";
+        $mercancia = $this->getMercancia($where);
+        $tarifa = $mercancia[1]["costo"];
+        $red_item = $mercancia[1]["id"];
+
+        if (gettype($tickets) != "array")
+            $tickets = array($tickets);
+
+        $nTickets = sizeof($tickets);
+        $tarifa = $nTickets * $tarifa;
+
+        $id_venta = $this->insertVenta($id,"BILLETERA");
+        $this->insertVentaItem($id, $id_venta,$red_item,$nTickets);
+        $list_tickets = implode(",",$tickets);
+        $descripcion = "NEW TICKET(S) : <a onclick='alert(\"$list_tickets\")'>See details</a>";
+        $this->add_sub_billetera("SUB",$id,$tarifa, $descripcion);
+
+        $id_red = 1;
+        $factor = 20;
+        $costo_venta = $tarifa;
+        $costo_venta*= $factor/100; #TODO: analizar
+        $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
+
+        date_default_timezone_set('UTC');
+        $nextTime = $this->getNextTime('now', 'day');
+        $nextTime .= " 21:00:00";
+
+        if($date_final){
+            $timestamp = strtotime($date_final);
+            $format = 'Y-m-d';
+            $nextTime = date($format, $timestamp);
+            $nextTime.= " 21:00:00";
+        }
+
+        echo ("\ngetNextTime ->> $nextTime");
+
+        $datos = array(
+            "user_id"=>$id,
+            "date_creation"=> date('Y-m-d H:i:s'),
+            "date_final"=> $nextTime,
+            "reference"=> $id_venta,
+            "estatus" => $actived
+        );
+        foreach ($tickets as $ticket){
+            $datos["amount"] = $ticket;
+            echo ("\ncreating ticket ->> ".json_encode($datos));
+            $this->insertDatos("ticket",$datos);
+        }
+
+        return true;
+    }
+
+    private function isRepeatedValueBitcoin($value)
+    {
+        $query = "SELECT * FROM ticket WHERE amount = $value";
+        $q = newQuery($this->db,$query);
+
+        return $q;
+    }
+
+    function getValueTicketAuto()
+    {
+        $bitcoin_value = $this->setBitcoinValue();
+
+        $value = $bitcoin_value;
+        $limit = 2000;
+        $min_rand = $bitcoin_value - $limit;
+        $max_rand = $bitcoin_value + $limit;
+
+        $isRepeated = true;
+        $iteration = 10;
+        $counter = 0;
+        $iterate = true;
+        while ($iterate) {
+            $value = rand($min_rand, $max_rand);
+            $isRepeated = $this->isRepeatedValueBitcoin($value);
+            $iterate = $isRepeated;
+            if(!$iterate)
+                $iterate = $counter < $iteration;
+            $counter++;
+        }
+        echo ("auto val btc:: $value \n");
+        return $value;
     }
 
     private function setMessageJackpot($ganadores, $valor)
@@ -1145,7 +1427,7 @@ class autobono
         return $msj;
     }
 
-    private function getPSRuser($id_usuario)
+    private function getPSRuser($id_usuario,$where ="")
     {
         $query = "SELECT * 
               FROM venta v, cross_venta_mercancia c, items i,mercancia m
@@ -1153,7 +1435,7 @@ class autobono
               AND m.id  = c.id_mercancia
               AND c.id_venta = v.id_venta
               AND i.categoria = 2 AND v.id_estatus = 'ACT'
-              AND v.id_user = $id_usuario";
+              AND v.id_user = $id_usuario $where";
 
         return newQuery($this->db, $query);
     }
@@ -1224,6 +1506,8 @@ class autobono
 
         $comisiones = $this->get_total_comisiones_afiliado($id_usuario);
 
+        $monto = 0;
+
         foreach ($itemsPSR as $index => $psr) {
 
             $json = json_encode($psr);
@@ -1260,8 +1544,9 @@ class autobono
             if($sumado > $tope)
                 $amount = $tope - $acumulado;
 
-            if($amount>0):
+            if($acumulado < $tope && $amount>0):
                 $this->acumularPasivo($amount, $id_pasivo);
+                $monto = $amount;
                 echo ("SUM $amount in PSR :: $sumado \n");
             endif;
 
@@ -1275,6 +1560,8 @@ class autobono
             endif;
 
         }
+
+        return $monto;
     }
 
     function get_total_comisiones_afiliado($id){
@@ -1908,8 +2195,8 @@ class autobono
             return 0;
         }
 
-        $this->bitcoinVal = 3890;
-        #TODO:$this->bitcoinVal = $API->newHistorical();
+        #TODO: $this->bitcoinVal = 3890;
+        $this->bitcoinVal = $API->newHistorical();
         echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
 
         return $this->bitcoinVal;
@@ -1969,7 +2256,7 @@ class autobono
 
         newQuery($this->db,$query);
 
-        return true;
+        return $this->getLastRowTable($table);
     }
 
     private function updateDatos($table,$datos,$where = false){
@@ -2091,6 +2378,30 @@ class autobono
         $this->insertDatos("bitcoin_stats",$data);
     }
 
+    private function setRecompraTickets($id_usuario, $pasivo, $fechaFin = false)
+    {
+        if(!$fechaFin)
+            $fechaFin = $this->getLastDayUTC();
+
+        $initdate = $pasivo["initdate"];
+        $id_venta = $pasivo["reference"];
+        $fecha_venta = date_create($initdate);
+        $fecha_actual = date_create($fechaFin);
+        log_message('DEV', $initdate . " - " . $fechaFin);
+
+        $interval = date_diff($fecha_venta, $fecha_actual);
+        $tiempo = $interval->format('%d');
+
+        $factor = 30;
+        $corte = $tiempo % $factor;
+
+        if ($corte == 0):
+            $where = "AND id_venta = $id_venta";
+            $itemsPSR = $this->getPSRuser($id_usuario, $where);
+            $id_mercancia = $itemsPSR ? $itemsPSR[1]["id_mercancia"] : 2;
+            $this->setAutoTicket($id_usuario, $id_mercancia);
+        endif;
+    }
 
 
 }

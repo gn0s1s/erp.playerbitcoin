@@ -4583,9 +4583,9 @@ function index()
             $isAvailable = $isMatricial || $isUnilevel;
 
             if ($isAvailable && $isPSR) {
-
+                $id_red = 2;
                 $costoVenta = $mercancia->costo_unidad_total;
-                $this->calcularComisionAfiliado($id_venta, 2, $costoVenta, $id_afiliado);
+                $this->calcularComisionAfiliado($id_venta, $id_red, $costoVenta, $id_afiliado);
                 $this->setAutoTicket($id_afiliado,$id_mercancia);
                 $this->newPasivo($id_afiliado,$id_venta);
             }
