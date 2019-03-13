@@ -308,7 +308,7 @@ class bonos extends CI_Controller
 		endforeach;
 
         $idRangoPOST = $_POST['idRango'];
-        $id_bono = $_POST['id_bono'];
+        $id_bono = isset($_POST['id_bono']) ? $_POST['id_bono'] : 1;
 
         $rango=$this->model_bonos->get_rangos_id_tipo($idRangoPOST,$idTipoRango,$id_bono);
 		$idDiv=$idTipoRango;

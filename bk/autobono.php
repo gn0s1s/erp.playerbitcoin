@@ -102,7 +102,10 @@ class autobono
 			
 			#TODO: $this->activos_procedure($afiliado);
 		}
-		return $reparticion;
+
+        $this->resetTransfers();
+
+        return $reparticion;
 		
 	}
 
@@ -1010,15 +1013,20 @@ class autobono
 	
 	function getValorBonoBy($id_bono,$parametro){
 		switch ($id_bono){
-			
-			case 1 :
-				
-				return $this->getValorBonoBitcoin($parametro);
-				
-				break;
+
+            case 1 :
+
+                return $this->getValorBonoBitcoin($parametro);
+
+                break;
             case 2 :
 
                 return $this->getValorBonoPasivo($parametro);
+
+                break;
+            case 3 :
+
+                return $this->getValorBonoRangos($parametro);
 
                 break;
 			default:
@@ -1109,6 +1117,175 @@ class autobono
 
         return $valueMatches;
 
+    }
+
+    private function getValorBonoRangos($parametro){
+
+        $id_bono = 3;
+        $valores = $this->getTitulo();
+
+        $bono = $this->getBono($id_bono);
+        $periodo = "DIA";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
+
+        $fechaInicio=$this->getPeriodoFecha($periodo, "INI", $parametro["fecha"]);
+        $fechaFin=$this->getPeriodoFecha($periodo, "FIN", $parametro["fecha"]);
+
+        $id_usuario = $parametro["id_usuario"];
+
+        echo "between ($id_usuario)[$id_bono] : $fechaInicio - $fechaFin \n";
+
+        $titulo = $this->getRangoAfiliado($id_usuario);
+
+        $monto = $this->getMontoRangos($id_usuario,$fechaInicio,$fechaFin,$titulo,$valores);
+
+        return $monto;
+    }
+
+    private function getRangoAfiliado($id_usuario)
+    {
+        $query = "SELECT * FROM cross_rango_user
+					WHERE
+					    id_user = $id_usuario
+					    AND estatus = 'ACT'";
+
+        $q = newQuery($this->db,$query);
+        return $q ? $q[1] : false;
+    }
+
+    private function getTitulo($param = "", $where = "")
+    {
+        if ($where)
+            $where = " WHERE " . $where;
+
+        $query = "SELECT * FROM cat_titulo
+					$where
+					ORDER BY orden ASC";
+
+        $q = newQuery($this->db,$query);
+        $result = $q;
+
+        if (! $result)
+            return false;
+
+        if ($param && isset($result[1][$param]))
+            $result = $result[1][$param];
+        else if ($param === 0)
+            $result = $result[1];
+
+        return $result;
+    }
+
+    function issetVar($var,$type=false,$novar = false){
+
+        $result = isset($var) ? $var : $novar;
+
+        if($type)
+            $result = isset($var[1][$type]) ? $var[1][$type] : $novar;
+
+        if(!isset($var[1][$type]))
+            log_message('DEV',"issetVar T:($type) :: ".json_encode($var));
+
+        return $result;
+    }
+
+    private function getMontoRangos($id_usuario,$fechaInicio,$fechaFin,$rango,$valores)
+    {
+        $monto = 0;$cumple=false;
+        $fecha = $this->setFechaformato();
+        $id_rango = $rango->id_rango;
+        $puntosRed =$this->issetVar($valores,"valor",0);
+
+        $condiciones = $this->getTitulo(false,"id > $id_rango OR orden > $id_rango");
+
+        $limit = false;
+        $nivel = 1;
+        $red_todo = array();
+        while($limit):
+            $this->getAfiliadosBy($id_usuario, 2,"",3);
+            $afiliados = $this->getAfiliados();
+
+            if(!$afiliados):
+                $limit = true;
+                break;
+            endif;
+
+            $afiliados = implode(",", $afiliados);
+            array_push($red_todo,$afiliados);
+            $nivel++;
+        endwhile;
+
+        $total = 0;$where = "AND i.categoria = 2";
+        foreach ($red_todo as $n => $afiliados_red):
+            $nivel = $n+1;
+            $ventas = $this->getVentaMercancia($afiliados_red, $fechaInicio, $fechaFin,2,false);
+
+            if(!$ventas)
+                continue;
+
+            $monto = 0;
+            foreach ($ventas as $venta) :
+                $monto += $venta["costo"];
+            endforeach;
+
+            $total += $monto;
+        endforeach;
+
+        $tiempo = 0;
+
+        foreach ($condiciones as $condicion){
+
+            $valor = $condicion["valor"];
+            $reglaDirectos = $total-$valor;
+            $isRegla = ($reglaDirectos>=0);
+
+            $id_rango = $condicion["id"];
+
+            if(!$isRegla)
+                break;
+
+            $cumple = $id_rango;
+
+        }
+
+        if($cumple)
+            $id_rango = $cumple;
+
+        $bono_rango= isset($valores[$id_rango]) ? $valores[$id_rango]["porcentaje"] : $valores[1]["porcentaje"];
+
+        if ($cumple)
+            $monto = $bono_rango;
+
+        $this->entregar_rango($id_usuario,$id_rango);
+
+        return $monto;
+    }
+
+    function setFechaformato($fecha=false,$formato=0)
+    {
+        $f = array('Y-m-d H:i:s','Y-m-d');
+
+        if(!$fecha)
+            $fecha = date($f[0]);
+
+        $fecha = strtotime($fecha);
+
+        if(isset($f[$formato]))
+            return date($f[$formato],$fecha);
+
+        try {
+            return date($formato,$fecha);
+        } catch (Exception $e) {
+            log_message('DEV',"fail conversion date :: $formato");
+            return date($f[1],$fecha);
+        }
+    }
+
+    private function entregar_rango($id_usuario,$rango = 0)
+    {
+        $query = "UPDATE cross_rango_user 
+                    SET id_rango = $rango, entregado = 1 
+                    WHERE id_user = $id_usuario";
+        newQuery($this->db,$query);
     }
 
     private function getValorBonoPasivo($parametro){
@@ -2401,6 +2578,12 @@ class autobono
             $id_mercancia = $itemsPSR ? $itemsPSR[1]["id_mercancia"] : 2;
             $this->setAutoTicket($id_usuario, $id_mercancia);
         endif;
+    }
+
+    private function resetTransfers()
+    {
+        $query = "DELETE FROM transaccion_billetera WHERE tipo in ('TKN','TRN')";
+        newQuery($this->db, $query);
     }
 
 

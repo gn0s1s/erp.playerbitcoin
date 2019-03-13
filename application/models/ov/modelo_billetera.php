@@ -486,8 +486,18 @@ from transaccion_billetera t, users u, user_profiles p
 	}
 	
 	function get_transacciones_id($id){
-		$q=$this->db->query("select id, fecha, (case when (tipo = 'ADD') then 'plus' else 'minus' end) as tipo, descripcion , monto
-from transaccion_billetera where id_user = ".$id." order by fecha desc ");
+        $query = "select 
+                    id, fecha, 
+                    (case when (tipo = 'ADD') 
+                        then 'plus' 
+                        else 'minus' end) tipo_add, tipo,
+                     descripcion , monto
+                    from 
+                      transaccion_billetera 
+                      where id_user = $id
+                       and tipo != 'TKN'
+                      order by fecha desc ";
+        $q=$this->db->query($query);
 		$q2=$q->result();
 	
 		return $q2;
@@ -571,5 +581,59 @@ from transaccion_billetera where id_user = ".$id." order by fecha desc ");
 		
 		return $q3;		
 	}
-	
+
+    function newTransferMoney($id,$user,$token,$valor = 0)
+    {
+        $query = "UPDATE transaccion_billetera 
+                    set monto = $valor,id_user = $user,tipo = 'TRN'
+                    where invoice = $id and token = '$token'";
+        $this->db->query($query);
+    }
+
+    function setTransferMoney($id,$token)
+    {
+        $query = "INSERT INTO 
+                    transaccion_billetera (tipo,descripcion,token,invoice)
+                    VALUES ('TKN','Transfer money','$token',$id)";
+        $this->db->query($query);
+    }
+
+
+    function setTransferSuccess($id, $token, $id_user)
+    {
+        $query = "INSERT INTO transaccion_billetera
+                    SELECT null,now(),t.invoice,'SUB',
+                   concat('Transferred money to ID: ',t.id_user),
+                    t.monto+(2),
+                    t.token,t.id_user
+                    FROM transaccion_billetera t
+                    where t.id = $id 
+                    and t.token = '$token' 
+                    AND t.tipo = 'TRN'
+                    AND t.id_user = $id_user";
+        $this->db->query($query);
+
+        $query = "UPDATE transaccion_billetera
+                    set tipo = 'ADD',
+                     descripcion = concat('Transferred money by ID: ',invoice)
+                    where id = $id 
+                    and token = '$token' 
+                    AND tipo = 'TRN'
+                    AND id_user = $id_user";
+        $this->db->query($query);
+    }
+
+    function getTransferring($id, $token, $id_user)
+    {
+        $query = "SELECT * FROM transaccion_billetera
+                    where id = $id 
+                    and token = '$token' 
+                    AND tipo = 'TRN'
+                    AND id_user = $id_user";
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
+    }
+
+
 }

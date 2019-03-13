@@ -84,7 +84,8 @@ class playerbonos extends CI_Model
 
     function getTituloAfiliado($id_usuario,$red = 1,$fecha = '' )
     {
-        $query ="SELECT * FROM cross_rango_user WHERE id_user = $id_usuario";
+        $query ="SELECT * FROM cross_rango_user 
+                    WHERE id_user = $id_usuario";
 
         $q = $this->db->query($query);
         $q = $q->result();

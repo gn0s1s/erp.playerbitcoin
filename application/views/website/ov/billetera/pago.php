@@ -13,8 +13,18 @@
     </div>
     <!-- row -->
     <div class="row">
+<?php
 
+function getUsers($users){
+    foreach ($users as $key => $user) :
+        $nombre_completo = "$user->id : $user->apellido $user->apellido";
+        ?>
+        <option value="<?=$user->id?>"><?=$nombre_completo?></option>
+    <?php
+    endforeach;
+}
 
+?>
     </div>
     <!-- end row -->
 
@@ -70,6 +80,9 @@
                                                         if($comision["comisiones"])
                                                             $sum_psr += $comision["comisiones"]["indirectos"];
                                                     endforeach;
+                                                    $sum_psr =  0;
+                                                    if(isset($comisiones[1]) )
+                                                        $sum_psr = $comisiones[1]["comisiones"]["indirectos"];
 
                                                     $data_psr = array();
                                                     if (isset($psr)) :
@@ -220,12 +233,12 @@
                                                             <i class="fa fa-money"></i>Commissions
                                                         </td>
                                                     </tr>
-                                                    <tr class="info">
+                                                  <!--  <tr class="info">
                                                         <td>&nbsp;&nbsp;Commissions by Tickets</td>
                                                         <td>$ <?=$printDirectos;?></td>
-                                                    </tr>
+                                                    </tr> -->
                                                     <tr class="info">
-                                                        <td>&nbsp;&nbsp;Commissions by PSR</td>
+                                                        <td>&nbsp;&nbsp;Commissions</td>
                                                         <td>$ <?=$printIndirectos;?></td>
                                                     </tr>
 
@@ -475,7 +488,7 @@
                                             <header>
                                                 <h2><span class="widget-icon">
                                                         <i class="fa fa-btc"></i> </span>
-                                                    Payment Info
+                                                    Payment money
                                                 </h2>
                                             </header>
 
@@ -489,7 +502,58 @@
                                                            id="wallet"/>
                                                 </label>
                                             </section>
+                                            <section class="col col-6">
+                                                <br/>
+                                                <button type="button" onclick="cobrar()" class="pull-right btn btn-success"
+                                                        id="enviar">
+                                                    <i class="glyphicon glyphicon-ok"></i>
+                                                    Withdraw
+                                                </button>
+                                            </section>
                                         </fieldset>
+                                        <fieldset>
+                                            <header>
+                                                <h2>
+                                                    <span class="widget-icon">
+                                                        <i class="fa fa-arrows-h"></i>
+                                                    </span>
+                                                    Transferring money between users
+                                                </h2>
+                                                <div class="col-md-12"><hr/>Note: Transferring money have cost of 2$.</div>
+                                                <br/>
+                                            </header>
+                                            <section class="col col-md-6">
+                                                <label for="" class="label"><b>Select User for transfer in:</b></label>
+                                                <label  for="" class="select">
+                                                    <select name="users" id="users" class="select2">
+                                                        <?php getUsers($afiliados); ?>
+                                                    </select>
+                                            </section>
+                                            <section class="col col-md-6">
+                                                <label for="" class="label"><b>Secure Token :</b></label>
+                                                <label for="" class="input">
+                                                    <i class="icon-prepend fa fa-key"></i>
+                                                    <h3 id="token_val" class="pull-right"><?=$token?></h3>
+                                                </label>
+                                                <br/>
+                                                <div class="col-md-12"><hr/>Please Copy for secured transferring.</div>
+                                            </section>
+                                            <section class="col col-4">
+                                                <label class="label"><b>Final Transfer amount (- 2$)</b></label>
+                                                <label class="input state-disabled state-error">
+                                                    <input value="" type="number" disabled="disabled"
+                                                           name="transfer_amount" id="transfer_amount"
+                                                           class="from-control" readonly/>
+                                                </label>
+                                            </section>
+                                        </fieldset>
+                                        <footer>
+                                            <button type="button" onclick="transferMoney()" class="btn btn-success"
+                                                    id="transfer">
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                Transfer
+                                            </button>
+                                        </footer>
                                         <fieldset class="hide">
                                             <header>
                                                 <h2><span class="widget-icon"> <i class="fa fa-bank"></i> </span>
@@ -579,7 +643,7 @@
                                             </section>
                                         </fieldset>
 
-                                        <footer>
+                                        <footer class="hide">
                                             <button type="button" onclick="cobrar()" class="btn btn-success"
                                                     id="enviar">
                                                 <i class="glyphicon glyphicon-ok"></i>
@@ -636,24 +700,40 @@
         // DO NOT REMOVE : GLOBAL FUNCTIONS!
         pageSetUp();
 
-        $("#cobro").keyup(CalcularSaldo);
-        $('#enviar').attr("disabled", true);
+        $("#cobro").keyup(CalcularTransfer);
+        CalcularSaldo(1);
+        CalcularTransfer(1);
     });
 
     //setup_flots();
     /* end flot charts */
-
     function CalcularSaldo(evt) {
 
         var saldo = <?=$saldo_neto?> /*$("#saldo").val()+ (String.fromCharCode(evt.charCode)*/;
         var pago = $("#cobro").val();
         var neto = saldo - pago;
+        neto =neto.toFixed(2);
         $("#neto").val(neto);
-        if (neto > 0) {
+        if (neto >= 0) {
             $('#enviar').attr("disabled", false);
         } else {
             $('#enviar').attr("disabled", true);
+            $('#transfer').attr("disabled", true);
         }
+    }
+    function CalcularTransfer(evt) {
+
+        var saldo = <?=$saldo_neto?> /*$("#saldo").val()+ (String.fromCharCode(evt.charCode)*/;
+        var pago = $("#cobro").val();
+        var neto = pago - 2;
+        neto =neto.toFixed(2);
+        $("#transfer_amount").val(neto);
+        if (neto > 0) {
+            $('#transfer').attr("disabled", false);
+        } else {
+            $('#transfer').attr("disabled", true);
+        }
+        CalcularSaldo(1);
     }
 
     function ver(id) {
@@ -700,6 +780,142 @@
                     }
                 })//fin done ajax
             });//Fin callback bootbox
+    }
+
+    function receiveMoney(id) {
+
+    var message = '<fieldset>' +
+                    '<div class="col col-md-6">' +
+                    '<label for="" class="label"><b>Secure Token :</b></label>' +
+                    '<label for="" class="input">' +
+                    '<i class="icon-prepend fa fa-key"></i>' +
+                    '<input name="token" type="text" pattern="[A-Z0-9]{6,}" '+
+                    'class="from-control" id="token" placeholder="Secure Token"/>' +
+                    '</label>' +
+                    '<br/>' +
+                    '</div>' +
+                    '<div class="col col-md-6">' +
+                    '<hr/>' +
+                    'This token is available only 24 h.' +
+                    '</div>\n' +
+                    '</fieldset>' ;
+
+        $.ajax({
+            type: "POST",
+            url: "/auth/show_dialog",
+            data: {message: message},
+        }).done(function (msg) {
+
+            bootbox.dialog({
+                message: msg,
+                title: 'Transferring',
+                buttons: {
+                    success: {
+                        label: "Accept",
+                        className: "btn-success",
+                        callback: function () {
+                            var token = $("#token").val();
+                            console.log(token);
+                            iniciarSpinner();
+                            $.ajax({
+                                type: "POST",
+                                url: "/ov/billetera2/receiveTransfer",
+                                data: {
+                                    token: token,
+                                    id: id
+                                }
+                            }).done(function (msg) {
+                                FinalizarSpinner();
+                                bootbox.dialog({
+                                    message: msg,
+                                    title: '',
+                                    buttons: {
+                                        success: {
+                                            label: "Accept",
+                                            className: "btn-success",
+                                            callback: function () {
+                                                location.href = 'requestPayment';
+                                            }
+                                        }
+                                    }
+                                })//fin done ajax
+                            });//Fin callback bootbox
+
+                        }
+                    },
+                    danger: {
+                        label: "Cancel!",
+                        className: "btn-danger",
+                        callback: function () {
+
+                        }
+                    }
+                }
+            })
+        });
+    }
+
+
+    function transferMoney() {
+
+        var valor = $("#transfer_amount").val();
+        var user = $("#users").val();
+        var token = '<?=$token?>';
+        var message = 'Are you sure you want to request transferring ?';
+        $.ajax({
+            type: "POST",
+            url: "/auth/show_dialog",
+            data: {message: message},
+        })
+            .done(function (msg) {
+
+                bootbox.dialog({
+                    message: msg,
+                    title: 'Transferring',
+                    buttons: {
+                        success: {
+                            label: "Accept",
+                            className: "btn-success",
+                            callback: function () {
+                                iniciarSpinner();
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/ov/billetera2/transfer",
+                                    data: {
+                                        valor: valor,
+                                        token: token,
+                                        user: user
+                                    }
+                                })
+                                    .done(function (msg) {
+                                        FinalizarSpinner();
+                                        bootbox.dialog({
+                                            message: msg,
+                                            title: '',
+                                            buttons: {
+                                                success: {
+                                                    label: "Accept",
+                                                    className: "btn-success",
+                                                    callback: function () {
+                                                        location.href = 'requestPayment';
+                                                    }
+                                                }
+                                            }
+                                        })//fin done ajax
+                                    });//Fin callback bootbox
+
+                            }
+                        },
+                        danger: {
+                            label: "Cancel!",
+                            className: "btn-danger",
+                            callback: function () {
+
+                            }
+                        }
+                    }
+                })
+            });
     }
 
     function cobrar() {

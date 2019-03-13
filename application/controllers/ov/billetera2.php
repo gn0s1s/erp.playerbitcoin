@@ -189,7 +189,15 @@ class billetera2 extends CI_Controller
 	
 		$redes = $this->model_tipo_red->listarTodos();
 		$redesUsuario = $this->model_tipo_red->RedesUsuario($id);
-		
+
+        $where = "AND U.id != $id";
+        $afiliados     = $this->model_perfil_red->get_tabla($where);
+        $this->template->set("afiliados",$afiliados);
+
+        $token = $this->general->setToken();
+        $this->modelo_billetera->setTransferMoney($id,$token);
+        $this->template->set("token",$token);
+
 		$ganancias=array();
 		$comision_directos = array();
 		$bonos = array();		
@@ -310,8 +318,61 @@ class billetera2 extends CI_Controller
 		}
 
 	}
-	
-	function estado()
+
+    function transfer()
+    {
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
+
+        $valor_pagar = $_POST['valor'];
+        if($valor_pagar <=0){
+            echo "ERROR <br>Invalid Withdrawal value.";
+            exit();
+        }
+
+
+
+        $id=$this->tank_auth->get_user_id();
+
+        $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
+        $retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
+        $cobrosPagos=$this->modelo_billetera->get_cobros_total_afiliado($id);
+        $cobroPendientes=$this->modelo_billetera->get_cobros_pendientes_total_afiliado($id);
+        $total_transact = $this->modelo_billetera->get_total_transact_id($id);
+        $total_bonos = $this->model_bonos->ver_total_bonos_id($id);
+
+        /*	echo $comisiones."<br>";
+         * 	echo $total_bonos."<br>";
+            echo $retenciones."<br>";
+            echo $cobrosPagos."<br>";
+            echo $cobroPendientes."<br>"; */
+
+        $cobrar = $valor_pagar;
+        $cobrar+= $retenciones + $cobrosPagos +  $cobroPendientes;
+        $comisiones_neto = $comisiones - $cobrar;
+        $total = $comisiones_neto + $total_transact + $total_bonos;
+
+        if($total < 0):
+            echo "ERROR <br>Balance Insufficient.";
+            return false;
+        endif;
+
+        $valor = isset($_POST['valor']) ? $_POST['valor'] : 0;
+        $token =  isset($_POST['token']) ? $_POST['token'] : 0;
+        $user = isset($_POST['user']) ? $_POST['user'] : 2;
+
+        log_message('DEV',"user trn : $user");
+
+        $this->modelo_billetera->newTransferMoney($id,$user,$token,$valor);
+        echo "Congratulations<br> Trasnferring successfully.";
+
+
+    }
+
+
+    function estado()
 	{
 		if (!$this->tank_auth->is_logged_in())
 		{																		// logged in
@@ -460,22 +521,38 @@ class billetera2 extends CI_Controller
 		//echo "dentro de historial : ".$id;
 		
 		$transactions = $this->modelo_billetera->get_transacciones_id($id);
-		
+
+        $tipos_icon = array(
+            "ADD" => "green,plus-circle",
+            "SUB" => "red,minus-circle",
+            "TKN" => "gray,key",
+            "TRN" => "orange,arrows-h",
+        );
+
 		echo
 		"<table id='datatable_fixed_column1' class='table table-striped table-bordered table-hover' width='80%'>
 				<thead id='tablacabeza'>
 					<th data-class='expand'>ID</th>
 					<th data-hide='phone,tablet'>date</th>
-					<th data-hide='phone,tablet'>Type</th>
 					<th data-hide='phone,tablet'>Subject</th>
 					<th data-hide='phone,tablet'>Value</th>
+					<th data-hide='phone,tablet'>Type</th>
 				</thead>
 				<tbody>";
-		
-		
+
 			foreach($transactions as $transaction)
 			{
-				$color = ($transaction->tipo=="plus") ? "green" : "red";
+			    $tipo = isset($tipos_icon[$transaction->tipo])
+                    ? $tipos_icon[$transaction->tipo] : $tipos_icon["TKN"];
+			    $tipo = explode(",",$tipo);
+
+			    $link = "";
+			    if ($transaction->tipo == "TRN")
+			        $link = "<br><a onclick='receiveMoney($transaction->id)'".
+                        " class='btn btn-success' >Receive Transfer</a>";
+
+				$color = $tipo[0];
+				$icon = $tipo[1];
                 $fecha = $transaction->fecha;
                 #$fecha = $this->general->changeTimezone($fecha);
                 $descripcion = $transaction->descripcion;
@@ -484,9 +561,9 @@ class billetera2 extends CI_Controller
                 echo "<tr>
 			<td class='sorting_1'>".$transaction->id."</td>
 			<td>". $fecha ."</td>
-			<td style='color: ".$color.";'><i class='fa fa-".$transaction->tipo."-circle fa-3x'></i></td>
 			<td>". $descripcion ."</td>
-			<td> $	".number_format($transaction->monto, 2)."</td>			
+			<td> $	".number_format($transaction->monto, 2)." $link</td>			
+			<td style='color: ".$color.";'><i class='fa fa-".$icon." fa-3x'></i></td>
 			</tr>";
 					
 				
@@ -664,5 +741,35 @@ class billetera2 extends CI_Controller
 		return $bonos_table;
 	
 	}
-	
+
+    function receiveTransfer()
+    {
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
+
+        $id_user = $this->tank_auth->get_user_id();
+
+        $id = isset($_POST['id']) ? $_POST['id'] : false;
+        $token = isset($_POST['token']) ? $_POST['token'] : false;
+
+        if(!$token || !$id):
+            echo "TOKEN OR TRANSFER NOT FOUND ";
+            return false;
+        endif;
+
+        $isTransfer = $this->modelo_billetera->getTransferring($id, $token, $id_user);
+
+        if(!$isTransfer):
+            echo "TOKEN OR TRANSFER NOT FOUND ";
+            return false;
+        endif;
+
+        $this->modelo_billetera->setTransferSuccess($id, $token, $id_user);
+
+        echo "TRANSFERRING SUCCESSFULLY";
+    }
+
+
 }

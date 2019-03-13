@@ -3,6 +3,17 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+13-03-2019
+-
+### transferring data in transaccion_billetera
+   ```mysql
+ALTER TABLE transaccion_billetera 
+ADD token varchar(50) DEFAULT 0 NULL 
+COMMENT 'token to transferring between users';
+ALTER TABLE transaccion_billetera 
+ADD invoice int DEFAULT 2 NULL
+ COMMENT 'id user sender transferring';
+   ```
 08-03-2019
 -
 ### comision_pasivo

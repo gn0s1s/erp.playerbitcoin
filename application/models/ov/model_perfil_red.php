@@ -459,9 +459,8 @@ class model_perfil_red extends CI_Model
 		return  $q->result();
 	}
 	
-	function get_tabla()
+	function get_tabla($where = "")
 	{
-
 	    $redes = "select af.id_red from afiliar af where af.id_afiliado = U.id";
 
 	    $redes = "select distinct group_concat(tr.nombre)
@@ -503,6 +502,7 @@ class model_perfil_red extends CI_Model
                   and CTU.id_tipo_usuario = UP.id_tipo_usuario
                   and CEA.id_estatus = UP.id_estatus
                   and UP.id_tipo_usuario = 2
+                  $where
                 order by (U.id)
                 limit 1000";
 

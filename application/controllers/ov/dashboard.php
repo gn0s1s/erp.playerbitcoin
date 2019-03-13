@@ -25,8 +25,113 @@ class dashboard extends CI_Controller
 	}
 
 	private $afiliados = array();
-	
-	private function VerificarCompras($id_afiliado,$id_red,$nivel, $profundidad, $frecuencia){
+
+    function index()
+    {
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
+
+        $id=$this->tank_auth->get_user_id();
+        $usuario=$this->general->get_username($id);
+
+
+        $this->getAfiliadosRed($id);
+        $numeroAfiliadosRed=count($this->afiliados);
+
+        $style=$this->modelo_dashboard->get_style($id);
+
+        $id_sponsor=$this->modelo_dashboard->get_red($id);
+        $ultima=$this->modelo_dashboard->get_ultima($id);
+        $telefono=$this->modelo_dashboard->get_user_phone($id);
+        $email=$this->modelo_dashboard->get_user_email($id);
+        $username=$this->modelo_dashboard->get_user_name($id);
+        $pais=$this->modelo_dashboard->get_user_country_code($id);
+
+        $cuentasPorPagar=$this->modelo_dashboard->get_cuentas_por_pagar_banco($id);
+        $notifies = $this->model_admin->get_notify_activos();
+
+
+        $name_sponsor= ($id_sponsor) ? $this->general->get_username($id_sponsor[0]->id_usuario) : '';
+
+        $image=$this->modelo_dashboard->get_images($id);
+        $fondo="/template/img/portada.jpg";
+        $user="/template/img/avatars/male.png";
+
+        foreach ($image as $img) {
+            $url=getcwd().$img->url;
+            if(file_exists($url)){
+                $user=$img->url;
+            }
+        }
+
+        $style=$this->modelo_dashboard->get_style($id);
+
+        $link_personal = $this->web_personal->val_web_personal($id);
+        $this->template->set("link_personal",$link_personal);
+
+        $date = date('Y-m-d');
+        $actividad=$this->modelo_compras->is_afiliado_activo($id, $date);
+        $actividad=$this->playerbonos->isActivedAfiliado($id);
+        $psr=$this->playerbonos->isActivedPSR($id,true);
+
+        $puntos_semana=0;#TODO: $this->modelo_dashboard->get_puntos_personales_semana($id);
+        $puntos_mes=0;#TODO: $this->modelo_dashboard->get_puntos_personales_mes($id);
+        $puntos_total=0;#TODO: $this->modelo_dashboard->get_puntos_personales_total($id);
+
+        $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
+        $saldo =  $billetera["add"];
+        $saldo -=   $billetera["sub"];
+        $this->template->set("balance",$saldo);
+
+        $puntos_red_semana=$this->modelo_dashboard->get_puntos_red_semana($id);
+        $puntos_red_mes=$this->modelo_dashboard->get_puntos_red_mes($id);
+        $puntos_red_total=$this->modelo_dashboard->get_puntos_red_total($id);
+
+        $ultimos_auspiciados=$this->modelo_dashboard->get_ultimos_auspiciados($id);
+
+        $titulo=$this->playerbonos->getTituloAfiliado($id);
+            #TODO: $this->titulo->getNombreTituloAlcanzadoAfiliado($id, $date);
+
+        $this->template->set("id",$id);
+        $this->template->set("usuario",$usuario);
+        $this->template->set("telefono",$telefono);
+        $this->template->set("email",$email);
+        $this->template->set("username",$username);
+        $this->template->set("pais",$pais);
+        $this->template->set("style",$style);
+        $this->template->set("user",$user);
+        $this->template->set("fondo",$fondo);
+        $this->template->set("id_sponsor",$id_sponsor);
+        $this->template->set("name_sponsor",$name_sponsor);
+        $this->template->set("ultima",$ultima);
+        $this->template->set("cuentasPorPagar",$cuentasPorPagar);
+        $this->template->set("notifies",$notifies);
+        $this->template->set("actividad",$actividad);
+        $this->template->set("psr",$psr);
+
+        $this->template->set("puntos_semana",$puntos_semana);
+        $this->template->set("puntos_mes",$puntos_mes);
+        $this->template->set("puntos_total",$puntos_total);
+        $this->template->set("puntos_red_semana",$puntos_red_semana);
+        $this->template->set("puntos_red_mes",$puntos_red_mes);
+        $this->template->set("puntos_red_total",$puntos_red_total);
+
+        $this->template->set("titulo",$titulo);
+
+        $this->template->set("ultimos_auspiciados",$ultimos_auspiciados);
+
+        $this->template->set("numeroAfiliadosRed",$numeroAfiliadosRed);
+
+        $this->template->set_theme('desktop');
+        $this->template->set_layout('website/main');
+        $this->template->set_partial('header', 'website/ov/header');
+        $this->template->set_partial('footer', 'website/ov/footer');
+        $this->template->build('website/ov/view_dashboard');
+    }
+
+    private function VerificarCompras($id_afiliado,$id_red,$nivel, $profundidad, $frecuencia){
 		
 		if ($nivel<$profundidad){
 		$afiliados = $this->modelo_compras->traer_afiliados_red($id_afiliado, $id_red);
@@ -113,109 +218,6 @@ class dashboard extends CI_Controller
 	
 	}
 	
-	function index()
-	{	
-		if (!$this->tank_auth->is_logged_in())
-		{																		// logged in
-			redirect('/auth');
-		}
-		
-		$id=$this->tank_auth->get_user_id();
-		$usuario=$this->general->get_username($id);
-		
-		
-		$this->getAfiliadosRed($id);
-		$numeroAfiliadosRed=count($this->afiliados);
-		
-		$style=$this->modelo_dashboard->get_style($id);
-
-		$id_sponsor=$this->modelo_dashboard->get_red($id);
-		$ultima=$this->modelo_dashboard->get_ultima($id);
-	    $telefono=$this->modelo_dashboard->get_user_phone($id);
-	    $email=$this->modelo_dashboard->get_user_email($id);
-	    $username=$this->modelo_dashboard->get_user_name($id);
-	    $pais=$this->modelo_dashboard->get_user_country_code($id);
-	    
-	    $cuentasPorPagar=$this->modelo_dashboard->get_cuentas_por_pagar_banco($id);
-	    $notifies = $this->model_admin->get_notify_activos();
-            
-
-	     $name_sponsor= ($id_sponsor) ? $this->general->get_username($id_sponsor[0]->id_usuario) : '';
-
-		$image=$this->modelo_dashboard->get_images($id);
-		$fondo="/template/img/portada.jpg";
-		$user="/template/img/avatars/male.png";
-		
-		foreach ($image as $img) {
-			$url=getcwd().$img->url;
-			if(file_exists($url)){
-				$user=$img->url;
-			}
-		}
-		
-		$style=$this->modelo_dashboard->get_style($id);
-                
-		$link_personal = $this->web_personal->val_web_personal($id);
-                $this->template->set("link_personal",$link_personal);
-
-        $date = date('Y-m-d');
-        $actividad=$this->modelo_compras->is_afiliado_activo($id, $date);
-		$actividad=$this->playerbonos->isActivedAfiliado($id);
-        $psr=$this->playerbonos->isActivedPSR($id,true);
-
-		$puntos_semana=0;#TODO: $this->modelo_dashboard->get_puntos_personales_semana($id);
-		$puntos_mes=0;#TODO: $this->modelo_dashboard->get_puntos_personales_mes($id);
-		$puntos_total=0;#TODO: $this->modelo_dashboard->get_puntos_personales_total($id);
-
-        $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
-        $saldo =  $billetera["add"];
-        $saldo -=   $billetera["sub"];
-        $this->template->set("balance",$saldo);
-
-        $puntos_red_semana=$this->modelo_dashboard->get_puntos_red_semana($id);
-		$puntos_red_mes=$this->modelo_dashboard->get_puntos_red_mes($id);
-		$puntos_red_total=$this->modelo_dashboard->get_puntos_red_total($id);
-		
-		$ultimos_auspiciados=$this->modelo_dashboard->get_ultimos_auspiciados($id);
-		
-		$titulo=$this->titulo->getNombreTituloAlcanzadoAfiliado($id, $date);
-		
-		$this->template->set("id",$id);
-		$this->template->set("usuario",$usuario);
-	    $this->template->set("telefono",$telefono);
-	    $this->template->set("email",$email);
-	    $this->template->set("username",$username);
-	    $this->template->set("pais",$pais);
-		$this->template->set("style",$style);
-		$this->template->set("user",$user);
-		$this->template->set("fondo",$fondo);
-		$this->template->set("id_sponsor",$id_sponsor);
-		$this->template->set("name_sponsor",$name_sponsor);
-		$this->template->set("ultima",$ultima);
-		$this->template->set("cuentasPorPagar",$cuentasPorPagar);
-		$this->template->set("notifies",$notifies);
-		$this->template->set("actividad",$actividad);
-        $this->template->set("psr",$psr);
-		
-		$this->template->set("puntos_semana",$puntos_semana);
-		$this->template->set("puntos_mes",$puntos_mes);
-		$this->template->set("puntos_total",$puntos_total);
-		$this->template->set("puntos_red_semana",$puntos_red_semana);
-		$this->template->set("puntos_red_mes",$puntos_red_mes);
-		$this->template->set("puntos_red_total",$puntos_red_total);
-		
-		$this->template->set("titulo",$titulo);
-		
-		$this->template->set("ultimos_auspiciados",$ultimos_auspiciados);
-		
-		$this->template->set("numeroAfiliadosRed",$numeroAfiliadosRed);
-		
-		$this->template->set_theme('desktop');
-        $this->template->set_layout('website/main');
-        $this->template->set_partial('header', 'website/ov/header');
-        $this->template->set_partial('footer', 'website/ov/footer');
-		$this->template->build('website/ov/view_dashboard');
-	}
 
 	private function getAfiliadosRed($id) {
 		$redesUsuario=$this->model_tipo_red->cantidadRedesUsuario($id);

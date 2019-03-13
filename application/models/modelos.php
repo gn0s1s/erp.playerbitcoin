@@ -439,5 +439,30 @@ class mGeneral extends CI_Model
         return implode(',',$ArrayVarchar);
     }
 
+    function setToken()
+    {
+        $token = rand(100000, 999999);
+        $token = rand($token/2, $token);
+        $token = rand(0, $token/2);
+        $start = "Z";
+        $end = "A";
+        $token2 = range($end, $start);
+        $token = str_split($token);
+        $max = sizeof($token2) - 1;
+        foreach ($token as $k => $tk):
+            $range = rand(0, $max);
+            $range = rand($range/2, $range);
+            $range = rand(0, $range/2);
+            $char = $token2[$range];
+
+            $token[$k] = $token[$k].$char;
+
+            $start = $end;
+            $end = $end == "Z" ? "A" : "Z";
+            $token2 = range($start, $end);
+        endforeach;
+        $token = implode("", $token);
+        return $token;
+    }
 
 }
