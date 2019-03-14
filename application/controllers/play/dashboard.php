@@ -359,9 +359,35 @@ class dashboard extends CI_Controller
         return $lines;
     }
 
-
-
     function getDataChart()
+    {
+        $chartdef = "20070101,46;51;56" . '\n' . "20070102,43;48;52" . '\n';
+        $chartlabel = "Date,Price (USD)" . '\n';
+
+        $stats = $this->playerbonos->getBitcoinStats();
+
+        $chartobj = "";
+        foreach ($stats as $index => $stat) :
+            $date = date('Ymd',strtotime($stat->date_status));
+            $amount = $stat->amount;
+            $amount.=";$amount;$amount";
+            $chart_data = "$date,$amount".'\n';
+            $chartobj.=$chart_data;
+        endforeach;
+
+        $chart_load = $chartlabel . $chartobj;
+
+        $isLoad = isset($_GET['load']);
+        if($isLoad){
+            echo $chart_load;
+            log_message('DEV',"update chart =>> [[ $isLoad ]] \n $chart_load");
+        }
+
+        return $chart_load;
+    }
+
+
+    function getDataChartTxt()
     {
         $chartdef = "20070101,46;51;56" . '\n' . "20070102,43;48;52" . '\n';
         $chartlabel = "Date,Price (USD)" . '\n';

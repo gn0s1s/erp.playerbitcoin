@@ -657,6 +657,20 @@ class playerbonos extends CI_Model
         return $valid;
     }
 
+    function getBitcoinStats($date = '21:00',$format = '%H:%i', $group = true)
+    {
+        $query = "SELECT * FROM bitcoin_stats -- imprimir
+                    WHERE amount > 0 
+                    and date_format(date_status,'$format') = '$date'";
+
+        if($group)
+            $query.=" GROUP BY date_format(date_status,'%Y-%m-%d')";
+
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
+    }
+
     function getBonosUsuario($id_usuario)
     {
         $redes = $this->getBonoRedes($id_usuario);
@@ -2228,7 +2242,7 @@ class playerbonos extends CI_Model
         $id_red = 1;
         $factor = 20;
         $costo_venta = $tarifa;
-        $costo_venta*= $factor/100; #TODO: analizar
+        #TODO: $costo_venta*= $factor/100;
         $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
 
         date_default_timezone_set('UTC');

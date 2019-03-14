@@ -160,7 +160,7 @@ function log_message($texto =  ""){
     if(strlen($texto)<3)
         return false;
 
-    $log_file = setDir() . "/bk/log.php";
+    $log_file = setDir() . "/logs/log.php";
     $linea=date('Y-m-d H:i:s')." - $texto \n\n ";
     $file = fopen($log_file, "a");
     fputs($file, $linea);

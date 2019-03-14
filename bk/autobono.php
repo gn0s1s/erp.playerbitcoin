@@ -559,12 +559,10 @@ class autobono
         $periodo = "UNI";#$this->issetVar($bono,"frecuencia","DIA");# "MES";
 
         $fechaFin = $this->getPeriodoFecha($periodo, "FIN", $fecha );
-        if($this->fechaFin)
-            $fechaFin = $this->fechaFin;
+        #if($this->fechaFin) $fechaFin = $this->fechaFin;
 
         $fechaInicio = $this->getInicioFecha($id_usuario);
-        if($this->fechaInicio)
-            $fechaInicio= $this->fechaInicio;
+        #if($this->fechaInicio) $fechaInicio= $this->fechaInicio;
 
         $venta = $this->getVentaMercancia($id_usuario,$fechaInicio,$fechaFin,5);
 
@@ -630,7 +628,7 @@ class autobono
 						$GP $OD";
 
         $q = newQuery($this->db,$query);
-
+        echo ("\n\n >>Q $query");
 
         return $q;
     }
@@ -1077,7 +1075,7 @@ class autobono
         #TODO: $q = array(array("amount"=>1002.6));
 
         if(!$q):
-            echo ("\n$id : tickets not found");
+            echo ("\n$id : tickets not found \n");
             return false;
         endif;
 
@@ -1125,7 +1123,7 @@ class autobono
         $valores = $this->getTitulo();
 
         $bono = $this->getBono($id_bono);
-        $periodo = "DIA";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
+        $periodo = "MES";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
 
         $fechaInicio=$this->getPeriodoFecha($periodo, "INI", $parametro["fecha"]);
         $fechaFin=$this->getPeriodoFecha($periodo, "FIN", $parametro["fecha"]);
@@ -1192,7 +1190,7 @@ class autobono
     {
         $monto = 0;$cumple=false;
         $fecha = $this->setFechaformato();
-        $id_rango = $rango->id_rango;
+        $id_rango = $rango ? $rango["id_rango"] : 0;
         $puntosRed =$this->issetVar($valores,"valor",0);
 
         $condiciones = $this->getTitulo(false,"id > $id_rango OR orden > $id_rango");
@@ -1200,10 +1198,12 @@ class autobono
         $limit = false;
         $nivel = 1;
         $red_todo = array();
-        while($limit):
-            $this->getAfiliadosBy($id_usuario, 2,"",3);
+        $vip = 2;
+        while(!$limit):
+            $this->getAfiliadosBy($id_usuario, $nivel,"RED","",2, $vip);
             $afiliados = $this->getAfiliados();
-
+            $json = json_encode($afiliados);
+            echo ("\n Nivel $nivel : $json ");
             if(!$afiliados):
                 $limit = true;
                 break;
@@ -1214,10 +1214,13 @@ class autobono
             $nivel++;
         endwhile;
 
-        $total = 0;$where = "AND i.categoria = 2";
-        foreach ($red_todo as $n => $afiliados_red):
+        $total = 0;
+        $servicio = 2;
+        $where = "AND i.categoria = 2";
+        $items = false;
+        foreach ($red_todo as $n => $red):
             $nivel = $n+1;
-            $ventas = $this->getVentaMercancia($afiliados_red, $fechaInicio, $fechaFin,2,false);
+            $ventas = $this->getVentaMercancia($red, $fechaInicio, $fechaFin, $servicio, $items,$where);
 
             if(!$ventas)
                 continue;
@@ -1228,9 +1231,8 @@ class autobono
             endforeach;
 
             $total += $monto;
+            echo ("\n Nivel $nivel : $red -> $monto");
         endforeach;
-
-        $tiempo = 0;
 
         foreach ($condiciones as $condicion){
 
@@ -1239,25 +1241,95 @@ class autobono
             $isRegla = ($reglaDirectos>=0);
 
             $id_rango = $condicion["id"];
+            echo ("\n Rango ? $id_rango : $total > $valor ? [[ $isRegla ]]");
 
             if(!$isRegla)
                 break;
 
+            echo ("\n Rango estimated :: $id_rango");
             $cumple = $id_rango;
 
         }
 
-        if($cumple)
-            $id_rango = $cumple;
+        if(!$cumple):
+            echo ("\n no cumple rango $id_usuario [$id_rango]");
+            return 0;
+        endif;
 
-        $bono_rango= isset($valores[$id_rango]) ? $valores[$id_rango]["porcentaje"] : $valores[1]["porcentaje"];
+        $id_rango = $cumple;
+
+        $bono_rango= $valores[1]["porcentaje"];
+        if(isset($valores[$id_rango]) )
+            $bono_rango = $valores[$id_rango]["porcentaje"];
+
+        $reporte_tickets = $this->getTodoTickets($fechaInicio,$fechaFin);
+        $json = json_encode($reporte_tickets);
+        $acumulado = 0;
+        foreach ($reporte_tickets as $ticket):
+            $acumulado+=$ticket["rankings"];
+        endforeach;
+        echo ("\n Reporte tickets ($fechaInicio,$fechaFin) \n ::>> $acumulado \n\n $json");
+
+        $per = $bono_rango/100;
 
         if ($cumple)
-            $monto = $bono_rango;
+            $monto = $acumulado*$per;
+
+        echo ("\n new rango $id_usuario [$id_rango]: ($acumulado * $per) = $ $monto");
 
         $this->entregar_rango($id_usuario,$id_rango);
 
         return $monto;
+    }
+
+    function getTodoTickets($fecha_inicio = false, $fecha_fin = false){
+
+        $referidos = 20;
+        $neto = "(m.costo/2)"; #TODO: "t.bonus"; 25;
+        $company = 30;
+        $rankings = 40;
+        $company2 = 10;
+
+        $where = "";
+
+        if($fecha_inicio)
+            $where .= "AND t.date_final >= '$fecha_inicio'";
+
+        if($fecha_fin)
+            $where .= "AND t.date_final <= '$fecha_fin'";
+
+        $query = "SELECT 
+                      count(*) tickets,
+                      t.date_final ,
+                      sum(m.costo) total,
+                      sum((case when (t.bonus = 50) then (m.costo*t.bonus/100) else 0 end)) neto,
+                      sum((case when (t.bonus = 25) then (m.costo*t.bonus/100) else 0 end)) acumulado,
+                       sum((m.costo*$referidos/100)) referrals,
+                       sum((m.costo*$company/100)) company,
+                       sum($neto-(m.costo*t.bonus/100)) residuo,
+                       sum(($neto-(m.costo*t.bonus/100))*($rankings*2/100)) rankings,
+                       sum((case when (t.bonus = 25) then ($neto*$company2/100) else 0 end)) company2
+                    from 
+                        ticket t,mercancia m,
+                        cross_venta_mercancia c,
+                        venta v,items i
+                        -- ,comision_bono cb,comision_bono_historial h
+                    where
+                        m.id = c.id_mercancia
+                        and c.id_venta = v.id_venta
+                        and v.id_venta = t.reference
+                        and i.categoria = 4
+                      --  and cb.id_bono = 1
+                      --  and cb.id_bono_historial = h.id
+                      --  and h.fecha = date_format(t.date_final,'%Y-%m-%d')
+                        $where
+                        group by t.date_final
+                        order by t.date_final asc";
+
+        $q = newQuery($this->db,$query);
+
+        return $q ;
+
     }
 
     function setFechaformato($fecha=false,$formato=0)
@@ -2372,8 +2444,8 @@ class autobono
             return 0;
         }
 
-        #TODO: $this->bitcoinVal = 3890;
-        $this->bitcoinVal = $API->newHistorical();
+        $this->bitcoinVal = 3889;
+        #TODO: $this->bitcoinVal = $API->newHistorical();
         echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
 
         return $this->bitcoinVal;
@@ -2494,7 +2566,7 @@ class autobono
         date_default_timezone_set('UTC');
         $datetime = date('Y-m-d') . $hour;
 
-        echo "fecha actual: $datetime \n";
+        echo "\n fecha actual: $datetime \n";
 
         return $datetime;
     }
@@ -2577,12 +2649,21 @@ class autobono
             $itemsPSR = $this->getPSRuser($id_usuario, $where);
             $id_mercancia = $itemsPSR ? $itemsPSR[1]["id_mercancia"] : 2;
             $this->setAutoTicket($id_usuario, $id_mercancia);
+            $this->deteleTickets($id_usuario, $fechaFin);
         endif;
     }
 
     private function resetTransfers()
     {
         $query = "DELETE FROM transaccion_billetera WHERE tipo in ('TKN','TRN')";
+        newQuery($this->db, $query);
+    }
+
+    private function deteleTickets($id_usuario, $fechaFin)
+    {
+        $query = "DELETE FROM ticket 
+                        WHERE date_final < '$fechaFin' 
+                        AND estatus = 'DES' AND user_id = $id_usuario";
         newQuery($this->db, $query);
     }
 
