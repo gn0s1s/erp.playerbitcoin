@@ -301,6 +301,19 @@
 
 <script type="text/javascript">
 
+    function del_ticket(id){
+        $.ajax({
+            type: "post",
+            url: "/ov/tickets/del_ticket",
+            data: {
+                id :id
+            }
+        }).done(function (msg) {
+                location.href='/bo/reportes';
+
+        });
+    }
+
 
     function tipo_reporte() {
 

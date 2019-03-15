@@ -359,6 +359,22 @@ class tickets extends CI_Controller
 
     }
 
+    function del_ticket(){
+        $id = isset($_POST['id']) ? $_POST['id'] : false;
+
+        $error = "ticket not found, Try again!!";
+        if(!$id){
+            echo $error;
+            return false;
+        }
+
+        $this->general->delete_ticket($id);
+
+        echo "OK";
+
+        return true;
+    }
+
     function estatus_ticket(){
 
         $id = isset($_POST['id']) ? $_POST['id'] : false;

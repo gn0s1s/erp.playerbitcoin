@@ -91,6 +91,7 @@ class dashboard extends CI_Controller
 
         $ultimos_auspiciados=$this->modelo_dashboard->get_ultimos_auspiciados($id);
 
+        $this->playerbonos->estimarRango($id);
         $titulo=$this->playerbonos->getTituloAfiliado($id);
             #TODO: $this->titulo->getNombreTituloAlcanzadoAfiliado($id, $date);
 

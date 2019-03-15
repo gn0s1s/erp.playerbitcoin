@@ -439,6 +439,12 @@ class mGeneral extends CI_Model
         return implode(',',$ArrayVarchar);
     }
 
+    function delete_ticket($id)
+    {
+        $query = "DELETE FROM ticket WHERE id = $id";
+        $this->db->query($query);
+    }
+
     function setToken()
     {
         $token = rand(100000, 999999);
@@ -462,6 +468,9 @@ class mGeneral extends CI_Model
             $token2 = range($start, $end);
         endforeach;
         $token = implode("", $token);
+        if(sizeof($token)>10)
+            $token = substr($token, 0, 10);
+
         return $token;
     }
 

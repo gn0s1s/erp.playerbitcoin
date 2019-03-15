@@ -4832,7 +4832,11 @@ function index()
         $date_final = $this->playerbonos->getAnyTime('now', '30 days',true);
         $date_final.=" 21:00:00";
 
-        $this->playerbonos->newTickets($id_afiliado,$tickets,'DES',$date_final);
+        #TODO: 1 de abril
+        $date_init = '2019-04-01';#false;
+        $date_final = $this->playerbonos->getAnyTime($date_init, '30 days',true);
+
+        $this->playerbonos->newTickets($id_afiliado,$tickets,'DES',$date_final,$date_init);
 
     }
 

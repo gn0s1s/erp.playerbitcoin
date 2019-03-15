@@ -570,7 +570,7 @@ from transaccion_billetera t, users u, user_profiles p
 		foreach ($q2 as $key){
 			switch ($key->tipo){
 				case "ADD" : $add=$key->valor;break;
-				case "SUB" : $sub=$key->valor;break;
+                case "SUB" : $sub=$key->valor;break;
 			}
 		}
 		
@@ -588,6 +588,8 @@ from transaccion_billetera t, users u, user_profiles p
                     set monto = $valor,id_user = $user,tipo = 'TRN'
                     where invoice = $id and token = '$token'";
         $this->db->query($query);
+
+        $this->insertTransferProcess($id, $user, $token, $valor);
     }
 
     function setTransferMoney($id,$token)
@@ -611,6 +613,14 @@ from transaccion_billetera t, users u, user_profiles p
                     and t.token = '$token' 
                     AND t.tipo = 'TRN'
                     AND t.id_user = $id_user";
+
+        $query = "UPDATE transaccion_billetera
+                   SET 
+                   descripcion = concat('Transferred money to ID: ',t.invoice)
+                    WHERE id = $id 
+                    AND token = '$token' 
+                    AND invoice = $id_user
+                    AND id_user = $id";
         $this->db->query($query);
 
         $query = "UPDATE transaccion_billetera
@@ -633,6 +643,15 @@ from transaccion_billetera t, users u, user_profiles p
         $q = $this->db->query($query);
         $q = $q->result();
         return $q;
+    }
+
+    private function insertTransferProcess($id, $user, $token, $valor)
+    {
+        $query = "INSERT INTO transaccion_billetera 
+                       (id_user,tipo,descripcion,monto,token,invoice)
+                  VALUES 
+                  ($id,'SUB','Transferring money in proccess',$valor+(2),'$token',$user)";
+        $this->db->query($query);
     }
 
 

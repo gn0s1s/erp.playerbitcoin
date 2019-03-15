@@ -32,10 +32,20 @@ class general extends CI_Model
             $token2 = range($start, $end);
         endforeach;
         $token = implode("", $token);
+
+        if(sizeof($token)>10)
+            $token = substr($token, 0, 10);
+
         return $token;
     }
 
 	/* tickets */
+
+    function delete_ticket($id)
+    {
+        $query = "DELETE FROM ticket WHERE id = $id";
+        $this->db->query($query);
+    }
 
     function getTicket($id){
 

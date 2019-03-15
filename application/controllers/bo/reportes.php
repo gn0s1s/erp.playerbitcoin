@@ -1968,6 +1968,7 @@ class reportes extends CI_Controller {
             "<th data-hide='phone,tablet'>Amount</th>" .
             "<th data-hide='phone,tablet'>Earning %</th>" .
             "<th data-hide='phone,tablet'>Estatus</th>" .
+            "<th data-hide='phone,tablet'>Options</th>" .
             "</thead>
 				<tbody>";
 
@@ -1981,7 +1982,11 @@ class reportes extends CI_Controller {
                 . "<td> " . $ticket->date_final . "</td>"
                 . "<td>$ " . $ticket->amount . " USD</td>"
                 . "<td> " . $ticket->bonus . "</td>"
-                . "<td> " . $ticket->estatus .
+                . "<td> " . $ticket->estatus . "</td>"
+                . "<td>"
+                . " <a class='btn btn-danger' "
+                . "   onclick='del_ticket($ticket->id)' >
+                    Delete</a>".
                 // ."|".$total
                 "</td>" . "</tr>";
         }

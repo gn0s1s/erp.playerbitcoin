@@ -272,7 +272,7 @@ class playerbonos extends CI_Model
         $Afiliado = $this->isAfiliadoenRed($id_usuario,$binario);
 
         if(!$Afiliado){
-            log_message('DEV',"ID : $id_usuario not in BINARIO");
+            log_message('DEV',"ID : $id_usuario not in VIP");
             return $isBinario ? false : 0;
         }
 
@@ -280,18 +280,16 @@ class playerbonos extends CI_Model
         $periodo = "UNI";#$this->issetVar($bono,"frecuencia","DIA");# "MES";
 
         $fechaFin = $this->getPeriodoFecha($periodo, "FIN", $fecha );
-        if($this->fechaFin)
-            $fechaFin = $this->fechaFin;
+        #if($this->fechaFin) $fechaFin = $this->fechaFin;
 
         $fechaInicio = $this->getInicioFecha($id_usuario);
-        if($this->fechaInicio)
-            $fechaInicio= $this->fechaInicio;
+        #if($this->fechaInicio) $fechaInicio= $this->fechaInicio;
 
         $venta = $this->getVentaMercancia($id_usuario,$fechaInicio,$fechaFin,5);
 
         $Pasa = ( $venta ) ? true : false;
 
-        log_message('DEV',"ID : $id_usuario BINARIO :: [[ $Pasa ]]");
+        log_message('DEV',"ID : $id_usuario VIP :: [[ $Pasa ]]");
 
         return $Pasa;
     }
@@ -566,10 +564,9 @@ class playerbonos extends CI_Model
 						c.id_bono_historial = h.id
 						AND c.id_bono = h.id_bono
 						AND h.id_bono = $id_bono
-						AND h.red = $red
 						AND c.id_usuario = $id_usuario
 						AND h.fecha BETWEEN '$this->fechaInicio' AND '$this->fechaFin'
-						AND (c.valor > 0 OR c.extra != '')";
+						AND c.valor > 0";
 
         $q = $this->db->query($query);
         $q =$q->result();
@@ -784,24 +781,12 @@ class playerbonos extends CI_Model
     {
         switch ($id_bono){
 
-            case 1 :
-                return $this->getValorBonoRangos($parametro);
-                break;
-
             case 2 :
-                return $this->getValorBonoBinario($parametro);
+                return $this->getValorBonoPasivo($parametro);
                 break;
 
             case 3 :
-                return $this->getValorBonoGanancias($parametro);
-                break;
-
-            case 4 :
-                return $this->getValorBonoDirectos($parametro);
-                break;
-
-            case 5 :
-                return $this->getValorBonoRapido($parametro);
+                return $this->getValorBonoRangos($parametro);
                 break;
 
             default:
@@ -816,9 +801,10 @@ class playerbonos extends CI_Model
         if(!isset($parametro["fecha"]))
             $parametro["fecha"] = date('Y-m-d');
 
-        $valores = $this->getBonoValorNiveles(1);
+        $id_bono = 3;
+        $valores = $this->getBonoValorNiveles($id_bono);
 
-        $bono = $this->getBono(1);
+        $bono = $this->getBono($id_bono);
         $periodo = $this->issetVar($bono,"frecuencia","UNI");
 
         $fechaInicio = $this->getPeriodoFecha($periodo, "INI", $parametro["fecha"]);
@@ -830,14 +816,18 @@ class playerbonos extends CI_Model
 
         $titulo = $this->getRangoAfiliado($id_usuario);
 
-        $isCobro = true;
-        if (! $titulo || ! $isCobro)
+        $date_now = date('Y-m-d', strtotime($parametro["fecha"]));
+        $isCobro = true;#TODO: $date_now == $fechaFin;
+        if (! $titulo || ! $isCobro):
+            log_message('DEV',"\n Not end month ($id_bono) : $date_now - $fechaFin \n");
             return 0;
+        endif;
 
-        $monto = $this->getMontoRangos($id_usuario, $valores, $titulo,$fechaInicio,$fechaFin);
+        $valores = $this->getTitulo();
+        $monto = $this->getMontoRangos($id_usuario,$fechaInicio,$fechaFin,$titulo,$valores);
 
         if($pagar&&$monto>0)
-            $this->repartirBono(1, $id_usuario, $monto,"",$fechaFin);
+            $this->repartirBono($id_bono, $id_usuario, $monto,"",$fechaFin);
 
         return $monto;
     }
@@ -928,39 +918,267 @@ class playerbonos extends CI_Model
         return $monto;
     }
 
-    private function getValorBonoBinario($parametro,$pagar=false)
-    {
-        if(!isset($parametro["fecha"]))
-            $parametro["fecha"] = date('Y-m-d');
+    private function getValorBonoPasivo($parametro){
 
         $id_bono = 2;
         $valores = $this->getBonoValorNiveles($id_bono);
 
-        $bono = $this->getBono(2);
-        $periodo = $this->issetVar($bono,"frecuencia","UNI");
+        $bono = $this->getBono($id_bono);
+        $periodo = "DIA";#TODO: isset($bono[1]["frecuencia"]) ? $bono[1]["frecuencia"] : "UNI";
 
         $fechaInicio=$this->getPeriodoFecha($periodo, "INI", $parametro["fecha"]);
         $fechaFin=$this->getPeriodoFecha($periodo, "FIN", $parametro["fecha"]);
 
         $id_usuario = $parametro["id_usuario"];
-        $id_red = isset($parametro["red"]) ?  $parametro["red"] : 1;
-        log_message('DEV', "BONO $id_bono between: $fechaInicio - $fechaFin ($periodo)");
 
-        $afiliados = $this->getAfiliadosMatriz($valores,$id_usuario,2);
+        log_message('DEV',"between ($id_usuario)[$id_bono] : $fechaInicio - $fechaFin ");
 
-        if(!$afiliados)
-            return 0;
+        $monto = $this->calcularBonoPasivo($id_usuario, $valores, $fechaInicio, $fechaFin);
 
-        $ganancia = $this->getGananciaBinario($id_usuario,$afiliados,$valores,$fechaInicio, $fechaFin);
-        if($ganancia==0)
-            return 0;
+        $where = "AND estatus = 'ACT' order by reference ASC";
+        $pasivos = $this->getPasivos($id_usuario, $where);
 
-        list($ganancia,$reporte) = $ganancia;
+        if(!$pasivos) :
+            #TODO: proceso bloquear y 5 dias para desactivar vip
+            return $monto;
+        endif;
 
-        #if($pagar)
-        $this->repartirBono($id_bono, $id_usuario, $ganancia,$reporte,$fechaFin);
+        foreach ($pasivos as $pasivo)
+            $this->setRecompraTickets( $id_usuario, $pasivo,$fechaFin);
 
-        return 0;
+        return $monto;
+    }
+
+    private function getLastDayUTC($fecha = false,$hour = " 21:00:00")
+    {
+        #TODO: Config UTC range tickets data
+        date_default_timezone_set('UTC');
+        $date =date('Y-m-d');
+        if($fecha)
+            $date =date('Y-m-d',strtotime($fecha));
+        $datetime = $date . $hour;
+
+        log_message('DEV'," fecha actual: $datetime");
+
+        return $datetime;
+    }
+
+    private function setRecompraTickets($id_usuario, $pasivo, $fechaFin = false)
+    {
+        if(!$fechaFin)
+            $fechaFin = $this->getLastDayUTC($fechaFin);
+
+        $timeInit = strtotime($pasivo->initdate);
+        $initdate = date('Y-m-d', $timeInit);
+        $id_venta = $pasivo->reference;
+        $fecha_venta = date_create($initdate);
+        $fecha_actual = date_create($fechaFin);
+        $interval = date_diff($fecha_venta, $fecha_actual);
+        $tiempo = $interval->format('%d');
+
+        $factor = 30;
+        $corte = $tiempo % $factor;
+        log_message('DEV', "is recompra ($id_venta) ? $initdate - $fechaFin ::> $tiempo day(s)");
+
+        if ($corte == 0):
+            $where = "AND v.id_venta = $id_venta";
+            $itemsPSR = $this->getPSRuser($id_usuario, $where);
+            $id_mercancia = $itemsPSR ? $itemsPSR[0]->id_mercancia : 2;
+            $this->setAutoTicket($id_usuario, $id_mercancia);
+            $this->deteleTickets($id_usuario, $fechaFin);
+        endif;
+    }
+
+    private function deteleTickets($id_usuario, $fechaFin)
+    {
+        $query = "DELETE FROM ticket 
+                        WHERE date_final < '$fechaFin' 
+                        AND estatus = 'DES' AND user_id = $id_usuario";
+        $this->db->query($query);
+    }
+
+    private function setAutoTicket($id_afiliado, $id_mercancia)
+    {
+        $query="SELECT * FROM mercancia m,items i 
+                    WHERE 
+                    i.id = m.id 
+                    AND i.categoria = 2
+                    AND i.id = $id_mercancia
+                    GROUP BY m.id";
+        $q = $this->db->query($query);
+        $q = $q->result();
+
+        if(!$q){
+            log_message('DEV',"PSR for autoticket not found :: $id_mercancia");
+            return false;
+        }
+
+        $item = $q[0]->sku;
+
+        $bono_psr = 2;
+        $valores = $this->getBonoValorNiveles($bono_psr);
+
+        if(!$valores){
+            log_message('DEV',"PSR bono not found :: $bono_psr");
+            return false;
+        }
+
+        $limite = sizeof($valores) - 1;
+        $valor_tickets = $valores[$limite]->valor ;
+        if( isset($valores[$item]) )
+            $valor_tickets = $valores[$item]->valor;
+
+        log_message('DEV',"auto tickets for PSR ($item) :: $valor_tickets");
+
+        $tickets = array();
+        for($i = 0;$i< $valor_tickets;$i++){
+            $ticket = $this->getValueTicketAuto();
+            array_push($tickets,$ticket);
+        }
+
+        date_default_timezone_set('UTC');
+        $date_final = $this->getAnyTime('now', '30 days',true);
+        $date_final.=" 21:00:00";
+
+        $this->newTickets($id_afiliado,$tickets,'DES',$date_final);
+
+    }
+
+
+    private function getPSRuser($id_usuario,$where = "")
+    {
+        $query = "SELECT * 
+              FROM venta v, cross_venta_mercancia c, items i,mercancia m
+              WHERE i.id = c.id_mercancia 
+              AND m.id  = c.id_mercancia
+              AND c.id_venta = v.id_venta
+              AND i.categoria = 2 AND v.id_estatus = 'ACT'
+              AND v.id_user = $id_usuario $where";
+
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
+    }
+
+    private function getPasivos($id_usuario, $where = "",$select = "*")
+    {
+        $query = "SELECT $select 
+              FROM comision_pasivo
+              WHERE user_id = $id_usuario
+              $where";
+
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
+    }
+
+    function get_total_comisiones_afiliado($id,$where =""){
+
+        $query = "SELECT sum(valor)as valor FROM comision
+                      where id_afiliado=$id $where";
+        $q=$this->db->query($query);
+        $comisiones=$q->result();
+        return $comisiones ? $comisiones[0]->valor : 0;
+    }
+
+    private function setPasivoUser($id_usuario, $fechaInicio, $fechaFinal, $amount, $id_venta)
+    {
+        $query = "INSERT INTO comision_pasivo
+                            (user_id,initdate,enddate,amount,reference)  
+                            VALUES
+                            ($id_usuario,'$fechaInicio','$fechaFinal',$amount,$id_venta)";
+
+        $this->db->query($query);
+        return $this->db->insert_id();
+    }
+
+    private function acumularPasivo($amount, $id_pasivo = 1)
+    {
+        $query = "UPDATE comision_pasivo
+                            set amount = amount+$amount  
+                            WHERE id = $id_pasivo";
+        $this->db->query($query);
+        return $query;
+    }
+
+    private function desactivarPasivo($id_pasivo)
+    {
+        $query = "UPDATE comision_pasivo set
+                            estatus = 'DES' 
+                            WHERE id = $id_pasivo";
+        $this->db->query($query);
+    }
+
+    private function calcularBonoPasivo($id_usuario, $valores, $fechaInicio, $fechaFin)
+    {
+        $per = $valores[0]->valor;
+        $percent = $per / 100;
+        log_message('DEV',"INCREMENT VALUE :: $percent | $per \n");
+
+        $itemsPSR = $this->getPSRuser($id_usuario);
+        $where = "order by reference ASC";
+        $pasivos = $this->getPasivos($id_usuario, $where);
+        $fechaFinal = $this->getAnyTime($fechaFin, "180 day", true);
+
+        $where = "AND id_red = 2";
+        $comisiones = $this->get_total_comisiones_afiliado($id_usuario,$where);
+
+        $monto = 0;
+
+        foreach ($itemsPSR as $index => $psr) {
+
+            $json = json_encode($psr);
+            #TODO: log_message('DEV',"VENTA PSR :: $json \n");
+
+            $reference = $psr->id_venta;
+            $valor = $psr->costo;
+            $tope = $valor * 2;
+
+            $where = "AND reference = $reference AND estatus = 'ACT'";
+            $pasivo = $this->getPasivos($id_usuario, $where);
+
+            $amount = $valor * $percent;
+            if (!$pasivo):
+                $this->setPasivoUser($id_usuario, $fechaInicio, $fechaFinal, $amount, $reference);
+                $where = "AND reference = $reference AND estatus = 'ACT'";
+                $pasivo = $this->getPasivos($id_usuario, $where);
+                log_message('DEV',"NEW PSR PASIVE $reference :: $valor \n");
+            endif;
+
+            $acumulado = $pasivo[0]->amount;
+            $acumulado+=$comisiones;
+            $comisiones = $acumulado - $tope;
+            if($acumulado>$tope):
+                $acumulado = $tope;
+            endif;
+
+            if($comisiones<0)
+                $comisiones =0;
+
+            $id_pasivo = $pasivo[0]->id;
+            $sumado = $acumulado + $amount;
+
+            if($sumado > $tope)
+                $amount = $tope - $acumulado;
+
+            if($acumulado < $tope && $amount>0):
+                $this->acumularPasivo($amount, $id_pasivo);
+                $monto = $amount;
+                log_message('DEV',"SUM $amount in PSR :: $sumado \n");
+            endif;
+
+            if ($sumado > $tope):
+                $this->desactivarPasivo($id_pasivo);
+                log_message('DEV',"DESACTIVAR PSR :: $id_pasivo \n");
+                break;
+            elseif ($comisiones <= 0) :
+                log_message('DEV',"REFERENCE $reference PSR ($id_usuario) :: $id_pasivo \n");
+                break;
+            endif;
+
+        }
+
+        return $monto;
     }
 
     private function getAfiliadosValores($valores, $id, $red_id = 1)
@@ -1802,106 +2020,161 @@ class playerbonos extends CI_Model
         return $acumulado;
     }
 
-    private function getMontoRangos($id_usuario, $valores, $rango, $fechaInicio, $fechaFin)
+    function estimarRango($id_usuario,$fechaInicio = false,$fechaFin = false)
     {
-        $monto = 0;$cumple=false;
-        $fecha = $this->setFechaformato();
-        $id_rango = $rango->id_rango;
-        $puntosRed =$this->issetVar($valores,"valor",0);
+        $id_bono = 3;
+        $bono = $this->getBono($id_bono);
+        $periodo = $this->issetVar($bono,"frecuencia","UNI");
 
-        $condiciones = $this->getTitulo(false,"id > $id_rango OR orden > $id_rango");
+        if(!$fechaInicio)
+            $fechaInicio = $this->getPeriodoFecha($periodo, "INI", '');
 
-        $InicioFecha = $this->getPeriodoFecha("MES","INI",$fechaInicio);
-        $finFecha = $this->getPeriodoFecha("MES","FIN",$fechaInicio);
+        if(!$fechaFin)
+            $fechaFin = $this->getPeriodoFecha($periodo, "FIN", '');
 
-        $usuario = new $this->afiliado();
-        $calculo = "getComprasPersonalesIntervaloDeTiempo";
-        $inversion = $usuario->$calculo($id_usuario, 1, $fechaInicio, $fechaFin, 2, "0", "COSTO");
-        $calculo = "getVentasTodaLaRed";
-        $puntosRed = $usuario->$calculo($id_usuario,1,"RED","EQU",0,$fechaInicio,$fechaFin,5,"0","PUNTOS");
+        $valores = $this->getTitulo();
+        $rango = $this->getRangoAfiliado($id_usuario);
 
-        $isbrazos = $this->getAfiliadosBinario($id_usuario,$fechaFin,$fechaInicio);
+        $id_rango = 0;
+        if($rango)
+            $id_rango = $rango->id_rango;
 
-        if($isbrazos){
-            list($brazos,$directos) = $isbrazos;
-            $isbrazos = sizeof($brazos)>=2;
-        }
+        $vip = 2;
+        $red_todo = $this->getRedTodo($id_usuario, $vip);
 
-        if(!$isbrazos)
+        $servicio = 2;
+        $items = false;
+        $where = "AND i.categoria = 2";
+        $total = $this->getMontoMercanciaRed($red_todo, $fechaInicio, $fechaFin, $servicio, $items, $where);
+
+        $cumple = $this->isCondicionesRango($id_rango, $total,true);
+
+        if(!$cumple):
+            log_message('DEV'," no cumple rango $id_usuario [$id_rango]");
             return 0;
+        endif;
 
-        $directosred=array(0,0);
-        $limite = array(false, false);
-        while($brazos != $limite){
-            foreach ($brazos as $index => $brazo) {
-                if(!$brazo)
-                    continue;
+        $id_rango = $cumple;
 
-                $this->getAfiliadosBy($brazo,1,"DIRECTOS","",$id_usuario);
-                $afiliados = $this->getAfiliados();
-                $directosred[$index]+=sizeof($afiliados);
-                $this->getAfiliadosBy($brazo,1,"RED","");
-                $afiliados = $this->getAfiliados();
-                $brazos[$index] = ($afiliados) ? implode(",",$afiliados) : false;
-            }
-        }
+        log_message('DEV'," new rango $id_usuario [$id_rango]: ");
 
-        log_message("DEV","directos :::: ".json_encode($directosred));
+        $this->update_rango($id_usuario,$id_rango);
 
-        $this->getDirectosBy($id_usuario, 1,"",2);
-        $afiliados = $this->getAfiliados();
-        $afiliados = sizeof($afiliados);
+        return $id_rango;
+    }
 
-        $factor=$valores[0]->valor;
-        $multiplo = 100;
+    private function getMontoRangos($id_usuario,$fechaInicio,$fechaFin,$rango,$valores)
+    {
+        $monto = 0;
+        $id_rango = 0;
+        if($rango)
+            $id_rango = $rango->id_rango;
 
-        foreach ($condiciones as $key => $condicion){
-            $index = $key+1;
-            $packs = $condicion->porcentaje*$multiplo;
-            $reglaPacks = $inversion-$packs;
+        $vip = 2;
+        $red_todo = $this->getRedTodo($id_usuario, $vip);
 
-            $directos = $index * $factor ;
-            $reglaDirectos = $afiliados-$directos;
+        $servicio = 2;
+        $items = false;
+        $where = "AND i.categoria = 2";
+        $total = $this->getMontoMercanciaRed($red_todo, $fechaInicio, $fechaFin, $servicio, $items, $where);
 
-            $puntuacion = $condicion->valor;
-            $reglaPuntos = $puntosRed-$puntuacion;
+        $cumple = $this->isCondicionesRango($id_rango, $total);
 
-            $isReglas = ($reglaDirectos>=0) && ($reglaPuntos>=0) ;
+        if(!$cumple):
+            log_message('DEV'," no cumple rango $id_usuario [$id_rango]");
+            return 0;
+        endif;
 
-            $actual="RECIENTE:(R:[$cumple] , T:$id_rango)";
-            log_message('DEV',"$actual TITULO:".$condicion->id." C:$reglaPacks R:($isReglas)");
+        $id_rango = $cumple;
 
-            if($reglaPacks<0)
-                break;
+        $limit = sizeof($valores)-1;
+        $bono_rango= $valores[$limit]->porcentaje;
+        if(isset($valores[$id_rango]) )
+            $bono_rango = $valores[$id_rango]->porcentaje;
 
-            $id_rango = $condicion->id;
+        $reporte_tickets = $this->getTodoTickets($fechaInicio,$fechaFin);
+        $json = json_encode($reporte_tickets);
+        $acumulado = 0;
+        foreach ($reporte_tickets as $ticket):
+            $acumulado+=$ticket->rankings;
+        endforeach;
+        log_message('DEV'," Reporte tickets ($fechaInicio,$fechaFin) \n ::>> $acumulado \n\n $json");
 
-            if(!$isReglas)
-                break;
-
-            $cumple = $id_rango;
-
-        }
-
-        if($cumple)
-            $id_rango = $cumple;
-
-        $bono_rango= isset($valores[$id_rango]) ? $valores[$id_rango]->valor : $valores[1]->valor;
+        $per = $bono_rango/100;
 
         if ($cumple)
-            $monto = $bono_rango;
+            $monto = $acumulado*$per;
+
+        log_message('DEV'," new rango $id_usuario [$id_rango]: ($acumulado * $per) = $ $monto");
 
         $this->entregar_rango($id_usuario,$id_rango);
 
         return $monto;
     }
 
+    function getTodoTickets($fecha_inicio = false, $fecha_fin = false){
+
+        $referidos = 20;
+        $neto = "(m.costo/2)"; #TODO: "t.bonus"; 25;
+        $company = 30;
+        $rankings = 40;
+        $company2 = 10;
+
+        $where = "";
+
+        if($fecha_inicio)
+            $where .= "AND t.date_final >= '$fecha_inicio'";
+
+        if($fecha_fin)
+            $where .= "AND t.date_final <= '$fecha_fin'";
+
+        $query = "SELECT 
+                      count(*) tickets,
+                      t.date_final ,
+                      sum(m.costo) total,
+                      sum((case when (t.bonus = 50) then (m.costo*t.bonus/100) else 0 end)) neto,
+                      sum((case when (t.bonus = 25) then (m.costo*t.bonus/100) else 0 end)) acumulado,
+                       sum((m.costo*$referidos/100)) referrals,
+                       sum((m.costo*$company/100)) company,
+                       sum($neto-(m.costo*t.bonus/100)) residuo,
+                       sum(($neto-(m.costo*t.bonus/100))*($rankings*2/100)) rankings,
+                       sum((case when (t.bonus = 25) then ($neto*$company2/100) else 0 end)) company2
+                    from 
+                        ticket t,mercancia m,
+                        cross_venta_mercancia c,
+                        venta v,items i
+                        -- ,comision_bono cb,comision_bono_historial h
+                    where
+                        m.id = c.id_mercancia
+                        and c.id_venta = v.id_venta
+                        and v.id_venta = t.reference
+                        and i.categoria = 4
+                      --  and cb.id_bono = 1
+                      --  and cb.id_bono_historial = h.id
+                      --  and h.fecha = date_format(t.date_final,'%Y-%m-%d')
+                        $where
+                        group by t.date_final
+                        order by t.date_final asc";
+
+        $q = $this->db->query($query);
+
+        return $q->result() ;
+
+    }
     private function entregar_rango($id_usuario,$rango = 0)
     {
         $query = "UPDATE cross_rango_user 
                     SET id_rango = $rango, entregado = 1 
                     WHERE id_user = $id_usuario";
-        $q = $this->db->query($query);
+        $this->db->query($query);
+    }
+
+    private function update_rango($id_usuario,$rango = 0)
+    {
+        $query = "UPDATE cross_rango_user 
+                    SET id_rango = $rango, entregado = 0 
+                    WHERE id_user = $id_usuario";
+        $this->db->query($query);
     }
 
     private function condicionCiclo($id_usuario,$id_red)
@@ -2220,7 +2493,7 @@ class playerbonos extends CI_Model
 
     }
 
-    function newTickets($id,$tickets,$actived = 'ACT',$date_final = false){
+    function newTickets($id,$tickets,$actived = 'ACT',$date_final = false,$date_init = false){
 
         $where = "AND i.categoria = 4";
         $mercancia = $this->getMercancia($where);
@@ -2258,9 +2531,14 @@ class playerbonos extends CI_Model
 
         log_message('DEV',"getNextTime ->> $nextTime");
 
+        $format = 'Y-m-d H:i:s';
+        $initTime = date($format);
+        if($date_init)
+            $initTime = date($format,strtotime($date_init));
+
         $datos = array(
             "user_id"=>$id,
-            "date_creation"=> date('Y-m-d H:i:s'),
+            "date_creation"=> $initTime,
             "date_final"=> $nextTime,
             "reference"=> $id_venta,
             "estatus" => $actived
@@ -2360,7 +2638,7 @@ class playerbonos extends CI_Model
         else
             $OD = "";
 
-        $query = "SELECT *
+        $query = "SELECT * -- imprimir
 						FROM
 							cross_venta_mercancia cvm,
 							mercancia m,
@@ -2804,7 +3082,7 @@ class playerbonos extends CI_Model
 
     function isAfiliadoenRed($id, $red = false,$order=false,$where=false)
     {
-        $query = "SELECT * -- imprimir 
+        $query = "SELECT *
                     FROM afiliar WHERE id_afiliado = $id";
 
         if ($red)
@@ -3061,10 +3339,9 @@ class playerbonos extends CI_Model
     {
         $is = array("DIRECTOS" =>"a.directo","RED"=>"a.debajo_de");
 
-        $subquery ="AND estatus = 'ACT'";#@test: 9
+        $subquery ="-- AND estatus = 'ACT'";#@test: 9
 
-
-        $query = "SELECT -- imprimir
+        $query = "SELECT
 						a.id_afiliado id,
 						a.directo,a.id rowid
 					FROM
@@ -3477,11 +3754,14 @@ class playerbonos extends CI_Model
     function getBitcoinValue()
     {
         $getcwd = getcwd();
+        $localBitcoin = 3854.6;
+
+        return $localBitcoin;#TODO: activar plan
 
         $islocalEnv = stripos($getcwd, "/var/www")!==false;
         $islocalEnv |= stripos($getcwd, ":")!==false;
+
         if($islocalEnv){
-            $localBitcoin = 3854.6;
             log_message('DEV',"bitcoin value for LOCAL enviroment :: $localBitcoin");
             return $localBitcoin;
         }
@@ -3509,6 +3789,79 @@ class playerbonos extends CI_Model
         $result = $q->result();
         $lado = $result ? $result[0]->lados : 0;
         return $lado;
+    }
+
+    private function getRedTodo($id_usuario, $red = 1)
+    {
+        $limit = false;
+        $nivel = 1;
+        $red_todo = array();
+        while (!$limit):
+            $this->getAfiliadosBy($id_usuario, $nivel, "RED", "", 2, $red);
+            $afiliados = $this->getAfiliados();
+            $json = json_encode($afiliados);
+            log_message('DEV', " Nivel $nivel : $json ");
+            if (!$afiliados):
+                $limit = true;
+                break;
+            endif;
+
+            $afiliados = implode(",", $afiliados);
+            array_push($red_todo, $afiliados);
+            $nivel++;
+        endwhile;
+        return $red_todo;
+    }
+
+    private function getMontoMercanciaRed($red_afiliados, $inicio, $fin, $tipo = false, $item = false, $where = "")
+    {
+        $total = 0;
+        foreach ($red_afiliados as $n => $afiliados):
+            $nivel = $n + 1;
+            $ventas = $this->getVentaMercancia($afiliados, $inicio, $fin, $tipo, $item, $where);
+
+            if (!$ventas)
+                continue;
+
+            $monto = 0;
+            foreach ($ventas as $venta) :
+                $monto += $venta->costo;
+            endforeach;
+
+            $total += $monto;
+            log_message('DEV', " Nivel $nivel : $afiliados -> $monto");
+        endforeach;
+        return $total;
+    }
+
+    private function isCondicionesRango($id_rango, $valor = 0,$estimar = false)
+    {
+        $cumple=false;
+
+        $where = "id >= $id_rango OR orden >= $id_rango";
+
+        if($estimar)
+            $where = "id > $id_rango OR orden > $id_rango";
+
+        $condiciones = $this->getTitulo(false, $where);
+
+        foreach ($condiciones as $condicion) {
+
+            $regla = $condicion->valor;
+            $reglaMonto = $valor - $regla;
+            $isRegla = ($reglaMonto >= 0);
+
+            $id_rango = $condicion->id;
+            log_message('DEV', " Rango ? $id_rango : $valor >= $regla ? [[ $isRegla ]]");
+
+            if (!$isRegla)
+                break;
+
+            log_message('DEV', " Rango estimated :: $id_rango");
+            $cumple = $id_rango;
+
+        }
+        return $cumple;
     }
 
 
