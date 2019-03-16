@@ -458,8 +458,20 @@ class model_perfil_red extends CI_Model
 				order by   U.id , AF.lado asc,(U.id) limit 5");
 		return  $q->result();
 	}
-	
-	function get_tabla($where = "")
+
+    function getUserEntering($user, $id = 0)
+    {
+        $user = strtolower($user);
+        $query = "SELECT * FROM users
+                      WHERE (id like '$user%' or
+                      id = '$user' or lower(username) like '$user%' or
+                      lower(username) = '$user') and id > 1 and id != $id";
+        $q = $this->db->query($query);
+        $q = $q->result();
+        return $q;
+    }
+
+    function get_tabla($where = "")
 	{
 	    $redes = "select af.id_red from afiliar af where af.id_afiliado = U.id";
 

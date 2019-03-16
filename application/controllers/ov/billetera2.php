@@ -329,9 +329,14 @@ class billetera2 extends CI_Controller
         $valor_pagar = $_POST['valor'];
         if($valor_pagar <=0){
             echo "ERROR <br>Invalid Withdrawal value.";
-            exit();
+            return false;
         }
 
+        $user = isset($_POST['user']) ? $_POST['user'] : false;
+        if(!$user || !sizeof($user)>0){
+            echo "ERROR <br>User Not set.";
+            return false;
+        }
 
 
         $id=$this->tank_auth->get_user_id();
@@ -361,7 +366,9 @@ class billetera2 extends CI_Controller
 
         $valor = isset($_POST['valor']) ? $_POST['valor'] : 0;
         $token =  isset($_POST['token']) ? $_POST['token'] : 0;
-        $user = isset($_POST['user']) ? $_POST['user'] : 2;
+
+        $datos = $this->model_perfil_red->getUserEntering($user, $id);
+        $user = $datos ? $datos[0]->id : 2;
 
         log_message('DEV',"user trn : $user");
 
@@ -513,10 +520,44 @@ class billetera2 extends CI_Controller
 		$this->template->build('website/ov/billetera/estado');
 	}
 	
-	function historial_transaccion(){
-	
-		
-		$id=$_POST['id'];
+	function val_user(){
+
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            echo "SESSION EXPIRED, LOG IN AGAIN";
+            return false;
+        }
+
+        $id=$this->tank_auth->get_user_id();
+        $user = isset($_POST['user']) ? $_POST['user'] : false;
+
+        if(!$user):
+            log_message('DEV',"ENTERING NOT LOADED");
+            return false;
+        endif;
+
+        $datos = $this->model_perfil_red->getUserEntering($user, $id);
+
+        $options = "";
+        $first = 2;
+        foreach ($datos as $key => $dato):
+            $result = "$dato->id - $dato->username";
+            if($key == 0)
+                $first = "$result";
+            $options .= "$result <br/>";
+        endforeach;
+
+        $options = "<div class='msg_user'>".
+                        "<strong>First Ocurrence Result: $first</strong><br/>".
+                        $options
+                        ."<hr/></div>";
+
+        echo $options;
+    }
+
+    function historial_transaccion(){
+
+        $id=$_POST['id'];
 	
 		//echo "dentro de historial : ".$id;
 		

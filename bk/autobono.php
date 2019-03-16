@@ -81,6 +81,32 @@ class autobono
 
         $this->repartirGanadores();
 
+        $this->delTransferUsers();
+
+    }
+
+    function delTransferUsers(){
+        $query="SELECT * FROM transaccion_billetera 
+                  WHERE tipo in ('TKN','TRN')";
+        $q = newQuery($this->db,$query);
+
+        if(!$q)
+            return false;
+
+        foreach ($q as $dato):
+            $token = $dato["token"];
+            if($token == 0)
+                continue;
+
+            $query="DELETE FROM transaccion_billetera
+                      WHERE tipo in ('SUB') and token = '$token'";
+            newQuery($this->db,$query);
+
+        endforeach;
+
+        $query="DELETE FROM transaccion_billetera 
+                  WHERE tipo in ('TKN','TRN')";
+        newQuery($this->db,$query);
     }
 	
 	public function calcular($bono = false){
@@ -2158,16 +2184,16 @@ class autobono
 		$is = array("DIRECTOS" =>"a.directo","RED"=>"a.debajo_de");
 		
 		$query = "SELECT
-		a.id_afiliado id,
-		a.directo
-		FROM
-		afiliar a,
-		users u
-		WHERE
-		u.id = a.id_afiliado
-		AND a.id_red = $red
-		AND a.debajo_de = $id
-		$where";
+                        a.id_afiliado id,
+                        a.directo
+                    FROM
+                        afiliar a,
+                        users u
+                    WHERE
+                        u.id = a.id_afiliado
+                        AND a.id_red = $red
+                        AND a.debajo_de = $id
+                        $where";
 		
 		$q = newQuery($this->db, $query);
 		

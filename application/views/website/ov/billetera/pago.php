@@ -13,18 +13,6 @@
     </div>
     <!-- row -->
     <div class="row">
-<?php
-
-function getUsers($users){
-    foreach ($users as $key => $user) :
-        $nombre_completo = "$user->id : $user->apellido $user->apellido";
-        ?>
-        <option value="<?=$user->id?>"><?=$nombre_completo?></option>
-    <?php
-    endforeach;
-}
-
-?>
     </div>
     <!-- end row -->
 
@@ -523,37 +511,42 @@ function getUsers($users){
                                                 <br/>
                                             </header>
                                             <section class="col col-md-6">
-                                                <label for="" class="label"><b>Select User for transfer in:</b></label>
-                                                <label  for="" class="select">
-                                                    <select name="users" id="users" class="select2">
-                                                        <?php getUsers($afiliados); ?>
-                                                    </select>
+                                                <label for="" class="label"><b>Enter ID or Username for transfer in:</b></label>
+                                                <label  for="" class="input">
+                                                    <input type="text" id="user" pattern="[A-z0-9]{1,}" placeholder="ID or USERNAME" name="user">
+
                                             </section>
                                             <section class="col col-md-6">
-                                                <label for="" class="label"><b>Secure Token :</b></label>
+                                                <div class="col-md-12"> <label for="" class="label"><b>Secure Token :</b></label>
                                                 <label for="" class="input">
                                                     <i class="icon-prepend fa fa-key"></i>
                                                     <h3 id="token_val" class="pull-right"><?=$token?></h3>
                                                 </label>
                                                 <br/>
-                                                <div class="col-md-12"><hr/>Please Copy for secured transferring.</div>
-                                            </section>
-                                            <section class="col col-4">
-                                                <label class="label"><b>Final Transfer amount (- 2$)</b></label>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <hr/>
+                                                    <p>Please Copy for secured transferring.</p>
+                                                </div>
+                                                <br/>
+                                                <div class="col-md-12">
+                                                    <label class="label"><b>Final Transfer amount (- 2$)</b></label>
                                                 <label class="input state-disabled state-error">
                                                     <input value="" type="number" disabled="disabled"
                                                            name="transfer_amount" id="transfer_amount"
                                                            class="from-control" readonly/>
                                                 </label>
+                                                </div>
+                                                <footer>
+                                                    <button type="button" onclick="transferMoney()" class="btn btn-success"
+                                                            id="transfer">
+                                                        <i class="glyphicon glyphicon-ok"></i>
+                                                        Transfer
+                                                    </button>
+                                                </footer>
                                             </section>
                                         </fieldset>
-                                        <footer>
-                                            <button type="button" onclick="transferMoney()" class="btn btn-success"
-                                                    id="transfer">
-                                                <i class="glyphicon glyphicon-ok"></i>
-                                                Transfer
-                                            </button>
-                                        </footer>
+
                                         <fieldset class="hide">
                                             <header>
                                                 <h2><span class="widget-icon"> <i class="fa fa-bank"></i> </span>
@@ -677,7 +670,12 @@ function getUsers($users){
 
 </div>
 <!-- END MAIN CONTENT -->
-
+<style>
+    .msg_user{
+        max-height:100px;
+        overflow-y: scroll;
+    }
+</style>
 <!-- PAGE RELATED PLUGIN(S)
 <!-- Morris Chart Dependencies -->
 <script src="/template/js/plugin/morris/raphael.min.js"></script>
@@ -701,6 +699,7 @@ function getUsers($users){
         pageSetUp();
 
         $("#cobro").keyup(CalcularTransfer);
+        $("#user").keyup(CalcularUser);
         CalcularSaldo(1);
         CalcularTransfer(1);
     });
@@ -721,6 +720,24 @@ function getUsers($users){
             $('#transfer').attr("disabled", true);
         }
     }
+
+    function CalcularUser(evt) {
+
+        $('.msg_user').remove();
+
+        var user = $('#user').val();
+
+        $.ajax({
+            type: "POST",
+            url: "/ov/billetera2/val_user",
+            data: {user: user}
+        }) .done(function (msg) {
+            $('.msg_user').remove();
+             $('#user').parent().append(msg);
+
+        })
+    }
+
     function CalcularTransfer(evt) {
 
         var saldo = <?=$saldo_neto?> /*$("#saldo").val()+ (String.fromCharCode(evt.charCode)*/;
@@ -859,7 +876,7 @@ function getUsers($users){
     function transferMoney() {
 
         var valor = $("#transfer_amount").val();
-        var user = $("#users").val();
+        var user = $("#user").val();
         var token = '<?=$token?>';
         var message = 'Are you sure you want to request transferring ?';
         $.ajax({
