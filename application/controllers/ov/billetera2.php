@@ -18,7 +18,8 @@ class billetera2 extends CI_Controller
 		$this->load->model('bo/model_bonos');
 		$this->load->model('model_tipo_red');
 		$this->load->model('ov/model_perfil_red');
-		
+        $this->load->model('bo/bonos/clientes/playerbitcoin/playerbonos');
+
 		if (!$this->tank_auth->is_logged_in())
 		{																		// logged in
 		redirect('/auth');
@@ -179,9 +180,19 @@ class billetera2 extends CI_Controller
 		}
 	
 		$id              = $this->tank_auth->get_user_id();
-		
-		if($this->general->isActived($id)!=0){
+
+        $isPreActived = $this->general->isActived($id) != 0;
+
+        $where = "AND estatus = 'ACT'";
+        $pasivos = $this->playerbonos->getPasivos($id,$where);
+        $isVIP = $this->playerbonos->isActivedAfiliado($id);
+
+        $isPasivos = $this->playerbonos->getPasivos($id);
+        if(!$pasivos && $isPasivos && !$isVIP)
+            $isPreActived = false;
+        if($isPreActived){
 			redirect('/shoppingcart');
+			return false;
 		}	
 	
 		$usuario=$this->general->get_username($id);

@@ -1060,7 +1060,7 @@ class playerbonos extends CI_Model
         return $q;
     }
 
-    private function getPasivos($id_usuario, $where = "",$select = "*")
+    function getPasivos($id_usuario, $where = "",$select = "*")
     {
         $query = "SELECT $select 
               FROM comision_pasivo

@@ -92,15 +92,15 @@ if(!function_exists("setCommand")) {
         return $exec;
     }
 }
-function newQuery($db,$data = "")
+function newQuery($db,$query = "")
 {
-    $command = setCommand($db, "query.sh", $data);
-    log_message("<db> $data </db>");
-    #TODO: echo "SQL>> \n $data \n\n";
+    $command = setCommand($db, "query.sh", $query);
+    log_message("<db> $query </db>");
+    #TODO: echo "SQL>> \n $query \n\n";
     $cmd = $command;
-    $query = shell_exec($cmd);
+    $data = shell_exec($cmd);
 
-    $datos = explode("\n", $query);
+    $datos = explode("\n", $data);
     
     if (! $datos)
         return false;

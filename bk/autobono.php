@@ -1143,6 +1143,354 @@ class autobono
 
     }
 
+
+    private function setRecompraTickets($id_usuario, $pasivo, $fechaFin = false)
+    {
+        if(!$fechaFin)
+            $fechaFin = $this->getLastDayUTC();
+
+        $timeInit = strtotime($pasivo["initdate"]);
+        $initdate = date('Y-m-d', $timeInit);
+        $id_venta = $pasivo["reference"];
+        $fecha_venta = date_create($initdate);
+        $fecha_actual = date_create($fechaFin);
+
+
+        $interval = date_diff($fecha_venta, $fecha_actual);
+        $tiempo = $interval->format('%d');
+
+        $factor = 30;
+        $corte = $tiempo % $factor;
+        echo ("\n is recompra ($id_venta) ? $initdate - $fechaFin ::> $tiempo day(s)");
+        if ($corte == 0):
+            $where = "AND v.id_venta = $id_venta";
+            $itemsPSR = $this->getPSRuser($id_usuario, $where);
+            $id_mercancia = $itemsPSR ? $itemsPSR[1]["id_mercancia"] : 2;
+            $this->setAutoTicket($id_usuario, $id_mercancia);
+            $this->deteleTickets($id_usuario, $fechaFin);
+        endif;
+    }
+
+    private function resetTransfers()
+    {
+        $query = "DELETE FROM transaccion_billetera WHERE tipo in ('TKN','TRN')";
+        newQuery($this->db, $query);
+    }
+
+    private function deteleTickets($id_usuario, $fechaFin)
+    {
+        $query = "DELETE FROM ticket 
+                        WHERE date_final < '$fechaFin' 
+                        AND estatus = 'DES' AND user_id = $id_usuario";
+        newQuery($this->db, $query);
+    }
+
+    private function getRedTodo($id_usuario, $red = 1)
+    {
+        $limit = false;
+        $nivel = 1;
+        $red_todo = array();
+        while (!$limit):
+            $this->getAfiliadosBy($id_usuario, $nivel, "RED", "", 2, $red);
+            $afiliados = $this->getAfiliados();
+            $json = json_encode($afiliados);
+            echo("\n Nivel $nivel : $json ");
+            if (!$afiliados):
+                $limit = true;
+                break;
+            endif;
+
+            $afiliados = implode(",", $afiliados);
+            array_push($red_todo, $afiliados);
+            $nivel++;
+        endwhile;
+        return $red_todo;
+    }
+
+    private function getMontoMercanciaRed($red_afiliados, $inicio, $fin, $tipo = false, $item = false, $where = "")
+    {
+        $total = 0;
+        foreach ($red_afiliados as $n => $afiliados):
+            $nivel = $n + 1;
+            $ventas = $this->getVentaMercancia($afiliados, $inicio, $fin, $tipo, $item, $where);
+
+            if (!$ventas)
+                continue;
+
+            $monto = 0;
+            foreach ($ventas as $venta) :
+                $monto += $venta["costo"];
+            endforeach;
+
+            $total += $monto;
+            echo("\n Nivel $nivel : $afiliados -> $monto");
+        endforeach;
+        return $total;
+    }
+
+    private function isCondicionesRango($id_rango, $valor = 0)
+    {
+        $cumple = false;
+        $condiciones = $this->getTitulo(false, "id > $id_rango OR orden > $id_rango");
+        foreach ($condiciones as $condicion) {
+
+            $regla = $condicion["valor"];
+            $reglaMonto = $valor - $regla;
+            $isRegla = ($reglaMonto >= 0);
+
+            $id_rango = $condicion["id"];
+            echo("\n Rango ? $id_rango : $valor > $regla ? [[ $isRegla ]]");
+
+            if (!$isRegla)
+                break;
+
+            echo("\n Rango estimated :: $id_rango");
+            $cumple = $id_rango;
+
+        }
+        return $cumple;
+    }
+
+    private function setExpiredPSR($id_usuario)
+    {
+        $where = "order by reference DES";
+        $pasivos = $this->getPasivos($id_usuario, $where);
+        if (!$pasivos)
+            return 0;
+
+        $pasivo = $pasivos[1];
+        $fecha_fin = $pasivo["enddate"];
+
+        $fecha_corte = date_create($fecha_fin);
+        $fecha_actual = date_create(date('Y-m-d'));
+
+        $interval = date_diff($fecha_corte, $fecha_actual);
+        $tiempo = $interval->format('%d');
+
+        $expiredDay = $tiempo >= 5;
+        $expiredDay &= $this->isActivedAfiliado($id_usuario);
+        $alertDay = $tiempo >= 0;
+        $vip = 2;
+        if ($expiredDay):
+            $success = $this->kill_afiliado($id_usuario,$vip);
+            if($success):
+                $this->trash_afiliado($id_usuario,$vip);
+            endif;
+        elseif($alertDay):
+            $count = 5 - $tiempo;
+            $this->notificarExpiredVIP($id_usuario,$count);
+        endif;
+
+        return $tiempo;
+    }
+
+    function ConsultarRedAfiliado($id){
+        $query = "select id_red from afiliar where id_afiliado=$id";
+        $q = newQuery($this->db, $query);
+        return $q;
+    }
+
+    function cantidadRedesUsuario($id)
+    {
+        $query = "SELECT af.id_red as id , r.nombre as nombre 
+                    FROM afiliar af, tipo_red r 
+                    where id_afiliado in ($id)
+                    and r.id = af.id_red
+                  group by id_red";
+        $q=newQuery($this->db, $query);
+        return $q;
+    }
+
+    function trash_afiliado($id,$red){
+        $redesUsuario = $this->cantidadRedesUsuario($id);
+        $redes=count($redesUsuario);
+        $isRedes = $red == 0;
+        $oneRed = $redes == 1;
+        if($oneRed || $isRedes):
+            echo ("KILL ALL REDES ($id)\n");
+            $this->kill_redes_afiliado($id);
+            return true;
+        endif;
+
+        echo ("KILL ($id) IN $red \n");
+        $this->kill_afiliadonred($id,$red);
+            
+    }
+
+    function kill_redes_afiliado($id){
+        newQuery($this->db,"delete from users where id = ".$id);
+        newQuery($this->db,"delete from user_profiles where user_id not in (select id from users)");
+        newQuery($this->db,"delete from afiliar where id_afiliado not in (select id from users)");
+        newQuery($this->db,"delete from cross_perfil_usuario where id_user not in (select id from users)");
+        newQuery($this->db,"delete from estilo_usuario where id_usuario not in (select id from users)");
+        newQuery($this->db,"delete from coaplicante where id_user not in (select id from users)");
+        newQuery($this->db,"delete from cross_tel_user where id_user not in (select id from users)");
+        newQuery($this->db,"delete from cross_dir_user where id_user not in (select id from users)");
+        newQuery($this->db,"delete from billetera where id_user not in (select id from users)");
+        newQuery($this->db,"delete from cross_rango_user where id_user not in (select id from users)");
+        newQuery($this->db,"delete from cross_img_user where id_user not in (select id from users)");
+        newQuery($this->db,"delete from cat_img where id_img not in (select id_img from cross_img_user union select id_cat_imagen from cross_merc_img)");
+        //newQuery($this->db,"delete from red where id_usuario = ".$id);
+        return true;
+    }
+    function kill_afiliadonred($id,$red){
+        newQuery($this->db,"delete from afiliar where id_afiliado = ".$id." and id_red = ".$red);
+        #TODO:
+        #$query = "delete from red where id_usuario = " . $id . " and id_red = " . $red;
+        #newQuery($this->db, $query);
+    }
+    
+    function kill_afiliado($id,$red){
+        //echo "dentro de admin kill ";
+        $redes_afiliado = $this->ConsultarRedAfiliado($id);
+        $isRedes = $red == 0;
+        if (!$isRedes):
+            $flowCompress = $this->flowCompress($id, $red);
+            $success = ($flowCompress) ? true : false;
+            echo "COMPRESS IN:  ($id) $red \n";
+            return $success;
+        endif;
+
+        $fails=0;
+        foreach($redes_afiliado as $red_afiliado):
+            //echo "red: $id_red";
+            $id_red = $red_afiliado["id_red"];
+            $flowCompress = $this->flowCompress($id, $id_red);
+            if(!$flowCompress):
+                echo "FAIl COMPRESS: ($id) $id_red \n";
+                $fails++;
+            endif;
+        endforeach;
+        echo "COMPRESS ALL : ($id) ? FAILS : $fails \n";
+        $sucess = ($fails == 0) ? true : false;
+        return $sucess;
+    }
+
+    function buscarEspacios($id,$red,$espacios,$cupos){
+        //echo "dentro de buscar espacios	";
+        $padre = $this->ConsultarPadre($id , $red);
+        $hijos = $this->ConsultarHijos($padre, $red);
+        $frontales = count($hijos)-1;
+
+        $isEspacios = $espacios <> 0;
+        if($isEspacios):
+            echo ("ROTAR PADRES :: $id [$red] -> $cupos - $espacios \n");
+            $padre = $this->rotarPadres($espacios,$padre,$frontales,$cupos,$red);
+        endif;
+        return $padre;
+    }
+
+    function rotarPadres($espacios,$padre,$frontales,$cupos,$red){
+        //echo "dentro de rotar padres";
+        $isPadre = $padre <> 2;
+        while ($isPadre):
+            //echo "padre: ".$padre." ";
+            $totalCupo = $frontales + $cupos;
+            $isEspacio = $totalCupo <= $espacios;
+            if ($isEspacio):
+                echo ("PADRE ROTADO:: $padre [$red]\n");
+                return $padre;
+            endif;
+
+            $padre = $this->ConsultarPadre($padre, $red);
+            $hijos = $this->ConsultarHijos($padre, $red);
+            $frontales = count($hijos);
+            $isPadre = $padre <> 2;
+        endwhile;
+        //echo "padre : ".$padre." ";
+        return $padre;
+    }
+
+    function ConsultarPadre($id , $id_red){
+        $query = "select debajo_de from afiliar
+                    where id_afiliado=$id 
+                    and id_red = $id_red";
+        $q = newQuery($this->db, $query);
+        $id_padre = $q;
+        return $id_padre ? $id_padre[1]["debajo_de"] : 2;
+    }
+
+
+    function flowCompress($id,$red){
+
+        //echo "dentro de flow compress ";
+        $hijos = $this->ConsultarHijos($id,$red);
+        $lados = $this->ObtenerFrontalesRed($red);
+        $espacio = 2;
+        if($hijos) :
+            $frontal = $lados ? $lados[1]["frontal"] : 0;
+            $nHijos = count($hijos);
+            $this->buscarEspacios($id,$red, $frontal, $nHijos);
+        endif;
+
+        //echo "padre: ".$espacio."	";
+        $setHijos = $this->ConsultarRedDebajo($id,$red);
+        $success = true;
+        if ($hijos):
+            $nhijos = $setHijos ? $setHijos[1]["hijos"] : 0;
+            echo ("SET COMPRESS :: $id [$red] -> $nHijos - $hijos ($espacio) \n");
+            $success = $this->actualizarHijos($id,$espacio, $nhijos,$red,$hijos);
+        endif;
+        echo ("SUCCESS COMPRESS ? [[ $success ]] \n");
+        return $success;
+
+    }
+
+    function consultarVacio($id,$espacio,$red,$i){
+        $debajo = $this->ConsultarIdPadre($id , $red);
+        $debajo_de = $debajo[1]["debajo_de"];
+        $lado = $debajo[1]["lado"];
+        $ladoVacio = ($debajo_de == $espacio) ? $lado : $i;
+        return $ladoVacio;
+
+    }
+
+    function actualizarHijos($id,$espacio,$setHijos,$red,$hijos){
+
+        $consultarHijos = $this->ConsultarHijos($espacio, $red);
+        $ladoTotal = count($consultarHijos);
+        $ladoVacio = $this->consultarVacio($id,$espacio,$red,$ladoTotal);
+        echo ("lados: \nvacio ($ladoVacio)\ntotal ($ladoTotal) \n");
+        //echo "dentro de actualizarHijos	:".$i."	cupos: ".$j." setHijos: ".$setHijos."	";
+        $this->setCompressHijos($espacio, $red, $setHijos);
+        foreach($hijos as $hijo):
+            $id_afiliado = $hijo["id_afiliado"];
+            $lado = $ladoVacio;
+            if($ladoVacio==$ladoTotal):
+                echo ("lado vacio ($ladoVacio) = total ($ladoTotal) \n");
+                $lado = $ladoTotal;
+            endif;
+            $this->setCompressChange($id_afiliado, $red, $lado);
+
+            $ladoVacio=$ladoTotal;
+            $ladoTotal++;
+        endforeach;
+        return true;
+    }
+
+    function ConsultarRedDebajo($id,$red){
+        $query = "select group_concat(id_afiliado) as hijos 
+                    from afiliar 
+                    where debajo_de=$id and id_red = $red";
+        $q = newQuery($this->db, $query);
+        return $q;
+    }
+
+    function ObtenerFrontalesRed($id)
+    {
+        $query = "select frontal, profundidad from tipo_red where id= $id";
+        $q=newQuery($this->db, $query);
+        return $q;
+    }
+
+    function ConsultarHijos($id,$red){
+        $query = "select id_afiliado from afiliar 
+                    where debajo_de=$id and id_red = $red";
+        $q = newQuery($this->db, $query);
+        return $q;
+    }
+
+
     private function getValorBonoRangos($parametro){
 
         $id_bono = 3;
@@ -1368,6 +1716,8 @@ class autobono
 
         if(!$pasivos) :
             #TODO: proceso bloquear y 5 dias para desactivar vip
+            $this->setExpiredPSR($id_usuario);
+
             return $monto;
         endif;
 
@@ -1723,7 +2073,7 @@ class autobono
     private function desactivarPasivo($id_pasivo)
     {
         $query = "UPDATE comision_pasivo set
-                            estatus = 'DES' 
+                            estatus = 'DES' , enddate = now()
                             WHERE id = $id_pasivo";
         newQuery($this->db, $query);
     }
@@ -2560,6 +2910,22 @@ class autobono
         return $datetime;
     }
 
+    private function notificarExpiredVIP($id, $count = 0, $fecha = false)
+    {
+        if(!$fecha)
+            $fecha = $this->getLastDayUTC();
+
+        $msj = "Your VIP account is soon expiring, Please! gets a PSR for activate it";
+        $link = "/shoppingcart";
+        $subject = "VIP EXPIRING WARNING : missing $count days";
+
+        $format = "Y-m-d H:i:s";
+        $fecha = $this->getNextTime($fecha,"day", $format);
+        $this->notificar($id, $msj, $subject, $fecha, $link);
+
+        return true;
+    }
+
     private function notificarJackpot( $ganador,$valor = 0, $fecha = false)
     {
         if(!$fecha)
@@ -2616,111 +2982,23 @@ class autobono
         $this->insertDatos("bitcoin_stats",$data);
     }
 
-    private function setRecompraTickets($id_usuario, $pasivo, $fechaFin = false)
+    private function setCompressChange($id_afiliado, $red, $lado)
     {
-        if(!$fechaFin)
-            $fechaFin = $this->getLastDayUTC();
-
-        $timeInit = strtotime($pasivo["initdate"]);
-        $initdate = date('Y-m-d', $timeInit);
-        $id_venta = $pasivo["reference"];
-        $fecha_venta = date_create($initdate);
-        $fecha_actual = date_create($fechaFin);
-
-
-        $interval = date_diff($fecha_venta, $fecha_actual);
-        $tiempo = $interval->format('%d');
-
-        $factor = 30;
-        $corte = $tiempo % $factor;
-        echo ("\n is recompra ($id_venta) ? $initdate - $fechaFin ::> $tiempo day(s)");
-        if ($corte == 0):
-            $where = "AND v.id_venta = $id_venta";
-            $itemsPSR = $this->getPSRuser($id_usuario, $where);
-            $id_mercancia = $itemsPSR ? $itemsPSR[1]["id_mercancia"] : 2;
-            $this->setAutoTicket($id_usuario, $id_mercancia);
-            $this->deteleTickets($id_usuario, $fechaFin);
-        endif;
-    }
-
-    private function resetTransfers()
-    {
-        $query = "DELETE FROM transaccion_billetera WHERE tipo in ('TKN','TRN')";
+        echo ("POSITION SET ($id_afiliado)[$red] -> $lado \n");
+        $query = "update afiliar set lado = $lado 
+                      where id_afiliado = $id_afiliado 
+                      and id_red = $red";
         newQuery($this->db, $query);
+        return true;
     }
 
-    private function deteleTickets($id_usuario, $fechaFin)
+    private function setCompressHijos($id, $red, $hijos)
     {
-        $query = "DELETE FROM ticket 
-                        WHERE date_final < '$fechaFin' 
-                        AND estatus = 'DES' AND user_id = $id_usuario";
+        echo ("AFFILIATES MOVED ($id)[$red] -> $hijos \n");
+        $query = "update afiliar set debajo_de = $id 
+                      where id_afiliado in ($hijos) 
+                      and id_red = $red";
         newQuery($this->db, $query);
-    }
-
-    private function getRedTodo($id_usuario, $red = 1)
-    {
-        $limit = false;
-        $nivel = 1;
-        $red_todo = array();
-        while (!$limit):
-            $this->getAfiliadosBy($id_usuario, $nivel, "RED", "", 2, $red);
-            $afiliados = $this->getAfiliados();
-            $json = json_encode($afiliados);
-            echo("\n Nivel $nivel : $json ");
-            if (!$afiliados):
-                $limit = true;
-                break;
-            endif;
-
-            $afiliados = implode(",", $afiliados);
-            array_push($red_todo, $afiliados);
-            $nivel++;
-        endwhile;
-        return $red_todo;
-    }
-
-    private function getMontoMercanciaRed($red_afiliados, $inicio, $fin, $tipo = false, $item = false, $where = "")
-    {
-        $total = 0;
-        foreach ($red_afiliados as $n => $afiliados):
-            $nivel = $n + 1;
-            $ventas = $this->getVentaMercancia($afiliados, $inicio, $fin, $tipo, $item, $where);
-
-            if (!$ventas)
-                continue;
-
-            $monto = 0;
-            foreach ($ventas as $venta) :
-                $monto += $venta["costo"];
-            endforeach;
-
-            $total += $monto;
-            echo("\n Nivel $nivel : $afiliados -> $monto");
-        endforeach;
-        return $total;
-    }
-
-    private function isCondicionesRango($id_rango, $valor = 0)
-    {
-        $cumple = false;
-        $condiciones = $this->getTitulo(false, "id > $id_rango OR orden > $id_rango");
-        foreach ($condiciones as $condicion) {
-
-            $regla = $condicion["valor"];
-            $reglaMonto = $valor - $regla;
-            $isRegla = ($reglaMonto >= 0);
-
-            $id_rango = $condicion["id"];
-            echo("\n Rango ? $id_rango : $valor > $regla ? [[ $isRegla ]]");
-
-            if (!$isRegla)
-                break;
-
-            echo("\n Rango estimated :: $id_rango");
-            $cumple = $id_rango;
-
-        }
-        return $cumple;
     }
 
 
