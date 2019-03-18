@@ -49,10 +49,11 @@
 
 											<ul class="steps">
 
-												<li data-target="#step1" class="active"><span
-													class="badge badge-info">1</span>
+												<li data-target="#step1" class="active">
+                                                    <span class="badge badge-info">1</span>
 													Registration data
-													<span class="chevron"></span></li>
+													<span class="chevron"></span>
+                                                </li>
 												<!--<li class="hide" data-target="#step2" >
 												<span class="badge badge-info">2</span>
 													Personal information
@@ -141,9 +142,16 @@
 															</section>
 															<section class="col col-10" style="text-align: justify">
 																[[agreement]]</section>
-														</fieldset>                                                                                                        
-                                                                                                        <legend>Personal information of the affiliate</legend>
-														<fieldset>															
+														</fieldset>
+                                                        <fieldset>
+                                                            <section class="col col-md-4"></section>
+                                                            <section class="col col-md-4">
+                                                                <a href="javascript:void(0)" onclick="afiliar()"
+                                                                   id="afiliar_boton" class="btn btn-success btn-block">Register</a>
+                                                            </section>
+                                                        </fieldset>
+                                                        <legend class="hide">Personal information of the affiliate</legend>
+														<fieldset class="hide">
 															<div class="row">
 																<section class="col col-4">
 																	<label class="input"> <i

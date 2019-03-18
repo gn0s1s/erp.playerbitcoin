@@ -153,7 +153,39 @@ class general extends CI_Model
 			return false;
 		}	
 	}
-	function get_tipo($id)
+
+    function setImage($id)
+    {
+        $image = $this->model_perfil_red->get_images($id);
+        $img_perfil = "/template/img/avatars/male.png";
+        foreach ($image as $img):
+            $img_url = $img->url;
+            $exists = file_exists(getcwd() . $img_url);
+            if ($exists):
+                $img_perfil = $img->url;
+            endif;
+        endforeach;
+        return $img_perfil;
+    }
+
+    function setImageUser($id)
+    {
+        $image = $this->model_perfil_red->get_images($id);
+        $img_perfil = "/template/img/avatars/male.png";
+        foreach ($image as $img):
+            $img_user = $img->img;
+            $cadena = explode(".", $img_user);
+            $isUserNamed =  $cadena[0] == "user";
+            $img_url = $img->url;
+            $exists = file_exists(getcwd() . $img_url);
+            if ($isUserNamed && $exists):
+                $img_perfil = $img->url;
+            endif;
+        endforeach;
+        return $img_perfil;
+    }
+
+    function get_tipo($id)
 	{
 		$q=$this->db->query('select id_tipo_usuario from user_profiles where user_id = '.$id);
 		return $q->result();

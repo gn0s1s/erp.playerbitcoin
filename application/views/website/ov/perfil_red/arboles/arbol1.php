@@ -28,14 +28,22 @@
 					<!-- widget options:
                                         usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
                     
-                                        data-widget-colorbutton="false"
-                                        data-widget-editbutton="false"
-                                        data-widget-togglebutton="false"
-                                        data-widget-deletebutton="false"
-                                        data-widget-fullscreenbutton="false"
-                                        data-widget-custombutton="false"
-                                        data-widget-collapsed="true"
-                                        data-widget-sortable="false"
+                               <?php
+
+                    function setImageUser($img_url)
+                    {
+                        $img_perfil = "/template/img/avatars/male.png";
+                        if (strlen($img_url) < 3)
+                            return $img_perfil;
+
+                        $exists = file_exists(getcwd() . $img_url);
+                        if ($exists):
+                            $img_perfil = $img_url;
+                        endif;
+                        return $img_perfil;
+                    }
+
+                    ?>
                     
                                     -->
                                    <header>
@@ -70,11 +78,17 @@
                                     									<? $aux = 0;
                                     									foreach ( $afiliadostree as $key ) {
                                     										$aux ++;
-                                    										$key->img ? $img = $key->img : $img = "/template/img/empresario.jpg";
+                                    										$img = setImageUser($key->img);
                                     										if ($key->debajo_de == $id) {	?>
-                                    											<li id="t<?=$key->id_afiliado?>"><a class="quitar" style="background: url('<?=$img?>'); background-size: cover; background-position: center;" onclick="subtree(<?=$key->id_afiliado?>, 1)" href="#"></a>
+                                    											<li id="t<?=$key->id_afiliado?>">
+                                                                                    <a class="quitar"
+                                                                                       style="background: url('<?=$img?>');
+                                                                                               background-size: cover;
+                                                                                               background-position: center;"
+                                                                                       onclick="subtree(<?=$key->id_afiliado?>, 1)" href="#"></a>
                                     												<div onclick="detalles(<?=$key->id_afiliado?>)"
-                                    													class="<?=($key->directo==$id) ? 'todo1' : 'todo'?>"><?=$key->afiliado?> <?=$key->afiliado_p?><br />Detalles
+                                    													class="<?=($key->directo==$id) ? 'todo1' : 'todo'?>">
+                                                                                        <?=$key->username?><br />Detalles
                                     												</div>
                                     											</li>
                                     											
@@ -414,7 +428,7 @@ function detalles(id)
 	$.ajax({
 		type: "POST",
 		url: "/ov/perfil_red/detalle_usuario",
-		data: {id: id},
+		data: {id: id,red: <?=$id_red?>},
 	})
 	.done(function( msg )
 	{

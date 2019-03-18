@@ -384,13 +384,19 @@ class model_perfil_red extends CI_Model
 	function get_afiliados($id, $id_afiliado)
 	{
 		
-		$q=$this->db->query("select *,(select nombre from user_profiles where user_id=id_afiliado) afiliado,
-			(select apellido from user_profiles where user_id=id_afiliado) afiliado_p,
-			(select nombre from user_profiles where user_id=debajo_de) debajo_de_n,
-			(select apellido from user_profiles where user_id=debajo_de) debajo_de_p,
+		$q=$this->db->query("select f.*,
+            (select nombre from user_profiles where user_id=f.id_afiliado) afiliado,
+			(select apellido from user_profiles where user_id=f.id_afiliado) afiliado_p,
+			(select nombre from user_profiles where user_id=f.debajo_de) debajo_de_n,
+			(select apellido from user_profiles where user_id=f.debajo_de) debajo_de_p,
 			(select (select url from cat_img b where a.id_img=b.id_img) url from cross_img_user a 
-				where id_user = id_afiliado order by a.id_img desc limit 1) img
-			from afiliar where id_red=".$id." and debajo_de=".$id_afiliado." order by lado");
+				where a.id_user = f.id_afiliado order by a.id_img desc limit 1) img
+				,u.username
+			from afiliar f, users u 
+			where f.id_red=".$id." 
+			    and f.debajo_de=".$id_afiliado." 
+			    and u.id = f.id_afiliado
+			order by lado");
 		return $q->result();
 	}
 	

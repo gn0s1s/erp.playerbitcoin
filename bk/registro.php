@@ -305,7 +305,7 @@ class registro {
     private function setVIPDefault($id, $id_debajo, $lado, $directo)
     {
         $red_vip = 2; # AFILIAR VIP
-        $this->insert_dato_afiliar($id, $red_vip, $id_debajo, $lado, $directo);
+        $this->dato_afiliar($id, $red_vip, $id_debajo, $lado, $directo);
 
         $id_venta = $this->insertVenta($id);
         $item = 1;
@@ -539,16 +539,24 @@ class registro {
     }
     
     private function insert_dato_afiliar($id, $mi_red, $id_debajo, $lado, $directo) { #insert_dato_afiliar
-        $dato_afiliar =array(
-            "id_red"      => $mi_red,
-            "id_afiliado" => $id,
-            "debajo_de"   => $id_debajo,
-            "directo"     => $directo,
-            "lado"        => $lado
+        $fields =array(
+            "id_red",
+            "id_afiliado",
+            "debajo_de",
+            "directo",
+            "lado"
         );
-        
+
+        $dato_afiliar =array(
+            $mi_red,
+            $id,
+            $id_debajo,
+            $directo,
+            $lado
+        );
+
         //var_dump($dato_afiliar); exit;
-        $this->db->insert("afiliar",$dato_afiliar);
+        $this->insertDatos("afiliar",$fields,$dato_afiliar);
         return true;
         #echo "afiliar si|";
     }
@@ -812,7 +820,7 @@ class registro {
                 'ano'		  => $año,
                 'id_afiliado' => $id
             );
-            $this->db->insert('cat_retenciones_historial', $datos);
+           $this->insertDatos('cat_retenciones_historial', $datos);
             
         }
         
@@ -858,7 +866,7 @@ class registro {
                     "estatus"		=> "ACT",
                     "premium"			=> '2'
                 );
-                $this->db->insert("red",$dato_red);
+               $this->insertDatos("red",$dato_red);
             }
             
             /*################### FIN DATO RED #########################*/
@@ -882,7 +890,7 @@ class registro {
             );
             
             
-            $this->db->insert("afiliar",$dato_afiliar);
+           $this->insertDatos("afiliar",$dato_afiliar);
             
             
             /*################### DATO TELEFONOS #########################*/
@@ -898,7 +906,7 @@ class registro {
                         "estatus"		=> "ACT"
                     );
                     
-                    $this->db->insert("cross_tel_user",$dato_tel);
+                   $this->insertDatos("cross_tel_user",$dato_tel);
                 }
                 
             }
@@ -912,7 +920,7 @@ class registro {
                         "numero"		=> $movil,
                         "estatus"		=> "ACT"
                     );
-                    $this->db->insert("cross_tel_user",$dato_tel);
+                   $this->insertDatos("cross_tel_user",$dato_tel);
                 }
             }
             
@@ -927,7 +935,7 @@ class registro {
                 "estado"    => $_POST['estado'],
                 "pais"      =>$_POST['pais']
             );
-            $this->db->insert("cross_dir_user",$dato_dir);
+           $this->insertDatos("cross_dir_user",$dato_dir);
             /*################### FIN DATO DIRECCION #########################*/
             
             /*################### DATO BILLETERA #########################*/
@@ -936,7 +944,7 @@ class registro {
                 "estatus"		=> "DES",
                 "activo"		=> "No"
             );
-            $this->db->insert("billetera",$dato_billetera);
+           $this->insertDatos("billetera",$dato_billetera);
             /*################### FIN DATO BILLETERA #########################*/
             
             /*################### FIN DATO COBRO #########################*/
@@ -956,7 +964,7 @@ class registro {
                 "entregado"		=> 1,
                 "estatus"		=> "ACT"
             );
-            $this->db->insert("cross_rango_user",$dato_rango);
+           $this->insertDatos("cross_rango_user",$dato_rango);
             /*################### FIN DATO RANGO #########################*/
             $dato_rango=array(
                 "url"		=> "/template/img/empresario.jpg",
@@ -965,13 +973,13 @@ class registro {
                 "extencion"		=> "jpg",
                 "estatus"		=> "ACT"
             );
-            $this->db->insert("cat_img",$dato_rango);
-            $id_img = $this->db->insert_id();
+           $this->insertDatos("cat_img",$dato_rango);
+            $id_img =$this->insertDatos_id();
             $dato_rango=array(
                 "id_user"	=> $id,
                 "id_img"	=> $id_img
             );
-            $this->db->insert("cross_img_user",$dato_rango);
+           $this->insertDatos("cross_img_user",$dato_rango);
             return true;
     }
     
@@ -1001,7 +1009,7 @@ class registro {
                 "estatus"		=> "ACT",
                 "premium"			=> '2'
             );
-            $this->db->insert("red",$dato_red);
+           $this->insertDatos("red",$dato_red);
         }
         
         /*################### FIN DATO RED #########################*/
@@ -1025,7 +1033,7 @@ class registro {
         );
         
         
-        $this->db->insert("afiliar",$dato_afiliar);
+       $this->insertDatos("afiliar",$dato_afiliar);
         
         
         /*################### DATO TELEFONOS #########################*/
@@ -1041,7 +1049,7 @@ class registro {
                     "estatus"		=> "ACT"
                 );
                 
-                $this->db->insert("cross_tel_user",$dato_tel);
+               $this->insertDatos("cross_tel_user",$dato_tel);
             }
             
         }
@@ -1055,7 +1063,7 @@ class registro {
                     "numero"		=> $movil,
                     "estatus"		=> "ACT"
                 );
-                $this->db->insert("cross_tel_user",$dato_tel);
+               $this->insertDatos("cross_tel_user",$dato_tel);
             }
         }
         
@@ -1070,7 +1078,7 @@ class registro {
             "estado"    => $_POST['estado'],
             "pais"      =>$_POST['pais']
         );
-        $this->db->insert("cross_dir_user",$dato_dir);
+       $this->insertDatos("cross_dir_user",$dato_dir);
         /*################### FIN DATO DIRECCION #########################*/
         
         /*################### DATO BILLETERA #########################*/
@@ -1079,7 +1087,7 @@ class registro {
             "estatus"		=> "DES",
             "activo"		=> "No"
         );
-        $this->db->insert("billetera",$dato_billetera);
+       $this->insertDatos("billetera",$dato_billetera);
         /*################### FIN DATO BILLETERA #########################*/
         
         
@@ -1090,7 +1098,7 @@ class registro {
             "entregado"		=> 1,
             "estatus"		=> "ACT"
         );
-        $this->db->insert("cross_rango_user",$dato_rango);
+       $this->insertDatos("cross_rango_user",$dato_rango);
         /*################### FIN DATO RANGO #########################*/
         
         return true;
@@ -1146,7 +1154,7 @@ class registro {
                 "directo"     => $this->tank_auth->get_user_id(),
                 "lado"        => $lado
             );
-            $this->db->insert("afiliar",$dato_afiliar);
+           $this->insertDatos("afiliar",$dato_afiliar);
             
             $q = newQuery($this->db,"select estatus from red where id_red = ".$mi_red." and id_usuario = ".$id);
             $red = $q;
@@ -1161,7 +1169,7 @@ class registro {
                     "estatus"		=> "ACT",
                     "premium"			=> '2'
                 );
-                $this->db->insert("red",$dato_red);
+               $this->insertDatos("red",$dato_red);
             }
             return true;
     }

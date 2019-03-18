@@ -9,7 +9,7 @@ if (! $secure) {
 }
 
 $function_exists = function_exists("setDir");
-echo "setDir ? [[ $function_exists ]] \n";
+#echo "setDir ? [[ $function_exists ]] \n";
 if(!$function_exists){
     function setDir(){
         $dir = str_replace("public_html", "erp.playerbitcoin", getcwd());

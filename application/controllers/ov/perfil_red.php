@@ -21,6 +21,8 @@ class perfil_red extends CI_Controller
 		$this->load->model('ov/modelo_dashboard');
 		$this->load->model('bo/model_tipo_usuario');		
 		$this->load->model('bo/bonos/titulo');
+        $this->load->model('bo/bonos/clientes/playerbitcoin/playerbonos');
+
 		if (!$this->tank_auth->is_logged_in()&&!isset($_POST['token']))
 		{																		// logged in
 		redirect('/auth');
@@ -387,34 +389,38 @@ class perfil_red extends CI_Controller
 	function detalle_usuario()
 	{
 
-		$image 			 = $this->model_perfil_red->get_images($_POST['id']);
-		
-		$img_perfil="/template/img/empresario.jpg";
-		foreach ($image as $img)
-		{
-			$cadena=explode(".", $img->img);
-			if($cadena[0]=="user")
-			{
-				$img_perfil=$img->url;
-			}
-		}
+        $id = isset($_POST['id']) ?  $_POST['id'] : false;
+        if(!$id):
+            echo "User not found";
+            return false;
+        endif;
 
-		$pais=$this->modelo_dashboard->get_user_country_code($_POST['id']);
-		
-		
-		$usuario =$this->model_perfil_red->datos_perfil($_POST['id']);
-		$edad    =$this->model_perfil_red->edad($_POST['id']);
-		$telefonos    =$this->model_perfil_red->telefonos($_POST['id']);
-		$dir    =$this->model_perfil_red->dir($_POST['id']);
-		$username = $this->general->username($_POST['id']);
-		$compras = $this->model_afiliado->ComprasUsuario($_POST['id']);
-		$comision  = $this->model_afiliado->ComisionUsuario($_POST['id']);
-		$bonos  = $this->model_afiliado->BonosUsuario($_POST['id']);
-		$puntos  = $this->model_afiliado->PuntosUsuario($_POST['id']);
-		$titulo=$this->titulo->getNombreTituloAlcanzadoAfiliado($_POST['id'],date('Y-m-d'));		
+        $img_perfil = $this->general->setImageUser($id);
+
+        $pais=$this->modelo_dashboard->get_user_country_code($id);
+
+		$isVip = isset($_POST['red']) ? $_POST['red']==2 : false;
+
+		if($isVip):
+        $vip = 2;
+		$isVip = $this->playerbonos->isAfiliadoenRed($id, $vip);
+		endif;
+
+        $this->template->set("vip",$isVip);
+
+		$usuario =$this->model_perfil_red->datos_perfil($id);
+		$edad    =$this->model_perfil_red->edad($id);
+		$telefonos    =$this->model_perfil_red->telefonos($id);
+		$dir    =$this->model_perfil_red->dir($id);
+		$username = $this->general->username($id);
+		$compras = $this->model_afiliado->ComprasUsuario($id);
+		$comision  = $this->model_afiliado->ComisionUsuario($id);
+		$bonos  = $this->model_afiliado->BonosUsuario($id);
+		$puntos  = $this->model_afiliado->PuntosUsuario($id);
+		$titulo=$this->titulo->getNombreTituloAlcanzadoAfiliado($id,date('Y-m-d'));
 		
 		$this->template->set("img_perfil",$img_perfil);
-		$this->template->set("id",$_POST['id']);
+		$this->template->set("id", $id);
 		$this->template->set("usuario",$usuario);
 		$this->template->set("username",$username[0]->username);
 		$this->template->set("compras",$compras);
@@ -1093,7 +1099,7 @@ class perfil_red extends CI_Controller
 		$ocupacion       = $this->model_perfil_red->get_ocupacion();
 		$tiempo_dedicado = $this->model_perfil_red->get_tiempo_dedicado();
 		$afiliados       = $this->model_perfil_red->get_afiliados($id_red, $id);
-		
+        $image = $this->model_perfil_red->get_images($id);
 		
 		$img_perfil="/template/img/empresario.jpg";
 		foreach ($image as $img)
@@ -1658,6 +1664,8 @@ class perfil_red extends CI_Controller
 		$this->template->set("red",$red);
 		$this->template->set("valor_retencion",$valor_retencion);
 		$this->template->build('website/ov/perfil_red/fases');
-	}	
-	
+	}
+
+
+
 }

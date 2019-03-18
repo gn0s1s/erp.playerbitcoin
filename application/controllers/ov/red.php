@@ -153,24 +153,17 @@ class red extends CI_Controller
 		$style         = $this->general->get_style($id);
 		//$afiliados     = $this->model_perfil_red->get_afiliados_($id_red, $id);
 		$afiliadostree = $this->model_perfil_red->get_afiliados($id_red, $id);
-	
-		$image=$this->model_perfil_red->get_images($id);
-		$user="/template/img/empresario.jpg";
-		foreach ($image as $img) {
-			$cadena=explode(".", $img->img);
-			if($cadena[0]=="user")
-			{
-				$user=$img->url;
-			}
-		}
-	
-		$this->template->set("user",$user);
+
+        $img_perfil = $this->general->setImage($id);
+
+        $this->template->set("id_red",$id_red);
+		$this->template->set("user",$img_perfil);
 		$this->template->set("style",$style);
 		$this->template->set("id",$id);
 		$this->template->set("frontales",$frontales);
 		//$this->template->set("afiliados",$afiliados);
 		$this->template->set("afiliadostree",$afiliadostree);
-		$this->template->set("img_perfil",$user);
+		$this->template->set("img_perfil",$img_perfil);
 		$this->template->set_theme('desktop');
 		$this->template->set_layout('website/main');
 		$this->template->set_partial('header', 'website/ov/header');

@@ -18,8 +18,11 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li class="active">
-								<a href="/"><i style="font-size: 2rem;" class="fa fa-home "></i>Home</a>
+								<a href="/"><i style="font-size: 2rem;" class="fa fa-btc "></i>Home</a>
 							</li>
+                            <li class="">
+                                <a href="/ov/dashboard"><i style="font-size: 2rem;" class="fa fa-home "></i>Dashboard</a>
+                            </li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<i style="font-size: 2rem;" class="fa fa-group "></i> Profile & Network<span class="caret"></span></a>

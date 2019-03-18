@@ -21,23 +21,30 @@
 		else if($puntos[0]->puntos == 0)
 			$puntos = $puntos[0]->puntosu;
 		else  $puntos = $puntos[0]->puntos;
-		
+
+		$fecha_init = 'Not Found';
+		if(isset($compras[0]->fecha))
+		    $fecha_init = $compras[0]->fecha;
+
+
 		if(!$compras)
 			$compras=0;
 		else if($compras[0]->compras== 0)
 				$compras= $compras[0]->comprast;
 		else $compras= $compras[0]->compras;
+
+
 					
 		?>
 		
 		<div class="row">Username: <b><?=$username;?></b></div>
-		<div class="row">Name: <b><?=$usuario[0]->nombre;?></b></div>
-		<div class="row">Surname: <b><?=$usuario[0]->apellido;?></b></div>
-		<div class="row">Birthdate: <b><?=$usuario[0]->nacimiento;?></b></div>
-		<div class="row">Age: <b><?=$edad[0]->edad;?></b></div>
+		<div class="row hide">Name: <b><?=$usuario[0]->nombre;?></b></div>
+		<div class="row hide">Surname: <b><?=$usuario[0]->apellido;?></b></div>
+		<div class="row hide">Birthdate: <b><?=$usuario[0]->nacimiento;?></b></div>
+		<div class="row hide">Age: <b><?=$edad[0]->edad;?></b></div>
 		<div class="row">Email: <b><?=$usuario[0]->email;?></b></div>
-		<div class="row">Address: <b><?=$direccion;?></b></div>
-		<div class="row">Fixed telephone(s): 
+		<div class="row hide">Address: <b><?=$direccion;?></b></div>
+		<div class="row hide">Fixed telephone(s):
 		<?php foreach ($telefonos as $key)
 		{
 			if($key->tipo=='Fijo')
@@ -46,7 +53,7 @@
 			}
 		} ?>
 		</div>
-		<div class="row">Mobile phone(s): 
+		<div class="row hide">Mobile phone(s):
 		<?php foreach ($telefonos as $key)
 		{
 			if($key->tipo=='Móvil')
@@ -54,13 +61,17 @@
 				echo "<b>".$key->numero."</b><br />";
 			}
 		} ?>
+            <?php if($vip) :?>
 		</div><br>
-		<div class="row">Purchases: $ <b><?=number_format($compras,2);?></b></div>
-		<div class="row">Commissions: $ <b><?=number_format($comision+$bonos,2);?></b></div>
-		<div class="row">Points of commissions:  <b><?=number_format($puntos,2);?></b></div>
-		<?php		
-		
-		if($titulo!=NULL){
+            <div class="row">PSR: $ <b><?= number_format($compras, 2); ?></b></div>
+            <div class="row">Recent PSR Date: <b><?= $fecha_init; ?></b> </b></div>
+            <div class="row hide">Commissions: $ <b><?= number_format($comision + $bonos, 2); ?></b></div>
+            <div class="row hide">Points of commissions: <b><?= number_format($puntos, 2); ?></b></div>
+            <?php
+        endif;
+
+        $isRanking = $titulo != NULL;
+        if($isRanking){
 		
 			echo '<ul id="sparks" class="">
 					<li class="sparks-info">

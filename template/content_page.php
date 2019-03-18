@@ -104,6 +104,12 @@
         </div>
         <!-- /Main content -->
 [[$CUSTOM]]
+<style>
+    #afiliar_boton {
+        padding: 1rem 0;
+        font-size: 18px;
+    }
+</style>
 <script>
 	var id = 0;
 
@@ -132,7 +138,81 @@
 <script type="text/javascript">
 	// DO NOT REMOVE : GLOBAL FUNCTIONS!
 
-	$(document).ready( function() {
+    function afiliar() {
+        $(".invalid").remove();
+
+        var ids = new Array(
+            //"#nombre",
+            //"#apellido",
+            //"#datepicker",
+            //"#keyword",
+            "#username",
+            "#email",
+            "#password",
+            "#confirm_password"
+        );
+        var mensajes = new Array(
+            //"Por favor ingresa tu nombre",
+            //"Por favor ingresa tu apellido",
+            //"Por favor ingresa tu fecha de nacimiento",
+            //"Por favor ingresa tu DNI",
+            "Please enter username",
+            "Please enter email",
+            "Please enter password",
+            "Please re-enter password");
+
+        var idss = new Array("#username");
+        var mensajess = new Array(
+            "El nombre de usuario no puede contener espacios en blanco");
+        var validacion_ = valida_espacios(idss,
+            mensajess);
+        var validacion = valida_vacios(ids,
+            mensajes);
+        if (validacion && validacion_) {
+            iniciarSpinner();
+            $(".steps").slideUp();
+            $(".steps").remove();
+            $(".actions").slideUp();
+            $(".actions").remove();
+            $("#myWizard").append('<div class="progress progress-sm progress-striped active"><div id="progress" class="progress-bar bg-color-darken"  role="progressbar" style=""></div></div>');
+
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "/afiliar.php",
+                    data: $('#nuevo_afiliado').serialize()
+                })
+                .done(
+                    function (msg) {
+
+                        $("#progress").attr('style', 'width: 100%');
+                        bootbox.dialog({
+                            message: msg,
+                            title: "Attention",
+                            buttons: {
+                                success: {
+                                    label: "Ok!",
+                                    className: "btn-success",
+                                    callback: function () {
+                                        location.href = "https://games.playerbitcoin.com/auth/login";
+                                        FinalizarSpinner();
+                                    }
+                                }
+                            }
+                        });
+                    });
+        } else {
+            $.smallBox({
+                title: "<h1>Attention</h1>",
+                content: "<h3>Please! check fields & try again </h3>",
+                color: "#C46A69",
+                icon: "fa fa-warning fadeInLeft animated",
+                timeout: 4000
+            });
+        }
+    }
+
+    $(document).ready( function() {
 					// Para local /controller.php",data:{fnct : "crear_user
 					// Produccion /auth/register
 					// fuelux
@@ -141,80 +221,9 @@
 
 					wizard .on( 'finished', function(e, data) {
 
-										$(".invalid").remove();
+                        afiliar();
 
-										var ids = new Array(
-												//"#nombre",
-												//"#apellido",
-												//"#datepicker",
-												//"#keyword",
-												"#username",
-												"#email", 
-												"#password",
-												"#confirm_password"
-
-										);
-										var mensajes = new Array(
-												//"Por favor ingresa tu nombre",
-												//"Por favor ingresa tu apellido",
-												//"Por favor ingresa tu fecha de nacimiento",
-												//"Por favor ingresa tu DNI",
-												"Please enter username",
-												"Please enter email",
-												"Please enter password",
-												"Please re-enter password");
-
-										var idss = new Array("#username");
-										var mensajess = new Array(
-												"El nombre de usuario no puede contener espacios en blanco");
-										var validacion_ = valida_espacios(idss,
-												mensajess);
-										var validacion = valida_vacios(ids,
-												mensajes);
-										if (validacion && validacion_) {
-											iniciarSpinner();
-											$(".steps").slideUp();
-											$(".steps").remove();
-											$(".actions").slideUp();
-											$(".actions").remove();
-											$("#myWizard") .append( '<div class="progress progress-sm progress-striped active"><div id="progress" class="progress-bar bg-color-darken"  role="progressbar" style=""></div></div>');
-
-											$ .ajax(
-															{
-																type : "POST",
-																url : "/afiliar.php",
-																data : $( '#nuevo_afiliado').serialize()
-															})
-													.done(
-															function(msg) {
-
-																$("#progress") .attr( 'style', 'width: 100%');
-																bootbox .dialog({
-																			message : msg,
-																			title : "Attention",
-																			buttons : {
-																				success : {
-																					label : "Ok!",
-																					className : "btn-success",
-																					callback : function() {
-																						location.href = "https://mesadejuego.playerbitcoin.com/auth/login";
-																						FinalizarSpinner();
-																					}
-																				}
-																			}
-																		});
-															});
-										} else {
-											$ .smallBox({
-														title : "<h1>Attention</h1>",
-														content : "<h3>Por favor revisa que todos los datos estén correctos</h3>",
-														color : "#C46A69",
-														icon : "fa fa-warning fadeInLeft animated",
-														timeout : 4000
-													});
-										}
-
-									});
+                    });
 
 					$('#pais').val("USA");
 

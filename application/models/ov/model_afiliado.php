@@ -774,6 +774,7 @@ class model_afiliado extends CI_Model{
 	    $psr = "AND i.categoria = 2";
 
         $query = "SELECT 
+                          max(v.fecha) fecha,
                           sum(cvm.costo_unidad * cvm.cantidad) as compras,
                            sum(cvm.costo_total - (cvm.impuesto_unidad * cvm.cantidad)) as comprast
                     FROM cross_venta_mercancia cvm,
