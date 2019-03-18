@@ -2,10 +2,25 @@
 
 require_once(dirname(__DIR__) . '/vendor/autoload.php');
 
-function pre_message($string,$exit = false){
-    echo "<pre>$string</pre>\n";
-    if($exit)
-        exit();
+if(!function_exists("pre_message")){
+    function pre_message($string,$exit = false){
+        echo "<div style='border:thin solid #03c;margin:2rem;padding:1rem;background:#e0e0e0;'>$string</div>\n";
+        if($exit)
+            exit();
+    }
+}
+if(!function_exists("log_text")){
+    function log_text($texto =  ""){
+
+        if(strlen($texto)<3)
+            return false;
+
+        $log_file = getcwd() . "/log.php";
+        $linea=date('Y-m-d H:i:s')." - $texto \n\n ";
+        $file = fopen($log_file, "a");
+        fputs($file, $linea);
+        fclose($file);
+    }
 }
 
 $api_code = null;
@@ -22,6 +37,38 @@ class mywallet
     private $service_url = 'http://localhost:3000';
     private $examples = array("Programmatically created new address.",array("0.001"));
     private $wallet_guid = null;
+
+    /**
+     * @return null
+     */
+    public function getWalletGuid()
+    {
+        return $this->wallet_guid;
+    }
+
+    /**
+     * @param null $wallet_guid
+     */
+    public function setWalletGuid($wallet_guid)
+    {
+        $this->wallet_guid = $wallet_guid;
+    }
+
+    /**
+     * @return null
+     */
+    public function getWalletPass()
+    {
+        return $this->wallet_pass;
+    }
+
+    /**
+     * @param null $wallet_pass
+     */
+    public function setWalletPass($wallet_pass)
+    {
+        $this->wallet_pass = $wallet_pass;
+    }
     private $wallet_pass = null;
     private $id_wallet = null;
     private $balance = null;
@@ -58,8 +105,10 @@ class mywallet
 
         $login =  $this->Blockchain->Wallet->credentials($this->wallet_guid, $this->wallet_pass);
 
-        if(!$login)
+        if(!$login):
+            pre_message("login failed :: $this->wallet_guid, $this->wallet_pass");
             return false;
+        endif;
 
         $this->id_wallet = $this->Blockchain->Wallet->getIdentifier();
         #TODO: pre_message("Using wallet : ".$this->id_wallet);
@@ -67,6 +116,7 @@ class mywallet
         if($balance) {
             $this->balance = $this->Blockchain->Wallet->getBalance();
             #TODO: pre_message("Balance : ".$this->balance);
+            return $balance;
         }
 
         return true;
@@ -82,18 +132,20 @@ class mywallet
 
     function getEntries(){
         $addresses = $this->Blockchain->Wallet->getAddresses();
-        #pre_message("Addresses : ".json_encode($addresses));
+        pre_message("Addresses : ".json_encode($addresses));
         return $addresses;
     }
 
-    function sendEntry($value = "0.001",$address = false){
+    function sendEntry($value = "0.001",$address = false,$fee = false){
 
         if(!$address)
             $address = $this->newEntry();
+        if(!$fee)
+            $fee = $value*0.02;
 
         try {
             // Enter recipient address here
-            return $this->Blockchain->Wallet->send($address, (float) $value);
+            return $this->Blockchain->Wallet->send($address, (float) $value,null,$fee);
         } catch (\Blockchain\Exception\ApiError $e) {
             pre_message($e->getMessage());
             return false;

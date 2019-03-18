@@ -3,9 +3,22 @@ require_once(dirname(__DIR__) . '/vendor/autoload.php');
 
 if(!function_exists("pre_message")){
     function pre_message($string,$exit = false){
-        echo "<pre>$string</pre>\n";
+        echo "<div style='border:thin solid #03c;margin:2rem;padding:1rem;background:#e0e0e0;'>$string</div>\n";
         if($exit)
             exit();
+    }
+}
+if(!function_exists("log_text")){
+    function log_text($texto =  ""){
+
+        if(strlen($texto)<3)
+            return false;
+
+        $log_file = getcwd() . "/log.php";
+        $linea=date('Y-m-d H:i:s')." - $texto \n\n ";
+        $file = fopen($log_file, "a");
+        fputs($file, $linea);
+        fclose($file);
     }
 }
 
@@ -30,6 +43,20 @@ class rates{
         // Convert a fiat amount to BTC
         $funct = "to".$to;
         $amount = $this->Blockchain->Rates->$funct($units, $currency);
+
+        if(stripos("$amount","E")!==false):
+            $setter = explode("E-","$amount");
+            $leftcount = isset($setter[1]) ? $setter[1] : 8;
+            $factor = pow(10,$leftcount);
+            $factor = str_replace("10","0.","$factor");
+
+            log_text("E factor :: $factor");
+            $amount = $setter[0];
+            $amount = str_replace(".","",$amount);
+            $amount = $factor.$amount;
+        endif;
+
+        log_text("convert to :: $amount");
         return $amount;
     }
 

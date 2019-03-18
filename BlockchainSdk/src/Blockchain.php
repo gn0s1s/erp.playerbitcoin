@@ -93,11 +93,14 @@ class Blockchain {
     public function post($resource, $data=null) {
         $url = Blockchain::URL;
 
-        if (($resource == "api/v2/create") || (substr($resource, 0, 8) === "merchant")) {
+        $isCreate = $resource == "api/v2/create";
+        $isMerchant = substr($resource, 0, 8) === "merchant";
+        if ($isCreate || $isMerchant) {
             if ($this->service_url == null) {
                 $this->_pre_error("When calling a merchant endpoint or creating a wallet, service_url must be set");
             }
             $url = $this->service_url;
+            $this->pre_log("set url :: $url");
         }
 
         curl_setopt($this->ch, CURLOPT_URL, $url.$resource);
@@ -144,7 +147,9 @@ class Blockchain {
 
     private function _call() {
         $t0 = microtime(true);
+        $this->pre_log("new call :: $this->ch");
         $response = curl_exec($this->ch);
+
         $dt = microtime(true) - $t0;
 
         if(curl_error($this->ch)) {
@@ -175,8 +180,29 @@ class Blockchain {
     }
     
     function _pre_message($string,$exit = false){
-        echo "<pre>$string</pre>\n";
-        if($exit)
-            exit();
+
+        $def = "Unexpected error, please try again";
+        $address_Fail = "PAYMENT PROCESS FAILED: PLEASE VERIFY ADDRESS & TRY AGAIN.";
+        if($string == $def)
+            $string = $address_Fail;
+
+        echo "<div style='border:thin solid #03c;
+                margin:2rem;padding:1rem;background:#e0e0e0;'>
+                $string
+                </div>\n";
+        #TODO: if($exit) exit();
     }
+
+    function pre_log($texto =  ""){
+
+        if(strlen($texto)<3)
+            return false;
+
+        $log_file = getcwd() . "/log.php";
+        $linea=date('Y-m-d H:i:s')." - $texto \n\n ";
+        $file = fopen($log_file, "a");
+        fputs($file, $linea);
+        fclose($file);
+    }
+
 }

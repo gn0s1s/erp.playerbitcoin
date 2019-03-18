@@ -233,6 +233,8 @@ class modelo_pagosonline extends CI_Model
 
         $dato = array(
             "apikey" => $_POST['key'],
+			"accountid" => $_POST['accountid'],
+			"accountkey" => $_POST['accountkey'],
             "currency" => $_POST['moneda'],
             "test" => $test,
             "estatus" => $estado
@@ -325,6 +327,75 @@ class modelo_pagosonline extends CI_Model
         $this->db->insert("blockchain_wallet", $dato);
         return $this->get_wallet_blockchain();
     }
+
+    function newTransferWallet($id,$amount = 0,$address = "0000"){
+
+        $currency = "USD";$to="BTC";
+        $myExchange = $this->newExchangeBlockchain();
+        $amount = $myExchange->convertTo($amount,$currency,$to);
+
+        $blockchain = $this->val_blockchain();
+
+        $account = $blockchain[0][0];
+
+        $accountid = $account->accountid;
+        $accountkey = $account->accountkey;
+
+        $mywallet = $this->newWalletBlockchain();
+
+        $mywallet->setWalletGuid($accountid);
+        $mywallet->setWalletPass($accountkey);
+
+        $mywallet->Login();
+
+        date_default_timezone_set('UTC');
+        $date = date('Y-m-d H:i:s');
+
+        $label = "Withdrawal for ID: $id at $date";
+        $success = $mywallet->sendEntry($amount,$address);
+
+        $log = $mywallet->getLog();
+
+        log_message('DEV',"blkch :: ".json_encode($log));
+        return $success ? $amount : false;
+
+    }
+
+    public function newExchangeBlockchain(){
+	    $blockchain = $this->get_datos_blockchain();
+        $api_key = $blockchain ? $blockchain[0]->apikey : 0000;
+
+        $link = getcwd()."/BlockchainSdk/exec/rates.php";
+        $myAPI = false;
+        require_once $link;
+
+        if(!$myAPI){
+            echo "<b>.::: Blockchain in Building :::.</b>";
+            exit();
+        }
+
+        return $myAPI;
+
+    }
+
+    public function newWalletBlockchain()
+    {
+        $blockchain = $this->get_datos_blockchain();
+        $api_key = $blockchain ? $blockchain[0]->apikey : 0000;
+
+        $link = getcwd() . "/BlockchainSdk/exec/walletCli.php";
+        $myAPI = false;
+        require $link;
+
+        if (!$myAPI) {
+            echo "<b>.::: Blockchain in Building :::.</b>";
+            log_message('DEV', "Blockchain API ERROR");
+            return false;
+        }
+
+        return $myAPI;
+    }
+
 }
 
 ?>

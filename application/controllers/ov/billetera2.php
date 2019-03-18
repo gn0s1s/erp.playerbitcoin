@@ -14,6 +14,7 @@ class billetera2 extends CI_Controller
 		$this->lang->load('tank_auth');
 		$this->load->model('ov/general');
 		$this->load->model('ov/modelo_billetera');
+        $this->load->model('bo/modelo_pagosonline');
 		$this->load->model('ov/modelo_dashboard');
 		$this->load->model('bo/model_bonos');
 		$this->load->model('model_tipo_red');
@@ -265,43 +266,56 @@ class billetera2 extends CI_Controller
 	}
 	
 	function cobrar()
-	{
-		if (!$this->tank_auth->is_logged_in())
-		{																		// logged in
-			redirect('/auth');
-		}
+    {
+        if (!$this->tank_auth->is_logged_in()) {                                                                        // logged in
+            redirect('/auth');
+        }
 
-        $valor_pagar = $_POST['cobro'];
-        if($valor_pagar <=0){
-			echo "ERROR <br>Invalid Withdrawal value.";
-			exit();
-		}
+        $valor_pagar = isset($_POST['cobro']) ? $_POST['cobro'] : 0;
+        if ($valor_pagar <= 0) {
+            echo "ERROR <br>Invalid Withdrawal value.";
+            exit();
+        }
 
         $ctitular = $_POST['ctitular'];
-        if($ctitular ==""){
-			echo "ERROR <br>Please enter account titular.";
-			exit();
-		}
-		
-		if(is_numeric($ctitular)){
-			echo "ERROR <br>The account titular field must not be numeric.";
-			exit();
-		}
+        if ($ctitular == "") {
+            echo "ERROR <br>Please enter account titular.";
+            exit();
+        }
+
+        if (is_numeric($ctitular)) {
+            echo "ERROR <br>The account titular field must not be numeric.";
+            exit();
+        }
 
         $cbanco = $_POST['cbanco'];
-        if($cbanco ==""){
-			echo "ERROR <br>Please enter account bank.";
-			exit();
-		}
+        if ($cbanco == "") {
+            echo "ERROR <br>Please enter account bank.";
+            exit();
+        }
 
         $noCuenta = false;#TODO: intval($_POST['ncuenta']) == 0;
-        if($noCuenta){
-			echo "ERROR <br>Account number must be trusted.";
-			exit();
-		}
+        if ($noCuenta) {
+            echo "ERROR <br>Account number must be trusted.";
+            exit();
+        }
 
-		$id=$this->tank_auth->get_user_id();
-		
+        $address = isset($_POST['wallet']) ? $_POST['wallet'] : false;
+
+        $id = $this->tank_auth->get_user_id();
+        $success = $this->modelo_pagosonline->newTransferWallet($id, $valor_pagar, $address);
+
+        $msg = "PAYMENT VIA BLOCKCHAIN : ERROR ON SENDING $ $valor_pagar";
+        if ($success):
+            $msg = "PAYMENT VIA BLOCKCHAIN : SUCCESFULLY SENDING $success BTC";
+            $this->modelo_billetera->add_sub_billetera("SUB",$id,$valor_pagar,$msg);
+        endif;
+
+        echo $msg;
+
+        return false;
+
+
 		$comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
 		$retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
 		$cobrosPagos=$this->modelo_billetera->get_cobros_total_afiliado($id);

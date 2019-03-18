@@ -5,6 +5,20 @@ _ERP BASE MLM - Versión: 3.9 -
 
 13-03-2019
 -
+### account data in blockchain
+   ```mysql
+ALTER TABLE blockchain 
+ADD accountid varchar(100) 
+  DEFAULT 0000 NULL 
+  COMMENT 'guid wallet for service:3000'
+  AFTER apikey,
+ADD accountkey varchar(100) 
+  DEFAULT 0000 NULL 
+  COMMENT 'account pass for service:3000' 
+  after accountid;
+ ```
+13-03-2019
+-
 ### transferring data in transaccion_billetera
    ```mysql
 ALTER TABLE transaccion_billetera 

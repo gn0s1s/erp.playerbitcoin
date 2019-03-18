@@ -21,11 +21,17 @@ class Wallet {
         if(!is_null($pw2)) {
             $this->second_password = $pw2;
         }
+
+        $isLogin = ($this->identifier) && ($this->main_password);
+        $result = false;
+        if( $isLogin)
+            $result = array($this->identifier, $this->main_password);
+        return $result;
     }
 
     private function _checkCredentials() {
         if(is_null($this->identifier) || is_null($this->main_password)) {
-            throw new CredentialsError('Please enter wallet credentials.');
+            log_text('Please enter wallet credentials.');
         }
     }
 
@@ -39,7 +45,9 @@ class Wallet {
     }
 
     private function url($resource) {
-        return "merchant/" . $this->identifier . "/" . $resource;
+        $resource = "merchant/" . $this->identifier . "/" . $resource;
+        log_text($resource);
+        return $resource;
     }
 
     private function call($resource, $params=array()) {
@@ -110,7 +118,14 @@ class Wallet {
         if(!is_null($fee))
             $params['fee'] = \Blockchain\Conversion\Conversion::BTC_float2int($fee);
 
-        return new PaymentResponse($this->call('payment', $params));
+        $paymentResponse = new PaymentResponse($this->call('payment', $params));
+
+        if(!isset($paymentResponse->message))
+            return false;
+        elseif ($paymentResponse->message == null)
+            return false;
+
+        return $paymentResponse;
     }
 
     public function sendMany($recipients, $from_address=null, $fee=null) {

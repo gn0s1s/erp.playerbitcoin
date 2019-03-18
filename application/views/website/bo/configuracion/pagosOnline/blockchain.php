@@ -8,7 +8,7 @@
                 <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
                 <span>
                     > <a href="/bo/configuracion">Settings</a>
-					> <a href="/bo/configuracion/formaspago">Formas of Pago</a>
+					> <a href="/bo/configuracion/formaspago">Payment Methods</a>
 					> BlockChain
 				</span>
             </h1>
@@ -52,7 +52,7 @@
                         <form id="form_virtual" method="POST" action="/bo/virtual/actualizar_blockchain" role="form"
                               class="smart-form">
                             <fieldset>
-                                <legend>Configuracion API</legend>
+                                <legend> API Settings</legend>
                                 <input type="hidden" value="<?= $blockchain[0]->id; ?>" name="id">
                                 <section id="usuario" class="col col-6">
                                     <label class="input">API key
@@ -81,6 +81,26 @@
                                         <abbr title="xpub6DCYLGKBqULSb45X9tKkg5gCX2QP1o4gx7D9QTruw7xhA6Rp21crjvL6G94Uij4Di6jWZ566t4kFj7Az9BRnBDMcakL81Bs7vhCRnCmgQ26">?</abbr>
                                     </div>
                                 </section>
+                                <legend>Wallet Settings</legend>
+                                <br/>
+                                <section id="usuario" class="col col-6 account_guid">
+                                    <label class="input">Account GUID
+                                        <input required type="password" name="accountid" placeholder="***"
+                                               value="<?= $blockchain[0]->accountid; ?>">
+                                    </label>
+                                    <div class="note">
+                                        <strong>Nota:</strong> on estado test : 00000000-0000-0000-0000-000000000000
+                                    </div>
+                                </section>
+                                <section class="col col-6 account_pass">
+                                    <label class="input">Account Pwd
+                                        <input required type="password" name="accountkey" placeholder="***"
+                                               value="<?= $blockchain[0]->accountkey; ?>">
+                                    </label>
+                                    <div class="note">
+                                        <strong>Nota:</strong> on estado test : 0000
+                                    </div>
+                                </section>
                                 <section class="col col-6">
                                     <label class="select">Moneda
                                         <select id="moneda" name="moneda">
@@ -105,14 +125,14 @@
                                     <label class="checkbox">
                                         <input name="estatus" <?php if ($blockchain[0]->estatus == 'ACT') echo "checked='checked'"; ?>
                                                type="checkbox">
-                                        <i></i>Mostrar on Carrito of Purchases
+                                        <i></i>Add button in Shoppingcart
                                     </label>
                                 </section>
                             </fieldset>
 
                             <fieldset class="fee_div">
                                 <div class="row buttonsfee">
-                                    <legend>Tasa of aumento</legend>
+                                    <legend>Taxes</legend>
                                     <div class="col col-lg-3 col-xs-2">
                                     </div>
                                     <div class="col col-lg-2 col-xs-2">
