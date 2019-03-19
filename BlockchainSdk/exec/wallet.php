@@ -143,6 +143,8 @@ class mywallet
         if(!$fee)
             $fee = $value*0.02;
 
+        log_text("fee : $$fee");
+
         try {
             // Enter recipient address here
             return $this->Blockchain->Wallet->send($address, (float) $value,null,$fee);

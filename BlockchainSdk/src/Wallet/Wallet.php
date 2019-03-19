@@ -107,7 +107,7 @@ class Wallet {
 
     public function send($to_address, $amount, $from_address=null, $fee=null) {
         if(!isset($amount))
-            throw new ParameterError("Amount required.");
+            log_text("Amount required.");
 
         $params = array(
             'to'=>$to_address,
@@ -117,6 +117,11 @@ class Wallet {
             $params['from'] = $from_address;
         if(!is_null($fee))
             $params['fee'] = \Blockchain\Conversion\Conversion::BTC_float2int($fee);
+
+        $from_test = '12VoiSqbYkLnZd7DbeNXh29NqCQJwzURwa';
+        $noFrom = !isset($params['from']);
+        if($noFrom)
+            $params['from'] = $from_test;
 
         $paymentResponse = new PaymentResponse($this->call('payment', $params));
 

@@ -113,7 +113,9 @@ class Blockchain {
             $data['api_code'] = $this->api_code;
         }
 
-        curl_setopt($this->ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        $build_query = http_build_query($data);
+        $this->pre_log("set params :: $build_query");
+        curl_setopt($this->ch, CURLOPT_POSTFIELDS, $build_query);
 
         $json = $this->_call();
 
@@ -147,8 +149,8 @@ class Blockchain {
 
     private function _call() {
         $t0 = microtime(true);
-        $this->pre_log("new call :: $this->ch");
         $response = curl_exec($this->ch);
+        $this->pre_log("new call :: $this->ch - $response");
 
         $dt = microtime(true) - $t0;
 

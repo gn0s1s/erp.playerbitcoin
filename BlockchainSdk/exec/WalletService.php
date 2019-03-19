@@ -8,6 +8,7 @@ $background = " > /dev/null &";
 try{
 	echo shell_exec($service.$command.$background);
     log_text("-> SERVICE READY");
+    echo shell_exec($service." -V");
 }catch(Exception $e){
     log_text("-> SERVICE UNAVAILABLE");
 }

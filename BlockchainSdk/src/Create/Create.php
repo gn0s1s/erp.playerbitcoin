@@ -16,14 +16,14 @@ class Create {
 
     public function createWithKey($password, $privKey, $email=null, $label=null) {
         if(!isset($privKey) || is_null($privKey))
-            throw new ParameterError("Private Key required.");
+            log_text("Private Key required.");
 
         return $this->doCreate($password, $privKey, $email, $label);
     }
 
     public function doCreate($password, $priv=null, $email=null, $label=null) {
         if(!isset($password) || is_null($password))
-            throw new ParameterError("Password required.");
+            log_text("Password required.");
         
         $params = array(
             'password'=>$password,
