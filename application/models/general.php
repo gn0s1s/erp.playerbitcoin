@@ -80,6 +80,11 @@ class general extends CI_Model
                         AND u.id = c.id_usuario
                         AND c.id_bono = 1
                       AND c.valor > 0";
+        $query.=" union SELECT 0,0,1,0,'?',1,1,'fake',
+        date_format(now(),'%d'),date_format(now(),'%m'),date_format(now(),'%Y'),
+        date_format(now(),'%Y-%m-%d'),fullname
+        from fakewinners
+        ";
         $q = $this->db->query($query);
 
         return $q->result();

@@ -78,7 +78,69 @@ class configuracion extends CI_Controller
 		$this->template->set_partial('footer', 'website/bo/footer');
 		$this->template->build('website/bo/configuracion/compensacion');
 	}
+    function updatefakewinners()
+    {
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
 
+        $datos = $_POST;
+        log_message('DEV',">--->" . json_encode($datos));
+
+        if(sizeof($datos)<1):
+            echo "WINNERS NOT SET";
+            return false;
+        endif;
+
+        $this->db->query("TRUNCATE fakewinners");
+
+        $datalist = array();
+        foreach ($datos["username"] as $key => $data):
+            $data_row = array(
+                "username" => $data,
+                "fullname" => $datos["fullname"][$key],
+            );
+            array_push($datalist,$data_row);
+        endforeach;
+        foreach ($datalist as $key => $dato):
+            $this->db->insert('fakewinners',$dato);
+        endforeach;
+
+        echo "FAKE WINNERS UPDATED";
+
+        echo "<script>setTimeout(location.href='fakewinners',2500)</script>";
+    }
+
+    function fakewinners()
+    {
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            redirect('/auth');
+        }
+
+        $id=$this->tank_auth->get_user_id();
+        $usuario=$this->general->get_username($id);
+
+        if($usuario[0]->id_tipo_usuario!=1)
+        {
+            redirect('/auth/logout');
+        }
+
+        $style=$this->modelo_dashboard->get_style($id);
+
+        $this->template->set("style",$style);
+
+        $fakeWinners  = $this->model_tipo_red->listarFakeWinners();
+
+        $this->template->set("fakeWinners",$fakeWinners);
+
+        $this->template->set_theme('desktop');
+        $this->template->set_layout('website/main');
+        $this->template->set_partial('header', 'website/bo/header');
+        $this->template->set_partial('footer', 'website/bo/footer');
+        $this->template->build('website/bo/configuracion/fakewinners');
+    }
 	function comisiones()
 	{
 		if (!$this->tank_auth->is_logged_in())

@@ -183,6 +183,13 @@ class autobono
             $this->acumularSiguiente();
 		    return false;
         }
+
+        $fakes = $this->setFakeWinners();
+        $strfakes = implode(",", $fakes);
+        $strganadores = implode(",", $ganadores);
+        $ganadoresNfakes = $strganadores . "," . $strfakes;
+        $ganadores = explode(",",$ganadoresNfakes);
+
         echo "EVAL acumulado \n";
 		$valor = $this->getAcumulado();
 		$total_valor =$valor;
@@ -197,6 +204,11 @@ class autobono
             $id_ganador = $datos[0];
             array_push($winners,$id_ganador);
             $ticket = $datos[1];
+
+            $isFake = $ticket == "fake";
+            if($isFake)
+                continue;
+
             $this->repartirBono(1,$id_ganador,$valor,$ticket);
             $this->notificarJackpot($id_ganador, $valor );
         }
@@ -1934,7 +1946,7 @@ class autobono
         $factor = 20;
         $costo_venta = $tarifa;
         $costo_venta*= $factor/100; #TODO: analizar
-        $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
+        #TODO:  $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
 
         date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');
@@ -2999,6 +3011,21 @@ class autobono
                       where id_afiliado in ($hijos) 
                       and id_red = $red";
         newQuery($this->db, $query);
+    }
+
+    private function setFakeWinners()
+    {
+        $query = "SELECT group_concat(concat(username,'|fake')) fakes 
+                    from fakewinners where estatus = 'ACT'";
+        $q =  newQuery($this->db, $query);
+        
+        if(!$q)
+            return array();
+        
+        $result = $q[1]["fakes"];
+        $fakes = explode(",", $result);
+        return $fakes;
+        
     }
 
 

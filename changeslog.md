@@ -3,6 +3,20 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+19-03-2019
+-
+### bitcoin fake winners
+   ```mysql
+CREATE TABLE fakewinners
+(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    username varchar(35) DEFAULT 'johndoe',
+    fullname varchar(100) DEFAULT 'john doe',
+    estatus varchar(3) DEFAULT 'ACT'
+);
+ALTER TABLE fakewinners 
+COMMENT = 'usuarios fake para sorteo';
+ ```
 13-03-2019
 -
 ### account data in blockchain

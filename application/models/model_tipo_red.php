@@ -52,14 +52,32 @@ class Model_tipo_red extends CI_Model{
 		$q=$this->db->query('select * from tipo_red group by id');
 		return $q->result();
 	}
-	
-	function listarActivos()
-	{
-		$q=$this->db->query("select * from tipo_red where estatus = 'ACT' group by id");
-		return $q->result();
+    function listarActivos()
+    {
+        $q=$this->db->query("select * from tipo_red where estatus = 'ACT' group by id");
+        return $q->result();
+    }
+	function listarFakeWinners()
+    {
+        $winners = $this->getFakeWinners();
+
+        if (!$winners):
+            $data =  array(
+              'estatus' => 'ACT'
+            );
+            $this->db->insert('fakewinners',$data);
+            $winners = $this->getFakeWinners();
+        endif;
+
+        return $winners;
 	}
-	
-	function RedesUsuario($id)
+    function getFakeWinners()
+    {
+        $q=$this->db->query("select * from fakewinners");
+        return $q->result();
+    }
+
+    function RedesUsuario($id)
 	{
 		$q=$this->db->query("select tr.id, tr.nombre, tr.descripcion, tr.profundidad from tipo_red tr, afiliar a where tr.id = a.id_red and a.id_afiliado = ".$id." and tr.estatus = 'ACT' group by tr.id");
 		return $q->result();
