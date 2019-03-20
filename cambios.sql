@@ -1,5 +1,4 @@
-truncate cat_rango;
-truncate cross_rango_tipos;
+
 ALTER TABLE cat_rango
   MODIFY id_rango int(11) NOT NULL auto_increment;
 INSERT INTO cat_rango (nombre, descripcion, condicion_red_afilacion, estatus)
@@ -10,9 +9,6 @@ INSERT INTO cross_rango_tipos (id_rango, id_tipo_rango, valor, condicion_red, ni
 VALUES (1, 3, 1, 'RED', 0),
        (2, 2, 1, 'RED', 0);
 
-truncate bono;
-truncate cat_bono_condicion;
-truncate cat_bono_valor_nivel;
 /*
 ALTER TABLE cat_bono_condicion
   MODIFY id int(11) NOT NULL auto_increment;

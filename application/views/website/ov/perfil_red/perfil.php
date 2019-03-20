@@ -68,7 +68,8 @@
 												<input required type="text" value="<?=$usuario[0]->apellido?>" id="apellido" name="apellido" placeholder="Surname">
 											</label>
 										</section>
-										<section class="col col-3">
+
+										<section class="col col-3 hide">
 											<label class="input"> <i class="icon-prepend fa fa-calendar"></i>
 												<input required id="datepicker" value="<?=$usuario[0]->nacimiento?>" type="text" name="nacimiento" placeholder="Birthdate">
 											</label>
@@ -78,7 +79,13 @@
 												<input required value="<?=$usuario[0]->email?>" id="email" type="email" name="email" placeholder="Email" onkeyup="use_mail()">
 												<b class="tooltip tooltip-top-left"> Enter an email</b>
 											</label>
-										</section>
+										</section><section class="col col-3">
+                                            <?php $secret = substr($usuario[0]->keyword,-3);?>
+                                            <label class="input"> <i class="icon-prepend fa fa-qrcode"></i>
+                                                <input required type="text" readonly onclick="changeSecret()"
+                                                       value="Secret: [...<?=$secret;?>] Click here for Reset">
+                                            </label>
+                                        </section>
 									</div>
 									<div class="row">
 									<div id="tel" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -156,7 +163,7 @@
 										</section>
 									</div>
 								</fieldset>
-								<fieldset>
+								<fieldset class="hide">
 									<legend>Tax data</legend>
 									<div class="row">
 										<section class="col col-4">
@@ -541,4 +548,26 @@ $(function()
  		$("#correo").append("<p id='msg_correo'>"+msg+"</msg>")
  	});
  }
+
+function changeSecret() {
+    $.ajax({
+        type: "POST",
+        url: "/ov/perfil_red/changeSecret",
+        data: {},
+    }).done(function (msg) {
+        bootbox.dialog({
+            message: msg,
+            title: "Attention",
+            buttons: {
+                success: {
+                    label: "Ok!",
+                    className: "btn-success",
+                    callback: function () {
+                        location.href = "/ov/networkProfile/profile";
+                    }
+                }
+            }
+        });
+    });
+}
 </script>

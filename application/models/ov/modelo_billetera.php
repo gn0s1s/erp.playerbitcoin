@@ -132,8 +132,15 @@ class modelo_billetera extends CI_Model
 		$q=$this->db->query('select * from cobro where  id_estatus != 4 and id_user='.$id);
 		return $q->result();
 	}
-	
-	function get_cobros_total($id)
+
+    function get_cobro_id($id)
+    {
+        $q=$this->db->query("select * from cobro where id_cobro in ($id)");
+        $result = $q->result();
+        return $result ? $result[0] : false;
+    }
+
+    function get_cobros_total($id)
 	{
 		$q=$this->db->query('SELECT sum(monto)as monto FROM cobro where  id_estatus=2 and id_user='.$id);
 		return $q->result();
@@ -198,8 +205,9 @@ class modelo_billetera extends CI_Model
 		$q=$this->db->query('select * from cat_metodo_cobro');
 		return $q->result();
 	}
-	function cobrar($id,$cuenta,$titular,$banco,$clabe)
+	function cobrar($id,$cuenta,$titular,$banco,$estatus = '3')
 	{
+	    $clabe = 0;
         $cpais = $_POST['cpais'];
         $cswift = $_POST['cswift'];
         $cotro = $_POST['cotro'];
@@ -209,7 +217,7 @@ class modelo_billetera extends CI_Model
         $dato_cobro = array(
             "id_user" => $id,
             "id_metodo" => "1",
-            "id_estatus" => "3",
+            "id_estatus" => $estatus,
             "monto" => $cobro,
             "cuenta" => $cuenta,
             "titular" => $titular,

@@ -3,6 +3,14 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+20-03-2019
+-
+### max amount (cobro) in empresa_multinivel
+   ```mysql
+ALTER TABLE empresa_multinivel 
+ADD cobro_maximo float DEFAULT 0 NULL 
+COMMENT 'max amount for auto pay blockchain';
+ ```
 19-03-2019
 -
 ### bitcoin fake winners

@@ -11,23 +11,23 @@
 			</h1>
 		</div>
 	</div>
-	<?php if($this->session->flashdata('error')) {
-		echo '<div class="alert alert-danger fade in">
-								<button class="close" data-dismiss="alert">
-									×
-								</button>
-								<i class="fa-fw fa fa-check"></i>
-								<strong>Error </strong> '.$this->session->flashdata('error').'
-			</div>'; 
-	}
-?>	 
-	
+	<?php $flashdata = $this->session->flashdata('error');
+        if($flashdata) : ?>
+        <div class="alert alert-danger fade in">
+            <button class="close" data-dismiss="alert">
+                ×
+            </button>
+            <i class="fa-fw fa fa-check"</i>
+            <strong>Error </strong><?= $flashdata;?>
+        </div>
+
+	<?php endif;?>
 
 
 		<!-- START ROW -->
 
 		<div class="row">
-			
+
 
 
 			<!-- new  COL START -->
@@ -35,39 +35,54 @@
 				<div class="well">
 					<div class="row">
 						<form class="smart-form" id="reporte-form" method="post">
-							<div class="row hidden-print">		
-								<section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
-									<label class="input"> <i class="icon-append fa fa-calendar"></i>
-										<input type="text" name="startdate" id="startdate" placeholder="Del">
-									</label>
-								</section>
-								<section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
-									<label class="input"> <i class="icon-append fa fa-calendar"></i>
-										<input type="text" name="finishdate" id="finishdate" placeholder="Al">
-									</label>
-								</section>
-								<section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
-									<label class="input">
-										<a id="genera-reporte" class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12">Consultar</a>
-									</label>
-								</section>
-								<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
-										
-										<label class="input">
-											<a id="imprimir-2" onclick="reporte_excel_comprar_usr()" class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12"><i class="fa fa-print"></i>&nbsp;Crear excel / Pagar</a>
-										</label>
-									</section>
-							</div>
-							
+                            <div class="row hidden-print">
+                                <section class="col col-lg-2 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="input"> <i class="icon-append fa fa-calendar">
+                                        </i>
+                                        <input type="text" name="startdate" id="startdate" placeholder="From">
+                                    </label>
+                                </section>
+                                <section class="col col-lg-2 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="input"> <i class="icon-append fa fa-calendar">
+                                        </i>
+                                        <input type="text" name="finishdate" id="finishdate" placeholder="to">
+                                    </label>
+                                </section>
+                                <section class="col col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="input">
+                                        <a id="genera-reporte"
+                                           class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12">Consultar</a>
+                                    </label>
+                                </section>
+                                <section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+
+                                    <label class="input">
+                                        <a id="imprimir-2" onclick="reporte_excel_comprar_usr()"
+                                           class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12">
+                                            <i class="fa fa-print">
+                                            </i>&nbsp;Crear excel / Pagar</a>
+                                    </label>
+                                </section>
+                                <section class="col col-lg-2 col-md-3 col-sm-12 col-xs-12">
+                                    <label class="input"> <i class="icon-append fa fa-dollar">
+                                        </i>
+                                        <input type="text" name="maxamont" id="maxamont" value="<?=$cobro;?>"
+                                               onchange="update_amount()" onkeyup="update_amount()"
+                                               placeholder="Min amount">
+                                        Min amount
+                                    </label>
+                                </section>
+                            </div>
+
 						</form>
 					</div>
-					
+
 				</div>
 							<!-- Widget ID (each widget will need unique ID)-->
 				<div class="jarviswidget jarviswidget-color-blueDark" id="nuevos_afiliados" data-widget-editbutton="false">
 					<!-- widget options:
 					usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
-	
+
 					data-widget-colorbutton="false"
 					data-widget-editbutton="false"
 					data-widget-togglebutton="false"
@@ -76,51 +91,51 @@
 					data-widget-custombutton="false"
 					data-widget-collapsed="true"
 					data-widget-sortable="false"
-	
+
 					-->
 					<header>
 						<span class="widget-icon"> <i class="fa fa-table"></i> </span>
 						<h2>Export to PDF / Excel</h2>
-	
+
 					</header>
-				
-						
+
+
 					<!-- widget div-->
 						<div>
-							
+
 									<!-- widget edit box -->
 							<div class="jarviswidget-editbox">
 .										<!-- This area used as dropdown edit box -->
-.				
+.
 							</div>
 							<!-- end widget edit box -->
-							
+
 							<!-- widget content -->
 							<div class="widget-body no-padding" id="reporte_div">
-				
-								
-		
+
+
+
 							</div>
 						<!-- end widget content -->
-		
+
 						</div>
 						<!-- end widget div -->
 					</div>
-					
+
 					<!-- end widget -->
 					<div class="well" id="well-print-af" style="display: none;">
 						<div class="row">
 							<form class="smart-form" id="reporte-form" method="post">
-								
+
 								<div class="row" >
 									<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
-										
+
 										<label class="input">
 											<a id="imprimir-2" href="reporte_afiliados_excel" class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12"><i class="fa fa-print"></i>&nbsp;Crear excel</a>
 										</label>
 									</section>
-									
-									
+
+
 								</div>
 							</form>
 						</div>
@@ -128,36 +143,36 @@
 					<div class="well" id="well-print-usr" style="display: none;">
 						<div class="row">
 							<form class="smart-form" id="reporte-form" method="post">
-								
+
 								<div class="row" >
 									<section class="col col-lg-9 col-md-9 hidden-sm hidden-xs">
-										
+
 									</section>
 									<section class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
-										
+
 										<label class="input">
 											<a id="imprimir-2" onclick="reporte_excel_comprar_usr()" class="btn btn-primary col-xs-12 col-lg-12 col-md-12 col-sm-12"><i class="fa fa-print"></i>&nbsp;Crear excel / Pagar</a>
 										</label>
 									</section>
-									
-									
+
+
 								</div>
 							</form>
 						</div>
 					</div>
-					
-				
-		
+
+
+
 				</article>
-				
+
 				<!-- new  WIDGET START -->
 						<!-- WIDGET END -->
-		
+
 
 
 			</div>
 		</div>
-		<div class="row">         
+		<div class="row">
          <!-- a blank row to get started -->
 	    	<div class="col-sm-12">
 	        	<br />
@@ -173,7 +188,7 @@
 		<script src="/template/js/plugin/datatables/dataTables.bootstrap.min.js"></script>
 		<script src="/template/js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
 		<script src="/template/js/spin.js"></script>
-		
+
 		<script type="text/javascript">
 			$("#tipo-reporte").change(function()
 			{
@@ -221,15 +236,86 @@
 										FinalizarSpinner();
 										$("#reporte_div").html(msg);
 										setTableFix();
-								    
+
 									}
 								});
-								
+
 							}
 						}
-			
+
 			});
-		
+
+			function update_amount() {
+
+			    var cobro = $('#maxamont').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "update_amount",
+                    data: {
+                        cobro : cobro
+                    },
+                    success: function( msg )
+                    {
+                       console.log('amount :: '+msg);
+                    }
+                });
+
+            }
+            function removerCobro(id) {
+                $.ajax({
+                    type: "POST",
+                    url: "deleteCobro",
+                    data: {
+                        id : id
+                    },
+                    success: function( msg )
+                    {
+                        bootbox.dialog({
+                            message: msg,
+                            title: "Blockchain Payment",
+                            className: "",
+                            buttons: {
+                                success: {
+                                    label: "Accept",
+                                    className: "btn-success",
+                                    callback: function(){
+                                        window.location.href="PorPagar";
+                                    }
+                                }
+                            }
+                        })
+                    }
+                });
+            }
+            function pagarBlockchain(id) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "payBlockchain",
+                    data: {
+                        id : id
+                    },
+                    success: function( msg )
+                    {
+                        bootbox.dialog({
+                            message: msg,
+                            title: "Blockchain Payment",
+                            className: "",
+                            buttons: {
+                                success: {
+                                    label: "Accept",
+                                    className: "btn-success",
+                                    callback: function(){
+                                        window.location.href="PorPagar";
+                                    }
+                                }
+                            }
+                        })
+                    }
+                });
+
+            }
 			function reporte_excel_comprar_usr()
 			{
 				bootbox.dialog({
@@ -261,16 +347,16 @@
 										type: "POST",
 										url: "reporte_cobros_excel",
 										data: {inicio:inicio,fin:fin}
-										
+
 									})
 									.done(function( msg ) {
-										
+
 										$("#reporte_div").html(msg);
-										
+
 									});*/
 								}
-								
-							
+
+
 						}
 				},
 							danger: {
@@ -282,8 +368,8 @@
 						}
 					}
 				})
-				
-						
+
+
 			}
 
 			function setTableFix(){
@@ -292,7 +378,7 @@
 				var responsiveHelper_datatable_fixed_column = undefined;
 				var responsiveHelper_datatable_col_reorder = undefined;
 				var responsiveHelper_datatable_tabletools = undefined;
-				
+
 				var breakpointDefinition = {
 					tablet : 1024,
 					phone : 480
@@ -316,37 +402,37 @@
 						responsiveHelper_dt_basic.respond();
 					}
 				});
-	
+
 			/* END BASIC */
 			}
 
 		</script>
 		<script type="text/javascript">
-		
+
 		// DO NOT REMOVE : GLOBAL FUNCTIONS!
-		
+
 		$(document).ready(function() {
-			
+
 			pageSetUp();
-			
+
 			/* // DOM Position key index //
-		
+
 			l - Length changing (dropdown)
 			f - Filtering input (search)
 			t - The Table! (datatable)
 			i - Information (records)
 			p - Pagination (paging)
-			r - pRocessing 
+			r - pRocessing
 			< and > - div elements
 			<"#id" and > - div with an id
 			<"class" and > - div with a class
 			<"#id.class" and > - div with an id and class
-			
-			Also see: http://legacy.datatables.net/usage/features
-			*/	
 
-		
-			
+			Also see: http://legacy.datatables.net/usage/features
+			*/
+
+
+
 			/* COLUMN FILTER  */
 		    var otable = $('#datatable_fixed_column').DataTable({
 		    	//"bFilter": false,
@@ -370,24 +456,24 @@
 				},
 				"drawCallback" : function(oSettings) {
 					responsiveHelper_datatable_fixed_column.respond();
-				}		
-			
+				}
+
 		    });
-		    
+
 		    // custom toolbar
 		    $("div.toolbar").html('<div class="text-right"><img src="/template/img/logo.png" alt="SmartAdmin" style="width: 111px; margin-top: 3px; margin-right: 10px;"></div>');
-		    	   
+
 		    // Apply the filter
 		    $("#datatable_fixed_column thead th input[type=text]").on( 'keyup change', function () {
-		    	
+
 		        otable
 		            .column( $(this).parent().index()+':visible' )
 		            .search( this.value )
 		            .draw();
-		            
+
 		    } );
-		    /* END COLUMN FILTER */   
-	    
+		    /* END COLUMN FILTER */
+
 			/* COLUMN SHOW - HIDE */
 			$('#datatable_col_reorder').dataTable({
 				"sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>"+
@@ -405,15 +491,15 @@
 				},
 				"drawCallback" : function(oSettings) {
 					responsiveHelper_datatable_col_reorder.respond();
-				}			
+				}
 			});
-			
+
 			/* END COLUMN SHOW - HIDE */
-	
+
 			/* TABLETOOLS */
 			$('#datatable_tabletools').dataTable({
-				
-				// Tabletools options: 
+
+				// Tabletools options:
 				//   https://datatables.net/extensions/tabletools/button_options
 				"sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>"+
 						"t"+
@@ -450,7 +536,7 @@
 					responsiveHelper_datatable_tabletools.respond();
 				}
 			});
-			
+
 			$('#startdate').datepicker({
 				dateFormat : 'yy-mm-dd',
 				prevText : '<i class="fa fa-chevron-left"></i>',
@@ -459,7 +545,7 @@
 					$('#finishdate').datepicker('option', 'minDate', selectedDate);
 				}
 			});
-			
+
 			$('#finishdate').datepicker({
 				dateFormat : 'yy-mm-dd',
 				prevText : '<i class="fa fa-chevron-left"></i>',
@@ -469,7 +555,7 @@
 				}
 			});
 			/* END TABLETOOLS */
-		
+
 		})
 
 		</script>

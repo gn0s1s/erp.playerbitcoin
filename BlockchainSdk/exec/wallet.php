@@ -147,7 +147,7 @@ class mywallet
 
         try {
             // Enter recipient address here
-            return $this->Blockchain->Wallet->send($address, (float) $value,null,$fee);
+            return $this->Blockchain->Wallet->send($address, (float) $value);
         } catch (\Blockchain\Exception\ApiError $e) {
             pre_message($e->getMessage());
             return false;

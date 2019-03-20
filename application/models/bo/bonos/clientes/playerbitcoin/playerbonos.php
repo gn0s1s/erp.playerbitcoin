@@ -3845,6 +3845,9 @@ class playerbonos extends CI_Model
 
         $condiciones = $this->getTitulo(false, $where);
 
+        if(!$condiciones)
+            return false;
+
         foreach ($condiciones as $condicion) {
 
             $regla = $condicion->valor;

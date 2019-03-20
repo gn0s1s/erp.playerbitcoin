@@ -14,8 +14,21 @@ from cobro c, user_profiles up, cat_metodo_cobro cm, cat_estatus cs
 where c.id_user = up.user_id and c.id_metodo = cm.id_metodo and c.id_estatus = cs.id_estatus and c.fecha BETWEEN "'.$fecha_inicio.' 00:00:00" AND "'.$fecha_final.' 23:59:59"');
 		return $cobros->result();
 	}
-	
-	function añosCobros(){
+
+     function delete_cobro($id_cobro = 1)
+    {
+        $this->db->query("DELETE FROM cobro WHERE id_cobro =  $id_cobro");
+        return true;
+    }
+
+    function updateCobroMaximo($cobro = 0)
+    {
+        $this->db->query("update empresa_multinivel set cobro_maximo = $cobro");
+        return true;
+    }
+
+
+    function añosCobros(){
 		$q = $this->db->query("select YEAR(fecha) as año from cobro group by año");
 		return $q->result();
 	}

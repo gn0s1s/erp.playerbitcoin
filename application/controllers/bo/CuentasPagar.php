@@ -28,10 +28,15 @@ class CuentasPagar extends CI_Controller
 		$this->load->model('model_coaplicante');
 		$this->load->model('bo/model_admin');
 		$this->load->model('bo/model_mercancia');
+		$this->load->model('bo/model_bonos');
 		$this->load->model('ov/modelo_compras');
 		$this->load->model('modelo_cobros');
 		$this->load->model('model_excel');
 		$this->load->model('cemail');
+        $this->load->model('ov/modelo_billetera');
+        $this->load->model('bo/modelo_pagosonline');
+
+        require getcwd()."/BlockchainSdk/exec/WalletService.php";
 	}
 
 	function index(){
@@ -107,12 +112,130 @@ class CuentasPagar extends CI_Controller
 		$style=$this->modelo_dashboard->get_style(1);
 	
 		$this->template->set("usuario",$usuario);
+
+        $empresa=$this->model_admin->val_empresa_multinivel();
+
+        $cobro_maximo = $empresa ? $empresa[0]->cobro_maximo : 0;
+        $this->template->set("cobro", $cobro_maximo);
+
 		$this->template->set("style",$style);
 		$this->template->set_theme('desktop');
 		$this->template->set_layout('website/main');
 		$this->template->set_partial('header', 'website/bo/header');
 		$this->template->set_partial('footer', 'website/bo/footer');
 		$this->template->build('website/bo/administracion/Cuentas/PorPagar');
+	}
+
+    function deleteCobro()
+    {
+        if (!$this->tank_auth->is_logged_in()) {                                                                        // logged in
+            echo "LOGOUT... PLEASE LOGIN AGAIN";
+            return false;
+        }
+
+        $id_cobro = isset($_POST['id']) ? $_POST['id'] : false;
+        $error = "ERROR <br>Payment Request not found.";
+        if (!$id_cobro) {
+            echo $error;
+            return false;
+        }
+
+        $cobro =$this->modelo_billetera->get_cobro_id($id_cobro);
+        if (!$cobro) {
+            echo $error;
+            return false;
+        }
+
+        $this->modelo_cobros->delete_cobro($id_cobro);
+
+        echo "PAYMENT ABORTED";
+
+        return true;
+
+    }
+
+    function payBlockchain()
+    {
+        if (!$this->tank_auth->is_logged_in()) {                                                                        // logged in
+            echo "LOGOUT... PLEASE LOGIN AGAIN";
+            return false;
+        }
+
+        $id_cobro = isset($_POST['id']) ? $_POST['id'] : false;
+        $error = "ERROR <br>Payment Request not found.";
+        if (!$id_cobro) {
+            echo $error;
+            return false;
+        }
+
+        $cobro =$this->modelo_billetera->get_cobro_id($id_cobro);
+        if (!$cobro) {
+            echo $error;
+            return false;
+        }
+
+        $valor_pagar = isset($cobro->monto) ? $cobro->monto : 0;
+        if ($valor_pagar <= 0) {
+            echo "ERROR <br>Invalid Withdrawal value.";
+            exit();
+        }
+
+        $id = $cobro->id_user;
+
+        $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
+        $retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
+        $cobrosPagos=$this->modelo_billetera->get_cobros_total_afiliado($id);
+        $cobroPendientes=$this->modelo_billetera->get_cobros_pendientes_total_afiliado($id);
+        $total_transact = $this->modelo_billetera->get_total_transact_id($id);
+        $total_bonos = $this->model_bonos->ver_total_bonos_id($id);
+
+        /*	echo $comisiones."<br>";
+         * 	echo $total_bonos."<br>";
+            echo $retenciones."<br>";
+            echo $cobrosPagos."<br>";
+            echo $cobroPendientes."<br>"; */
+
+        $cobrar = 0;#TODO: $valor_pagar;
+        $cobrar+= $retenciones + $cobrosPagos +  $cobroPendientes;
+        $comisiones_neto = $comisiones - $cobrar;
+        $total = $comisiones_neto + $total_transact + $total_bonos;
+        if($total < 0):
+            echo "ERROR <br>Balance Insufficient.";
+            return false;
+        endif;
+
+        $address = isset($cobro->address) ? $cobro->address : $cobro->cuenta;
+
+        $success = $this->modelo_pagosonline->newTransferWallet($id, $valor_pagar, $address);
+        $msg = "PAYMENT VIA BLOCKCHAIN : ERROR ON SENDING $ $valor_pagar";
+        if ($success):
+            $this->modelo_cobros->CambiarEstadoCobro($id_cobro);
+            $msg = "PAYMENT VIA BLOCKCHAIN : SUCCESFULLY SENDING $success BTC";
+            #TODO: $this->modelo_billetera->add_sub_billetera("SUB",$id,$valor_pagar,$msg);
+        endif;
+
+        echo $msg;
+
+        return true;
+
+        #TODO: $this->setPagoPendienteBanco($id, $ctitular, $cbanco);
+
+    }
+
+
+    function update_amount(){
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            echo "LOGOUT... PLEASE LOGIN AGAIN";
+            return false;
+        }
+        $id=$this->tank_auth->get_user_id();
+
+        $cobro = isset($_POST['cobro']) ? $_POST['cobro'] : "cobro_maximo";
+        $this->modelo_cobros->updateCobroMaximo($cobro);
+
+        echo "OK : changed amount cobro -> $cobro";
+
 	}
 	
 	function reporte_cobros(){
@@ -303,4 +426,6 @@ class CuentasPagar extends CI_Controller
 		$this->template->set_partial('footer', 'website/bo/footer');
 		$this->template->build('website/bo/comercial/Archivero/archivos_pagos');
 	}
+
+
 }

@@ -45,8 +45,56 @@ class Auth extends CI_Controller
 		restore_error_handler();
 	}
 
-	function index()
+	function new2FA()
 	{
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            echo "LOGOUT... LOGIN AGAIN";
+            return false;
+        }
+        $id=$this->tank_auth->get_user_id();
+
+        #TODO: 2FA
+        $code = isset($_POST['code']) ? $_POST['code'] : false;
+
+        $success = false;
+        if($code)
+            $success = $this->general->valCodeSecret($id,$code);
+
+        if(!$success):
+            echo "<div class='text-center smart-form'>
+                    <label style='width: 200px;left: 33%' class='input'>Please enter 2FA code
+                    <input id='code' type='text' width='3em' 
+                    name='code' pattern='[A-z0-9]{6,}' onkeyup='val_2fa()' />
+                    </label> 
+                </div>
+                <script>      
+                       $('.bootbox .btn-success').hide();          
+                     function val_2fa() {
+                        setiniciarSpinner()
+                        var code = $('#code').val();
+                        $.ajax({
+                            type: 'POST',
+                            url: '/auth/new2FA',
+                            data: {code : code }
+                        })
+                        .done(function (msg) {
+                            FinalizarSpinner();
+                            if(msg==='OK')
+                                $('.bootbox .btn-success').show();  
+                            else 
+                                $('.bootbox .btn-success').hide();
+                        });//Fin callback bootbox
+                    }
+                </script>";
+            return false;
+        endif;
+
+        return $success ? "OK" : false;
+    }
+
+    function index()
+    {
 		if ($message = $this->session->flashdata('message'))
 		{
 			$this->load->view('auth/general_message', array('message' => $message));

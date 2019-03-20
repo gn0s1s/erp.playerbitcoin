@@ -49,9 +49,24 @@ class perfil_red extends CI_Controller
 	}
 
 
-  	function perfil()
+  	function changeSecret()
 	{
-		if (!$this->tank_auth->is_logged_in())
+
+        if (!$this->tank_auth->is_logged_in())
+        {																		// logged in
+            echo "LOGOUT... LOGIN AGAIN";
+            return false;
+        }
+
+        $id = $this->tank_auth->get_user_id();
+
+	    $this->general->changeSecret($id);
+    }
+
+
+    function perfil()
+    {
+        if (!$this->tank_auth->is_logged_in())
 		{																		// logged in
 			redirect('/auth');
 		}

@@ -12,6 +12,7 @@ class billetera2 extends CI_Controller
 		$this->load->library('tank_auth');
 		$this->load->library('cart');
 		$this->lang->load('tank_auth');
+		$this->load->model('bo/model_admin');
 		$this->load->model('ov/general');
 		$this->load->model('ov/modelo_billetera');
         $this->load->model('bo/modelo_pagosonline');
@@ -21,16 +22,18 @@ class billetera2 extends CI_Controller
 		$this->load->model('ov/model_perfil_red');
         $this->load->model('bo/bonos/clientes/playerbitcoin/playerbonos');
 
-		if (!$this->tank_auth->is_logged_in())
-		{																		// logged in
-		redirect('/auth');
-		}
+		if (!$this->tank_auth->is_logged_in()):
+		    redirect('/auth');
+		endif;
 		
 		$id=$this->tank_auth->get_user_id();
 	/*	if($this->general->isAValidUser($id,"OV") == false)
 		{
 			redirect('/shoppingcart');
 		}*/
+
+	    require getcwd()."/BlockchainSdk/exec/WalletService.php";
+
 	}
 
 	function index()
@@ -300,23 +303,10 @@ class billetera2 extends CI_Controller
             exit();
         }
 
-        $address = isset($_POST['wallet']) ? $_POST['wallet'] : false;
-
         $id = $this->tank_auth->get_user_id();
-        $success = $this->modelo_pagosonline->newTransferWallet($id, $valor_pagar, $address);
-
-        $msg = "PAYMENT VIA BLOCKCHAIN : ERROR ON SENDING $ $valor_pagar";
-        if ($success):
-            $msg = "PAYMENT VIA BLOCKCHAIN : SUCCESFULLY SENDING $success BTC";
-            $this->modelo_billetera->add_sub_billetera("SUB",$id,$valor_pagar,$msg);
-        endif;
-
-        echo $msg;
-
-        return false;
 
 
-		$comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
+        $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
 		$retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
 		$cobrosPagos=$this->modelo_billetera->get_cobros_total_afiliado($id);
 		$cobroPendientes=$this->modelo_billetera->get_cobros_pendientes_total_afiliado($id);
@@ -333,14 +323,38 @@ class billetera2 extends CI_Controller
         $cobrar+= $retenciones + $cobrosPagos +  $cobroPendientes;
         $comisiones_neto = $comisiones - $cobrar;
         $total = $comisiones_neto + $total_transact + $total_bonos;
-        if($total >0){
-            $ncuenta = $_POST['ncuenta'];
-            $cclabe = $_POST['cclabe'];
-            $this->modelo_billetera->cobrar($id, $ncuenta, $ctitular, $cbanco, $cclabe);
-			echo "Congratulations<br> Withdrawal successfully.";
-		}else {
+        if($total < 0):
 			echo "ERROR <br>Balance Insufficient.";
-		}
+            return false;
+		endif;
+
+
+        $usuario=$this->general->get_user($id);
+        $ctitular = $usuario ? $usuario[0]->username : "ID: $id";
+        $address = isset($_POST['wallet']) ? $_POST['wallet'] : false;
+
+        $empresa=$this->model_admin->val_empresa_multinivel();
+        $cobro_maximo = $empresa ? $empresa[0]->cobro_maximo : 0;
+
+        if($cobro_maximo <= $valor_pagar):
+            $this->modelo_billetera->cobrar($id, $address, $ctitular, "BLOCKCHAIN");
+            echo "Congratulations<br> Withdrawal requested.";
+            return false;
+        endif;
+
+        $success = $this->modelo_pagosonline->newTransferWallet($id, $valor_pagar, $address);
+        $msg = "PAYMENT VIA BLOCKCHAIN : ERROR ON SENDING $ $valor_pagar";
+        if ($success):
+            $this->modelo_billetera->cobrar($id, $address, $ctitular, "BLOCKCHAIN",2);
+            $msg = "PAYMENT VIA BLOCKCHAIN : SUCCESFULLY SENDING $success BTC";
+            #TODO: $this->modelo_billetera->add_sub_billetera("SUB",$id,$valor_pagar,$msg);
+        endif;
+
+        echo $msg;
+
+        return true;
+
+        #TODO: $this->setPagoPendienteBanco($id, $ctitular, $cbanco);
 
 	}
 
@@ -363,8 +377,8 @@ class billetera2 extends CI_Controller
             return false;
         }
 
-
         $id=$this->tank_auth->get_user_id();
+
 
         $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
         $retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
@@ -392,7 +406,13 @@ class billetera2 extends CI_Controller
         $valor = isset($_POST['valor']) ? $_POST['valor'] : 0;
         $token =  isset($_POST['token']) ? $_POST['token'] : 0;
 
-        $datos = $this->model_perfil_red->getUserEntering($user, $id);
+        $datos = $this->model_perfil_red->get_user_or_id($id);
+
+        if(!$datos):
+            echo "ERROR <br>User not found.";
+            return false;
+        endif;
+
         $user = $datos ? $datos[0]->id : 2;
 
         log_message('DEV',"user trn : $user");
@@ -577,7 +597,7 @@ class billetera2 extends CI_Controller
                         $options
                         ."<hr/></div>";
 
-        echo $options;
+        #TODO: echo $options;
     }
 
     function historial_transaccion(){
@@ -835,6 +855,18 @@ class billetera2 extends CI_Controller
         $this->modelo_billetera->setTransferSuccess($id, $token, $id_user);
 
         echo "TRANSFERRING SUCCESSFULLY";
+    }
+
+    /**
+     * @param $id
+     * @param $ctitular
+     * @param $cbanco
+     */
+    private function setPagoPendienteBanco($id, $ctitular, $cbanco)
+    {
+        $ncuenta = $_POST['ncuenta'];
+        $cclabe = $_POST['cclabe'];
+        $this->modelo_billetera->cobrar($id, $ncuenta, $ctitular, $cbanco, $cclabe);
     }
 
 

@@ -76,7 +76,20 @@ class model_perfil_red extends CI_Model
 		$q=$this->db->query('select * from cat_tiempo_dedicado');
 		return $q->result();
 	}
-	function get_id()
+
+	function get_user_or_id($id)
+    {
+        $q=$this->db->query("select * from users u,user_profiles p 
+                                  where p.user_id = u.id and (u.username = '$id' or u.id = '$id')");
+        return $q->result();
+    }
+    function get_user_id($id)
+    {
+        $q=$this->db->query("select * from users u,user_profiles p
+                                  where p.user_id = u.id and u.id = '$id'");
+        return $q->result();
+    }
+    function get_id()
 	{
 		$q=$this->db->query('select id from users where email like "'.$_POST['mail_important'].'"');
 		return $q->result();

@@ -441,7 +441,7 @@
                                     </div>
 
 
-                                    <form action="send_mail" method="post" id="contact-form1"
+                                    <form action="send_mail" method="post" id="paymentform"
                                           class="smart-form col-xs-12 col-sm-8 col-md-6 col-lg-6">
                                         <fieldset>
                                             <section class="col col-4">
@@ -935,6 +935,31 @@
             });
     }
 
+    function paymentProcess() {
+        iniciarSpinner();
+        $.ajax({
+            type: "POST",
+            url: "/ov/billetera2/cobrar",
+            data: $('#paymentform').serialize()
+        })
+            .done(function (msg) {
+                FinalizarSpinner();
+                bootbox.dialog({
+                    message: msg,
+                    title: '',
+                    buttons: {
+                        success: {
+                            label: "Accept",
+                            className: "btn-success",
+                            callback: function () {
+                                location.href = 'history';
+                            }
+                        }
+                    }
+                })//fin done ajax
+            });//Fin callback bootbox
+    }
+
     function cobrar() {
 
         if (validarCampos()) {
@@ -947,34 +972,13 @@
 
                     bootbox.dialog({
                         message: msg,
-                        title: 'Transacion',
+                        title: 'Transaction',
                         buttons: {
                             success: {
                                 label: "Accept",
                                 className: "btn-success",
                                 callback: function () {
-                                    iniciarSpinner();
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "/ov/billetera2/cobrar",
-                                        data: $('#contact-form1').serialize()
-                                    })
-                                        .done(function (msg) {
-                                            FinalizarSpinner();
-                                            bootbox.dialog({
-                                                message: msg,
-                                                title: '',
-                                                buttons: {
-                                                    success: {
-                                                        label: "Accept",
-                                                        className: "btn-success",
-                                                        callback: function () {
-                                                            location.href = 'history';
-                                                        }
-                                                    }
-                                                }
-                                            })//fin done ajax
-                                        });//Fin callback bootbox
+                                    paymentProcess();
 
                                 }
                             },

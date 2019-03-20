@@ -1,5 +1,10 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+require getcwd().'/TwoFactorAuth/lib/loader.php';
+Loader::register('../lib','RobThree\\Auth');
+
+use \RobThree\Auth\TwoFactorAuth;
+
 class general extends CI_Model
 {
 
@@ -8,6 +13,58 @@ class general extends CI_Model
 	
 		$this->load->model('ov/model_perfil_red');
 	}
+
+    function changeSecret($id){
+
+        $issuer = $this->config->item('website_name', 'tank_auth');
+        $tfa = new TwoFactorAuth($issuer);
+        $bits = 160;
+        $secret = $tfa->createSecret($bits);
+        // Though the default is an 80 bits secret (for backwards compatibility reasons) we recommend creating 160+ bits secrets (see RFC 4226 - Algorithm Requirements)
+        $label = "authforID$id";
+        $data = "secret_$id";
+        $size = 200;
+        $QRCodeImageAsDataUri = $tfa->getQRCodeImageAsDataUri($label, $secret, $size, $data);
+
+        $this->db->query("update user_profiles set keyword = '$secret' where user_id = $id");
+
+        echo '<div class="text-center">
+<img width="300px" src="'.$QRCodeImageAsDataUri.'">
+        <br/>
+        <h3>Please, Scan this QR code for setup 2FA auth in your phone.</h3>        
+</div>';
+
+    }
+
+    function valCodeSecret($id,$code = "0000"){
+        $issuer = $this->config->item('website_name', 'tank_auth');
+        $tfa = new TwoFactorAuth($issuer);
+
+        $user = $this->model_perfil_red->get_user_id($id);
+
+        if(!$user):
+            return false;
+        endif;
+
+        $secret = $user[0]->keyword;
+
+        $sizeof = strlen("$secret");
+        $noSecret = $sizeof < 4;
+        log_message('DEV',"secret :: $secret -> $sizeof : [[ $noSecret ]]");
+
+        if($noSecret):
+            echo "<p>Please, set up 2FA auth secret for Payment Security.".
+                "<a href='/ov/networkProfile/profile'>Click Here</a></p>";
+            return false;
+        endif;
+
+        log_message('DEV',"code :: $code");
+
+        $verifyCode = $tfa->verifyCode($secret, $code);
+        $isVerified = $verifyCode === true;
+
+        return $isVerified;
+    }
 
     function setToken()
     {

@@ -1,18 +1,5 @@
 <?php
 
-log_text("initialize Wallet service");
-$service = "blockchain-wallet-service";
-$command = " start --port 3000 ";
-$background = " > /dev/null &";
-
-try{
-	echo shell_exec($service.$command.$background);
-    log_text("-> SERVICE READY");
-    echo shell_exec($service." -V");
-}catch(Exception $e){
-    log_text("-> SERVICE UNAVAILABLE");
-}
-
 if(!function_exists("log_text")){
     function log_text($texto =  ""){
 
@@ -26,3 +13,18 @@ if(!function_exists("log_text")){
         fclose($file);
     }
 }
+
+log_text("initialize Wallet service");
+$service = "blockchain-wallet-service";
+$command = " start --port 3000 ";
+$background = " > /dev/null &";
+
+try{
+	echo shell_exec($service.$command.$background);
+    log_text("-> SERVICE READY");
+    $return = shell_exec($service . " -V");
+    log_text("BLOCKCHAIN WALLLET API v$return");
+}catch(Exception $e){
+    log_text("-> SERVICE UNAVAILABLE");
+}
+
