@@ -476,8 +476,11 @@
                                             <header>
                                                 <h2><span class="widget-icon">
                                                         <i class="fa fa-btc"></i> </span>
-                                                    Payment money
+                                                    Payment money : at least 5$
                                                 </h2>
+                                                <div class="col-md-12">
+                                                    <hr/>Note: Blockchain Trasnsactions have cost of 2$.</div>
+                                                <br/>
                                             </header>
 
                                             <br>

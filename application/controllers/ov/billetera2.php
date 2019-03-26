@@ -275,7 +275,8 @@ class billetera2 extends CI_Controller
         }
 
         $valor_pagar = isset($_POST['cobro']) ? $_POST['cobro'] : 0;
-        if ($valor_pagar <= 0) {
+        $isValue = $valor_pagar >= 5 ;
+        if (!$isValue) {
             echo "ERROR <br>Invalid Withdrawal value.";
             exit();
         }
@@ -334,7 +335,7 @@ class billetera2 extends CI_Controller
         $address = isset($_POST['wallet']) ? $_POST['wallet'] : false;
 
         $empresa=$this->model_admin->val_empresa_multinivel();
-        $cobro_maximo = $empresa ? $empresa[0]->cobro_maximo : 0;
+        $cobro_maximo = isset($empresa[0]->cobro_maximo) ? $empresa[0]->cobro_maximo : 0;
 
         if($cobro_maximo <= $valor_pagar):
             $this->modelo_billetera->cobrar($id, $address, $ctitular, "BLOCKCHAIN");
@@ -346,7 +347,9 @@ class billetera2 extends CI_Controller
         $msg = "PAYMENT VIA BLOCKCHAIN : ERROR ON SENDING $ $valor_pagar";
         if ($success):
             $this->modelo_billetera->cobrar($id, $address, $ctitular, "BLOCKCHAIN",2);
-            $msg = "PAYMENT VIA BLOCKCHAIN : SUCCESFULLY SENDING $success BTC";
+            $msg = "PAYMENT VIA BLOCKCHAIN :$success BTC SENT";
+
+            $this->sendEmailTransaction($id, $address, $valor_pagar, $total, $success);
             #TODO: $this->modelo_billetera->add_sub_billetera("SUB",$id,$valor_pagar,$msg);
         endif;
 
@@ -857,16 +860,37 @@ class billetera2 extends CI_Controller
         echo "TRANSFERRING SUCCESSFULLY";
     }
 
-    /**
-     * @param $id
-     * @param $ctitular
-     * @param $cbanco
-     */
     private function setPagoPendienteBanco($id, $ctitular, $cbanco)
     {
         $ncuenta = $_POST['ncuenta'];
         $cclabe = $_POST['cclabe'];
         $this->modelo_billetera->cobrar($id, $ncuenta, $ctitular, $cbanco, $cclabe);
+    }
+
+    private function sendEmailTransaction($id, $reference, $valor, $balance = 0, $converted = false)
+    {
+        $usuario = $this->general->get_email($id);
+        $email = "you@domain.com";
+        if (isset($usuario[0]->email))
+            $email = $usuario[0]->email;
+
+        $usuario = $this->general->get_user($id);
+        $username = $usuario ? $usuario[0]->username : "ID: $id";
+        if(!$converted)
+            $converted = $valor;
+
+        $date = date('Y-m-d H:i:s');
+        $amount_str = "$ $valor ($converted BTC)";
+        $total_str = "$ $balance";
+
+        $data = array(
+            "address" => $reference,
+            "username" => $username,
+            "amount" => $amount_str,
+            "balance" => $total_str,
+            "fecha" => $date
+        );
+        $this->cemail->send_email(5, $email, $data);
     }
 
 

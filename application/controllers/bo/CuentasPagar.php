@@ -210,7 +210,8 @@ class CuentasPagar extends CI_Controller
         $msg = "PAYMENT VIA BLOCKCHAIN : ERROR ON SENDING $ $valor_pagar";
         if ($success):
             $this->modelo_cobros->CambiarEstadoCobro($id_cobro);
-            $msg = "PAYMENT VIA BLOCKCHAIN : SUCCESFULLY SENDING $success BTC";
+            $msg = "PAYMENT VIA BLOCKCHAIN : $success BTC SENT";
+            $this->sendEmailTransaction($id,$address,$valor_pagar,$total,$success);
             #TODO: $this->modelo_billetera->add_sub_billetera("SUB",$id,$valor_pagar,$msg);
         endif;
 
@@ -222,6 +223,31 @@ class CuentasPagar extends CI_Controller
 
     }
 
+    private function sendEmailTransaction($id, $reference, $valor, $balance = 0, $converted = false)
+    {
+        $usuario = $this->general->get_email($id);
+        $email = "you@domain.com";
+        if (isset($usuario[0]->email))
+            $email = $usuario[0]->email;
+
+        $usuario = $this->general->get_user($id);
+        $username = $usuario ? $usuario[0]->username : "ID: $id";
+        if(!$converted)
+            $converted = $valor;
+
+        $date = date('Y-m-d H:i:s');
+        $amount_str = "$ $valor ($converted BTC)";
+        $total_str = "$ $balance";
+
+        $data = array(
+            "address" => $reference,
+            "username" => $username,
+            "amount" => $amount_str,
+            "balance" => $total_str,
+            "fecha" => $date
+        );
+        $this->cemail->send_email(5, $email, $data);
+    }
 
     function update_amount(){
         if (!$this->tank_auth->is_logged_in())

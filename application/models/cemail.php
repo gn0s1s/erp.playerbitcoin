@@ -91,8 +91,8 @@ class Cemail extends CI_Model
 				"TE DAMOS LA BIENVENIDA", //welcome
 				"ACTIVACIÓN", //activate
 				"CONFIRMACIÓN NUEVO EMAIL", //change-email
-				"Payment on DE SOLICITUD DE DINERO", //cobros
-				"CONFIRMACIÓN DE PAGO POR BANCO", //cuentas-cobrar
+				"Payment Request", //cobros
+				"Payment via Blockchain", //cuentas-cobrar
 				"RECUPERACIÓN DE CONTRASEÑA", //forgot-password
 				"CONFIRMACIÓN DE NUEVA CONTRASEÑA", //reset-password
 				"INVITACION AL MULTINIVEL", //invitacion
@@ -109,8 +109,8 @@ class Cemail extends CI_Model
 				($type==0) ? "Hola ".$data['username'].", te damos la bienvenida a tu BackOffice de ".$data['site_name']."." : "", //welcome
 				($type==1) ? "Welcome, ".$data['username']." Ha sido registrado en nuestro sistema." : "", //activate
 				($type==2) ? "Your new email address on ".$data['site_name']."." : "", //change-email
-				($type==3) ? "Hola ".$data['username'].", Su peticion de pago esta siendo procesada." : "", //cobros
-				($type==4) ? "Hola ".$data['username'].", Su pago se ha recibido." : "", //cuentas-cobrar
+				($type==3) ? "Hi, ".$data['username'].", Su peticion de pago esta siendo procesada." : "", //cobros
+				($type==4) ? "Hi, ".$data['username'].", Your sending has been succesfully." : "", //cuentas-cobrar
 				($type==5) ? "Hi, ".$data['username']."." : "", //forgot-password
 				($type==6) ? "Tu nueva contraseña en ".$data['site_name']."." : "", //reset-password
 				($type==7) ? "Hola, ".$data['email'].", Te han invitado a afiliarte." : "", //invitacion
@@ -212,16 +212,12 @@ class Cemail extends CI_Model
 						<p>'. $validar['monto'].'<br /></p>' : '';
 		
 		$cuentas_cobrar = ($type==4) ? '<p class="callout">
-							Recibimos su confirmacion sobre la transaccion con los siguientes datos:
+							You has been sending a withdrawal :
 						</p><!-- /Callout Panel -->						
-						<p>'. $validar['id_venta'].'<br /></p>
-						<p>'. $validar['fecha'].'<br /></p>
-						<p>'. $validar['username'].'<br /></p>
-						<p>Correo: '.$data['email'].'</p><br/>
-						<p>'. $validar['nombres'].'<br /></p>	
-						<p>'. $validar['banco'].'<br /></p>
-						<p>'. $validar['cuenta'].'<br /></p>
-						<p>'. $validar['valor'].'<br /></p> ' : '';
+						<p>Address: '. $data['address'].'<br /></p>
+						<p>Date: '. $data['fecha'].'<br /></p>
+						<p>Amount: '. $data['amount'].'<br /></p>
+						<p>Balance: '. $data['balance'].'<br /></p> ' : '';
 		
 		$forgot_password = ($type==5) ? '<a href="'.$sitios[4].'" >
 						<h5>Da click aquí para recuperar tu contraseña</h5></a><br />
