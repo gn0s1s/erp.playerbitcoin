@@ -62,6 +62,10 @@
         font-size: x-small;
         padding-right: 1rem;
     }
+   .backHome{
+         height: auto !important;
+         min-height: 3em;
+     }
 </style>
 
 

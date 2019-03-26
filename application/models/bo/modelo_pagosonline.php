@@ -351,6 +351,9 @@ class modelo_pagosonline extends CI_Model
         date_default_timezone_set('UTC');
         $date = date('Y-m-d H:i:s');
 
+        $label = "pay in $id - ".date('Y-m-d H:i:s');
+        $NewAddress = $mywallet->newEntry($label);
+
         $label = "Withdrawal for ID: $id at $date";
         $success = $mywallet->sendEntry($amount,$address);
 

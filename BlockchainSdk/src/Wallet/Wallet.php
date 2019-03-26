@@ -118,10 +118,14 @@ class Wallet {
         if(!is_null($fee))
             $params['fee'] = \Blockchain\Conversion\Conversion::BTC_float2int($fee);
 
-        $from_test = '12VoiSqbYkLnZd7DbeNXh29NqCQJwzURwa';
+        $from_test = 0;#TODO: '162UqF3wsxzkukNQGKFU5qz9WTcsAWL4yU';
         $noFrom = !isset($params['from']);
         #if($noFrom)
-        #    $params['from'] = $from_test;
+           $params['from'] = $from_test;
+        #if(!isset($params['fee']))
+            $params['fee'] = 3500;
+
+        log_text("REQUESTED : ".json_encode($params));
 
         $paymentResponse = new PaymentResponse($this->call('payment', $params));
 
