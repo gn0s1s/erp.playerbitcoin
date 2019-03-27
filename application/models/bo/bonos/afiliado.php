@@ -497,9 +497,11 @@ class afiliado extends CI_Model
 						ELSE 0 END)";
 	    
 	    $set = ($tipo=="PUNTOS") ? $puntos : $costo;
-	    
+
+	    $where = "AND i.categoria = 2";
+
 	    $cart = "(SELECT
-        				   ".$set." cart
+        				   ".$set." cart -- imprimir
         				FROM
         				    venta v,
         				    cross_venta_mercancia cvm,
@@ -519,6 +521,8 @@ class afiliado extends CI_Model
 	    $q= $q->result();
 	    
 	    $valor_cart = isset($q)&&isset($q[0]->total) ? $q[0]->total : 0;
+	    log_message('DEV',"valor query: $valor_cart");
+
 	    return $valor_cart;
 	    
 	}
@@ -765,7 +769,8 @@ class afiliado extends CI_Model
 			return $this->getVentasTodaLaRedEquilibrada( $id_afiliado, $red,$tipo,$nivel,$fechaInicio,$fechaFin,$limite,$id_tipo_mercancia,$id_mercancia,$datoVenta);
 
 		}else if($condicionRed=="DEB") {
-			return $this->getVentasTodaLaRedPataDebil($id_afiliado, $red,$tipo,$nivel,$fechaInicio,$fechaFin,$id_tipo_mercancia,$id_mercancia,$datoVenta)["total"];
+            $ventasTodaLaRedPataDebil = $this->getVentasTodaLaRedPataDebil($id_afiliado, $red, $tipo, $nivel, $fechaInicio, $fechaFin, $id_tipo_mercancia, $id_mercancia, $datoVenta);
+            return $ventasTodaLaRedPataDebil["total"];
 
 		}
 	}

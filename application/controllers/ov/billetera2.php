@@ -21,6 +21,7 @@ class billetera2 extends CI_Controller
 		$this->load->model('model_tipo_red');
 		$this->load->model('ov/model_perfil_red');
         $this->load->model('bo/bonos/clientes/playerbitcoin/playerbonos');
+        $this->load->model('cemail');
 
 		if (!$this->tank_auth->is_logged_in()):
 		    redirect('/auth');
@@ -274,12 +275,16 @@ class billetera2 extends CI_Controller
             redirect('/auth');
         }
 
-        $valor_pagar = isset($_POST['cobro']) ? $_POST['cobro'] : 0;
-        $isValue = $valor_pagar >= 5 ;
+        $input_cobro = 'cobro_amount';#'cobro';
+        $valor_neto = isset($_POST['cobro']) ? $_POST['cobro'] : 0;
+        $isValue = $valor_neto >= 5 ;
         if (!$isValue) {
             echo "ERROR <br>Invalid Withdrawal value.";
             exit();
         }
+
+        $valor_pagar = $valor_neto * 0.98;
+        log_message('DEV',"amount :: $valor_pagar");
 
         $ctitular = $_POST['ctitular'];
         if ($ctitular == "") {
@@ -334,8 +339,7 @@ class billetera2 extends CI_Controller
         $ctitular = $usuario ? $usuario[0]->username : "ID: $id";
         $address = isset($_POST['wallet']) ? $_POST['wallet'] : false;
 
-        $empresa=$this->model_admin->val_empresa_multinivel();
-        $cobro_maximo = isset($empresa[0]->cobro_maximo) ? $empresa[0]->cobro_maximo : 0;
+        $cobro_maximo =$this->model_admin->val_settings("auto_payment_limit");
 
         if($cobro_maximo <= $valor_pagar):
             $this->modelo_billetera->cobrar($id, $address, $ctitular, "BLOCKCHAIN");

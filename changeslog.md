@@ -3,6 +3,25 @@ erp.multinivel
 _ERP BASE MLM - Versión: 3.9 - 
 [NetworkSoft DEV](http://network-soft.com)_
 
+27-03-2019
+-
+### settings new table 
+   ```mysql
+CREATE TABLE settings
+(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    title varchar(35) DEFAULT 'default',
+    description varchar(150)  
+      COMMENT '{json}, text',
+    auto_payment_limit float DEFAULT 0,
+    payment_fee float DEFAULT 0,
+    transfer_fee float DEFAULT 0,
+    estatus varchar(3) DEFAULT 'ACT',
+    orden int DEFAULT 1
+);
+ALTER TABLE settings
+ COMMENT = 'platform settings ex: payment';
+ ```
 20-03-2019
 -
 ### max amount (cobro) in empresa_multinivel

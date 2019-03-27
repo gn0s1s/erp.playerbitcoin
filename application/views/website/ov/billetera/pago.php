@@ -479,12 +479,12 @@
                                                     Payment money : at least 5$
                                                 </h2>
                                                 <div class="col-md-12">
-                                                    <hr/>Note: Blockchain Trasnsactions have cost of 2$.</div>
+                                                    <hr/>Note: Blockchain Trasnsactions have cost of 2%.</div>
                                                 <br/>
                                             </header>
 
                                             <br>
-                                            <section class="col col-6">
+                                            <section class="col col-md-6">
                                                 <label class="label"><b>Wallet address</b></label>
                                                 <label class="input">
                                                     <i class="icon-prepend fa fa-btc"></i>
@@ -493,7 +493,15 @@
                                                            id="wallet"/>
                                                 </label>
                                             </section>
-                                            <section class="col col-6">
+                                            <section class="hide col col-md-3">
+                                                <label class="label"><b>Final Amount (- 2%)</b></label>
+                                                <label class="input state-disabled state-error">
+                                                    <input value="" type="number" disabled="disabled"
+                                                           name="cobro_amount" id="cobro_amount"
+                                                           class="from-control" readonly/>
+                                                </label>
+                                            </section>
+                                            <section class="col col-3">
                                                 <br/>
                                                 <button type="button" onclick="cobrar()" class="pull-right btn btn-success"
                                                         id="enviar">
@@ -715,8 +723,19 @@
         var pago = $("#cobro").val();
         var neto = saldo - pago;
         neto =neto.toFixed(2);
+
+        var per = pago*0.98;
+        per =per.toFixed(2);
+        $("#cobro_amount").val(per);
+
         $("#neto").val(neto);
-        if (neto >= 0) {
+        var isNeto = neto >= 0;
+        var isMinValue = pago >= 5;
+        var isValid = isNeto && isMinValue;
+
+        console.log(isNeto+' - '+isMinValue);
+
+        if (isValid) {
             $('#enviar').attr("disabled", false);
         } else {
             $('#enviar').attr("disabled", true);

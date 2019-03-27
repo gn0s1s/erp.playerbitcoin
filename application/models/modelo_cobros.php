@@ -23,7 +23,7 @@ where c.id_user = up.user_id and c.id_metodo = cm.id_metodo and c.id_estatus = c
 
     function updateCobroMaximo($cobro = 0)
     {
-        $this->db->query("update empresa_multinivel set cobro_maximo = $cobro");
+        $this->db->query("update settings set auto_payment_limit = $cobro");
         return true;
     }
 

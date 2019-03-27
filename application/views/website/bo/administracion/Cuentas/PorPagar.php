@@ -1,15 +1,48 @@
 
 <!-- MAIN CONTENT -->
 <div id="content">
-	<div class="row hidden-print">
-			<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-			<h1 class="page-title txt-color-blueDark">
-						<a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
-							<span>>
-								<a href="/bo/administracion/"> Administración</a> > Cuentas Por Pagar
-							</span>
-			</h1>
-		</div>
+    <div class="row hidden-print">
+        <div class="col-xs-12 col-sm-6">
+            <h1 class="page-title txt-color-blueDark">
+                <a class="backHome" href="/bo"><i class="fa fa-home"></i> Menu</a>
+                <span>
+                    > <a href="/bo/administracion/"> Administración</a>
+                    > Cuentas Por Pagar
+                </span>
+            </h1>
+        </div>
+        <div class="well smart-form col col-md-6" id="config-cobros">
+            <section class="col-md-4 col col-sm-12 col-xs-12">
+                <label class="input"> <i class="icon-append fa fa-dollar">
+                    </i>
+                    <input type="number" step="0.01"
+                           name="maxamont" id="maxamont" value="<?=$cobro;?>"
+                           onchange="update_amount()" onkeyup="update_amount()"
+                           placeholder="Min amount">
+                    <b class="pull-right">Min amount</b>
+                </label>
+            </section>
+            <section class="col-md-4 col col-sm-12 col-xs-12">
+                <label class="input"> <i class="icon-append fa">%
+                    </i>
+                    <input type="number" step="0.01"
+                           name="feePayment" id="feePayment" value="<?=$payment_fee;?>"
+                           onchange="update_fee()" onkeyup="update_fee()"
+                           placeholder="Min amount">
+                    <b class="pull-right">Transaction Fee (%)</b>
+                </label>
+            </section>
+            <section class="col-md-4 col col-sm-12 col-xs-12">
+                <label class="input"> <i class="icon-append fa fa-dollar">
+                    </i>
+                    <input type="number" step="0.01"
+                           name="feeTransfer" id="feeTransfer" value="<?=$transfer_fee;?>"
+                           onchange="update_fee_transfer()" onkeyup="update_fee_transfer()"
+                           placeholder="Min amount">
+                    <b class="pull-right">Transferring Fee ($)</b>
+                </label>
+            </section>
+        </div>
 	</div>
 	<?php $flashdata = $this->session->flashdata('error');
         if($flashdata) : ?>
@@ -63,15 +96,7 @@
                                             </i>&nbsp;Crear excel / Pagar</a>
                                     </label>
                                 </section>
-                                <section class="col col-lg-2 col-md-3 col-sm-12 col-xs-12">
-                                    <label class="input"> <i class="icon-append fa fa-dollar">
-                                        </i>
-                                        <input type="text" name="maxamont" id="maxamont" value="<?=$cobro;?>"
-                                               onchange="update_amount()" onkeyup="update_amount()"
-                                               placeholder="Min amount">
-                                        Min amount
-                                    </label>
-                                </section>
+
                             </div>
 
 						</form>
@@ -258,6 +283,38 @@
                     success: function( msg )
                     {
                        console.log('amount :: '+msg);
+                    }
+                });
+
+            }function update_fee() {
+
+                var fee = $('#feePayment').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "update_amount",
+                    data: {
+                        fee : fee
+                    },
+                    success: function( msg )
+                    {
+                        console.log('fee :: '+msg);
+                    }
+                });
+
+            }function update_fee_transfer() {
+
+                var cobro = $('#feeTransfer').val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "update_amount",
+                    data: {
+                        transfer : transfer
+                    },
+                    success: function( msg )
+                    {
+                        console.log('transfer :: '+msg);
                     }
                 });
 

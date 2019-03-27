@@ -38,8 +38,8 @@ class model_admin extends CI_Model
 	}
 	function get_banco()
 	{
-		$_POST['cuenta'];
-		$q=$this->db->query("select * from cat_banco where clave='".$clave."'");
+        $clave = $_POST['cuenta'];
+		$q=$this->db->query("select * from cat_banco where cuenta='".$clave."'");
 		return $q->result();
 	}
 	function get_zona()
@@ -81,7 +81,32 @@ class model_admin extends CI_Model
 		$this->db->query("update notificacion set estatus = '".$_POST['estado']."' where id=".$_POST["id"]);
 		return true;
 	}
-	
+    function val_settings($attrib = "*")
+    {
+        $dato=$this->get_settings($attrib);
+        if(!$dato){
+            $dato=array(
+                "auto_payment_limit" =>	"200"
+            );
+            $this->db->insert("settings",$dato);
+            $dato=$this->get_settings($attrib);
+        }
+        return $dato;
+    }
+
+    function get_settings($attrib = "*")
+    {
+        $query = "select $attrib from settings";
+        $q=$this->db->query($query);
+        $dato = $q->result();
+
+        if($attrib == "*")
+            return $dato;
+        if(isset($dato[0]->$attrib))
+            $dato = $dato[0]->$attrib ;
+
+        return $dato;
+    }
 	function val_empresa_multinivel()
 	{
 		$empresa=$this->get_empresa_multinivel();

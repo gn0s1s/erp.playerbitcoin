@@ -113,10 +113,14 @@ class CuentasPagar extends CI_Controller
 	
 		$this->template->set("usuario",$usuario);
 
-        $empresa=$this->model_admin->val_empresa_multinivel();
-
-        $cobro_maximo = $empresa ? $empresa[0]->cobro_maximo : 0;
+        $cobro_maximo =$this->model_admin->val_settings("auto_payment_limit");
         $this->template->set("cobro", $cobro_maximo);
+
+        $payment_fee =$this->model_admin->val_settings("payment_fee");
+        $this->template->set("payment_fee", $payment_fee);
+
+        $transfer_fee =$this->model_admin->val_settings("transfer_fee");
+        $this->template->set("transfer_fee", $transfer_fee);
 
 		$this->template->set("style",$style);
 		$this->template->set_theme('desktop');
