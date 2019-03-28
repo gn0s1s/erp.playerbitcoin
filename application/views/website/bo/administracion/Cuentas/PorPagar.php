@@ -304,7 +304,7 @@
 
             }function update_fee_transfer() {
 
-                var cobro = $('#feeTransfer').val();
+                var transfer = $('#feeTransfer').val();
 
                 $.ajax({
                     type: "POST",

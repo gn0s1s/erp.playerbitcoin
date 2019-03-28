@@ -53,7 +53,13 @@ class model_coinmarketcap extends CI_Model
         );
         // Completar la url y los parámetros
         $request_uri = "ohlcv/historical";
-        $this->data = $this->setCurlRequest($params, $request_uri);
+
+        try{
+            $this->data = $this->setCurlRequest($params, $request_uri);
+        }catch (Exception $e){
+            $this->data = array();
+        }
+
         return $this->data;
     }
 
@@ -211,7 +217,12 @@ class model_coinmarketcap extends CI_Model
      */
     public function getData()
     {
-        $data = json_decode($this->data,true);
+        $data = isset($this->data) ? $this->data : false;
+       try{
+           $data = json_decode($data,true);
+       }catch (Exception $e){
+           $data = false;
+       }
         log_message('DEV',"getdata C->> ".json_encode($data));
         return $data;
     }

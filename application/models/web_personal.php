@@ -141,10 +141,10 @@ class web_personal extends CI_Model{
     private function setNoBody()
     {
         $webempresa = $this->empresa();              
-        $webempresa = $webempresa[0]->web; # "http://[[website]]";
+        $webempresa = "https://www.playerbitcoin.com"; # $webempresa[0]->web;
         $webland = "";#TODO : "/[[website_form]].html";
 
-        $urldef = 'http://' . $_SERVER['SERVER_NAME'] . "/";
+        $urldef = $webempresa;#'http://' . $_SERVER['SERVER_NAME'] . "/";
         $contacto = file_get_contents($urldef);
 
         set_error_handler(

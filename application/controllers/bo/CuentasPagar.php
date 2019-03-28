@@ -270,7 +270,7 @@ class CuentasPagar extends CI_Controller
             $this->modelo_cobros->updateSettings($fee,'payment_fee');
 
         $transfer = isset($_POST['transfer']) ? $_POST['transfer'] : 'transfer_fee';
-        if($fee)
+        if($transfer)
             $this->modelo_cobros->updateSettings($transfer,'transfer_fee');
 
         echo "OK : changed amount -> 1|$cobro 2|$fee 3|$transfer";

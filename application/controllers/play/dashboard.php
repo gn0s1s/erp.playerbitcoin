@@ -313,7 +313,7 @@ class dashboard extends CI_Controller
         $getChart = $bitcoinCap->report();
         $chart = $bitcoinCap->getData();
 
-        $chart_load = $this->getChartLine($chart);
+        # $chart_load = $this->getChartLine($chart);
 
         $chart_load = $this->getChartDygraph();
 

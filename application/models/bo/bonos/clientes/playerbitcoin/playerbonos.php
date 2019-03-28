@@ -2516,7 +2516,7 @@ class playerbonos extends CI_Model
         $factor = 20;
         $costo_venta = $tarifa;
         #TODO: $costo_venta*= $factor/100;
-        $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
+        #$this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
 
         date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');
@@ -3443,6 +3443,8 @@ class playerbonos extends CI_Model
     {
         if (! $fecha)
             $fecha = date('Y-m-d');
+
+        $fecha = date('Y-m-d',strtotime($fecha));
 
         $periodoFecha = array(
             "SEM" => "Semana",

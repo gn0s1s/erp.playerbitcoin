@@ -15,6 +15,7 @@ class dashboard extends CI_Controller
 		$this->load->model('ov/general');
 		$this->load->model('ov/modelo_compras');
 		$this->load->model('ov/modelo_billetera');
+        $this->load->model('bo/model_bonos');
 		$this->load->model('modelo_premios');
 		$this->load->model('model_tipo_red');
 		$this->load->model('bo/model_admin');
@@ -37,8 +38,8 @@ class dashboard extends CI_Controller
         $usuario=$this->general->get_username($id);
 
 
-        $this->getAfiliadosRed($id);
-        $numeroAfiliadosRed=count($this->afiliados);
+        #$this->getAfiliadosRed($id);
+        $numeroAfiliadosRed=0;#count($this->afiliados);
 
         $style=$this->modelo_dashboard->get_style($id);
 
@@ -80,13 +81,8 @@ class dashboard extends CI_Controller
         $puntos_mes=0;#TODO: $this->modelo_dashboard->get_puntos_personales_mes($id);
         $puntos_total=0;#TODO: $this->modelo_dashboard->get_puntos_personales_total($id);
 
-        $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
-        $saldo =  $billetera["add"];
-        $saldo -=   $billetera["sub"];
-        $this->template->set("balance",$saldo);
-
-        $puntos_red_semana=$this->modelo_dashboard->get_puntos_red_semana($id);
-        $puntos_red_mes=$this->modelo_dashboard->get_puntos_red_mes($id);
+        $puntos_red_semana=0;#$this->modelo_dashboard->get_puntos_red_semana($id);
+        $puntos_red_mes=0;#$this->modelo_dashboard->get_puntos_red_mes($id);
         $puntos_red_total=$this->modelo_dashboard->get_puntos_red_total($id);
 
         $ultimos_auspiciados=$this->modelo_dashboard->get_ultimos_auspiciados($id);
@@ -94,6 +90,25 @@ class dashboard extends CI_Controller
         $this->playerbonos->estimarRango($id);
         $titulo=$this->playerbonos->getTituloAfiliado($id);
             #TODO: $this->titulo->getNombreTituloAlcanzadoAfiliado($id, $date);
+
+        $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
+        $retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
+        $cobrosPagos=$this->modelo_billetera->get_cobros_total_afiliado($id);
+        $cobroPendientes=$this->modelo_billetera->get_cobros_pendientes_total_afiliado($id);
+        $total_transact = $this->modelo_billetera->get_total_transact_id($id);
+        $total_bonos = $this->model_bonos->ver_total_bonos_id($id);
+
+        /*	echo $comisiones."<br>";
+         * 	echo $total_bonos."<br>";
+            echo $retenciones."<br>";
+            echo $cobrosPagos."<br>";
+            echo $cobroPendientes."<br>"; */
+
+        $cobrar = $retenciones + $cobrosPagos +  $cobroPendientes;
+        $comisiones_neto = $comisiones - $cobrar;
+        $saldo = $comisiones_neto + $total_transact + $total_bonos;
+
+        $this->template->set("balance",$saldo);
 
         $this->template->set("id",$id);
         $this->template->set("usuario",$usuario);
