@@ -60,7 +60,8 @@ class general extends CI_Model
 
         log_message('DEV',"code :: $code");
 
-        $verifyCode = $tfa->verifyCode($secret, $code);
+        $rangeTime = 3;
+        $verifyCode = $tfa->verifyCode($secret, $code, $rangeTime);
         $isVerified = $verifyCode === true;
 
         return $isVerified;

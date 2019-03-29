@@ -39,7 +39,7 @@ class mGeneral extends CI_Model
         $issuer = $this->config->item('website_name', 'tank_auth');
         $tfa = new TwoFactorAuth($issuer);
 
-        $user = $this->model_perfil_red->get_user_or_id($id);
+        $user = $this->model_perfil_red->get_user_id($id);
 
         if(!$user):
             return false;
@@ -47,13 +47,20 @@ class mGeneral extends CI_Model
 
         $secret = $user[0]->keyword;
 
-        if(sizeof($secret)<4):
-            echo "<p>Please, set up 2FA auth secret for Payment Security.</p>".
-                    "<a href='/ov/networkProfile/profile'>Click Here</a>";
+        $sizeof = strlen("$secret");
+        $noSecret = $sizeof != 22;
+        log_message('DEV',"secret :: $secret -> $sizeof : [[ $noSecret ]]");
+
+        if($noSecret):
+            echo "<p>Please, set up 2FA auth secret for Payment Security.".
+                "<a href='/ov/networkProfile/profile'>Click Here</a></p>";
             return false;
         endif;
 
-        $verifyCode = $tfa->verifyCode($secret, $code);
+        log_message('DEV',"code :: $code");
+
+        $rangeTime = 3;
+        $verifyCode = $tfa->verifyCode($secret, $code, $rangeTime);
         $isVerified = $verifyCode === true;
 
         return $isVerified;
