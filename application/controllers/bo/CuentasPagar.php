@@ -261,10 +261,19 @@ class CuentasPagar extends CI_Controller
         }
         $id=$this->tank_auth->get_user_id();
 
-        $cobro = isset($_POST['cobro']) ? $_POST['cobro'] : "cobro_maximo";
-        $this->modelo_cobros->updateCobroMaximo($cobro);
+        $cobro = isset($_POST['cobro']) ? $_POST['cobro'] : 'auto_payment_limit';
+        if($cobro)
+            $this->modelo_cobros->updateSettings($cobro);
 
-        echo "OK : changed amount cobro -> $cobro";
+        $fee = isset($_POST['fee']) ? $_POST['fee'] : 'payment_fee';
+        if($fee)
+            $this->modelo_cobros->updateSettings($fee,'payment_fee');
+
+        $transfer = isset($_POST['transfer']) ? $_POST['transfer'] : 'transfer_fee';
+        if($transfer)
+            $this->modelo_cobros->updateSettings($transfer,'transfer_fee');
+
+        echo "OK : changed amount -> 1|$cobro 2|$fee 3|$transfer";
 
 	}
 	

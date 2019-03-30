@@ -277,7 +277,9 @@ class perfil_red extends CI_Controller
 					echo "
 					<li id='t".$afiliado[0]->user_id."'>
 		            	<a class='quitar' onclick='subtree(".$afiliado[0]->user_id.",".($nivel+1).")' style='background: url(".$img_perfil."); background-size: cover; background-position: center;' href='javascript:void(0)'></a>
-		            	<div onclick='detalles(".$afiliado[0]->user_id.")' class='".$todo."'>".$afiliado[0]->nombre." ".$afiliado[0]->apellido."<br />Detalles</div>
+		            	<div onclick='detalles(".$afiliado[0]->user_id.")' class='".$todo."'>"
+                        .$afiliado[0]->username
+                        ."<br />Detalles</div>
 		            </li>";
 						
 				}

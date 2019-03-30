@@ -289,7 +289,7 @@ img.fa{
         if($day_init > 21){
             $fecha_sub = new DateTime($date_stamp);
             date_add($fecha_sub, date_interval_create_from_date_string("1 day"));
-            $date_stamp = date_format($fecha_sub, $format);
+            $date_stamp = date_format($fecha_sub, 'Y-m-d');
         }
 
         ?>

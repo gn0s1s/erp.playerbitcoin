@@ -245,6 +245,12 @@ class billetera2 extends CI_Controller
         $psr = $this->modelo_billetera->get_psr($id);
         $this->template->set("psr",$psr);
 
+        $transfer =$this->model_admin->val_settings("transfer_fee");
+        $this->template->set("transfer_fee",$transfer);
+
+        $payment =$this->model_admin->val_settings("payment_fee");
+        $this->template->set("payment_fee",$payment);
+
         $this->template->set("style",$style);
 		$this->template->set("pais",$pais);
 		$this->template->set("cuenta",$cuenta);
@@ -717,7 +723,7 @@ class billetera2 extends CI_Controller
 		{
 				
 			$ventas_table .= "<tr>
-			<td class='sorting_1'>".$venta->id_venta."</td>
+			<td class='sorting_1'>".$venta->id_usuario."</td>
 			<td>".$venta->nombres."</td>
 			<td>".$venta->red."</td>
 			<td>".$venta->items."</td>

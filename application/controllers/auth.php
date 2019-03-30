@@ -19,21 +19,24 @@ class Auth extends CI_Controller
 		
 		$this->setWeb ();  
 	}
-	
+
+
+
 	private function setWeb() {
-		
+        $this->web = 'auth/login/';
+        #return false;
+
 		set_error_handler(
-				create_function(
-						'$severity, $message, $file, $line',
-						'throw new ErrorException($message, $severity, $severity, $file, $line);'
-				)
+            function ($severity, $message, $file, $line) {
+                throw new ErrorException($message, $severity, $severity, $file, $line);
+            }
 		);
 		
 		$q=$this->model_admin->get_empresa_multinivel();
 		$web = $q[0]->web;
 		
 		try {
-			$s = file_get_contents($web);
+			#TODO: $s = file_get_contents($web);
 			#log_message('ERROR',strlen($s));
 			$this->web = $web;
 		}
@@ -61,8 +64,10 @@ class Auth extends CI_Controller
         if($code)
             $success = $this->general->valCodeSecret($id,$code);
 
+        $result = "OK";
+
         if(!$success):
-            echo "<div class='text-center smart-form'>
+            $result = "<div class='text-center smart-form'>
                     <label style='width: 200px;left: 33%' class='input'>Please enter 2FA code
                     <input id='code' type='text' width='3em' 
                     name='code' pattern='[A-z0-9]{6,}' onkeyup='val_2fa()' />
@@ -87,10 +92,10 @@ class Auth extends CI_Controller
                         });//Fin callback bootbox
                     }
                 </script>";
-            return false;
         endif;
 
-        return $success ? "OK" : false;
+        echo $result;
+        return $success;
     }
 
     function index()

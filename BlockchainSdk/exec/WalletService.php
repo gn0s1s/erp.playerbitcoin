@@ -20,7 +20,7 @@ $command = " start --port 3000 ";
 $background = " > /dev/null &";
 
 try{
-	echo shell_exec($service.$command.$background);
+	#echo shell_exec($service.$command.$background);
     log_text("-> SERVICE READY");
     $return = shell_exec($service . " -V");
     log_text("BLOCKCHAIN WALLLET API v$return");

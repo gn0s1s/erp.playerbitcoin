@@ -5,6 +5,25 @@ _ERP BASE MLM - Versión: 3.9 -
 
 27-03-2019
 -
+### support (tickets) new table 
+   ```mysql
+create table support
+(
+	id int auto_increment,
+	id_user int default 2 null,
+	title varchar(35) default 'ticket' null,
+	content text null,
+	attachment varchar(100) default 0 null comment 'id archivo, comma seperated',
+	estatus varchar(3) default 'ACT' null comment 'DES,BLK,CLD',
+	parent int default 0 null,
+	orden int default 1 null,
+	constraint support_pk
+		primary key (id)
+)
+comment 'support tickets';
+```
+27-03-2019
+-
 ### settings new table 
    ```mysql
 CREATE TABLE settings

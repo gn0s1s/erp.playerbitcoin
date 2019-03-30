@@ -19,7 +19,7 @@
     <!-- row -->
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="well">
+            <div class="">
 
                 <section id="widget-grid" class="">
 
@@ -46,8 +46,9 @@
 
                                 -->
                                 <!-- widget content -->
-                                <div class="widget-body" style="padding : 0;">
-                                    <div id="myTabContent1" class="col-md-6 tab-content ">
+                                <div class="widget-body" style="padding : 0;background: transparent !important;border:none">
+                                    <div class="col col-md-1 col-lg-1"></div>
+                                    <div id="myTabContent1" class="col well col-md-5 tab-content ">
 
                                         <div class="table-responsive">
                                             <table class="table">
@@ -63,14 +64,9 @@
 
                                                 function setPSRs($psr,$comisiones)
                                                 {
-                                                    $sum_psr =  0;
-                                                    foreach ($comisiones as $comision):
-                                                        if($comision["comisiones"])
-                                                            $sum_psr += $comision["comisiones"]["indirectos"];
-                                                    endforeach;
-                                                    $sum_psr =  0;
-                                                    if(isset($comisiones[1]) )
-                                                        $sum_psr = $comisiones[1]["comisiones"]["indirectos"];
+                                                    #TODO:  setSumPSRTodo($comisiones);
+
+                                                    $sum_psr = setSumPSR($comisiones);
 
                                                     $data_psr = array();
                                                     if (isset($psr)) :
@@ -82,11 +78,42 @@
                                                     return $data_psr;
                                                 }
 
+
+                                                function setSumPSR($comisiones)
+                                                {
+                                                    $sum_psr = 0;
+                                                    if (isset($comisiones[1])):
+                                                        $comision_vip = $comisiones[1]["comisiones"];
+                                                        $PSRcomision = isset($comision_vip["indirectos"]) ? $comision_vip["indirectos"] : 0;
+                                                        $sum_psr += $PSRcomision;
+                                                    endif;
+
+                                                    if (isset($comisiones[1]["bonos"])):
+                                                        $bonos_vip = $comisiones[1]["bonos"];
+                                                        $pasiveBonus = isset($bonos_vip['Pasive Bonus']) ? $bonos_vip['Pasive Bonus'] : 0;
+                                                        $sum_psr += $pasiveBonus;
+                                                    endif;
+                                                    return $sum_psr;
+                                                }
+
+                                                function setSumPSRTodo($comisiones)
+                                                {
+                                                    $sum_psr = 0;
+                                                    foreach ($comisiones as $comision):
+                                                        $comision_vip = isset($comision["comisiones"]) ? $comision["comisiones"] : false;
+                                                        if ($comision_vip):
+                                                            $PSRcomision = isset($comision_vip["indirectos"]) ? $comision_vip["indirectos"] : 0;
+                                                            $sum_psr += $PSRcomision;
+                                                        endif;
+                                                    endforeach;
+                                                    return $sum_psr;
+                                                }
+
                                                 function setPSR($pasive,$sum = 0)
                                                 {
                                                     #TODO: bono pasivo
                                                     $cent = 100;
-                                                    $acumulado = isset($pasive->amount) ? $pasive->amount : 0;
+                                                    $acumulado = 0;#TODO: isset($pasive->amount) ? $pasive->amount : 0;
                                                     $total = $pasive->costo * 2;
 
                                                     $acumulado += $sum;
@@ -439,222 +466,257 @@
                                         </table>
 
                                     </div>
+                                    <!-- contenido nuevo Farez Prieto-->
+                                    <div class="col col-md-1 col-lg-1"></div>
+                                    <div id="myTabContent2" class="col well col-sm-12 col-md-4 tab-content transactions_div">
+                                        <!--tabs-->
+                                        <div id="exTab1"> 
+                                            <ul  class="nav nav-pills">
+                                                <li class="active pest">
+                                                     <a  href="#withdrawallsPest" data-toggle="tab">Withdrawals</a>
+                                                </li>
+                                                <li class="pest">
+                                                    <a href="#transferPest" data-toggle="tab">Transfer</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                       <form action="send_mail" method="post" id="paymentform"
+                                              class="smart-form ">
+                                        <div class="row">
+                                            <div class="col col-lg-12">
+                                                <fieldset>
+                                                    <section class="col col-lg-12 col-md-12">
+                                                        <label class="label "><b>Available Balance</b></label>
+                                                        <label class="input input state-success">
+                                                            <input type="text" name="saldo" class="from-control cajasPago" id="saldo"
+                                                                   value="<?php
+                                                                   //$saldo_neto=number_format(($total-($cobro+$retenciones_total+$cobroPendientes)),2);
+                                                                   if ($saldo_neto < 0)
+                                                                       echo 0;
+                                                                   else
+                                                                       echo number_format($saldo_neto, 2) ?>" readonly/>
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-lg-12">
+                                                        <label class="label"><b>Withdrawals</b></label>
+                                                        <label class="input">
+                                                            <!-- <i class="icon-prepend fa fa-money"></i> -->
+                                                            <input name="cobro" type="number" min="0.01" step="0.01"
+                                                                   class="from-control cajasPago" id="cobro"/>
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-lg-12">
+                                                        <label class="label"><b>Final Balance</b></label>
+                                                        <label class="input state-disabled state-error">
+                                                            <input value="" type="number" disabled="disabled" name="neto"
+                                                                   id="neto" class="from-control cajasPago" readonly/>
+                                                        </label>
+                                                    </section>
+                                                </fieldset>
+                                            </div>
+                                        </div>      
+                                        <div class="tab-content clearfix">
+                                            <div class="tab-pane active" id="withdrawallsPest">
+                                                <!--Contenido pest retiros-->
+                                                <fieldset>
+                                                    <header>
+                                                        <h2><span class="widget-icon">
+                                                            <i class="fa fa-btc"></i> </span>
+                                                            Payment money : at least 5$
+                                                        </h2>
+                                                        <div class="col-md-12">
+                                                            <hr/>Note: Blockchain Trasnsactions have cost of 2%.</div>
+                                                        <br/>
+                                                    </header>
 
+                                                    <br>
+                                                    <section class="col col-md-12">
+                                                        <label class="label"><b>Wallet address</b></label>
+                                                        <label class="input">
+                                                            <!-- <i class="icon-prepend fa fa-btc"></i> -->
+                                                            <input required name="wallet" type="text"
+                                                                   value="<?= $cuenta[0]->address ?>" class="from-control cajasPago"
+                                                                   id="wallet"/>
+                                                        </label>
+                                                    </section>
+                                                    <section class="hide col col-md-12">
+                                                        <label class="label"><b>Final Amount (- <?=$payment_fee?>%)</b></label>
+                                                        <label class="input state-disabled state-error">
+                                                            <input value="" type="number"
+                                                                   name="cobro_amount" id="cobro_amount"
+                                                                   class="from-control cajasPago" readonly/>
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-lg-12">
+                                                        <center>
+                                                        <a onclick="cobrar()" class="btn btn-process"
+                                                                id="enviar" style="width:50% !important;height:auto !important;padding:5% 0% !important;text-align: center !important">Withdraw</a>
+                                                            </center>
+                                                    </section>
+                                                </fieldset>
+                                                <!-- Fin contenido pest retiros-->
+                                            </div>
+                                            <div class="tab-pane" id="transferPest">
+                                                <!-- Contenido pest transferencia-->
 
-                                    <form action="send_mail" method="post" id="paymentform"
-                                          class="smart-form col-xs-12 col-sm-8 col-md-6 col-lg-6">
-                                        <fieldset>
-                                            <section class="col col-4">
-                                                <label class="label "><b>Available Balance</b></label>
-                                                <label class="input input state-success">
-                                                    <input type="text" name="saldo" class="from-control" id="saldo"
-                                                           value="<?php
-                                                           //$saldo_neto=number_format(($total-($cobro+$retenciones_total+$cobroPendientes)),2);
-                                                           if ($saldo_neto < 0)
-                                                               echo 0;
-                                                           else
-                                                               echo number_format($saldo_neto, 2) ?>" readonly/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-4">
-                                                <label class="label"><b>Withdrawals</b></label>
-                                                <label class="input">
-                                                    <i class="icon-prepend fa fa-money"></i>
-                                                    <input name="cobro" type="number" min="0.01" step="0.01"
-                                                           class="from-control" id="cobro"/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-4">
-                                                <label class="label"><b>Final Balance</b></label>
-                                                <label class="input state-disabled state-error">
-                                                    <input value="" type="number" disabled="disabled" name="neto"
-                                                           id="neto" class="from-control" readonly/>
-                                                </label>
-                                            </section>
-                                        </fieldset>
-                                        <fieldset>
-                                            <header>
-                                                <h2><span class="widget-icon">
-                                                        <i class="fa fa-btc"></i> </span>
-                                                    Payment money : at least 5$
-                                                </h2>
-                                                <div class="col-md-12">
-                                                    <hr/>Note: Blockchain Trasnsactions have cost of 2%.</div>
-                                                <br/>
-                                            </header>
+                                                    <fieldset>
+                                                        <header>
+                                                            <h2>
+                                                            <span class="widget-icon">
+                                                                <i class="fa fa-arrows-h"></i>
+                                                            </span>
+                                                                Transferring money between users
+                                                            </h2>
+                                                            <div class="col-md-12"><hr/>Note: Transferring money have cost of 2$.</div>
+                                                            <br/>
+                                                        </header>
+                                                        <section class="col col-md-12">
+                                                            <label for="" class="label"><b>Enter ID or Username for transfer in:</b></label>
+                                                            <label  for="" class="input">
+                                                                <input type="text" id="user" class="cajasPago" pattern="[A-z0-9]{1,}" placeholder="ID or USERNAME" name="user">
 
-                                            <br>
-                                            <section class="col col-md-6">
-                                                <label class="label"><b>Wallet address</b></label>
-                                                <label class="input">
-                                                    <i class="icon-prepend fa fa-btc"></i>
-                                                    <input required name="wallet" type="text"
-                                                           value="<?= $cuenta[0]->address ?>" class="from-control"
-                                                           id="wallet"/>
-                                                </label>
-                                            </section>
-                                            <section class="hide col col-md-3">
-                                                <label class="label"><b>Final Amount (- 2%)</b></label>
-                                                <label class="input state-disabled state-error">
-                                                    <input value="" type="number" disabled="disabled"
-                                                           name="cobro_amount" id="cobro_amount"
-                                                           class="from-control" readonly/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-3">
-                                                <br/>
-                                                <button type="button" onclick="cobrar()" class="pull-right btn btn-success"
-                                                        id="enviar">
-                                                    <i class="glyphicon glyphicon-ok"></i>
-                                                    Withdraw
-                                                </button>
-                                            </section>
-                                        </fieldset>
-                                        <fieldset>
-                                            <header>
-                                                <h2>
-                                                    <span class="widget-icon">
-                                                        <i class="fa fa-arrows-h"></i>
-                                                    </span>
-                                                    Transferring money between users
-                                                </h2>
-                                                <div class="col-md-12"><hr/>Note: Transferring money have cost of 2$.</div>
-                                                <br/>
-                                            </header>
-                                            <section class="col col-md-6">
-                                                <label for="" class="label"><b>Enter ID or Username for transfer in:</b></label>
-                                                <label  for="" class="input">
-                                                    <input type="text" id="user" pattern="[A-z0-9]{1,}" placeholder="ID or USERNAME" name="user">
+                                                        </section>
+                                                        <section class="col col-md-12">
+                                                            <div class="col-md-12"> <label for="" class="label"><b>Secure Token :</b></label>
+                                                                <label for="" class="input">
+                                                                    <i class="icon-prepend fa fa-key"></i>
+                                                                    <h3 id="token_val" class="pull-right"><?=$token?></h3>
+                                                                </label>
+                                                                <br/>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <hr/>
+                                                                <p>Please Copy for secured transferring.</p>
+                                                            </div>
+                                                            <br/>
+                                                            <div class="col-md-12">
+                                                                <label class="label"><b>Final Transfer amount (- <?=$transfer_fee?>$)</b></label>
+                                                                <label class="input state-disabled state-error">
+                                                                    <input value="" type="number" disabled="disabled"
+                                                                           name="transfer_amount" id="transfer_amount"
+                                                                           class="from-control cajasPago" readonly/>
+                                                                </label>
+                                                            </div>
 
-                                            </section>
-                                            <section class="col col-md-6">
-                                                <div class="col-md-12"> <label for="" class="label"><b>Secure Token :</b></label>
-                                                <label for="" class="input">
-                                                    <i class="icon-prepend fa fa-key"></i>
-                                                    <h3 id="token_val" class="pull-right"><?=$token?></h3>
-                                                </label>
-                                                <br/>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <hr/>
-                                                    <p>Please Copy for secured transferring.</p>
-                                                </div>
-                                                <br/>
-                                                <div class="col-md-12">
-                                                    <label class="label"><b>Final Transfer amount (- 2$)</b></label>
-                                                <label class="input state-disabled state-error">
-                                                    <input value="" type="number" disabled="disabled"
-                                                           name="transfer_amount" id="transfer_amount"
-                                                           class="from-control" readonly/>
-                                                </label>
-                                                </div>
-                                                <footer>
-                                                    <button type="button" onclick="transferMoney()" class="btn btn-success"
-                                                            id="transfer">
-                                                        <i class="glyphicon glyphicon-ok"></i>
-                                                        Transfer
-                                                    </button>
-                                                </footer>
-                                            </section>
-                                        </fieldset>
+                                                            <div class="col-md-12">
+                                                            <center><br>
+                                                                <a onclick="transferMoney()" class="btn btn-success"
+                                                                        id="transfer" class="btn btn-process"
+                                                                 style="width:50% !important;height:auto !important;padding:5% 0% !important;text-align: center !important;text-transform: uppercase !important; ">
+                                                                        Transfer
+                                                                </a>
+                                                            </center>
 
-                                        <fieldset class="hide">
-                                            <header>
-                                                <h2><span class="widget-icon"> <i class="fa fa-bank"></i> </span>
-                                                    Bank Account Info</h2>
+                                                            </div>
+                                                        </section>
+                                                    </fieldset>
 
-                                            </header>
-                                            <br>
-                                            <section class="col col-6">
-                                                <label class="label"><b>Account Titular</b></label>
-                                                <label class="input">
-                                                    <i class="icon-prepend fa fa-user"></i>
-                                                    <input required name="ctitular" type="text"
-                                                           value="<?= $cuenta[0]->titular ?>" class="from-control"
-                                                           id="ctitular"/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label"><b>Country</b></label>
-                                                <label class="select">
-                                                    <select id="cpais" required name="cpais">
-                                                        <?php foreach ($pais as $key) {
-                                                            if ($cuenta[0]->pais == $key->Code) {
-                                                                ?>
+                                                    <fieldset class="hide">
+                                                        <header>
+                                                            <h2><span class="widget-icon"> <i class="fa fa-bank"></i> </span>
+                                                                Bank Account Info</h2>
 
-                                                                <option selected value="<?= $key->Code ?>">
-                                                                    <?= $key->Name ?>
-                                                                </option>
-                                                            <?php } else {
-                                                                ?>
-                                                                <option value="<?= $key->Code ?>">
-                                                                    <?= $key->Name ?>
-                                                                </option>
-                                                            <?php }
-                                                        } ?>
-                                                    </select>
-                                                </label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label "><b>Account Number</b></label>
-                                                <label class="input input">
-                                                    <i class="icon-prepend fa fa-credit-card"></i>
-                                                    <input type="number" name="ncuenta"
-                                                           value="<?= $cuenta[0]->cuenta ?>" class="from-control"
-                                                           id="ncuenta" value="" required/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label"><b>bank</b></label>
-                                                <label class="input">
-                                                    <i class="icon-prepend fa fa-bank"></i>
-                                                    <input name="cbanco" type="text" value="<?= $cuenta[0]->banco ?>"
-                                                           class="from-control" id="cbanco" required/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label"><b>SwiftCode</b></label>
-                                                <label class="input">
-                                                    <i class="icon-prepend fa fa-sort-numeric-desc"></i>
-                                                    <input name="cswift" type="text" class="from-control"
-                                                           value="<?= $cuenta[0]->swift ?>" id="cswift"/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label "><b>Otro</b></label>
-                                                <label class="input input">
-                                                    <i class="icon-prepend fa fa-sort-numeric-desc"></i>
-                                                    <input type="number" name="cotro" class="from-control" id="cotro"
-                                                           value="<?= $cuenta[0]->otro ?>"/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label"><b>CLABE (ONLY Mexico)</b></label>
-                                                <label class="input">
-                                                    <i class="icon-prepend fa fa-sort-numeric-desc"></i>
-                                                    <input name="cclabe" type="text" class="from-control"
-                                                           value="<?= $cuenta[0]->clabe ?>" id="cclabe"/>
-                                                </label>
-                                            </section>
-                                            <section class="col col-6">
-                                                <label class="label"><b>ZIPCODE</b></label>
-                                                <label class="input input">
-                                                    <i class="icon-prepend fa fa-sort-numeric-desc"></i>
-                                                    <input value="" type="number" name="cpostal"
-                                                           value="<?= $cuenta[0]->dir_postal ?>" id="cpostal"
-                                                           class="from-control"/>
-                                                </label>
-                                            </section>
-                                        </fieldset>
+                                                        </header>
+                                                        <br>
+                                                        <section class="col col-6">
+                                                            <label class="label"><b>Account Titular</b></label>
+                                                            <label class="input">
+                                                                <i class="icon-prepend fa fa-user"></i>
+                                                                <input required name="ctitular" type="text"
+                                                                       value="<?= $cuenta[0]->titular ?>" class="from-control"
+                                                                       id="ctitular"/>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label"><b>Country</b></label>
+                                                            <label class="select">
+                                                                <select id="cpais" required name="cpais">
+                                                                    <?php foreach ($pais as $key) {
+                                                                        if ($cuenta[0]->pais == $key->Code) {
+                                                                            ?>
 
-                                        <footer class="hide">
-                                            <button type="button" onclick="cobrar()" class="btn btn-success"
-                                                    id="enviar">
-                                                <i class="glyphicon glyphicon-ok"></i>
-                                                Submit
-                                            </button>
-                                        </footer>
-                                    </form>
+                                                                            <option selected value="<?= $key->Code ?>">
+                                                                                <?= $key->Name ?>
+                                                                            </option>
+                                                                        <?php } else {
+                                                                            ?>
+                                                                            <option value="<?= $key->Code ?>">
+                                                                                <?= $key->Name ?>
+                                                                            </option>
+                                                                        <?php }
+                                                                    } ?>
+                                                                </select>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label "><b>Account Number</b></label>
+                                                            <label class="input input">
+                                                                <i class="icon-prepend fa fa-credit-card"></i>
+                                                                <input type="number" name="ncuenta"
+                                                                       value="<?= $cuenta[0]->cuenta ?>" class="from-control"
+                                                                       id="ncuenta" value="" required/>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label"><b>bank</b></label>
+                                                            <label class="input">
+                                                                <i class="icon-prepend fa fa-bank"></i>
+                                                                <input name="cbanco" type="text" value="<?= $cuenta[0]->banco ?>"
+                                                                       class="from-control" id="cbanco" required/>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label"><b>SwiftCode</b></label>
+                                                            <label class="input">
+                                                                <i class="icon-prepend fa fa-sort-numeric-desc"></i>
+                                                                <input name="cswift" type="text" class="from-control"
+                                                                       value="<?= $cuenta[0]->swift ?>" id="cswift"/>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label "><b>Otro</b></label>
+                                                            <label class="input input">
+                                                                <i class="icon-prepend fa fa-sort-numeric-desc"></i>
+                                                                <input type="number" name="cotro" class="from-control" id="cotro"
+                                                                       value="<?= $cuenta[0]->otro ?>"/>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label"><b>CLABE (ONLY Mexico)</b></label>
+                                                            <label class="input">
+                                                                <i class="icon-prepend fa fa-sort-numeric-desc"></i>
+                                                                <input name="cclabe" type="text" class="from-control"
+                                                                       value="<?= $cuenta[0]->clabe ?>" id="cclabe"/>
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-6">
+                                                            <label class="label"><b>ZIPCODE</b></label>
+                                                            <label class="input input">
+                                                                <i class="icon-prepend fa fa-sort-numeric-desc"></i>
+                                                                <input value="" type="number" name="cpostal"
+                                                                       value="<?= $cuenta[0]->dir_postal ?>" id="cpostal"
+                                                                       class="from-control"/>
+                                                            </label>
+                                                        </section>
+                                                    </fieldset>
+
+                                                    <footer class="hide">
+                                                        <button type="button" onclick="cobrar()" class="btn btn-success"
+                                                                id="enviar">
+                                                            <i class="glyphicon glyphicon-ok"></i>
+                                                            Submit
+                                                        </button>
+                                                    </footer>
+                                                <!-- Fin Contenido pest transferencia-->
+                                            </div>
+
+                                        </div>
+                                            </form>
+                                        <!--fin tabs-->
+
+                                    </div>
+                                    <div class="col col-md-1 col-lg-1"></div>
+
 
                                 </div>
 
@@ -685,6 +747,12 @@
     .msg_user{
         max-height:100px;
         overflow-y: scroll;
+    }
+    .widget-body .myTabContent1{
+        margin-left: 2em;
+    }
+    .widget-body{
+        background: none;
     }
 </style>
 <!-- PAGE RELATED PLUGIN(S)
@@ -724,7 +792,10 @@
         var neto = saldo - pago;
         neto =neto.toFixed(2);
 
-        var per = pago*0.98;
+        var factor = <?=$payment_fee;?>;
+        factor /= 100;
+        factor = 1 - factor;
+        var per = pago*factor;
         per =per.toFixed(2);
         $("#cobro_amount").val(per);
 
@@ -764,7 +835,8 @@
 
         var saldo = <?=$saldo_neto?> /*$("#saldo").val()+ (String.fromCharCode(evt.charCode)*/;
         var pago = $("#cobro").val();
-        var neto = pago - 2;
+        var factor = <?=$transfer_fee;?>;
+        var neto = pago - factor;
         neto =neto.toFixed(2);
         $("#transfer_amount").val(neto);
         if (neto > 0) {
@@ -987,7 +1059,7 @@
         if (validarCampos()) {
             $.ajax({
                 type: "POST",
-                url: "/auth/show_dialog",
+                url: "/auth/new2FA",
                 data: {message: 'Are you sure you want to request payment with the data that was just entered?'},
             })
                 .done(function (msg) {

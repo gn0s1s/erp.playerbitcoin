@@ -49,7 +49,7 @@ class general extends CI_Model
         $secret = $user[0]->keyword;
 
         $sizeof = strlen("$secret");
-        $noSecret = $sizeof < 4;
+        $noSecret = $sizeof != 22;
         log_message('DEV',"secret :: $secret -> $sizeof : [[ $noSecret ]]");
 
         if($noSecret):
@@ -60,7 +60,8 @@ class general extends CI_Model
 
         log_message('DEV',"code :: $code");
 
-        $verifyCode = $tfa->verifyCode($secret, $code);
+        $rangeTime = 3;
+        $verifyCode = $tfa->verifyCode($secret, $code, $rangeTime);
         $isVerified = $verifyCode === true;
 
         return $isVerified;

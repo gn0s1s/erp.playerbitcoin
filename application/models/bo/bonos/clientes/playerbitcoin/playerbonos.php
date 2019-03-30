@@ -2516,7 +2516,7 @@ class playerbonos extends CI_Model
         $factor = 20;
         $costo_venta = $tarifa;
         #TODO: $costo_venta*= $factor/100;
-        $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
+        #$this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
 
         date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');
@@ -3444,6 +3444,8 @@ class playerbonos extends CI_Model
         if (! $fecha)
             $fecha = date('Y-m-d');
 
+        $fecha = date('Y-m-d',strtotime($fecha));
+
         $periodoFecha = array(
             "SEM" => "Semana",
             "QUI" => "Quincena",
@@ -3756,7 +3758,7 @@ class playerbonos extends CI_Model
         $getcwd = getcwd();
         $localBitcoin = 3854.6;
 
-        return $localBitcoin;#TODO: activar plan
+        #TODO: return $localBitcoin;activar plan
 
         $islocalEnv = stripos($getcwd, "/var/www")!==false;
         $islocalEnv |= stripos($getcwd, ":")!==false;
@@ -3768,6 +3770,7 @@ class playerbonos extends CI_Model
 
         $this->bitcoinCap->getLatest();
         $bitcoin = $this->bitcoinCap->getData();
+        log_message('DEV',"BITCOIN PRO :: ".json_encode($bitcoin));
 
         if(!isset($bitcoin["data"])){
             $bitcoinCap = new $this->model_coinmarketcap(1);

@@ -2608,7 +2608,8 @@ class autobono
 					    DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 1 DAY),
 					            '%Y-%m-%d') fecha";
 	    $q = newQuery($this->db,$query);
-	    $fecha = $q[1]["fecha"]." 23:59:59"; #TODO: '2019-02-28';
+        $fecha = $q ? $q[1]["fecha"] : date('Y-m-d');
+        $fecha .= " 23:59:59"; #TODO: '2019-02-28';
 	    return $fecha;
 
 	}
@@ -2795,8 +2796,8 @@ class autobono
             return 0;
         }
 
-        $this->bitcoinVal = 3889;
-        #TODO: $this->bitcoinVal = $API->newHistorical(); activar plan
+        #$this->bitcoinVal = 3889; activar plan
+        $this->bitcoinVal = $API->newHistorical();
         echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
 
         return $this->bitcoinVal;

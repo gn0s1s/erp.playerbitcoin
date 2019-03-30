@@ -27,6 +27,12 @@ where c.id_user = up.user_id and c.id_metodo = cm.id_metodo and c.id_estatus = c
         return true;
     }
 
+    function updateSettings($valor = 0,$attrib = 'auto_payment_limit')
+    {
+        $this->db->query("update settings set $attrib = $valor");
+        return true;
+    }
+
 
     function añosCobros(){
 		$q = $this->db->query("select YEAR(fecha) as año from cobro group by año");

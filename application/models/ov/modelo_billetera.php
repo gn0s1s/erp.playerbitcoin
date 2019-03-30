@@ -433,14 +433,15 @@ from transaccion_billetera t, users u, user_profiles p
 	
 	function get_ventas_comision_id($id){
 		$q=$this->db->query("SELECT c.id_venta, v.fecha, t.nombre as red, c.id_afiliado,
-								concat(p.nombre,' ',p.apellido) as nombres,
+								u.id id_usuario,    
+								u.username as nombres,
 								(select group_concat(
 										concat((
 										select 
 											item
 										from items 
 										where id = s.id_mercancia
-											),' (',cantidad,') ')
+										and categoria = 2))
 									) 
 									from cross_venta_mercancia s
 									where s.id_venta = c.id_venta) as items,
@@ -448,9 +449,10 @@ from transaccion_billetera t, users u, user_profiles p
 									from cross_venta_mercancia 
 									where id_venta = c.id_venta) as total,
 								(select sum(valor) from comision where id_venta = c.id_venta and id_afiliado =  c.id_afiliado) comision
-							FROM comision c , user_profiles p , venta v, tipo_red t
+							FROM comision c , user_profiles p , venta v, tipo_red t,users u
 							WHERE 	
 								p.user_id = v.id_user
+								and u.id = v.id_user
 								and v.id_venta = c.id_venta
 								and	t.id = c.id_red
 								and c.id_afiliado = ".$id."
@@ -464,14 +466,16 @@ from transaccion_billetera t, users u, user_profiles p
 	
 	function get_ventas_comision_fecha($id,$fecha){
 		$q=$this->db->query("SELECT c.id_venta, v.fecha, t.nombre as red, c.id_afiliado,
-								concat(p.nombre,' ',p.apellido) as nombres,
+                                u.id id_usuario,    
+								u.username as nombres,
 								(select group_concat(
 										concat((
 										select
 											item
 										from items
 										where id = s.id_mercancia
-											),' (',cantidad,') ')
+										and categoria = 2
+											))
 									)
 									from cross_venta_mercancia s
 									where s.id_venta = c.id_venta) as items,
@@ -479,9 +483,10 @@ from transaccion_billetera t, users u, user_profiles p
 									from cross_venta_mercancia
 									where id_venta = c.id_venta) as total,
 								c.valor as comision
-							FROM comision c , user_profiles p , venta v, tipo_red t
+							FROM comision c , user_profiles p , venta v, tipo_red t,users u
 							WHERE
 								p.user_id = v.id_user
+								and u.id = v.id_user
 								and v.id_venta = c.id_venta
 								and	t.id = c.id_red
 								and c.id_afiliado = ".$id."

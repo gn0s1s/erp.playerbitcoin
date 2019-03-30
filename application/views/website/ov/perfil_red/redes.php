@@ -32,7 +32,7 @@
                     <a href="afiliarExistente">
                         <div class="well well-sm txt-color-white text-center link_dashboard" style="background:<?= $style[0]->btn_2_color ?>">
                             <i class="fa fa-user fa-3x"></i>
-                            <h5>Afiliado Existente</h5>
+                            <h5>Affiliate from my Network</h5>
                         </div>	
                     </a>
                 </div>

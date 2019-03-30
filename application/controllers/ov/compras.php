@@ -410,14 +410,27 @@ function index()
             return false;
         }
 
-        $billetera = $this->modelo_billetera->get_total_transacciones_id($id);
-        $saldo =  $billetera["add"];
-        $saldo -=   $billetera["sub"];
+        $comisiones = $this->modelo_billetera->get_total_comisiones_afiliado($id);
+        $retenciones = $this->modelo_billetera->ValorRetencionesTotalesAfiliado($id);
+        $cobrosPagos=$this->modelo_billetera->get_cobros_total_afiliado($id);
+        $cobroPendientes=$this->modelo_billetera->get_cobros_pendientes_total_afiliado($id);
+        $total_transact = $this->modelo_billetera->get_total_transact_id($id);
+        $total_bonos = $this->model_bonos->ver_total_bonos_id($id);
+
+        /*	echo $comisiones."<br>";
+         * 	echo $total_bonos."<br>";
+            echo $retenciones."<br>";
+            echo $cobrosPagos."<br>";
+            echo $cobroPendientes."<br>"; */
+
+        $cobrar = $retenciones + $cobrosPagos +  $cobroPendientes;
+        $comisiones_neto = $comisiones - $cobrar;
+        $saldo = $comisiones_neto + $total_transact + $total_bonos;
 
         $saldo -= $totalCarrito;
 
         if($saldo<0){
-            log_message('DEV',"refunds earnings :: ".json_encode($billetera));
+            log_message('DEV',"refunds earnings :: ".json_encode($saldo));
             echo "Insufficient Balance";
             return false;
         }
@@ -4580,12 +4593,23 @@ function index()
             log_message('DEV',"categoria ($categoria) tipo -> $id_red_item");
 
             $isPSR = $categoria == 2;
-            $isAvailable = $isMatricial || $isUnilevel;
 
-            if ($isAvailable && $isPSR) {
+            $where = "AND i.categoria = 2";
+            $fechafin = date('Y-m-d H:i:s');
+            $fechainicio = $this->playerbonos->getPeriodoFecha("UNI","INI",$fechafin);
+            $isCompraPSR = $this->playerbonos->getVentaMercancia($id_afiliado,$fechainicio,$fechafin,false,false,$where);
+            $isAvailable = $isMatricial || $isUnilevel;
+            $isFirstPSR = $isCompraPSR ? (sizeof($isCompraPSR) <= 1) : false;
+
+            log_message('DEV',"iscomprapsr :: [[ $isFirstPSR ]]");
+
+            if ($isAvailable && $isPSR ) {
                 $id_red = 2;
                 $costoVenta = $mercancia->costo_unidad_total;
-                $this->calcularComisionAfiliado($id_venta, $id_red, $costoVenta, $id_afiliado);
+                if($isFirstPSR):
+                    log_message('DEV',"is first PSR ($id_afiliado)");
+                    $this->calcularComisionAfiliado($id_venta, $id_red, $costoVenta, $id_afiliado);
+                endif;
                 $this->setAutoTicket($id_afiliado,$id_mercancia);
                 $this->newPasivo($id_afiliado,$id_venta);
             }
@@ -4618,7 +4642,9 @@ function index()
     }
 	
 	public function calcularComisionAfiliado($id_venta, $id_red, $costoVenta, $id_afiliado){
-	
+
+        log_message('DEV',"comisionando :: $id_afiliado : $id_venta - $costoVenta");
+
 		$valores = $this->modelo_compras->ValorComision($id_red);
 		$capacidad_red = $this->model_tipo_red->CapacidadRed($id_red);
 		$profundidadRed=$capacidad_red[0]->profundidad;
@@ -4639,8 +4665,10 @@ function index()
                 $isAvailable &= $this->isActivedPasivo($id_padre);
             endif;
 
-			if(!$isAvailable)
+			if(!$isAvailable):
+                $id_afiliado=$id_padre;
 			    continue;
+			endif;
 
 			$valorComision =  0;
 
@@ -4648,6 +4676,8 @@ function index()
 			    $valorComision = $valores[$i]->valor;
 
 			$valor_comision=(($valorComision*$costoVenta)/100);
+
+			log_message('DEV',"comision ($id_afiliado) :: $id_venta|$id_red|$id_padre|$valor_comision");
 				
 			$this->modelo_compras->set_comision_afiliado($id_venta,$id_red,$id_padre,$valor_comision);
 				
@@ -4734,7 +4764,7 @@ function index()
             return false;
 
         $tipo = "SUB";
-        $descripcion = "VENTA # $id_venta";
+        $descripcion = "ORDER # $id_venta";
         $this->modelo_billetera->add_sub_billetera($tipo, $id_afiliado, $valor, $descripcion);
 
         return true;
@@ -4743,8 +4773,8 @@ function index()
     private function setDepositoCompra($id_afiliado, $mercancia)
     {
         $tipo = "ADD";
-        $descripcion = "NUEVO DEPOSITO";
         $monto = $mercancia->costo_unidad;#$costoVenta;
+        $descripcion = "NEW DEPOSIT FROM BTC: $monto $";
         log_message('DEV',"ID: $id_afiliado depositando $monto");
         $this->modelo_billetera->add_sub_billetera($tipo, $id_afiliado, $monto, $descripcion);
 
@@ -4909,8 +4939,8 @@ function index()
             $json = json_encode($psr);
             log_message ('DEV',"VENTA PSR :: $json ");
 
-            $reference = $psr["id_venta"];
-            $valor = $psr["costo"];
+            $reference = $psr->id_venta;
+            $valor = $psr->costo;
             $tope = $valor * 2;
 
             $where = "AND reference = $reference AND estatus = 'ACT'";
