@@ -3758,7 +3758,7 @@ class playerbonos extends CI_Model
         $getcwd = getcwd();
         $localBitcoin = 3854.6;
 
-        return $localBitcoin;#TODO: activar plan
+        #TODO: return $localBitcoin;activar plan
 
         $islocalEnv = stripos($getcwd, "/var/www")!==false;
         $islocalEnv |= stripos($getcwd, ":")!==false;
@@ -3770,6 +3770,7 @@ class playerbonos extends CI_Model
 
         $this->bitcoinCap->getLatest();
         $bitcoin = $this->bitcoinCap->getData();
+        log_message('DEV',"BITCOIN PRO :: ".json_encode($bitcoin));
 
         if(!isset($bitcoin["data"])){
             $bitcoinCap = new $this->model_coinmarketcap(1);

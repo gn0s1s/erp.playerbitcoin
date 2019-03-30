@@ -83,3 +83,33 @@ VALUES ('3', '2', '2', '1', '1', '2', '2', 'REC'),
        ('3', '2', '2', '1', '1', '2', '5', 'REC'),
        ('3', '2', '2', '1', '1', '2', '6', 'REC'),
        ('3', '2', '2', '1', '1', '2', '7', 'REC');
+
+UPDATE `cat_metodo_cobro` t
+SET t.`descripcion` = 'Withdrawal'
+WHERE t.`id_metodo` = 1;
+UPDATE `cat_metodo_cobro` t
+SET t.`descripcion` = 'Checkout Bill'
+WHERE t.`id_metodo` = 3;
+
+UPDATE `cat_estatus` t
+SET t.`descripcion` = 'Modified'
+WHERE t.`id_estatus` = 5;
+UPDATE `cat_estatus` t
+SET t.`descripcion` = 'Active'
+WHERE t.`id_estatus` = 4;
+
+UPDATE `cat_estatus` t
+SET t.`descripcion` = 'Aborted'
+WHERE t.`id_estatus` = 6;
+
+UPDATE `cat_estatus` t
+SET t.`descripcion` = 'Correct'
+WHERE t.`id_estatus` = 1;
+
+UPDATE `cat_estatus` t
+SET t.`descripcion` = 'On Pending'
+WHERE t.`id_estatus` = 3;
+
+UPDATE `cat_estatus` t
+SET t.`descripcion` = 'Succeded'
+WHERE t.`id_estatus` = 2;

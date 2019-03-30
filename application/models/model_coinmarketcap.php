@@ -21,6 +21,8 @@ class model_coinmarketcap extends CI_Model
         if($test===false)
             $test = isset($get->test) ? $get->test : 1;
 
+        log_message('DEV',"INIT COINMARKETCAP TEST ? ($test)");
+
         parent::__construct();
         $this->timeapi = date('Y-m-d H:i:s');
         $this->setUrl($test);
