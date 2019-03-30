@@ -64,14 +64,9 @@
 
                                                 function setPSRs($psr,$comisiones)
                                                 {
-                                                    $sum_psr =  0;
-                                                    foreach ($comisiones as $comision):
-                                                        if($comision["comisiones"])
-                                                            $sum_psr += $comision["comisiones"]["indirectos"];
-                                                    endforeach;
-                                                    $sum_psr =  0;
-                                                    if(isset($comisiones[1]) )
-                                                        $sum_psr = $comisiones[1]["comisiones"]["indirectos"];
+                                                    #TODO:  setSumPSRTodo($comisiones);
+
+                                                    $sum_psr = setSumPSR($comisiones);
 
                                                     $data_psr = array();
                                                     if (isset($psr)) :
@@ -83,11 +78,42 @@
                                                     return $data_psr;
                                                 }
 
+
+                                                function setSumPSR($comisiones)
+                                                {
+                                                    $sum_psr = 0;
+                                                    if (isset($comisiones[1])):
+                                                        $comision_vip = $comisiones[1]["comisiones"];
+                                                        $PSRcomision = isset($comision_vip["indirectos"]) ? $comision_vip["indirectos"] : 0;
+                                                        $sum_psr += $PSRcomision;
+                                                    endif;
+
+                                                    if (isset($comisiones[1]["bonos"])):
+                                                        $bonos_vip = $comisiones[1]["bonos"];
+                                                        $pasiveBonus = isset($bonos_vip['Pasive Bonus']) ? $bonos_vip['Pasive Bonus'] : 0;
+                                                        $sum_psr += $pasiveBonus;
+                                                    endif;
+                                                    return $sum_psr;
+                                                }
+
+                                                function setSumPSRTodo($comisiones)
+                                                {
+                                                    $sum_psr = 0;
+                                                    foreach ($comisiones as $comision):
+                                                        $comision_vip = isset($comision["comisiones"]) ? $comision["comisiones"] : false;
+                                                        if ($comision_vip):
+                                                            $PSRcomision = isset($comision_vip["indirectos"]) ? $comision_vip["indirectos"] : 0;
+                                                            $sum_psr += $PSRcomision;
+                                                        endif;
+                                                    endforeach;
+                                                    return $sum_psr;
+                                                }
+
                                                 function setPSR($pasive,$sum = 0)
                                                 {
                                                     #TODO: bono pasivo
                                                     $cent = 100;
-                                                    $acumulado = isset($pasive->amount) ? $pasive->amount : 0;
+                                                    $acumulado = 0;#TODO: isset($pasive->amount) ? $pasive->amount : 0;
                                                     $total = $pasive->costo * 2;
 
                                                     $acumulado += $sum;
@@ -576,7 +602,7 @@
                                                             <center><br>
                                                                 <a onclick="transferMoney()" class="btn btn-success"
                                                                         id="transfer" class="btn btn-process"
-                                                                id="enviar" style="width:50% !important;height:auto !important;padding:5% 0% !important;text-align: center !important;text-transform: uppercase !important; ">
+                                                                 style="width:50% !important;height:auto !important;padding:5% 0% !important;text-align: center !important;text-transform: uppercase !important; ">
                                                                         Transfer
                                                                 </a>
                                                             </center>
@@ -722,7 +748,7 @@
         max-height:100px;
         overflow-y: scroll;
     }
-    .widget-body myTabContent1{
+    .widget-body .myTabContent1{
         margin-left: 2em;
     }
     .widget-body{

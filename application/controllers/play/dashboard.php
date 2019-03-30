@@ -630,8 +630,11 @@ function getDataChart(){
         if($isVIP)
             $script.="<script> $('#become-vip').hide();</script>";
 
+        $misite = "https://games.playerbitcoin.com/";
+
         $script .= "<script> 
                 $('.btn.btn-registro8').attr('href','/ov/dashboard');
+                $('#boton_salir_web').attr('href','$misite/auth/logout');
                 $('.acumulado').html('$acumulado');
                 $('#nuevaClase').attr('href','/ov/dashboard');
                 $('.btn.btn-registro3').attr('href','/ov/tickets/manual');

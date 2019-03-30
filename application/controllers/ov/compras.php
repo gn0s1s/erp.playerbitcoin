@@ -4665,8 +4665,10 @@ function index()
                 $isAvailable &= $this->isActivedPasivo($id_padre);
             endif;
 
-			if(!$isAvailable)
+			if(!$isAvailable):
+                $id_afiliado=$id_padre;
 			    continue;
+			endif;
 
 			$valorComision =  0;
 

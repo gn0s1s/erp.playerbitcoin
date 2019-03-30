@@ -84,7 +84,7 @@ class model_admin extends CI_Model
     function val_settings($attrib = "*")
     {
         $dato=$this->get_settings($attrib);
-        if(!$dato){
+        if($dato===false){
             $dato=array(
                 "auto_payment_limit" =>	"200"
             );
@@ -100,10 +100,14 @@ class model_admin extends CI_Model
         $q=$this->db->query($query);
         $dato = $q->result();
 
-        if($attrib == "*")
-            return $dato;
+        log_message('DEV',"is settings :: [$attrib] ".json_encode($dato));
+
+        if($attrib == "*"):
+            log_message('DEV',"all settings");
+            return $dato ? $dato : false;
+        endif;
         if(isset($dato[0]->$attrib))
-            $dato = $dato[0]->$attrib ;
+            $dato = $dato[0]->$attrib  ? $dato[0]->$attrib : false ;
 
         return $dato;
     }

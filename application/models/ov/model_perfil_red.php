@@ -14,6 +14,7 @@ class model_perfil_red extends CI_Model
 	{
 		$q=$this->db->query('SELECT 
 							    `profile`.keyword keyword,
+							    u.username,
 							    (select 
 							            email
 							        from
@@ -36,6 +37,8 @@ class model_perfil_red extends CI_Model
 							    estilos.btn_2_color
 							from
 							    user_profiles `profile`
+							    left join
+							    users u ON `profile`.user_id = u.id
 							        left join
 							    cat_sexo sexo ON `profile`.id_sexo = sexo.id_sexo
 							        left join
