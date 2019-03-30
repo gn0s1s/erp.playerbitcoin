@@ -28,7 +28,7 @@
                     <input type="number" step="0.01"
                            name="feePayment" id="feePayment" value="<?=$payment_fee;?>"
                            onchange="update_fee()" onkeyup="update_fee()"
-                           placeholder="Min amount">
+                           placeholder="Payment Fee">
                     <b class="pull-right">Transaction Fee (%)</b>
                 </label>
             </section>
@@ -38,7 +38,7 @@
                     <input type="number" step="0.01"
                            name="feeTransfer" id="feeTransfer" value="<?=$transfer_fee;?>"
                            onchange="update_fee_transfer()" onkeyup="update_fee_transfer()"
-                           placeholder="Min amount">
+                           placeholder="Transferring Fee">
                     <b class="pull-right">Transferring Fee ($)</b>
                 </label>
             </section>
