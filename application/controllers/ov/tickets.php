@@ -178,14 +178,17 @@ class tickets extends CI_Controller
 
         $isActived = $this->playerbonos->isActivedAfiliado($id);
         $hour = (int) date("His");
-        $limit = $isActived ? 235959 : 205959;
-        $isActived = $hour <= $limit;
+        $limit = $isActived ? true : 205959;
+
+        if(!$isActived)
+            $isActived = $hour <= $limit;
 
         log_message('DEV',"hour :::: $hour");
 
-        if($this->general->isActived($id)!=0){
-			redirect('/shoppingcart');
-		}elseif(!$isActived){
+        #if($this->general->isActived($id)!=0){
+		#	redirect('/shoppingcart');
+		#}
+		if(!$isActived){
             redirect('/listTickets');
         }
 	
@@ -338,7 +341,16 @@ class tickets extends CI_Controller
 
     function update_ticket(){
 
+        if (!$this->tank_auth->is_logged_in())
+        {
+            echo "LOGOUT... LOGIN AGAIN";// logged out
+            return false;
+        }
+
+        $id              = $this->tank_auth->get_user_id();
+
 	    $datos = $_POST;
+        $id_ticket = $datos['id'];
 
 	    if(isset($datos['date_final'])){
             $timestamp = strtotime($datos['date_final']);
@@ -348,11 +360,20 @@ class tickets extends CI_Controller
 
         $datos["estatus"] = 'ACT';
 
+        $where = "AND i.categoria = 4";
+        $mercancia = $this->playerbonos->getMercancia($where);
+        $tarifa = $mercancia ? $mercancia[0]->costo : 5;
+        $ticket = $this->general->getTicket($id_ticket);
+        $id_venta = $ticket ? $ticket->reference : 1;
+        $id_red = 1;
+
+        $this->playerbonos->calcularComisionAfiliado($id_venta,$id_red,$tarifa,$id);
+
         $json = json_encode($datos);
 	    log_message('DEV',"update ticket :: $json");
 
-	    $this->db->where("id",$datos['id']);
-	    unset($datos['id']);
+        $this->db->where("id", $id_ticket);
+	    unset($id_ticket);
 	    $this->db->update("ticket",$datos);
 
         echo "Ticket updated";

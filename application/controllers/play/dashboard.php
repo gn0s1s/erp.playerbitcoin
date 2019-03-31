@@ -387,6 +387,17 @@ class dashboard extends CI_Controller
     }
 
 
+    function ejecutarJackpot()
+    {
+
+        if(!isset($_GET['k']))
+            return false;
+        else if($_GET['k']=="123456jackpot")
+          echo  shell_exec('	/usr/local/bin/php "/home/playerbitcoin/erp.playerbitcoin/bk/jackpot.php" ');
+
+    }
+
+
     function getDataChartTxt()
     {
         $chartdef = "20070101,46;51;56" . '\n' . "20070102,43;48;52" . '\n';
@@ -598,6 +609,7 @@ function getDataChart(){
         }
 
         $total = $q[0]->total;
+        log_message('DEV',"acumulado :: $total");
         return floatval($total);
     }
 

@@ -185,10 +185,12 @@ class autobono
         }
 
         $fakes = $this->setFakeWinners();
-        $strfakes = implode(",", $fakes);
-        $strganadores = implode(",", $ganadores);
-        $ganadoresNfakes = $strganadores . "," . $strfakes;
-        $ganadores = explode(",",$ganadoresNfakes);
+        if($fakes){
+            $strfakes = implode(",", $fakes);
+            $strganadores = implode(",", $ganadores);
+            $ganadoresNfakes = $strganadores . "," . $strfakes;
+            $ganadores = explode(",",$ganadoresNfakes);
+        }
 
         echo "EVAL acumulado \n";
 		$valor = $this->getAcumulado();
@@ -2796,7 +2798,7 @@ class autobono
             return 0;
         }
 
-        #$this->bitcoinVal = 3889; activar plan
+        #$this->bitcoinVal = 3600;#TODO:  activar plan
         $this->bitcoinVal = $API->newHistorical();
         echo "NEW BITCOIN ".date('Y-m-d')." $this->bitcoinVal \n";
 
@@ -3021,10 +3023,12 @@ class autobono
         $q =  newQuery($this->db, $query);
         
         if(!$q)
-            return array();
+            return false;
         
-        $result = $q[1]["fakes"];
-        $fakes = explode(",", $result);
+        $result = $q ? $q[1]["fakes"] : false;
+
+        if($result)
+            $fakes = explode(",", $result);
         return $fakes;
         
     }

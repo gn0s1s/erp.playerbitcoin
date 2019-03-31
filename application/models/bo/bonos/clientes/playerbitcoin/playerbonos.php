@@ -2509,14 +2509,15 @@ class playerbonos extends CI_Model
         $id_venta = $this->insertVenta($id,"BILLETERA");
         $this->insertVentaItem($id, $id_venta,$red_item,$nTickets);
         $list_tickets = implode(",",$tickets);
-        $descripcion = "NEW TICKET(S) : <a onclick='alert(\"$list_tickets\")'>See details</a>";
+        $descripcion = 'NEW TICKET(S) : <a onclick="alert(\"'.$list_tickets.'\")">See details</a>';
         $this->add_sub_billetera("SUB",$id,$tarifa, $descripcion);
 
         $id_red = 1;
         $factor = 20;
         $costo_venta = $tarifa;
         #TODO: $costo_venta*= $factor/100;
-        #$this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
+        if($actived == 'ACT')
+            $this->calcularComisionAfiliado($id_venta,$id_red,$costo_venta,$id);
 
         date_default_timezone_set('UTC');
         $nextTime = $this->getNextTime('now', 'day');

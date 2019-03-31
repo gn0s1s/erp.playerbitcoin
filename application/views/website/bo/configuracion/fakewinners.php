@@ -131,8 +131,8 @@
     function remove_winner() {
         winners = $('.winners').length;
 
-        if(winners <=1)
-            return false;
+        //if(winners <=1)
+        //    return false;
 
         var lastdiv = winners-1;
         $('#win_'+lastdiv).remove();
